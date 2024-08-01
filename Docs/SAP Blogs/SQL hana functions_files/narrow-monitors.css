@@ -1,0 +1,65 @@
+/* OLD 2 PANE DESIGN
+@media screen and (max-width: 1279px) {
+
+	div#rw-container {
+		width: 21px;
+	}
+
+	div#rw-container > div.side-widget-title > h1, div#rw-container div.rw-content, div#rw-container a#comments-gear {
+		display: none;
+	}
+
+	div#topic {
+		width: 65%;
+		margin-right: 35px;
+	}
+
+	div#toc-container, html.toc-hidden div#rw-container {
+		width: calc(35% - 35px - 14px);
+	}
+
+	html.toc-hidden div#rw-container > div.side-widget-title > h1 {
+		display: inline-block;
+	}
+
+	html.toc-hidden div#rw-container div.rw-content {
+		display: block;
+	}
+	
+	html.toc-hidden div#rw-container a#comments-gear {
+		display: inline;
+	}
+
+	html.toc-hidden div#topic {
+		width: 65%;
+		margin-left: 35px;
+	}
+
+	div.page-related-links {
+		display: block;
+	}
+
+	div#rw-menu > a:first-of-type {
+		display: none;
+	}
+
+}
+*/
+/*
+@media screen and (max-width: 1330px) {
+
+	div#page {
+		padding-top: calc(6.92641% + 9.71426px);
+		padding-left: calc(17.316% - 60.7142px);
+		padding-right: calc(17.316% - 60.7142px);
+	}
+
+	div.cp-viewer-hero {
+		padding-bottom: calc(15% - 48px);
+	}
+
+	div#rw-container {
+		right: 0px;
+		width: calc(22.5% - 0px);
+	}
+}*/

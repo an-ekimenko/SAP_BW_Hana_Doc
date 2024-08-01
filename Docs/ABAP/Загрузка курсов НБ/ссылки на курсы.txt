@@ -1,0 +1,16 @@
+
+http://extsys-bank-by.it.beloil.by/Services/XmlExRates.aspx?ondate=MM/DD/YYYY
+
+
+
+http://extsys-bank-by.it.beloil.by/Services/XmlExRates.aspx
+http://extsys-bank-pl.it.beloil.by/kursy/xml/
+http://extsys-bank-ru.it.beloil.by/scripts/XML_daily.asp
+http://extsys-bank-ua.it.beloil.by/NBU_Exchange/exchange
+
+http://extsys-bank-kz.it.beloil.by/rss/get_rates.cfm?fdate=14.09.2020
+http://extsys-bank-az.it.beloil.by/currencies/22.09.2020.xml
+http://extsys-bank-ge.it.beloil.by/rss.php?&date=2020-09-15
+http://extsys-bank-kg.it.beloil.by/XML/daily.xml
+http://extsys-bank-kg.it.beloil.by/XML/weekly.xml
+

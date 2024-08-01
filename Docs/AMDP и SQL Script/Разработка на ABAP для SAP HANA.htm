@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html><head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta name="theme-color" content="#a0c2ce">
+
+		<link rel="stylesheet" href="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/bootstrap.css">
+		<link rel="stylesheet" href="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/bootstrap-theme.css">
+
+		<link rel="stylesheet" href="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/font-awesome.css">
+
+		<link rel="stylesheet" href="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/highlight.css">
+		<link rel="stylesheet" href="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/habrahabr.css">
+
+		<link rel="stylesheet" href="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/style.css">
+
+		<link rel="icon" type="image/png" href="https://sohabr.net/static/images/sources/habr_mini.png">
+
+			<script async="" src="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/analytics.js"></script><script type="text/javascript" async="" src="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/watch.js"></script><script src="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/jquery.js"></script>
+		<script src="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/bootstrap.js"></script>
+
+		<script src="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/highlight.js"></script>
+		<script src="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/habrahabr.js"></script>
+
+		<script src="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/moment-with-ru.js"></script>
+		<script src="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/moment-timezone-with-data-2006-2020.js"></script>
+		<script src="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/localdate.js"></script>
+
+
+	<script src="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/post.js" type="text/javascript"></script>
+
+	<meta name="description" content="Привет, хабрасообщество! В данной статье я хотел бы осветить новые подходы к разработке на ABAP, применительно к SAP HANA. Мы рассмотрим новые элементы языка ABAP, которые позволят эффективнее...">
+	<meta name="keywords" content="SAP HANA, ABAP, SAP, SCN, AMDP, ERP, NetWeaver">
+
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="https://sohabr.net/habr/post/245923/">
+	<meta property="og:title" content="Разработка на ABAP для SAP HANA">
+	<meta property="og:description" content="Привет, хабрасообщество! В данной статье я хотел бы осветить новые подходы к разработке на ABAP, применительно к SAP HANA. Мы рассмотрим новые элементы языка ABAP, которые позволят эффективнее...">
+	<title>Разработка на ABAP для SAP HANA / СоХабр</title>
+</head>
+<body>
+	<div id="wrap">
+		<header class="navbar navbar-default navbar-habrahabr navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="https://sohabr.net/posts/all" class="navbar-brand sohabr-logo">СоХабр</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="https://sohabr.net/posts/all" class="habrahabr">Все посты</a></li>
+						<li><a href="https://sohabr.net/about">О проекте</a></li>
+						<li><a href="https://shbr.xyz/settings">SHBR.xyz</a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+		<div class="container">
+	<div class="post from-habrahabr">
+		<div class="guide"></div>
+		<div class="published">
+			<span class="published">
+					<time class="localdate" data-date="23.12.2014 15:01:47 +0300" data-humanly="true">23 декабря 2014 в 15:01</time>
+ 		| сохранено
+		<div class="versions_dropdown" title="Посмотреть другие версии поста">
+			<span class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><time class="localdate" data-date="24.12.2014 15:01:54 +0300" data-humanly="true" data-notshowdate="23.12.2014 +0300">24 декабря 2014 в 15:01</time> <span class="caret"></span></span>
+			<ul class="dropdown-menu" role="menu">
+				<li role="presentation" class="dropdown-header">Изменения:</li>
+					<li class="active"><a href="https://sohabr.net/habr/post/245923/?version=75305" class="localdate" data-date="24.12.2014 15:01:54 +0300" data-humanly="true" data-notshowdate="23.12.2014 +0300">24 декабря 2014 в 15:01</a></li>
+					<li><a href="https://sohabr.net/habr/post/245923/?version=75168" class="localdate" data-date="23.12.2014 17:32:42 +0300" data-humanly="true" data-notshowdate="23.12.2014 +0300">в 17:32</a></li>
+					<li><a href="https://sohabr.net/habr/post/245923/?version=75164" class="localdate" data-date="23.12.2014 17:22:36 +0300" data-humanly="true" data-notshowdate="23.12.2014 +0300">в 17:22</a></li>
+					<li><a href="https://sohabr.net/habr/post/245923/?version=75160" class="localdate" data-date="23.12.2014 17:12:30 +0300" data-humanly="true" data-notshowdate="23.12.2014 +0300">в 17:12</a></li>
+					<li><a href="https://sohabr.net/habr/post/245923/?version=75144" class="localdate" data-date="23.12.2014 15:53:05 +0300" data-humanly="true" data-notshowdate="23.12.2014 +0300">в 15:53</a></li>
+					<li><a href="https://sohabr.net/habr/post/245923/?version=75142" class="localdate" data-date="23.12.2014 15:46:05 +0300" data-humanly="true" data-notshowdate="23.12.2014 +0300">в 15:46</a></li>
+					<li><a href="https://sohabr.net/habr/post/245923/?version=75140" class="localdate" data-date="23.12.2014 15:38:58 +0300" data-humanly="true" data-notshowdate="23.12.2014 +0300">в 15:38</a></li>
+					<li><a href="https://sohabr.net/habr/post/245923/?version=75130" class="localdate" data-date="23.12.2014 15:04:56 +0300" data-humanly="true" data-notshowdate="23.12.2014 +0300">в 15:04</a></li>
+			</ul>
+		</div>
+
+			</span>
+		</div>
+			<h1 class="title">
+<a href="https://habr.com/post/245923/" class="label label-primary from-habrahabr" title="с Хабра">H</a>		<span class="post_title">Разработка на ABAP для SAP HANA</span>
+
+	</h1>
+
+				<div class="hubs"><span class="fa fa-briefcase"></span>
+<a href="https://habr.com/company/sap/"><b>Блог компании SAP</b></a>, <a href="https://habr.com/hub/db_admins/">Администрирование баз данных</a>, <a href="https://habr.com/hub/erp/">ERP-системы</a>		</div>
+
+
+
+		<div class="content html_format">
+			Привет, хабрасообщество!<br>
+<br>
+В данной статье я хотел бы осветить новые подходы к разработке на ABAP, 
+применительно к SAP HANA. Мы рассмотрим новые элементы языка ABAP, 
+которые позволят эффективнее использовать возможности, предоставляемые 
+SAP HANA.<br>
+<br>
+Допустим, у нас есть отчет, написанный на языке ABAP, время работы 
+которого нас не устраивает. Мы хотим оптимизировать работу этого отчета.
+ Основная идея изменения логики работы отчета, заключается в том, что 
+часть логики отчета, которая интенсивно использует данные из СУБД (в 
+нашем случае это SAP HANA), будет делегирована на уровень СУБД.<br>
+<br>
+<img alt="image" src="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/bc116a6e6dd8875bd65aded6208d0eb4.png"><br>
+Рис.1. Code to Data pushdown.<br>
+<br>
+Для осуществления этого подхода могут быть использованы следующие конструкции:<br>
+<ol>
+<li>Расширенный Open SQL</li>
+<li>FOR ALL ENTRIES</li>
+<li>ABAP Managed Database Procedures</li>
+</ol><br>
+<a name="habracut"></a><br>
+<h4 id="section_1">Расширенный Open SQL</h4><br>
+Начиная с Application Server ABAP 7.4 SP5 были значительно расширены 
+возможности встроенного в ABAP языка работы с базами данных -– Open SQL.<br>
+<br>
+<img alt="image" src="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/d89c1474e456dc82d9fe422474c463d9.png"><br>
+Рис.2. Расширенный Open SQL<br>
+<br>
+Новые возможности Open SQL:<br>
+<ol>
+<li>Расширенный JOIN БД таблиц</li>
+<li>Арифметические выражения</li>
+<li>Строковые выражения</li>
+<li>CASE, COALESCE выражения</li>
+</ol><br>
+Дополнительную информацию по расширенному Open SQL вы можете найти в 
+курсе от Open SAP под названием “ABAP Development for SAP HANA” (<a href="https://open.sap.com/courses/a4h1/resume">link</a>).<br>
+<br>
+<h4 id="section_2">FOR ALL ENTRIES</h4><br>
+Новые возможности касаются, как правило, оперированием оперирования с 
+таблицами на уровне СУБД.Но часто возникают ситуации, когда нужно 
+совместно «манипулировать» как внутренними таблицами так и таблицами 
+базы данных. Для этих целей можно использовать конструкцию SELECT … FOR 
+ALL ENTRIES (FAE). <br>
+<br>
+SELECT result FROM table FOR ALL ENTRIES IN itab WHERE… col op itab_comp…<br>
+<br>
+Эта конструкция выражение не имеет соответствия в стандарте языка SQL, 
+поэтому интерпретатор осуществляет преобразование к семантически 
+эквивалентному SELECT выражению, которое может быть выполнено базой 
+данных.<br>
+Управлять процессом преобразования можно с использованием ProfileParameters (задаются в тарнзакции RZ11):<br>
+<ul>
+<li> rsdb/prefer_in_itab_opt (преобразовать к IN)</li>
+<li> rsdb/prefer_join (преобразовать к JOIN)</li>
+<li> rsdb/prefer_union_all (преобразовать к UNION ALL)</li>
+<li> rsdb/max_blocking_factor (максимальное кол-во строк переданных из itab)</li>
+<li> rsdb/max_in_blocking_factor (максимальное кол-во строк переданных из itab в случае с IN)</li>
+</ul><br>
+<br>
+Например, конструкция:<br>
+<b>ABAP</b><br>
+<i>SELECT col1, col2, ..., colM from TAB<br>
+FOR ALL ENTRIES IN itab<br>
+WHERE col1 op1 itab-a1<br>
+ op col2 op2 itab-a2<br>
+…<br>
+ op colM opM itab-aM</i><br>
+<br>
+в зависимости от настроек может быть преобразована следующими способами:<br>
+<b>UNION</b><br>
+<i>SELECT col1, col2, ..., colM FROM TAB WHERE col1 op1 i11 op col2 op2 i12 op… op colM opM i1N<br>
+UNION ALL SELECT col1, col2, ..., colM FROM TAB WHERE col1 op1 i21 op col2 op2 i22 op… op colM opM i2N<br>
+…<br>
+UNION ALL SELECT col1, col2, ..., colM FROM TAB WHERE col1 op1 iM1 op col2 op2 iM2 op… op colM opM iMN</i><br>
+<br>
+<b>OR</b><br>
+<i>SELECT col1,, col2, ..., colM FROM TAB WHERE col1 op1 i11 op col2 op2 i12 op… op colM opM i1N<br>
+ OR col1 op1 i21 op col2 op2 i22 op… op colM opM i2N<br>
+…<br>
+ OR col1 op1 iM1 op col2 op2 iM2 op… op colM opM iMN</i><br>
+<br>
+<b>IN</b><br>
+<i>SELECT col1, col2, ..., colM FROM TAB WHERE (col1, ..., colM) IN ( (i11, ..., i1N),<br>
+ (i21, ..., i2N),<br>
+…<br>
+ (iM1, ..., iMN) )</i><br>
+<br>
+<b>JOIN</b><br>
+<i>SELECT col1, col2, ..., colM FROM TAB, ABAP_ITAB AS T1 ( C_1 datatype, C_2 datatype, ..., C_M datatype )<br>
+WHERE TAB.col1 op1 T1.C_1 op<br>
+ op TAB.col2 op2 T1.C_2 <br>
+… <br>
+ op TAB.colM opM T1.C_M</i><br>
+<br>
+Profile parameters могут быть перегружены с использованием хинтов:<br>
+<i>SELECT * FROM [..] FOR ALL ENTRIES IN [..] WHERE [..]<br>
+%_HINTS HDB '&amp;prefer_join 1'.</i><br>
+<br>
+Дополнительную информацию по FOR ALL ENTRIES вы найдете в SAP нотах 48230, 129385, 1622681.<br>
+<h4 id="section_3">ABAP Managed Database Procedures (AMDP)</h4><br>
+<br>
+<iframe allowfullscreen="" src="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/22PDDf2x80I.htm" width="560" height="349" frameborder="0"></iframe><br>
+<br>
+Не всегда функциональности Open SQL бывает достаточно. Например, Open 
+SQL выражение может получить на вход и вернуть только одну внутреннюю 
+таблицу. Для реализации более сложной логики запроса к СУБД все в той же
+ версии AS ABAP 7.4 SP5 появилась возможность создавать хранимые 
+процедуры SAP HANA прямо в ABAP. Выглядит это так, как будто хранимая 
+процедура «оборачивается» в метод класса.Для создания и редактирования 
+AMDP потребуется ABAP Development Tools in Eclipse версии 2.19 или выше.
+ Просматривать код AMDP можно и в SAP GUI (например, через транзакции 
+SE24, SE80).<br>
+<br>
+<img alt="image" src="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/2c6f3f85987457a2699d1ad9269f9d11.png"><br>
+Рис.3. ABAP Managed Database Procedures<br>
+<br>
+Возможности AMDP:<br>
+<ol>
+<li>Поддержка Lifecycle-Management</li>
+<li>Использование объектов ABAP словаря</li>
+<li>Вызов других AMDP</li>
+<li>Язык написания – SQL Script</li>
+<li>Вызывается как обычный ABAP метод</li>
+</ol><br>
+Дополнительную информацию по AMDP вы можете найти все в том же курсе от “ABAP Development for SAP HANA” (<a href="https://open.sap.com/courses/a4h1/resume">link</a>) или в SCN(<a href="http://scn.sap.com/docs/DOC-51612">link</a>).<br>
+<br>
+<b>Итоги</b><br>
+<br>
+В этой статье мы хотели показать, что в ABAP имеется развитый 
+инструментарий, который позволяет эффективно использовать возможности 
+SAP HANA.<br>
+<br>
+<b>Полезные ссылки<b><ul>
+<li><a href="https://open.sap.com/courses">Open SAP</a></li>
+<li><a href="https://www.youtube.com/user/saphanaacademy/featured?lf1=4101015419d392212035817c30070134">SAP HANA Academy</a></li>
+<li><a href="http://scn.sap.com/community/developer-center">Технологии SAP для разработчиков</a></li>
+<li><a href="http://hcp.sap.com/developers.html">HANA Cloud Platform для разработчиков</a></li>
+<li><a href="https://ru.wikipedia.org/wiki/SAP_HANA">Wiki</a></li>
+</ul></b></b>
+
+			<div class="clear"></div>
+			
+		</div>
+
+				<div class="tags"><span class="fa fa-tags"></span>
+				<a href="https://habr.com/search/?q=%5BSAP+HANA%5D">SAP HANA</a>, 				<a href="https://habr.com/search/?q=%5BABAP%5D">ABAP</a>, 				<a href="https://habr.com/search/?q=%5BSAP%5D">SAP</a>, 				<a href="https://habr.com/search/?q=%5BSCN%5D">SCN</a>, 				<a href="https://habr.com/search/?q=%5BAMDP%5D">AMDP</a>, 				<a href="https://habr.com/search/?q=%5BERP%5D">ERP</a>, 				<a href="https://habr.com/search/?q=%5BNetWeaver%5D">NetWeaver</a>		</div>
+
+			<div class="infopanel">
+
+		<div class="voting">
+			<div class="mark positive">
+				<span class="score" title="Всего 22: ↑13 и ↓9">+4</span>
+			</div>
+		</div>
+
+
+<div class="pageviews" title="Просмотры поста (на Хабре)"><span class="fa fa-eye"></span> 2422</div>
+		<div class="author">
+
+				<a title="Автор текста" href="https://habr.com/users/AyratK/">
+					<span class="fa fa-user"></span>&nbsp;
+						AyratK
+				</a>
+		</div>
+
+
+
+			<button class="btn btn-default" onclick="request_post_scan('245923@habrahabr', this);"><i class="fa fa-refresh" style="position: relative; top: 1px;"></i> сканировать</button>
+	</div>
+
+
+				<div class="comments_list" id="comments">
+		<h2 class="title"><span class="fa fa-comments-o"></span> комментарии (<span id="comments_count">12</span>) <sup><a href="https://sohabr.net/rss/post/habr:245923/" class="fa fa-rss" title="RSS-канал комментариев к этому посту"></a></sup></h2>
+			
+	<div class="comment_item" id="comment_8191871">
+		<div class="comment_body">
+			<div class="info">
+				<div id="voting_8191871" class="voting">
+					<div class="mark negative">
+						<span class="score" title="Всего 1: ↑0 и ↓1">–1</span>
+					</div>
+				</div>
+<!-- 					<a href="https://habr.com/users/valexey/" class="avatar fa fa-user"></a> -->
+<!--					<a href="https://habr.com/users/valexey/" class="username">valexey</a><span class="comma">,</span>-->
+<a href="https://habr.com/users/valexey/" class="author">						<span class="avatar stub fa fa-user"></span>
+<span class="username">valexey</span></a>
+					<span class="comma">,&nbsp;&nbsp;</span>
+
+						<time class="localdate" data-date="23.12.2014 15:36:00 +0300" data-humanly="false">23 декабря 2014 в 15:36</time>
+				<div class="buttons">
+					<a href="#comment_8191871" class="link_to_comment"><i class="fa fa-hashtag"></i></a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="message html_format bad bad1">
+				А под кат спрятать саму статью нельзя было?
+			</div>
+		</div>
+		<div class="reply_comments" id="reply_comments_8191871">				
+	<div class="comment_item" id="comment_8191885">
+		<div class="comment_body">
+			<div class="info is_topic_starter">
+				<div id="voting_8191885" class="voting">
+					<div class="mark">
+						<span class="score" title="Всего 0: ↑0 и ↓0">0</span>
+					</div>
+				</div>
+<!-- 					<a href="https://habr.com/users/AyratK/" class="avatar fa fa-user"></a> -->
+<!--					<a href="https://habr.com/users/AyratK/" class="username">AyratK</a><span class="comma">,</span>-->
+<a href="https://habr.com/users/AyratK/" class="author">						<span class="avatar stub fa fa-user"></span>
+<span class="username">AyratK</span></a>
+					<span class="comma">,&nbsp;&nbsp;</span>
+
+						<time class="localdate" data-date="23.12.2014 15:41:00 +0300" data-humanly="false">23 декабря 2014 в 15:41</time>
+				<div class="buttons">
+					<a href="#comment_8191885" class="link_to_comment"><i class="fa fa-hashtag"></i></a>
+						<a href="#comment_8191871" data-id="8191885" data-parent_id="8191871" class="to_parent"><i class="fa fa-long-arrow-up"></i></a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="message html_format">
+				Исправил.
+			</div>
+		</div>
+		<div class="reply_comments" id="reply_comments_8191885">		</div>
+	</div>
+		</div>
+	</div>
+
+			
+	<div class="comment_item" id="comment_8191983">
+		<div class="comment_body">
+			<div class="info">
+				<div id="voting_8191983" class="voting">
+					<div class="mark positive">
+						<span class="score" title="Всего 1: ↑1 и ↓0">+1</span>
+					</div>
+				</div>
+<!-- 					<a href="https://habr.com/users/Color/" class="avatar fa fa-user"></a> -->
+<!--					<a href="https://habr.com/users/Color/" class="username">Color</a><span class="comma">,</span>-->
+<a href="https://habr.com/users/Color/" class="author">						<img src="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/329b2af036a04ab9e9cfc0cb7b456b0b_small.png" class="avatar">
+<span class="username">Color</span></a>
+					<span class="comma">,&nbsp;&nbsp;</span>
+
+						<time class="localdate" data-date="23.12.2014 16:36:00 +0300" data-humanly="false">23 декабря 2014 в 16:36</time>
+ <span class="changed"><b>*</b><small> (был изменён)</small></span>				<div class="buttons">
+					<a href="#comment_8191983" class="link_to_comment"><i class="fa fa-hashtag"></i></a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="message html_format">
+				Планируется полноценная поддержка SQL?<br>
+<br>
+В статье говорится о новизне и больших возможностях, но запросы, на 
+которых построена основная часть логики программ, до сих пор ограничены 
+«очень своеобразным» синтаксисом. Да кейсы и динамическая типизация 
+таблиц это очень круто и сэкономит много времени, но все же… Доколе? :)<br>
+<br>
+<div class="spoiler"><b class="spoiler_title">Поддержка новейшего OpenSQL?</b><div class="spoiler_text" style="display: none;"><img alt="image" src="%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%D0%BD%D0%B0%20ABAP%20%D0%B4%D0%BB%D1%8F%20SAP%20HANA_files/ba0480932d354ec1a52e6920cdf2acb0.jpg"></div></div>
+			</div>
+		</div>
+		<div class="reply_comments" id="reply_comments_8191983">		</div>
+	</div>
+
+			
+	<div class="comment_item" id="comment_8192051">
+		<div class="comment_body">
+			<div class="info is_topic_starter">
+				<div id="voting_8192051" class="voting">
+					<div class="mark">
+						<span class="score" title="Всего 0: ↑0 и ↓0">0</span>
+					</div>
+				</div>
+<!-- 					<a href="https://habr.com/users/AyratK/" class="avatar fa fa-user"></a> -->
+<!--					<a href="https://habr.com/users/AyratK/" class="username">AyratK</a><span class="comma">,</span>-->
+<a href="https://habr.com/users/AyratK/" class="author">						<span class="avatar stub fa fa-user"></span>
+<span class="username">AyratK</span></a>
+					<span class="comma">,&nbsp;&nbsp;</span>
+
+						<time class="localdate" data-date="23.12.2014 17:31:00 +0300" data-humanly="false">23 декабря 2014 в 17:31</time>
+				<div class="buttons">
+					<a href="#comment_8192051" class="link_to_comment"><i class="fa fa-hashtag"></i></a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="message html_format">
+				В SAP NW 7.4 SP5 также появились CDS Views (<a href="http://scn.sap.com/community/abap/hana/blog/2014/01/22/whats-new-on-abap-74-sp5">1</a>, <a href="http://scn.sap.com/community/abap/eclipse/blog/2014/02/04/new-data-modeling-features-in-abap-for-hana">2</a>, <a href="http://scn.sap.com/community/abap/hana/blog/2014/05/01/under-the-hana-hood-of-an-abap-cds-view">3</a>).<br>
+<br>
+Языком написания AMDP является не OpenSQL, а <a href="http://help.sap.com/hana/sap_hana_sql_script_reference_en.pdf">SQL Script</a>.<br>
+<br>
+Какие конкретно возможности SQL-92 вас интересуют?
+			</div>
+		</div>
+		<div class="reply_comments" id="reply_comments_8192051">		</div>
+	</div>
+
+			
+	<div class="comment_item" id="comment_8193375">
+		<div class="comment_body">
+			<div class="info">
+				<div id="voting_8193375" class="voting">
+					<div class="mark negative">
+						<span class="score" title="Всего 1: ↑0 и ↓1">–1</span>
+					</div>
+				</div>
+<!-- 					<a href="https://habr.com/users/zone1508/" class="avatar fa fa-user"></a> -->
+<!--					<a href="https://habr.com/users/zone1508/" class="username">zone1508</a><span class="comma">,</span>-->
+<a href="https://habr.com/users/zone1508/" class="author">						<span class="avatar stub fa fa-user"></span>
+<span class="username">zone1508</span></a>
+					<span class="comma">,&nbsp;&nbsp;</span>
+
+						<time class="localdate" data-date="24.12.2014 11:51:00 +0300" data-humanly="false">24 декабря 2014 в 11:51</time>
+				<div class="buttons">
+					<a href="#comment_8193375" class="link_to_comment"><i class="fa fa-hashtag"></i></a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="message html_format bad bad1">
+				О. Живой SAPовец. А можно задать Вам вопрос для общего развития? <br>
+Откуда в SAP взялось это совершенно идиотское ограничение в 40 символов и как вообще с этим работать и жить?
+			</div>
+		</div>
+		<div class="reply_comments" id="reply_comments_8193375">				
+	<div class="comment_item" id="comment_8193523">
+		<div class="comment_body">
+			<div class="info">
+				<div id="voting_8193523" class="voting">
+					<div class="mark">
+						<span class="score" title="Всего 0: ↑0 и ↓0">0</span>
+					</div>
+				</div>
+<!-- 					<a href="https://habr.com/users/smartello/" class="avatar fa fa-user"></a> -->
+<!--					<a href="https://habr.com/users/smartello/" class="username">smartello</a><span class="comma">,</span>-->
+<a href="https://habr.com/users/smartello/" class="author">						<span class="avatar stub fa fa-user"></span>
+<span class="username">smartello</span></a>
+					<span class="comma">,&nbsp;&nbsp;</span>
+
+						<time class="localdate" data-date="24.12.2014 12:23:00 +0300" data-humanly="false">24 декабря 2014 в 12:23</time>
+				<div class="buttons">
+					<a href="#comment_8193523" class="link_to_comment"><i class="fa fa-hashtag"></i></a>
+						<a href="#comment_8193375" data-id="8193523" data-parent_id="8193375" class="to_parent"><i class="fa fa-long-arrow-up"></i></a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="message html_format">
+				В ERP столько ограничений, про какие именно 40 символов идёт речь?
+			</div>
+		</div>
+		<div class="reply_comments" id="reply_comments_8193523">				
+	<div class="comment_item" id="comment_8193933">
+		<div class="comment_body">
+			<div class="info">
+				<div id="voting_8193933" class="voting">
+					<div class="mark">
+						<span class="score" title="Всего 0: ↑0 и ↓0">0</span>
+					</div>
+				</div>
+<!-- 					<a href="https://habr.com/users/zone1508/" class="avatar fa fa-user"></a> -->
+<!--					<a href="https://habr.com/users/zone1508/" class="username">zone1508</a><span class="comma">,</span>-->
+<a href="https://habr.com/users/zone1508/" class="author">						<span class="avatar stub fa fa-user"></span>
+<span class="username">zone1508</span></a>
+					<span class="comma">,&nbsp;&nbsp;</span>
+
+						<time class="localdate" data-date="24.12.2014 14:07:00 +0300" data-humanly="false">24 декабря 2014 в 14:07</time>
+				<div class="buttons">
+					<a href="#comment_8193933" class="link_to_comment"><i class="fa fa-hashtag"></i></a>
+						<a href="#comment_8193523" data-id="8193933" data-parent_id="8193523" class="to_parent"><i class="fa fa-long-arrow-up"></i></a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="message html_format">
+				В наименованиях. «Краткий текст»
+			</div>
+		</div>
+		<div class="reply_comments" id="reply_comments_8193933">				
+	<div class="comment_item" id="comment_8193949">
+		<div class="comment_body">
+			<div class="info is_topic_starter">
+				<div id="voting_8193949" class="voting">
+					<div class="mark">
+						<span class="score" title="Всего 0: ↑0 и ↓0">0</span>
+					</div>
+				</div>
+<!-- 					<a href="https://habr.com/users/AyratK/" class="avatar fa fa-user"></a> -->
+<!--					<a href="https://habr.com/users/AyratK/" class="username">AyratK</a><span class="comma">,</span>-->
+<a href="https://habr.com/users/AyratK/" class="author">						<span class="avatar stub fa fa-user"></span>
+<span class="username">AyratK</span></a>
+					<span class="comma">,&nbsp;&nbsp;</span>
+
+						<time class="localdate" data-date="24.12.2014 14:10:00 +0300" data-humanly="false">24 декабря 2014 в 14:10</time>
+				<div class="buttons">
+					<a href="#comment_8193949" class="link_to_comment"><i class="fa fa-hashtag"></i></a>
+						<a href="#comment_8193933" data-id="8193949" data-parent_id="8193933" class="to_parent"><i class="fa fa-long-arrow-up"></i></a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="message html_format">
+				Простите, в наименованиях чего? Какая таблица\программа\поле?
+			</div>
+		</div>
+		<div class="reply_comments" id="reply_comments_8193949">		</div>
+	</div>
+				
+	<div class="comment_item" id="comment_8194445">
+		<div class="comment_body">
+			<div class="info">
+				<div id="voting_8194445" class="voting">
+					<div class="mark positive">
+						<span class="score" title="Всего 1: ↑1 и ↓0">+1</span>
+					</div>
+				</div>
+<!-- 					<a href="https://habr.com/users/smartello/" class="avatar fa fa-user"></a> -->
+<!--					<a href="https://habr.com/users/smartello/" class="username">smartello</a><span class="comma">,</span>-->
+<a href="https://habr.com/users/smartello/" class="author">						<span class="avatar stub fa fa-user"></span>
+<span class="username">smartello</span></a>
+					<span class="comma">,&nbsp;&nbsp;</span>
+
+						<time class="localdate" data-date="24.12.2014 15:55:00 +0300" data-humanly="false">24 декабря 2014 в 15:55</time>
+				<div class="buttons">
+					<a href="#comment_8194445" class="link_to_comment"><i class="fa fa-hashtag"></i></a>
+						<a href="#comment_8193933" data-id="8194445" data-parent_id="8193933" class="to_parent"><i class="fa fa-long-arrow-up"></i></a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="message html_format">
+				Ответ прост и печален: тип CHAR занимает фиксированную длину в 
+таблице, был даже специальный костыль LCHR для длинных строк, который 
+имеет ряд ограничений. <br>
+Сейчас есть тип STRING, который может держать любые строки и не жрёт 
+лишней памяти (наконец-то), но старые разработки, боюсь никто уже 
+никогда изменять не будет.
+			</div>
+		</div>
+		<div class="reply_comments" id="reply_comments_8194445">				
+	<div class="comment_item" id="comment_8194897">
+		<div class="comment_body">
+			<div class="info">
+				<div id="voting_8194897" class="voting">
+					<div class="mark">
+						<span class="score" title="Всего 0: ↑0 и ↓0">0</span>
+					</div>
+				</div>
+<!-- 					<a href="https://habr.com/users/horosho/" class="avatar fa fa-user"></a> -->
+<!--					<a href="https://habr.com/users/horosho/" class="username">horosho</a><span class="comma">,</span>-->
+<a href="https://habr.com/users/horosho/" class="author">						<span class="avatar stub fa fa-user"></span>
+<span class="username">horosho</span></a>
+					<span class="comma">,&nbsp;&nbsp;</span>
+
+						<time class="localdate" data-date="24.12.2014 18:20:00 +0300" data-humanly="false">24 декабря 2014 в 18:20</time>
+ <span class="changed"><b>*</b><small> (был изменён)</small></span>				<div class="buttons">
+					<a href="#comment_8194897" class="link_to_comment"><i class="fa fa-hashtag"></i></a>
+						<a href="#comment_8194445" data-id="8194897" data-parent_id="8194445" class="to_parent"><i class="fa fa-long-arrow-up"></i></a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="message html_format">
+				У меня есть подозрения, зная общую идеологию SAP, что ноги растут аж
+ со стандарта перфокарт IBM, которые 80 символов. Ну и юникод — итого 
+целых 40.
+			</div>
+		</div>
+		<div class="reply_comments" id="reply_comments_8194897">				
+	<div class="comment_item" id="comment_8195621">
+		<div class="comment_body">
+			<div class="info">
+				<div id="voting_8195621" class="voting">
+					<div class="mark">
+						<span class="score" title="Всего 0: ↑0 и ↓0">0</span>
+					</div>
+				</div>
+<!-- 					<a href="https://habr.com/users/smartello/" class="avatar fa fa-user"></a> -->
+<!--					<a href="https://habr.com/users/smartello/" class="username">smartello</a><span class="comma">,</span>-->
+<a href="https://habr.com/users/smartello/" class="author">						<span class="avatar stub fa fa-user"></span>
+<span class="username">smartello</span></a>
+					<span class="comma">,&nbsp;&nbsp;</span>
+
+						<time class="localdate" data-date="25.12.2014 00:16:00 +0300" data-humanly="false">25 декабря 2014 в 0:16</time>
+				<div class="buttons">
+					<a href="#comment_8195621" class="link_to_comment"><i class="fa fa-hashtag"></i></a>
+						<a href="#comment_8194897" data-id="8195621" data-parent_id="8194897" class="to_parent"><i class="fa fa-long-arrow-up"></i></a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="message html_format">
+				Я думаю с появления abap-словаря в 1983, а вот Юникода изначально не было, поэтому вряд ли эта теория верна. <br>
+Интересно, что у некоторых до сих пор установлена ERP без поддержки 
+юникода, ведь до седьмой версии SAP NetWeaver (аж 2008-ой год!) юникод 
+не был обязательным. При конвертации максимально допустимая длина строк 
+не уменьшалась: как было 40, так и осталось.
+			</div>
+		</div>
+		<div class="reply_comments" id="reply_comments_8195621">		</div>
+	</div>
+		</div>
+	</div>
+		</div>
+	</div>
+		</div>
+	</div>
+		</div>
+	</div>
+				
+	<div class="comment_item" id="comment_8194463">
+		<div class="comment_body">
+			<div class="info">
+				<div id="voting_8194463" class="voting">
+					<div class="mark">
+						<span class="score" title="Всего 0: ↑0 и ↓0">0</span>
+					</div>
+				</div>
+<!-- 					<a href="https://habr.com/users/Yaruson/" class="avatar fa fa-user"></a> -->
+<!--					<a href="https://habr.com/users/Yaruson/" class="username">Yaruson</a><span class="comma">,</span>-->
+<a href="https://habr.com/users/Yaruson/" class="author">						<span class="avatar stub fa fa-user"></span>
+<span class="username">Yaruson</span></a>
+					<span class="comma">,&nbsp;&nbsp;</span>
+
+						<time class="localdate" data-date="24.12.2014 15:58:00 +0300" data-humanly="false">24 декабря 2014 в 15:58</time>
+				<div class="buttons">
+					<a href="#comment_8194463" class="link_to_comment"><i class="fa fa-hashtag"></i></a>
+						<a href="#comment_8193375" data-id="8194463" data-parent_id="8193375" class="to_parent"><i class="fa fa-long-arrow-up"></i></a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="message html_format">
+				Так исторически сложилось, видимо ничего не остаётся, кроме как просто смириться с этим…<br>
+<br>
+Как работать и жить? Сокращать где можно, а в документации, в том числе и
+ к создаваемым объектам, писать пояснения «что это» и «для чего нужно» —
+ придёт за вами программист, увидит ZE731_T48_PCKGCF, ужаснётся, 
+прочитает в документации «Table for document packages creation flags» и 
+скажет больше спасибо :)
+			</div>
+		</div>
+		<div class="reply_comments" id="reply_comments_8194463">		</div>
+	</div>
+		</div>
+	</div>
+
+	</div>
+
+	</div>
+
+			<div id="goup-scrlwrp" style="display: block;"><a href="#" id="goup" onclick="$(document).scrollTop(0); return false;"><b><i class="fa fa-chevron-up"></i><br>наверх</b></a></div>
+			<script type="text/javascript">
+				$(function() {
+					var doc = $(document);
+					var goup = $('#goup-scrlwrp');
+
+					function update_goup_visibility() {
+						goup.toggle(doc.scrollTop() > doc.height() * 0.10);
+					}
+
+					update_goup_visibility();
+					doc.scroll(update_goup_visibility);
+				});
+			</script>
+
+			<footer>
+				<p style="font-weight:bold;">Источник статей: <a href="http://habr.com/">Хабр</a>.</p>
+
+				<p>Время указано в том часовом поясе, который установлен на Вашем устройстве.</p>
+
+				<p>
+					Версия сайта: 0.8.<br>
+					Об ошибках, предложениях, пожалуйста, сообщайте через Telegram пользователю <a href="https://telegram.me/leenr" target="_blank">@leenr</a>, по e-mail <a href="mailto:i@leenr.ru">i@leenr.ru</a> или с помощью <a href="https://sohabr.net/about/contacts">других способов связаться</a>.				</p>
+
+				<p>
+					<span class="fa fa-plus-square-o"></span> <a href="https://sohabr.net/vsegdabr" target="_blank">Всегдабр (расширение для Google Chrome)</a><br>
+					<span class="fa fa-bar-chart"></span> <a href="https://metrika.yandex.ru/stat/?id=22505092" target="_blank">Статистика посещений</a><br>
+					<span class="fa fa-vk"></span> <a href="https://vk.com/sohabr" target="_blank">СоХабр в ВК (новости проекта)</a>
+				</p>
+			</footer>
+		</div>
+	</div>
+		<!-- Yandex.Metrika counter -->
+		<script type="text/javascript">
+		(function (d, w, c) {
+			(w[c] = w[c] || []).push(function() {
+				try {w.yaCounter22505092 = new Ya.Metrika({id:22505092, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true});} catch(e) {}
+			});
+
+			var n = d.getElementsByTagName("script")[0],
+				s = d.createElement("script"),
+				f = function() {n.parentNode.insertBefore(s, n);};
+			s.type = "text/javascript";
+			s.async = true;
+			s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+			if(w.opera == "[object Opera]") {d.addEventListener("DOMContentLoaded", f, false);} else {f();}
+		})(document, window, "yandex_metrika_callbacks");
+		</script>
+		<noscript><div><img src="//mc.yandex.ru/watch/22505092" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+
+		<!-- Google Analytics -->
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-48829253-1', 'sohabr.net');
+			ga('send', 'pageview');
+		</script>
+		<!-- /Google Analytics -->
+
+</body></html>

@@ -1,0 +1,1 @@
+"use strict";jQuery(document).ready(function(a){a(".dm-sharing-icons .dm-sharing-icons--item a").click(function(b){b.preventDefault();var c=a(this).attr("href"),d=screen.width/2-350,f=screen.height/2-250;return window.open(c,"_blank","height=500, width=700, status=yes, toolbar=no, menubar=no, location=no, top="+f+", left="+d),!1})});

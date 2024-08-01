@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if gte IE 9]>
+<html class="ie" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar" content="black">
+    <title>HANA based BW Transformation – Guidelines and Recommendations | SAP Blogs</title>
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+
+    
+    <!--[if lt IE 9]>
+    <script src="https://blogs.sap.com/wp-content/themes/sap-v3/js/html5.js" type="text/javascript"></script>
+
+    <![endif]-->
+
+    <link rel="icon" type="image" href="https://static.community.services.sap/com-hdr/v3//shared-ui/1dx-assets/images/favicon.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.community.services.sap/com-hdr/v3//shared-ui/1dx-assets/images/favicon.ico"><link rel="apple-touch-icon" href="https://static.community.services.sap/com-hdr/v3//shared-ui/1dx-assets/images/apple-touch-icon.png"><link rel="dns-prefetch" href="https://static.community.services.sap/">
+<link rel="dns-prefetch" href="https://assets.adobedtm.com/">
+<link rel="dns-prefetch" href="https://accounts.sap.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="SAP Blogs » Feed" href="https://blogs.sap.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="SAP Blogs » Comments Feed" href="https://blogs.sap.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="SAP Blogs » HANA based BW Transformation – Guidelines and Recommendations Comments Feed" href="https://blogs.sap.com/2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations/feed/">
+		<script type="text/javascript" defer="defer" async="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/privacy.js"></script><script type="text/javascript" defer="defer" async="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/privacy_002.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/blogs.sap.com\/res1dx-2736\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="twentytwelve-fonts-css" href="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="twentytwelve-style-css" href="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/style.css" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentytwelve-ie-css'  href='https://blogs.sap.com/res1dx-2736/wp-content/themes/sap-v3/css/ie.css' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="unified_header_styles-css" href="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/scn-header.xml" type="text/css" media="all">
+<link rel="stylesheet" id="unified_subheader_styles-css" href="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/scn-subheader.xml" type="text/css" media="all">
+<link rel="stylesheet" id="designmate_styles-css" href="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/designmate.css" type="text/css" media="all">
+<link rel="stylesheet" id="prism-css" href="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/prism.css" type="text/css" media="all">
+<link rel="stylesheet" id="pt_style_css-css" href="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/pt_style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wprc-style-css" href="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="sap_subscr_css-css" href="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/ss_style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wordpress-popular-posts-css-css" href="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/wpp.css" type="text/css" media="all">
+<script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/satelliteLib-5b395b37d9c840291336f737b7ec55ce96357d73.js"></script><script src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/mbox-contents-b3289bb66afbc0829b613f61d1b927004a259d8f_002.js"></script><script src="file://api.demandbase.com/api/v2/ip.json?key=344c8b40e92227af3765320635a83926&amp;var=dbInfo&amp;callback=demandbaseParse&amp;query=" type="text/javascript"></script><script src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/mbox-contents-b3289bb66afbc0829b613f61d1b927004a259d8f.js"></script><script src="file://api.demandbase.com/api/v2/ip.json?key=344c8b40e92227af3765320635a83926&amp;var=dbInfo&amp;callback=demandbaseParse&amp;query=" type="text/javascript"></script><script src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/ip.json" type="text/javascript"></script><script src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/notice.txt" crossorigin="" id="truste_0.6942217802966413">
+</script><script async="async" type="text/javascript" crossorigin="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/v1.7-53"></script><script async="async" type="text/javascript" crossorigin="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/v1.txt"></script>
+<script>
+localStorage.setItem("trusteIsEU", identifyEU(truste));
+var apiObject = { PrivacyManagerAPI : {action: "getConsent",timestamp:new Date().getTime(),self:"sap.com"}};
+var json = JSON.stringify(apiObject);
+window.top.postMessage(json,"*");
+function removeIframeHandler(json){ 
+  if(json.data!==undefined && json.data.indexOf!==undefined && json.data.indexOf("remove_iframe") >= 0) {
+    window.location.reload();
+  }
+}
+function submitPreferencesHandler(json){ 
+  if(json.data!==undefined && json.data.indexOf!==undefined && json.data.indexOf("submit_preferences") >= 0) {
+    window.addEventListener("message", removeIframeHandler, false);
+  }
+}
+window.addEventListener("message", submitPreferencesHandler, false);
+
+function identifyEU(truste){
+  if(typeof truste === "undefined" || truste === null ){
+    console.error("truste is undefined");
+    return true;
+  }
+  if(typeof truste.eu === "undefined" || truste.eu === null){
+    console.error("truste.eu is undefined");
+    return true;
+  }
+  if(typeof truste.eu.bindMap === "undefined" || truste.eu.bindMap === null){
+    console.error("truste.eu.bindMap is undefined");
+    return true;
+  }
+  if(typeof truste.eu.bindMap.behavior === "undefined" || truste.eu.bindMap.behavior === null){
+    console.error("truste.eu.bindMap is undefined");
+    return true;
+  }
+  return truste.eu.bindMap.behavior === "expressed";
+}
+</script><script src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/satellite-57f3511c64746d3cc1006e84.js"></script><script src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/satellite-57f3511c64746d3cc1006e85.js"></script>
+<script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/jquery.js"></script>
+<script type="text/javascript">
+if (jQuery) {
+                jQuery(window).load(function(){
+                    var _wpWindowLoaded = document.createElement("div");
+                    _wpWindowLoaded.setAttribute("class", "hidden");
+                    _wpWindowLoaded.setAttribute("id", "wp_window_loaded");
+                    document.body.appendChild(_wpWindowLoaded);
+                });
+            }
+</script>
+<script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/jquery-migrate.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpp_params = {"sampling_active":"","sampling_rate":"100","ajax_url":"https:\/\/blogs.sap.com\/wp-admin\/admin-ajax.php","action":"update_views_ajax","ID":"465608","token":"43508be051"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/wpp.js"></script>
+<link rel="https://api.w.org/" href="https://blogs.sap.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blogs.sap.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blogs.sap.com/wp-includes/wlwmanifest.xml"> 
+
+<link rel="canonical" href="https://blogs.sap.com/2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations/">
+<link rel="shortlink" href="https://blogs.sap.com/?p=465608">
+<script type="text/javascript">var ajaxurl = "https://blogs.sap.com/wp-admin/admin-ajax.php";var likePostLabel = "Like";var unLikePostLabel = "Liked";var likeCommentLabel = "Like";var unLikeCommentLabel = "Liked";</script><meta name="type" content="Blog">    <!--[if IE ]>
+    <link rel="stylesheet" id="scn-ie-styles" href="https://blogs.sap.com/wp-content/themes/sap-v3/css/ie.css"
+          type="text/css" media="all">
+    <link id="ids-popup-css" href="https://accounts.sap.com/universalui/shared/stylesheets/idsPopup.css"
+          rel="stylesheet"
+          type="text/css">
+    <![endif]-->
+
+
+<link rel="stylesheet" type="text/css" id="u0" href="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/skin.css"><link rel="stylesheet" type="text/css" id="u0" href="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/skin_002.css"></head>
+
+<body class="post-template-default single single-post postid-465608 single-format-standard custom-font-enabled">
+
+
+<div class="page-wrapper">
+<b class="cn-accessibility"><a href="#main" tabindex="0" accesskey="S">Skip to Content</a></b>
+<div id="page" class="hfeed site">
+
+<header id="masthead" class="blogs-nav sap-header">
+    <header id="comm-hdr-Header">
+    <!-- Empty element ???? -->
+    <div class="comm-hdr-container">
+    </div>
+    <div class="comm-hdr-header comm-hdr-headerStandard comm-hdr-headerLangStandard comm-hdr-section" id="comm-hdr-headerLangStandard">
+        <!--Header Component-->
+        <div class="comm-hdr-lang-standard comm-hdr-standard">
+            <div class="comm-hdr-logo-wrapper">
+                <a class="comm-hdr-logo" href="http://www.sap.com/" title="SAP">
+                    <div title="SAP" class="comm-hdr-sap-icon"></div>
+                </a>
+            </div>
+            <nav id="comm-hdrNavBlock" class="comm-hdr-menu-wrapper">
+                <ul id="comm-hdrMenu" class="comm-hdr-menu comm-hdr-list-unstyled"><li class="comm-hdr-menu__item" id="comm-hdr-menu__item-0"><a target="_self" class="comm-hdr-menu__link comm-hdr-has-dropdown" href="https://www.sap.com/products.html"><span class="comm-hdr-link__title">Products<span class="comm-hdr-icon-standard-menu-arrow-right"></span></span></a></li><li class="comm-hdr-menu__item" id="comm-hdr-menu__item-1"><a target="_self" class="comm-hdr-menu__link comm-hdr-has-dropdown" href="https://www.sap.com/industries.html"><span class="comm-hdr-link__title">Industries<span class="comm-hdr-icon-standard-menu-arrow-right"></span></span></a></li><li class="comm-hdr-menu__item" id="comm-hdr-menu__item-2"><a target="_self" class="comm-hdr-menu__link comm-hdr-has-dropdown" href="https://www.sap.com/support.html"><span class="comm-hdr-link__title">Support<span class="comm-hdr-icon-standard-menu-arrow-right"></span></span></a></li><li class="comm-hdr-menu__item" id="comm-hdr-menu__item-3"><a target="_self" class="comm-hdr-menu__link comm-hdr-has-dropdown" href="https://www.sap.com/training-certification.html"><span class="comm-hdr-link__title">Training<span class="comm-hdr-icon-standard-menu-arrow-right"></span></span></a></li><li class="comm-hdr-menu__item" id="comm-hdr-menu__item-4"><a target="_self" class="comm-hdr-menu__link comm-hdr-has-dropdown" href="https://www.sap.com/community.html"><span class="comm-hdr-link__title">Community<span class="comm-hdr-icon-standard-menu-arrow-right"></span></span></a></li><li class="comm-hdr-menu__item" id="comm-hdr-menu__item-5"><a target="_self" class="comm-hdr-menu__link comm-hdr-has-dropdown" href="https://www.sap.com/developer.html"><span class="comm-hdr-link__title">Developer<span class="comm-hdr-icon-standard-menu-arrow-right"></span></span></a></li><li class="comm-hdr-menu__item" id="comm-hdr-menu__item-6"><a target="_self" class="comm-hdr-menu__link comm-hdr-has-dropdown" href="https://www.sap.com/partner.html"><span class="comm-hdr-link__title">Partner<span class="comm-hdr-icon-standard-menu-arrow-right"></span></span></a></li><li class="comm-hdr-menu__item" id="comm-hdr-menu__item-7"><a target="_self" class="comm-hdr-menu__link comm-hdr-has-dropdown" href="https://www.sap.com/corporate/en.html"><span class="comm-hdr-link__title">About<span class="comm-hdr-icon-standard-menu-arrow-right"></span></span></a></li><li class="comm-hdr-menu__item--side-panel-opener"><button class="comm-hdr-button comm-hdr-side-panel-opener">Spotlights<span class="comm-hdr-icon-standard-menu-arrow-right"></span></button></li></ul>
+            </nav>
+            <div id="comm-hdr-QuickAccess" class="comm-hdr-right-container">
+                <!--Mobile menu button for activating the mobile menu-->
+                <button id="comm-hdr-MobileMenuBtn" class="comm-hdr-button comm-hdr-menu__icon-mobile">
+                    <span class="comm-hdr-icon-standard-menu"></span>
+                </button>
+                <div id="comm-hdr-search-header-standard" class="comm-hdr-search-wrapper"><a class="comm-hdr-search__opener comm-hdr-mobile-btn" href="#" title="Search"><span class="comm-hdr-icon-search03"></span><span class="comm-hdr-screen-reader-text">Search</span></a><form class="comm-hdr-search__form" id="comm-hdr-search__form" action=""><div class="comm-hdr-search__holder"><div class="comm-hdr-search__field"><span class="comm-hdr-input-placeholder-text">Search</span><input class="comm-hdr-search__input comm-hdr-ui-autocomplete-input" title="Search" name="Query" autocomplete="off" type="search"><span role="status" aria-live="polite" class="comm-hdr-ui-helper-hidden-accessible"></span><span class="comm-hdr-search__icon comm-hdr-icon-search03"><input class="comm-hdr-search__btn" type="submit"></span></div></div></form></div>
+                <div id="comm-hdr-Authentication" class="comm-hdr-authentication-wrapper"><div class="comm-hdr-authentication"><a id="comm-hdr-SignIn" href="" title="Log On" class="comm-hdr-mobile-btn comm-hdr-opener" rel="IDS_login"><img class="comm-hdr-logon comm-hdr-avatar comm-hdr-hidden" data-src="" src=""><span class="comm-hdr-notificationsCount comm-hdr-hidden"></span><span class="comm-hdr-icon-logon comm-hdr-hidden"></span><span class="comm-hdr-icon-account comm-hdr-hidden"></span><span class="comm-hdr-screen-reader-text">Log On</span></a><ul id="comm-hdr-UserProfileMenu" class="comm-hdr-user-profile__menu"><li id="comm-hdr-Username" class="comm-hdr-user-profile__heading"><a href="" class="comm-hdr-user-profile__user-name" title="Open Profile"></a></li><ul class="comm-hdr-user-profile__actions"><li id="comm-hdr-UserProfile" class="comm-hdr-user-profile__list-item"><a href="" class="comm-hdr-user-profile__menu-item">Edit My Profile</a></li><li id="comm-hdr-AccountSettings" class="comm-hdr-user-profile__list-item"><a href="" class="comm-hdr-user-profile__menu-item">Account Settings</a></li><li id="comm-hdr-Notifications" class="comm-hdr-user-profile__list-item"><a href="" class="comm-hdr-user-profile__menu-item">Notifications<span class="comm-hdr-notificationsCount comm-hdr-hidden"></span></a></li><li id="comm-hdr-ProfileActivity" class="comm-hdr-user-profile__list-item"><a href="" class="comm-hdr-user-profile__menu-item">Followed Activities</a></li></ul><div class="comm-hdr-user-avatar__container"><a href=""><img class="comm-hdr-user-avatar" src=""></a></div><hr class="comm-hdr-user-profile__divider"><div id="comm-hdr-UserProfileActions" class="comm-hdr-dropdown-menu__actions"></div><hr class="comm-hdr-user-profile__divider"><div id="comm-hdr-LogoutActions" class="comm-hdr-dropdown-menu__actions comm-hdr-logout"><li class="comm-hdr-user-profile__list-item"><a id="comm-hdr-LogOut" class="comm-hdr-user-profile__menu-item" href="">Logout</a></li></div></ul></div></div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="dm-wrapper dm-subheader dm-subheader--wrapper  dm-user--unauthenticated "><div class="dm-grid"><div class="dm-breadcrumb dm-user--unauthenticated" role="menubar">
+    <ul class="dm-breadcrumb-nav" role="navigation" aria-label="breadcrumb navigation">
+        
+        <li><a id="comm-shdr-breadcrumb-home" href="https://www.sap.com/" title="Home">Home</a></li>
+        
+        <li><a id="comm-shdr-breadcrumb-community" href="https://www.sap.com/community.html" title="Community">Community</a></li>
+        
+    </ul>
+    <ul class="dm-breadcrumb-actions" role="menu">
+        
+        <li><a id="comm-shdr-AskQuestion" href="https://answers.sap.com/questions/ask.html" title="Ask a Question">Ask a Question</a></li>
+        
+        <li><a id="comm-shdr-WriteBlogPost" href="https://blogs.sap.com/wp-admin/post-new.php" title="Write a Blog Post">Write a Blog Post</a></li>
+        
+        <li class="dm-user__login-button--wrapper"><a class="dm-button-small dm-button--primary" rel="IDS_login"><span class="dm-button-text">Login / Sign-up</span></a></li>
+        <li class="dm-breadcrumb-actions__dropdown">
+            <span id="comm-shdr-actions-opener" class="dm-breadcrumb-actions__dropdown-toggle" title="Community actions">
+                 <span class="dm-icon-encoded dm-icon-encoded--3dots"></span>
+            </span>
+            <ul id="comm-shdr-user-actions-ul" class="dm-breadcrumb-actions__dropdown-menu" role="menu">
+            </ul>
+        </li>
+    </ul>
+</div>
+</div></div>    <!-- #site-navigation -->
+
+</header>
+
+<!-- #masthead -->
+<div id="main" tabindex="0" class="wrapper">
+
+
+
+<div id="primary" class="content">
+            <article id="post-465608" class="post-465608 post type-post status-publish format-standard hentry category-uncategorized tag-bw-transformation tag-push-down tag-sql tag-sql-script sap-language-en-us sap-7492 sap-6838 sap-6200">
+            
+            
+            <section class="entry-header single">
+                
+                
+                
+                <div id="header-content" role="main" class="hero-unit">
+                    <div class="header-single">
+                        <div class="scn-blog-meta-info hidden">
+                            <div class="blog-category hidden">
+                                <li class="categories">Categories<ul>	<li class="cat-item cat-item-1"><a href="https://blogs.sap.com/category/uncategorized/">Uncategorized</a>
+</li>
+</ul></li>                            </div>
+                        </div>
+                        <div class="post-meta-info">
+                            <div class="entry-title single">
+                                <h2>HANA based BW Transformation – Guidelines and Recommendations</h2>
+                                <span class="blog-date-info">March 24, 2017</span>
+                                <span class="blog-info-seperator">|</span>
+                                <span class="blog-date-info">6,836 Views</span><span class="blog-info-seperator"> |</span>                                
+                            </div>
+                            <div class="blog-details-summary">
+                                <div class="scn-blog-avatar">
+                                    <img alt="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/torsten.png" class="avatar avatar-66 photo avatar-default" width="66" height="66">
+                                </div>
+                                <div class="blog-meta-data single">
+                                    <div class="entry-meta-header single">
+                                        <h5 class="author-name">
+                                                                                        <a class="author-name " href="https://people.sap.com/torsten.kessler" rel="author" title=" Torsten Kessler">
+                                                Torsten Kessler                                            </a>
+                                        </h5>
+
+
+                                        <ul class="scn_rbicons"><li><span title="SAP Employee" alt="SAP Employee" class="scn-rbicon-sml scn-svg-icon-groups scn-employees-svg-icon"></span></li></ul>
+                                                                                <div class="author-link">
+                                            <a href="https://blogs.sap.com/author/torsten.kessler/" rel="author">
+                                                more by this author
+                                            </a>
+                                        </div>
+                                                                            </div>
+                                </div>
+                                <div class="scn-tags-info single">
+                                    <!-- added function to display custom taxonomy-->
+                                    <div class="primary-tag">
+                                        
+               <div class="scn_pt_div">
+                   <a class="pt-link" href="https://blogs.sap.com/tags/73554900100800000681/" rel="tag">SAP BW/4HANA</a>
+               </div>                                    </div>
+                                    <!-- print post user tags -->
+                                    <div class="user-tag"><a href="https://blogs.sap.com/tags/833755570260738661924709785639136/" rel="tag">ABAP Development</a><a href="https://blogs.sap.com/tags/242586194391178517100436979900901/" rel="tag">BW (SAP Business Warehouse)</a><a href="https://blogs.sap.com/tags/73554900100700000996/" rel="tag">SAP HANA</a>&nbsp;<a href="https://blogs.sap.com/tag/bw-transformation/">BW Transformation</a><a href="https://blogs.sap.com/tag/push-down/">Push Down</a><a href="https://blogs.sap.com/tag/sql/">sql</a><a href="https://blogs.sap.com/tag/sql-script/">sql script</a></div>                                </div>
+
+                                <div class="blog-sharing-options">
+                                    <div class="shariff shariff-main shariff-align-flex-start shariff-widget-align-flex-start" data-services="googleplus%7Cfacebook%7Clinkedin" data-url="https%3A%2F%2Fblogs.sap.com%2F2017%2F03%2F24%2Fhana-based-bw-transformation-guidelines-and-recommendations%2F" data-timestamp="1517158282" data-backendurl="//shariff.services.sap.com/?"><ul class="shariff-buttons theme-white orientation-horizontal buttonsize-medium"><li class="shariff-button googleplus" style="background-color:#f75b44"><a href="https://plus.google.com/share?url=https%3A%2F%2Fblogs.sap.com%2F2017%2F03%2F24%2Fhana-based-bw-transformation-guidelines-and-recommendations%2F" title="Share on Google+" aria-label="Share on Google+" role="button" rel="noopener nofollow" class="shariff-link" target="_blank" style="background-color:#d34836; color:#d34836"><span class="shariff-icon" style="fill:#d34836"><svg width="32px" height="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M31.6 14.7h-3.3v-3.3h-2.6v3.3h-3.3v2.6h3.3v3.3h2.6v-3.3h3.3zM10.8 14v4.1h5.7c-0.4 2.4-2.6 4.2-5.7 4.2-3.4 0-6.2-2.9-6.2-6.3s2.8-6.3 6.2-6.3c1.5 0 2.9 0.5 4 1.6v0l2.9-2.9c-1.8-1.7-4.2-2.7-7-2.7-5.8 0-10.4 4.7-10.4 10.4s4.7 10.4 10.4 10.4c6 0 10-4.2 10-10.2 0-0.8-0.1-1.5-0.2-2.2 0 0-9.8 0-9.8 0z"></path></svg></span><span class="shariff-text">share</span>&nbsp;<span class="shariff-count" data-service="googleplus" style="color:#d34836;opacity:0"></span>&nbsp;</a></li><li class="shariff-button facebook" style="background-color:#4273c8"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblogs.sap.com%2F2017%2F03%2F24%2Fhana-based-bw-transformation-guidelines-and-recommendations%2F" title="Share on Facebook" aria-label="Share on Facebook" role="button" rel="noopener nofollow" class="shariff-link" target="_blank" style="background-color:#3b5998; color:#3b5998"><span class="shariff-icon" style="fill:#3b5998"><svg width="32px" height="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 32"><path d="M17.1 0.2v4.7h-2.8q-1.5 0-2.1 0.6t-0.5 1.9v3.4h5.2l-0.7 5.3h-4.5v13.6h-5.5v-13.6h-4.5v-5.3h4.5v-3.9q0-3.3 1.9-5.2t5-1.8q2.6 0 4.1 0.2z"></path></svg></span><span class="shariff-text">share</span>&nbsp;<span class="shariff-count" data-service="facebook" style="color:#3b5998;opacity:0"></span>&nbsp;</a></li><li class="shariff-button twitter" style="background-color:#32bbf5"><a href="https://twitter.com/share?url=https%3A%2F%2Fblogs.sap.com%2F2017%2F03%2F24%2Fhana-based-bw-transformation-guidelines-and-recommendations%2F&amp;text=HANA+based+BW+Transformation+%E2%80%93+Guidelines+and+Recommendations" title="Share on Twitter" aria-label="Share on Twitter" role="button" rel="noopener nofollow" class="shariff-link" target="_blank" style="background-color:#55acee; color:#55acee"><span class="shariff-icon" style="fill:#55acee"><svg width="32px" height="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 32"><path d="M29.7 6.8q-1.2 1.8-3 3.1 0 0.3 0 0.8 0 2.5-0.7 4.9t-2.2 4.7-3.5 4-4.9 2.8-6.1 1q-5.1 0-9.3-2.7 0.6 0.1 1.5 0.1 4.3 0 7.6-2.6-2-0.1-3.5-1.2t-2.2-3q0.6 0.1 1.1 0.1 0.8 0 1.6-0.2-2.1-0.4-3.5-2.1t-1.4-3.9v-0.1q1.3 0.7 2.8 0.8-1.2-0.8-2-2.2t-0.7-2.9q0-1.7 0.8-3.1 2.3 2.8 5.5 4.5t7 1.9q-0.2-0.7-0.2-1.4 0-2.5 1.8-4.3t4.3-1.8q2.7 0 4.5 1.9 2.1-0.4 3.9-1.5-0.7 2.2-2.7 3.4 1.8-0.2 3.5-0.9z"></path></svg></span><span class="shariff-text">tweet</span>&nbsp;</a></li><li class="shariff-button linkedin" style="background-color:#1488bf"><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblogs.sap.com%2F2017%2F03%2F24%2Fhana-based-bw-transformation-guidelines-and-recommendations%2F&amp;title=HANA+based+BW+Transformation+%E2%80%93+Guidelines+and+Recommendations" title="Share on LinkedIn" aria-label="Share on LinkedIn" role="button" rel="noopener nofollow" class="shariff-link" target="_blank" style="background-color:#0077b5; color:#0077b5"><span class="shariff-icon" style="fill:#0077b5"><svg width="32px" height="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 32"><path d="M6.2 11.2v17.7h-5.9v-17.7h5.9zM6.6 5.7q0 1.3-0.9 2.2t-2.4 0.9h0q-1.5 0-2.4-0.9t-0.9-2.2 0.9-2.2 2.4-0.9 2.4 0.9 0.9 2.2zM27.4 18.7v10.1h-5.9v-9.5q0-1.9-0.7-2.9t-2.3-1.1q-1.1 0-1.9 0.6t-1.2 1.5q-0.2 0.5-0.2 1.4v9.9h-5.9q0-7.1 0-11.6t0-5.3l0-0.9h5.9v2.6h0q0.4-0.6 0.7-1t1-0.9 1.6-0.8 2-0.3q3 0 4.9 2t1.9 6z"></path></svg></span><span class="shariff-text">share</span>&nbsp;<span class="shariff-count" data-service="linkedin" style="color:#0077b5;opacity:0"></span>&nbsp;</a></li></ul></div>                                    <div id="sap-header-content-actions">
+                                        
+<span class="multibutton-row"><a href="#" class="button-secondary blog-roll-btn sap-button-follow disabled" id="sap-button-follow-hdr-id" data-post-id="465608" name="a309027369" title="Please log into the system to use follow/unfollow functionality.">Follow</a></span>                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="content" class="content-wrapper">
+                <div class="content-main">
+                    <div class="content-single">
+                        <section class="section-article">
+                            <!-- .entry-header -->
+                            <div class="entry-content post-content">
+                                
+                                <p><span style="background: #ffffff;text-align: justify;font-size: 8pt;color: #ff0000">Last change on 01/28/2018</span></p>
+<p>This blog is part of the blog series <a class="jive-link-blog-small" href="https://blogs.sap.com/?p=142823">HANA based BW Transformation</a>.</p>
+<p>The following list is based on experiences with real customer 
+messages and is intended to help customers learn from the mistakes of 
+other customers.</p>
+<h2>9.1 SQL Script Procedures</h2>
+<p>Some SQL Script best practice tips could be found in chapter »Best Practices for Using SQLScript« inside the <a href="http://help.sap.com/hana/sap_hana_sql_script_reference_en.pdf" target="_blank" rel="noopener">SAP HANA SQLScript Reference</a>.</p>
+<p>Here are some general SQLScript recommendations:</p>
+<ul>
+<li>Do not mix the functions of SQLScript and CE functions within a script.
+<ul>
+<li>Example: Do not code SQLScript and read inside the SQLScript from a procedure or CalcView with CE Functions).</li>
+</ul>
+</li>
+<li>Pass on all parameters as required to the lowest level</li>
+<li>Reduce the size of the data set as early as possible in the data 
+flow. This can be done by applying static filters or applying dynamic 
+filters using parameters at the lowest level</li>
+<li>Minimize the size of any intermediate result sets in complex 
+processing. Do not include any extra attribute columns that may increase
+ the rows of aggregated results being passed between nodes in the data 
+flow.</li>
+<li>Avoid extremely large intermediate result sets, even if they will be
+ reduced or aggregated before the final result is returned to the 
+client. These can have high memory requirements.</li>
+<li>Perform calculations at the last node possible in the data flow 
+(ideally done in final aggregation or projection). This will reduce the 
+amount of data rows on which you are performing the calculations also 
+reduce the number of columns being transferred from one node to another.</li>
+<li>In some situations, you can use a union and then aggregate the results instead of using a join for better performance.</li>
+<li>Reduce Complexity of SQL Statements: Break up a complex SQL 
+statement into many simpler ones. This makes a SQLScript procedure 
+easier to comprehend.</li>
+<li>Identify Common Sub-Expressions: If you split a complex query into 
+logical sub queries it can help the optimizer to identify common sub 
+expressions and to derive more efficient execution plans.</li>
+<li>Understand the Costs of Statements: Employ the explain plan facility
+ to investigate the performance impact of different SQL queries used in 
+scripts.</li>
+<li>Reduce Dependencies: As SQLScript is translated into a dataflow 
+graph, and independent paths in this graph can be executed in parallel, 
+reducing dependencies enables better parallelism, and thus better 
+performance.</li>
+</ul>
+<p>The following listed SQL Script issues are related to SQL Script in the context of BW.</p>
+<h3>9.1.1 Initial values</h3>
+<p align="justify">Within the BW all fields are defined as NOT NULL 
+columns. Therefore, the developer is responsible to ensure that all data
+ inside the result table of a SQL Script routine are initialized type 
+conform. The SQL function <a href="https://help.sap.com/saphelp_hanaplatform/helpdata/en/20/db6dd7751910149105978452f92bbd/content.htm" target="_blank" rel="noopener">COALESCE</a>
+ could be used to avoid NULL values and ensure that all values would be 
+initialed correct in case of NULL values. Characteristic sample:</p>
+<p><code class="  language-en">COALESCE( inTab."MATERIAL”, '' ) AS "MATERIAL”</code></p>
+<p align="justify">In case of numeric field, it is important to 
+initialize the field by a numeric value. The default initial value for a
+ numeric field is 0 and not ‘’. Key figure sample:</p>
+<p><code class="  language-en">COALESCE( inTab."KEYFIGURE”, 0 ) AS "KEYFIGURE”</code>.</p>
+<h3>9.1.2 Avoid preventing filter push down</h3>
+<p align="justify">The optimizer tries to push down the filter as far as
+ possible to the source to keep the data volume as small as possible. It
+ may have a negative performance effect if the filter push down is 
+prevented.</p>
+<p align="justify">The calculation engine tries to optimizer the 
+SQLScript coding in order to compile all local select statements to one 
+select statement. Therefore the single statements would be <strong>in-lined</strong>. Sample:</p>
+<p>Original statements:</p>
+<p><code class="  language-en">tab   = select A, B, C from T where A = 1;</code></p>
+<p><code class="  language-en">tab2  = select C from :tab where  C = 0;</code></p>
+<p>In-lined statement:</p>
+<p><code class="  language-en">tab2  = select C from (select A,B,C from T where A = 1) where C=0;</code></p>
+<p>For further information about in-lining see <a href="http://help.sap.com/saphelp_hanaplatform/helpdata/en/23/531168b23340c08731b9660058ee8f/content.htm" target="_blank" rel="noopener">HINTS: NO_INLINE and INLINE</a>. The hints could also be used to force or prevent inlining for a single select.</p>
+<p align="justify">A further option to prevent inlining is to put the coding into a <a href="https://help.sap.com/saphelp_hanaplatform/helpdata/en/20/d467407519101484f190f545d54b24/content.htm" target="_blank" rel="noopener">SEQUENTIAL EXECUTION</a> block. All statements inside a <a href="https://help.sap.com/saphelp_hanaplatform/helpdata/en/20/d467407519101484f190f545d54b24/content.htm" target="_blank" rel="noopener">SEQUENTIAL EXECUTION</a> block (<code class="  language-en">BEGIN SEQUENTIAL EXECUTION … END;</code>) would not been in-lined and would be executed sequentially. The force of sequential execution prevents parallelization!</p>
+<p align="justify">Also the usage of <a href="http://help.sap.com/saphelp_hanaplatform/helpdata/en/7e/9f763c141f4cfe83ac888a8afff0b3/content.htm" target="_blank" rel="noopener">Imperative SQLScript Logic</a> prevents that the optimizer can inline the single SQL statements. Therefore the recommendation is to use <a href="http://help.sap.com/saphelp_hanaplatform/helpdata/en/f0/a6dceac8b94cca98dd2741ac6541b8/content.htm" target="_blank" rel="noopener">declarative SQLScript logic</a> to implement the SQL script procedures in the BW transformation context, if the logic allows it.</p>
+<p>Use of imperative SQLScript logic</p>
+<p>The procedure SQL code would be translated into L-coding in case of 
+using structure control elements like LOOPs or IF-conditions or 
+declaration of local variables, see Figure 9.1.</p>
+<p>&nbsp;</p>
+<p><a href="https://blogs.sap.com/wp-content/uploads/2017/03/Figure_9_1.png" target="_blank" rel="noopener"><img src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/Figure_9_1.png"></a></p>
+<p>Figure 9.1: Resulting CeLjitPop for converted SQL Script code to L</p>
+<p>Use</p>
+<ul>
+<li><strong>hints</strong></li>
+<li>the <strong>sequential execution block</strong> and</li>
+<li><strong>imperative</strong> SQLScript logic</li>
+</ul>
+<p>with care!</p>
+<p>Sometimes it makes sense to test if one of this features would increase the performance.</p>
+<p>&nbsp;</p>
+<h3>9.1.3 Concatenate in SQL Script within an AMDP Method <span style="font-size: 13.3333px;color: #333333;text-align: justify;background: #ffffff">(</span><span style="font-size: 8pt;text-align: justify;color: #ff0000;background: #ffffff">Added on 08/03/2017<span style="font-size: 13.3333px;color: #333333;text-align: justify;background: #ffffff">)</span></span></h3>
+<p>The following statement</p>
+<p><code class="  language-en"><strong>SELECT</strong> 'A' || ' ' || 'B' || ' ' || 'C' <strong>FROM</strong> &lt;any table&gt;;</code></p>
+<p>within an AMDP method will lead into the result <code class="  language-en">'ABC'</code>.</p>
+<p>The expected blanks are not available. To get the expected result it is necessary to set the space by using the <a href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.01/en-US/20db6dd675191014a4fd978452f92bbd.html" target="_blank" rel="noopener">CHAR Function (String)</a>.</p>
+<p>The following statement</p>
+<p><code class="  language-en"><strong>SELECT</strong> 'A' || CHAR(32) || 'B' || CHAR(32) || 'C'  <strong>FROM</strong> &lt;any table&gt;;</code></p>
+<p>delivers the expected result <code class="  language-en">'A B C'</code>.</p>
+<p>&nbsp;</p>
+<h3>9.1.4 Keep internal table small</h3>
+<p>Keeping the internal table small is a general recommendation and 
+means always check your WHERE condition twice. While processing the 
+Calculation Scenario by the calculation engine it is necessary to 
+materialize some Calculation Views. Materializing views means allocation
+ of memory. From performance and memory allocation perspective we 
+recommend to reduce the data volume as soon as possible, see paragraph 
+9.1.7 »Use of DISTINCT«. Inside all SAP HANA engines try to push down 
+filter conditions as close as possible to the sources.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>9.1.5 Use of DISTINCT</h3>
+<p>A join can multiply the number of resulting rows and in case of 
+selecting only a subset of the whole width a DISTINCT can reduce the 
+resulting number of rows significantly.</p>
+<p>The customer coding below results in an internal table with more than 700.000.000 rows.</p>
+<p>(inTab ~ 16.000.000 rows)</p>
+<pre class="  language-sql"><code class="  language-sql">L_ITAB2 <span class="token operator">=</span> 
+  <span class="token keyword">SELECT</span> <span class="token string">"BPARTNER"</span><span class="token punctuation">,</span> 
+         <span class="token string">"BP_EXTERN"</span> 
+    <span class="token keyword">FROM</span> :L_ITAB1   
+   <span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> :inTab      
+      <span class="token keyword">ON</span> :L_ITAB1<span class="token punctuation">.</span><span class="token string">"BP_EXTERN"</span> <span class="token operator">=</span> :inTab<span class="token punctuation">.</span><span class="token string">"BP_EXTERN"</span>   
+   <span class="token keyword">WHERE</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span></code></pre>
+<p>By adding <strong>DISTINCT</strong> to the statement the number of rows could be reduced to 1.300.</p>
+<pre class="  language-sql"><code class="  language-sql">L_ITAB2 <span class="token operator">=</span> 
+  <span class="token keyword">SELECT</span> <span class="token keyword">DISTINCT</span> <span class="token string">"BPARTNER"</span><span class="token punctuation">,</span> 
+                  <span class="token string">"BP_EXTERN"</span>
+    <span class="token keyword">FROM</span> :L_ITAB1    
+   <span class="token keyword">INNER</span> <span class="token keyword">JOIN</span> :inTab
+      <span class="token keyword">ON</span> :L_ITAB1<span class="token punctuation">.</span><span class="token string">"BP_EXTERN"</span> <span class="token operator">=</span> :inTab<span class="token punctuation">.</span><span class="token string">"BP_EXTERN"</span>
+   <span class="token keyword">WHERE</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span></code></pre>
+<h3></h3>
+<h3>9.1.6 Potential pitfall at UNION / UNION ALL</h3>
+<p>The following aspects should be considered when using the UNION operator.</p>
+<ul>
+<li>The structure of the first SELECT statement defines the column names of the resulting structure (table)</li>
+<li>The UNION operator matches the columns from the involved SELECT statements by position and NOT by name</li>
+<li>If the data type of a column differ from each other, the HANA engine will try to determine an appropriate data type</li>
+</ul>
+<p>The individual SELECTs in an UNION can base on a persistent database 
+table or an internal SQL Script (iTab) table. By combining several 
+SELECT statements to a new result table one must pay attention to the 
+column order of every single SELECT statement.</p>
+<p>Figure 9.2 shows in<span style="color: #0000ff"> <strong>(1)</strong> </span>and <span style="color: #0000ff"><strong>(2)</strong></span> two table definitions with the same columns but the column order is different. <span style="color: #0000ff"><strong>(3)</strong> </span>shows a structure definition for the output parameter of the procedure in <span style="color: #0000ff"><strong>(4)</strong></span>.</p>
+<p>The first UNION in<span style="color: #0000ff"><strong> (5) </strong></span>uses
+ the * operator instead of an explicit column list (see comments). The 
+column names of the resulting tables are based on the columns (“CHA_01”,
+ “CHA_02”, “KYF_01”, “KYF_02”, “RECORD”) from the first SELECT 
+statement. The datatype from the third (KYF_01 / RECORD) and the fifth 
+(RECORD / KYF_02) column of both SELECT statements are different. The</p>
+<p><a href="https://blogs.sap.com/wp-content/uploads/2017/03/Figure_9_2-4.png%22" target="_blank" rel="noopener"><img src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/Figure_9_2-4.png"></a></p>
+<p><em>Figure </em><em>9.2: UNION without and with explicit field list</em></p>
+<h3></h3>
+<h3>9.1.7 Pitfalls in field routines</h3>
+<p>The runtime behavior of AMDP field routines are different from the runtime behavior of ABAP field routines.</p>
+<p>The processing logic for an ABAP field routine is based on an 
+external loop over the source package and for each row a field routine 
+is called with a single value. The input fields of an ABAP field routine
+ are single value variable (scalar variable). An ABAP field routine can 
+consume several single values, depending on the field routine 
+definition. An ABAP field routine always returns (EXPORTS) to one single
+ value field.</p>
+<p>The process logic for an AMDP field routine is based on every value 
+in the column for the source package which is currently being processed.
+ That means, if the AMDP field routine be called all values from the 
+selected input fields are handover in one call. In Figure 9.4 only one 
+source field is selected. Therefore, the table base input parameter for 
+the AMDP routine contains one data column. There are further technical 
+columns in the input table.</p>
+<p><a href="https://blogs.sap.com/wp-content/uploads/2017/03/Figure_9_4.png" target="_blank" rel="noopener"><img src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/Figure_9_4.png"></a></p>
+<p><em>Figure </em><em>9.4: Field Routines Definition</em></p>
+<p>The transformation process expects thus from the AMDP field routine 
+an output table with the same number of rows as the input table!</p>
+<p>To get a better understanding why this is so important I’ll provide some background information about the runtime processing.</p>
+<p>A field based AMDP routine is embedded in a Calculation Scenario. For more details read through <a href="https://blogs.sap.com/2016/06/17/hana-based-transformation-deep-dive/" target="_blank" rel="noopener">HANA based Transformation (deep dive)</a>.</p>
+<p>Figure 9.5 shows the internal process of an AMDP field routine inside
+ the Calculation Scenario. After extracting the data from the source 
+object the start routine (in case a start routine is available) is 
+called. In the next step the transformation process splits the dataset 
+into several parts. To illustrate this Figure 9.5 is based on a 
+transformation with two AMDP field routines. Therefore, the data package
+ is split into three parts. One part for each field routine and the 
+third part for the other transformation rules like formula or direct 
+assignment or ….</p>
+<p>This enables the underlying engine to parallelize the transformation process.</p>
+<p>After processing the field routines and the other rules it is 
+necessary to bring the results together. To do so one must bring all 
+three data packages in the same order. Each data package contains two 
+technical columns for this purpose. The Calculation Scenario contains an
+ order projection for each processing thread to align the data of each 
+thread in the same order.</p>
+<p>The vertical union brings the separated data packets back together for further processing.</p>
+<p><a href="https://blogs.sap.com/wp-content/uploads/2017/03/Figure_9_5.png" target="_blank" rel="noopener"><img src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/Figure_9_5.png"></a></p>
+<p><em>Figure </em><em>9.5: Field Routines and Vertical Union Part 1</em></p>
+<p>Regarding the split packages, there are two prominent difficulties:</p>
+<ol>
+<li>Changing the number of rows within an AMDP field routine</li>
+<li>Changing the sorting order of the data column within an AMDP field routine</li>
+</ol>
+<h4><em>9.1.7.1</em> <em>Changing the number of rows within an AMDP field routine</em></h4>
+<p>The following coding example should set the attribute Vendor 
+(TK_VENDOR) if there is a vendor for the material (TK_MAT). The last 
+part of the where condition (and mat.”/BIC/TK_VENDOR” &lt;&gt; ”) 
+filters records without a vendor out. This can reduce the number of 
+rows.</p>
+<p>&nbsp;</p>
+<pre class="  language-sql"><code class="  language-sql">METHOD S0001_G01_R11 <span class="token keyword">BY</span> <span class="token keyword">DATABASE</span> <span class="token keyword">PROCEDURE</span> <span class="token keyword">FOR</span> HDB LANGUAGE SQLSCRIPT OPTIONS <span class="token keyword">READ</span><span class="token operator">-</span>ONLY <span class="token keyword">USING</span> <span class="token operator">/</span>BIC<span class="token operator">/</span>PTK_MAT<span class="token punctuation">.</span>
+
+<span class="token comment" spellcheck="true">-- target field: TK_VENDOR</span>
+  outTab <span class="token operator">=</span>
+    <span class="token keyword">select</span> mat<span class="token punctuation">.</span><span class="token string">"/BIC/TK_VENDOR"</span><span class="token punctuation">,</span>
+           intab<span class="token punctuation">.</span>record<span class="token punctuation">,</span>
+           inTab<span class="token punctuation">.</span>sql__procedure__source__record
+     <span class="token keyword">from</span> :inTab <span class="token keyword">as</span> inTab
+     <span class="token keyword">inner</span> <span class="token keyword">join</span> <span class="token string">"/BIC/PTK_MAT"</span> <span class="token keyword">as</span> mat
+       <span class="token keyword">on</span> inTab<span class="token punctuation">.</span><span class="token string">"/BIC/TK_MAT"</span> <span class="token operator">=</span> mat<span class="token punctuation">.</span><span class="token string">"/BIC/TK_MAT"</span>
+     <span class="token keyword">where</span> mat<span class="token punctuation">.</span>objvers <span class="token operator">=</span> <span class="token string">'A'</span>
+       <span class="token operator">and</span> mat<span class="token punctuation">.</span><span class="token string">"/BIC/TK_VENDOR"</span> <span class="token operator">&lt;&gt;</span> <span class="token string">''</span><span class="token punctuation">;</span>
+  errorTab <span class="token operator">=</span>
+    <span class="token keyword">select</span> <span class="token string">''</span> <span class="token keyword">as</span> ERROR_TEXT<span class="token punctuation">,</span>
+           <span class="token string">''</span> <span class="token keyword">as</span> SQL__PROCEDURE__SOURCE__RECORD
+     <span class="token keyword">from</span> <span class="token keyword">dummy</span>
+     <span class="token keyword">where</span> <span class="token keyword">dummy</span> <span class="token operator">&lt;&gt;</span> <span class="token string">'X'</span><span class="token punctuation">;</span>
+
+ENDMETHOD<span class="token punctuation">.</span>
+</code></pre>
+<p><em>Listing 9.1: Example of a field routine that removes the records </em></p>
+<p>Figure 9.6 shows a further example routine that makes removing rows possible. <strong>(1)</strong> shows the whole data package we get from the source object or from the start routine <strong>(2)</strong>
+ shows the package split. Here we can see that each package gets two 
+additional technical columns to the existing data column(s) 
+SQL_PROCEDURE_SOURCE_RECORD and RECORD. For further information on these
+ two fields go to my blog <a href="https://blogs.sap.com/2016/08/29/hana-based-bw-transformation-new-features-delivered-by-750-sp04/comment-page-1/#comment-400978" target="_blank" rel="noopener">HANA based BW Transformation – New features delivered by 7.50 SP04</a>.</p>
+<p><strong>(3) </strong>shows the field routine source code and the 
+other transformation rules. The field routine logic doesn’t write all 
+rows from the input table into the output table. The row that wasn’t 
+transferred is crossed out in <strong>(4). </strong> The resulting data package is shown in <strong>(5)</strong>. We get a NULL value, as seen in <strong>(6)</strong>, based on a pitfall in the coding.</p>
+<p>Additionally, to the NULL value a part of the data package is moved. The back values are moved up by the missing row.</p>
+<p>NULL values are not allowed in BW and therefore the DTP leads to an error.</p>
+<p><a href="https://blogs.sap.com/wp-content/uploads/2017/03/Figure_9_6.png" target="_blank" rel="noopener"><img src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/Figure_9_6.png"></a></p>
+<p><em>Figure </em><em>9.6: Field Routines and Vertical Union Part 2</em></p>
+<p>In both cases, the Listing 9.2 and in Figure 9.6, the misconduct may 
+occur but not necessarily. Often the test data in the development are 
+well prepared. This means the error should not occur.</p>
+<p>Figure 9.7 provides an example to avoid the pitfall. The not wanted values are replaced by an initial value.</p>
+<p><a href="https://blogs.sap.com/wp-content/uploads/2017/03/Figure_9_7.png" target="_blank" rel="noopener"><img src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/Figure_9_7.png"></a></p>
+<p><em>Figure </em><em>9.7: Field Routines and Vertical Union Part 3</em></p>
+<h4><em>9.1.7.2</em> <em>Changing the sorting order of the data column within an AMDP field routine</em></h4>
+<p>Within a field routine it is important to keep the sorting order for 
+the data column. Therefore, do not change or delete the values from the 
+two technical columns SQL_PROCEDURE_SOURCE_RECORD and RECORD. It is also
+ not possible to add or delete rows.</p>
+<p>Figure 9.8 shows how data can be sorted and how not. <strong>(1)</strong>
+ shows the input data with one data column (Col 5). In case it is 
+necessary to sort the data from Col 5 it is important to keep the order 
+stable regarding the two technical fields SQL__PROCEDURE__SOURCE__RECORD
+ and RECORD.</p>
+<p><strong>(2)</strong> is a negative example that showing a potential 
+source of error by changing the sort order. The next step after the 
+field routine sort the field routine data (outTab) over the two 
+technical columns. In case <strong>(2)</strong> the resulting order is not determined.</p>
+<p><strong>(3)</strong> shows the way how the data can be sorted by the data column with keep the sorting order stable regarding the technical fields.</p>
+<p><a href="https://blogs.sap.com/wp-content/uploads/2017/03/Figure_9_8.png" target="_blank" rel="noopener"><img src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/Figure_9_8.png"></a></p>
+<p><em>Figure </em><em>9.8: Changing the sorting order of the data column within an AMDP field routine</em></p>
+<p>Changing the sorting order of the data column causes errors when merging the individual packages.</p>
+<p>This kind of error is very difficult to identify. The result does not
+ lead into a technical error. Only the values from one or more columns 
+are in wrong rows.</p>
+<h4><em>9.1.7.3</em> <em>Recommendations regarding AMDP field routines</em></h4>
+<p>We do not recommend to use field routine to implement complex logic 
+like reading additional data or implement complex business logic.</p>
+<p>The general purpose and our recommendation for field routine is to 
+implement logic which cannot implement as formula. Some formulas could 
+prevent a push down, see note <a href="https://launchpad.support.sap.com/#notes/2423215" target="_blank" rel="noopener">2423215 – SAP HANA Processing: Non Supported Formulas in HANA Transformations</a>. This kind of formulas could be implemented as a field routine.</p>
+<p>&nbsp;</p>
+<p><strong>… coming soon…</strong></p>
+                            </div>
+                            <div class="alert-moderator">
+                                    <div class="wprc-container">
+        <button type="button" class="wprc-switch">Alert Moderator</button>        <div class="wprc-content">
+            <div class="wprc-message"></div>
+            <div class="wprc-form">
+                                    To report this post you need to <a href="https://blogs.sap.com/wp-login.php?redirect_to=2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations" title="Login" rel="IDS_login">login</a> first.
+                    </div>
+                            </div>
+                            <footer class="entry-meta blog-details">
+                            </footer>
+                            <!-- .nav-single -->
+                        </div></div></section>
+                    </div>
+                </div>
+            </section>
+            <!-- .entry-meta -->
+        </article><!-- #post -->
+
+        <div class="content">
+            <div class="content-wrapper secondary">
+                <div role="main" class="content-main">
+                                            <div class="comments-link hidden">
+                            <a href="https://blogs.sap.com/2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations/#comments">13 Replies</a>                        </div>
+                        <!-- .comments-link -->
+                                        
+<section id="comments" class="comments-area">
+
+                <h3 class="comments-title" title="Number of Comments">
+            13 Comments        </h3>
+                    <p class="alert comment-notice" title="Please log on to comment" aria-role="alert">
+
+                    You must be <a href="https://blogs.sap.com/wp-login.php?redirect_to=2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations" class="opener js-idspopup" rel="IDS_login" title="Log On">Logged on</a> to comment or reply to a post.
+            </p>
+        
+        <ol class="commentlist">
+                <li class="comment byuser comment-author-sebastiangesiarz even thread-even depth-1" id="li-comment-368450" name="">
+        <article id="comment-368450" class="comment level-1">
+            <header class="comment-meta comment-author vcard">
+                <img alt="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/sebastian.png" class="avatar avatar-44 photo avatar-default" width="44" height="44"><cite><b class="fn"><a href="https://people.sap.com/sebastian.gesiarz" rel="external nofollow" class="url ">Sebastian Gesiarz</a></b> </cite><a href="https://blogs.sap.com/2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations/#comment-368450"><time datetime="2017-03-26T17:51:00+00:00">March 26, 2017 at 5:51 pm</time></a>            </header><!-- .comment-meta -->
+
+            
+            <section class="comment-content comment">
+                            <div>
+                <p>Hello Torsten,</p>
+<p>&nbsp;</p>
+<p>Looking forward to the continuation. Keep&nbsp;up the good work!</p>
+<p>It would be great if you could share some loop &amp; lookup code samples (like in ABAP with field symbols).</p>
+<p>&nbsp;</p>
+<p>Best regards,</p>
+<p>Sebastian</p>
+                                            </div>
+            </section><!-- .comment-content -->
+            
+            <div class="reply">
+                <div class="sap-comment-actions">
+                                        <!-- render like, edit, delete links -->
+                    <span class="sap-icon-sml sap-like-comment-icon"></span><span class="likes-comment-link disabled ">like</span> <span class="nb-likes-comment" id="nbLikeComment_368450">(0)</span>&nbsp;                                    </div>
+            </div><!-- .reply -->
+        </article>
+    </li><!-- #comment-## -->
+    <li class="comment byuser comment-author-formermember odd alt thread-odd thread-alt depth-1" id="li-comment-369912" name="">
+        <article id="comment-369912" class="comment level-1">
+            <header class="comment-meta comment-author vcard">
+                <img alt="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/former.png" class="avatar avatar-44 photo avatar-default" width="44" height="44"><cite><b class="fn"><a href="https://people.sap.com/former.member" rel="external nofollow" class="url disabled">Former Member</a></b> </cite><a href="https://blogs.sap.com/2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations/#comment-369912"><time datetime="2017-04-05T13:46:52+00:00">April 5, 2017 at 1:46 pm</time></a>            </header><!-- .comment-meta -->
+
+            
+            <section class="comment-content comment">
+                            <div>
+                <p>Hello Torsten,</p>
+<p>you mentioned in your blog that it is possible to join the :inTab with an DSO, like the following:</p>
+<pre>outTab = SELECT&nbsp; intab."DOC_NUMBER",
+&nbsp;intab."RECORDMODE",
+&nbsp;FROM :inTab as intab
+&nbsp;inner join "_SYS_BIC"."system-local.bw.bw2hana/FSDAHD01" as sd
+&nbsp;and&nbsp; sd."DOC_NUMBER" =&nbsp; intab."DOC_NUMBER";</pre>
+<p>We have here the problem that (can be seen in Plan PlanViz) the system will extract all data from</p>
+<p>“_SYS_BIC”.”pr.sd/DPRSDL016″, that leads to high usage of memory.</p>
+<p>If we don’t use the generated view (in DSO Externe SAP-HANA-Sicht für
+ Reporting) and instead use the active table from the dso 
+“/BIC/AFSDAHD01”, the system extracts only the data records which are 
+needed and results in less (appr. only 20% of scenario before) usage of 
+memory.</p>
+<p>We use a classical DSO, the generated view is an analytical view.</p>
+<p>&nbsp;</p>
+<p>Any suggestions?</p>
+<p>Best Regards,</p>
+<p>Florian</p>
+                                            </div>
+            </section><!-- .comment-content -->
+            
+            <div class="reply">
+                <div class="sap-comment-actions">
+                                        <!-- render like, edit, delete links -->
+                    <span class="sap-icon-sml sap-like-comment-icon"></span><span class="likes-comment-link disabled ">like</span> <span class="nb-likes-comment" id="nbLikeComment_369912">(0)</span>&nbsp;                                    </div>
+            </div><!-- .reply -->
+        </article>
+    <ol class="children">
+    <li class="comment byuser comment-author-torstenkessler bypostauthor even depth-2" id="li-comment-370264" name="">
+        <article id="comment-370264" class="comment ">
+            <header class="comment-meta comment-author vcard">
+                <img alt="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/torsten.png" class="avatar avatar-44 photo avatar-default" width="44" height="44"><cite><b class="fn"><a href="https://people.sap.com/torsten.kessler" rel="external nofollow" class="url ">Torsten Kessler</a></b> <span>Post author</span></cite><a href="https://blogs.sap.com/2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations/#comment-370264"><time datetime="2017-04-07T11:25:53+00:00">April 7, 2017 at 11:25 am</time></a>            </header><!-- .comment-meta -->
+
+            
+            <section class="comment-content comment">
+                            <div>
+                <p>HI,</p>
+<p>it’s okay to use the active table here.</p>
+<p>as long as we do not offer a SQL Script API to determinate the active DSO table it is okay to use the hard coded name.</p>
+<p>but keep in mind if you later migrate to BW/4 the classic DSO will be
+ migrate to an advanced DSO, that means also the active table name here 
+will change.</p>
+<p>Our up coming migration tool will point such coding blocks, but from 
+current point of view the coding must be handle by the customer.</p>
+<p>Torsten</p>
+                                            </div>
+            </section><!-- .comment-content -->
+            
+            <div class="reply">
+                <div class="sap-comment-actions">
+                                        <!-- render like, edit, delete links -->
+                    <span class="sap-icon-sml sap-like-comment-icon"></span><span class="likes-comment-link disabled ">like</span> <span class="nb-likes-comment" id="nbLikeComment_370264">(0)</span>&nbsp;                                    </div>
+            </div><!-- .reply -->
+        </article>
+    <ol class="children">
+    <li class="comment byuser comment-author-formermember odd alt depth-3" id="li-comment-371497" name="">
+        <article id="comment-371497" class="comment ">
+            <header class="comment-meta comment-author vcard">
+                <img alt="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/former.png" class="avatar avatar-44 photo avatar-default" width="44" height="44"><cite><b class="fn"><a href="https://people.sap.com/former.member" rel="external nofollow" class="url disabled">Former Member</a></b> </cite><a href="https://blogs.sap.com/2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations/#comment-371497"><time datetime="2017-04-18T11:15:31+00:00">April 18, 2017 at 11:15 am</time></a>            </header><!-- .comment-meta -->
+
+            
+            <section class="comment-content comment">
+                            <div>
+                <p>Hi Torsten,</p>
+<p>Firstly thanks for your answer.</p>
+<p>We plan later also to use an nls (license and system exist but DAPs 
+aren’t created), the recommendation is here to use the generated view, 
+because otherwise the archived date would not be read.</p>
+<p>For me the behavior of the hana database seems to be like a bug.</p>
+<p>Normal behavior should if I join table A with table B and table A has
+ 1000 entries (which are also the different keys) and B has 100 mio 
+entries with 2000 entries which are equal to table A (according to the 
+join statement key) that the database only extracts the 2000 entries 
+from table B and not the complete table.</p>
+<p>This seems to be work correctly if we use the active table of the dso but if we use the generated view it doesn’t fit.</p>
+<p>Any other suggestions…we opened also a ticket…</p>
+<p>Regards,</p>
+<p>Florian</p>
+                                            </div>
+            </section><!-- .comment-content -->
+            
+            <div class="reply">
+                <div class="sap-comment-actions">
+                                        <!-- render like, edit, delete links -->
+                    <span class="sap-icon-sml sap-like-comment-icon"></span><span class="likes-comment-link disabled ">like</span> <span class="nb-likes-comment" id="nbLikeComment_371497">(0)</span>&nbsp;                                    </div>
+            </div><!-- .reply -->
+        </article>
+    <ol class="children">
+    <li class="comment byuser comment-author-torstenkessler bypostauthor even depth-4" id="li-comment-371662" name="">
+        <article id="comment-371662" class="comment ">
+            <header class="comment-meta comment-author vcard">
+                <img alt="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/torsten.png" class="avatar avatar-44 photo avatar-default" width="44" height="44"><cite><b class="fn"><a href="https://people.sap.com/torsten.kessler" rel="external nofollow" class="url ">Torsten Kessler</a></b> <span>Post author</span></cite><a href="https://blogs.sap.com/2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations/#comment-371662"><time datetime="2017-04-19T09:03:08+00:00">April 19, 2017 at 9:03 am</time></a>            </header><!-- .comment-meta -->
+
+            
+            <section class="comment-content comment">
+                            <div>
+                <p>Hi,</p>
+<p>could you send me the incident number via mail.</p>
+<p><a href="mailto:torsten.kessler@sap.com">torsten.kessler@sap.com</a></p>
+<p>Torsten</p>
+<p>&nbsp;</p>
+                                            </div>
+            </section><!-- .comment-content -->
+            
+            <div class="reply">
+                <div class="sap-comment-actions">
+                                        <!-- render like, edit, delete links -->
+                    <span class="sap-icon-sml sap-like-comment-icon"></span><span class="likes-comment-link disabled ">like</span> <span class="nb-likes-comment" id="nbLikeComment_371662">(0)</span>&nbsp;                                    </div>
+            </div><!-- .reply -->
+        </article>
+    </li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment byuser comment-author-kotta75 odd alt thread-even depth-1" id="li-comment-372412" name="">
+        <article id="comment-372412" class="comment level-1">
+            <header class="comment-meta comment-author vcard">
+                <img alt="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/kotta75_small.png" class="avatar avatar-44 photo avatar-default" width="44" height="44"><cite><b class="fn"><a href="https://people.sap.com/kotta75" rel="external nofollow" class="url ">Anand Kumar Kotha</a></b> </cite><a href="https://blogs.sap.com/2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations/#comment-372412"><time datetime="2017-04-25T12:53:58+00:00">April 25, 2017 at 12:53 pm</time></a>            </header><!-- .comment-meta -->
+
+            
+            <section class="comment-content comment">
+                            <div>
+                <p>Hi Torsten,</p>
+<p>Nice document on HANA based BW Transformation&nbsp;– guidelines and 
+recommendations. Keep up the good work!!. Looking forward your 
+continuation in other topics too 🙂</p>
+<p>&nbsp;</p>
+<p>BR/</p>
+<p>Anand Kotha</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+                                            </div>
+            </section><!-- .comment-content -->
+            
+            <div class="reply">
+                <div class="sap-comment-actions">
+                                        <!-- render like, edit, delete links -->
+                    <span class="sap-icon-sml sap-like-comment-icon"></span><span class="likes-comment-link disabled ">like</span> <span class="nb-likes-comment" id="nbLikeComment_372412">(1)</span>&nbsp;                                    </div>
+            </div><!-- .reply -->
+        </article>
+    </li><!-- #comment-## -->
+    <li class="comment byuser comment-author-pavolferanec even thread-odd thread-alt depth-1" id="li-comment-431450" name="">
+        <article id="comment-431450" class="comment level-1">
+            <header class="comment-meta comment-author vcard">
+                <img alt="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/pavol.png" class="avatar avatar-44 photo avatar-default" width="44" height="44"><cite><b class="fn"><a href="https://people.sap.com/pavol.feranec" rel="external nofollow" class="url ">Pavol Feranec</a></b> </cite><a href="https://blogs.sap.com/2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations/#comment-431450"><time datetime="2018-07-23T08:23:59+00:00">July 23, 2018 at 8:23 am</time></a>            </header><!-- .comment-meta -->
+
+            
+            <section class="comment-content comment">
+                            <div>
+                <p>Hi Thorsten,</p>
+<p>&nbsp;</p>
+<p>maybe you are mentioning it somewhere but I would like to ask if you 
+compared performance of these BW AMDP Transformations with HANA Native 
+views. I very like develop these BW transformations for my clients but 
+when I attended Case studies in a SAP conference I was surprised to see 
+that many clients (i.e. Lufthansa ) opt for multiple( hundreds) HANA 
+Native Views&nbsp; instead of these new BW transformations. They 
+calculate everything in several steps via the HANA Views what was 
+previously done in Start/End/Expert routines. They often talk how 
+incredibly faster it is compared to ABAP world but I could not get any 
+comparison with these new BW Transformations.</p>
+<p>&nbsp;</p>
+<p>Would be really happy to hear your opinion regarding this.</p>
+<p>&nbsp;</p>
+<p>Thanks.</p>
+<p>&nbsp;</p>
+<p>Cheers,</p>
+<p>Pavol</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+                                            </div>
+            </section><!-- .comment-content -->
+            
+            <div class="reply">
+                <div class="sap-comment-actions">
+                                        <!-- render like, edit, delete links -->
+                    <span class="sap-icon-sml sap-like-comment-icon"></span><span class="likes-comment-link disabled ">like</span> <span class="nb-likes-comment" id="nbLikeComment_431450">(0)</span>&nbsp;                                    </div>
+            </div><!-- .reply -->
+        </article>
+    <ol class="children">
+    <li class="comment byuser comment-author-torstenkessler bypostauthor odd alt depth-2" id="li-comment-431460" name="">
+        <article id="comment-431460" class="comment ">
+            <header class="comment-meta comment-author vcard">
+                <img alt="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/torsten.png" class="avatar avatar-44 photo avatar-default" width="44" height="44"><cite><b class="fn"><a href="https://people.sap.com/torsten.kessler" rel="external nofollow" class="url ">Torsten Kessler</a></b> <span>Post author</span></cite><a href="https://blogs.sap.com/2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations/#comment-431460"><time datetime="2018-07-23T08:55:03+00:00">July 23, 2018 at 8:55 am</time></a>            </header><!-- .comment-meta -->
+
+            
+            <section class="comment-content comment">
+                            <div>
+                <p>Hi,</p>
+<p>I didn’t understand what you exactly wants to compare!?!</p>
+<p>A “AMDP Transformation” does not really exist. we are able to process
+ a transformation in two different runtimes. In ABAP and in HANA.</p>
+<p>A transformation executed in the ABAP runtime is at the end a ABAP report.</p>
+<p>A transformation executed in the HANA runtime is at the end a CalculationScenario.</p>
+<p>We only talking about AMDP if the customer added at least one routine.</p>
+<p>In both cases (with or without AMDP) a HANA executed transformation 
+based on a HANA View (this HANA View based on the CalculationScenario)</p>
+<p>Our recommendation is to use the HANA processing (in best case without AMDP routines) whenever possible.</p>
+<p>In case of adding a routine you have to consider:</p>
+<ul>
+<li>Is the logic very complex (do I need loop, conditions, …)</li>
+<li>Is the amount of data very huge (big data)</li>
+</ul>
+<p>Depending on the answers above you had to decide which kind of coding (ABAP or SQLScript (AMDP)) is better for your case.</p>
+<p>Torsten</p>
+                                            </div>
+            </section><!-- .comment-content -->
+            
+            <div class="reply">
+                <div class="sap-comment-actions">
+                                        <!-- render like, edit, delete links -->
+                    <span class="sap-icon-sml sap-like-comment-icon"></span><span class="likes-comment-link disabled ">like</span> <span class="nb-likes-comment" id="nbLikeComment_431460">(0)</span>&nbsp;                                    </div>
+            </div><!-- .reply -->
+        </article>
+    <ol class="children">
+    <li class="comment byuser comment-author-pavolferanec even depth-3" id="li-comment-431479" name="">
+        <article id="comment-431479" class="comment ">
+            <header class="comment-meta comment-author vcard">
+                <img alt="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/pavol.png" class="avatar avatar-44 photo avatar-default" width="44" height="44"><cite><b class="fn"><a href="https://people.sap.com/pavol.feranec" rel="external nofollow" class="url ">Pavol Feranec</a></b> </cite><a href="https://blogs.sap.com/2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations/#comment-431479"><time datetime="2018-07-23T10:12:31+00:00">July 23, 2018 at 10:12 am</time></a>            </header><!-- .comment-meta -->
+
+            
+            <section class="comment-content comment">
+                            <div>
+                <p>Hi Thorsten,</p>
+<p>&nbsp;</p>
+<p>in AMDP BW transformation I create BW transformation and I connect it
+ to next aDSO. In HANA Native approach they take a View of aDSO or 
+Composite Provider in HANA Studio and create other HANA NATIVE Views 
+between different providers/Tables. They don’t need intermediate aDSOs 
+(with AMDP I think you wrote we should not have more than 2 
+transformations between Infoproviders) they just create Calculated 
+Views.</p>
+<p>I create normal BW transformation without HANA Studio. I can use BW 
+Masterdata lookups in Fields, or other things in SAP GUI. THen I create a
+ start routine where I write SQL scripts im AMDP. I do not create any 
+physical HANA Views though they may be created based on what I program 
+in start routine.</p>
+<p>&nbsp;</p>
+<p>Pavol</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+                                            </div>
+            </section><!-- .comment-content -->
+            
+            <div class="reply">
+                <div class="sap-comment-actions">
+                                        <!-- render like, edit, delete links -->
+                    <span class="sap-icon-sml sap-like-comment-icon"></span><span class="likes-comment-link disabled ">like</span> <span class="nb-likes-comment" id="nbLikeComment_431479">(0)</span>&nbsp;                                    </div>
+            </div><!-- .reply -->
+        </article>
+    <ol class="children">
+    <li class="comment byuser comment-author-torstenkessler bypostauthor odd alt depth-4" id="li-comment-431667" name="">
+        <article id="comment-431667" class="comment ">
+            <header class="comment-meta comment-author vcard">
+                <img alt="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/torsten.png" class="avatar avatar-44 photo avatar-default" width="44" height="44"><cite><b class="fn"><a href="https://people.sap.com/torsten.kessler" rel="external nofollow" class="url ">Torsten Kessler</a></b> <span>Post author</span></cite><a href="https://blogs.sap.com/2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations/#comment-431667"><time datetime="2018-07-24T15:57:59+00:00">July 24, 2018 at 3:57 pm</time></a>            </header><!-- .comment-meta -->
+
+            
+            <section class="comment-content comment">
+                            <div>
+                <p>Okay,</p>
+<p>that what you are describes is a so called mix-scenario.</p>
+<p>They read data from a BW object within a native CalculationView and 
+do in the CalculationView a lot of stuff like joining master data or 
+other BW table / external views.</p>
+<p>And later on they bring the result back into the BW by adding the CalculationView into a CompositeProvider.</p>
+<p>I’m right so far?</p>
+<p>The difference between this approach and a BW Transformation is:</p>
+<ul>
+<li>in the mix scenario the data are not stored in the Composite 
+Provider. The logic from the CalculationView must be executed by each 
+request based on the HCPR</li>
+</ul>
+<p>In case of grown data volume the mix scenario can run into performance issue.</p>
+<p>Both approaches are valid, it’s quite difficult to say which way is the better way, it depends always on the business case.</p>
+<p>&nbsp;</p>
+<p>Torsten</p>
+                                            </div>
+            </section><!-- .comment-content -->
+            
+            <div class="reply">
+                <div class="sap-comment-actions">
+                                        <!-- render like, edit, delete links -->
+                    <span class="sap-icon-sml sap-like-comment-icon"></span><span class="likes-comment-link disabled ">like</span> <span class="nb-likes-comment" id="nbLikeComment_431667">(1)</span>&nbsp;                                    </div>
+            </div><!-- .reply -->
+        </article>
+    <ol class="children">
+    <li class="comment byuser comment-author-pavolferanec even depth-5" id="li-comment-431744" name="">
+        <article id="comment-431744" class="comment ">
+            <header class="comment-meta comment-author vcard">
+                <img alt="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/pavol.png" class="avatar avatar-44 photo avatar-default" width="44" height="44"><cite><b class="fn"><a href="https://people.sap.com/pavol.feranec" rel="external nofollow" class="url ">Pavol Feranec</a></b> </cite><a href="https://blogs.sap.com/2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations/#comment-431744"><time datetime="2018-07-25T08:12:50+00:00">July 25, 2018 at 8:12 am</time></a>            </header><!-- .comment-meta -->
+
+            
+            <section class="comment-content comment">
+                            <div>
+                <p>Hi Thorsten,</p>
+<p>&nbsp;</p>
+<p>yes that’s it. I did not fully understand your comment that logic 
+must be executed by each request. Isn’t it the same as in BW 
+Transformation? When I create my AMDP start routine it is also executed 
+by each request. In ABAP there are 50 000 records per request and in 
+HANA mode we have 1 million records at the same time.</p>
+<p>&nbsp;</p>
+<p>I thought HANA is designed especially for big data volumes so it 
+should not have problems with it. Is there maybe a SAP OSS Note 
+describing possible volume issues?</p>
+<p>&nbsp;</p>
+<p>Problem with BW transformations is that SAP is still adding technical
+ fields in case of AMDP routines. Last year there were 2 tech fields 
+added and this year there is at least one more. WHen my client makes an 
+SP upgrade of his 7.5 system they run into problems when trying to 
+reactivate the transformations. They then have to manually add the new 
+tech field to the AMDP coding.</p>
+<p>&nbsp;</p>
+<p>Thank you for all your hints.</p>
+<p>&nbsp;</p>
+<p>Cheers,</p>
+<p>Pavol</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+                                            </div>
+            </section><!-- .comment-content -->
+            
+            <div class="reply">
+                <div class="sap-comment-actions">
+                                        <!-- render like, edit, delete links -->
+                    <span class="sap-icon-sml sap-like-comment-icon"></span><span class="likes-comment-link disabled ">like</span> <span class="nb-likes-comment" id="nbLikeComment_431744">(0)</span>&nbsp;                                    </div>
+            </div><!-- .reply -->
+        </article>
+    <ol class="children">
+    <li class="comment byuser comment-author-torstenkessler bypostauthor odd alt depth-6" id="li-comment-431752" name="level-5">
+        <article id="comment-431752" class="comment ">
+            <header class="comment-meta comment-author vcard">
+                <img alt="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/torsten.png" class="avatar avatar-44 photo avatar-default" width="44" height="44"><cite><b class="fn"><a href="https://people.sap.com/torsten.kessler" rel="external nofollow" class="url ">Torsten Kessler</a></b> <span>Post author</span></cite><a href="https://blogs.sap.com/2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations/#comment-431752"><time datetime="2018-07-25T08:56:55+00:00">July 25, 2018 at 8:56 am</time></a>            </header><!-- .comment-meta -->
+
+            
+            <section class="comment-content comment">
+                            <div>
+                <p>Hi,</p>
+<p><em>yes that’s it. I did not fully understand your comment that logic
+ must be executed by each request. Isn’t it the same as in BW 
+Transformation? When I create my AMDP start routine it is also executed 
+by each request. In ABAP there are 50 000 records per request and in 
+HANA mode we have 1 million records at the same time.</em></p>
+<p>Yes you are right if you only consider the stating request. But whats
+ happen in case of a query request? In case of using a virtual provider 
+(HCPR) the logic from the view is executed by each request.</p>
+<p>&nbsp;</p>
+<p>Regarding HANA and Big Data´; I’m quite sure there are several notes 
+available for this topic. But to find the right note you need the 
+revision.</p>
+<p>&nbsp;</p>
+<p>Regarding your issue related to the technical fields:</p>
+<p>Some times it is necessary to enhance a interface to implemented customer requirements.</p>
+<p>We always try to change an interface in a way that everything is 
+optional, so that there is no impact for the customer after an upgrade.</p>
+<p>But in case of SQLScript is that a little bit complicate, SQLScript is more restrict than ABAP.</p>
+<p>Torsten</p>
+<p>&nbsp;</p>
+                                            </div>
+            </section><!-- .comment-content -->
+            
+            <div class="reply">
+                <div class="sap-comment-actions">
+                                        <!-- render like, edit, delete links -->
+                    <span class="sap-icon-sml sap-like-comment-icon"></span><span class="likes-comment-link disabled ">like</span> <span class="nb-likes-comment" id="nbLikeComment_431752">(0)</span>&nbsp;                                    </div>
+            </div><!-- .reply -->
+        </article>
+    </li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment byuser comment-author-kienchanrio1 even thread-even depth-1" id="li-comment-438732" name="">
+        <article id="comment-438732" class="comment level-1">
+            <header class="comment-meta comment-author vcard">
+                <img alt="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/kienchanrio1_small.png" class="avatar avatar-44 photo avatar-default" width="44" height="44"><cite><b class="fn"><a href="https://people.sap.com/kienchanrio1" rel="external nofollow" class="url ">Kien Chan</a></b> </cite><a href="https://blogs.sap.com/2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations/#comment-438732"><time datetime="2018-10-04T12:09:47+00:00">October 4, 2018 at 12:09 pm</time></a>            </header><!-- .comment-meta -->
+
+            
+            <section class="comment-content comment">
+                            <div>
+                <p>Is it possible to created an AMDP transformation 
+where you only populate/map some of the target fields. Say I have 10 
+target fields. My AMDP only popuate 3 of the fields. Has anyone tried 
+that? I can’t seem to get it to work. It won’t let me activate unless 
+all are mapped. But as you know, under normal transformation, we don’t 
+have to populate/map all the fields.</p>
+                                            </div>
+            </section><!-- .comment-content -->
+            
+            <div class="reply">
+                <div class="sap-comment-actions">
+                                        <!-- render like, edit, delete links -->
+                    <span class="sap-icon-sml sap-like-comment-icon"></span><span class="likes-comment-link disabled ">like</span> <span class="nb-likes-comment" id="nbLikeComment_438732">(0)</span>&nbsp;                                    </div>
+            </div><!-- .reply -->
+        </article>
+    </li><!-- #comment-## -->
+
+        </ol><!-- .commentlist -->
+
+        
+        
+    
+                      <div id="comment-form" class="comment-form hide">
+        	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://blogs.sap.com/2017/03/24/hana-based-bw-transformation-guidelines-and-recommendations/#respond" style="display:none;">Cancel reply</a></small></h3><p class="must-log-in">You must be <a href="https://blogs.sap.com/wp-login.php?redirect_to=https%3A%2F%2Fblogs.sap.com%2F2017%2F03%2F24%2Fhana-based-bw-transformation-guidelines-and-recommendations%2F">logged in</a> to post a comment.</p>	</div><!-- #respond -->
+	      </div>
+    
+
+</section><!-- #comments .comments-area -->                </div>
+            </div>
+        </div>
+    
+</div><!-- #primary -->
+                </div> <!-- #main -->
+                <div id="shared_footer" class="dm-container dm-wrapper">
+                    <footer class="dm-footer">
+    <div class="dm-footer__inner-wrapper">
+        <div class="dm-socialmedia">
+            <h5 class="dm-socialmedia__headline" id="hl-sharefollow">Share &amp; Follow</h5>
+            <ul class="dm-socialmedia__links" aria-labelledby="hl-sharefollow">
+                <li><a href="https://www.facebook.com/sapcommunity" title="Facebook"><span class="dm-icon-encoded--facebook"></span></a></li>
+                <li><a href="https://twitter.com/SAPCommunity" title="Twitter"><span class="dm-icon-encoded--twitter"></span></a></li>
+                <li><a href="https://www.youtube.com/c/SAPCommunities" title="YouTube"><span class="dm-icon-encoded--youtube"></span></a></li>
+                <li><a href="https://www.linkedin.com/company/sap" title="LinkedIn"><span class="dm-icon-encoded--linkedin"></span></a></li>
+                <li><a href="https://plus.google.com/+SAPCommunities" title="Google Plus"><span class="dm-icon-encoded--googleplus"></span></a></li>
+                <li><a href="http://www.slideshare.net/SAP" title="Slideshare"><span class="dm-icon-encoded--slideshare"></span></a></li>
+                <li><a href="https://instagram.com/sap/" title="Instagram"><span class="dm-icon-encoded--instagram"></span></a></li>
+                <li><a href="" title="Email Share"><span class="dm-icon-encoded--email"></span></a></li>
+            </ul>
+        </div>
+        <nav role="navigation" class="dm-footer__navigation">
+             <ul class="dm-footer__navigation__list" aria-label="footer navigation">
+                <li><a href="http://sap.com/about/legal/privacy.html" target="_blank">Privacy</a></li>
+                <li><a href="http://sap.com/corporate/en/legal/terms-of-use.html" target="_blank">Terms of Use</a></li>
+                <li><a href="http://sap.com/about/legal/impressum.html" target="_blank">Legal Disclosure</a></li>
+                <li><a href="http://sap.com/about/legal/copyright.html" target="_blank">Copyright</a></li>
+                <li><a href="http://sap.com/about/legal/trademark.html" target="_blank">Trademark</a></li>
+                <li id="teconsent" consent="undefined" style="display: list-item;"><a id="icon-id05865479173475807" tabindex="0" role="button" style="cursor: pointer;" lang="ru">Настройки параметра cookie</a><a id="icon-id0260735313188152" tabindex="0" role="button" style="cursor: pointer;" lang="ru">Настройки параметра cookie</a></li>
+                <li><a href="http://www.sap.com/sitemap/index.html" target="_blank">Sitemap</a></li>
+                <li><a href="https://sap.com/registration/newsletter.html" target="_blank">Newsletter</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>                </div>
+            </div> <!-- #page -->
+            <link rel="stylesheet" id="shariffcss-css" href="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/shariff.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var headerInitArgs = {"system":"blogs","wrapperID":"page","breadcrumbItems":[{"text":"Blogs","href":"https:\/\/blogs.sap.com"}]};
+/* ]]> */
+</script>
+<script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/scn-header_002.xml"></script>
+<script type="text/javascript">
+            scnHeader.init(headerInitArgs);
+            setCookie("userArgs", headerInitArgs.user ? JSON.stringify(headerInitArgs.user) : "");
+    
+</script>
+<script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/scn-subheader_002.xml"></script>
+<script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/comment-reply.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var satmContentSelectors = ["div.post-content","section.comment-content"];
+var satmProfileBaseUrl = "people.sap.com\/";
+var satmChangeableElementsSelectors = ["section.comment-content"];
+var satmPluginEnabled = "1";
+var satmApiUrl = "https:\/\/people-api.services.sap.com";
+/* ]]> */
+</script>
+<script type="text/javascript" defer="defer" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/sap-at-mention.js"></script>
+<script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/designmate.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var commentValidation = {"validateMaxLinks":"1","max_links_number":"7","BLOGS_PAGE":"single"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/sap-comment-validation.js"></script>
+<script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/run_code_highlighting.js"></script>
+<script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/sap-post-status.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wprcajaxhandler = {"ajaxurl":"https:\/\/blogs.sap.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/scripts.js"></script>
+<script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/SAP_IDS.js"></script>
+<script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/shariff.js"></script>
+<script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/shariff-popup.js"></script>
+<div id="wp-load_tinymce-wrap" class="wp-core-ui wp-editor-wrap tmce-active"><link rel="stylesheet" id="dashicons-css" href="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/dashicons.css" type="text/css" media="all">
+<link rel="stylesheet" id="editor-buttons-css" href="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/editor.css" type="text/css" media="all">
+<style>#wp-load_tinymce-wrap {display:none;}</style>
+<div id="wp-load_tinymce-editor-tools" class="wp-editor-tools hide-if-no-js"><div class="wp-editor-tabs"><button type="button" id="load_tinymce-tmce" class="wp-switch-editor switch-tmce" data-wp-editor-id="load_tinymce">Visual</button>
+<button type="button" id="load_tinymce-html" class="wp-switch-editor switch-html" data-wp-editor-id="load_tinymce">Text</button>
+</div>
+</div>
+<div id="wp-load_tinymce-editor-container" class="wp-editor-container"><div id="qt_load_tinymce_toolbar" class="quicktags-toolbar"></div><div id="mceu_25" class="mce-tinymce mce-container mce-panel" hidefocus="1" tabindex="-1" role="group"><div id="mceu_25-body" class="mce-container-body mce-stack-layout"><div id="mceu_26" class="mce-top-part mce-container mce-stack-layout-item mce-first"><div id="mceu_26-body" class="mce-container-body"><div id="mceu_27" class="mce-toolbar-grp mce-container mce-panel mce-first mce-last" hidefocus="1" tabindex="-1" role="group"><div id="mceu_27-body" class="mce-container-body mce-stack-layout"><div id="mceu_28" class="mce-container mce-toolbar mce-stack-layout-item mce-first" role="toolbar"><div id="mceu_28-body" class="mce-container-body mce-flow-layout"><div id="mceu_29" class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"><div id="mceu_29-body"><div id="mceu_0" class="mce-widget mce-btn mce-menubtn mce-fixed-width mce-listbox mce-first mce-btn-has-text" tabindex="-1" aria-labelledby="mceu_0" role="button" aria-haspopup="true"><button id="mceu_0-open" role="presentation" type="button" tabindex="-1"><span class="mce-txt">Paragraph</span> <i class="mce-caret"></i></button></div><div id="mceu_1" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Bold"><button id="mceu_1-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bold"></i></button></div><div id="mceu_2" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Italic"><button id="mceu_2-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-italic"></i></button></div><div id="mceu_3" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Bulleted list"><button id="mceu_3-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bullist"></i></button></div><div id="mceu_4" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Numbered list"><button id="mceu_4-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-numlist"></i></button></div><div id="mceu_5" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Blockquote"><button id="mceu_5-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-blockquote"></i></button></div><div id="mceu_6" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Align left"><button id="mceu_6-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignleft"></i></button></div><div id="mceu_7" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Align center"><button id="mceu_7-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-aligncenter"></i></button></div><div id="mceu_8" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Align right"><button id="mceu_8-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignright"></i></button></div><div id="mceu_9" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Insert/edit link"><button id="mceu_9-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-link"></i></button></div><div id="mceu_10" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Fullscreen"><button id="mceu_10-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-fullscreen"></i></button></div><div id="mceu_11" class="mce-widget mce-btn" tabindex="-1" role="button" aria-label="Toolbar Toggle"><button id="mceu_11-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-wp_adv"></i></button></div><div id="mceu_12" class="mce-widget mce-btn mce-last" tabindex="-1"><button id="mceu_12-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-codesample"></i></button></div></div></div></div></div><div id="mceu_30" class="mce-container mce-toolbar mce-stack-layout-item mce-last" role="toolbar"><div id="mceu_30-body" class="mce-container-body mce-flow-layout"><div id="mceu_31" class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"><div id="mceu_31-body"><div id="mceu_13" class="mce-widget mce-btn mce-first" tabindex="-1" aria-pressed="false"><button id="mceu_13-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-strikethrough"></i></button></div><div id="mceu_14" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_14-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-hr"></i></button></div><div id="mceu_15" class="mce-widget mce-btn mce-splitbtn mce-colorbutton" role="button" tabindex="-1" aria-haspopup="true"><button role="presentation" hidefocus="1" type="button" tabindex="-1"><i class="mce-ico mce-i-forecolor"></i><span id="mceu_15-preview" class="mce-preview"></span></button><button type="button" class="mce-open" hidefocus="1" tabindex="-1"> <i class="mce-caret"></i></button></div><div id="mceu_16" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false"><button id="mceu_16-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-pastetext"></i></button></div><div id="mceu_17" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_17-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-removeformat"></i></button></div><div id="mceu_18" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_18-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-charmap"></i></button></div><div id="mceu_19" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_19-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-outdent"></i></button></div><div id="mceu_20" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_20-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-indent"></i></button></div><div id="mceu_21" class="mce-widget mce-btn mce-menubtn" tabindex="-1" aria-labelledby="mceu_21"><button id="mceu_21-open" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-table"></i> <i class="mce-caret"></i></button></div><div id="mceu_22" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_22-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-undo"></i></button></div><div id="mceu_23" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_23-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-redo"></i></button></div><div id="mceu_24" class="mce-widget mce-btn mce-last" tabindex="-1"><button id="mceu_24-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-wp_help"></i></button></div></div></div></div></div></div></div></div></div><div id="mceu_32" class="mce-edit-area mce-container mce-panel mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group"></div><div id="mceu_33" class="mce-statusbar mce-container mce-panel mce-stack-layout-item mce-last" hidefocus="1" tabindex="-1" role="group"><div id="mceu_33-body" class="mce-container-body mce-flow-layout"><div id="mceu_34" class="mce-path mce-flow-layout-item mce-first"><div class="mce-path-item">&nbsp;</div></div><div id="mceu_35" class="mce-flow-layout-item mce-last mce-resizehandle"><i class="mce-ico mce-i-resize"></i></div></div></div></div></div><div id="mceu_25" class="mce-tinymce mce-container mce-panel" hidefocus="1" tabindex="-1" role="group"><div id="mceu_25-body" class="mce-container-body mce-stack-layout"><div id="mceu_26" class="mce-top-part mce-container mce-stack-layout-item mce-first"><div id="mceu_26-body" class="mce-container-body"><div id="mceu_27" class="mce-toolbar-grp mce-container mce-panel mce-first mce-last" hidefocus="1" tabindex="-1" role="group"><div id="mceu_27-body" class="mce-container-body mce-stack-layout"><div id="mceu_28" class="mce-container mce-toolbar mce-stack-layout-item mce-first" role="toolbar"><div id="mceu_28-body" class="mce-container-body mce-flow-layout"><div id="mceu_29" class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"><div id="mceu_29-body"><div id="mceu_0" class="mce-widget mce-btn mce-menubtn mce-fixed-width mce-listbox mce-first mce-btn-has-text" tabindex="-1" aria-labelledby="mceu_0"><button id="mceu_0-open" role="presentation" type="button" tabindex="-1"><span class="mce-txt">Paragraph</span> <i class="mce-caret"></i></button></div><div id="mceu_1" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false"><button id="mceu_1-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bold"></i></button></div><div id="mceu_2" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false"><button id="mceu_2-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-italic"></i></button></div><div id="mceu_3" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false"><button id="mceu_3-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bullist"></i></button></div><div id="mceu_4" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false"><button id="mceu_4-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-numlist"></i></button></div><div id="mceu_5" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false"><button id="mceu_5-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-blockquote"></i></button></div><div id="mceu_6" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false"><button id="mceu_6-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignleft"></i></button></div><div id="mceu_7" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false"><button id="mceu_7-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-aligncenter"></i></button></div><div id="mceu_8" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false"><button id="mceu_8-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignright"></i></button></div><div id="mceu_9" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false"><button id="mceu_9-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-link"></i></button></div><div id="mceu_10" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false"><button id="mceu_10-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-fullscreen"></i></button></div><div id="mceu_11" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_11-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-wp_adv"></i></button></div><div id="mceu_12" class="mce-widget mce-btn mce-last" tabindex="-1"><button id="mceu_12-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-codesample"></i></button></div></div></div></div></div><div id="mceu_30" class="mce-container mce-toolbar mce-stack-layout-item mce-last" role="toolbar"><div id="mceu_30-body" class="mce-container-body mce-flow-layout"><div id="mceu_31" class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"><div id="mceu_31-body"><div id="mceu_13" class="mce-widget mce-btn mce-first" tabindex="-1" aria-pressed="false"><button id="mceu_13-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-strikethrough"></i></button></div><div id="mceu_14" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_14-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-hr"></i></button></div><div id="mceu_15" class="mce-widget mce-btn mce-splitbtn mce-colorbutton" role="button" tabindex="-1" aria-haspopup="true"><button role="presentation" hidefocus="1" type="button" tabindex="-1"><i class="mce-ico mce-i-forecolor"></i><span id="mceu_15-preview" class="mce-preview"></span></button><button type="button" class="mce-open" hidefocus="1" tabindex="-1"> <i class="mce-caret"></i></button></div><div id="mceu_16" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false"><button id="mceu_16-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-pastetext"></i></button></div><div id="mceu_17" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_17-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-removeformat"></i></button></div><div id="mceu_18" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_18-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-charmap"></i></button></div><div id="mceu_19" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_19-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-outdent"></i></button></div><div id="mceu_20" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_20-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-indent"></i></button></div><div id="mceu_21" class="mce-widget mce-btn mce-menubtn" tabindex="-1" aria-labelledby="mceu_21"><button id="mceu_21-open" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-table"></i> <i class="mce-caret"></i></button></div><div id="mceu_22" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_22-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-undo"></i></button></div><div id="mceu_23" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_23-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-redo"></i></button></div><div id="mceu_24" class="mce-widget mce-btn mce-last" tabindex="-1"><button id="mceu_24-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-wp_help"></i></button></div></div></div></div></div></div></div></div></div><div id="mceu_32" class="mce-edit-area mce-container mce-panel mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group"></div><div id="mceu_33" class="mce-statusbar mce-container mce-panel mce-stack-layout-item mce-last" hidefocus="1" tabindex="-1" role="group"><div id="mceu_33-body" class="mce-container-body mce-flow-layout"><div id="mceu_34" class="mce-path mce-flow-layout-item mce-first"><div class="mce-path-item">&nbsp;</div></div><div id="mceu_35" class="mce-flow-layout-item mce-last mce-resizehandle"><i class="mce-ico mce-i-resize"></i></div></div></div></div></div><textarea class="wp-editor-area" rows="20" autocomplete="off" cols="40" name="load_tinymce" id="load_tinymce" style="visibility: hidden;"></textarea></div>
+</div>
+
+
+		<script type="text/javascript">
+		tinyMCEPreInit = {
+			baseURL: "https://blogs.sap.com/wp-includes/js/tinymce",
+			suffix: ".min",
+						mceInit: {'load_tinymce':{theme:"modern",skin:"lightgray",language:"en",formats:{alignleft: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"left"}},{selector: "img,table,dl.wp-caption", classes: "alignleft"}],aligncenter: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"center"}},{selector: "img,table,dl.wp-caption", classes: "aligncenter"}],alignright: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"right"}},{selector: "img,table,dl.wp-caption", classes: "alignright"}],strikethrough: {inline: "del"}},relative_urls:false,remove_script_host:false,convert_urls:false,browser_spellcheck:true,fix_list_elements:true,entities:"38,amp,60,lt,62,gt",entity_encoding:"raw",keep_styles:false,cache_suffix:"wp-mce-4711-20180425",resize:"vertical",menubar:false,branding:false,preview_styles:"font-family font-size font-weight font-style text-decoration text-transform",end_container_on_empty_block:true,wpeditimage_html5_captions:true,wp_lang_attr:"en-US",wp_keep_scroll_position:false,wp_shortcut_labels:{"Heading 1":"access1","Heading 2":"access2","Heading 3":"access3","Heading 4":"access4","Heading 5":"access5","Heading 6":"access6","Paragraph":"access7","Blockquote":"accessQ","Underline":"metaU","Strikethrough":"accessD","Bold":"metaB","Italic":"metaI","Code":"accessX","Align center":"accessC","Align right":"accessR","Align left":"accessL","Justify":"accessJ","Cut":"metaX","Copy":"metaC","Paste":"metaV","Select all":"metaA","Undo":"metaZ","Redo":"metaY","Bullet list":"accessU","Numbered list":"accessO","Insert\/edit image":"accessM","Remove link":"accessS","Toolbar Toggle":"accessZ","Insert Read More tag":"accessT","Insert Page Break tag":"accessP","Distraction-free writing mode":"accessW","Keyboard Shortcuts":"accessH"},content_css:"https://blogs.sap.com/wp-includes/css/dashicons.min.css?ver=2736,https://blogs.sap.com/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=2736,https://fonts.googleapis.com/css?family=Open+Sans:400italic%2C700italic%2C400%2C700&subset=latin%2Clatin-ext,https://blogs.sap.com/wp-content/themes/sap-v3/editor-style.css",plugins:"charmap,colorpicker,hr,lists,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpautoresize,wpeditimage,wpemoji,wpgallery,wplink,wpdialogs,wptextpattern,wpview,image,codesample",external_plugins:{"table":"https:\/\/blogs.sap.com\/wp-content\/plugins\/mce-table-buttons\/tinymce41-table\/plugin.min.js"},selector:"#load_tinymce",wpautop:true,indent:false,toolbar1:"formatselect,bold,italic,bullist,numlist,blockquote,alignleft,aligncenter,alignright,link,spellchecker,fullscreen,wp_adv,codesample",toolbar2:"strikethrough,hr,forecolor,pastetext,removeformat,charmap,outdent,indent,table,undo,redo,wp_help",toolbar3:"",toolbar4:"",tabfocus_elements:":prev,:next",body_class:"load_tinymce post-type-post post-status-publish post-format-standard page-template-default locale-en-us",extended_valid_elements:"div"}},
+			qtInit: {'load_tinymce':{id:"load_tinymce",buttons:"strong,em,link,block,del,ins,img,ul,ol,li,code,more,close"}},
+			ref: {plugins:"charmap,colorpicker,hr,lists,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpautoresize,wpeditimage,wpemoji,wpgallery,wplink,wpdialogs,wptextpattern,wpview,image,codesample",theme:"modern",language:"en"},
+			load_ext: function(url,lang){var sl=tinymce.ScriptLoader;sl.markDone(url+'/langs/'+lang+'.js');sl.markDone(url+'/langs/'+lang+'_dlg.js');}
+		};
+		</script>
+		<script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/tinymce.js"></script>
+<script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/plugin.js"></script>
+<script type="text/javascript">
+tinymce.addI18n( 'en', {"Ok":"OK","Bullet list":"Bulleted list","Insert\/Edit code sample":"Insert\/edit code sample","Url":"URL","Spellcheck":"Check Spelling","Row properties":"Table row properties","Cell properties":"Table cell properties","Paste row before":"Paste table row before","Paste row after":"Paste table row after","Cut row":"Cut table row","Copy row":"Copy table row","Merge cells":"Merge table cells","Split cell":"Split table cell","Paste is now in plain text mode. Contents will now be pasted as plain text until you toggle this option off.":"Paste is now in plain text mode. Contents will now be pasted as plain text until you toggle this option off.\n\nIf you\u2019re looking to paste rich content from Microsoft Word, try turning this option off. The editor will clean up text pasted from Word automatically.","Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":"Rich Text Area. Press Alt-Shift-H for help.","You have unsaved changes are you sure you want to navigate away?":"The changes you made will be lost if you navigate away from this page.","Your browser doesn't support direct access to the clipboard. Please use the Ctrl+X\/C\/V keyboard shortcuts instead.":"Your browser does not support direct access to the clipboard. Please use keyboard shortcuts or your browser\u2019s edit menu instead.","Edit ":"Edit"});
+tinymce.ScriptLoader.markDone( 'https://blogs.sap.com/wp-includes/js/tinymce/langs/en.js' );
+</script>
+<script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/wp-langs-en.js"></script>
+		<script type="text/javascript">
+		tinyMCEPreInit.load_ext("https://blogs.sap.com/wp-content/plugins/mce-table-buttons/tinymce41-table", "en");
+tinymce.PluginManager.load("table", "https://blogs.sap.com/wp-content/plugins/mce-table-buttons/tinymce41-table/plugin.min.js");
+
+var ajaxurl = "/wp-admin/admin-ajax.php";
+		( function() {
+			var init, id, $wrap;
+
+			if ( typeof tinymce !== 'undefined' ) {
+				if ( tinymce.Env.ie && tinymce.Env.ie < 11 ) {
+					tinymce.$( '.wp-editor-wrap ' ).removeClass( 'tmce-active' ).addClass( 'html-active' );
+					return;
+				}
+
+				for ( id in tinyMCEPreInit.mceInit ) {
+					init = tinyMCEPreInit.mceInit[id];
+					$wrap = tinymce.$( '#wp-' + id + '-wrap' );
+
+					if ( ( $wrap.hasClass( 'tmce-active' ) || ! tinyMCEPreInit.qtInit.hasOwnProperty( id ) ) && ! init.wp_skip_init ) {
+						tinymce.init( init );
+
+						if ( ! window.wpActiveEditor ) {
+							window.wpActiveEditor = id;
+						}
+					}
+				}
+			}
+
+			if ( typeof quicktags !== 'undefined' ) {
+				for ( id in tinyMCEPreInit.qtInit ) {
+					quicktags( tinyMCEPreInit.qtInit[id] );
+
+					if ( ! window.wpActiveEditor ) {
+						window.wpActiveEditor = id;
+					}
+				}
+			}
+		}());
+		</script>
+				<div id="wp-link-backdrop" style="display: none"></div>
+		<div id="wp-link-wrap" class="wp-core-ui" style="display: none" role="dialog" aria-labelledby="link-modal-title">
+		<form id="wp-link" tabindex="-1">
+		<input id="_ajax_linking_nonce" name="_ajax_linking_nonce" value="7be2c5c3da" type="hidden">		<h1 id="link-modal-title">Insert/edit link</h1>
+		<button type="button" id="wp-link-close"><span class="screen-reader-text">Close</span></button>
+		<div id="link-selector">
+			<div id="link-options">
+				<p class="howto" id="wplink-enter-url">Enter the destination URL</p>
+				<div>
+					<label><span>URL</span>
+					<input id="wp-link-url" aria-describedby="wplink-enter-url" type="text"></label>
+				</div>
+				<div class="wp-link-text-field">
+					<label><span>Link Text</span>
+					<input id="wp-link-text" type="text"></label>
+				</div>
+				<div class="link-target">
+					<label><span></span>
+					<input id="wp-link-target" type="checkbox"> Open link in a new tab</label>
+				</div>
+			</div>
+			<p class="howto" id="wplink-link-existing-content">Or link to existing content</p>
+			<div id="search-panel">
+				<div class="link-search-wrapper">
+					<label>
+						<span class="search-label">Search</span>
+						<input id="wp-link-search" class="link-search-field" autocomplete="off" aria-describedby="wplink-link-existing-content" type="search">
+						<span class="spinner"></span>
+					</label>
+				</div>
+				<div id="search-results" class="query-results" tabindex="0">
+					<ul></ul>
+					<div class="river-waiting">
+						<span class="spinner"></span>
+					</div>
+				</div>
+				<div id="most-recent-results" class="query-results" tabindex="0">
+					<div class="query-notice" id="query-notice-message">
+						<em class="query-notice-default">No search term specified. Showing recent items.</em>
+						<em class="query-notice-hint screen-reader-text">Search or use up and down arrow keys to select an item.</em>
+					</div>
+					<ul></ul>
+					<div class="river-waiting">
+						<span class="spinner"></span>
+					</div>
+ 				</div>
+ 			</div>
+		</div>
+		<div class="submitbox">
+			<div id="wp-link-cancel">
+				<button type="button" class="button">Cancel</button>
+			</div>
+			<div id="wp-link-update">
+				<input value="Add Link" class="button button-primary" id="wp-link-submit" name="wp-link-submit" type="submit">
+			</div>
+		</div>
+		</form>
+		</div>
+		<script type="text/javascript">_satellite.pageBottom();</script><script src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/highlight_002.js">
+<script src="https://cdn.schemaapp.com/javascript/schemaFunctions.min.js"></script>
+<script>schemaLoad("Acronym/SAP", "325UM-NQRHZ-P7T97-M5SY8");</script><script>
+    var swa = {
+        pubToken: '33255556-c863-4a29-9bda-1309df0cff50',
+        baseUrl: 'https://webanalytics.cfapps.eu10.hana.ondemand.com/tracker/',
+        dntLevel: 1,
+        subSiteId:"blogs.sap.com"
+    };
+    (function(){
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.defer=true; g.async=true; g.src=swa.baseUrl+'js/privacy.js';
+        s.parentNode.insertBefore(g,s);
+     })();
+</script><!--BEGIN QUALTRICS SITE INTERCEPT-->
+<script type="text/javascript">
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g+ "&t=" + (new Date()).getTime();document.body&&document.body.appendChild(a)}};
+this.start=function(){var a=this;window.addEventListener?window.addEventListener("load",function(){a.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){a.go()})}};
+try{(new g(100,"r","QSI_S_ZN_3yfiAnqEVy9gvYN","https://zn3yfianqevy9gvyn-sap.siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_ZID=ZN_3yfiAnqEVy9gvYN&Q_LOC="+encodeURIComponent(window.location.href))).start()}catch(i){}})();
+</script><div id="ZN_3yfiAnqEVy9gvYN"><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END SITE INTERCEPT-->
+
+
+<script src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/satellite-57f3516264746d3cc1006e91.js"></script><script src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/highlight.js">
+<script src="https://cdn.schemaapp.com/javascript/schemaFunctions.min.js"></script>
+<script>schemaLoad("Acronym/SAP", "325UM-NQRHZ-P7T97-M5SY8");</script>        </div><style>#swa_background{position:fixed;top:0px;left:0px;height:100%;width:100%;display:none;background-color: black;z-index:100;}#swa_license{font-family:Arial,Helvetica,sans-serif;background-color: white;color: black;border: 1px solid gray;position:absolute;display:none;z-index:11100;padding: 30px; display:none;background: #FFF;border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;box-shadow: 0px 0px 4px rgba(0,0,0,0.7); -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7); -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);}.close_license{ position: absolute; top: 12px; right: 12px; display: block; width: 14px; height: 14px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEUAAACIiIhaeOqmAAAAAXRSTlMAQObYZgAAAC9JREFUaN5jYGBgEOBgsJBhqLFjsKthkP/BwP+Bgf0BCAEZQC5QECgFVABUxsAAAOcxCbuaDAybAAAAAElFTkSuQmCC); z-index: 2;}.swabutton{display:inline;position: absolute;right: 25px;margin: 0px}.swalicensetxt{width:500px; height:350px; overflow-y: hidden;overflow-x: hidden;}</style><div id="swa_background"></div><div id="swa_license"><div id="swa_header"><table><tbody><tr><td><strong>Privacy Statement</strong></td></tr></tbody></table><a class="close_license" href="#"></a></div><iframe id="swa_licence_window" class="swalicensetxt" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/a.htm" scrolling="yes"></iframe><div id="swa_form"><p></p><p></p><input class="swa_checkid" id="swa_p_checkid" type="checkbox"><label for="swa_p_checkid" id="l_swa_p_checkid">&nbsp;Allow use of SAP Web Analytics</label>&nbsp;&nbsp;<button class="swabutton" type="button" id="swa_save_modal" onclick="frame_save(event);">Save</button></div></div> <!-- .page-wrapper -->
+    
+
+<script type="text/javascript" defer="defer" async="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/piwik.js"></script><script type="text/javascript" defer="defer" async="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/piwik_plugin.js"></script><div class="hidden" id="wp_window_loaded"></div><script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/a.txt"></script><script src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/Asset.txt" defer="defer"></script><div class="hidden" id="wp_window_loaded"></div><script type="text/javascript" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/a"></script><script src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/Asset.php" defer="defer"></script><iframe sandbox="allow-scripts allow-same-origin" title="Adobe ID Syncing iFrame" id="destination_publishing_iframe_sap_0" name="destination_publishing_iframe_sap_0_name" style="display: none; width: 0px; height: 0px;" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/dest5.htm" class="aamIframeLoaded"></iframe><script type="text/javascript" defer="defer" async="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/piwik_002.js"></script><script type="text/javascript" defer="defer" async="" src="HANA%20based%20BW%20Transformation%20%E2%80%93%20Guidelines%20and%20Recommendations_files/piwik_plugin_002.js"></script></body></html>

@@ -1,0 +1,84 @@
+.wprc-container {
+    display: block;
+    float: right;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.wprc-content .wprc-form a {
+    font-size: 100%;
+}
+
+.clear {
+    clear: both;
+}
+
+div.wprc-content li {
+    list-style: none outside none;
+    margin: 0;
+}
+
+.wprc-content textarea, .wprc-content input[type='text'], .wprc-content input[type='email'],
+    .wprc-content input[type='password'], .wprc-content select {
+    resize: none;
+    width: 100%;
+    padding: 5px;
+}
+
+.wprc-content, .wprc-content textarea, .wprc-content input,
+    .wprc-content select, .wprc-content .left-section, .wprc-content .right-section
+    {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.wprc-content .required-sign {
+    color: #FF0000;
+}
+
+.wprc-content .input-details {
+    height: 135px;
+}
+
+.wprc-container button.wprc-switch {
+    float: right;
+}
+
+.wprc-content .loading-img {
+    vertical-align: middle;
+    box-shadow: none;
+    border: 0 none;
+}
+
+.wprc-content .wprc-submit {
+    margin-top: 10px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 640px) {
+    .wprc-content .left-section, .wprc-content .right-section {
+        width: 100%;
+    }
+    .wprc-container .wprc-content {
+        max-height: 300px;
+    }
+    .wprc-content .right-section {
+        float: left;
+        padding-left: 0;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .wprc-content .left-section, .wprc-content .right-section {
+        width: 100%;
+    }
+    .wprc-container .wprc-content {
+        max-height: 300px;
+    }
+    .wprc-content .right-section {
+        float: left;
+        padding-left: 0;
+    }
+
+}

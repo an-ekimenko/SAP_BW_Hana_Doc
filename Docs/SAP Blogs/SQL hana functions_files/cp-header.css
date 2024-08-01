@@ -1,0 +1,294 @@
+#cp-header {
+	background-color: rgb(0,0,0);
+	color: rgb(255,255,255);
+	padding-top: 17px;
+	padding-bottom: 17px;
+}
+
+#cp-header > div > a {
+	color: rgb(255,255,255);
+}
+
+#sap-logo {
+	height: 36px;
+}
+
+#help-logo {
+	height: 27px;
+	margin-left: 35px;
+}
+
+#help-portal {
+	font-size: 1.571em;
+	color: rgb(255,255,255);
+	font-weight: 600;
+	display: inline-block;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 36px;
+	vertical-align: top;
+	position: relative;
+}
+
+/*#help-portal span.cp-beta {
+	position: absolute;
+    color: #E35500;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    right: -34px;
+    top: 4px;
+    line-height: 1em;
+    background-color: rgba(0,0,0,0.5);
+}*/
+
+
+
+html[dir="ltr"] #help-portal {
+	margin-left: 10px;
+}
+
+html[dir="rtl"] #help-portal {
+	margin-right: 10px;
+}
+
+#cp-header > div.block-max > a,
+#header-product-title > a {
+	display: inline-block;
+	height: 100%;
+	outline-offset: 5px;
+	outline-width: 1px;
+}
+
+#header-product-title > a {
+	max-height: 36px;
+    overflow: hidden;
+}
+
+#cp-header > div.block-max > a {
+	min-width: 256px;
+}
+
+#header-product-title {
+	max-width: calc(100% - 510px);
+	max-height: 36px;
+    font-size: 1.429em;
+	color: rgb(255,255,255);
+	font-family: 'Benton Sans', Arial, sans-serif;
+	font-weight: 300;
+	display: inline-block;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 36px;
+	vertical-align: top;
+	position: relative;
+}
+
+html[dir="ltr"] #header-product-title {
+	margin-left: 40px;
+}
+
+html[dir="rtl"] 2#header-product-title {
+	margin-right: 40px;
+}
+
+button#submitbutton_header{
+	height: 31px;
+    border: 0;
+    padding: 0;
+    color: rgba(0,119,200,0.9);
+    background-color: rgba(0,0,0,0);
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 200ms, color 200ms;
+    /* -webkit-transition: background-color 200ms, color 200ms; */
+    font-family: sap-icons;
+}
+
+html[dir="ltr"] button#submitbutton_header{
+	float: right;
+	margin-right: 0.3em;
+}
+
+html[dir="rtl"] button#submitbutton_header{
+	float: left;
+	margin-left: 0.3em;
+}
+
+button#submitbutton_header:hover, button#submitbutton_header:focus{
+	color: #003283;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 515px) {
+	#help-portal {
+		display: none;
+	}
+	#cp-header > div.block-max > a {
+		min-width: 0;
+	}
+}
+
+[dir="ltr"] #help-text {
+	margin-left: 40px;
+}
+
+[dir="ltr"] #product-area {
+	margin-left: 50px;
+}
+
+[dir="rtl"] #help-text {
+	margin-right: 40px;
+}
+
+[dir="rtl"] #product-area {
+	margin-right: 50px;
+}
+
+
+@media screen and (max-width: 800px) {
+	#header-product-title {
+		display: none;
+	}
+}
+
+html[dir="ltr"] #cp-header nav.actions {
+	position: absolute;
+    right: 0;
+    top: 0;
+}
+
+html[dir="rtl"] #cp-header nav.actions {
+	position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#cp-header nav.actions div.action {
+	position: relative;
+	margin: 0 10px;
+}
+
+html[dir="ltr"] #cp-header nav.actions div.action {
+	float: left;
+}
+
+html[dir="rtl"] #cp-header nav.actions div.action {
+	float: right;
+}
+
+#cp-header nav.actions div.action:focus {
+	outline: none;
+}
+
+#cp-header nav.actions div.action .menu-trigger {
+	display: block;
+	font-family: sap-icons;
+	font-size: 20px;
+	line-height: 36px;
+	width: 36px;
+	color: rgba(255,255,255,0.8);
+	text-align: center;
+	background: transparent;
+	border: 0;
+	padding: 0;
+	outline-offset: 5px;
+	outline-width: 1px;
+}
+
+html[dir="ltr"] #cp-header nav.actions div.action:last-of-type {
+	margin-right: 0;
+}
+
+html[dir="rtl"] #cp-header nav.actions div.action:last-of-type {
+	margin-left: 0;
+}
+
+#cp-header nav.actions div.action .menu-trigger:hover {
+	color: rgba(255,255,255,1);
+	cursor: pointer;
+}
+
+#cp-header div.action > div.cp-menu:before {
+	content: "";
+	height: 14px;
+	width: 14px;
+	background-color: rgb(255,255,255);
+	transform: rotate(45deg);
+	position: absolute;
+    top: -7px;
+}
+
+html[dir="ltr"] #cp-header div.action > div.cp-menu:before {
+	right: 31px;
+}
+
+html[dir="rtl"] #cp-header div.action > div.cp-menu:before {
+	left: 31px;
+}
+
+#cp-header div.cp-menu {
+	top: 53px;
+	min-width: 200px;
+	padding: 10px 0;
+	border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    z-index: 1000;
+}
+
+html[dir="ltr"] #cp-header div.cp-menu {
+	right: -20px;
+}
+
+html[dir="rtl"] #cp-header div.cp-menu {
+	left: -20px;
+}
+
+#cp-header div.menu a.tile {
+	white-space: nowrap;
+}
+
+div.action span.counter {
+	color: rgb(255,255,255);
+    background-color: #E35500;
+    position: absolute;
+    font-size: 0.929em;
+    border-radius: 7px;
+    display: block;
+    height: 10px;
+    width: 10px;
+    text-align: center;
+    line-height: 1.4em;
+    cursor: default;
+    bottom: 3px;
+    right: 0px;
+    pointer-events: none;
+}
+
+
+
+
+div.survey-request {
+	padding-top: 2em;
+	padding-bottom: 2em;
+	height: 5em;
+}
+
+div.survey-request > div.centered-button-container {
+	margin-bottom: 0;
+}
+
+.survey-request {
+  opacity:1;
+}
+
+.survey-request.ng-hide-add.ng-hide-add-active,
+.survey-request.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition:all ease 0.4s;
+  transition:all ease 0.4s;
+}
+
+.survey-request.ng-hide {
+  opacity:0;
+  padding:0;
+  height: 0;
+}

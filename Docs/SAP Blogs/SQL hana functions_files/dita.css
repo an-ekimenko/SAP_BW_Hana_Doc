@@ -1,0 +1,1181 @@
+/**
+ * 
+ *  Base CSS for sap-default theme
+    © Copyright 2015 SAP SE. All rights reserved
+ *
+ * 
+ *      1. Container Styles (html, body,  #d4h5-main-container etc).
+ *      2. Header Styles (header, logo, search)
+ *      3. Breadcrumb Styles (breadcrumbs, previous/next)
+ *      4. Navigation Styles
+ *      5. Related Links Styles
+ *      6. Footer Styles
+ *      7. Block Element Styles
+ *      8. Inline Element Styles
+ * 
+ * 
+ * */
+
+/*******************************************************************
+            HEADER STYLES
+ *******************************************************************/
+ 
+.secondary-language-level[lang='mn'] #page, 
+.secondary-language-level[lang='mn'] #page .topictitle1, 
+.secondary-language-level[lang='mn'] #page aside .title, 
+.secondary-language-level[lang='mn'] #page div.note .notetitle, 
+.secondary-language-level[lang='mn'] #page div.syntax .syntaxtitle {
+    font-family: Arial, sans-serif !important;
+}
+ 
+#page .topictitle1 {
+   font-family: 'Benton Sans', Arial, sans-serif;
+   font-size: 3.14em;
+   line-height: 1.1em;
+   margin: 0 0 0.6em 0;
+   font-weight: 300;
+   color: rgba(0,0,0,0.9);
+   letter-spacing: -1px;
+}
+
+#page  h1 span.enumeration, 
+#page  h1 span.topic-enumeration {
+
+}
+
+#page h2.topictitle2,
+#page h3.topictitle3,
+#page h4.topictitle4,
+#page h5.topictitle5,
+#page h6.topictitle6,
+div.disclaimer-page-block h1  {
+    line-height: 1.1em;
+    color: rgba(0,0,0,0.8);
+    margin: 1.6em 0 0.75em 0;
+    font-weight: 400;
+    font-family: 'Benton Sans', Arial, sans-serif;
+}
+
+#page h2.topictitle2,
+div.disclaimer-page-block h1  {
+	font-size: 2em;
+}
+
+#page h3.topictitle3 {
+	font-size: 1.929em;
+}
+
+#page h4.topictitle4 {
+	font-size: 1.857em;
+}
+
+#page h5.topictitle5 {
+	font-size: 1.786em;
+}
+
+#page h6.topictitle6 {
+	font-size: 1.714em;
+}
+
+#page div.section_title,
+#page h2.section_title,
+#page .sectiontitle,
+#page .relinfotitle,
+#page .exampletitle,
+div.disclaimer-page-block h2 {
+    color: rgba(0,0,0,0.7);
+    font-size: 1.5em;
+    line-height: 1.1em;
+    margin: 1.6em 0 1em 0;
+    /*font-family: 'Open Sans', Arial, sans-serif;*/
+    font-weight: 600;
+    display: block;
+}
+
+#page div.section_title > a.section_title {
+	color: inherit;
+}
+
+#page div.section_title > a.section_title:hover {
+	text-decoration: none;
+}
+
+#page div.section .sectionexpand:before {
+	content: '\e000';
+    font-family: sap-icofonts;
+    margin-right: 0.3em;
+    font-size: 0.714em;
+    position: relative;
+    top: -1px;
+}
+
+#page div.section .sectioncontract:before {
+	content: '\e002';
+}
+
+.related-links div {
+	margin: 0.6em 0;
+}
+
+
+ /*******************************************************************
+            BLOCK ELEMENTS 
+ *******************************************************************/
+#page p,
+#page div.p,
+#page div.codeblock-title,
+div.disclaimer-page-block p {
+    line-height: 1.6em;
+    orphans: 2;
+    padding: 0;
+    widows: 2;
+    margin: 1.5em 0em;
+    font-size: 1em;
+}
+
+#page blockquote,
+#page pre.msgblock {
+	padding: 0;
+    margin: 1.5em 0 1.5em 1.6em;
+    font-size: 1em;
+    border: 0 !important;
+    background-color: initial;
+}
+
+#page .example .authorexampletitle,
+#page .subsectiontitle {
+   font-size: 1.071em;
+   line-height: 1.6em;
+   /*font-family: 'Open Sans', Arial, sans-serif;*/
+   font-weight: 600;
+   color: rgba(0,0,0,0.9);
+}
+
+#page ol, 
+#page ul {
+   margin: 1.5em 0;
+   font-family: 'Benton Sans', Arial, sans-serif;
+} 
+
+#page div.sectiondiv {
+	margin: 1.5em 0;
+}
+
+#page li,
+#page li p,
+#page li div.p,
+#page li ol,
+#page li ul,
+#page li aside,
+#page li pre.codeblock,
+#page li div.note,
+#page li div.syntax
+#page li blockquote,
+#page li pre.msgblock,
+#page li table,
+#page li div.table-wrapper,
+#page table p,
+#page table div.p,
+#page table ol,
+#page table ul,
+#page table aside,
+#page table pre.codeblock,
+#page table div.note,
+#page table div.syntax
+#page table blockquote,
+#page table pre.msgblock,
+#page .stepresult,
+#page .itemgroup,
+div.disclaimer-page-block li,
+div.disclaimer-page-block li p {
+   margin-top: 1em;
+   margin-bottom: 1em;
+}
+
+#page li.sli {
+	list-style: none;
+}
+
+#page .tablecap,
+#page .figcap,
+#page .tabledesc {
+   font-family: Arial, sans-serif;
+   font-size: 0.857em;
+   color: rgba(0,0,0,0.8);
+   page-break-inside: avoid;
+   font-style: normal;
+   font-weight: normal;
+   line-height: 1.4em;
+}
+
+#page .tabledesc {
+	display: block;
+	margin-top: 0.6em;
+}
+
+#page span.figcap {
+	font-weight: normal;
+}
+
+#page .tablecap > .tablecap, 
+#page .figcap > .figcap,
+#page .tabledesc > .tabledesc,
+#page .tablecap > .figcap,
+#page .tablecap > .tabledesc,
+#page .figcap > .tablecap,
+#page .figcap > .tabledesc,
+#page .tabledesc > .tablecap,
+#page .tabledesc > .figcap {
+	font-size: 1em;
+	color: inherit;
+}
+
+#page caption {
+	margin: 0.3em 0;
+	padding: 0;
+	color: inherit;
+	line-height: 1em;
+	display: block;
+}
+
+div.secondary-language-level[dir="ltr"] #page caption {
+	text-align: left;
+}
+
+div.secondary-language-level[dir="rtl"] #page caption {
+	text-align: right;
+}
+
+#page table > caption {
+	/*font-size: 1.111em;*/
+	font-size: 1.077em;
+	line-height: 1em;
+	display: table-caption;
+}
+
+div.secondary-language-level[dir="ltr"] #page table > caption {
+	margin-left: 2px;
+}
+
+div.secondary-language-level[dir="rtl"] #page table > caption {
+	margin-right: 2px;
+}
+
+/* note: the examples of this have a blank p inserted above. Is this done automatically or manually? */
+div.video-links-disclaimer,
+div.iframe-wrapper,
+video {
+   margin: 1.5em 0;
+}
+
+/* responsive videos */
+
+#page div.video-max-width {
+	max-width: 640px;
+	margin: 1.5em 0;
+}
+
+#page div.iframe-wrapper,
+#page div.video-wrapper {
+	height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#page div.iframe-wrapper > iframe,
+#page div.video-wrapper > video {
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+    margin: 0 !important;
+}
+
+#page dl {
+   margin: 1.5em 0em;
+}
+
+dt,dd,
+#page dl div,
+#page dl p,
+#page dl aside.note {
+   margin: 1em 0em;
+}
+
+dt {
+   /*font-family: 'Open Sans', Arial, sans-serif;*/
+   font-weight: 600;
+}
+
+div.secondary-language-level[dir="ltr"] dd {
+   margin-left: 1.6em
+}
+
+div.secondary-language-level[dir="rtl"] dd {
+   margin-right: 1.6em
+}
+
+ /*******************************************************************
+            INLINE ELEMENTS 
+ *******************************************************************/
+#page em, 
+#page .emphasis, 
+#page strong,
+div.disclaimer-page-block strong {
+   /*font-family: 'Open Sans', Arial, sans-serif;*/
+   font-weight: 600;
+}
+
+/* depracated, but still support
+formally used for window and dialog box titles 
+msgblock is linked to a block element style as well*/
+#page .uicontrol,
+#page .uilabel, 
+#page .wintitle, 
+#page .uinolabel,
+#page .msgph,
+#page .msgblock {
+   /*font-family: 'Open Sans', Arial, sans-serif;*/
+   font-weight: 600;
+   color: rgba(13,35,113,0.8);
+}
+
+div#page span.menucascade img {
+	display: none;
+}
+
+div#page span.menucascade .uicontrol:after {
+	font-family: sap-icons;
+    font-size: 0.75em;
+    position: relative;
+    color: rgba(13,35,113,0.65);
+    padding-left: 0.15em;
+    padding-right: 0.15em;
+}
+
+div.secondary-language-level[dir="ltr"] div#page span.menucascade .uicontrol:after {
+	content: '\e066';
+	left: 0.35em;
+}
+
+div.secondary-language-level[dir="rtl"] div#page span.menucascade .uicontrol:after {
+	content: '\e067';
+	right: 0.35em;
+}
+
+div#page span.menucascade .uicontrol:last-of-type:after {
+	content: '' !important;
+}
+
+h1 > .uicontrol,
+h1 > .uilabel {
+   font-family: inherit;
+   font-weight: inherit;
+}
+
+p.shortdesc > .uicontrol {}
+
+/* ITALIC */
+
+
+
+#page var.keyword,
+#page span[class="keyword"], 
+#page var.varname, 
+#page var.structure, 
+#page var.field,
+#page .cmdname,
+#page .msgnum,
+#page .sap-icon-font-description {
+	font-style: italic;
+}
+
+div.secondary-language-level[dir="ltr"] #page .sap-icon-font-description {
+	margin-left: -2px;
+	margin-right: 2px;
+}
+
+div.secondary-language-level[dir="rtl"] #page .sap-icon-font-description {
+	margin-right: -2px;
+	margin-left: 2px;
+}
+
+/* Monospace */
+#page kbd.userinput, 
+#page .cmdtext,
+#page samp.codeph, 
+#page span.filepath, 
+#page samp.systemoutput,
+#page code,
+#page  kbd,
+#page  pre,
+#page  samp,
+#page .sap-technical-name,
+#page .apiname,
+#page .parmname {
+	font-family: Monaco, monospace;
+}
+
+#page kbd.userinput,  
+#page .cmdtext,
+#page samp.codeph, 
+#page span.filepath, 
+#page samp.systemoutput,
+#page .sap-technical-name,
+#page .apiname,
+#page .parmname {
+	font-size: 1.071em;
+}
+
+#page samp.codeph kbd.userinput, 
+#page samp.codeph .cmdtext,
+#page samp.codeph samp.codeph, 
+#page samp.codeph span.filepath, 
+#page samp.codeph samp.systemoutput,
+#page samp.codeph .sap-technical-name,
+#page samp.codeph .apiname,
+#page samp.codeph .parmname {
+	font-size: 1em;
+}
+
+#page kbd,
+#search-suggestions kbd {
+   background: none;
+   color: inherit;
+   box-shadow: none;
+   padding: 0;
+   border-radius: 3px;
+   font-size: 1em;
+}
+
+#page kbd.key {
+   border: 1px solid rgba(0,0,0,0.8);
+   padding: 2px 4px;
+   font-family: inherit;
+}
+
+#search-suggestions kbd.key {
+   border: 1px solid rgba(0,0,0,0.55);
+   padding: 2px 4px;
+   font-family: inherit;
+}
+
+
+#page a {
+	color: rgba(0,119,200,0.9);
+}
+
+#page a:hover {
+	text-decoration: underline;
+}
+
+/*******************************************************************
+            UNSORTED ELEMENTS 
+ *******************************************************************/
+#page span.sap-icon {
+   font-family: sap-icons;
+   display: block;
+}
+
+/* Test on HTML5 */
+#page .content-body #toggleToc, 
+#page .content-body .collapsible-icon, 
+#page .content-body section.collapsible h2 {
+   cursor: pointer;
+}
+
+/* Collapsible stuff */
+#page .col-wrapper:hover, 
+#page .col-wrapper:hover h2.section_title,
+#page .col-wrapper:hover > *,
+#page .col-wrapper:hover > *:before {
+    color: rgba(0,29,134,0.9) !important;
+    cursor: pointer;
+}
+
+#page .col-wrapper:hover .collapsible-icon {
+	font-weight: 600;
+}
+
+#page .collapsible .authorexampletitle {
+	cursor: default;
+}
+
+div.secondary-language-level[dir="ltr"] #page .collapsible-icon {
+   padding-right: 0.2em;
+   float: left;
+   color: inherit;
+} 
+
+div.secondary-language-level[dir="rtl"] #page .collapsible-icon {
+   padding-right: 0.2em;
+   float: right;
+   color: inherit;
+} 
+
+div.secondary-language-level[dir="rtl"] .col-wrapper.collapse .collapsible-icon::before {
+    content: '\e1ee';
+}
+
+#page .topic .collapsible-icon {
+	font-size: 1.3em;
+	line-height: 1.6em;
+	padding-right: 0.2em;
+}
+
+#page .section .collapsible-icon,
+#page .related-links .collapsible-icon,
+#page .example .collapsible-icon,
+#page aside .collapsible-icon,
+#page .fig aside .collapsible-icon,
+#page .fig aside .collapsible-icon.expand {
+    font-size: 1.1em;
+    transform: none;
+    padding: 0 0.2em 0 0;
+    height: 100%;
+    width: 1em;
+    text-align: center;
+    top: 0;
+}
+
+#page .subsection .collapsible-icon {
+	font-size: 0.9em;
+    line-height: 1.75em;
+    width: 0.9em;
+	padding-right: 0.2em;
+}
+
+#page aside.example > .col-wrapper:first-child .collapsible-icon {
+	line-height: 1.35em;
+    font-size: 1.2em;
+}
+
+#page .collapsible-codeblock .collapsible-icon,
+#page aside.example > .collapsible-codeblock .collapsible-icon {
+	font-size: 1em;
+    line-height: 1.4em;
+    width: 0.9em;
+	padding-right: 0.2em;
+}
+
+#page .fig .collapsible-icon,
+#page .table-wrapper .collapsible-icon {
+	font-size: 0.7em;
+	line-height: 1.6em;
+    top: 4px;
+    position: relative;
+	padding-right: 0.2em;
+}
+
+#page .fig .collapsible-icon.expand {
+	transform: rotate(180deg);
+    text-align: center;
+    padding: 0 0 0 0.2em;
+    top: 2px;
+}
+
+#page aside .collapsible-icon,
+#page .fig aside .collapsible-icon,
+#page .fig aside .collapsible-icon.expand {
+    font-size: 1.1em;
+    transform: none;
+    padding: 0 0.2em 0 0;
+	line-height: 1.6em;
+}
+
+/*Misc*/
+
+#page sup {
+   top: -0.5em;
+}
+
+#page sub, sup {
+    position: relative;
+    font-size: 0.714em;
+    line-height: 0;
+    vertical-align: baseline;
+    font-family: Arial, sans-serif;
+}
+
+#page img { 
+   vertical-align: middle;
+}
+
+#page img {
+   border: 0;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+     #page table img {
+     	max-width: 850px;
+     }
+     
+}
+
+#page dfn.term {
+	font-style: normal;
+}
+
+/*******************************************************************
+            PROCEDURE LISTS
+ *******************************************************************/
+@media screen {
+	
+	#page ol.steps {
+		counter-reset: steps-counter;
+	}
+	
+	#page ol.steps > li {
+		list-style-type: none;
+		position: relative;
+	}
+	
+	#page ol.steps > li:before {
+		content: counter(steps-counter)".";
+	    counter-increment: steps-counter;
+	    font-family: 'Open Sans', Arial, sans-serif;
+	    font-size: 1.071em;
+	    font-weight: 600;
+	    position: absolute;
+	    top: -0.1em;
+	    color: rgba(0,0,0,0.7);
+	    display: block;
+	    width: 40px;
+	    text-align: center;
+	}
+	
+	div.secondary-language-level[dir="ltr"] #page ol.steps > li:before {
+		left: -40px;
+	}
+	
+	div.secondary-language-level[dir="rtl"] #page ol.steps > li:before {
+		right: -40px;
+	}
+}
+/*******************************************************************
+            TABLES STYLES
+ *******************************************************************/
+#page table {
+	text-align: left;
+	font-size: 0.929em;
+	border-spacing: 2px;
+	margin: 0;
+	border: 0;
+	border-collapse: separate;
+	min-width: 150px;
+	table-layout: fixed;
+	width: auto;
+	
+	/*Temporary plain style*/
+	border-spacing: 0;
+    border-collapse: collapse;
+    margin-left: 0;
+    margin-right: 0;
+    
+    /* Fix table borders nondisplay on IE bug */
+    overflow-y: auto !important;
+}
+
+#page table .row:before,
+#page table .row:after {
+	display: none;
+}
+
+#page table th,
+#page table td {
+	line-height: 1.6em;
+	border: 1px solid rgba(0,0,0,0.04);
+	
+	/*Temporary plain style*/
+    border: 1px solid #BBB;
+    border-radius: 0 !important;
+}
+
+#page table th {
+	color: rgba(0,0,0,0.9);
+	padding: 0.6em;
+	/*font-family: 'Open Sans', Arial, sans-serif;*/
+	font-weight: 600;
+	font-size: 1em;
+	vertical-align: top;
+	background-color: rgba(0,0,0,0.21);
+	
+	/*Temporary plain style */
+	background-color: rgba(0,0,0,0.15);
+}
+
+#page table .align_center,
+[dir="rtl"] #page table .align_center {
+	text-align: center;
+}
+/*
+div.secondary-language-level[dir="ltr"] #page table tr:first-of-type > *:first-child {
+	border-top-left-radius: 4px;
+}
+
+div.secondary-language-level[dir="ltr"] #page table tr:first-of-type > *:last-child {
+	border-top-right-radius: 4px;
+}
+
+div.secondary-language-level[dir="ltr"] #page table tbody tr:last-of-type > *:first-child {
+	border-bottom-left-radius: 4px;
+}
+
+div.secondary-language-level[dir="ltr"] #page table tbody tr:last-of-type > *:last-child {
+	border-bottom-right-radius: 4px;
+}
+
+div.secondary-language-level[dir="rtl"] #page table tr:first-of-type > *:first-child {
+	border-top-right-radius: 4px;
+}
+
+div.secondary-language-level[dir="rtl"] #page table tr:first-of-type > *:last-child {
+	border-top-left-radius: 4px;
+}
+
+div.secondary-language-level[dir="rtl"] #page table tbody tr:last-of-type > *:first-child {
+	border-bottom-right-radius: 4px;
+}
+
+div.secondary-language-level[dir="rtl"] #page table tbody tr:last-of-type > *:last-child {
+	border-bottom-left-radius: 4px;
+}
+
+#page thead + tbody tr:first-of-type > *:first-child {
+	border-top-left-radius: 0px;
+}
+
+#page thead + tbody tr:first-of-type > *:last-child {
+	border-top-right-radius: 0px;
+}*/
+
+#page td {
+	padding: 0.6em;
+	vertical-align: top;
+	background-color: rgba(0,0,0,0.08);
+	
+	/* Temporary plain style */
+	background-color: transparent;
+}
+
+#page td > *:first-child,
+#page th > *:first-child {
+	margin-top: 0 !important;
+}
+
+#page td > *:last-child,
+#page th > *:last-child {
+	margin-bottom: 0 !important;
+}
+
+#page div.table-wrapper {
+	margin: 1.5em -2px;
+	overflow-x: auto;
+	
+	/*Temporary plain style*/
+	margin-left: 0;
+    margin-right: 0;
+}
+
+#page div.datatable-scroll table {
+	width: auto !important;
+}
+
+#page span.tablecap + div.table-wrapper {
+	margin-top: 0.3em;
+}
+
+#page div.table-wrapper table[width="100%"] {
+    min-width: 100%;
+}
+
+/* Special Paragraphs in tables */
+
+#page table aside,
+#page table pre.codeblock,
+#page table div.note,
+#page table div.syntax,
+#page table pre {
+    background-color: rgba(0,0,0,0.05);
+    
+    /* Temporary plain style */
+    background-color: rgba(0,0,0,0.08);
+}
+
+
+/* Border-less tables (used for figure + description) */
+
+#page table[border='0'] th, 
+#page table[border='0'] td {
+    border: 1px solid transparent;
+}
+
+div.secondary-language-level[dir="ltr"] #page table[border='0'] tr > th:first-of-type, 
+div.secondary-language-level[dir="ltr"] #page table[border='0'] tr > td:first-of-type,
+div.secondary-language-level[dir="rtl"] #page table[border='0'] tr > th:last-of-type, 
+div.secondary-language-level[dir="rtl"] #page table[border='0'] tr > td:last-of-type  {
+    padding-left: 0
+}
+
+div.secondary-language-level[dir="ltr"] #page table[border='0'] tr > th:last-of-type, 
+div.secondary-language-level[dir="ltr"] #page table[border='0'] tr > td:last-of-type,
+div.secondary-language-level[dir="rtl"] #page table[border='0'] tr > th:first-of-type, 
+div.secondary-language-level[dir="rtl"] #page table[border='0'] tr > td:first-of-type {
+    padding-right: 0
+}
+
+/* Table Cell Colors */
+
+#page td.background_blue {
+	border-color: rgba(0,118,203,0.53);
+	background-color: rgba(0,118,203,0.08);
+}
+
+#page td.background_yellow {
+	border-color: rgba(240,171,0,0.65);
+	background-color: rgba(240,171,0,0.16);
+}
+
+#page td.background_green {
+	border-color: rgba(79,187,28,0.7);
+	background-color: rgba(79,187,28,0.12);
+} 
+
+/* Rotate */
+
+#page div.includesrotate {
+	display: inline;
+}
+
+#page div.includesrotate div.table-wrapper {
+	padding-right: 5em;
+}
+
+#page div.includesrotate div.table-wrapper table {
+
+}
+
+#page th.rotate {
+    height: 80px;
+    white-space: nowrap;
+    max-width: 100px;
+    background-color: transparent;
+    border: 0;
+    position: relative;
+    padding: 0;
+    vertical-align: bottom;
+}
+
+#page th.rotate > div {
+    border-bottom: 1px solid #BBB;
+    transform-origin: left bottom;
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    transform: rotate(-45deg) translate(0, 0);
+    width: 100%;
+}
+
+#page th.rotate > div > span {
+    display: block;
+    margin-bottom: calc(40% - 0.8em);
+    position: absolute;
+    bottom: 0;
+    left: calc(-40% + 0.8em);
+}
+
+#page th.rotate p {
+    margin: 0;
+    line-height: 1em;
+}
+
+/*******************************************************************
+            SPECIAL PARAGRAPHS STYLES
+ *******************************************************************/
+#page aside,
+#page pre.codeblock,
+#page div.note,
+#page div.syntax,
+#page pre {
+	background-color: rgba(0,0,0,0.08);
+	padding: 0.75em;
+	border-top: 0;
+    border-bottom: 0;
+    margin: 1.5em 0;
+}
+
+div.secondary-language-level[dir="ltr"] #page aside,
+div.secondary-language-level[dir="ltr"] #page pre.codeblock,
+div.secondary-language-level[dir="ltr"] #page div.note,
+div.secondary-language-level[dir="ltr"] #page div.syntax,
+div.secondary-language-level[dir="ltr"] #page pre {
+	border-left: 0.6rem solid rgba(0,119,200,0.7);
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+}
+
+div.secondary-language-level[dir="rtl"] #page aside,
+div.secondary-language-level[dir="rtl"] #page pre.codeblock,
+div.secondary-language-level[dir="rtl"] #page div.note,
+div.secondary-language-level[dir="rtl"] #page div.syntax,
+div.secondary-language-level[dir="rtl"] #page pre {
+	border-right: 0.6rem solid rgba(0,119,200,0.7);
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+}
+
+#page aside pre.codeblock,
+#page div.codeblock pre.codeblock,
+#page div.syntax pre.codeblock {
+    border: 0 !important;
+    background-color: transparent !important;
+}
+
+#page aside aside {
+	background-color: transparent;
+    border: 0 !important;
+    padding-bottom: 0;
+}
+
+div.secondary-language-level[dir="ltr"] #page aside aside {
+   padding-left: 0;
+}
+
+div.secondary-language-level[dir="rtl"] #page aside aside {
+   padding-right: 0;
+}
+
+#page aside.warning,
+#page aside.caution,
+#page aside.restriction,
+#page aside.limitations {
+	border-color: rgba(231,70,0,0.7) !important;
+}
+
+#page aside > *:last-child {
+	margin-bottom: 0;
+}
+
+#page aside > *:first-child,
+#page aside > span.title + * {
+	margin-top: 0;
+}
+
+/* Special Paragraph Titles */
+
+#page aside .title, 
+#page div.note .notetitle,
+#page div.syntax .syntaxtitle {
+	font-weight: 300;
+	color: rgba(0,0,0,1);
+	font-size: 1.357em;
+	margin: 0 0 0.6em 0;
+    display: block;
+    line-height: 1.1em;
+}
+
+/* Special Paragraph Icons */
+
+#page aside .title:before,
+#page div.note .notetitle:before,
+#page div.syntax .syntaxtitle:before {
+	content: '\e05c';
+    font-family: sap-icons;
+    color: rgba(0,0,0,0.8);
+    margin-right: 0.5em;
+    font-size: 0.9em;
+
+}
+
+#page aside.caution .title:before,
+#page aside.warning .title:before {
+	content: '\e201';
+}
+
+#page aside.example .title:before {
+	content: '\e16d';
+}
+
+#page aside.restriction .title:before,
+#page aside.limitations .title:before {
+	content: '\e094';
+}
+
+#page aside.syntax .title:before,
+#page aside.samplecode .title:before,
+#page div.syntax .syntaxtitle:before,
+#page aside.outputcodeblock .title:before,
+#page aside.sourcecodeblock .title:before,
+#page aside.codesyntax .title:before {
+	content: '\e139';
+}
+
+div.secondary-language-level[dir="ltr"] #page aside.remember .title:before,
+div.secondary-language-level[dir="ltr"] #page aside.tip .title:before,
+div.secondary-language-level[dir="ltr"] #page aside.recommendation .title:before {
+	content: '\e04c';
+}
+
+div.secondary-language-level[dir="rtl"] #page aside.remember .title:before,
+div.secondary-language-level[dir="rtl"] #page aside.tip .title:before,
+div.secondary-language-level[dir="rtl"] #page aside.recommendation .title:before {
+	content: '\e04d';
+}
+
+/* Related links and stuff */
+
+div.secondary-language-level[dir="ltr"] #page ul.ullinks {
+	padding-left: 0;
+}
+
+div.secondary-language-level[dir="rtl"] #page ul.ullinks {
+	padding-left: 0;
+}
+
+#page #content-toolbar {
+	display: none;
+}
+
+/* Prettify */
+
+#page li.L1, li.L3, li.L5, li.L7, li.L9 {
+    background: rgba(255,255,255,0.7);
+}
+
+#page li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
+	margin: 0 !important;
+}
+
+
+
+/* Grid layout */
+
+.gridrow {
+    display: flex;
+    margin-bottom: 2.5em;
+}
+
+.gridrow div.section {
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 0 0.6em;
+    text-align: center
+}
+
+div.secondary-language-level[dir="ltr"] .gridrow div.section {
+	float: left;
+}
+
+div.secondary-language-level[dir="rtl"] .gridrow div.section {
+	float: right;
+}
+
+div.secondary-language-level[dir="ltr"] .gridrow.row-2-columns div.section {
+    margin-right: 6%;
+    width: 47%
+}
+
+div.secondary-language-level[dir="rtl"] .gridrow.row-2-columns div.section {
+    margin-left: 6%;
+    width: 47%
+}
+
+div.secondary-language-level[dir="ltr"] .gridrow.row-3-columns div.section {
+    margin-right: 4.5%;
+    width: 31%
+}
+
+div.secondary-language-level[dir="rtl"] .gridrow.row-3-columns div.section {
+    margin-left: 4.5%;
+    width: 31%
+}
+
+div.secondary-language-level[dir="ltr"] .gridrow.row-4-columns div.section {
+    margin-right: 1%;
+    width: 24.25%
+}
+
+div.secondary-language-level[dir="rtl"] .gridrow.row-4-columns div.section {
+    margin-left: 1%;
+    width: 24.25%
+}
+
+.gridrow div.section:last-child {
+    margin-right: 0 !important;
+}
+
+.gridrow img {
+    margin: 0
+}
+
+.gridrow img.link-sap,.gridrow img.link-external {
+    margin: 0
+}
+
+.gridrow ul {
+    list-style-type: none;
+    padding-left: 0
+}
+
+div.secondary-language-level[dir="ltr"] .gridrow:after {
+    clear: left;
+    content: '';
+    display: table
+}
+
+div.secondary-language-level[dir="rtl"] .gridrow:after {
+    clear: both;
+    content: '';
+    display: table
+}
+
+@media screen and (max-width: 640px) {
+	
+	.gridrow {
+	    display: block;
+	    margin-bottom: 0;
+	}
+	
+	.gridrow div.section {
+	    width: 100% !important;
+    	margin-bottom: 2.5em;
+	}
+}
+
+/* Extra scrollbars in IE and Firefox */
+
+#page div.table-wrapper div.doubleScroll-scroll-wrapper {
+	display: none;
+}
+
+/* Image maps */
+
+div.secondary-language-level[dir="ltr"] #page div.imagemap_sidebyside div.imagemap {
+    margin-right: 1rem;
+}
+
+div.secondary-language-level[dir="rtl"] #page div.imagemap_sidebyside div.imagemap {
+    margin-left: 1rem;
+}
+
+#page .sectiondiv.visibility-trigger,
+#page .sectiondiv.main {
+	display: table-cell;
+	vertical-align: top;
+}
+
+#page .sectiondiv.visibility-trigger,
+#page .sectiondiv.visibility-trigger > *:first-child {
+	margin-top: 0;
+}

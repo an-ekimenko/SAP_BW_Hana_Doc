@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600,700&display=swap&subset=cyrillic');
+
+body {
+    min-width:300px;
+    position:relative;
+    overflow-x:hidden;
+    margin:0;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body a{
+    text-decoration: none;
+}
+
+*{
+    outline: none;
+}
+
+.banner{
+    width: 300px;
+    height : 250px;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    position: relative;
+    background: radial-gradient(128.26% 128.26% at 50% 50%, #E2F6FF 0%, #AECCE1 100%);
+}
+
+
+.banner_left{
+    z-index: 2;
+    width: 50%;
+    height: 250px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    display: block;
+    background: #EA6C14;
+    transition: .5s all ease-out;
+}
+
+.banner_right{
+    z-index: 2;
+    width: 50%;
+    height: 250px;
+    right: 0;
+    top: 0;
+    position: absolute;
+    content: "";
+    display: block;
+    background: #EA6C14;
+    transition: .5s all ease-out;
+}
+
+.banner_active{
+    width: 0;
+    transition: .5s all ease-out;
+}
+
+.banner-container {
+    min-width: 300px;
+    width: 300px;
+    height: 250px;
+    position: relative;
+    margin: 0 auto;
+}
+
+
+/*первый экран*/
+
+.title{
+    width: 171.73px;
+    position: absolute;
+    left: 64px;
+    top: 18px;
+    transform: translateY(100px);
+    opacity: 0;
+}
+
+.title_active{
+    opacity: 1;
+    transform: translateY(0);
+    transition: .5s all ease-in-out;
+}
+
+.title_move{
+    transform: translateY(-200px);
+    transition: .5s all ease-in-out;
+}
+
+.box{
+    width: 223.36px;
+    position: absolute;
+    right: 38px;
+    top: 82px;
+    transform: translateY(200px) translateX(100px);
+    opacity: 0;
+}
+
+.box_active{
+    transform: translateY(0) translateX(0);
+    opacity: 1;
+    transition: .5s all ease-in-out;
+}
+
+.box_scale{
+    transform: scale(1.1);
+    transition: 1.5s all ease-in-out;
+}
+
+.box_move{
+    transform: translateY(-200px) translateX(100px);
+    opacity: 0;
+    transition: .5s all ease-in-out;
+}
+
+
+/*второй экран*/
+
+.girl1{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+}
+
+.girl1_active{
+    opacity: 1;
+    transition: .5s all .3s;
+}
+
+.girl1_scale{
+    transform: scale(1.1);
+    transition: 1.5s all ease-in-out;
+}
+
+.girl1_move{
+    opacity: 0;
+    transition: .5s all ease-in-out;
+}
+
+.arrow1{
+    position: absolute;
+    right: 11px;
+    top: 18px;
+    transform: translateX(-100px);
+    opacity: 0;
+}
+
+.arrow1_active{
+    opacity: 1;
+    transform: translateX(0);
+    transition: .5s all;
+}
+
+.arrow1_move{
+    transform: translateX(100px);
+    opacity: 0;
+    transition: .5s all ease-in-out;
+}
+
+
+/*третий экран*/
+
+.girl2{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+}
+
+.girl2_active{
+    opacity: 1;
+    transition: .5s all .3s;
+}
+
+.girl2_scale{
+    transform: scale(1.1);
+    transition: 1.5s all ease-in-out;
+}
+
+.girl2_move{
+    opacity: 0;
+    transition: .5s all ease-in-out;
+}
+
+.arrow2{
+    position: absolute;
+    right: 11px;
+    top: 18px;
+    transform: translateX(-100px);
+    opacity: 0;
+}
+
+.arrow2_active{
+    opacity: 1;
+    transform: translateX(0);
+    transition: .5s all;
+}
+
+.arrow2_move{
+    transform: translateX(100px);
+    opacity: 0;
+    transition: .5s all ease-in-out;
+}
+
+.recomend{
+    position: absolute;
+    right: 7px;
+    bottom: 6px;
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+.recomend_active{
+    transform: translateY(0);
+    opacity: 1;
+    transition: .5s all ease-in-out;
+}
+
+.recomend_move{
+    transform: translateY(50px);
+    opacity: 0;
+    transition: .5s all ease-in-out;
+}
+
+
+/*четвертый экран*/
+
+.girl3{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+}
+
+.girl3_active{
+    opacity: 1;
+    transition: .5s all .3s;
+}
+
+.girl3_scale{
+    transform: scale(1.1);
+    transition: 1.5s all ease-in-out;
+}
+
+.girl3_move{
+    opacity: 0;
+    transition: .5s all ease-in-out;
+}
+
+.arrow3{
+    position: absolute;
+    right: 11px;
+    top: 18px;
+    transform: translateX(-100px);
+    opacity: 0;
+}
+
+.arrow3_active{
+    opacity: 1;
+    transform: translateX(0);
+    transition: .5s all;
+}
+
+.arrow3_move{
+    transform: translateX(100px);
+    opacity: 0;
+    transition: .5s all ease-in-out;
+}
+
+
+/*пятый экран*/
+
+.box2{
+    position: absolute;
+    right: 2px;
+    top: 5px;
+    z-index: 1;
+    transform: translateX(100px);
+    opacity: 0;
+}
+
+.box2_active{
+    transform: translateX(0);
+    opacity: 1;
+    transition: .5s all ease-in-out;
+}
+
+.bio{
+    position: absolute;
+    left: 105px;
+    top: 66px;
+    z-index: 2;
+    transform: rotate(-90deg);
+    opacity: 0;
+}
+
+.bio_active{
+    transform: rotate(0);
+    opacity: 1;
+    transition: .5s all ease-in-out;
+}
+
+.addText{
+    position: absolute;
+    left: 9px;
+    top: 33px;
+    opacity: 0;
+}
+
+.addText_active{
+    animation: .5s rubberBand ease-in-out forwards;
+}
+
+.text{
+    position: absolute;
+    right: 0;
+    bottom: 4px;
+    opacity: 0;
+}
+
+.text_active{
+    opacity: 1;
+    transition: .5s all ease-in-out;
+}
+
+.logo{
+    position: absolute;
+    right: 7px;
+    bottom: 0;
+    opacity: 0;
+}
+
+.logo_active{
+    opacity: 1;
+    transition: .5s all ease-in-out;
+}
+
+
+
+@keyframes rubberBand {
+    from {
+        transform: scale3d(1, 1, 1);
+        opacity: 0;
+    }
+
+    30% {
+        transform: scale3d(1.25, 0.75, 1);
+    }
+
+    40% {
+        transform: scale3d(0.75, 1.25, 1);
+    }
+
+    50% {
+        transform: scale3d(1.15, 0.85, 1);
+    }
+
+    65% {
+        transform: scale3d(.95, 1.05, 1);
+    }
+
+    75% {
+        transform: scale3d(1.05, .95, 1);
+    }
+
+    to {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
+}

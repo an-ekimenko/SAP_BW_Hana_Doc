@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="ru-RU"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+
+<title>Odata Сервис на CDS. — SAP BW справочник</title>
+<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="https://ced.sascdn.com/">
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://wordpress.com/">
+<link rel="dns-prefetch" href="https://fonts-api.wp.com/">
+<link rel="dns-prefetch" href="https://s.pubmine.com/">
+<link rel="dns-prefetch" href="https://x.bidswitch.net/">
+<link rel="dns-prefetch" href="https://static.criteo.net/">
+<link rel="dns-prefetch" href="https://ib.adnxs.com/">
+<link rel="dns-prefetch" href="https://aax.amazon-adsystem.com/">
+<link rel="dns-prefetch" href="https://bidder.criteo.com/">
+<link rel="dns-prefetch" href="https://cas.criteo.com/">
+<link rel="dns-prefetch" href="https://gum.criteo.com/">
+<link rel="dns-prefetch" href="https://ads.pubmatic.com/">
+<link rel="dns-prefetch" href="https://gads.pubmatic.com/">
+<link rel="dns-prefetch" href="https://tpc.googlesyndication.com/">
+<link rel="dns-prefetch" href="https://ad.doubleclick.net/">
+<link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/">
+<link rel="dns-prefetch" href="https://www.googletagservices.com/">
+<link rel="dns-prefetch" href="https://cdn.switchadhub.com/">
+<link rel="dns-prefetch" href="https://delivery.g.switchadhub.com/">
+<link rel="dns-prefetch" href="https://delivery.swid.switchadhub.com/">
+<link rel="dns-prefetch" href="https://a.teads.tv/">
+<link rel="dns-prefetch" href="https://prebid.media.net/">
+<link rel="dns-prefetch" href="https://adserver-us.adtech.advertising.com/">
+<link rel="dns-prefetch" href="https://fastlane.rubiconproject.com/">
+<link rel="dns-prefetch" href="https://prebid-server.rubiconproject.com/">
+<link rel="dns-prefetch" href="https://hb-api.omnitagjs.com/">
+<link rel="dns-prefetch" href="https://mtrx.go.sonobi.com/">
+<link rel="dns-prefetch" href="https://apex.go.sonobi.com/">
+<link rel="dns-prefetch" href="https://u.openx.net/">
+<link rel="alternate" type="application/rss+xml" title="SAP BW справочник » Лента" href="https://helpbw.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="SAP BW справочник » Лента комментариев" href="https://helpbw.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="SAP BW справочник » Лента комментариев к «Odata Сервис на&nbsp;CDS.»" href="https://helpbw.wordpress.com/2022/09/16/odata-%d1%81%d0%b5%d1%80%d0%b2%d0%b8%d1%81-%d0%bd%d0%b0-cds/feed/">
+	<script async="" type="text/javascript" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/pwt.js"></script><script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+	<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s0.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1677072837i&ver=6.5-alpha-57144"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<link crossorigin="anonymous" rel="stylesheet" id="all-css-0-1" href="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/%25D0%2591%25D0%25B5%25D0%25B7%2520%25D0%25B8%25D0%25BC%25D0%25B5%25D0%25BD%25D0%25B8_005.css" type="text/css" media="all">
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link crossorigin="anonymous" rel="stylesheet" id="all-css-2-1" href="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/style.css" type="text/css" media="all">
+<style id="wp-block-library-inline-css">
+.has-text-align-justify {
+	text-align:justify;
+}
+.wp-block-cover__image-background.has-parallax {
+	background-size: cover;
+}
+</style>
+<link crossorigin="anonymous" rel="stylesheet" id="all-css-4-1" href="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/%25D0%2591%25D0%25B5%25D0%25B7%2520%25D0%25B8%25D0%25BC%25D0%25B5%25D0%25BD%25D0%25B8_006.css" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<link crossorigin="anonymous" rel="stylesheet" id="all-css-6-1" href="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/%25D0%2591%25D0%25B5%25D0%25B7%2520%25D0%25B8%25D0%25BC%25D0%25B5%25D0%25BD%25D0%25B8_004.css" type="text/css" media="all">
+<style id="global-styles-inline-css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #fff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--dark-green: #1c7c7c;--wp--preset--color--dark-gray: #666;--wp--preset--color--medium-gray: #999;--wp--preset--color--light-gray: #eee;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-family--albert-sans: 'Albert Sans', sans-serif;--wp--preset--font-family--alegreya: Alegreya, serif;--wp--preset--font-family--arvo: Arvo, serif;--wp--preset--font-family--bodoni-moda: 'Bodoni Moda', serif;--wp--preset--font-family--cabin: Cabin, sans-serif;--wp--preset--font-family--chivo: Chivo, sans-serif;--wp--preset--font-family--commissioner: Commissioner, sans-serif;--wp--preset--font-family--cormorant: Cormorant, serif;--wp--preset--font-family--courier-prime: 'Courier Prime', monospace;--wp--preset--font-family--crimson-pro: 'Crimson Pro', serif;--wp--preset--font-family--dm-mono: 'DM Mono', monospace;--wp--preset--font-family--dm-sans: 'DM Sans', sans-serif;--wp--preset--font-family--domine: Domine, serif;--wp--preset--font-family--eb-garamond: 'EB Garamond', serif;--wp--preset--font-family--epilogue: Epilogue, sans-serif;--wp--preset--font-family--figtree: Figtree, sans-serif;--wp--preset--font-family--fira-sans: 'Fira Sans', sans-serif;--wp--preset--font-family--fraunces: Fraunces, serif;--wp--preset--font-family--ibm-plex-mono: 'IBM Plex Mono', monospace;--wp--preset--font-family--ibm-plex-sans: 'IBM Plex Sans', sans-serif;--wp--preset--font-family--inter: Inter, sans-serif;--wp--preset--font-family--josefin-sans: 'Josefin Sans', sans-serif;--wp--preset--font-family--jost: Jost, sans-serif;--wp--preset--font-family--libre-baskerville: 'Libre Baskerville', serif;--wp--preset--font-family--libre-franklin: 'Libre Franklin', sans-serif;--wp--preset--font-family--literata: Literata, serif;--wp--preset--font-family--lora: Lora, serif;--wp--preset--font-family--merriweather: Merriweather, serif;--wp--preset--font-family--montserrat: Montserrat, sans-serif;--wp--preset--font-family--newsreader: Newsreader, serif;--wp--preset--font-family--nunito: Nunito, sans-serif;--wp--preset--font-family--open-sans: 'Open Sans', sans-serif;--wp--preset--font-family--overpass: Overpass, sans-serif;--wp--preset--font-family--petrona: Petrona, serif;--wp--preset--font-family--piazzolla: Piazzolla, serif;--wp--preset--font-family--playfair-display: 'Playfair Display', serif;--wp--preset--font-family--plus-jakarta-sans: 'Plus Jakarta Sans', sans-serif;--wp--preset--font-family--poppins: Poppins, sans-serif;--wp--preset--font-family--raleway: Raleway, sans-serif;--wp--preset--font-family--roboto: Roboto, sans-serif;--wp--preset--font-family--roboto-slab: 'Roboto Slab', serif;--wp--preset--font-family--rubik: Rubik, sans-serif;--wp--preset--font-family--sora: Sora, sans-serif;--wp--preset--font-family--source-sans-3: 'Source Sans 3', sans-serif;--wp--preset--font-family--source-serif-4: 'Source Serif 4', serif;--wp--preset--font-family--space-mono: 'Space Mono', monospace;--wp--preset--font-family--texturina: Texturina, serif;--wp--preset--font-family--work-sans: 'Work Sans', sans-serif;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}.has-albert-sans-font-family{font-family: var(--wp--preset--font-family--albert-sans) !important;}.has-alegreya-font-family{font-family: var(--wp--preset--font-family--alegreya) !important;}.has-arvo-font-family{font-family: var(--wp--preset--font-family--arvo) !important;}.has-bodoni-moda-font-family{font-family: var(--wp--preset--font-family--bodoni-moda) !important;}.has-cabin-font-family{font-family: var(--wp--preset--font-family--cabin) !important;}.has-chivo-font-family{font-family: var(--wp--preset--font-family--chivo) !important;}.has-commissioner-font-family{font-family: var(--wp--preset--font-family--commissioner) !important;}.has-cormorant-font-family{font-family: var(--wp--preset--font-family--cormorant) !important;}.has-courier-prime-font-family{font-family: var(--wp--preset--font-family--courier-prime) !important;}.has-crimson-pro-font-family{font-family: var(--wp--preset--font-family--crimson-pro) !important;}.has-dm-mono-font-family{font-family: var(--wp--preset--font-family--dm-mono) !important;}.has-dm-sans-font-family{font-family: var(--wp--preset--font-family--dm-sans) !important;}.has-domine-font-family{font-family: var(--wp--preset--font-family--domine) !important;}.has-eb-garamond-font-family{font-family: var(--wp--preset--font-family--eb-garamond) !important;}.has-epilogue-font-family{font-family: var(--wp--preset--font-family--epilogue) !important;}.has-figtree-font-family{font-family: var(--wp--preset--font-family--figtree) !important;}.has-fira-sans-font-family{font-family: var(--wp--preset--font-family--fira-sans) !important;}.has-fraunces-font-family{font-family: var(--wp--preset--font-family--fraunces) !important;}.has-ibm-plex-mono-font-family{font-family: var(--wp--preset--font-family--ibm-plex-mono) !important;}.has-ibm-plex-sans-font-family{font-family: var(--wp--preset--font-family--ibm-plex-sans) !important;}.has-inter-font-family{font-family: var(--wp--preset--font-family--inter) !important;}.has-josefin-sans-font-family{font-family: var(--wp--preset--font-family--josefin-sans) !important;}.has-jost-font-family{font-family: var(--wp--preset--font-family--jost) !important;}.has-libre-baskerville-font-family{font-family: var(--wp--preset--font-family--libre-baskerville) !important;}.has-libre-franklin-font-family{font-family: var(--wp--preset--font-family--libre-franklin) !important;}.has-literata-font-family{font-family: var(--wp--preset--font-family--literata) !important;}.has-lora-font-family{font-family: var(--wp--preset--font-family--lora) !important;}.has-merriweather-font-family{font-family: var(--wp--preset--font-family--merriweather) !important;}.has-montserrat-font-family{font-family: var(--wp--preset--font-family--montserrat) !important;}.has-newsreader-font-family{font-family: var(--wp--preset--font-family--newsreader) !important;}.has-nunito-font-family{font-family: var(--wp--preset--font-family--nunito) !important;}.has-open-sans-font-family{font-family: var(--wp--preset--font-family--open-sans) !important;}.has-overpass-font-family{font-family: var(--wp--preset--font-family--overpass) !important;}.has-petrona-font-family{font-family: var(--wp--preset--font-family--petrona) !important;}.has-piazzolla-font-family{font-family: var(--wp--preset--font-family--piazzolla) !important;}.has-playfair-display-font-family{font-family: var(--wp--preset--font-family--playfair-display) !important;}.has-plus-jakarta-sans-font-family{font-family: var(--wp--preset--font-family--plus-jakarta-sans) !important;}.has-poppins-font-family{font-family: var(--wp--preset--font-family--poppins) !important;}.has-raleway-font-family{font-family: var(--wp--preset--font-family--raleway) !important;}.has-roboto-font-family{font-family: var(--wp--preset--font-family--roboto) !important;}.has-roboto-slab-font-family{font-family: var(--wp--preset--font-family--roboto-slab) !important;}.has-rubik-font-family{font-family: var(--wp--preset--font-family--rubik) !important;}.has-sora-font-family{font-family: var(--wp--preset--font-family--sora) !important;}.has-source-sans-3-font-family{font-family: var(--wp--preset--font-family--source-sans-3) !important;}.has-source-serif-4-font-family{font-family: var(--wp--preset--font-family--source-serif-4) !important;}.has-space-mono-font-family{font-family: var(--wp--preset--font-family--space-mono) !important;}.has-texturina-font-family{font-family: var(--wp--preset--font-family--texturina) !important;}.has-work-sans-font-family{font-family: var(--wp--preset--font-family--work-sans) !important;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+</style>
+<link crossorigin="anonymous" rel="stylesheet" id="all-css-8-1" href="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/%D0%91%D0%B5%D0%B7%20%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8.css" type="text/css" media="all">
+<style id="penscratch-2-style-inline-css">
+.tags-links, .byline .author, .group-blog .byline + .sep, .single .byline + .sep { clip: rect(1px, 1px, 1px, 1px); height: 1px; position: absolute; overflow: hidden; width: 1px; }
+</style>
+<link rel="stylesheet" id="penscratch-2-fonts-css" href="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/css.css" media="all">
+<link crossorigin="anonymous" rel="stylesheet" id="all-css-10-1" href="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/%25D0%2591%25D0%25B5%25D0%25B7%2520%25D0%25B8%25D0%25BC%25D0%25B5%25D0%25BD%25D0%25B8_003.css" type="text/css" media="all">
+<link crossorigin="anonymous" rel="stylesheet" id="print-css-11-1" href="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/global-print.css" type="text/css" media="print">
+<style id="jetpack-global-styles-frontend-style-inline-css">
+:root { --font-headings: unset; --font-base: unset; --font-headings-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; --font-base-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;}
+</style>
+<link crossorigin="anonymous" rel="stylesheet" id="all-css-14-1" href="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/%25D0%2591%25D0%25B5%25D0%25B7%2520%25D0%25B8%25D0%25BC%25D0%25B5%25D0%25BD%25D0%25B8_002.css" type="text/css" media="all">
+<script type="text/javascript" id="jetpack_related-posts-js-extra">
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script crossorigin="anonymous" type="text/javascript" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/%D0%91%D0%B5%D0%B7%20%D0%B8%D0%BC%D0%B5%D0%BD%D0%B8"></script>
+<script type="text/javascript" id="rlt-proxy-js-after">
+/* <![CDATA[ */
+	window.addEventListener( 'DOMContentLoaded', function() {
+		rltInitialize( {"token":null,"iframeOrigins":["https:\/\/widgets.wp.com"]} );
+	} );
+/* ]]> */
+</script>
+<script type="text/javascript" crossorigin="anonymous" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/importmap-polyfill.min.js" id="es-module-shims-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="media-video-jwt-bridge-js-extra">
+/* <![CDATA[ */
+var videopressAjax = {"ajaxUrl":"https:\/\/helpbw.wordpress.com\/wp-admin\/admin-ajax.php","bridgeUrl":"\/wp-content\/mu-plugins\/jetpack-plugin\/sun\/jetpack_vendor\/automattic\/jetpack-videopress\/build\/lib\/token-bridge.js","post_id":"1563"};
+/* ]]> */
+</script>
+<script type="text/javascript" id="wpcom-actionbar-placeholder-js-extra">
+/* <![CDATA[ */
+var actionbardata = {"siteID":"125712666","postID":"1563","siteURL":"http:\/\/helpbw.wordpress.com","xhrURL":"https:\/\/helpbw.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"84c01011fd","isLoggedIn":"","statusMessage":"","subsEmailDefault":"instantly","proxyScriptUrl":"https:\/\/s0.wp.com\/wp-content\/js\/wpcom-proxy-request.js?ver=20211021","shortlink":"https:\/\/wp.me\/p8vtBE-pd","i18n":{"followedText":"New posts from this site will now appear in your <a href=\"https:\/\/wordpress.com\/read\">Reader<\/a>","foldBar":"\u0421\u0432\u0435\u0440\u043d\u0443\u0442\u044c \u044d\u0442\u0443 \u043f\u0430\u043d\u0435\u043b\u044c","unfoldBar":"\u0420\u0430\u0437\u0432\u0435\u0440\u043d\u0443\u0442\u044c \u044d\u0442\u0443 \u043f\u0430\u043d\u0435\u043b\u044c"}};
+/* ]]> */
+</script>
+<script crossorigin="anonymous" type="text/javascript" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/%25D0%2591%25D0%25B5%25D0%25B7%2520%25D0%25B8%25D0%25BC%25D0%25B5%25D0%25BD%25D0%25B8_002"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://helpbw.wordpress.com/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/a.htm">
+<link rel="shortlink" href="https://wp.me/p8vtBE-pd">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/?format=json&amp;url=https%3A%2F%2Fhelpbw.wordpress.com%2F2022%2F09%2F16%2Fodata-%25d1%2581%25d0%25b5%25d1%2580%25d0%25b2%25d0%25b8%25d1%2581-%25d0%25bd%25d0%25b0-cds%2F&amp;for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/?format=xml&amp;url=https%3A%2F%2Fhelpbw.wordpress.com%2F2022%2F09%2F16%2Fodata-%25d1%2581%25d0%25b5%25d1%2580%25d0%25b2%25d0%25b8%25d1%2581-%25d0%25bd%25d0%25b0-cds%2F&amp;for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Odata Сервис на CDS.">
+<meta property="og:url" content="https://helpbw.wordpress.com/2022/09/16/odata-%d1%81%d0%b5%d1%80%d0%b2%d0%b8%d1%81-%d0%bd%d0%b0-cds/">
+<meta property="og:description" content="Построение Odata сервисов с помощью CDS, без использования ABAP и Bex.">
+<meta property="article:published_time" content="2022-09-16T08:41:39+00:00">
+<meta property="article:modified_time" content="2022-09-16T14:58:14+00:00">
+<meta property="og:site_name" content="SAP BW справочник">
+<meta property="og:image" content="https://helpbw.files.wordpress.com/2022/09/2.jpg">
+<meta property="og:image:width" content="255">
+<meta property="og:image:height" content="34">
+<meta property="og:image:alt" content="CDS_LSBLE_annonation">
+<meta property="og:locale" content="ru_RU">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+<meta name="twitter:text:title" content="Odata Сервис на&nbsp;CDS.">
+<meta name="twitter:image" content="https://helpbw.files.wordpress.com/2022/09/2.jpg?w=144">
+<meta name="twitter:image:alt" content="CDS_LSBLE_annonation">
+<meta name="twitter:card" content="summary">
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel="search" type="application/opensearchdescription+xml" href="https://helpbw.wordpress.com/osd.xml" title="SAP BW справочник">
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com">
+<link rel="pingback" href="https://helpbw.wordpress.com/xmlrpc.php"><meta name="application-name" content="SAP BW справочник"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="Полезная информация для работы по SAP BW."><meta name="msapplication-task" content="name=Подписаться;action-uri=https://helpbw.wordpress.com/feed/;icon-uri=https://helpbw.files.wordpress.com/2017/04/cropped-saplg11.jpg?w=16"><meta name="msapplication-task" content="name=Зарегистрируйтесь и начните вести бесплатный блог;action-uri=http://wordpress.com/signup/;icon-uri=https://s0.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Поддержка WordPress.com;action-uri=http://support.wordpress.com/;icon-uri=https://s0.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Форумы WordPress.com;action-uri=http://forums.wordpress.com/;icon-uri=https://s0.wp.com/i/favicon.ico"><meta name="description" content="Построение Odata сервисов с помощью CDS, без использования ABAP и Bex. Odata Сервисы можно делать на CDS, помимо создания Odata Сервисов через ABAP и BEx Query. Сначала можно изучить о CDS в целом в следующих статьях на русском: Практика освоения ABAP CDS для непрограммистов. Часть 1&nbsp; - в общем о CDS (что это такое). Практика…">
+
+			<style>
+			.wordads-ad-wrapper {
+				position: absolute;
+				visibility: hidden;
+				font: normal 11px Arial, sans-serif;
+				letter-spacing: 1px;
+				text-decoration: none;
+				width: 100%;
+				margin: 25px auto;
+				padding: 0;
+				clear: both;
+			}
+			.wordads-ad-title {
+				margin: 0 auto 5px auto;
+			}
+			.wordads-ad-controls {
+				margin: 5px auto 0 auto;
+				text-align: right;
+			}
+			.wordads-ad-controls span {
+				cursor: pointer;
+			}
+			.wordads-ad {
+				width: 300px;
+				max-width: 580px;
+				margin: 0 auto;
+			}
+			.wordads-ad iframe {
+				margin: 0;
+				padding: 0;
+			}
+			.wordads-ad.wordads-ad-responsive {
+				width: 100%;
+			}
+			</style>
+		<script type="text/javascript">
+/* <![CDATA[ */
+let wa_smart = { 'network_id': 3905, 'site_id': 474853, 'page_id': 1572546, 'formats': [ { 'id': 110354, 'tagId': 'sas_110354' } ], 'blog_id': 125712666, 'post_id': 1563, 'theme': 'pub/penscratch-2', 'target': 'iab_category=IAB19;iab_category=IAB20;iab_category=IAB23;wp_blog_id=125712666;language=ru', 'inline': { 'title': 'Реклама', 'gdpr': '', 'format_id': 110354, 'max_slots': 20, 'max_blaze_slots': 1, 'enabled': true, 'adflow_enabled': false }, 'openwrap_enabled': true }; wa_smart.cmd = [];
+/* ]]> */
+</script>
+		<script>
+			window.sas_fallback = window.sas_fallback || [];
+			window.sas_fallback.push( { tag: "&lt;div class=&quot;OUTBRAIN wa-ob-widget&quot;data-ob-contentUrl=&quot;https://helpbw.wordpress.com/2022/09/16/odata-%d1%81%d0%b5%d1%80%d0%b2%d0%b8%d1%81-%d0%bd%d0%b0-cds/&quot;data-widget-id=&quot;AR_1&quot;data-ob-installation-key=&quot;WORDP263NC92GIANECJP6HEPM&quot;data-ob-psub=&quot;tech&quot;&gt;&lt;/div&gt;&lt;script&gt;window._stq = window._stq || [];window._stq.push( [ \'extra\', { x_wordads_outbrain: \'widget_render_ar_1\', }, ] );&lt;/script&gt;&lt;script src=&quot;https://widgets.outbrain.com/outbrain.js&quot;&gt;&lt;/script&gt;", type: 'belowpost' } );
+		</script>		<script type="text/javascript">
+		function __ATA_CC() {var v = document.cookie.match('(^|;) ?personalized-ads-consent=([^;]*)(;|$)');return v ? 1 : 0;}
+		var __ATA_PP = { 'pt': 1, 'ht': 0, 'tn': 'penscratch-2', 'uloggedin': 0, 'amp': false, 'consent': __ATA_CC(), 'gdpr_applies': false, 'ad': { 'label': { 'text': 'Реклама' }, 'reportAd': { 'text': 'Пожаловаться на это объявление' } }, 'disabled_slot_formats': [ 'IAD' ], 'siteid': 8982, 'blogid': 125712666 };
+		var __ATA = __ATA || {};
+		__ATA.cmd = __ATA.cmd || [];
+		__ATA.criteo = __ATA.criteo || {};
+		__ATA.criteo.cmd = __ATA.criteo.cmd || [];
+		</script>
+		<script type="text/javascript">
+		(function(){var g=Date.now||function(){return+new Date};function h(a,b){a:{for(var c=a.length,d="string"==typeof a?a.split(""):a,e=0;e<c;e++)if(e in d&&b.call(void 0,d[e],e,a)){b=e;break a}b=-1}return 0>b?null:"string"==typeof a?a.charAt(b):a[b]};function k(a,b,c){c=null!=c?"="+encodeURIComponent(String(c)):"";if(b+=c){c=a.indexOf("#");0>c&&(c=a.length);var d=a.indexOf("?");if(0>d||d>c){d=c;var e=""}else e=a.substring(d+1,c);a=[a.substr(0,d),e,a.substr(c)];c=a[1];a[1]=b?c?c+"&"+b:b:c;a=a[0]+(a[1]?"?"+a[1]:"")+a[2]}return a};var l=0;function m(a,b){var c=document.createElement("script");c.src=a;c.onload=function(){b&&b(void 0)};c.onerror=function(){b&&b("error")};a=document.getElementsByTagName("head");var d;a&&0!==a.length?d=a[0]:d=document.documentElement;d.appendChild(c)}function n(a){var b=void 0===b?document.cookie:b;return(b=h(b.split("; "),function(c){return-1!=c.indexOf(a+"=")}))?b.split("=")[1]:""}function p(a){return"string"==typeof a&&0<a.length}
+		function r(a,b,c){b=void 0===b?"":b;c=void 0===c?".":c;var d=[];Object.keys(a).forEach(function(e){var f=a[e],q=typeof f;"object"==q&&null!=f||"function"==q?d.push(r(f,b+e+c)):null!==f&&void 0!==f&&(e=encodeURIComponent(b+e),d.push(e+"="+encodeURIComponent(f)))});return d.filter(p).join("&")}function t(a,b){a||((window.__ATA||{}).config=b.c,m(b.url))}var u=Math.floor(1E13*Math.random()),v=window.__ATA||{};window.__ATA=v;window.__ATA.cmd=v.cmd||[];v.rid=u;v.createdAt=g();var w=window.__ATA||{},x="s.pubmine.com";
+		w&&w.serverDomain&&(x=w.serverDomain);var y="//"+x+"/conf",z=window.top===window,A=window.__ATA_PP&&window.__ATA_PP.gdpr_applies,B="boolean"===typeof A?Number(A):null,C=window.__ATA_PP||null,D=z?document.referrer?document.referrer:null:null,E=z?window.location.href:document.referrer?document.referrer:null,F,G=n("__ATA_tuuid");F=G?G:null;var H=window.innerWidth+"x"+window.innerHeight,I=n("usprivacy"),J=r({gdpr:B,pp:C,rid:u,src:D,ref:E,tuuid:F,vp:H,us_privacy:I?I:null},"",".");
+		(function(a){var b=void 0===b?"cb":b;l++;var c="callback__"+g().toString(36)+"_"+l.toString(36);a=k(a,b,c);window[c]=function(d){t(void 0,d)};m(a,function(d){d&&t(d)})})(y+"?"+J);}).call(this);
+		</script><script src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/conf"></script>	<script>
+		var sas_fallback = sas_fallback || [];
+		sas_fallback.push(
+			{ tag: "&lt;div id=&quot;atatags-26942-6583d94c3b12c&quot;&gt;&lt;/div&gt;&lt;script&gt;__ATA.cmd.push(function() {__ATA.initDynamicSlot({id: \'atatags-26942-6583d94c3b12c\',location: 120,formFactor: \'001\',label: {text: \'Реклама\',},creative: {reportAd: {text: \'Пожаловаться на это объявление\',},privacySettings: {text: \'Политика конфиденциальности\',}}});});&lt;/script&gt;", type: 'belowpost' },
+			{ tag: "&lt;div id=&quot;atatags-26942-{{unique_id}}&quot;&gt;&lt;/div&gt;&lt;script&gt;__ATA.cmd.push(function() {__ATA.initDynamicSlot({id: \'atatags-26942-{{unique_id}}\',location: 310,formFactor: \'001\',label: {text: \'Реклама\',},creative: {reportAd: {text: \'Пожаловаться на это объявление\',},privacySettings: {text: \'Политика конфиденциальности\',}}});});&lt;/script&gt;", type: 'inline' }
+		);
+	</script>		<script type="text/javascript">
+
+			window.doNotSellCallback = function() {
+
+				var linkElements = [
+					'a[href="https://wordpress.com/?ref=footer_blog"]',
+					'a[href="https://wordpress.com/?ref=footer_website"]',
+					'a[href="https://wordpress.com/?ref=vertical_footer"]',
+					'a[href^="https://wordpress.com/?ref=footer_segment_"]',
+				].join(',');
+
+				var dnsLink = document.createElement( 'a' );
+				dnsLink.href = 'https://wordpress.com/ru/advertising-program-optout/';
+				dnsLink.classList.add( 'do-not-sell-link' );
+				dnsLink.rel = 'nofollow';
+				dnsLink.style.marginLeft = '0.5em';
+				dnsLink.textContent = 'Отказ от продажи персональных данных и их передачи третьим лицам';
+
+				var creditLinks = document.querySelectorAll( linkElements );
+
+				if ( 0 === creditLinks.length ) {
+					return false;
+				}
+
+				Array.prototype.forEach.call( creditLinks, function( el ) {
+					el.insertAdjacentElement( 'afterend', dnsLink );
+				});
+
+				return true;
+			};
+
+		</script>
+		<link rel="icon" href="https://helpbw.files.wordpress.com/2017/04/cropped-saplg11.jpg?w=32" sizes="32x32">
+<link rel="icon" href="https://helpbw.files.wordpress.com/2017/04/cropped-saplg11.jpg?w=192" sizes="192x192">
+<link rel="apple-touch-icon" href="https://helpbw.files.wordpress.com/2017/04/cropped-saplg11.jpg?w=180">
+<meta name="msapplication-TileImage" content="https://helpbw.files.wordpress.com/2017/04/cropped-saplg11.jpg?w=270">
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_gat._anonymizeIp']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script type="text/javascript" async="" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/ga.js"></script>
+<script src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/wp-emoji-release.min.js" defer="defer"></script><link rel="stylesheet" id="gravatar-card-css" href="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/hovercards.min.css"><script type="text/javascript" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/platforms_003" charset="UTF-8" async=""></script><script src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/ata.js"></script><script src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/tag.js"></script><script type="text/javascript" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/obVideo.js" charset="UTF-8" async=""></script><style>div[id^=wrapperContainerForShadowDom_],.obv-video-wrapper{position:relative}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper,.obv-video-wrapper .ob-player-wrapper{z-index:1;top:0;margin-right:auto;margin-left:auto;display:flex;flex-direction:column;position:relative}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper.above-widget,div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper.below-widget,.obv-video-wrapper .ob-player-wrapper.above-widget,.obv-video-wrapper .ob-player-wrapper.below-widget{margin:20px auto}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper.ghost-fixed-size,.obv-video-wrapper .ob-player-wrapper.ghost-fixed-size{margin:unset}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper.obv-hide-wrapper,.obv-video-wrapper .ob-player-wrapper.obv-hide-wrapper{visibility:hidden;position:absolute;z-index:0}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper.ob-sticky .omp-native-description,div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper.ob-sticky .omp-native-title,.obv-video-wrapper .ob-player-wrapper.ob-sticky .omp-native-description,.obv-video-wrapper .ob-player-wrapper.ob-sticky .omp-native-title{-webkit-line-clamp:1}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper.ob-sticky .omp-native-title,.obv-video-wrapper .ob-player-wrapper.ob-sticky .omp-native-title{font-size:16px}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper.ob-sticky .omp-native-description,.obv-video-wrapper .ob-player-wrapper.ob-sticky .omp-native-description{font-size:12px}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper.ob-sticky .omp-sponsor-brand,.obv-video-wrapper .ob-player-wrapper.ob-sticky .omp-sponsor-brand{font-size:11px}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper.ob-sticky .omp-native-button,.obv-video-wrapper .ob-player-wrapper.ob-sticky .omp-native-button{font-size:11px}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper.ob-sticky-z-index,.obv-video-wrapper .ob-player-wrapper.ob-sticky-z-index{z-index:1}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper .ob-inner-player-wrapper,.obv-video-wrapper .ob-player-wrapper .ob-inner-player-wrapper{position:relative;flex:1;overflow:hidden;max-height:100%;max-width:100%}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper .ob-inner-player-wrapper .ob-player,.obv-video-wrapper .ob-player-wrapper .ob-inner-player-wrapper .ob-player{width:100%;height:100%;position:absolute;visibility:hidden;z-index:0;top:0}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper .ob-inner-player-wrapper .ob-player.obv-playing,.obv-video-wrapper .ob-player-wrapper .ob-inner-player-wrapper .ob-player.obv-playing{visibility:visible;position:relative;z-index:1;display:block}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper .ob-inner-player-wrapper .ob-player.obv-playing .ob-inner-player-wrapper,.obv-video-wrapper .ob-player-wrapper .ob-inner-player-wrapper .ob-player.obv-playing .ob-inner-player-wrapper{overflow:visible}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper .obv-title-wrapper,.obv-video-wrapper .ob-player-wrapper .obv-title-wrapper{padding:8px 6px 0;font-size:14px;color:#000}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper .obv-skip-wrapper,.obv-video-wrapper .ob-player-wrapper .obv-skip-wrapper{position:absolute;direction:ltr !important;bottom:14%;right:0;z-index:3;border-radius:2px;border:solid .5px rgba(255,255,255,.7);background-color:rgba(0,0,0,.8);cursor:pointer;font-family:Lato,"sans-serif";font-size:12px;display:flex;align-items:center;color:#fff;gap:8px;padding:8px;line-height:1}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper .obv-skip-wrapper.minimize-skip-button,.obv-video-wrapper .ob-player-wrapper .obv-skip-wrapper.minimize-skip-button{bottom:20%}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper .obv-skip-wrapper.minimize-skip-button>span:first-child,.obv-video-wrapper .ob-player-wrapper .obv-skip-wrapper.minimize-skip-button>span:first-child{font-size:13px}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper .obv-skip-wrapper.minimize-skip-button>.obv-skip-icon,.obv-video-wrapper .ob-player-wrapper .obv-skip-wrapper.minimize-skip-button>.obv-skip-icon{font-size:10px}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper .obv-skip-wrapper.minimize-skip-button>.obv-skip-icon:after,.obv-video-wrapper .ob-player-wrapper .obv-skip-wrapper.minimize-skip-button>.obv-skip-icon:after{font-size:12px}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper .obv-skip-wrapper>span:first-child,.obv-video-wrapper .ob-player-wrapper .obv-skip-wrapper>span:first-child{direction:ltr !important;font-family:Arial,"sans-serif";font-size:18px}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper .obv-skip-wrapper>.obv-skip-icon,.obv-video-wrapper .ob-player-wrapper .obv-skip-wrapper>.obv-skip-icon{font-size:12px;position:relative}div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper .obv-skip-wrapper>.obv-skip-icon:after,.obv-video-wrapper .ob-player-wrapper .obv-skip-wrapper>.obv-skip-icon:after{content:"⏽";font-size:14px;margin-left:1px}div[id^=wrapperContainerForShadowDom_] #skip-btn,.obv-video-wrapper #skip-btn{display:none !important}div[id^=wrapperContainerForShadowDom_] .obv-visual-id,.obv-video-wrapper .obv-visual-id{position:absolute;color:#e5e4e2;font-size:8px;bottom:1px;right:1px;z-index:1;opacity:.5;letter-spacing:1px;text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000}in-widget-styling,div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper.in-widget,.obv-video-wrapper .ob-player-wrapper.in-widget,div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper.covering-widget,.obv-video-wrapper .ob-player-wrapper.covering-widget{position:absolute}in-widget-styling .ob-player[id$=VI_Player],div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper.in-widget .ob-player[id$=VI_Player],.obv-video-wrapper .ob-player-wrapper.in-widget .ob-player[id$=VI_Player],div[id^=wrapperContainerForShadowDom_] .ob-player-wrapper.covering-widget .ob-player[id$=VI_Player],.obv-video-wrapper .ob-player-wrapper.covering-widget .ob-player[id$=VI_Player]{display:flex !important;align-items:center;background:#000}.no-transition{transition:unset !important}</style><script src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/aniview.js"></script><script src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/vpts.js"></script><script src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/omp.min.js"></script><link href="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/omp.min.css" id="omp-style" rel="stylesheet" type="text/css"><script type="text/javascript" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/platforms_004" charset="UTF-8" async=""></script><script id="script-451587-1" type="text/javascript" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/sas-banner-1.4.js" async="true"></script><script type="text/javascript" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/sbt.js"></script><style>.sbt{width:100%;height:100%;position:relative;line-height:0;background:#000;overflow:hidden}.sbt,.sbt *{box-sizing:border-box}.sbt button:focus{outline:0}.sbt .sbt-wrapper::-webkit-scrollbar{width:0!important;height:0!important}.sbt .sbt-wrapper{position:absolute;height:100%;width:100%;overflow:hidden;-ms-overflow-style:none;overflow:-moz-scrollbars-none}.sbt .sbt-wrapper .sbt-placeholder{min-width:100%;min-height:100%;width:100%;height:100%}.sbt .sbt-wrapper .sbt-placeholder>canvas,.sbt .sbt-wrapper .sbt-placeholder>div,.sbt .sbt-wrapper .sbt-placeholder>iframe,.sbt .sbt-wrapper .sbt-placeholder>img,.sbt .sbt-wrapper .sbt-placeholder>object,.sbt .sbt-wrapper .sbt-placeholder>video{min-width:100%;min-height:100%;width:100%;height:100%;position:absolute;background:#000;top:0;left:0;z-index:1;border:none}.sbt .sbt-nonlin-close{position:absolute;z-index:1001;top:15px;font-size:1.5em;color:#efefef;right:10px;cursor:pointer}</style><script type="text/javascript" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/outbrain_002.js"></script><style type="text/css">@font-face{font-family:materialicons;src:url(data:application/x-font-ttf;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBVcAAAC8AAAAYGNtYXDjgIysAAABHAAAAHRnYXNwAAAAEAAAAZAAAAAIZ2x5ZiuRYbcAAAGYAAAB7GhlYWQOewzKAAADhAAAADZoaGVhB0IDywAAA7wAAAAkaG10eB4ABL4AAAPgAAAAKGxvY2ECJgG2AAAECAAAABZtYXhwAA8AMQAABCAAAAAgbmFtZUu5ugUAAARAAAAB5nBvc3QAAwAAAAAGKAAAACAAAwO3AZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADodgPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAWAAAABIAEAADAAIAAQAg4DTgN+BQ5c3odv/9//8AAAAAACDgNOA34E/lzeh2//3//wAB/+Mf0B/OH7caOxeTAAMAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAH//wAPAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAIBAACBAwAC1QADAAcAAAEzESMhETMRAlaqqv6qqgLV/awCVP2sAAABAVYAgQMqAtUAAgAACQIBVgHU/iwC1f7W/tYABACAACsDgAMrAAIAFAAmAC4AAAEVJycBBycOAQc1PgE3JxEnIxEzJwE0LgInNR4DFRQGByc+ASccAQcnNR4BAgBa8ALKNlgiTiwbMBW21qrKygKqHzlNL0BuTy0XFUAKDGoCaDA6AwG0WoT9NjZYGykKWAcaEbb+4NYBAMr+tjNcSzYOWA9FY3tEMFsnQhk5HggMBmheGFsAAAAAAwCAADUDgAMhABUAHAAiAAABHgMVFA4CBzU+AzU0LgInExQGBxEeASUzNxEnIwJWQG5PLS1PbUEuTjkfHzlNL2o6MDA6/cCq1taqAyEPRWN7REV7Y0UOWA03S1wzM1xLNg7+4jlbGAFYGFtH1v1U1gAAAAABANYAgQMqAtUACwAAAQcXBycHJzcnNxc3Ayru7jzu7jzu7jzu7gKZ7u487u487u487u4AAQCSAIEDgAK9AAUAACUBFwEnNwGAAcQ8/gDuOvcBxjz+AO48AAAAAAEAAAABAAD+kIdjXw889QALBAAAAAAA1e5kUQAAAADV7mRRAAAAAAOAAysAAAAIAAIAAAAAAAAAAQAAA8D/wAAABAAAAAAAA4AAAQAAAAAAAAAAAAAAAAAAAAoEAAAAAAAAAAAAAAACAAAABAABAAQAAVYEAACABAAAgAQAANYEAACSAAAAAAAKABQAHgAyAEAAjgDIAOIA9gAAAAEAAAAKAC8ABAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAOAK4AAQAAAAAAAQAPAAAAAQAAAAAAAgAHAKgAAQAAAAAAAwAPAE4AAQAAAAAABAAPAL0AAQAAAAAABQALAC0AAQAAAAAABgAPAHsAAQAAAAAACgAaAOoAAwABBAkAAQAeAA8AAwABBAkAAgAOAK8AAwABBAkAAwAeAF0AAwABBAkABAAeAMwAAwABBAkABQAWADgAAwABBAkABgAeAIoAAwABBAkACgA0AQR2aWRhem9vLWluLXJlYWQAdgBpAGQAYQB6AG8AbwAtAGkAbgAtAHIAZQBhAGRWZXJzaW9uIDEuMABWAGUAcgBzAGkAbwBuACAAMQAuADB2aWRhem9vLWluLXJlYWQAdgBpAGQAYQB6AG8AbwAtAGkAbgAtAHIAZQBhAGR2aWRhem9vLWluLXJlYWQAdgBpAGQAYQB6AG8AbwAtAGkAbgAtAHIAZQBhAGRSZWd1bGFyAFIAZQBnAHUAbABhAHJ2aWRhem9vLWluLXJlYWQAdgBpAGQAYQB6AG8AbwAtAGkAbgAtAHIAZQBhAGRGb250IGdlbmVyYXRlZCBieSBJY29Nb29uLgBGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABJAGMAbwBNAG8AbwBuAC4AAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA) format("truetype"),url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAAaUAAsAAAAABkgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAABCAAAAGAAAABgDxIFV2NtYXAAAAFoAAAAdAAAAHTjgIysZ2FzcAAAAdwAAAAIAAAACAAAABBnbHlmAAAB5AAAAewAAAHsK5Fht2hlYWQAAAPQAAAANgAAADYOewzKaGhlYQAABAgAAAAkAAAAJAdCA8tobXR4AAAELAAAACgAAAAoHgAEvmxvY2EAAARUAAAAFgAAABYCJgG2bWF4cAAABGwAAAAgAAAAIAAPADFuYW1lAAAEjAAAAeYAAAHmS7m6BXBvc3QAAAZ0AAAAIAAAACAAAwAAAAMDtwGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAA6HYDwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEAFgAAAASABAAAwACAAEAIOA04DfgUOXN6Hb//f//AAAAAAAg4DTgN+BP5c3odv/9//8AAf/jH9Afzh+3GjsXkwADAAEAAAAAAAAAAAAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAACAQAAgQMAAtUAAwAHAAABMxEjIREzEQJWqqr+qqoC1f2sAlT9rAAAAQFWAIEDKgLVAAIAAAkCAVYB1P4sAtX+1v7WAAQAgAArA4ADKwACABQAJgAuAAABFScnAQcnDgEHNT4BNycRJyMRMycBNC4CJzUeAxUUBgcnPgEnHAEHJzUeAQIAWvACyjZYIk4sGzAVttaqysoCqh85TS9Abk8tFxVACgxqAmgwOgMBtFqE/TY2WBspClgHGhG2/uDWAQDK/rYzXEs2DlgPRWN7RDBbJ0IZOR4IDAZoXhhbAAAAAAMAgAA1A4ADIQAVABwAIgAAAR4DFRQOAgc1PgM1NC4CJxMUBgcRHgElMzcRJyMCVkBuTy0tT21BLk45Hx85TS9qOjAwOv3AqtbWqgMhD0Vje0RFe2NFDlgNN0tcMzNcSzYO/uI5WxgBWBhbR9b9VNYAAAAAAQDWAIEDKgLVAAsAAAEHFwcnByc3JzcXNwMq7u487u487u487u4Cme7uPO7uPO7uPO7uAAEAkgCBA4ACvQAFAAAlARcBJzcBgAHEPP4A7jr3AcY8/gDuPAAAAAABAAAAAQAA/pCHY18PPPUACwQAAAAAANXuZFEAAAAA1e5kUQAAAAADgAMrAAAACAACAAAAAAAAAAEAAAPA/8AAAAQAAAAAAAOAAAEAAAAAAAAAAAAAAAAAAAAKBAAAAAAAAAAAAAAAAgAAAAQAAQAEAAFWBAAAgAQAAIAEAADWBAAAkgAAAAAACgAUAB4AMgBAAI4AyADiAPYAAAABAAAACgAvAAQAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEADwAAAAEAAAAAAAIABwCoAAEAAAAAAAMADwBOAAEAAAAAAAQADwC9AAEAAAAAAAUACwAtAAEAAAAAAAYADwB7AAEAAAAAAAoAGgDqAAMAAQQJAAEAHgAPAAMAAQQJAAIADgCvAAMAAQQJAAMAHgBdAAMAAQQJAAQAHgDMAAMAAQQJAAUAFgA4AAMAAQQJAAYAHgCKAAMAAQQJAAoANAEEdmlkYXpvby1pbi1yZWFkAHYAaQBkAGEAegBvAG8ALQBpAG4ALQByAGUAYQBkVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwdmlkYXpvby1pbi1yZWFkAHYAaQBkAGEAegBvAG8ALQBpAG4ALQByAGUAYQBkdmlkYXpvby1pbi1yZWFkAHYAaQBkAGEAegBvAG8ALQBpAG4ALQByAGUAYQBkUmVndWxhcgBSAGUAZwB1AGwAYQBydmlkYXpvby1pbi1yZWFkAHYAaQBkAGEAegBvAG8ALQBpAG4ALQByAGUAYQBkRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==) format("woff");font-weight:400;font-style:normal}</style><style type="text/css">._12d6H{border-radius:5px}._12d6H,.x-LP8{overflow:hidden}.x-LP8{transition:height .2s}</style><style type="text/css">._33vU3{opacity:1!important}._33SJW{direction:ltr;position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;z-index:2;opacity:0;pointer-events:none}._33SJW *{box-sizing:border-box;line-height:100%;direction:inherit}._33SJW._33vU3 ._1UrEn ._16d1e,._33SJW._33vU3 ._1UrEn .Zn3T9{transform:translateY(0);opacity:1}._33SJW._33vU3._3YbIt{pointer-events:all}._33SJW ._1UrEn{position:relative;width:100%;height:100%;cursor:pointer}._33SJW ._1UrEn .Zn3T9{position:absolute;justify-content:space-between;bottom:0;left:0;width:100%;padding:10px;background:-webkit-linear-gradient(transparent,rgba(0,0,0,.6));background:-moz-linear-gradient(transparent 0,rgba(0,0,0,.6) 100%);background:-o-linear-gradient(transparent 0,rgba(0,0,0,.6) 100%);background:linear-gradient(transparent,rgba(0,0,0,.6));transition:transform .5s,opacity .5s;opacity:0;transform:translateY(50%)}._33SJW ._1UrEn .Zn3T9,._33SJW ._1UrEn .Zn3T9 ._3RvOK{display:flex;align-items:center}._33SJW ._1UrEn .Zn3T9 ._3RvOK div+div{margin-left:6px}._33SJW ._1UrEn ._16d1e{position:absolute;display:flex;align-items:center;justify-content:flex-start;top:0;left:0;width:100%;padding:10px;background:-webkit-linear-gradient(bottom,transparent,rgba(0,0,0,.6));background:-moz-linear-gradient(bottom,transparent 0,rgba(0,0,0,.6) 100%);background:-o-linear-gradient(bottom,transparent 0,rgba(0,0,0,.6) 100%);background:linear-gradient(0deg,transparent 0,rgba(0,0,0,.6));transition:transform .5s,opacity .5s;opacity:0;transform:translateY(-50%);min-height:55px}._33SJW ._1UrEn ._16d1e ._3g_pA{cursor:pointer;padding:5px;opacity:0;pointer-events:none}._33SJW ._1UrEn ._16d1e ._3g_pA._33vU3{pointer-events:all}._33SJW ._1UrEn ._16d1e ._3g_pA i{font-size:22px;color:#fff;text-shadow:0 0 3px rgba(0,0,0,.5)}</style><style type="text/css">._2yWZT:before{content:"\E037"}._2yWZT:before,._3dhkp:before{font-family:materialicons!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;display:inline-block;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}._3dhkp:before{content:"\E034"}._2T36N:before{content:"\E050"}._2T36N:before,._3_3I2:before{font-family:materialicons!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;display:inline-block;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}._3_3I2:before{content:"\E04F"}._1o6eJ:before{font-family:materialicons!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;display:inline-block;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\E5CD"}</style><style type="text/css">._1QQvl{position:absolute;width:100%;bottom:0;left:0;z-index:10;height:3px;transition:height .1s}._1QQvl._2dc_N._1ztp8{height:8px}._1QQvl._2dc_N._1ztp8 ._1uGNr{transform:scaleX(.95) translateY(-50px)}._1QQvl._2sbxu ._1uGNr ._2o_Tj{background-color:#fc0}._1QQvl._1ztp8 ._1uGNr ._2o_Tj{background-color:#4080ff}._1QQvl ._1uGNr{position:relative;height:100%;width:100%;background-color:hsla(0,0%,100%,.5);transition:transform .2s}._1QQvl ._1uGNr ._2o_Tj{width:0;height:100%;transition:background-color .2s}</style><style type="text/css">._20fW7{cursor:pointer;padding:5px;pointer-events:all}._20fW7 ._10stO{font-size:22px;color:#fff;text-shadow:0 0 3px rgba(0,0,0,.5)}</style><style type="text/css">._3AZMS{cursor:pointer;padding:5px;pointer-events:all}._3AZMS img._2Cfml{max-width:32px}</style><style type="text/css">@keyframes _3GYy6{0%{transform:scale(0);opacity:0}50%{transform:scale(1);opacity:1}to{transform:scale(2);opacity:0}}._1ZGDn{width:100%;height:100%;position:absolute;pointer-events:none;font-size:10px}._1ZGDn,._1ZGDn ._3dNO8{display:flex;align-items:center;justify-content:center}._1ZGDn ._3dNO8{width:5em;height:5em;background-color:rgba(0,0,0,.5);border-radius:5em;transform:scale(0);opacity:0}._1ZGDn ._3dNO8._3CoSq{animation:_3GYy6 .5s linear 1 normal}._1ZGDn ._3dNO8 .Efhjq{font-size:2em;color:#fff}</style><style type="text/css">a._2xvNZ{text-decoration:none;position:absolute;align-items:center;justify-content:center;pointer-events:all;z-index:1}a._2xvNZ,a._2xvNZ ._3prrU,a._2xvNZ ._29yId,a._2xvNZ ._29yId._2TCKu{display:flex}a._2xvNZ._2pGu4{display:none}</style><style type="text/css">.T6BTS{position:absolute;display:none;pointer-events:none;font-family:Arial,Helvetica,sans-serif}.T6BTS.pBSte{display:block}.T6BTS:after{content:attr(title)}</style><style type="text/css">._2tC1O{background-color:rgba(0,0,0,.9);border:1px solid #fff;padding:10px;cursor:pointer;position:absolute;pointer-events:all;border-radius:2px;z-index:10}._2tC1O._2dZOZ{display:none}._2tC1O ._3qhve{color:#fff;font-size:14px;font-family:Arial,Helvetica,sans-serif}</style><style type="text/css">@-webkit-keyframes _3pFUO{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes _3pFUO{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}._2Z2bN{position:absolute;width:100%;height:100%;z-index:10;pointer-events:none;display:flex;align-items:center;justify-content:center}._2Z2bN._1v9bW{display:none}._2Z2bN .JV0BG,._2Z2bN .JV0BG:after{border-radius:50%;width:32px;height:32px}._2Z2bN .JV0BG{font-size:10px;position:relative;border-top:3px solid hsla(0,0%,100%,.2);border-right:3px solid hsla(0,0%,100%,.2);border-bottom:3px solid hsla(0,0%,100%,.2);border-left:3px solid #fff;-webkit-transform:translateZ(0);-ms-transform:translateZ(0);transform:translateZ(0);-webkit-animation:_3pFUO .7s infinite linear;animation:_3pFUO .7s infinite linear}</style><style type="text/css">._2Tpcc{width:100%;height:100%;top:0;left:0;background-size:cover;background-position:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;pointer-events:all}._2Tpcc._2xWwj{display:none}._2Tpcc .M3qTj{width:5em;height:5em;background-color:rgba(0,0,0,.5);border-radius:5em;display:flex;align-items:center;justify-content:center}._2Tpcc .M3qTj>i{font-size:2em;color:#fff}</style><style type="text/css">._3JM7v:before{content:"\E037"}._3JM7v:before,.opWbT:before{font-family:materialicons!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;display:inline-block;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opWbT:before{content:"\E034"}._1UzXk:before{content:"\E050"}._1UzXk:before,.hFYko:before{font-family:materialicons!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;display:inline-block;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.hFYko:before{content:"\E04F"}._3rKTn:before{font-family:materialicons!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;display:inline-block;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;content:"\E5CD"}</style><link href="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/actionbar.css" type="text/css" rel="stylesheet"><script type="text/javascript" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/platforms_002" charset="UTF-8" async=""></script><script type="text/javascript" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/platforms" charset="UTF-8" async=""></script></head>
+
+<body class="post-template-default single single-post postid-1563 single-format-standard wp-embed-responsive customizer-styles-applied tags-hidden author-hidden">
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">Перейти к содержимому</a>
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding">
+							<p class="site-title"><a href="https://helpbw.wordpress.com/" rel="home">SAP BW справочник</a></p>
+							<p class="site-description">Полезная информация для работы по SAP BW.</p>
+					</div>
+
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<button class="menu-toggle">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><rect x="0" fill="none" width="16" height="16"></rect><g><path id="menu-icon" d="M0 14h16v-2H0v2zM0 2v2h16V2H0zm0 7h16V7H0v2z"></path></g></svg>
+				Меню			</button>
+			<div class="menu-main-menu-container"><ul id="menu-main-menu" class="menu nav-menu" aria-expanded="false"><li id="menu-item-36" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-36"><a href="https://helpbw.wordpress.com/">Главная</a></li>
+<li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a href="https://helpbw.wordpress.com/resources/">Ссылки по BW</a></li>
+<li id="menu-item-626" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-626"><a href="https://helpbw.wordpress.com/bw-on-hana/">BW on HANA</a></li>
+<li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a href="https://helpbw.wordpress.com/contacts/">Контакты</a></li>
+</ul></div>		</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+		
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+<article id="post-1563" class="post-1563 post type-post status-publish format-standard hentry category-how-to category-web-services tag-cds tag-odata tag-web-service">
+	<header class="entry-header">
+		<h1 class="entry-title">Odata Сервис на&nbsp;CDS.</h1>		
+		<div class="entry-meta">
+			<span class="posted-on"><a href="https://helpbw.wordpress.com/2022/09/16/odata-%d1%81%d0%b5%d1%80%d0%b2%d0%b8%d1%81-%d0%bd%d0%b0-cds/" rel="bookmark"><time class="entry-date published" datetime="2022-09-16T12:41:39+04:00">16.09.2022</time><time class="updated" datetime="2022-09-16T18:58:14+04:00">16.09.2022</time></a></span><span class="byline"><span class="author vcard"><span class="sep"> ~ </span><a class="url fn n" href="https://helpbw.wordpress.com/author/hazysonic/">Vyacheslav</a></span></span>					</div><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<p>Построение Odata сервисов с помощью CDS, без использования ABAP и Bex.<span id="more-1563"></span></p>
+<p>Odata Сервисы можно делать на CDS, помимо создания Odata Сервисов через ABAP и BEx Query.</p>
+<p>Сначала можно изучить о CDS в целом в следующих статьях на русском:</p>
+<p><a href="https://sappro.sapland.ru/kb/articles/stats/praktika-osvoeniya-abap-cds-dlya-neprogrammistov-chasti1.html" target="_blank" rel="noopener">Практика освоения ABAP CDS для непрограммистов. Часть 1</a>&nbsp; — в общем о CDS (что это такое).</p>
+<p><a href="https://sappro.sapland.ru/kb/articles/stats/praktika-osvoeniya-abap-cds-dlya-neprogrammistov-chasti-2.html" target="_blank" rel="noopener">Практика освоения ABAP CDS для непрограммистов. Часть 2</a> — как установить среду разработки для создания CDS (установка Eclipse, ADT, etc..).</p>
+<p><a href="https://sappro.sapland.ru/kb/articles/stats/praktika-osvoeniya-abap-cds-dlya-neprogrammistov-chasti-3.html" target="_blank" rel="noopener">Практика освоения ABAP CDS для непрограммистов. Часть 3</a> — основной пример, как создать простейший CDS ракурс.</p>
+<p><a href="https://sappro.sapland.ru/kb/articles/stats/praktika-osvoeniya-abap-cds-dlya-neprogrammistov-chasti-4.html" target="_blank" rel="noopener">Практика освоения ABAP CDS для непрограммистов. Часть 4 </a>— рассказывается про ассоциации и как их использовать.</p>
+<p>CDS Odata сервисы могут выдавать значения по указанным критериям, 
+переданными как параметр внутри адреса. Кроме того CDS Odata сервисы 
+могут передать Input parameter в код или в CV.</p>
+<p>Аннотация&nbsp;<strong>@OData.publish: true</strong> позволяет сделать этот CDS как Odata сервис.</p>
+<p>В транзакции /n/IWFND/MAINT_SERVICE можно добавить этот Odata сервис и протестировать его.</p>
+<p>Для передачи Input параметра и получения нескольких значений по 
+неуникальному ключу используется следующий синтаксис вызова сервиса: <strong>/sap/opu/odata/sap/ZI_CM_CALENDAR_DATE_CDS/ZI_CM_CALENDAR_DATE(P_CutDate=’20170217′,P_cutofftype=’EOD’)/Set.</strong></p>
+<p>Стоит обратить внимание, что указанный выше синтаксис по передаче 
+параметров, транзакция для тестирования не предлагает в качестве 
+шаблона. По кнопке EntitySets будет предложен вариант 
+ZI_CM_CALENDAR_DATESet. В него параметр передаётся с синтаксисом: <strong>/sap/opu/odata/sap/ZI_CM_CALENDAR_DATE_CDS/ZI_CM_CALENDAR_DATESet(P_CutDate=’20170217′,CutDate=’20170217′)</strong>.
+ Такой вызов сервиса может вернуть только одно ключевое значение!&nbsp; И
+ если их несколько, то такой вызов будет выдавать ошибку. Для 
+возможности возврата из сервиса нескольких значений по параметру нужно 
+использовать синтаксис, который я показывал выше, т.е. использовать <strong>ZI_CM_CALENDAR_DATE </strong>вместо <strong>ZI_CM_CALENDAR_DATESet</strong>. Кроме того необходимо добавлять <strong>/Set </strong>в конце адреса с вызовом.</p>
+<div class="wordads-ad-wrapper" style="position: relative; visibility: visible;"><div class="wordads-ad"><div class="wordads-ad-title">Реклама</div><div class="wordads-ad-content wordads-ad-inline" id="wordads-ad-975007"><div id="equativ_feedback_110354"><div id="equativ_feedback_closeButton_110354"><a class="closeFeedback"></a></div><style type="text/css">
+            #equativ_feedback_110354 {
+              width: 300px;
+              left: 0px;
+              position: relative;
+              z-index: 1000;
+              top: 28px;
+              font-size: 14px;
+            }
+            #equativ_feedback_closeButton_110354 {
+              width: 15px;
+              height: 15px;
+              float: right;
+              cursor: pointer;
+              margin: -25px  3px 0 0 !important;
+            }
+            .closeFeedback {
+              position: relative;
+              opacity: 1;
+              width: 18px;
+              height: 18px;
+              cursor: pointer;
+              margin-left: 5px;
+            }
+            .closeFeedback:before, .closeFeedback:after {
+              position: absolute;
+              content: ' ';
+              height: 15px;
+              width: 2px;
+              background-color: #05b1f5;
+            }
+            .closeFeedback:before {
+              transform: rotate(45deg);
+            }
+            .closeFeedback:after {
+              transform: rotate(-45deg);
+            }     
+          </style></div><script id="sas_script1" type="text/javascript" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/ac" async=""></script><!--TagID--><iframe src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/a_007.htm" width="300" height="250" frameborder="0" allow="autoplay;fullscreen;" scrolling="no" marginheight="0" marginwidth="0" id="wordads-ad-975007_iframe"></iframe></div><div class="wordads-ad-controls"></div></div></div><p>Использование аннотации <strong>@<span class="skimlinks-unlinked">EndUserText.label</span></strong>
+ переда каждым полем позволяет отображать в сервисе лэйбл (описание) 
+поля в сервисе. Т.е. например ввод такой аннотации перед кодом с валютой
+ :</p>
+<p>@<span class="skimlinks-unlinked">EndUserText.label</span>: ‘Валюта’<br>CURRENCY</p>
+<figure data-shortcode="caption" id="attachment_1582" aria-describedby="caption-attachment-1582" style="width: 255px" class="wp-caption alignnone"><img data-attachment-id="1582" data-permalink="https://helpbw.wordpress.com/2022/09/16/odata-%d1%81%d0%b5%d1%80%d0%b2%d0%b8%d1%81-%d0%bd%d0%b0-cds/2-12/" data-orig-file="https://helpbw.files.wordpress.com/2022/09/2.jpg" data-orig-size="255,34" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="CDS_LSBLE_annonation" data-image-description="" data-image-caption="&lt;p&gt;Аннотация label в CDS&lt;/p&gt;
+" data-medium-file="https://helpbw.files.wordpress.com/2022/09/2.jpg?w=255" data-large-file="https://helpbw.files.wordpress.com/2022/09/2.jpg?w=255" class="alignnone size-full wp-image-1582" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/2.webp" alt="CDS_LSBLE_annonation" width="255" height="34" srcset="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/2.webp 255w, Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/2_002.webp 150w" sizes="(max-width: 255px) 100vw, 255px"><figcaption id="caption-attachment-1582" class="wp-caption-text">Аннотация label в CDS</figcaption></figure>
+<p>отобразит в сервисе кроме технического имени поля в атрибуте «sap: label» русское описание поля.</p>
+<figure data-shortcode="caption" id="attachment_1581" aria-describedby="caption-attachment-1581" style="width: 794px" class="wp-caption alignnone"><img data-attachment-id="1581" data-permalink="https://helpbw.wordpress.com/2022/09/16/odata-%d1%81%d0%b5%d1%80%d0%b2%d0%b8%d1%81-%d0%bd%d0%b0-cds/1-34/" data-orig-file="https://helpbw.files.wordpress.com/2022/09/1.jpg" data-orig-size="794,24" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Odata_cds_serv" data-image-description="" data-image-caption="&lt;p&gt;Отображение в сервисе лэйбл поля&lt;/p&gt;
+" data-medium-file="https://helpbw.files.wordpress.com/2022/09/1.jpg?w=300" data-large-file="https://helpbw.files.wordpress.com/2022/09/1.jpg?w=656" class="alignnone size-full wp-image-1581" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/1_002.webp" alt="Odata_cds_serv" width="794" height="24" srcset="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/1_002.webp 794w, Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/1_003.webp 150w, Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/1_004.webp 300w, Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/1.webp 768w" sizes="(max-width: 794px) 100vw, 794px"><figcaption id="caption-attachment-1581" class="wp-caption-text">Отображение в сервисе лэйбл поля</figcaption></figure>
+
+
+<p>Что бы посмотреть метаданные, необходимо вконце написать «$metadata», т.е. в данном примере …<strong>ZI_CM_CALENDAR_DATE/$metadata</strong></p>
+
+
+
+<p></p>
+
+
+
+<p>Программа RUTDDLSACT помогает активировать CDS Ракурсы (источник DDL) в целевой системе при переносе. </p>
+<div id="atatags-370373-6583d94c41434">
+		<script type="text/javascript">
+			__ATA.cmd.push(function() {
+				__ATA.initVideoSlot('atatags-370373-6583d94c41434', {
+					sectionId: '370373',
+					format: 'inread'
+				});
+			});
+		</script>
+	</div>	<div id="ob_holder" style="display: none;"></div><div class="OUTBRAIN wa-ob-widget" data-ob-contenturl="https://helpbw.wordpress.com/2022/09/16/odata-%d1%81%d0%b5%d1%80%d0%b2%d0%b8%d1%81-%d0%bd%d0%b0-cds/" data-widget-id="AR_1" data-ob-installation-key="WORDP263NC92GIANECJP6HEPM" data-ob-psub="tech" data-ob-mark="true" data-browser="firefox" data-os="win32" data-dynload="" data-idx="0" id="outbrain_widget_0"><div class="ob-widget ob-grid-layout AR_1" data-dynamic-truncate="true">
+            <style type="text/css">.ob-grid-layout,.ob-grid-layout *{-webkit-box-sizing:content-box;box-sizing:content-box}.ob-grid-layout .ob-widget-items-container{display:-ms-grid;display:grid;clear:both}.ob-grid-layout .ob-dynamic-rec-container{position:relative}.ob-grid-layout .ob-dynamic-rec-link{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;text-decoration:none}.ob-grid-layout .ob-unit{display:block;-webkit-box-flex:1;-ms-flex:auto;flex:auto}.ob-grid-layout .ob-unit.ob-rec-image-container{position:relative;width:100%;height:auto}.ob-grid-layout .ob-unit .ob-rec-logo-container.logo-over-image{position:absolute}.ob-grid-layout .ob-rec-comments-count{font-size:11px;font-family:Lato,sans-serif;text-decoration:none;border-radius:0 2px 2px 0;position:absolute;bottom:11px;color:#fff;font-weight:700;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:5px 8px 6px;height:13px}.ob-grid-layout .ob-rec-comments-count__icon{margin:2px 5px 0 0}.ob-grid-layout .ob-rec-image,.ob-grid-layout .ob-rec-video{position:absolute;top:0;left:0;bottom:0;right:0;width:100%;max-height:100%}.ob-grid-layout .ob-rec-rtb-image{background-color:#fff;background-position:top;background-repeat:no-repeat;width:100%;position:absolute;top:0;bottom:0;left:0;right:0}.ob-grid-layout .ob-rec-label{position:absolute;bottom:0;left:0;padding:0 3px;color:#fff;font-size:10px;line-height:15px}.ob-grid-layout .ob-rec-source-wrapper,.ob-grid-layout .ob-rec-text-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:baseline;-ms-flex-align:baseline;align-items:baseline}.ob-grid-layout .ob-rec-source-wrapper .ob-rec-label,.ob-grid-layout .ob-rec-text-wrapper .ob-rec-label{position:static;-ms-flex-item-align:baseline;align-self:baseline;border-radius:2px;padding:2px 6px}.ob-grid-layout .ob-video-icon-container{position:absolute;left:0}.ob-grid-layout .ob-video-icon-container .ob-video-icon{height:100%;opacity:.7}.ob-grid-layout .ob-rec-author{text-overflow:ellipsis;overflow:hidden}.ob-grid-layout.ob-text-on-image .ob-unit.ob-rec-image-container:after{content:"";display:block;background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(0,4,7,0)),color-stop(76%,rgba(0,4,7,.41)),to(rgba(0,4,7,.54)));background-image:linear-gradient(180deg,rgba(0,4,7,0),rgba(0,4,7,.41) 76%,rgba(0,4,7,.54));height:100%;position:absolute;width:100%;top:0;left:0}.ob-grid-layout.ob-text-on-image .ob-dynamic-rec-link{position:relative}.ob-grid-layout.ob-text-on-image .ob-sub-units{position:absolute;bottom:0}.ob-grid-layout .ob-widget-footer{position:relative}.ob-grid-layout .ob-widget-header{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.ob-grid-layout .ob-rec-source{word-break:break-all}
+.AR_1.ob-grid-layout .ob-widget-items-container {
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, minmax(min-content, 1fr));
+    -ms-grid-rows: (1fr)[3];
+    grid-template-rows: repeat(3, auto);
+    margin: 0px 0px 15px 0px
+}
+.AR_1.ob-grid-layout .ob-unit.ob-rec-image-container .ob-image-ratio {padding-top: 66.66666666666666%;}
+.AR_1.ob-widget .ob-rec-image-container .ob-rec-image {opacity:0;transition:all 750ms;}
+.AR_1.ob-widget .ob-rec-image-container .ob-rec-image.ob-show {opacity:1;}
+.AR_1.ob-widget .ob-widget-header {font-weight:bold;}
+.AR_1.ob-widget .ob-dynamic-rec-container .ob-rec-text,
+.AR_1.ob-widget .ob-dynamic-rec-container .ob-rec-source,
+.AR_1.ob-widget .ob-dynamic-rec-container .ob-rec-customText,
+.AR_1.ob-widget .ob-dynamic-rec-container .ob-rec-description{display: -webkit-box;-webkit-box-orient: vertical;overflow: hidden;max-height: initial;}
+.AR_1.ob-widget .ob-dynamic-rec-container .ob-rec-text{-webkit-line-clamp: 3;}
+.AR_1.ob-widget .ob-dynamic-rec-container .ob-rec-source{-webkit-line-clamp: 1;}
+.AR_1.ob-widget .ob-dynamic-rec-container .ob-rec-description{-webkit-line-clamp: 3;}
+.AR_1.ob-widget .ob-dynamic-rec-container .ob-rec-customText{-webkit-line-clamp: 1;}
+.AR_1.ob-widget .ob-rec-text {font-weight:bold;}
+.AR_1.ob-widget .ob-rec-source {font-weight:normal;}
+.AR_1.ob-widget .ob-rec-date {font-weight:bold;}
+.AR_1.ob-widget .ob-rec-description {max-height:53.0px;overflow:hidden;font-weight:normal;}
+
+.AR_1.ob-widget .ob-rec-image-container .ob-video-icon-container {position:absolute;left:0;height:30%;width:100%;text-align:center;top:35%;}
+.AR_1.ob-widget .ob-rec-image-container .ob-video-icon {display:inline-block;height:100%;float:none;opacity:0.7;transition: opacity 500ms;}
+.AR_1.ob-widget .ob-rec-image-container .ob-video-icon:hover {opacity:1;}
+            .AR_1 .ob_what a:after {content: "";;;background-image: url('https://widgets.outbrain.com/images/widgetIcons/achoice.svg');background-size:100% 100%;width:12px;height:12px;padding-left:4px; display:inline-block;background-repeat:no-repeat;background-position:right center;border-left:1px solid #999; }
+    .AR_1.ob-widget .ob_what{direction:ltr;clear:both;padding:5px 10px 0px;}
+.AR_1.ob-widget .ob_what a{color:#757575;font-size:11px;font-family:arial;text-decoration: none;}
+.AR_1.ob-widget .ob_what.ob-hover:hover a{text-decoration: underline;}
+.AR_1.ob-widget .ob_amelia,
+.AR_1.ob-widget .ob_amelia_covid,
+.AR_1.ob-widget .ob_logo,
+.AR_1.ob-widget .ob_feed_logo,
+.AR_1.ob-widget .ob_sfeed_logo,
+.AR_1.ob-widget .ob_text_logo{vertical-align:baseline !important;display:inline-block;vertical-align:text-bottom;padding:0px 5px;box-sizing:content-box;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;}.AR_1.ob-widget .ob_amelia{background:url('https://widgets.outbrain.com/images/widgetIcons/ob_logo_16x16.svg') no-repeat center top;width:16px;height:16px;margin-bottom:-2px;}@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+.AR_1.ob-widget .ob_amelia{background:url('https://widgets.outbrain.com/images/widgetIcons/ob_logo_16x16@2x.png') no-repeat center top;width:16px;height:16px;margin-bottom:-2px; background-size:16px 32px;}}
+.AR_1.ob-widget:hover .ob_amelia,
+.AR_1.ob-widget:hover .ob_logo,
+.AR_1.ob-widget:hover .ob_text_logo{background-position:center bottom;}
+  .AR_1.ob-widget {position:relative;}
+  .AR_1.ob-widget .ob_what{position:absolute;top:5px;right:0px;}
+  .AR_1.ob-widget .ob_what{text-align:right;}
+  .AR_1.ob-widget .ob_what.ob_what_resp{position: static;float:  right;padding: 0px;font-weight: normal;flex:none;}
+
+.AR_1.ob-widget .ob_what.ob_what_resp{padding:5px 0;}.AR_1.ob-grid-layout .ob-rec-image-container .ob-rec-label {bottom:0;left:0}
+.AR_1.ob-grid-layout .ob-rec-image-container .ob-rec-label {font-size:10px;font-weight:normal;}
+
+.AR_1.ob-grid-layout .ob-widget-header {font-family:inherit;font-size:18px;color:black;margin:8px 0px 12px 0px}
+.AR_1.ob-grid-layout .ob-sub-units {margin:6px 0px 0px 0px}
+.AR_1.ob-grid-layout .ob-grid-button-container {font-family:inherit;line-height:1.25;font-size:18px;}
+.AR_1.ob-grid-layout .ob-rec-text {font-family:inherit;color:inherit;margin:0px 0px 0px 0px;text-align:left;line-height:1.25;font-size:18px;}
+.AR_1.ob-grid-layout .ob-rec-text:hover {color:inherit;}
+.AR_1.ob-grid-layout .ob-rec-source {font-family:inherit;color:#757575;margin:0px 0px 0px 0px;text-align:left;font-size:12px;line-height:1.25;}
+.AR_1.ob-grid-layout .ob-rec-date {font-family:inherit;color:black;padding:0px 0 0px;text-align:left;font-size:12px;}
+.AR_1.ob-grid-layout .ob-rec-author {font-family:inherit;color:black;padding:0px 0 0px;text-align:left;font-size:12px;}
+.AR_1.ob-grid-layout .ob-rec-description {font-family:inherit;color:black;margin:0;text-align:left;font-size:14px;line-height:1.25;}
+.AR_1.ob-grid-layout .ob-rec-customText {font-family:inherit;color:black;font-size:14px;background-color:}
+.AR_1.ob-grid-layout .ob-rec-brandName {font-family:inherit;padding:$dynamic:TitleMarginTop$px 0 $dynamic:TitleMarginBottom$px;line-height:1.25;font-size:13px;font-weight:400;}
+.AR_1.ob-grid-layout .ob-rec-brandLogo {width:$dynamic:BrandLogoWidth$px;height:$dynamic:BrandLogoHeight$px;}
+.AR_1.ob-grid-layout .ob-unit.ob-rec-image-container span.ob-rec-label {background-color:#666;color:;font-family:;}
+.AR_1.ob-grid-layout .ob-rec-text-wrapper span.ob-rec-label,.ob-rec-source-wrapper span.ob-rec-label {background-color:#666;color:;font-family:;}
+.AR_1.ob-grid-layout .ob-widget-items-container {grid-row-gap:15px;grid-column-gap:15px;}
+.AR_1.ob-grid-layout .ob-widget-items-container .ob-dynamic-rec-container {padding:0px;border:none;background-color:initial;}
+</style>
+                <style type="text/css" class="ob-custom-css"></style>
+        <div class="ob-widget-header">
+    <span class="ob-grid-header-text">Sponsored Content</span>
+<div class="ob_what ob_what_resp">
+		<a href="https://www.outbrain.com/what-is/default/ru" rel="nofollow" onclick="OBR.extern.callWhatIs('https://www.outbrain.com/what-is/default/ru',-1,-1,true ,null);return false"><span class="ob_amelia" title="outbrain.com"></span></a>
+	</div>
+</div>
+
+
+
+
+        <div class="ob-widget-items-container"><div class="ob-dynamic-rec-container ob-recIdx-0 ob-p" data-pos="0">
+    <a class="ob-dynamic-rec-link " onclick="" href="https://prough-veridated.icu/0ba598af-467b-4012-b57a-f15f21ec0a54?campaign_id=00dd6ceffd2f648f6fd422a016e8d8da70&amp;publisher_id=$publisher_id$&amp;publisher_name=$publisher_name$&amp;ad_id=00305e8f6e1642054983fcaf15f7371c83&amp;ad_title=Only+%2449+to+get+all+the+TV+channels%3F+It%27s+now+possible&amp;section_id=$section_id$&amp;section_name=$section_name$&amp;req_id=$req_id$&amp;promoted_link_id=00305e8f6e1642054983fcaf15f7371c83&amp;time_stamp=$time_stamp$&amp;ob_click_id=$ob_click_id$&amp;obOrigUrl=true" onmousedown="this.href='https://paid.outbrain.com/network/redir?p=2rVkjnXq8PNGocbBcxnjUcWUSubTElUmSGKu_dcfWhT0iqP2DDLy-XIpE6V2Bkg4j47mCX5rjVJLm_H2eOcxdbecFUDtJRQPOxdpf43CPEGqpkirsRQr3nfj70oXbU2Vc5EMjpzXgQZsmTu3IOL5Jx44mZEkmR_U3CUR3mqr3b4TUBpLQOpUIBNdjLDOWuGktqQPqCNu-WtUCvts49LJrOpQl7rdRiVpCqUytbZyw27iyaofuZFfWqzgMoHXV4b2JexxrZdqtzDUqffzLm3uXQv048VAyRaXA_tA3z3W9h2VHxTGK5dzcmALU2QYeq2jZpIpgns7YlcjqPRz-j8uaLpDnAY9ZGnBZgQZRaTW6g1-HerYAqh5JyFeN1vBCJbPzVIisaOW5GQbPoNvPlEHW3jHjsNLq34aUG0XNkVUk4sKpLQJ9tTcwuvPfkO80OP6etLkL2H8-p08jy20Y3QVsIU2oD1gt0mhLPhDlxCGVqP1pvkTzUvdkbgFFh1waah0NVJKbJjC9zgqZ1p6F53d4imNoIHwqA4l1iv5I6eK-5SCExN29O8_ycIu-RU2DQfTcHcMq6zsWJjL9HMGOq5IpsZn_3txoQotZgZlGA6ZKyo-ANQZFWx2X9LzzolgolU_m49MBtkAKMP-0KuTSHnGncDbiV8q6cAmPzf7n-tO_ihHQuGJXMWk4f-PJDVe_5QhZdi_FIPHrbZV7bIDibK7vcZuZdL76xYz4d5CRoJxBAcD6Oe7Q74ob0ZS-sybXkVs9qZdb4tfWOu9g9vGnW4lWUXK5Oe6DGvMBv8zdzFbv5tdQgph6rF4spS1CpmKUyWYUmneqYFxUbWcXg_v57DWhKjHySDtLzT2wKBTlxTuagTyEmlqxsTpNBRMELxD9fulPo14zyuugGtAi16uX4auyWdTHwzlOMXElrB2UmCvsG8fgqk70iT-E0C1QRe4zIMN&amp;c=ea6f616b&amp;v=4';" target="_blank" data-rec-en-did="7d3IvSy4Hjg_iwA03BC6LQ" data-adv-id="52905454" rel="nofollow noopener">
+    <span class="ob-unit ob-rec-image-container" data-type="Image">
+  <div class="ob-image-ratio"></div>
+                      <img class="ob-rec-image ob-show" loading="lazy" aria-hidden="true" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/eyJpdSI6IjNlNjI1N2FmZDg0YTNkZTQ3ZGZjMjVhZjY2MzRjZmI2YjMwMjE.webp" onload="this.className+=' ob-show'" alt="Only $49 to get all the TV channels? It's now possible" title="Only $49 to get all the TV channels? It's now possible" onerror="OBR.extern.imageError(this)">
+                                                    </span>
+    <section class="ob-sub-units">
+        <span class="ob-unit ob-rec-text" data-type="Title" title="Only $49 to get all the TV channels? It's now possible">Only $49 to get all the TV channels? It's now possible</span>
+            <span class="ob-unit ob-rec-source" data-type="Source">TV Superboost | Sponsored</span>
+    
+
+    </section>
+    </a>
+   </div>
+<div class="ob-dynamic-rec-container ob-recIdx-1 ob-p" data-pos="1">
+    <a class="ob-dynamic-rec-link " onclick="" href="https://prouseum-cheads.xyz/48265305-e8f2-484f-b619-af3e37f3e4bc?campaign_id=002d2b35eaf9ce6d83a09a32c36e90564a&amp;publisher_id=$publisher_id$&amp;publisher_name=$publisher_name$&amp;ad_id=00ed5f9aecc72f15123796eb314e7b0da8&amp;ad_title=Incredible+toothbrush+is+all+the+rage+in+%24%7Bcountry%7D%24&amp;section_id=$section_id$&amp;section_name=$section_name$&amp;req_id=$req_id$&amp;promoted_link_id=00ed5f9aecc72f15123796eb314e7b0da8&amp;time_stamp=$time_stamp$&amp;ob_click_id=$ob_click_id$&amp;obOrigUrl=true" onmousedown="this.href='https://paid.outbrain.com/network/redir?p=dgddN44cGzwgu9pMGSkgtmNwkGkstiabE4tkWKoltBWZ_oRL2Zn62J76mnYmVm4S28n1nZTo2MvMi2Lrq13ckIB4pPQnRx_NOFk4zBzaj5jvyTVgpop-GDQU4oWkW2Oi8nfEDXJ9ahmFs9B9UZRgSzKiEZPCUZj0I5V0unJvJovtWzHEusUnGeRwF3QE0rc0pPpGtXW2EAh8OvEEZTzAIqI4wP3kRjGP07bK852CfQVKALaHP4zenWy5_ef4-HkejkZyVc6YZcNk6R-LWTDAu9Zaes8zYDavbZxTArWzTLtx__jKHWp8GAkYfXboifhuJRKudBIIB4KLktw0116XCqrrED154C9THcKhiaVB-p7Sjc-jyo6PasOfvuCcyYOjEolM3nOMwbDzCXigry64WxMJQ_3pgXuRlyw-vmcWpAt2ZeTUhF69jXHOjZ17BpjApgtKbJdjDj_AG63J-p5cdlD0cRO6CjHHLkCErHgD_CF1JskfMwEiiurbSaiPiovUUSmRSjZ-i91sdFAzQGaJGKRbeqUmLqykFzMYBJINZei9BJ8KmqOsjahEoPhaiQlaOhwAkd-lWJeaKpwe5MCEnxQ6LVzOLY8Gq8ZtcJyLCkVyFHXo23U7TNNmKKvk9d2-WHDQB55vNwS2k76qPTWTu5AM83Fg0ikbGIGL7O7ebOPt5LzUHVHXhBmuO9SJrsRyNhTYunqjyU5EjjDXdg9ou4nWVO3RwihWaG42s3yuNB7vHS-n63QzMnIwqdvU1280G0v5DZX88gV_R8ej0geMbZLLH45QNqZHF3MGzwXYwfN8Ivs-gSEFCw5CsEaGzfY-ZhCQn25lhCGlUlOvzAGFKUrtPc2vSq8xDJH1_P--zqBqfqPhipcjkIAXvdQVcFySHB7u2qQpHKdAGDMUzDT4q9no92r0EBH5rnYVEAPf43NsQX61RqGr2950bKd2o_DX&amp;c=2cdce017&amp;v=4';" target="_blank" data-rec-en-did="5Rzm-Wf9JjPIkz-DkjzqrA" data-adv-id="53880715" rel="nofollow noopener">
+    <span class="ob-unit ob-rec-image-container" data-type="Image">
+  <div class="ob-image-ratio"></div>
+                      <img class="ob-rec-image ob-show" loading="lazy" aria-hidden="true" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/eyJpdSI6ImFiOTJhYTFmYjk5MjBmZTdiYTcxOGJhYTgwNzU5YTZmNjllZDh.webp" onload="this.className+=' ob-show'" alt="Incredible toothbrush is all the rage in Belarus" title="Incredible toothbrush is all the rage in Belarus" onerror="OBR.extern.imageError(this)">
+                                                    </span>
+    <section class="ob-sub-units">
+        <span class="ob-unit ob-rec-text" data-type="Title" title="Incredible toothbrush is all the rage in Belarus">Incredible toothbrush is all the rage in Belarus</span>
+            <span class="ob-unit ob-rec-source" data-type="Source">Teeth Care | Sponsored</span>
+    
+
+    </section>
+    </a>
+   </div>
+<div class="ob-dynamic-rec-container ob-recIdx-2 ob-p" data-pos="2">
+    <a class="ob-dynamic-rec-link " onclick="" href="https://www.mansionglobal.com/articles/ivanka-trump-and-jared-kushner-lease-miami-condo-following-32-million-deal-on-indian-creek-145832?reflink=outbrain_2021_$section_id$&amp;obOrigUrl=true" onmousedown="this.href='https://paid.outbrain.com/network/redir?p=fKynAXllmfJZpaVT-bsYzrr04KwpsBgmYag-FMENLCGuBsWa2PeHnEcugwRugnm5090u3jCZ-IRWYaqF16Jy_as6Dvh552o3CLEDtr5w7bRJL4kmDXzkNEqTt8BRKA5nsNC36bh_tWf83PpI4HgmlAAIlcAtc0iJ2UKo9GSccNqhc2NY4Dg-DiPgH-Xmk_zgyTQzejWzafRp2ZkbKGnksmCZ1C4cy_LOvPBcXuR1AiEhJwbJS0pfj9vCarft230c_M-16DMWtfETWHmfHUhmuK0i4HUm0oljgR2rpO0efXUgcVVs-3NzqlqGRRBJ9bT6gWr2j0Lrmysao8gbvGxOM0RkfVkkciJtWZCMvRYunhJCBkjQnYWI4kaGB7xpe060mbLTkOE_v2TlPzVXWyFnJJN2p9AwCJNMAcr_zpAxyQGh0QxzbuoM9aIDJXJtGTQJMkAASjx8PDvYFuk8WBwSvWfp-xBByO6OcUpRnpOSQBKJN12mLL3K-eAQUGRg9qwq6e8bggI3YJi7W45lzoXs4ZI2jz7iETynZ5MzSsNZCpx2OgDNDxnhBWJAxxclvxCoEOrpUPEOusCnntj39DrRKEa2oXEwzkCAQi-LT8rmCU92eV5i-M9rj0E-li-CyayUDlrXwxw6laNwrNkzLvWvpXq3oOrr3KEzAMzWgc7-o_ursKlKD6rxpCgku-k7Ljd1dhacjI0xJ_Ie1qmM_A3tZrRNc-NDUqu2iixieRrg7FlpkHH9gQQS2XLNXE3YGlH-lFSedflXfy87joSWw8UzuBh9L6GyLd5GZ0FwBlhPnHuZShYV5cr3cjsJ7yW9D6F9LeLmTX8fxyXuRhbwJfVGpVx3ccGbB5ijHoK-oZLgc3298EGw1j2fsLjz94QNgJco-28ROLX29QhubaCdy7GCNv18UzAiGf1OmOAUkUjKoy2mVOR_82J5zX_Lxs3oAOh2&amp;c=2b97b866&amp;v=4';" target="_blank" data-rec-en-did="10QHEzT-e2P_XpwMZAxGbg" data-adv-id="33562" rel="nofollow noopener">
+    <span class="ob-unit ob-rec-image-container" data-type="Image">
+  <div class="ob-image-ratio"></div>
+                      <img class="ob-rec-image ob-show" loading="lazy" aria-hidden="true" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/eyJpdSI6IjIxNDVlNGZmM2QzMmZkYjAwZDZlZmQxZTdmMTE3NDE1ZjA3MzE.webp" onload="this.className+=' ob-show'" alt="Ivanka Trump and Jared Kushner Close massive $32 Million Dollar Deal in Miami Condo" title="Ivanka Trump and Jared Kushner Close massive $32 Million Dollar Deal in Miami Condo" onerror="OBR.extern.imageError(this)">
+                                                    </span>
+    <section class="ob-sub-units ob-cta">
+        <span class="ob-unit ob-rec-text" data-type="Title" title="Ivanka Trump and Jared Kushner Close massive $32 Million Dollar Deal in Miami Condo">Ivanka Trump and Jared Kushner Close massive $32 Million Dollar Deal in Miami Condo</span>
+            <span class="ob-unit ob-rec-source" data-type="Source">Mansion Global | Sponsored</span>
+    
+
+    </section>
+    </a>
+   </div>
+<div class="ob-dynamic-rec-container ob-recIdx-3 ob-p" data-pos="3">
+    <a class="ob-dynamic-rec-link " onclick="" href="https://www.mansionglobal.com/articles/dwayne-the-rock-johnson-picks-up-9-5-million-georgia-farm-208876?reflink=outbrain_editorial-toparticles_$section_id$&amp;obOrigUrl=true" onmousedown="this.href='https://paid.outbrain.com/network/redir?p=AD3MyPHPQpDEnLKF6SjaOJl-waE6_cI-YQhDaVXgH_YUWM3_ZcCFXKzn3tmjLbKIj4f9_SBllt8U-LN57jxZWIS241B9mrvPwGYIvWbFF2atzxnCgKxM4ICX-y3jI28Y4sw8qT5y8a6y9hOz-0_EdAAchOICyq9dPKBZAqSBqqbnFJDKctyxqfP15Sbj4iHg9Vb-Di-23-jQbKFZv_iShbzb9DIZtbei7eZSPMznt1l7qVDCFLUWxRxV0pdShjty-2dwIRxvrJx0fm56o9LVVWVSOV78xo9k0eAhxx1x9Veo4NioT6slIPUZnTh0N4L8JX28jxAubn5gVg7PMU7zRq42Bgoqn1t8MvoxiJi39rXqOekqbT95igBKeSVLCQsBMsDIxIBY9Z1PFU4IW0TYMf7-hek-4k7ekML6Q8BoomW6WfWLtjDfvSlwKGB7sQk7uZMfQ31V45YJSheUZU9KLFBVyMRTqKQEklYzX8-Ak0PMUAFQfCPuUNx3GMOxKhQWJRJ_f6y16n7auCFxphdRqtVFIkJ87QcFQlWJ3aXl-o0UkUAVYt4e9DwGtboixj72IgC_qAjFQ922-GZD5t2zqGOFQeu1dyVLeQ1Sx1qPSXdHlGtLlYTW8JrFK-Gv85bE0Ot8yabHC1MyKsK4AQ-qEdyDSL26JgMmHjb7FhUk2FtMj0xlLYnrzw2xJ5M8hvwf1upKS0s_Xf8AdylBar2kPXnBChizsA0sDwDmF9MraWQKH87iR-lxX4wztk9sNYnl5r0XnNbdfcfZylHJ1PsRd-Q_eFWcezSM2WXt1EEQD0zdE4W3EZl2P10S7eDIGTyUzFrvdXKLxiFvIF_K1gXSEC6euZEoyXFEN5mijm_RigLNyoWoyQXES5is8y8LNlpwavptQnIOZwSTpKYhvRRiyCHLNh50-dLq_ymSbamMFR4&amp;c=f386c595&amp;v=4';" target="_blank" data-rec-en-did="zjMhW20VYjllJp9beR_rvQ" data-adv-id="33562" rel="nofollow noopener">
+    <span class="ob-unit ob-rec-image-container" data-type="Image">
+  <div class="ob-image-ratio"></div>
+                      <img class="ob-rec-image ob-show" loading="lazy" aria-hidden="true" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/eyJpdSI6ImQ4ODA1YzdkZjQ4NDZlZmJjMmYwNTM0NzcxMDQ5YTJmNzhlNjJ.webp" onload="this.className+=' ob-show'" alt="Dwayne 'The Rock' Johnson Buys Georgia Farm - The Home Was Built For Mr. Johnson’s Family" title="Dwayne 'The Rock' Johnson Buys Georgia Farm - The Home Was Built For Mr. Johnson’s Family" onerror="OBR.extern.imageError(this)">
+                                                    </span>
+    <section class="ob-sub-units ob-cta">
+        <span class="ob-unit ob-rec-text" data-type="Title" title="Dwayne 'The Rock' Johnson Buys Georgia Farm - The Home Was Built For Mr. Johnson’s Family">Dwayne 'The Rock' Johnson Buys Georgia Farm - The Home Was Built For Mr. Johnson’s Family</span>
+            <span class="ob-unit ob-rec-source" data-type="Source">Mansion Global | Sponsored</span>
+    
+
+    </section>
+    </a>
+   </div>
+<div class="ob-dynamic-rec-container ob-recIdx-4 ob-p" data-pos="4">
+    <a class="ob-dynamic-rec-link " onclick="" href="https://www.insblueprint.com/2022/05/26/the-good-old-days-celebrities-from-the-past/?utm_medium=$section_name$&amp;utm_source=$section_id$&amp;utm_content=000cdce4e276f2d1f146642aaf7ad71b8d-clickid-obsource-$ob_click_id$&amp;utm_campaign=outbrain-62695&amp;utm_term=$publisher_name$&amp;obOrigUrl=true" onmousedown="this.href='https://paid.outbrain.com/network/redir?p=lNhDDCYb2waI9gMcv9YpGi87HzHyOOTxYKWmucCcecfxd_xwV9WDgpLT4ZNhldyBXoNF5F_a76tEgwvhEeoXpcSXa1L3QMzbmQ2ak6m9_X-CIbt2qJnFkBQrtYuJU0TXak_E1ovxsZkufYRUO6LLlHNfMuFVHj1cN3m5IMGmZ-pl20NJ5fEeD_EmnoM7mJY2r07kKmov1nO-dRY8I2lL7oIDl4_Z-7iOeta5KnJvVrIcU3xnqiEPfXRg8r7ZW1ODZINVm8yfFyHCKUMtT804PyhBlyojdeTvTiq20-xoGGVUKFg2ioZ29wCFV42YgxmErnhnimKqXI2d1a6lM5IxfgnjtU6-qVn9vxoVUDBV265kaUpBsb2PRj5_gp9OTwpAv-KNcWaJ8Y8muqXtlU9iVg40_vlt8aedWa1xpfl5fmF9nGOgG2PZuQAAu1E2ASU3ENnLWARtObB5Xv_Z5G5o9qmzuB2je02mQOfNJZ2jzWboNq1ztv54eIreoi-dPawYz0OhStdMs8S4nvIeSH8nHLEERUm2AScMmhMktARwLCxpLYSa1wfUVmoRvjkE4eIzij2mpkubaWPm_p6ONRVv4RH03zOAS7MungfCLXcklGqin8r_gkRhiLoc9vcKYc81kLUCT7wMwYQqn6NxTFad8yv8QDopktsY3E__0OX1YjEk-Y9CuPLr75uh_yWeNOmD3FF4CoZ7OrbXw7JRc1IddwSzwfGHCq0Cblhl1zZkAsesUd_Bg906gnoaNGs_mFQ9ZRMWrLUUGxlk_JWXLNaElFicoVudObcL3Y71VF7xUjaMjEZDL-SAAX89kaD3Ta5AB2dtf5gPDV5YtzmcUuPqMyynsmHFJHlvP21ceXmSoGcmmTF6jkf3DnhhsvMY7RJDWIQCn_Ussv1BKVppu9Y1yt2L-mmeOw0zIxTBA-35Yw26tUrqn5XNtCo2lu-39j_a&amp;c=6cd98841&amp;v=4';" target="_blank" data-rec-en-did="161vCnptcjq8Qh1sNmUEOw" data-adv-id="50601178" rel="nofollow noopener">
+    <span class="ob-unit ob-rec-image-container" data-type="Image">
+  <div class="ob-image-ratio"></div>
+                      <img class="ob-rec-image ob-show" loading="lazy" aria-hidden="true" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/eyJpdSI6IjkzYTA0YmIwNGNjMTU0M2FhNDMyNzcyYzJlNTIwMTZlZTRmMjg.webp" onload="this.className+=' ob-show'" alt="[Images] Remember Bolo Yeung? This Is Him At 76" title="[Images] Remember Bolo Yeung? This Is Him At 76" onerror="OBR.extern.imageError(this)">
+                                                    </span>
+    <section class="ob-sub-units">
+        <span class="ob-unit ob-rec-text" data-type="Title" title="[Images] Remember Bolo Yeung? This Is Him At 76">[Images] Remember Bolo Yeung? This Is Him At 76</span>
+            <span class="ob-unit ob-rec-source" data-type="Source">Insblueprint | Sponsored</span>
+    
+
+    </section>
+    </a>
+   </div>
+<div class="ob-dynamic-rec-container ob-recIdx-5 ob-p" data-pos="5">
+    <a class="ob-dynamic-rec-link " onclick="" href="https://prouseum-cheads.xyz/9a6dd4c3-aba7-466b-bfd7-f93e3ade5654?campaign_id=000c456da4dbb83e7fd59e15160fe252ae&amp;publisher_id=$publisher_id$&amp;publisher_name=$publisher_name$&amp;ad_id=008ac5295d506850ae7d6323695acbaf31&amp;ad_title=The+Liposuction+Patches+Everyone+is+Talking+About&amp;section_id=$section_id$&amp;section_name=$section_name$&amp;req_id=$req_id$&amp;promoted_link_id=008ac5295d506850ae7d6323695acbaf31&amp;time_stamp=$time_stamp$&amp;ob_click_id=$ob_click_id$&amp;obOrigUrl=true" onmousedown="this.href='https://paid.outbrain.com/network/redir?p=wi473c5nNB7qmr3pt6vLmVRpqXkSd3TAn7ct8LT_HT9lL9uUQ4dMVoX7JolfYvmXu9QYGPplA1xunqFoTyAgWds7YgG3w-vPx8YNhC9SUIeeP_kbIpebroTJ_F62U1EhTiP7Kt6EqtBmclb3L-_9HIl0Bv9d_wpwFwwcBq89dwETx3gWsQceTO1FsoEhwXy0iV3aAs0D9vexqQ3iLMNdRzxyPYekxSNKjUcp4ZWgBd6mdkqLhkxWCvHGbtfNBGi0fq5gzWCpHNdx180TMy34sZHoNokbswDL5B2slA8FPfGgWtJHN3EO82YZ2uiZz1r5tJY3MGrJULdOcsiAjg9Mmz-I00O_u37odmssRpiP5Iwvr-fsnvp2Zn07Kvs8SVyu8IC8L27IvDTVpEcM0OOdIsJ7Ox-N3tVyEUis015S23LY3tZpvY5bb1hvgpMXqAWP7JzzScjKRtwv17otTIQgBQsft508JEy4eJ8OppRDwxnTVogxiuTAUtOIYVwYJNyBhDbUg06Yq_XjtjtZXjmitUM17-NUeGlUgO1Xx_qNucFQDTXs3ToO7EY4Tn8YCymbRLOUDElC4cF0jwnHTrpKcZR13YQBkYMku0lLDwnrTUDztYt_cfzsAzuLzx_U1h_IFCoda51RMmBguvGRZ5I02-Ul0nvwoh6sDZ1ZiMWVlf1PCDqnx2BiaD6AHlUTM0q2ZvekxCKjHElxveiVQaiEx0e97NregHb7JnioE2fMM9c9RHj2Gzt7-Yicb_EoFJ3W1QKuTSFHp-KVy89RzcH7MCaAY8HI95eWhiVSrhcK1r5p4qczwVhHJR_0cWs9lHFrXZQ5viFo3tWA0oTpHEbhx5XemMLSg031CWb5aWHSwImx1GGvRFhvOWJYay2ai4RkVsnuouL6CERtTafTqVT1Lz5GJEnvPtQsvkbleVELlPszAXJ7_wew-crWF0TmhhZj&amp;c=bb78499e&amp;v=4';" target="_blank" data-rec-en-did="eyMlNsiiP_fdqUAwKcROvA" data-adv-id="53611206" rel="nofollow noopener">
+    <span class="ob-unit ob-rec-image-container" data-type="Image">
+  <div class="ob-image-ratio"></div>
+                      <img class="ob-rec-image ob-show" loading="lazy" aria-hidden="true" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/eyJpdSI6ImNlNzc4YzRkZjZiYTA3MjYwNWVlMzE4OTVlMzA5ODBhMTk3MGY.webp" onload="this.className+=' ob-show'" alt="The Liposuction Patches Everyone is Talking About" title="The Liposuction Patches Everyone is Talking About" onerror="OBR.extern.imageError(this)">
+                                                    </span>
+    <section class="ob-sub-units">
+        <span class="ob-unit ob-rec-text" data-type="Title" title="The Liposuction Patches Everyone is Talking About">The Liposuction Patches Everyone is Talking About</span>
+            <span class="ob-unit ob-rec-source" data-type="Source">WonderPatch | Sponsored</span>
+    
+
+    </section>
+    </a>
+   </div>
+<div class="ob-dynamic-rec-container ob-recIdx-6 ob-p" data-pos="6">
+    <a class="ob-dynamic-rec-link " onclick="" href="https://www.mansionglobal.com/articles/dallas-cowboys-owner-jerry-jones-splashes-out-on-superyacht-118840?reflink=outbrain_editorial-toparticles_$section_id$&amp;obOrigUrl=true" onmousedown="this.href='https://paid.outbrain.com/network/redir?p=uTPflEMjWcQ_20gpygyu6wdZy5ViH8lcHYg8FXgiyxNRvWVBNxGBvhdqv4T_f1T5z0r_vCA6O2y4uLwzeqLVFqeW9wba22Y0BOYHK7UdUmwU1ihx08ZF4xCCS4RMAAgmm6AHshURAzqCGonS2nBXlFEOJeXB0kO1gW6RRby0N0wQhLUsdbEvHezMMUua7D3P_SYrX0NNYJKfM1QCZgNMcW4hhKsw-r3_Uk8Dtv4GGaVSlP3gQnBEb4ppFgine-u8a5SmQvSw86CIyhCr6yEBV9XaqbY-Qwkbdny83qd2uEnTqazBWIiomRbwD-OrfeXNKojuDwBEF5bWI5Y6RRwBgJk7nLEJBqlQ9du7kTagYXZ47_9BMgXRoxCmEgLbaHQrvcieHYQjIdkj-7HYm2hjMmv1K58aJq-hBeYwPcXCFtF9xd29fEEsYzbO8DkHnpfbq9y5gZPWNLIFM0_iU05ZDxkpPS-TPzcoTNzLGXyr7ua_4O89By-D6_snWnmfUJGzqOIhetLQqur8BhZACsLAtQETBe4BiSMqEycf-BpV7ZW_b2e_jBozBdU8pVVgIvd4lVIB0wMN1yqITUmJZl2AyOv2XuE2csLYKisY4Qx7duKqKkRMeQch5F0m5rSm30xnN23FGhSvtZb3gP-1ZdJzSS20pC1NtpPDAGJ7KYvLc7ZvFziEqnLhLz499IoQwUZqAw3cH0XhFekXIRyXYk-1IBcOC8w-18AyQvz7bhSUf6bn8OgIggrbyYa34zbpRaShtQi0R15T-z0goiJWYpL7vo_juEFYU6wW4SnSMg6RTaix6JgaRqy0as-ZXJv9NYI469Js3wNbiJmHQNDTEVFVUbIQJwRKv81tQ8uj99en21fWKAZ6RBFFdoZ-47JwkQliXH6Pg_j81TG5ouB6-ia0ywdTidWAQlJkNk1VPDfg82s&amp;c=6f9f1e81&amp;v=4';" target="_blank" data-rec-en-did="_9S4tZPWVe9ZAdZ-x-C7Dw" data-adv-id="33562" rel="nofollow noopener">
+    <span class="ob-unit ob-rec-image-container" data-type="Image">
+  <div class="ob-image-ratio"></div>
+                      <img class="ob-rec-image ob-show" loading="lazy" aria-hidden="true" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/eyJpdSI6IjQxZTcyM2UzMmJlZjdlMTgzMjc4YmQwYWE5ZDQ2ZmU1ZDY4YWU.webp" onload="this.className+=' ob-show'" alt="Jerry Jones just bought himself an impressive yacht." title="Jerry Jones just bought himself an impressive yacht." onerror="OBR.extern.imageError(this)">
+                                                    </span>
+    <section class="ob-sub-units ob-cta">
+        <span class="ob-unit ob-rec-text" data-type="Title" title="Jerry Jones just bought himself an impressive yacht.">Jerry Jones just bought himself an impressive yacht.</span>
+            <span class="ob-unit ob-rec-source" data-type="Source">Mansion Global | Sponsored</span>
+    
+
+    </section>
+    </a>
+   </div>
+<div class="ob-dynamic-rec-container ob-recIdx-7 ob-p" data-pos="7">
+    <a class="ob-dynamic-rec-link " onclick="" href="https://za.investing.com/magazine/most-expensive-news-bloopers-and-fails-in-history-2/?utm_source=Outbrain&amp;utm_medium=cpm&amp;utm_campaign=004962ef210a46a95d1acce5ada53b389d&amp;utm_content=Photos%5D+They+Wished+They+Were+Off-Air+When+This+Happened&amp;utm_term=$publisher_name$_$section_name$&amp;origin=outbrain&amp;outbrain_params[ad_id]=00174c4ae92031300518e5192d791c5cfc&amp;outbrain_params[doc_title]=Most+Expensive+News+Bloopers+and+Fails+in+History&amp;outbrain_params[doc_author]=Daniel+Rosenblat&amp;outbrain_params[doc_id]=003350b2f465fdca55217aac866862de54&amp;outbrain_params[ad_title]=Photos%5D+They+Wished+They+Were+Off-Air+When+This+Happened&amp;outbrain_params[publish_date]=20230517&amp;outbrain_params[req_id]=$req_id$&amp;outbrain_params[source_id]=$source_id$&amp;outbrain_params[promoted_link_id]=00174c4ae92031300518e5192d791c5cfc&amp;outbrain_params[time_stamp]=$time_stamp$&amp;outbrain_params[campaign_id]=004962ef210a46a95d1acce5ada53b389d&amp;outbrain_params[uuid]=$uuid$&amp;outbrain_params[section_id]=$section_id$&amp;outbrain_params[section_name]=$section_name$&amp;outbrain_params[publisher_id]=$publisher_id$&amp;outbrain_params[publisher_name]=$publisher_name$&amp;outbrain_params[ob_click_id]=$ob_click_id$&amp;outbrain_params[android_id]=$android_id$&amp;outbrain_params[idfa]=$idfa$&amp;outbrain_params[cpc]=$cpc$&amp;im_dars=1x100_3x130_5x624_7x569&amp;obOrigUrl=true" onmousedown="this.href='https://paid.outbrain.com/network/redir?p=SR8VNq8pOu6b_BpJWoM1sVO66JSZUQJKnTeECw90zKrEoGHH8oOEGkrYj6LbOqOABH9gEaUuGHb5j4TvhQlJIh56q2e9ceMecBQnKcakeXWRtafMfRX3nvDFsaal4bh79UDmfeREQISg539yKXGhx7a2ibScKCnSCDKKdvmlCnVu9tmpD_LYjwcFA1bYvRCC26FyzGSUjuv0nnbhCmuYKhhMdC_70rZvRi-skjWhZGhy8IcCo-3a08-F4DeYrl_Z_9_K-rRShB7x0rhYKodvYsQ3_6io-tO2pShf6fMH3EGfCPwIQB1aRMB2k5D0J6ee6LIYj0zySfJPtAEKucmB9nIYvzZwpSzbDqIVyNR8kXTAlOfMXzfgCJTEUk1swAKzjXJO44J2LrDPVBCjs967lXsPKCmS-vi48Y-QMVJYEuxBJonpRErkvqncmAdYHdmbBZQJ7EIPARzIokGJTy6w77NNZUjbHX0ImWmJDff_107Wj1UmHQ_1s5TF6oCDoUZjS_Mvm3x3ZSZkm22RYONjRrxg3s3YJaKQSAobWWRLJW1Gj9YAIA8VTeImoNLvbXipWCj6AOsdisUIaD1Da6qbsax9tfqoS5LaPGKDpSZy5PDp437L0LpWTDZ2MiSdBTCCjicyPY_ukVT2hez_giZNWeyX6zp-GDfXkuUyHZm_NqlJdFNf1-Q2GwaUyR3qsnlSRkyyNM1QPbgLGinwpHANKUJGWJmH7QnwXWgIY2T9oJK92xDjWURrjhlK052RQRWPCgbpno7SiyyGH-2s_dbOheUWdXRKjFONSlAtLZa9EeDo-ZRhY1BSIMrt9WXqAViGXxjYZHMyeuFNsfsK5RTU_eQB7jqE8sKIeLtIhGB9uAl12_YtPGh0mjwZqVQDAfwhqIhy2LCVZwJHnzZSxfJiIDtf4erWiwpMTzeoPFiGCHUg-RsNejh50qoWJqIcTZHw&amp;c=33a0af70&amp;v=4';" target="_blank" data-rec-en-did="je1WeCm-aAnXhzfv1ANrkg" data-adv-id="61056600" rel="nofollow noopener">
+    <span class="ob-unit ob-rec-image-container" data-type="Image">
+  <div class="ob-image-ratio"></div>
+                      <img class="ob-rec-image ob-show" loading="lazy" aria-hidden="true" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/eyJpdSI6IjY3YWVkMTliNmVhYzlmMmNmZWViYmE3NDU4MDYxNWM2NDZlNTc.webp" onload="this.className+=' ob-show'" alt="Photos] They Wished They Were Off-Air When This Happened" title="Photos] They Wished They Were Off-Air When This Happened" onerror="OBR.extern.imageError(this)">
+                                                    </span>
+    <section class="ob-sub-units">
+        <span class="ob-unit ob-rec-text" data-type="Title" title="Photos] They Wished They Were Off-Air When This Happened">Photos] They Wished They Were Off-Air When This Happened</span>
+            <span class="ob-unit ob-rec-source" data-type="Source">Investing Magazine | Sponsored</span>
+    
+
+    </section>
+    </a>
+   </div>
+<div class="ob-dynamic-rec-container ob-recIdx-8 ob-p" data-pos="8">
+    <a class="ob-dynamic-rec-link " onclick="" href="https://www.quizdict.com/wp_quiz/quiz-can-you-name-these-historical-figures/?utm_medium=%24section_name%24&amp;utm_source=%24section_id%24&amp;utm_content=0059ff5cedabe805e2d27821ed9f39d0f5-clickid-obsource-%24ob_click_id%24&amp;utm_campaign=Lola-outbrainquiz-6447&amp;utm_term=%24publisher_name%24&amp;utm_medium=$section_name$&amp;utm_source=$section_id$&amp;utm_content=00176dcf90065d16270e7213a8eb41a150-clickid-obsource-$ob_click_id$&amp;utm_campaign=Lolaoutbrainquiz-0035&amp;utm_term=$publisher_name$&amp;obOrigUrl=true" onmousedown="this.href='https://paid.outbrain.com/network/redir?p=yFR4R90IcWH8oAusmxWGWk3i2HLSOpMncXWhMynEwoIVy36sf_nOLaN0r172qftSKgA6vybVPupJmlb8OE1L-vaZ34QKEEesYGOxvv9hhuv0cipOfpoIx-ALYaGaKm16kOzlln6KNdBmv8Q9_eypKC3moX2Ziv8GALjysmJhYb7bHnhMGNYqeGGWy3tdrayHzooSPTdxKUxVMQVo-db4y4QEu3DHi4dVi7TnApoGP1ve3MzDCb6qORrsYloNYR2wwZudRzkSmZp349LivqjoycJE0LpUtM1D8cjzdiMeYrpdUQGvBUcGofRwoWLo0NMF-VJ4yoIEC5RG7nrcpZ7tl-zZLOGlbTuT3kA0bpCK4XfuPVID-jW8Sn9TGTa_a3fJ1CSdsgcY4R4ibfu4_8KbqBuD3HJIczuVP1C2bEJMAyHEthPjvPhgG_g1srjSRq-C7d2kVbgigrQnraQJk_mCAM5N38ZHkb9OTHbft1EgpVd1xKRQXB-5zsx4o-4xCGPXHd2hICu42d6wnUVO37wmBZXL8p8Z4dk3cQVU-gdYnFJFncFPBGt4p8Nh8CiISMlOW8GNh_UEn1n12quZ0bclbPko8sunmniP0MqhF1y46kCGCqEKCiCdUd-3ZR8S8euzRXmxH3Wcla5GPlblPEq-FJ9kqM9_HynpKq6quJvdoqltlvJz8zaWgtKy10mj46a3Afkk6aFELTRwv4xzFiJG9stItRiJolx09ywECBqGdkXH5Xd3VAR3vtPKXs6N5OWCqWItiXlytPh9KANWhhh7q23GoerVHspffL32Sk3MWaV5VzTmbY2BxN9M3L-cqwyHboAC2shbE6e2Isq_rRyfmG28BFs9QoTg5zFwqhu_9Rvlff7GKVDVfsH6twP4xocKaQFLrI7344SWHmeInuDP_RXox2JXlqV_ar92S1-4c3Ghdg2FzUbZkvyJYlyt0uAx&amp;c=36835c32&amp;v=4';" target="_blank" data-rec-en-did="omTMjtkgZNZ9RvnGmAvqkw" data-adv-id="51950386" rel="nofollow noopener">
+    <span class="ob-unit ob-rec-image-container" data-type="Image">
+  <div class="ob-image-ratio"></div>
+                      <img class="ob-rec-image ob-show" loading="lazy" aria-hidden="true" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/eyJpdSI6IjliYjFjNzRmM2FhYmVkMThiZDBhYzY4MzFlY2I3ZDdmMzlhODM5.jpg" onload="this.className+=' ob-show'" alt="Your IQ Is 140 If You Can Name 10 Of These People" title="Your IQ Is 140 If You Can Name 10 Of These People" onerror="OBR.extern.imageError(this)">
+                                                    </span>
+    <section class="ob-sub-units">
+        <span class="ob-unit ob-rec-text" data-type="Title" title="Your IQ Is 140 If You Can Name 10 Of These People">Your IQ Is 140 If You Can Name 10 Of These People</span>
+            <span class="ob-unit ob-rec-source" data-type="Source">Quizdict | Sponsored</span>
+    
+
+    </section>
+    </a>
+   </div>
+</div>        <div class="ob-widget-footer">
+<div class="ob-pixels">
+</div>
+</div>
+    </div></div>
+	<script>
+		window._stq = window._stq || [];
+		window._stq.push( [ 'extra', { x_wordads_outbrain: 'widget_render_ar_1', }, ] );
+	</script><div id="jp-post-flair" class="sharedaddy sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Поделиться ссылкой:</h3><div class="sd-content"><ul data-sharing-events-added="true"><li class="share-twitter"><a rel="nofollow noopener noreferrer" data-shared="sharing-twitter-1563" class="share-twitter sd-button share-icon" href="https://helpbw.wordpress.com/2022/09/16/odata-%d1%81%d0%b5%d1%80%d0%b2%d0%b8%d1%81-%d0%bd%d0%b0-cds/?share=twitter&amp;nb=1" target="_blank" title="Нажмите, чтобы поделиться на Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow noopener noreferrer" data-shared="sharing-facebook-1563" class="share-facebook sd-button share-icon" href="https://helpbw.wordpress.com/2022/09/16/odata-%d1%81%d0%b5%d1%80%d0%b2%d0%b8%d1%81-%d0%bd%d0%b0-cds/?share=facebook&amp;nb=1" target="_blank" title="Нажмите, чтобы открыть на Facebook"><span>Facebook</span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-125712666-1563-6583d94c41d8a" data-src="//widgets.wp.com/likes/index.html?ver=20231208#blog_id=125712666&amp;post_id=1563&amp;origin=helpbw.wordpress.com&amp;obj_id=125712666-1563-6583d94c41d8a&amp;n=1" data-name="like-post-frame-125712666-1563-6583d94c41d8a" data-title="Нравится или перепост"><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Нравится</span></span> <span class="loading">Загрузка...</span></div><iframe class="post-likes-widget jetpack-likes-widget" name="like-post-frame-125712666-1563-6583d94c41d8a" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/index.htm" height="55px" width="100%" frameborder="0" scrolling="no" title="Нравится или перепост"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div>
+<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Похожее</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-minimal jp-relatedposts-grid "><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="1386" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://helpbw.wordpress.com/2022/01/21/%d1%87%d0%b8%d1%82%d0%b0%d0%bc-calculation-view-%d0%b8%d0%b7-abap-%d1%87%d0%b5%d1%80%d0%b5%d0%b7-cds/" title="Читаем Calculation View из ABAP через&amp;nbsp;CDS" data-origin="1563" data-position="0">Читаем Calculation View из ABAP через&nbsp;CDS</a></span><time class="jp-relatedposts-post-date" datetime="21.01.2022" style="display: block;">21.01.2022</time><span class="jp-relatedposts-post-context">В "ABAP"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="1215" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://helpbw.wordpress.com/2021/11/24/calculation_view_from_abap/" title="Читаем Calculation View (из&amp;nbsp;ABAP)" data-origin="1563" data-position="1">Читаем Calculation View (из&nbsp;ABAP)</a></span><time class="jp-relatedposts-post-date" datetime="24.11.2021" style="display: block;">24.11.2021</time><span class="jp-relatedposts-post-context">В "How to"</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="1171" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://helpbw.wordpress.com/2021/10/12/%d1%81%d0%be%d0%b7%d0%b4%d0%b0%d1%91%d0%bc-odata-%d1%81%d0%b5%d1%80%d0%b2%d0%b8%d1%81-%d0%bd%d0%b0-%d0%be%d1%81%d0%bd%d0%be%d0%b2%d0%b5-query-%d0%b7%d0%b0%d0%bf%d1%80%d0%be%d1%81%d0%b0/" title="Создаём OData сервис на основе Query&amp;nbsp;запроса" data-origin="1563" data-position="2">Создаём OData сервис на основе Query&nbsp;запроса</a></span><time class="jp-relatedposts-post-date" datetime="12.10.2021" style="display: block;">12.10.2021</time><span class="jp-relatedposts-post-context">В "Справочник"</span></p></div></div></div>			</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+				<span class="cat-links">
+			Рубрика: <a href="https://helpbw.wordpress.com/category/how-to/" rel="category tag">How to</a>, <a href="https://helpbw.wordpress.com/category/%d1%81%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d1%87%d0%bd%d0%b8%d0%ba/web-services/" rel="category tag">Web Services</a>		</span>
+							<span class="tags-links">
+				<a href="https://helpbw.wordpress.com/tag/cds/" rel="tag">CDS</a><a href="https://helpbw.wordpress.com/tag/odata/" rel="tag">Odata</a><a href="https://helpbw.wordpress.com/tag/web-service/" rel="tag">Web service</a>			</span>
+			</footer><!-- .entry-footer -->
+
+		<div class="entry-author author-avatar-show">
+				<div class="author-avatar">
+			<img alt="" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/mu_003.gif" srcset="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/mu_003.gif 1x, Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/mu_004.gif 1.5x, Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/mu_005.gif 2x, Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/mu_002.gif 3x, Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/mu.gif 4x" class="avatar avatar-60 wp-hovercard-attachment grav-hashed grav-hijack" height="60" width="60" loading="lazy" decoding="async">		</div><!-- .author-avatar -->
+		
+		<div class="author-heading">
+			<h2 class="author-title">Опубликовано <span class="author-name">Vyacheslav</span></h2>
+		</div><!-- .author-heading -->
+
+		<p class="author-bio">
+			Consultant of SAP BW			<a class="author-link" href="https://helpbw.wordpress.com/author/hazysonic/" rel="author">
+				Смотреть все записи автора Vyacheslav			</a>
+		</p><!-- .author-bio -->
+	</div><!-- .entry-auhtor -->
+</article><!-- #post-## -->
+
+			
+	<nav class="navigation post-navigation" aria-label="Записи">
+		<h2 class="screen-reader-text">Навигация по записям</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://helpbw.wordpress.com/2022/07/19/%d0%bf%d0%be%d0%bb%d0%b5%d0%b7%d0%bd%d1%8b%d0%b5-sql-%d0%ba%d0%be%d0%bc%d0%b0%d0%bd%d0%b4%d1%8b-%d0%b2-hana/" rel="prev"><span class="meta-nav">‹ Previous</span>Полезные SQL команды в&nbsp;HANA.</a></div><div class="nav-next"><a href="https://helpbw.wordpress.com/2022/10/18/%d0%b2%d0%b8%d0%b4%d1%8b-adso-%d0%b8%d1%85-%d1%82%d0%b0%d0%b1%d0%bb%d0%b8%d1%86%d1%8b-%d1%80%d0%b0%d0%ba%d1%83%d1%80%d1%81%d1%8b-%d0%b8-%d0%b2%d0%be%d0%b7%d0%bc%d0%be%d0%b6%d0%bd%d0%be%d1%81%d1%82/" rel="next"><span class="meta-nav">Next ›</span>Виды ADSO, их таблицы, ракурсы и&nbsp;возможности</a></div></div>
+	</nav>
+			
+<div id="comments" class="comments-area">
+
+	
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Комментарии <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://helpbw.wordpress.com/2022/09/16/odata-%d1%81%d0%b5%d1%80%d0%b2%d0%b8%d1%81-%d0%bd%d0%b0-cds/#respond" style="display:none;">Отменить ответ</a></small></h3><form action="https://helpbw.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+
+
+<div id="comment-form__verbum" class="transparent"></div><div class="verbum-form-meta"><input type="hidden" name="comment_post_ID" value="1563" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+
+			<input type="hidden" name="highlander_comment_nonce" id="highlander_comment_nonce" value="b80ff39156">
+			<input type="hidden" name="verbum_show_subscription_modal" value=""></div><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="ec6e12dbb2"></p><p style="display: none !important;"><label>Δ<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="1703139660199"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+	
+</div><!-- #comments -->
+
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+	<div id="secondary" class="widget-area" role="complementary">
+		<aside id="categories-3" class="widget widget_categories"><h1 class="widget-title">Разделы</h1>
+			<ul>
+					<li class="cat-item cat-item-805610"><a href="https://helpbw.wordpress.com/category/%d0%b1%d0%b5%d0%b7-%d1%80%d1%83%d0%b1%d1%80%d0%b8%d0%ba%d0%b8/">Без рубрики</a> (5)
+</li>
+	<li class="cat-item cat-item-7563663"><a href="https://helpbw.wordpress.com/category/%d1%81%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d1%87%d0%bd%d0%b8%d0%ba/">Справочник</a> (45)
+<ul class="children">
+	<li class="cat-item cat-item-284541"><a href="https://helpbw.wordpress.com/category/%d1%81%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d1%87%d0%bd%d0%b8%d0%ba/abap/">ABAP</a> (12)
+</li>
+	<li class="cat-item cat-item-573961132"><a href="https://helpbw.wordpress.com/category/%d1%81%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d1%87%d0%bd%d0%b8%d0%ba/basis-%d1%81%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d1%87%d0%bd%d0%b8%d0%ba/">Basis</a> (4)
+</li>
+	<li class="cat-item cat-item-91974968"><a href="https://helpbw.wordpress.com/category/%d1%81%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d1%87%d0%bd%d0%b8%d0%ba/bo-analysis/">BO Analysis</a> (1)
+</li>
+	<li class="cat-item cat-item-716452358"><a href="https://helpbw.wordpress.com/category/%d1%81%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d1%87%d0%bd%d0%b8%d0%ba/psa-and-extraction/">PSA and Extraction</a> (4)
+</li>
+	<li class="cat-item cat-item-195721"><a href="https://helpbw.wordpress.com/category/%d1%81%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d1%87%d0%bd%d0%b8%d0%ba/query/">Query</a> (5)
+</li>
+	<li class="cat-item cat-item-10346"><a href="https://helpbw.wordpress.com/category/%d1%81%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d1%87%d0%bd%d0%b8%d0%ba/sql/">SQL</a> (1)
+</li>
+	<li class="cat-item cat-item-2358"><a href="https://helpbw.wordpress.com/category/%d1%81%d0%bf%d1%80%d0%b0%d0%b2%d0%be%d1%87%d0%bd%d0%b8%d0%ba/web-services/">Web Services</a> (4)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-41504"><a href="https://helpbw.wordpress.com/category/%d1%81%d1%81%d1%8b%d0%bb%d0%ba%d0%b8/">Ссылки</a> (8)
+</li>
+	<li class="cat-item cat-item-2708"><a href="https://helpbw.wordpress.com/category/how-to/">How to</a> (34)
+<ul class="children">
+	<li class="cat-item cat-item-80335"><a href="https://helpbw.wordpress.com/category/how-to/basis/">Basis</a> (4)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-48248770"><a href="https://helpbw.wordpress.com/category/sap-hana/">SAP HANA</a> (8)
+</li>
+			</ul>
+
+			</aside><aside id="search-1" class="widget widget_search"><h1 class="widget-title">Найти на сайте</h1><form role="search" method="get" class="search-form" action="https://helpbw.wordpress.com/">
+				<label>
+					<span class="screen-reader-text">Поиск:</span>
+					<input type="search" class="search-field" placeholder="Поиск…" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Поиск">
+			</form></aside><aside id="wp_tag_cloud-3" class="widget wp_widget_tag_cloud"><h1 class="widget-title">Метки</h1><a href="https://helpbw.wordpress.com/tag/abap/" class="tag-cloud-link tag-link-284541 tag-link-position-1" style="font-size: 22pt;" aria-label="ABAP (9 элементов)">ABAP</a>
+<a href="https://helpbw.wordpress.com/tag/activate/" class="tag-cloud-link tag-link-603555 tag-link-position-2" style="font-size: 11.6pt;" aria-label="ACTIVATE (2 элемента)">ACTIVATE</a>
+<a href="https://helpbw.wordpress.com/tag/adso/" class="tag-cloud-link tag-link-8871653 tag-link-position-3" style="font-size: 11.6pt;" aria-label="ADSO (2 элемента)">ADSO</a>
+<a href="https://helpbw.wordpress.com/tag/amdp/" class="tag-cloud-link tag-link-45791917 tag-link-position-4" style="font-size: 11.6pt;" aria-label="AMDP (2 элемента)">AMDP</a>
+<a href="https://helpbw.wordpress.com/tag/basis/" class="tag-cloud-link tag-link-80335 tag-link-position-5" style="font-size: 8pt;" aria-label="Basis (1 элемент)">Basis</a>
+<a href="https://helpbw.wordpress.com/tag/bex/" class="tag-cloud-link tag-link-968987 tag-link-position-6" style="font-size: 14pt;" aria-label="Bex (3 элемента)">Bex</a>
+<a href="https://helpbw.wordpress.com/tag/cds/" class="tag-cloud-link tag-link-9159 tag-link-position-7" style="font-size: 11.6pt;" aria-label="CDS (2 элемента)">CDS</a>
+<a href="https://helpbw.wordpress.com/tag/cube/" class="tag-cloud-link tag-link-5460 tag-link-position-8" style="font-size: 11.6pt;" aria-label="CUBE (2 элемента)">CUBE</a>
+<a href="https://helpbw.wordpress.com/tag/data-transfer/" class="tag-cloud-link tag-link-2187017 tag-link-position-9" style="font-size: 8pt;" aria-label="Data Transfer (1 элемент)">Data Transfer</a>
+<a href="https://helpbw.wordpress.com/tag/dso/" class="tag-cloud-link tag-link-642350 tag-link-position-10" style="font-size: 11.6pt;" aria-label="DSO (2 элемента)">DSO</a>
+<a href="https://helpbw.wordpress.com/tag/dtp/" class="tag-cloud-link tag-link-144552 tag-link-position-11" style="font-size: 16pt;" aria-label="DTP (4 элемента)">DTP</a>
+<a href="https://helpbw.wordpress.com/tag/extract/" class="tag-cloud-link tag-link-621688 tag-link-position-12" style="font-size: 11.6pt;" aria-label="Extract (2 элемента)">Extract</a>
+<a href="https://helpbw.wordpress.com/tag/fm/" class="tag-cloud-link tag-link-153647 tag-link-position-13" style="font-size: 14pt;" aria-label="FM (3 элемента)">FM</a>
+<a href="https://helpbw.wordpress.com/tag/hana/" class="tag-cloud-link tag-link-347828 tag-link-position-14" style="font-size: 17.6pt;" aria-label="HANA (5 элементов)">HANA</a>
+<a href="https://helpbw.wordpress.com/tag/infocube/" class="tag-cloud-link tag-link-80372 tag-link-position-15" style="font-size: 11.6pt;" aria-label="InfoCube (2 элемента)">InfoCube</a>
+<a href="https://helpbw.wordpress.com/tag/infopackage/" class="tag-cloud-link tag-link-54137376 tag-link-position-16" style="font-size: 11.6pt;" aria-label="InfoPackage (2 элемента)">InfoPackage</a>
+<a href="https://helpbw.wordpress.com/tag/odata/" class="tag-cloud-link tag-link-2611405 tag-link-position-17" style="font-size: 11.6pt;" aria-label="Odata (2 элемента)">Odata</a>
+<a href="https://helpbw.wordpress.com/tag/psa-and-extraction/" class="tag-cloud-link tag-link-716452358 tag-link-position-18" style="font-size: 14pt;" aria-label="PSA and Extraction (3 элемента)">PSA and Extraction</a>
+<a href="https://helpbw.wordpress.com/tag/query/" class="tag-cloud-link tag-link-195721 tag-link-position-19" style="font-size: 11.6pt;" aria-label="Query (2 элемента)">Query</a>
+<a href="https://helpbw.wordpress.com/tag/querydesigner/" class="tag-cloud-link tag-link-9309100 tag-link-position-20" style="font-size: 11.6pt;" aria-label="querydesigner (2 элемента)">querydesigner</a>
+<a href="https://helpbw.wordpress.com/tag/semantic/" class="tag-cloud-link tag-link-5655 tag-link-position-21" style="font-size: 8pt;" aria-label="Semantic (1 элемент)">Semantic</a>
+<a href="https://helpbw.wordpress.com/tag/snc/" class="tag-cloud-link tag-link-367725 tag-link-position-22" style="font-size: 8pt;" aria-label="SNC (1 элемент)">SNC</a>
+<a href="https://helpbw.wordpress.com/tag/sql/" class="tag-cloud-link tag-link-10346 tag-link-position-23" style="font-size: 14pt;" aria-label="SQL (3 элемента)">SQL</a>
+<a href="https://helpbw.wordpress.com/tag/tables/" class="tag-cloud-link tag-link-160209 tag-link-position-24" style="font-size: 14pt;" aria-label="tables (3 элемента)">tables</a>
+<a href="https://helpbw.wordpress.com/tag/vba/" class="tag-cloud-link tag-link-32862 tag-link-position-25" style="font-size: 11.6pt;" aria-label="VBA (2 элемента)">VBA</a>
+<a href="https://helpbw.wordpress.com/tag/web-service/" class="tag-cloud-link tag-link-13849 tag-link-position-26" style="font-size: 11.6pt;" aria-label="Web service (2 элемента)">Web service</a>
+<a href="https://helpbw.wordpress.com/tag/web-services/" class="tag-cloud-link tag-link-2358 tag-link-position-27" style="font-size: 8pt;" aria-label="Web Services (1 элемент)">Web Services</a>
+<a href="https://helpbw.wordpress.com/tag/%d0%bf%d0%bf%d0%b4/" class="tag-cloud-link tag-link-85590733 tag-link-position-28" style="font-size: 11.6pt;" aria-label="ППД (2 элемента)">ППД</a>
+<a href="https://helpbw.wordpress.com/tag/%d1%82%d0%b0%d0%b1%d0%bb%d0%b8%d1%86%d1%8b/" class="tag-cloud-link tag-link-3825948 tag-link-position-29" style="font-size: 8pt;" aria-label="Таблицы (1 элемент)">Таблицы</a>
+<a href="https://helpbw.wordpress.com/tag/%d1%82%d1%80%d0%b0%d0%bd%d1%81%d0%bf%d0%be%d1%80%d1%82/" class="tag-cloud-link tag-link-990379 tag-link-position-30" style="font-size: 11.6pt;" aria-label="транспорт (2 элемента)">транспорт</a></aside>
+		<aside id="recent-posts-1" class="widget widget_recent_entries">
+		<h1 class="widget-title">Свежие записи</h1>
+		<ul>
+											<li>
+					<a href="https://helpbw.wordpress.com/2023/06/09/%d1%81%d0%bf%d0%b8%d1%81%d0%be%d0%ba-%d1%81%d0%b8%d1%81%d1%82%d0%b5%d0%bc-%d0%b2-eclipse-062020-%d0%b8-%d0%bd%d0%be%d0%b2%d0%b5%d0%b5/">Список систем в Eclipse 062020 и&nbsp;новее</a>
+											<span class="post-date">09.06.2023</span>
+									</li>
+											<li>
+					<a href="https://helpbw.wordpress.com/2022/12/09/%d1%81%d0%b2%d1%8f%d0%b7%d1%8c-%d0%b2-adso-%d1%81-%d1%83%d0%b4%d0%b0%d0%bb%d1%91%d0%bd%d0%bd%d1%8b%d0%bc-dtp-%d0%bf%d0%bf%d0%b4/">Связь в ADSO с удалённым DTP&nbsp;(ППД)</a>
+											<span class="post-date">09.12.2022</span>
+									</li>
+											<li>
+					<a href="https://helpbw.wordpress.com/2022/10/18/%d0%b2%d0%b8%d0%b4%d1%8b-adso-%d0%b8%d1%85-%d1%82%d0%b0%d0%b1%d0%bb%d0%b8%d1%86%d1%8b-%d1%80%d0%b0%d0%ba%d1%83%d1%80%d1%81%d1%8b-%d0%b8-%d0%b2%d0%be%d0%b7%d0%bc%d0%be%d0%b6%d0%bd%d0%be%d1%81%d1%82/">Виды ADSO, их таблицы, ракурсы и&nbsp;возможности</a>
+											<span class="post-date">18.10.2022</span>
+									</li>
+											<li>
+					<a href="https://helpbw.wordpress.com/2022/09/16/odata-%d1%81%d0%b5%d1%80%d0%b2%d0%b8%d1%81-%d0%bd%d0%b0-cds/" aria-current="page">Odata Сервис на&nbsp;CDS.</a>
+											<span class="post-date">16.09.2022</span>
+									</li>
+											<li>
+					<a href="https://helpbw.wordpress.com/2022/07/19/%d0%bf%d0%be%d0%bb%d0%b5%d0%b7%d0%bd%d1%8b%d0%b5-sql-%d0%ba%d0%be%d0%bc%d0%b0%d0%bd%d0%b4%d1%8b-%d0%b2-hana/">Полезные SQL команды в&nbsp;HANA.</a>
+											<span class="post-date">19.07.2022</span>
+									</li>
+					</ul>
+
+		</aside>	</div><!-- #secondary -->
+
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+				<div class="site-info-wrapper clear">
+						<div class="site-info">
+				<a href="https://wordpress.com/?ref=footer_custom_powered" rel="nofollow">Веб-сайт работает на WordPress.com</a>.
+				
+				Тема: Penscratch 2, автор: <a href="https://wordpress.com/themes/" rel="designer">WordPress.com</a>.			</div><!-- .site-info -->
+		</div><!-- .site-info-wrapper -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<!--  -->
+<script type="text/javascript" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/hovercards.min.js" id="grofiles-cards-js"></script>
+<script type="text/javascript" id="wpgroho-js-extra">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script crossorigin="anonymous" type="text/javascript" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/wpgroho.js"></script>
+
+	<script>
+		// Initialize and attach hovercards to all gravatars
+		( function() {
+			function init() {
+				if ( typeof Gravatar === 'undefined' ) {
+					return;
+				}
+
+				if ( typeof Gravatar.init !== 'function' ) {
+					return;
+				}
+
+				Gravatar.profile_cb = function ( hash, id ) {
+					WPGroHo.syncProfileData( hash, id );
+				};
+
+				Gravatar.my_hash = WPGroHo.my_hash;
+				Gravatar.init(
+					'body',
+					'#wp-admin-bar-my-account',
+					{
+						i18n: {
+							'Edit your profile': 'Изменить профиль',
+							'View profile': 'View profile',
+							'Sorry, we are unable to load this Gravatar profile.': 'Sorry, we are unable to load this Gravatar profile.',
+							'Sorry, we are unable to load this Gravatar profile. Please check your internet connection.': 'Sorry, we are unable to load this Gravatar profile. Please check your internet connection.',
+						},
+					}
+				);
+			}
+
+			if ( document.readyState !== 'loading' ) {
+				init();
+			} else {
+				document.addEventListener( 'DOMContentLoaded', init );
+			}
+		} )();
+	</script>
+
+		<div style="display:none">
+	<div class="grofile-hash-map-24fcabf01cd9d8164785f24d9a9afaaa">
+	</div>
+	</div>
+		<script type="text/javascript">
+		( function() {
+			function init() {
+				document.body.addEventListener( 'is.post-load', function() {
+					if ( typeof __ATA.insertInlineAds === 'function' ) {
+						__ATA.insertInlineAds();
+					}
+				} );
+			}
+
+			if ( document.readyState !== 'loading' ) {
+				init();
+			} else {
+				document.addEventListener( 'DOMContentLoaded', init );
+			}
+		} )();
+		</script>		<!-- CCPA [start] -->
+		<script type="text/javascript">
+			( function () {
+
+				var setupPrivacy = function() {
+
+					// Minimal Mozilla Cookie library
+					// https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie/Simple_document.cookie_framework
+					var cookieLib = window.cookieLib = {getItem:function(e){return e&&decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*"+encodeURIComponent(e).replace(/[\-\.\+\*]/g,"\\$&")+"\\s*\\=\\s*([^;]*).*$)|^.*$"),"$1"))||null},setItem:function(e,o,n,t,r,i){if(!e||/^(?:expires|max\-age|path|domain|secure)$/i.test(e))return!1;var c="";if(n)switch(n.constructor){case Number:c=n===1/0?"; expires=Fri, 31 Dec 9999 23:59:59 GMT":"; max-age="+n;break;case String:c="; expires="+n;break;case Date:c="; expires="+n.toUTCString()}return"rootDomain"!==r&&".rootDomain"!==r||(r=(".rootDomain"===r?".":"")+document.location.hostname.split(".").slice(-2).join(".")),document.cookie=encodeURIComponent(e)+"="+encodeURIComponent(o)+c+(r?"; domain="+r:"")+(t?"; path="+t:"")+(i?"; secure":""),!0}};
+
+					// Implement IAB USP API.
+					window.__uspapi = function( command, version, callback ) {
+
+						// Validate callback.
+						if ( typeof callback !== 'function' ) {
+							return;
+						}
+
+						// Validate the given command.
+						if ( command !== 'getUSPData' || version !== 1 ) {
+							callback( null, false );
+							return;
+						}
+
+						// Check for GPC. If set, override any stored cookie.
+						if ( navigator.globalPrivacyControl ) {
+							callback( { version: 1, uspString: '1YYN' }, true );
+							return;
+						}
+
+						// Check for cookie.
+						var consent = cookieLib.getItem( 'usprivacy' );
+
+						// Invalid cookie.
+						if ( null === consent ) {
+							callback( null, false );
+							return;
+						}
+
+						// Everything checks out. Fire the provided callback with the consent data.
+						callback( { version: 1, uspString: consent }, true );
+					};
+
+					// Initialization.
+					document.addEventListener( 'DOMContentLoaded', function() {
+
+						// Internal functions.
+						var setDefaultOptInCookie = function() {
+							var value = '1YNN';
+							var domain = '.wordpress.com' === location.hostname.slice( -14 ) ? '.rootDomain' : location.hostname;
+							cookieLib.setItem( 'usprivacy', value, 365 * 24 * 60 * 60, '/', domain );
+						};
+
+						var setDefaultOptOutCookie = function() {
+							var value = '1YYN';
+							var domain = '.wordpress.com' === location.hostname.slice( -14 ) ? '.rootDomain' : location.hostname;
+							cookieLib.setItem( 'usprivacy', value, 24 * 60 * 60, '/', domain );
+						};
+
+						var setDefaultNotApplicableCookie = function() {
+							var value = '1---';
+							var domain = '.wordpress.com' === location.hostname.slice( -14 ) ? '.rootDomain' : location.hostname;
+							cookieLib.setItem( 'usprivacy', value, 24 * 60 * 60, '/', domain );
+						};
+
+						var setCcpaAppliesCookie = function( applies ) {
+							var domain = '.wordpress.com' === location.hostname.slice( -14 ) ? '.rootDomain' : location.hostname;
+							cookieLib.setItem( 'ccpa_applies', applies, 24 * 60 * 60, '/', domain );
+						}
+
+						var maybeCallDoNotSellCallback = function() {
+							if ( 'function' === typeof window.doNotSellCallback ) {
+								return window.doNotSellCallback();
+							}
+
+							return false;
+						}
+
+						// Look for usprivacy cookie first.
+						var usprivacyCookie = cookieLib.getItem( 'usprivacy' );
+
+						// Found a usprivacy cookie.
+						if ( null !== usprivacyCookie ) {
+
+							// If the cookie indicates that CCPA does not apply, then bail.
+							if ( '1---' === usprivacyCookie ) {
+								return;
+							}
+
+							// CCPA applies, so call our callback to add Do Not Sell link to the page.
+							maybeCallDoNotSellCallback();
+
+							// We're all done, no more processing needed.
+							return;
+						}
+
+						// We don't have a usprivacy cookie, so check to see if we have a CCPA applies cookie.
+						var ccpaCookie = cookieLib.getItem( 'ccpa_applies' );
+
+						// No CCPA applies cookie found, so we'll need to geolocate if this visitor is from California.
+						// This needs to happen client side because we do not have region geo data in our $SERVER headers,
+						// only country data -- therefore we can't vary cache on the region.
+						if ( null === ccpaCookie ) {
+
+							var request = new XMLHttpRequest();
+							request.open( 'GET', 'https://public-api.wordpress.com/geo/', true );
+
+							request.onreadystatechange = function () {
+								if ( 4 === this.readyState ) {
+									if ( 200 === this.status ) {
+
+										// Got a geo response. Parse out the region data.
+										var data = JSON.parse( this.response );
+										var region      = data.region ? data.region.toLowerCase() : '';
+										var ccpa_applies = ['california', 'colorado', 'connecticut', 'utah', 'virginia'].indexOf( region ) > -1;
+										// Set CCPA applies cookie. This keeps us from having to make a geo request too frequently.
+										setCcpaAppliesCookie( ccpa_applies );
+
+										// Check if CCPA applies to set the proper usprivacy cookie.
+										if ( ccpa_applies ) {
+											if ( maybeCallDoNotSellCallback() ) {
+												// Do Not Sell link added, so set default opt-in.
+												setDefaultOptInCookie();
+											} else {
+												// Failed showing Do Not Sell link as required, so default to opt-OUT just to be safe.
+												setDefaultOptOutCookie();
+											}
+										} else {
+											// CCPA does not apply.
+											setDefaultNotApplicableCookie();
+										}
+									} else {
+										// Could not geo, so let's assume for now that CCPA applies to be safe.
+										setCcpaAppliesCookie( true );
+										if ( maybeCallDoNotSellCallback() ) {
+											// Do Not Sell link added, so set default opt-in.
+											setDefaultOptInCookie();
+										} else {
+											// Failed showing Do Not Sell link as required, so default to opt-OUT just to be safe.
+											setDefaultOptOutCookie();
+										}
+									}
+								}
+							};
+
+							// Send the geo request.
+							request.send();
+						} else {
+							// We found a CCPA applies cookie.
+							if ( ccpaCookie === 'true' ) {
+								if ( maybeCallDoNotSellCallback() ) {
+									// Do Not Sell link added, so set default opt-in.
+									setDefaultOptInCookie();
+								} else {
+									// Failed showing Do Not Sell link as required, so default to opt-OUT just to be safe.
+									setDefaultOptOutCookie();
+								}
+							} else {
+								// CCPA does not apply.
+								setDefaultNotApplicableCookie();
+							}
+						}
+					} );
+				};
+
+				// Kickoff initialization.
+				if ( window.defQueue && defQueue.isLOHP && defQueue.isLOHP === 2020 ) {
+					defQueue.items.push( setupPrivacy );
+				} else {
+					setupPrivacy();
+				}
+
+			} )();
+		</script>
+
+		<!-- CCPA [end] -->
+			<div id="actionbar" class="actnbr-pub-penscratch-2 actnbr-has-follow">
+		<ul>
+								<li class="actnbr-btn actnbr-hidden">
+						<a class="actnbr-action actnbr-actn-comment" href="https://helpbw.wordpress.com/2022/09/16/odata-%d1%81%d0%b5%d1%80%d0%b2%d0%b8%d1%81-%d0%bd%d0%b0-cds/#respond">
+							<svg class="gridicon gridicons-comment" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M12 16l-5 5v-5H5c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v9c0 1.1-.9 2-2 2h-7z"></path></g></svg>							<span>комментарий						</span>
+						</a>
+					</li>
+									<li class="actnbr-btn actnbr-hidden">
+								<a class="actnbr-action actnbr-actn-follow " href="">
+			<svg class="gridicon" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path clip-rule="evenodd" d="m4 4.5h12v6.5h1.5v-6.5-1.5h-1.5-12-1.5v1.5 10.5c0 1.1046.89543 2 2 2h7v-1.5h-7c-.27614 0-.5-.2239-.5-.5zm10.5 2h-9v1.5h9zm-5 3h-4v1.5h4zm3.5 1.5h-1v1h1zm-1-1.5h-1.5v1.5 1 1.5h1.5 1 1.5v-1.5-1-1.5h-1.5zm-2.5 2.5h-4v1.5h4zm6.5 1.25h1.5v2.25h2.25v1.5h-2.25v2.25h-1.5v-2.25h-2.25v-1.5h2.25z" fill-rule="evenodd"></path></svg>
+			<span>Отслеживать</span>
+		</a>
+		<a class="actnbr-action actnbr-actn-following  no-display" href="">
+			<svg class="gridicon" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 4.5H4V15C4 15.2761 4.22386 15.5 4.5 15.5H11.5V17H4.5C3.39543 17 2.5 16.1046 2.5 15V4.5V3H4H16H17.5V4.5V12.5H16V4.5ZM5.5 6.5H14.5V8H5.5V6.5ZM5.5 9.5H9.5V11H5.5V9.5ZM12 11H13V12H12V11ZM10.5 9.5H12H13H14.5V11V12V13.5H13H12H10.5V12V11V9.5ZM5.5 12H9.5V13.5H5.5V12Z" fill="#008A20"></path><path class="following-icon-tick" d="M13.5 16L15.5 18L19 14.5" stroke="#008A20" stroke-width="1.5"></path></svg>
+			<span>Отслеживаемые сайты</span>
+		</a>
+							<div class="actnbr-popover tip tip-top-left actnbr-notice" id="follow-bubble">
+							<div class="tip-arrow"></div>
+							<div class="tip-inner actnbr-follow-bubble">
+															<ul>
+											<li class="actnbr-sitename actnbr-hidden">
+			<a href="https://helpbw.wordpress.com/">
+				<img alt="" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/cropped-saplg11_004.webp" srcset="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/cropped-saplg11_004.webp 1x, Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/cropped-saplg11.webp 1.5x, Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/cropped-saplg11_002.webp 2x, Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/cropped-saplg11_003.webp 3x, Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/cropped-saplg11_005.webp 4x" class="avatar avatar-50" height="50" width="50">				SAP BW справочник			</a>
+		</li>
+										<div class="actnbr-message no-display"></div>
+									<form method="post" action="https://subscribe.wordpress.com" accept-charset="utf-8" style="display: none;">
+																				<div>
+										<input type="email" name="email" placeholder="Введите свой адрес электронной почты" class="actnbr-email-field" aria-label="Введите свой адрес электронной почты">
+										</div>
+										<input type="hidden" name="action" value="subscribe">
+										<input type="hidden" name="blog_id" value="125712666">
+										<input type="hidden" name="source" value="https://helpbw.wordpress.com/2022/09/16/odata-%d1%81%d0%b5%d1%80%d0%b2%d0%b8%d1%81-%d0%bd%d0%b0-cds/">
+										<input type="hidden" name="sub-type" value="actionbar-follow">
+										<input type="hidden" id="_wpnonce" name="_wpnonce" value="f10f4fe98c">										<div class="actnbr-button-wrap">
+											<button type="submit" value="Подписаться">
+												Подписаться											</button>
+										</div>
+									</form>
+									<li class="actnbr-login-nudge actnbr-hidden">
+										<div>
+											Уже есть учётная запись <span class="skimlinks-unlinked">WordPress.com</span>? <a href="https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fhelpbw.wordpress.com%2F2022%2F09%2F16%2Fodata-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81-%D0%BD%D0%B0-cds%2F&amp;signup_flow=account">Войдите в систему.</a>										</div>
+									</li>
+								</ul>
+															</div>
+						</div>
+					</li>
+							<li class="actnbr-ellipsis actnbr-hidden">
+				<svg class="gridicon gridicons-ellipsis" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M7 12c0 1.104-.896 2-2 2s-2-.896-2-2 .896-2 2-2 2 .896 2 2zm12-2c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2zm-7 0c-1.104 0-2 .896-2 2s.896 2 2 2 2-.896 2-2-.896-2-2-2z"></path></g></svg>				<div class="actnbr-popover tip tip-top-left actnbr-more">
+					<div class="tip-arrow"></div>
+					<div class="tip-inner">
+						<ul>
+									<li class="actnbr-sitename actnbr-hidden">
+			<a href="https://helpbw.wordpress.com/">
+				<img alt="" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/cropped-saplg11_004.webp" srcset="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/cropped-saplg11_004.webp 1x, Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/cropped-saplg11.webp 1.5x, Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/cropped-saplg11_002.webp 2x, Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/cropped-saplg11_003.webp 3x, Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/cropped-saplg11_005.webp 4x" class="avatar avatar-50" height="50" width="50">				SAP BW справочник			</a>
+		</li>
+								<li class="actnbr-folded-customize actnbr-hidden">
+								<a href="https://helpbw.wordpress.com/wp-admin/customize.php?url=https%3A%2F%2Fhelpbw.wordpress.com%2F2022%2F09%2F16%2Fodata-%25d1%2581%25d0%25b5%25d1%2580%25d0%25b2%25d0%25b8%25d1%2581-%25d0%25bd%25d0%25b0-cds%2F">
+									<svg class="gridicon gridicons-customize" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M2 6c0-1.505.78-3.08 2-4 0 .845.69 2 2 2 1.657 0 3 1.343 3 3 0 .386-.08.752-.212 1.09.74.594 1.476 1.19 2.19 1.81L8.9 11.98c-.62-.716-1.214-1.454-1.807-2.192C6.753 9.92 6.387 10 6 10c-2.21 0-4-1.79-4-4zm12.152 6.848l1.34-1.34c.607.304 1.283.492 2.008.492 2.485 0 4.5-2.015 4.5-4.5 0-.725-.188-1.4-.493-2.007L18 9l-2-2 3.507-3.507C18.9 3.188 18.225 3 17.5 3 15.015 3 13 5.015 13 7.5c0 .725.188 1.4.493 2.007L3 20l2 2 6.848-6.848c1.885 1.928 3.874 3.753 5.977 5.45l1.425 1.148 1.5-1.5-1.15-1.425c-1.695-2.103-3.52-4.092-5.448-5.977z"></path></g></svg>									<span>Настроить</span>
+								</a>
+							</li>
+																<li class="actnbr-folded-follow actnbr-hidden">
+												<a class="actnbr-action actnbr-actn-follow " href="">
+			<svg class="gridicon" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path clip-rule="evenodd" d="m4 4.5h12v6.5h1.5v-6.5-1.5h-1.5-12-1.5v1.5 10.5c0 1.1046.89543 2 2 2h7v-1.5h-7c-.27614 0-.5-.2239-.5-.5zm10.5 2h-9v1.5h9zm-5 3h-4v1.5h4zm3.5 1.5h-1v1h1zm-1-1.5h-1.5v1.5 1 1.5h1.5 1 1.5v-1.5-1-1.5h-1.5zm-2.5 2.5h-4v1.5h4zm6.5 1.25h1.5v2.25h2.25v1.5h-2.25v2.25h-1.5v-2.25h-2.25v-1.5h2.25z" fill-rule="evenodd"></path></svg>
+			<span>Отслеживать</span>
+		</a>
+		<a class="actnbr-action actnbr-actn-following  no-display" href="">
+			<svg class="gridicon" height="20" width="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 4.5H4V15C4 15.2761 4.22386 15.5 4.5 15.5H11.5V17H4.5C3.39543 17 2.5 16.1046 2.5 15V4.5V3H4H16H17.5V4.5V12.5H16V4.5ZM5.5 6.5H14.5V8H5.5V6.5ZM5.5 9.5H9.5V11H5.5V9.5ZM12 11H13V12H12V11ZM10.5 9.5H12H13H14.5V11V12V13.5H13H12H10.5V12V11V9.5ZM5.5 12H9.5V13.5H5.5V12Z" fill="#008A20"></path><path class="following-icon-tick" d="M13.5 16L15.5 18L19 14.5" stroke="#008A20" stroke-width="1.5"></path></svg>
+			<span>Отслеживаемые сайты</span>
+		</a>
+										</li>
+																	<li class="actnbr-signup actnbr-hidden"><a href="https://wordpress.com/start/">Регистрация</a></li>
+									<li class="actnbr-login actnbr-hidden"><a href="https://wordpress.com/log-in?redirect_to=https%3A%2F%2Fhelpbw.wordpress.com%2F2022%2F09%2F16%2Fodata-%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81-%D0%BD%D0%B0-cds%2F&amp;signup_flow=account">Войти</a></li>
+																	<li class="actnbr-shortlink actnbr-hidden"><a href="https://wp.me/p8vtBE-pd">Копировать ссылку</a></li>
+																	<li class="flb-report actnbr-hidden">
+										<a href="http://en.wordpress.com/abuse/?report_url=https://helpbw.wordpress.com/2022/09/16/odata-%d1%81%d0%b5%d1%80%d0%b2%d0%b8%d1%81-%d0%bd%d0%b0-cds/" target="_blank">
+											Сообщить об этом содержимом										</a>
+									</li>
+																	<li class="actnbr-reader actnbr-hidden">
+										<a href="https://wordpress.com/read/blogs/125712666/posts/1563">
+											View post in Reader										</a>
+									</li>
+																	<li class="actnbr-subs actnbr-hidden">
+										<a href="https://subscribe.wordpress.com/">Управление подписками</a>
+									</li>
+																		<li class="actnbr-fold actnbr-hidden"><a href="">Свернуть эту панель</a></li>
+															</ul>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	
+<script>
+window.addEventListener( "load", function( event ) {
+	var link = document.createElement( "link" );
+	link.href = "https://s0.wp.com/wp-content/mu-plugins/actionbar/actionbar.css?v=20231122";
+	link.type = "text/css";
+	link.rel = "stylesheet";
+	document.head.appendChild( link );
+
+	var script = document.createElement( "script" );
+	script.src = "https://s0.wp.com/wp-content/mu-plugins/actionbar/actionbar.js?v=20231122";
+	script.defer = true;
+	document.body.appendChild( script );
+} );
+</script>
+
+			<div id="jp-carousel-loading-overlay">
+			<div id="jp-carousel-loading-wrapper">
+				<span id="jp-carousel-library-loading">&nbsp;</span>
+			</div>
+		</div>
+		<div class="jp-carousel-overlay" style="display: none;">
+
+		<div class="jp-carousel-container">
+			<!-- The Carousel Swiper -->
+			<div class="jp-carousel-wrap swiper-container jp-carousel-swiper-container jp-carousel-transitions" itemscope="" itemtype="https://schema.org/ImageGallery">
+				<div class="jp-carousel swiper-wrapper"></div>
+				<div class="jp-swiper-button-prev swiper-button-prev">
+					<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<mask id="maskPrev" mask-type="alpha" maskUnits="userSpaceOnUse" x="8" y="6" width="9" height="12">
+							<path d="M16.2072 16.59L11.6496 12L16.2072 7.41L14.8041 6L8.8335 12L14.8041 18L16.2072 16.59Z" fill="white"></path>
+						</mask>
+						<g mask="url(#maskPrev)">
+							<rect x="0.579102" width="23.8823" height="24" fill="#FFFFFF"></rect>
+						</g>
+					</svg>
+				</div>
+				<div class="jp-swiper-button-next swiper-button-next">
+					<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<mask id="maskNext" mask-type="alpha" maskUnits="userSpaceOnUse" x="8" y="6" width="8" height="12">
+							<path d="M8.59814 16.59L13.1557 12L8.59814 7.41L10.0012 6L15.9718 12L10.0012 18L8.59814 16.59Z" fill="white"></path>
+						</mask>
+						<g mask="url(#maskNext)">
+							<rect x="0.34375" width="23.8822" height="24" fill="#FFFFFF"></rect>
+						</g>
+					</svg>
+				</div>
+			</div>
+			<!-- The main close buton -->
+			<div class="jp-carousel-close-hint">
+				<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<mask id="maskClose" mask-type="alpha" maskUnits="userSpaceOnUse" x="5" y="5" width="15" height="14">
+						<path d="M19.3166 6.41L17.9135 5L12.3509 10.59L6.78834 5L5.38525 6.41L10.9478 12L5.38525 17.59L6.78834 19L12.3509 13.41L17.9135 19L19.3166 17.59L13.754 12L19.3166 6.41Z" fill="white"></path>
+					</mask>
+					<g mask="url(#maskClose)">
+						<rect x="0.409668" width="23.8823" height="24" fill="#FFFFFF"></rect>
+					</g>
+				</svg>
+			</div>
+			<!-- Image info, comments and meta -->
+			<div class="jp-carousel-info">
+				<div class="jp-carousel-info-footer">
+					<div class="jp-carousel-pagination-container">
+						<div class="jp-swiper-pagination swiper-pagination"></div>
+						<div class="jp-carousel-pagination"></div>
+					</div>
+					<div class="jp-carousel-photo-title-container">
+						<h2 class="jp-carousel-photo-caption"></h2>
+					</div>
+					<div class="jp-carousel-photo-icons-container">
+						<a href="#" class="jp-carousel-icon-btn jp-carousel-icon-info" aria-label="Переключить видимость метаданных фотографии">
+							<span class="jp-carousel-icon">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<mask id="maskInfo" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="2" width="21" height="20">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M12.7537 2C7.26076 2 2.80273 6.48 2.80273 12C2.80273 17.52 7.26076 22 12.7537 22C18.2466 22 22.7046 17.52 22.7046 12C22.7046 6.48 18.2466 2 12.7537 2ZM11.7586 7V9H13.7488V7H11.7586ZM11.7586 11V17H13.7488V11H11.7586ZM4.79292 12C4.79292 16.41 8.36531 20 12.7537 20C17.142 20 20.7144 16.41 20.7144 12C20.7144 7.59 17.142 4 12.7537 4C8.36531 4 4.79292 7.59 4.79292 12Z" fill="white"></path>
+									</mask>
+									<g mask="url(#maskInfo)">
+										<rect x="0.8125" width="23.8823" height="24" fill="#FFFFFF"></rect>
+									</g>
+								</svg>
+							</span>
+						</a>
+												<a href="#" class="jp-carousel-icon-btn jp-carousel-icon-comments" aria-label="Переключить видимость комментариев к фотографии">
+							<span class="jp-carousel-icon">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<mask id="maskComments" mask-type="alpha" maskUnits="userSpaceOnUse" x="2" y="2" width="21" height="20">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M4.3271 2H20.2486C21.3432 2 22.2388 2.9 22.2388 4V16C22.2388 17.1 21.3432 18 20.2486 18H6.31729L2.33691 22V4C2.33691 2.9 3.2325 2 4.3271 2ZM6.31729 16H20.2486V4H4.3271V18L6.31729 16Z" fill="white"></path>
+									</mask>
+									<g mask="url(#maskComments)">
+										<rect x="0.34668" width="23.8823" height="24" fill="#FFFFFF"></rect>
+									</g>
+								</svg>
+
+								<span class="jp-carousel-has-comments-indicator" aria-label="Имеются комментарии к этому изображению."></span>
+							</span>
+						</a>
+											</div>
+				</div>
+				<div class="jp-carousel-info-extra">
+					<div class="jp-carousel-info-content-wrapper">
+						<div class="jp-carousel-photo-title-container">
+							<h2 class="jp-carousel-photo-title"></h2>
+						</div>
+						<div class="jp-carousel-comments-wrapper">
+															<div id="jp-carousel-comments-loading">
+									<span>Загружаются Комментарии...</span>
+								</div>
+								<div class="jp-carousel-comments"></div>
+								<div id="jp-carousel-comment-form-container">
+									<span id="jp-carousel-comment-form-spinner">&nbsp;</span>
+									<div id="jp-carousel-comment-post-results"></div>
+																														<form id="jp-carousel-comment-form">
+												<label for="jp-carousel-comment-form-comment-field" class="screen-reader-text">Опубликовать комментарий...</label>
+												<textarea name="comment" class="jp-carousel-comment-form-field jp-carousel-comment-form-textarea" id="jp-carousel-comment-form-comment-field" placeholder="Опубликовать комментарий..."></textarea>
+												<div id="jp-carousel-comment-form-submit-and-info-wrapper">
+													<div id="jp-carousel-comment-form-commenting-as">
+																													<fieldset>
+																<label for="jp-carousel-comment-form-email-field">E-mail (обязательно)</label>
+																<input type="text" name="email" class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-email-field">
+															</fieldset>
+															<fieldset>
+																<label for="jp-carousel-comment-form-author-field">Имя (обязательно)</label>
+																<input type="text" name="author" class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-author-field">
+															</fieldset>
+															<fieldset>
+																<label for="jp-carousel-comment-form-url-field">Сайт</label>
+																<input type="text" name="url" class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-url-field">
+															</fieldset>
+																											</div>
+													<input type="submit" name="submit" class="jp-carousel-comment-form-button" id="jp-carousel-comment-form-button-submit" value="Отправить комментарий">
+												</div>
+											</form>
+																											</div>
+													</div>
+						<div class="jp-carousel-image-meta">
+							<div class="jp-carousel-title-and-caption">
+								<div class="jp-carousel-photo-info">
+									<h3 class="jp-carousel-caption" itemprop="caption description"></h3>
+								</div>
+
+								<div class="jp-carousel-photo-description"></div>
+							</div>
+							<ul class="jp-carousel-image-exif" style="display: none;"></ul>
+							<a class="jp-carousel-image-download" href="#" target="_blank" style="display: none;">
+								<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="3" y="3" width="19" height="18">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M5.84615 5V19H19.7775V12H21.7677V19C21.7677 20.1 20.8721 21 19.7775 21H5.84615C4.74159 21 3.85596 20.1 3.85596 19V5C3.85596 3.9 4.74159 3 5.84615 3H12.8118V5H5.84615ZM14.802 5V3H21.7677V10H19.7775V6.41L9.99569 16.24L8.59261 14.83L18.3744 5H14.802Z" fill="white"></path>
+									</mask>
+									<g mask="url(#mask0)">
+										<rect x="0.870605" width="23.8823" height="24" fill="#FFFFFF"></rect>
+									</g>
+								</svg>
+								<span class="jp-carousel-download-text"></span>
+							</a>
+							<div class="jp-carousel-image-map" style="display: none;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		</div>
+		
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/helpbw.wordpress.com\/2022\/09\/16\/odata-%d1%81%d0%b5%d1%80%d0%b2%d0%b8%d1%81-%d0%bd%d0%b0-cds\/":1563};
+	</script>
+				<link crossorigin="anonymous" rel="stylesheet" id="all-css-0-2" href="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/%25D0%2591%25D0%25B5%25D0%25B7%2520%25D0%25B8%25D0%25BC%25D0%25B5%25D0%25BD%25D0%25B8_007.css" type="text/css" media="all">
+<script type="text/javascript" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/smart.js" id="smart-tag-lib-js"></script>
+<script type="text/javascript" id="comment-like-js-extra">
+/* <![CDATA[ */
+var comment_like_text = {"loading":"\u0417\u0430\u0433\u0440\u0443\u0437\u043a\u0430...","swipeUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/comment-likes\/js\/lib\/swipe.js?ver=20131008"};
+/* ]]> */
+</script>
+<script type="text/javascript" id="jetpack-carousel-js-extra">
+/* <![CDATA[ */
+var jetpackSwiperLibraryPath = {"url":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/jetpack-plugin\/sun\/_inc\/build\/carousel\/swiper-bundle.min.js"};
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"ru","ajaxurl":"https:\/\/helpbw.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"bb01296887","display_exif":"1","display_comments":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"\u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439","post_comment":"\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439","write_comment":"\u041e\u043f\u0443\u0431\u043b\u0438\u043a\u043e\u0432\u0430\u0442\u044c \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439...","loading_comments":"\u0417\u0430\u0433\u0440\u0443\u0436\u0430\u044e\u0442\u0441\u044f \u041a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0438...","download_original":"\u041f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u0432 \u043f\u043e\u043b\u043d\u043e\u043c \u0440\u0430\u0437\u043c\u0435\u0440\u0435 <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043d\u0430\u043f\u0438\u0448\u0438\u0442\u0435 \u0442\u0435\u043a\u0441\u0442 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u044f.","no_comment_email":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u0430\u0434\u0440\u0435\u0441 \u044d\u043b. \u043f\u043e\u0447\u0442\u044b, \u0447\u0442\u043e\u0431\u044b \u043e\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439.","no_comment_author":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u0441\u0432\u043e\u0435 \u0438\u043c\u044f, \u0447\u0442\u043e\u0431\u044b \u043e\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439.","comment_post_error":"\u0421\u043e\u0436\u0430\u043b\u0435\u0435\u043c, \u043d\u043e \u0432\u043e \u0432\u0440\u0435\u043c\u044f \u043f\u0443\u0431\u043b\u0438\u043a\u0430\u0446\u0438\u0438 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u044f \u0432\u043e\u0437\u043d\u0438\u043a\u043b\u0430 \u043e\u0448\u0438\u0431\u043a\u0430. \u041f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0435\u0449\u0435 \u0440\u0430\u0437.","comment_approved":"\u0412\u0430\u0448 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439 \u0431\u044b\u043b \u043e\u0434\u043e\u0431\u0440\u0435\u043d.","comment_unapproved":"\u0412\u0430\u0448 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439 \u043e\u0436\u0438\u0434\u0430\u0435\u0442 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438.","camera":"\u041a\u0430\u043c\u0435\u0440\u0430","aperture":"\u0410\u043f\u0435\u0440\u0442\u0443\u0440\u0430","shutter_speed":"\u0412\u044b\u0434\u0435\u0440\u0436\u043a\u0430","focal_length":"\u0414\u043b\u0438\u043d\u0430 \u0424\u043e\u043a\u0443\u0441\u0430","copyright":"\u0410\u0432\u0442\u043e\u0440\u0441\u043a\u0438\u0435 \u043f\u0440\u0430\u0432\u0430","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/helpbw.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Fhelpbw.wordpress.com%2F2022%2F09%2F16%2Fodata-%25d1%2581%25d0%25b5%25d1%2580%25d0%25b2%25d0%25b8%25d1%2581-%25d0%25bd%25d0%25b0-cds%2F","blog_id":"125712666","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"stats_query_args":"blog=125712666&v=wpcom&tz=4&user_id=0&subd=helpbw","is_public":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" id="verbum-settings-js-before">
+/* <![CDATA[ */
+window.VerbumComments = {"Log in or provide your name and email to leave a reply.":"\u0427\u0442\u043e\u0431\u044b \u043e\u0442\u0432\u0435\u0442\u0438\u0442\u044c, \u0432\u043e\u0439\u0434\u0438\u0442\u0435 \u0432 \u0441\u0438\u0441\u0442\u0435\u043c\u0443 \u0438\u043b\u0438 \u0443\u043a\u0430\u0436\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0438\u043c\u044f \u0438 \u0430\u0434\u0440\u0435\u0441 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0439 \u043f\u043e\u0447\u0442\u044b.","Receive web and mobile notifications for posts on this site.":"\u041f\u043e\u043b\u0443\u0447\u0430\u0439\u0442\u0435 \u0443\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u044f \u043e \u043d\u043e\u0432\u044b\u0445 \u0437\u0430\u043f\u0438\u0441\u044f\u0445 \u043d\u0430 \u044d\u0442\u043e\u043c \u0441\u0430\u0439\u0442\u0435 \u0447\u0435\u0440\u0435\u0437 \u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442 \u0438\u043b\u0438 \u043f\u043e \u043c\u043e\u0431\u0438\u043b\u044c\u043d\u043e\u0439 \u0441\u0432\u044f\u0437\u0438.","Name":"\u0418\u043c\u044f","Email (address never made public)":"\u0410\u0434\u0440\u0435\u0441 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0439 \u043f\u043e\u0447\u0442\u044b (\u043d\u0438\u043a\u043e\u0433\u0434\u0430 \u043d\u0435 \u0431\u0443\u0434\u0435\u0442 \u043e\u043f\u0443\u0431\u043b\u0438\u043a\u043e\u0432\u0430\u043d)","Website (optional)":"\u0412\u0435\u0431-\u0441\u0430\u0439\u0442 (\u043d\u0435\u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e)","Leave a reply. (log in optional)":"\u041e\u0442\u0432\u0435\u0442\u0438\u0442\u044c. (\u0412\u0445\u043e\u0434 \u0432 \u0441\u0438\u0441\u0442\u0435\u043c\u0443 \u043d\u0435 \u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u0435\u043d.)","Log in to leave a reply.":"\u0412\u043e\u0439\u0434\u0438\u0442\u0435, \u0447\u0442\u043e\u0431\u044b \u0434\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u043e\u0442\u0432\u0435\u0442.","Logged in via %s":"\u0412\u044b\u043f\u043e\u043b\u043d\u0435\u043d \u0432\u0445\u043e\u0434 \u0447\u0435\u0440\u0435\u0437 %s","Log out":"\u0412\u044b\u0439\u0442\u0438","Email":"E-mail","(Address never made public)":"(\u0410\u0434\u0440\u0435\u0441 \u043d\u0438\u043a\u043e\u0433\u0434\u0430 \u043d\u0435 \u0431\u0443\u0434\u0435\u0442 \u043e\u043f\u0443\u0431\u043b\u0438\u043a\u043e\u0432\u0430\u043d)","Instantly":"\u041c\u0433\u043d\u043e\u0432\u0435\u043d\u043d\u043e","Daily":"\u0415\u0436\u0435\u0434\u043d\u0435\u0432\u043d\u043e","Reply":"\u041e\u0442\u0432\u0435\u0442\u0438\u0442\u044c","WordPress":"WordPress","Weekly":"\u0415\u0436\u0435\u043d\u0435\u0434\u0435\u043b\u044c\u043d\u043e","Notify me of new posts":"\u0423\u0432\u0435\u0434\u043e\u043c\u043b\u044f\u0442\u044c \u043c\u0435\u043d\u044f \u043e \u043d\u043e\u0432\u044b\u0445 \u0437\u0430\u043f\u0438\u0441\u044f\u0445","Email me new posts":"\u0423\u0432\u0435\u0434\u043e\u043c\u043b\u044f\u0442\u044c \u043c\u0435\u043d\u044f \u043e \u043d\u043e\u0432\u044b\u0445 \u0437\u0430\u043f\u0438\u0441\u044f\u0445 \u043f\u043e\u0447\u0442\u043e\u0439","Email me new comments":"\u041e\u0442\u043f\u0440\u0430\u0432\u043b\u044f\u0442\u044c \u043c\u043d\u0435 email \u043e \u043d\u043e\u0432\u044b\u0445 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u044f\u0445","Cancel":"\u041e\u0442\u043c\u0435\u043d\u0430","Write a comment...":"\u041e\u043f\u0443\u0431\u043b\u0438\u043a\u043e\u0432\u0430\u0442\u044c \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439...","Website":"\u0412\u0435\u0431\u0441\u0430\u0439\u0442","Optional":"\u041e\u043f\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u043e","We'll keep you in the loop!":"\u041c\u044b \u0431\u0443\u0434\u0435\u043c \u0434\u0435\u0440\u0436\u0430\u0442\u044c \u0432\u0430\u0441 \u0432 \u043a\u0443\u0440\u0441\u0435.","Loading your comment...":"\u0417\u0430\u0433\u0440\u0443\u0437\u043a\u0430 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u044f\u2026","Never miss a beat!":"\u041d\u0435 \u0443\u043f\u0443\u0441\u0442\u0438\u0442\u0435 \u043d\u0438\u0447\u0435\u0433\u043e!","Interested in getting blog post updates? Simply click the button below to stay in the loop!":"\u0425\u043e\u0442\u0438\u0442\u0435 \u043f\u043e\u043b\u0443\u0447\u0430\u0442\u044c \u0443\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u044f \u043e \u043d\u043e\u0432\u044b\u0445 \u0437\u0430\u043f\u0438\u0441\u044f\u0445 \u0432 \u0431\u043b\u043e\u0433\u0435? \u0427\u0442\u043e\u0431\u044b \u0432\u0441\u0435\u0433\u0434\u0430 \u0431\u044b\u0442\u044c \u0432 \u043a\u0443\u0440\u0441\u0435 \u043d\u043e\u0432\u043e\u0441\u0442\u0435\u0439, \u043f\u0440\u043e\u0441\u0442\u043e \u043d\u0430\u0436\u043c\u0438\u0442\u0435 \u043a\u043d\u043e\u043f\u043a\u0443 \u043d\u0438\u0436\u0435!","Enter your email address":"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0441\u0432\u043e\u0439 \u0430\u0434\u0440\u0435\u0441 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0439 \u043f\u043e\u0447\u0442\u044b","Subscribe":"\u041f\u043e\u0434\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f","Comment sent successfully":"\u041a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439 \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u0435\u043d.","Save my name, email, and website in this browser for the next time I comment.":"\u0421\u043e\u0445\u0440\u0430\u043d\u0438\u0442\u044c \u043c\u043e\u0451 \u0438\u043c\u044f, email \u0438 \u0430\u0434\u0440\u0435\u0441 \u0441\u0430\u0439\u0442\u0430 \u0432 \u044d\u0442\u043e\u043c \u0431\u0440\u0430\u0443\u0437\u0435\u0440\u0435 \u0434\u043b\u044f \u043f\u043e\u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0445 \u043c\u043e\u0438\u0445 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0435\u0432.","siteId":125712666,"postId":1563,"mustLogIn":false,"requireNameEmail":true,"commentRegistration":false,"connectURL":"https:\/\/helpbw.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/helpbw.wordpress.com\/wp-login.php?action=logout&_wpnonce=769118175b","homeURL":"https:\/\/helpbw.wordpress.com\/","subscribeToBlog":true,"subscribeToComment":true,"isJetpackCommentsLoggedIn":false,"jetpackUsername":"","jetpackUserId":0,"jetpackSignature":"","jetpackAvatar":"https:\/\/s0.wp.com\/i\/mu.gif","enableBlocks":false,"enableSubscriptionModal":true,"currentLocale":"ru","isJetpackComments":false,"allowedBlocks":["core\/paragraph","core\/list","core\/code","core\/list-item","core\/quote","core\/image","core\/embed","core\/quote","core\/code"],"embedNonce":"8a255b135b","verbumBundleUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/verbum\/dist\/index.js"}
+/* ]]> */
+</script>
+<script crossorigin="anonymous" type="text/javascript" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/%25D0%2591%25D0%25B5%25D0%25B7%2520%25D0%25B8%25D0%25BC%25D0%25B5%25D0%25BD%25D0%25B8_004"></script><div class="widget widget_eu_cookie_law_widget" style="display: block;">
+<div class="hide-on-button ads-active" data-hide-timeout="30" data-consent-expiration="180" id="eu-cookie-law" style="display: block;">
+	<form method="post">
+		<input type="submit" value="Принять и закрыть" class="accept">
+
+		Политика конфиденциальности и использования файлов сookie: Этот сайт 
+использует файлы cookie. Продолжая пользоваться сайтом, вы соглашаетесь с
+ их использованием. <br>
+Дополнительную информацию, в том числе об управлении файлами cookie, можно найти здесь:
+				<a href="https://automattic.com/cookies/" rel="nofollow">
+			Политика использования файлов cookie		</a>
+ </form>
+</div>
+</div>
+<script type="text/javascript" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/outbrain.js" id="outbrain-js"></script>
+<script type="text/javascript" id="sharing-js-js-extra">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1","is_stats_active":"1"};
+/* ]]> */
+</script>
+<script crossorigin="anonymous" type="text/javascript" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/%25D0%2591%25D0%25B5%25D0%25B7%2520%25D0%25B8%25D0%25BC%25D0%25B5%25D0%25BD%25D0%25B8_003"></script>
+<script type="text/javascript" id="sharing-js-js-after">
+/* <![CDATA[ */
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-twitter' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-twitter' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+						return false;
+					}
+				} );
+			} )();
+var windowOpen;
+			( function () {
+				function matches( el, sel ) {
+					return !! (
+						el.matches && el.matches( sel ) ||
+						el.msMatchesSelector && el.msMatchesSelector( sel )
+					);
+				}
+
+				document.body.addEventListener( 'click', function ( event ) {
+					if ( ! event.target ) {
+						return;
+					}
+
+					var el;
+					if ( matches( event.target, 'a.share-facebook' ) ) {
+						el = event.target;
+					} else if ( event.target.parentNode && matches( event.target.parentNode, 'a.share-facebook' ) ) {
+						el = event.target.parentNode;
+					}
+
+					if ( el ) {
+						event.preventDefault();
+
+						// If there's another sharing window open, close it.
+						if ( typeof windowOpen !== 'undefined' ) {
+							windowOpen.close();
+						}
+						windowOpen = window.open( el.getAttribute( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+						return false;
+					}
+				} );
+			} )();
+/* ]]> */
+</script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>	<iframe src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/master.htm" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+	<div id="likes-other-gravatars" class="wpl-new-layout" aria-hidden="true">
+		<div class="likes-text">
+			<span>%d</span>		</div>
+		<ul class="wpl-avatars sd-like-gravatars"></ul>
+	</div>
+
+		<script src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/w.js" defer="defer"></script> <script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'125712666','blog_tz':'4','user_lang':'ru','blog_lang':'ru','user_id':'0'}]);
+_stq.push(['view', {'blog':'125712666','v':'wpcom','tz':'4','user_id':'0','post':'1563','subd':'helpbw'}]);
+_stq.push(['extra', {'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdWtpP0NsWnVkPS9sL0ViLndld3BocnhKS342elM2RSUuTnZbWnosQnJvYS5GQWw9dkpCRCtHMj9odFZTd2ZSQV8/WWswaD92dnN4Zi0uM3xqaWxLaXdIVnl+d0EuVytjRGlUUXpEN044fGk2TCYzL1BxeFRrK0I9WFQ0cTd8TVl+QzJEbTZuZ0UwfEtUYkFMYzIyVnxYRGt2U0dTSVlqVHJhdUV0PTE2ZW12MnVzZkRJL1dsQmJQV2VORVNOVUx4N29TZ0pteThIaGlxK1k/WHM1UkhLVzRXVWNTaHdKRzVzTExkVHhBaTdfWUVfSFNdanZ0OGdoLHpTTCUxXUltcXI0RS9mTCtERkw0L1s3RzN0JkdQYTRJZj9jZ0lmK253P1ZBZkM4T0ZdU0w0S3JQVkIuT2dfVUp+K0E='}]);
+_stq.push([ 'clickTrackerInit', '125712666', '1563' ]);
+</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:1px;width:1px;overflow:hidden;position:absolute;bottom:1px;" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+<script>
+(function() {
+	'use strict';
+
+	const fetches = {};
+	const promises = {};
+	const urls = {
+		'verbum': 'https://s0.wp.com/wp-content/mu-plugins/verbum/dist/index.js?m=1703085346i&ver=1703085346'
+	};
+	const loaders = {
+		'verbum': () => {
+			fetchExternalScript('verbum');
+			promises['verbum'] = promises['verbum'] || loadWPScript('verbum');
+			return promises['verbum'];
+		},
+		
+	};
+	const scriptExtras = {
+		
+	};
+
+	window.WP_Enqueue_Dynamic_Script = {
+		loadScript: (handle) => {
+			if (!loaders[handle]) {
+				console.error('WP_Enqueue_Dynamic_Script: unregistered script `' + handle + '`.');
+			}
+			return loaders[handle]();
+		}
+	};
+
+	function fetchExternalScript(handle) {
+		if (!urls[handle]) {
+			return Promise.resolve();
+		}
+
+		fetches[handle] = fetches[handle] || fetch(urls[handle], { mode: 'no-cors' });
+		return fetches[handle];
+	}
+
+	function runExtraScript(handle, type, index) {
+		const id = 'wp-enqueue-dynamic-script:' + handle + ':' + type + ':' + (index + 1);
+		const template = document.getElementById(id);
+		if (!template) {
+			return Promise.reject();
+		}
+
+		const script = document.createElement( 'script' );
+		script.innerHTML = template.innerHTML;
+		document.body.appendChild( script );
+		return Promise.resolve();
+	}
+
+	function loadExternalScript(handle) {
+		if (!urls[handle]) {
+			return Promise.resolve();
+		}
+
+		return fetches[handle].then(() => {
+			return new Promise((resolve, reject) => {
+				const script = document.createElement('script');
+				script.onload = () => resolve();
+				script.onerror = (e) => reject(e);
+				script.src = urls[handle];
+				document.body.appendChild(script);
+			});
+		});
+	}
+
+	function loadExtra(handle, pos) {
+		const count = (scriptExtras[handle] && scriptExtras[handle][pos]) || 0;
+		let promise = Promise.resolve();
+
+		for (let i = 0; i < count; i++) {
+			promise = promise.then(() => runExtraScript(handle, pos, i));
+		}
+
+		return promise;
+	}
+
+	function loadWPScript(handle) {
+		return loadExtra(handle, 'before')
+			.then(() => loadExternalScript(handle))
+			.then(() => loadExtra(handle, 'after'));
+	}
+} )();
+</script>
+
+
+
+<style>img#wpstats {
+			position: absolute !important;
+			clip: rect(0, 0, 0, 0);
+			padding: 0 !important;
+			border: 0 !important;
+			height: 0 !important;
+			width: 0 !important;
+			overflow: hidden;
+		}</style><img src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/g.gif" alt="" id="wpstats"><iframe style="display: none;" name="__tcfapiLocator"></iframe><div class="comment-likes-overlay" style="display: none;"></div><iframe style="display: none" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/user_sync.htm"></iframe><iframe style="display: none" src="https://ups.analytics.yahoo.com/ups/58666/occ?uid=7a1cba6e-5adf-4a89-940e-269eef496131&amp;gdpr=0&amp;gdpr_consent="></iframe><iframe style="display: none" src="https://ssc-cms.33across.com/ps/?m=xch&amp;rt=html&amp;id=0010b00002CphGRAAZ&amp;gdpr_consent=&amp;ru=https%3A%2F%2Fs.pubmine.com%2Fmatch%3Fbidder_id%3D6%26external_user_id%3D33XUSERID33X%26ssp_data%3D7a1cba6e-5adf-4a89-940e-269eef496131%26rid%3D%26gdpr%3D0%26gdpr_consent%3D%26us_privacy%3D1---"></iframe><iframe style="display: none" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/user_sync_002.htm"></iframe><iframe style="display: none" src="https://ic.tynt.com/r/d?m=xch&amp;rt=html&amp;gdpr=0&amp;gdpr_consent=&amp;us_privacy=1---&amp;ru=https%3A%2F%2Fs.pubmine.com%2Fmatch%3Fbidder_id%3D24%26ssp_data%3D7a1cba6e-5adf-4a89-940e-269eef496131%26rid%3D%26us_privacy%3D1---%26gdpr%3D0%26gdpr_consent%3D%26external_user_id%3D33XUSERID33X&amp;id=zzz000000000002zzz"></iframe><iframe style="display: none" src="https://sync.inmobi.com/prebid?gdpr=0&amp;gdpr_consent=&amp;us_privacy=1---&amp;redirect=https%3A%2F%2Fs.pubmine.com%2Fmatch%3Fbidder_id%3D20%26ssp_data%3D7a1cba6e-5adf-4a89-940e-269eef496131%26rid%3D%26us_privacy%3D1---%26gdpr%3D0%26gdpr_consent%3D%26external_user_id%3D%7BID5UID%7D"></iframe><iframe style="display: none" src="https://x.bidswitch.net/check_uuid/https%3A%2F%2Fs.pubmine.com%2Fmatch%3Fbidder_id%3D18%26external_user_id%3D%24%7BBSW_UUID%7D%26ssp_data%3D7a1cba6e-5adf-4a89-940e-269eef496131%26rid%3D%26us_privacy%3D1---%26gdpr%3D0%26gdpr_consent%3D"></iframe><iframe style="display: none" src="https://s.ad.smaato.net/c/?adExInit=p&amp;redir=https%3A%2F%2Fs.pubmine.com%2Fmatch%3Fbidder_id%3D29%26ssp_data%3D7a1cba6e-5adf-4a89-940e-269eef496131%26rid%3D%26us_privacy%3D1---%26gdpr%3D0%26gdpr_consent%3D%26external_user_id%3D%24UID"></iframe><iframe style="display: none" src="https://ups.analytics.yahoo.com/ups/58366/occ?uid=7a1cba6e-5adf-4a89-940e-269eef496131"></iframe><div class="bottom-sticky__ad-container bottom-sticky__ad-container_hidden" id="bottom-sticky__ad-container" style="">
+            <div class="bottom-sticky__ad-close-btn"></div>
+            <div id="bottom-sticky-ad" style="margin:0 auto;width:728px;"></div>
+        </div><style>.bottom-sticky__ad-container {
+    background: #f1f1f1;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translate(0,0);
+    transition: transform .2s ease-in-out;
+    user-select: none;
+    padding-top: 10px;
+    z-index: 49999;         /* AUTOMATTIC-2205 - because cookie consent banner has 50000 z-index */
+}
+.bottom-sticky__ad-container_hidden {
+    visibility: hidden;
+    transform: translate(0,1000px);
+}
+.bottom-sticky__ad-close-btn {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    box-sizing: content-box;
+    border: 2px solid #9d9d9d;
+    right: 2px;
+    top: -14px;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    background-size: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke-width='4' stroke='%239d9d9d' d='M0 0l24 24M0 24L24 0'/%3E%3C/svg%3E");
+}
+.bottom-sticky__ad-container .adtags-button {
+    color: #000;
+}</style><style>.ata-controls__complain-btn:hover,
+.ata-controls__privacy-btn:hover {
+    color: #666666 !important;
+}
+.ata-controls__complain-btn:active,
+.ata-controls__privacy-btn:active {
+    color: #5ac8fa !important;
+}
+.ata-controls__complain-btn_clicked,
+.ata-controls__complain-btn_clicked:hover,
+.ata-controls__complain-btn_clicked:active {
+    color: #000 !important;
+    cursor: default !important;
+}
+.ata-frame-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+</style><iframe id="ob-user-test" style="display:none;width:0;height:0;" src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/test.htm"></iframe><script src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/725X1342.skimlinks.js"></script><script src="Odata%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%BD%D0%B0%20CDS_files/actionbar.js" defer="defer"></script><iframe id="skimlinks-pixels-iframe" width="0" height="0" style="display: none;"></iframe></body></html>

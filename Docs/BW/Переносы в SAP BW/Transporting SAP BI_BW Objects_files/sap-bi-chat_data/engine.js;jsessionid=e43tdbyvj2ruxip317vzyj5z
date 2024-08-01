@@ -1,0 +1,8 @@
+dwr.engine._sessionId = "e43tdbyvj2ruxip317vzyj5z";
+dwr.engine._sessionCookieName = "JSESSIONID";
+dwr.engine._origScriptSessionId = "AB61D3A4D7DCCD3BE30C36C1E4067C26";
+dwr.engine._allowGetForSafariButMakeForgeryEasier = "false";
+dwr.engine._scriptTagProtection = "throw 'allowScriptTagRemoting is false.';";
+dwr.engine._defaultPath = "/service";
+dwr.engine._pollWithXhr = "false";
+

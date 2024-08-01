@@ -1,0 +1,2071 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>SAP HANA Smart Data Access - Интеллектуальный доступ к данным / Авторские колонки / База знаний / SAPLand — Мир решений SAP</title>
+<meta name="keywords" content="Финансы и управленческий учет, FinancialsУправление логистической сетью, SCMИнформационные технологии, IT, Basis, ABAPУправление персоналом, HRБизнес аналитика, BIУправление взаимоотношениями с клиентами, CRM">
+<meta name="description" content="В прикладных сценариях управления данными в SAP HANA зачастую требуется обработка данных из различных СУБД и хранилищ данных. В этом случае, как правило, необходимые наборы данных реплицируются из целевых систем в центральное хранилище для последующей обработки. Этот процесс требует дополнительного времени, дискового пространства, а так же настройки, собственно, самой репликации. Механизм SAP HANA Smart Data Access позволяет избежать физической репликации данных в SAP HANA, предоставляя пользователям прозрачный доступ к данным в удаленных источниках.">
+
+	<meta property="og:url" content="http://sapland.ru/material/11315/">
+<meta property="og:title" content="SAP HANA Smart Data Access - Интеллектуальный доступ к данным">
+<meta property="og:image" content="http://sapland.ru/files/materials/picture/15/tabimage007.png">
+<meta property="og:description" content="В прикладных сценариях управления данными в SAP HANA зачастую требуется обработка данных из различных СУБД и хранилищ данных. В этом случае, как правило, необходимые наборы данных реплицируются из целевых систем в центральное хранилище для последующей обработки. Этот процесс требует дополнительного времени, дискового пространства, а так же настройки, собственно, самой репликации. Механизм SAP HANA Smart Data Access позволяет избежать физической репликации данных в SAP HANA, предоставляя пользователям прозрачный доступ к данным в удаленных источниках.">
+
+	<meta charset="UTF-8">
+	<!--[if lt IE 7]>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>        <![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://sapland.ru/rss/">
+	<link href="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/css.css" rel="stylesheet" type="text/css">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://sapland.ru/os/appearances/sapland-2014/shared/fav/apple-touch-icon-144x144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://sapland.ru/os/appearances/sapland-2014/shared/fav/apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://sapland.ru/os/appearances/sapland-2014/shared/fav/apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="https://sapland.ru/os/appearances/sapland-2014/shared/fav/apple-touch-icon-precomposed.png">
+
+	<link type="text/css" rel="stylesheet" href="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/25489769721b7bcea755cff180f83f71.css">
+	<link type="text/css" rel="stylesheet" href="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/d41d8cd98f00b204e9800998ecf8427e.css">
+	<link type="text/css" rel="stylesheet" href="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/b1bf2769d1417965bffa030887f7d637.css">
+	<link type="text/css" rel="stylesheet" href="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/d41d8cd98f00b204e9800998ecf8427e.css">
+	<link type="text/css" rel="stylesheet" href="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/b0d7424cb9a43817e4bad49e445defc0.css">
+	<link type="text/css" rel="stylesheet" href="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/fdf4ca7cffa5375cd4eb7bd3e8334146.css" media="print"><link type="text/css" rel="stylesheet" href="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/jquery.css"><link type="text/css" rel="stylesheet" href="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/jquery_002.css"><link type="text/css" rel="stylesheet" href="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/user-profile.css">
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="/os/js/ie/html5.js"></script><![endif]-->
+
+	
+
+			<script type="text/javascript" async="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/tag.js"></script><script type="text/javascript" async="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/ga.js"></script><script src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/cbgapi.loaded_0" async=""></script><script src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/jquery_006.js"></script>
+		<script src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/jquery-migrate.js"></script>
+	
+	<script type="text/javascript" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/jquery_005.js"></script>
+	<script type="text/javascript" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/jquery-ui.js"></script>
+
+	<!-- /os/js/js.js --><script type="text/javascript">window.js = {
+	rootUrl     : "/os/js/",
+	styleRootUrl: "/os/css/",
+
+	loadedModules: {},
+	addedCss     : {},
+
+	/**
+	 * @deprecated Используйте require
+	 * @param path
+	 */
+	include: function (path) {
+		if (this.loadedModules[path]) {
+			return;
+		}
+
+		os.error("Warning! Used js.include('" + path + "')", true);
+
+		var js = this;
+
+		$.ajax({
+			url     : this.rootUrl + path,
+			async   : false,
+			dataType: "text",
+			cache   : true,
+			success : function (data) {
+				// noinspection WithStatementJS
+				with (window) {
+					eval(data);
+				}
+				js.module(path);
+			}
+		});
+	},
+
+	module: function (path) {
+		this.loadedModules[path] = true;
+	},
+
+	css: function (path) {
+		if (this.addedCss[path]) {
+			return;
+		}
+
+		var $link = $("<link/>").attr("type", "text/css").attr("rel", "stylesheet").attr("href",
+			this.styleRootUrl + path);
+		$("head link:last").after($link);
+
+		this.addedCss[path] = true;
+	}
+};
+
+if (RegExp.quote === undefined) {
+	RegExp.quote = function (str) {
+		return (str + "").replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
+	};
+}
+
+Number.prototype.numberFormat = function (_c, _d, _t) {
+	var j;
+	var n = this,
+		c = isNaN(_c = Math.abs(_c)) ? 2 : _c,
+		d = _d === undefined ? "." : _d,
+		t = _t === undefined ? "," : _t,
+		s = n < 0 ? "-" : "",
+		i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "";
+
+	j = (j = i.length) > 3 ? j % 3 : 0;
+
+	return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+};
+
+if (!("keys" in Object)) {
+	Object.prototype.keys = function (data) {
+		var keys = [];
+		for (var prop in data) {
+			if (data.hasOwnProperty(prop)) {
+				keys.push(prop);
+			}
+		}
+		return keys;
+	};
+}
+
+// attach the .equals method to Array's prototype to call it on any array
+Array.prototype.equals = function (array) {
+	if (!array) {
+		return false;
+	}
+
+	// compare lengths - can save a lot of time
+	if (this.length !== array.length) {
+		return false;
+	}
+
+	for (var i = 0, l = this.length; i < l; i++) {
+		// Check if we have nested arrays
+		if (this[i] instanceof Array && array[i] instanceof Array) {
+			// recurse into the nested arrays
+			if (!this[i].equals(array[i])) {
+				return false;
+			}
+		}
+		else if (this[i] !== array[i]) {
+			// Warning - two different object instances will never be equal: {x:20} != {x:20}
+			return false;
+		}
+	}
+	return true;
+};</script>
+	<script type="text/javascript" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/os_002.js"></script>
+	<script type="text/javascript">
+		os.seed       = 136;
+		os.debug_mode = 0;
+	</script>
+
+		<script type="text/javascript">
+		document.write("<scr" + "ipt type=\"text/javascript\" src=\"https://apis.google.com/js/plusone.js\">{lang: \"ru\"}</" + "script>");
+	</script><script type="text/javascript" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/plusone.js" gapi_processed="true">{lang: "ru"}</script>
+
+	<meta name="google-site-verification" content="K5eZ_X5skEJE3PK9tq-lyMUqUGHTx7v46KQQZUc-TYM">
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(["_setAccount", "UA-28264801-1"]);
+		_gaq.push(["_trackPageview"]);
+		_gaq.push(["_trackPageLoadTime"]);
+
+		(function () {
+			var ga   = document.createElement("script");
+			ga.type  = "text/javascript";
+			ga.async = true;
+			ga.src   = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+			var s    = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+		(function (d, w, c) {
+			(w[c] = w[c] || []).push(function () {
+				try {
+					w.yaCounter1375405 = new Ya.Metrika2({
+						id                 : 1375405,
+						clickmap           : true,
+						trackLinks         : true,
+						accurateTrackBounce: true,
+						webvisor           : true,
+						trackHash          : true
+					});
+				}
+				catch (e) {
+				}
+			});
+
+			var n   = d.getElementsByTagName("script")[0],
+				s   = d.createElement("script"),
+				f   = function () {
+					n.parentNode.insertBefore(s, n);
+				};
+			s.type  = "text/javascript";
+			s.async = true;
+			s.src   = "https://mc.yandex.ru/metrika/tag.js";
+
+			if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f, false);
+			}
+			else {
+				f();
+			}
+		})(document, window, "yandex_metrika_callbacks2");
+	</script>
+	<noscript>
+		<div><img src="https://mc.yandex.ru/watch/1375405" style="position:absolute; left:-9999px;" alt=""/></div>
+	</noscript>
+	<!-- /Yandex.Metrika counter -->
+
+
+	<script src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/require.js"></script>
+	<script src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/require-config.js"></script>
+	<script>
+		require.config({
+			urlArgs: String(136)
+		});
+	</script>
+
+	<script type="text/javascript" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/common.js"></script>
+	<script type="text/javascript" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/print-button.js"></script><script type="text/javascript" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/like.js"></script><script type="text/javascript" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/main-drop-down.js"></script><script type="text/javascript" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/avatar.js"></script><script type="text/javascript" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/materials-list.js"></script><script type="text/javascript" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/slide.js"></script>
+
+	
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery/plugins/os.dd-menu/drop-down-menu" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/drop-down-menu.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="../appearances/sapland-2012/users/widgets/user-profile" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/user-profile.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery/plugins/bsmselect/jquery.bsmselect" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/jquery_002.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery/plugins/os.nice-tables" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/os.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery-qtip" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/jquery.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="../lib/qtip2/jquery.qtip.min" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/jquery_004.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery/plugins/bsmselect/jquery.bsmselect.sortable" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/jquery_003.js"></script></head>
+
+<body>
+<div class="wrap">
+	<div class="wrap2">
+		<noscript>
+			<div id="noScriptMsgContainer">Для корректной работы сайта необходимо включить JavaScript</div>
+		</noscript>
+		<div class="top-banner" style="display: none;"><div><span class="close-ico"></span></div></div>
+	<script>
+		(function () {
+			var $topBanner = $(".top-banner");
+			if ($topBanner.find("img").length === 0)
+			{
+				$topBanner.hide();
+			}
+			else
+			{
+				$(function () {
+					$topBanner.find(".close-ico").click(function () {
+						var cookieId     = "hide_banners";
+						var hide_banners = ($.cookie(cookieId) || "").split(",");
+						var banner_id    = Number($(this).prev().find("img").data("id"));
+
+						var is = false;
+
+						$.each(hide_banners, function (i) {
+							if (Number(hide_banners[i]) === banner_id) is = true;
+						});
+						if (!is)
+						{
+							hide_banners.push(banner_id);
+						}
+						$.cookie(cookieId, hide_banners.join(","), {expires: 365, path: "/"});
+						$topBanner.hide();
+					});
+				});
+			}
+		})();
+	</script>
+
+		<div class="head">
+			<div class="head2 noprint">
+				
+<div class="nav1">
+		<ul>
+		<li><a href="https://sapland.ru/kb/articles/spj/"><img alt="SPJ" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/nav1_02.png"></a></li>
+		<li><a href="https://sapland.ru/kb/articles/stats/"><img alt="Сапёр" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/nav1_03.png"></a></li>
+		<li><a href="https://sapland.ru/books/sap-press/"><img alt="SAP Press" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/nav1_06.png"></a></li>
+	</ul>
+</div>
+				
+<div class="site-logo">
+		<a href="https://sapland.ru/"></a>
+		<p>
+		Интернет проект<br> SAP Professional Journal Россия
+	</p>
+</div>
+				<div class="nav2">
+					
+<!--noindex-->
+<div class="search drop-down-h">
+	<p class="se-t">Поиск</p>
+	<div class="search-drop" style="display: none;">
+		<h3>Расширенный поиск знаний</h3>
+		<form action="/search/" method="get">
+			<div class="shb">
+				<p class="sh">Найти страницы, которые содержат...</p>
+				<table>
+					<tbody><tr>
+						<td><p class="sh2">Точную формулировку или фразу:</p>
+							<input type="text" name="search[exact]">
+						</td>
+						<td><p class="sh2">Все эти слова:</p>
+							<input type="text" name="search[all]">
+						</td>
+						<td><p class="sh2">Любые из этих слов:</p>
+							<input type="text" name="search[query]">
+						</td>
+					</tr>
+				</tbody></table>
+			</div>
+			<div class="shb">
+				<table>
+					<tbody><tr>
+						<td><p class="sh2">Функциональная область:</p>
+							<div class="bsmContainer" id="bsmContainer0"><select class="bsmSelect" name="bsmSelectbsmContainer0" id="bsmSelectbsmContainer0"><option value="" selected="selected">Выберите...</option><option value="775">SAP Cloud / SAP Cloud</option><option value="773">SAP HANA / SAP HANA</option><option value="774">SAP Mobility / SAP Mobility</option><option value="445">Бизнес аналитика / BI</option><option value="15">Информационные технологии / IT, Basis, ABAP</option><option value="697">Обучение / Education</option><option value="696">Поддержка / Support, Solution manager</option><option value="446">Управление взаимоотношениями с клиентами / CRM</option><option value="491">Управление документооборотом / Document Management</option><option value="13">Управление логистической сетью / SCM</option><option value="444">Управление персоналом / HR</option><option value="14">Управление проектами / Project management</option><option value="443">Управление рисками / GRC</option><option value="12">Финансы и управленческий учет / Financials</option></select><ol id="bsmListbsmContainer0" class="bsmList bsmListSortable ui-sortable"></ol><select name="dsf[areas][]" multiple="multiple" title="Выберите..." style="display: none;">
+<option value="775">SAP Cloud / SAP Cloud</option>
+<option value="773">SAP HANA / SAP HANA</option>
+<option value="774">SAP Mobility / SAP Mobility</option>
+<option value="445">Бизнес аналитика / BI</option>
+<option value="15">Информационные технологии / IT, Basis, ABAP</option>
+<option value="697">Обучение / Education</option>
+<option value="696">Поддержка / Support, Solution manager</option>
+<option value="446">Управление взаимоотношениями с клиентами / CRM</option>
+<option value="491">Управление документооборотом / Document Management</option>
+<option value="13">Управление логистической сетью / SCM</option>
+<option value="444">Управление персоналом / HR</option>
+<option value="14">Управление проектами / Project management</option>
+<option value="443">Управление рисками / GRC</option>
+<option value="12">Финансы и управленческий учет / Financials</option>
+</select></div>
+
+						</td>
+						<td><p class="sh2">Ролевое назначение:</p>
+							<div class="bsmContainer" id="bsmContainer1"><select class="bsmSelect" name="bsmSelectbsmContainer1" id="bsmSelectbsmContainer1"><option value="" selected="selected">Выберите...</option><option value="11">SAP Консультант / Consultant</option><option value="10">Ключевой пользователь / Expert</option><option value="801">Конечный пользователь / End user</option><option value="9">Руководитель / Manager</option></select><ol id="bsmListbsmContainer1" class="bsmList bsmListSortable ui-sortable"></ol><select name="dsf[roles][]" multiple="multiple" title="Выберите..." style="display: none;">
+<option value="11">SAP Консультант / Consultant</option>
+<option value="10">Ключевой пользователь / Expert</option>
+<option value="801">Конечный пользователь / End user</option>
+<option value="9">Руководитель / Manager</option>
+</select></div>
+
+						</td>
+						<td><p class="sh2">Рубрики:</p>
+							<div class="bsmContainer" id="bsmContainer2"><select class="bsmSelect" name="bsmSelectbsmContainer2" id="bsmSelectbsmContainer2"><option value="" selected="selected">Выберите...</option><option value="1">Статьи</option><option value="2">Авторские колонки </option><option value="5">Интервью</option><option value="6">Материалы мероприятий</option><option value="7">Вебинары</option><option value="10">Исследования</option><option value="8">Новости</option><option value="3">Видео</option><option value="9">Книги</option></select><ol id="bsmListbsmContainer2" class="bsmList bsmListSortable ui-sortable"></ol><select name="mview[]" multiple="multiple" title="Выберите..." style="display: none;">
+<option value="1">Статьи</option>
+<option value="2">Авторские колонки </option>
+<option value="5">Интервью</option>
+<option value="6">Материалы мероприятий</option>
+<option value="7">Вебинары</option>
+<option value="10">Исследования</option>
+<option value="8">Новости</option>
+<option value="3">Видео</option>
+<option value="9">Книги</option>
+</select></div>
+
+						</td>
+					</tr>
+				</tbody></table>
+			</div>
+			<div style="text-align: center; padding: 11px;">
+				<button type="submit">
+					<img alt="Искать" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/bu1.jfif">
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+<!--/noindex-->
+					
+<div class="shop-pls">
+        
+    <a href="https://sapland.ru/books/">Магазин</a> <a href="https://sapland.ru/basket/"><span class="icon1"></span>0<span class="icon2"></span></a>
+</div>
+				</div>
+									
+
+
+
+
+
+
+<div class="main-menu-wrap">
+	<div class="nav main-menu-h">
+		<table>
+			<tbody>
+			<tr data-hide-time="1000">
+				<td class="drop-down-h inactive">
+					<span><a class="drop-menu-link inactive" href="#" style="cursor: default;"><i></i></a></span>
+
+					<div class="drop-menu">
+						<div class="drop-menu-inner">
+							<div class="drop-main-menu">
+
+								<ul>
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=15" class="has-child">ADMIN/DEV</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=15&amp;dsf[areas][]=15">Информационные технологии / IT, Basis, ABAP</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=445" class="has-child">BI</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=445&amp;dsf[areas][]=445">Бизнес аналитика / BI</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=446" class="has-child">CRM</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=446&amp;dsf[areas][]=446">Управление взаимоотношениями с клиентами / CRM</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=697" class="has-child">EDUCATION &amp; SUPPORT</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=697&amp;dsf[areas][]=697">Обучение / Education</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=12" class="has-child">Financials</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=12&amp;dsf[areas][]=12">Финансы и управленческий учет / Financials</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=14" class="has-child">FOR CxO</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=14&amp;dsf[areas][]=14">Управление проектами/ Project management</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=444" class="has-child">HR</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=444&amp;dsf[areas][]=444">Управление персоналом / HR</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=775" class="has-child">SAP Mobility / SAP Mobility</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=775&amp;dsf[areas][]=775">SAP Cloud / SAP Cloud</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=13" class="has-child">SCM</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=13&amp;dsf[areas][]=13">Управление логистической сетью / SCM</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=773" class="has-child">TRENDING TOPICS</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=773&amp;dsf[areas][]=773">SAP HANA / SAP HANA</a>
+														</p>
+														
+													</div>
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=774&amp;dsf[areas][]=773">SAP Mobility / SAP Mobility</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=445" class="has-child">Бизнес аналитика / BI</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=445&amp;dsf[areas][]=445">Бизнес аналитика / BI</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=446" class="has-child">Управление взаимоотношениями с клиентами / CRM</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=446&amp;dsf[areas][]=446">Управление взаимоотношениями с клиентами</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=13" class="has-child">Управление логистической сетью / SCM</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=13&amp;dsf[areas][]=13">Управление логистической цепочкой</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=444" class="has-child">Управление персоналом / HR</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=444&amp;dsf[areas][]=444">SAP BusinessObjects Strategic Workforce Planning</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=12" class="has-child">Финансы и управленческий учет / Financials</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=12&amp;dsf[areas][]=12">SAP Invoice Management</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																</ul>
+							</div>
+						</div>
+					</div>
+				</td>
+				<td class="drop-down-h">
+					<span><a href="https://sapland.ru/kb/">База знаний</a></span>
+					<div class="drop-menu" style="display:none">
+						<div class="drop-main-menu">
+							
+<ul><li class="drop-down-h" data-show-time="1"><span><a href="https://sapland.ru/kb/articles/" class="has-child">Статьи</a></span><div class="submenu" style="display: none;"><div class="sub-col"><p class="L1"><a href="https://sapland.ru/kb/articles/spj/">SPJ Россия</a></p></div><div class="sub-col"><p class="L1"><a href="https://sapland.ru/kb/articles/stats/">Сапёр</a></p></div></div></li><li><span><a href="https://sapland.ru/kb/blogs/">Авторские колонки</a></span><div></div></li><li><span><a href="https://sapland.ru/kb/interview/">Интервью</a></span><div></div></li><li><span><a href="https://sapland.ru/kb/materials-of-events/">Материалы мероприятий</a></span><div></div></li><li><span><a href="https://sapland.ru/kb/webinars/">Вебинары</a></span><div></div></li><li><span><a href="https://sapland.ru/kb/research/">Исследования</a></span><div></div></li><li><span><a href="https://sapland.ru/kb/goldenhistory/">Истории успеха</a></span><div></div></li></ul>
+
+						</div>
+					</div>
+				</td>
+				<td class="drop-down-h">
+					<span><a href="https://sapland.ru/courses/">Курсы и тренинги</a></span>
+					<div class="drop-menu" style="display:none">
+						<div class="drop-main-menu">
+							
+<ul><li><span><a href="https://sapland.ru/courses/events/">Календарь мероприятий</a></span><div></div></li><li><span><a href="https://sapland.ru/courses/for-order/">Мероприятия под заказ</a></span><div></div></li><li><span><a href="https://sapland.ru/courses/companies/">Обучающие компании</a></span><div></div></li></ul>
+
+						</div>
+					</div>
+				</td>
+				<td class="drop-down-h">
+					<span><a href="https://sapland.ru/p-events/">События</a></span>
+					<div class="drop-menu" style="display:none">
+						<div class="drop-main-menu">
+							
+<ul><li><span><a href="https://sapland.ru/p-events/calendar/">Ближайшие</a></span><div></div></li><li><span><a href="https://sapland.ru/p-events/archive/">Архив</a></span><div></div></li><li><span><a href="https://sapland.ru/p-events/news/">Новости</a></span><div></div></li></ul>
+
+						</div>
+					</div>
+				</td>
+				<td class="drop-down-h">
+					<span><a href="https://sapland.ru/partners/partners/">Компании и проекты</a></span>
+					<div class="drop-menu" style="display: none;">
+						<div class="drop-main-menu">
+							<ul>
+								<li><span><a href="https://sapland.ru/partners/partners/">Интеграторы</a></span><div></div></li>
+								<li><span><a href="https://sapland.ru/projects/partners/">Проекты</a></span><div></div></li>
+								<li><span><a href="https://sapland.ru/solutions/partners/">Решения</a></span><div></div></li>
+							</ul>
+						</div>
+					</div>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+								<div class="nav3">
+					
+<div class="nav3-box">
+	<a href="https://sapland.ru/latest/" class="link1">Все обновления <strong>+3</strong></a>
+</div>
+					
+<div class="nav3-box drop-down-h">
+	<a href="#" class="link1 link2" onclick="return false;">О портале</a>
+	<div class="guide-menu" style="display: none;">
+		<ul>
+			<li><a title="" href="https://sapland.ru/kontsept/">Концепт</a></li>
+			<li><a title="" href="https://sapland.ru/navigation/">Навигация</a></li>
+			<li><a title="" href="https://sapland.ru/club_sl/">Участники</a></li>
+			<li><a title="" href="https://sapland.ru/contacts/">Контакты</a></li>
+		</ul>
+	</div>
+</div>
+					
+
+<div class="nav3-box drop-down-h" id="log">
+	<div class="profile h-user-plate" style="padding-left:0;width:134px">
+					<img src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/invite-user.png" style="float:left; margin:9px; position:static;" alt=""> 
+			<div style="float:left"><a href="https://sapland.ru/login/">Присоединиться</a></div>
+			</div>
+	<div class="auth" style="display: none;">
+				<form name="login-form" action="/kb/blogs/sap-hana-smart-data-access-intellektualinii-dostup-k-dannim.html" method="post" id="login-form" class="noprint">
+			<div class="l">
+				<p>Логин:</p>
+				<input type="text" name="auth[login]" placeholder="E-mail" class="text" value="a.ekimenko@beloil.by">
+			</div>
+			<div class="l">
+				<p>Пароль:</p>
+				<input type="password" name="auth[password]" value="" class="text ym-disable-keys">
+			</div>
+			<div class="forgot">
+				<a href="https://sapland.ru/kb/blogs/sap-hana-smart-data-access-intellektualinii-dostup-k-dannim.html?auth[reset_password]">Забыли пароль?</a><br> 
+			</div>
+			<div class="sbm-img" align="center">
+				<button type="submit" class="button"><span>Войти</span></button>
+				<img src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/btn-r.png" style="margin:0 0 -7px -3px" alt="">
+			</div>
+			<div class="forgot">
+				<a href="https://sapland.ru/register/">Зарегистрироваться</a>
+			</div>
+		</form>
+			</div>
+</div>
+					<img src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/bb.gif" style="border:none !important;position:absolute" alt="">
+				</div>
+			</div>
+		</div>
+		<div class="center">
+	
+			
+		<div class="mainframe">
+			<div class="left-column">
+				<div class="col1">
+<div class="mv-menu-shadow">
+	<div class="mv-menu">
+		<h3>Рубрики:</h3>
+		<ul>
+																								<li>
+					<span class="i">
+					1323
+					</span>
+																<a href="https://sapland.ru/kb/articles/" style="background-image:url('/files/materials-menu-items/1/icon.png')">Статьи</a>
+									</li>
+																								<li>
+					<span class="i">
+					666
+					</span>
+																<a href="https://sapland.ru/kb/blogs/" style="background-image:url('/files/materials-menu-items/2/icon.png')">Авторские колонки</a>
+									</li>
+																								<li>
+					<span class="i">
+					46
+					</span>
+																<a href="https://sapland.ru/kb/interview/" style="background-image:url('/files/materials-menu-items/3/icon.png')">Интервью</a>
+									</li>
+																								<li>
+					<span class="i">
+					1573
+					</span>
+																<a href="https://sapland.ru/kb/materials-of-events/" style="background-image:url('/files/materials-menu-items/4/icon.png')">Материалы мероприятий</a>
+									</li>
+																								<li>
+					<span class="i">
+					194
+					</span>
+																<a href="https://sapland.ru/kb/webinars/" style="background-image:url('/files/materials-menu-items/5/icon.png')">Вебинары</a>
+									</li>
+																								<li>
+					<span class="i">
+					14
+					</span>
+																<a href="https://sapland.ru/kb/research/" style="background-image:url('/files/materials-menu-items/6/icon.png')">Исследования</a>
+									</li>
+																								<li>
+					<span class="i">
+					8
+					</span>
+																<a href="https://sapland.ru/kb/goldenhistory/" style="background-image:url('/files/materials-menu-items/7/icon.png')">Истории успеха</a>
+									</li>
+																								<li>
+					<span class="i">
+					
+					</span>
+																<a href="https://sapland.ru/books/novelty/" style="background-image:url('/files/materials-menu-items/8/icon.png')">Книги</a>
+									</li>
+					</ul>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	<div class="block3">
+		<div class="news3 block-similar slider-books">
+			<div class="news-header">
+				<p>Ещё по теме</p>
+			</div>
+			<div class="_slider">
+														<div class="new2">
+		<p><a title="" href="https://sapland.ru/kb/materials-of-events/sap-erp-on-hana-akkumulirovannii-opit-v-rossii.html">SAP ERP on HANA: Аккумулированный опыт в России</a></p>
+	<div class="clear"></div>
+</div>
+
+															<img class="material-type-icon" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/nav1_03.png">
+										<div class="new2">
+		<div class="foto2">
+		<a title="" href="https://sapland.ru/kb/articles/stats/otobrazhenie-tekuschego-vremeni-v-sap-hana-s-pomoschiyu-radarnoi-diagrammi.html"><img class="avatar-50" alt="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/male.jfif"></a>
+	</div>
+			<p>
+		<a title="" href="https://sapland.ru/kb/articles/stats/otobrazhenie-tekuschego-vremeni-v-sap-hana-s-pomoschiyu-radarnoi-diagrammi.html">Отображение текущего времени в SAP HANA с помощью радарной диаграммы</a>
+	</p>
+	<div class="clear"></div>
+</div>
+															<img class="material-type-icon" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/nav1_02.png">
+										<div class="new2">
+		<div class="foto2">
+		<a title="" href="https://sapland.ru/kb/articles/spj/obzor-sap-s4hana-finance-s-tochki-zreniya-ucheta-osnovnih-sredstv-2.html"><img class="avatar-50" alt="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/male.jfif"></a>
+	</div>
+			<p>
+		<a title="" href="https://sapland.ru/kb/articles/spj/obzor-sap-s4hana-finance-s-tochki-zreniya-ucheta-osnovnih-sredstv-2.html">Обзор SAP S/4HANA Finance  с точки зрения Учета основных средств</a>
+	</p>
+	<div class="clear"></div>
+</div>
+															<img class="material-type-icon" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/nav1_03.png">
+										<div class="new2">
+		<div class="foto2">
+		<a title="" href="https://sapland.ru/kb/articles/stats/partitsii-i-zagruzka-dannih-v-operativnuyu-pamyati.html"><img class="avatar-50" alt="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/male.jfif"></a>
+	</div>
+			<p>
+		<a title="" href="https://sapland.ru/kb/articles/stats/partitsii-i-zagruzka-dannih-v-operativnuyu-pamyati.html">Партиции и загрузка данных в оперативную память</a>
+	</p>
+	<div class="clear"></div>
+</div>
+														<div class="new2">
+		<div class="foto2">
+		<a title="" href="https://sapland.ru/kb/materials-of-events/sap-s4hana-business-suite-novogo-pokoleniya.html"><img alt="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/5331.png"></a>
+	</div>
+		<p><a title="" href="https://sapland.ru/kb/materials-of-events/sap-s4hana-business-suite-novogo-pokoleniya.html">SAP S/4HANA – Business Suite нового поколения</a></p>
+	<div class="clear"></div>
+</div>
+
+														<div class="new2">
+		<div class="foto2">
+		<a title="" href="https://sapland.ru/kb/materials-of-events/chto-nesyot-real-timein-memory-dlya-proizvoditelei-tnp.html"><img alt="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/5331.png"></a>
+	</div>
+		<p><a title="" href="https://sapland.ru/kb/materials-of-events/chto-nesyot-real-timein-memory-dlya-proizvoditelei-tnp.html">Что несёт Real-time&amp;In-Memory для производителей ТНП</a></p>
+	<div class="clear"></div>
+</div>
+
+														<div class="new2">
+		<div class="foto2">
+		<a title="" href="https://sapland.ru/kb/materials-of-events/hana-and-big-data-roadmap.html"><img alt="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/5331.png"></a>
+	</div>
+		<p><a title="" href="https://sapland.ru/kb/materials-of-events/hana-and-big-data-roadmap.html">HANA and Big Data Roadmap</a></p>
+	<div class="clear"></div>
+</div>
+
+															<img class="material-type-icon" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/nav1_02.png">
+										<div class="new2">
+		<div class="foto2">
+		<a title="" href="https://sapland.ru/kb/articles/spj/rasshirenie-vozmozhnostei-upravleniya-temperaturoi-dannih-v-sap-hana-s-pomoschiy.html"><img class="avatar-50" alt="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/male.jfif"></a>
+	</div>
+			<p>
+		<a title="" href="https://sapland.ru/kb/articles/spj/rasshirenie-vozmozhnostei-upravleniya-temperaturoi-dannih-v-sap-hana-s-pomoschiy.html">Расширение возможностей управления «температурой данных» в SAP HANA с помощью опции Dynamic Tiering</a>
+	</p>
+	<div class="clear"></div>
+</div>
+														<div class="video">
+	<p title="Онлайн-семинар «Миграция SAP ERP на платформу SAP HAHA»">
+		<a href="https://sapland.ru/kb/webinars/onlain-seminar-migratsiya-sap-erp-na-platphormu-sap-haha.html"><img class="play" alt="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/play-43.png"><img alt="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/9482.jfif" class="video_img"></a>
+	</p>
+	<p class="name">
+		<a title="" href="https://sapland.ru/kb/webinars/onlain-seminar-migratsiya-sap-erp-na-platphormu-sap-haha.html">Онлайн-семинар «Миграция SAP ERP на платформу SAP HAHA»</a>
+	</p>
+	<div class="clear"></div>
+</div>
+
+
+														<div class="new2">
+		<div class="foto2">
+		<a title="" href="https://sapland.ru/kb/materials-of-events/sap_hana_prinimayte_resheniya_bystree_planiruyte_razumnee_rabotayte_effektivnee.html"><img alt="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/5331.png"></a>
+	</div>
+		<p><a title="" href="https://sapland.ru/kb/materials-of-events/sap_hana_prinimayte_resheniya_bystree_planiruyte_razumnee_rabotayte_effektivnee.html">SAP HANA: Принимайте решения быстрее, планируйте разумнее, работайте эффективнее</a></p>
+	<div class="clear"></div>
+</div>
+
+							</div>
+		</div>
+	</div>
+	
+<div class="relevant-comments-block">
+	<h3>Комментарии по теме</h3>
+		<div class="c">«<a href="https://sapland.ru/material/13975/#comment-2195">Ре­ко­ме­нда­ции по обе­спе­че­нию бе­зо­па­сно­сти и контроля SAP HANA</a>»
+		<div class="cc">
+			<img src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/3853.png" alt="">
+			<a href="https://sapland.ru/cabinet/3853/" data-hasqtip="true">Дмитрий Буслов</a>:
+			<div class="ct"> 
+	(1) Автор начинает с того, что HANA — это СУБД, позволяющая хранить 
+записи в колонках и работающая в оперативной памяти. Я бы, хотел сделать
+ акцент на том, что HANA — не просто СУБД,...</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+		<div class="c">«<a href="https://sapland.ru/material/6619/#comment-1342">Различие между двумя текущими версиями HANA</a>»
+		<div class="cc">
+			<img src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/img1830.jfif" alt="">
+			<a href="https://sapland.ru/cabinet/1830/" data-hasqtip="true">Олег Точенюк</a>:
+			<div class="ct">Спасибо конечно... я вот не понимаю как консалт 
+выживает в этом мире, когда есть такой чудесный традиционный сайт  
+help.sap.com/  :-)</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+		<div class="c">«<a href="https://sapland.ru/material/18344/#comment-2922">Испо­льзо­ва­ние SAP S/4 HANA Migration Cockpit для загрузки ма­те­ри­а­ло­в. Пра­кти­че­ское ру­ко­во­дство</a>»
+		<div class="cc">
+			<img src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/male.jfif" alt="">
+			<a href="https://sapland.ru/cabinet/18564/" data-hasqtip="true">Марат Мухаметзянов</a>:
+			<div class="ct">Добрый день!
+ &nbsp; 
+Спасибо статью!
+ &nbsp; 
+P.S.: Есть еще транзакции DMC и DMCMOM, как решение для загрузки данных в S4H. 
+DMC в большей степени для загрузки данных из Excel, а DMCMOM для...</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	</div>
+
+
+</div>
+			</div>
+			<div class="content-column">
+				<div class="col4">
+	
+		<div class="header1">
+		
+		
+													
+										
+							
+							<h1>
+											База знаний
+									</h1>
+				
+								
+					
+				<img class="nodisp" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/logo.jfif">
+
+		<div class="clear"></div>
+	</div>
+	
+	
+			
+	
+<div class="content-inner">
+
+
+
+<div class="tx">
+	Вы можете подписаться на эту колонки этого автора, если авторизируетесь или <a href="https://sapland.ru/zaregistrirovatsya/">зарегистрируетесь</a>
+</div>
+
+		  
+
+
+<div class="content-inner blog" itemscope="" itemtype="http://schema.org/Blog">
+
+	
+
+
+ 
+	
+<div class="blog-head">
+	<div class="photo" itemscope="" itemtype="http://schema.org/Person" itemprop="author">
+		<meta itemprop="name" content="Табаков Вадим">
+		<a href="https://sapland.ru/cabinet/9792/" data-hasqtip="true">
+							<img src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/9792-1154_002.jfif" alt="Табаков Вадим" style="height:100px; display: block;" itemprop="image">
+					</a>
+	</div>
+
+	<div class="description">
+		
+					<div class="company">
+				<img src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/sap-expert.jfif" alt="SAP" title="SAP">
+			</div>
+		
+		<a href="https://sapland.ru/cabinet/9792/" data-hasqtip="true">Табаков Вадим</a>
+		<meta itemprop="name" content="SAP HANA">
+		<h2><a href="https://sapland.ru/blogs/tabakov/">
+																<span style="display: none" class="hint">Настоящая авторская колонка посвящена флагманской технологии SAP по управлению и обработке данных в оперативной памяти SAP HANA.<br>
+<br>
+В ней мы будем публиковать материалы по следующим темам:<br>
+  - технико-экономические аспекте эффективности SAP HANA;<br>
+  - технологические особенности и преимущества HANA в контексте прикладного использования<br>
+  - обсуждение подходов предприятий различных отраслей к решению 
+операционных задач эксплуатации ИТ с помощью SAP HANA и достигнутых 
+технических и экономических результатов.<br>
+<br>
+Мы будем делиться с вами наиболее актуальными вопросами, обсуждать 
+свежие новости и события, происходящие не только вокруг SAP HANA, но и в
+ развитии самого продукта.<br>
+<br>
+Вадим Табаков,<br>
+менеджер по развитию направления Database&amp;Technology SAP CIS</span>SAP HANA</a>
+		</h2>
+											<a class="all-posts" href="https://sapland.ru/material/17352/?filter%5Bauthors%5D%5Bby-authors%5D%5B%5D=934">Все публикации автора</a>
+	</div>
+</div>
+
+	<span style="float:right;margin-top: 1em">
+<button class="button-b print-button-h noprint" style="" onclick="window.print();" type="button"><span>Распечатать</span></button></span>
+
+	<h2>SAP HANA Smart Data Access - Интеллектуальный доступ к данным</h2>
+
+	<p class="date">20 августа 2014, 19:52</p>
+
+	
+	<div class="user-content" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
+		<meta itemprop="name" content="SAP HANA Smart Data Access - Интеллектуальный доступ к данным">
+					<img src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/tabimage007_002.png" alt="" class="post-picture" itemprop="image">
+				<div itemprop="articleBody">
+							<h2>&nbsp;</h2>
+
+<h2>Назначение SAP HANA Smart Data Access</h2>
+
+<p>SAP HANA Smart Data Access (SDA) представляет собой метод SAP HANA 
+для&nbsp;доступа к&nbsp;данным, сохраненным в&nbsp;удаленных источниках.
+ SDA позволяет SAP HANA создавать мэппинг так называемых виртуальных 
+таблиц к&nbsp;таблицам, находящихся в&nbsp;удаленных источниках данных, в
+ результате чего SAP HANA позволяет получить доступ к данным напрямую 
+посредством виртуальной таблицы. Управление виртуальной таблицей 
+в&nbsp;SAP HANA аналогично обычным таблицам, то есть для&nbsp;нее 
+доступны все операции DML. Также поддерживается операция соединения 
+между локальной и&nbsp;виртуальной таблицами SAP HANA. 
+При&nbsp;выполнении такой операции соединения оптимизатор SAP HANA 
+отправляет запросы в&nbsp;удаленный источник данных для&nbsp;обработки, 
+а&nbsp;затем итоговый результат возвращается в&nbsp;SAP HANA 
+для&nbsp;дальнейшей обработки.</p>
+
+<p>Впервые механизм SDA появился в&nbsp;SAP HANA в SPS 06. На&nbsp;тот 
+момент для&nbsp;SAP HANA SDA поддерживались следующие источники данных: 
+SAP HANA, SAP Sybase ASE, SAP Sybase IQ, СУБД Teradata, а 
+также&nbsp;Apache Hadoop. При этом для&nbsp;виртуальной таблицы была 
+разрешена только операция считывания.</p>
+
+<p>В&nbsp;SAP HANA SPS 07 возможности SDA расширились. Стали поддерживаться новые источники данных и&nbsp;операции (см. <strong>Таблицу 1</strong>).</p>
+
+<p><strong>Таблица 1</strong>. Источники данных и операции в SDA</p>
+
+<table>
+	<tbody>
+		<tr class="header">
+			<td>&nbsp;</td>
+			<td>
+			<p>SPS 06</p>
+			</td>
+			<td>
+			<p>SPS 07</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:213px">
+			<p>Поддерживаемые источники данных</p>
+			</td>
+			<td style="width:213px">
+			<p>SAP HANA, SAP Sybase ASE,</p>
+
+			<p>15.7, SAP Sybase IQ 15.4 и 16.0,</p>
+
+			<p>Teradata 13.0, Intel Distribution for Apache Hadoop 2.3</p>
+			</td>
+			<td style="width:213px">
+			<p>Все источники данных, поддерживаемые в SPS06, а так же Oracle Database 12c, Microsoft SQL Server 11 для SQL Server 2012</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:213px">
+			<p>Поддерживаемые операции для виртуальной таблицы</p>
+			</td>
+			<td style="width:213px">
+			<p>Select</p>
+			</td>
+			<td style="width:213px">
+			<p>Select, Insert, Update, Delete</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>Создание источника данных</h2>
+
+<p>Первым шагом в организации доступа к удаленному источнику данных 
+является, собственно, создание удаленного источника в SAP HANA. 
+Коммуникация между SAP HANA и удаленным источником данных осуществляется
+ по протоколу ODBC. Рассмотрим процесс создания удаленного источника 
+данных в SAP HANA Studio.</p>
+
+<p>В SAP HANA Studio существует два способа создания удаленных источников данных: через GUI или SQL-инструкцию.</p>
+
+<p>Для создания удаленного источника данных через GUI необходимо открыть
+ папку Provisioning. Затем щелкнуть правой кнопкой мыши узел Remote 
+Sources и выбрать New Remote Source (см. <strong>Рис.2</strong>).</p>
+
+<p><img alt="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/tabimage001.png" style="height:231px; width:392px"></p>
+
+<p><strong>Рис.2</strong>. Создание удаленного источника данных через GUI</p>
+
+<p>Далее необходимо выбрать адаптер удаленного источника из списка 
+адаптеров в всплывающем окне и&nbsp;заполнить соответствующую информацию
+ о&nbsp;соединении и&nbsp;аутентификации для&nbsp;удаленного источника 
+данных и нажать кнопку запуска для создания источника данных (см. <strong>Рис.3</strong>).</p>
+
+<p><img alt="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/tabimage003.png" style="height: 303.441px; width: 730px;"></p>
+
+<p><strong>Рис.3</strong>. Выбор адаптер удаленного источника данных</p>
+
+<p>Для создания удаленного источника данных через SQL необходимо выполнить следующие действия:</p>
+
+<p>CREATE REMOTE SOURCE &lt;src_name&gt;<br>
+ADAPTER &lt;adapter_name&gt; [CONFIGURATION FILE 'filename']<br>
+CONFIGURATION &lt;connection_info_string&gt;<br>
+[opt_credentials_clause]<br>
+Example:<br>
+CREATE REMOTE SOURCE ORCL_11g_LNX<br>
+ADAPTER "odbc"<br>
+CONFIGURATION FILE ‘property_orcl.ini’<br>
+CONFIGURATION ‘DSN=oral11g_lnx'<br>
+WITH CREDENTIAL TYPE ‘PASSWORD'<br>
+USING ‘user=OUTLN;password=Aa111111';</p>
+
+<p>В вышеприведенной SQL-инструкции &lt; adapter_name&gt; может быть: 
+ASEODBC, IQODBC, TDODBC, HIVEODBC, ODBC. ASEODBC – для источника данных 
+SAP ASE, IQODBC – для SAP IQ, TDODBC – для базы данных Teradata, 
+HIVEODBC – для Hadoop. Адаптер ODBC используется для других стандартных 
+источников данных. Переменная &lt;<em>connection</em><em>_</em><em>info</em><em>_</em><em>string</em>&gt; используется для указания информации о соединении с источником данных, здесь обычно вводится имя сервера базы данных. &lt;<em>opt</em><em>_</em><em>credentials</em><em>_</em><em>clause</em>&gt;
+ используется для указания информации об аутентификации источника 
+данных. Необходимо отметить, что только адаптер ODBC требует 
+CONFGURATION FILE, функции файла конфигурации рассматриваются в 
+следующем разделе.</p>
+
+<h2>Общая архитектура адаптера</h2>
+
+<p>SDA позволяет SAP HANA получать доступ к источникам данных, которые 
+поддерживают протокол ODBC. Однако, как было сказано выше, 
+поддерживаемые источники данных SAP HANA SDA все еще ограничены. 
+Для&nbsp;поддержки операций специализированных источников данных SAP 
+HANA предоставляет собственный код.</p>
+
+<p>Причина отсутствия поддержки других источников данных ODBC в&nbsp;SAP
+ HANA SDA заключается в&nbsp;том, что ряд операций и&nbsp;конфигураций 
+этих источников данных ODBC не могут быть обработаны стандартным 
+интерфейсом ODBC.</p>
+
+<p>Например, подготовка транзакции для&nbsp;Sybase ASE требует 
+дополнительного кода, который не входит в&nbsp;стандартный протокол 
+ODBC. Поскольку SAP HANA предоставляет этот код, операции 
+для&nbsp;Sybase ASE поддерживаются.</p>
+
+<p>Для решения подобной задачи SAP HANA SDA реализует общую архитектуру 
+адаптера, которая обеспечивает коммуникацию с такими не поддерживаемыми 
+источниками данных ODBC, вместо вызова специального собственного кода 
+для&nbsp;источника данных в&nbsp;SAP HANA. С помощью общей архитектуры 
+адаптера можно настроить функции и&nbsp;операции источника данных 
+в&nbsp;файле конфигурации. К примеру, в&nbsp;файле конфигурации можно 
+указать поддерживаемые операции, мэппинг функций и&nbsp;мэппинг типов 
+данных источника.</p>
+
+<p>При создании источника данных SAP HANA SDA использует общую 
+архитектуру адаптера для&nbsp;коммуникации с удаленным источником 
+данных, если выбран адаптер ODBC. SAP HANA SDA выполняет поиск файла 
+конфигурации свойств в&nbsp;папке, которая определяется переменной среды
+ DIR_EXECUTABLE, а&nbsp;имя файла задается</p>
+
+<p>опцией CONFIGURATION FILE. В&nbsp;SAP HANA SDA SPS 07 доступны 
+шаблоны файла конфигурации свойств для&nbsp;MSSQL и&nbsp;Oracle. Это 
+файлы property_mss.ini и&nbsp;property_orcl.ini, которые находятся 
+в&nbsp;папке: $DIR_EXECUTABLE/config.</p>
+
+<p>После создания источника данных SAP HANA SDA выполняет синтаксический
+ анализ файла конфигурации свойств; все функции, мэппинг функций, 
+мэппинг типов данных и&nbsp;другие свойства соединяются 
+в&nbsp;источником данных и&nbsp;определяют коммуникацию между SAP HANA 
+и&nbsp;этим источником данных.</p>
+
+<p>Часть содержимого property_orcl.ini приведена ниже на&nbsp;<strong>Рис.4&nbsp;</strong>для&nbsp;иллюстрации некоторых особенностей формата и&nbsp;функции файла конфигурации свойств.</p>
+
+<p><img alt="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/tabimage005.png" style="height:367px; width:544px"></p>
+
+<p><strong>Рис.4</strong>. Содержимое файла property_orcl.ini</p>
+
+<h2>Типовой процесс создания источника данных</h2>
+
+<p>Создание удаленного источника данных в&nbsp;SAP HANA обычно включает следующие шаги:</p>
+
+<ol>
+	<li>Выполняется проверка наличия в&nbsp;SAP HANA специального адаптера 
+для&nbsp;источника данных, такого как "ASEODBC", "IQODBC", "TDODBC".</li>
+	<li>Если специальный адаптер доступен, он используется для&nbsp;создания источника данных.</li>
+	<li>Если специальный адаптер недоступен, выполняется проверка 
+специального файла шаблона конфигурации свойств, например, шаблона 
+для&nbsp;Oracle, MSSQL.</li>
+	<li>Если есть специальный шаблон конфигурации свойств, можно изменить 
+его согласно требованиям, а&nbsp;затем создать источник данных с помощью
+ измененного файла. Например, можно деактивировать лишние функции 
+при&nbsp;условии соблюдения корректности конфигурации или изменить 
+мэппинг типа данных или функции в&nbsp;зависимости от требований.</li>
+	<li>Если нет специального шаблона конфигурации свойств, необходимо 
+создать файл конфигурации свойств с нуля. Для&nbsp;создания такого файла
+ ознакомьтесь со свойствами источника данных и&nbsp;его драйвера.</li>
+	<li>Создайте источник данных в&nbsp;SAP HANA Studio с помощью 
+специального или стандартного адаптера (например, ODBC). 
+При&nbsp;использовании стандартного адаптера необходимо указать файл 
+конфигурации свойств для&nbsp;источника данных.</li>
+</ol>
+
+<p>Необходимо также учитывать, что при&nbsp;изменении и&nbsp;создании 
+файла конфигурации свойств указываются только свойства, которые 
+отличаются от значений по умолчанию. Ошибки в&nbsp;файле конфигурации 
+свойств могут привести к&nbsp;некорректным операциям и&nbsp;результатам 
+источника данных.</p>
+
+<h2>Создание виртуальной таблицы</h2>
+
+<p>После создания источника данных в&nbsp;SAP HANA Studio можно 
+выполнить мэппинг виртуальной таблицы к&nbsp;данным в&nbsp;удаленном 
+источнике данных в&nbsp;SAP HANA Studio. Аналогично созданию источника 
+данных, существует два способа создания виртуальной таблицы.</p>
+
+<p>На&nbsp;<strong>Рис.5</strong>&nbsp;приведен процесс создания виртуальной таблицы через GUI</p>
+
+<p><img alt="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/tabimage007.png"></p>
+
+<p><strong>Рис.5.&nbsp;</strong>Создание виртуальной таблицы через GUI</p>
+
+<p>Для создания виртуальной таблицы с помощью SQL-инструкции необходимо выполнить&nbsp; следующие действия:</p>
+
+<p>CREATE VIRTUAL TABLE &lt;table_name&gt; &lt;remote_location_clause&gt;<br>
+Example:<br>
+CREATE VIRTUAL TABLE sda.vt AT "ORCL_11G_WIN"."NULL"."OUTLN"."CANDIDATES";</p>
+					</div>
+	</div>
+
+	
+
+<div class="likes likes-h" data-material-id="11315">
+	<div class="likes-plate slide-hide likes-plate-h">
+		<div class="pop">
+			<div class="pop-top">
+				<p class="likes-count-plural likes-count-plural-h">Понравилось 3 людям</p>
+			</div>
+			<div class="popbg">
+				<div class="photos photos-h">
+										<div class="p"><a href="https://sapland.ru/cabinet/21920/" data-hasqtip="true"><img alt="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/21920.jfif" class="avatar-50" title="Василий Суханов"></a></div>
+										<div class="p"><a href="https://sapland.ru/cabinet/9792/" data-hasqtip="true"><img alt="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/9792-1154.jfif" class="avatar-50" title="Вадим Табаков"></a></div>
+										<div class="p"><a href="https://sapland.ru/cabinet/88/" data-hasqtip="true"><img alt="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/88-9110.jfif" class="avatar-50" title="Михаил Сковородин"></a></div>
+										<div class="clear"></div>
+				</div>
+			</div>
+			<div class="pop-bottom"></div>
+		</div>
+	</div>
+	<a class="like like-material like-material-h" href="#" title="Мне нравится"><span>Нравится</span></a>
+
+    <span class="yes likes-count likes-count-h positive">3</span>
+
+	<a class="unlike like-material dislike-material-h" href="#" title="Мне не нравится"><span>Не нравится</span></a>
+</div>
+
+			<div style="float: right">
+				<table style="border-collapse:collapse;width:215px;height:30px;table-layout:fixed" class="noprint">
+		<tbody><tr>
+			<td style="width: 130px">
+				
+<div class="yashare-auto-init" data-yasharel10n="ru" data-yasharetype="button" data-yasharequickservices="" style="display: inline-block"></div> 
+
+			</td>
+		</tr>
+	</tbody></table>
+
+		</div>
+		<div class="clear"></div>
+
+	
+<div class="data-support">
+		<p><strong>
+		Функциональная область					</strong>:
+			<a href="https://sapland.ru/filter/results/?dsf%5Bareas%5D%5B%5D=446">Управление взаимоотношениями с клиентами / CRM</a>, 			<a href="https://sapland.ru/filter/results/?dsf%5Bareas%5D%5B%5D=444">Управление персоналом / HR</a>, 			<a href="https://sapland.ru/filter/results/?dsf%5Bareas%5D%5B%5D=13">Управление логистической сетью / SCM</a>, 			<a href="https://sapland.ru/filter/results/?dsf%5Bareas%5D%5B%5D=773">SAP HANA / SAP HANA</a>, 			<a href="https://sapland.ru/filter/results/?dsf%5Bareas%5D%5B%5D=15">Информационные технологии / IT, Basis, ABAP</a>, 			<a href="https://sapland.ru/filter/results/?dsf%5Bareas%5D%5B%5D=445">Бизнес аналитика / BI</a>, 			<a href="https://sapland.ru/filter/results/?dsf%5Bareas%5D%5B%5D=12">Финансы и управленческий учет / Financials</a>	</p>
+		<p><strong>
+						Ключевые слова	</strong>:
+			<a href="https://sapland.ru/filter/results/?dsf%5Bcats%5D%5B%5D=422">SAP HANA </a>, 			<a href="https://sapland.ru/filter/results/?dsf%5Bcats%5D%5B%5D=760">Функциональные возможности SAP HANA / Functionality of SAP HANA</a>	</p>
+		<p><strong>
+				Ролевое назначение			</strong>:
+			<a href="https://sapland.ru/filter/results/?dsf%5Broles%5D%5B%5D=11">SAP Консультант / Consultant</a>	</p>
+	</div>
+
+
+
+	<p>
+				
+	</p>
+	
+<!-- /os/appearances/sapland-2012/comments/../../../modules/comments/comments.js --><script type="text/javascript">$(document).ready(function(){
+	if ($('.transition-index').size() > 0)
+		os.require('modules/comments/transition-index');
+
+	// Показываем форму
+	$('#show-comment-form').click(function(){
+		var $parent = $(this).parent();
+		$parent.after($('#comment-form'));
+
+		$('#comment-form #comm_parent_id').val(0);
+
+		$('#comment-form').slideDown();
+		$('#comment-text').focus();
+
+		return false;
+	});
+
+	// Показываем форму в древовидных комментариях
+	$('body').delegate('.show-comment-form', 'click', function(){
+		var $parent = $(this).closest('.actions');
+		$parent.after($('#comment-form'));
+
+		$('#comment-form #comm_parent_id').val($(this).closest('.comment').data('comment-id'));
+
+		$('#comment-form').fadeIn();
+		$('#comment-text').focus();
+
+		return false;
+	});
+
+	// Редактирование комментария
+	$('#comments').on('click', '.edit-comment', function(e){
+		e.preventDefault();
+
+		var comment = $(this).closest('.comment');
+		var comment_id = comment.data('comment-id');
+
+		var dlg = $('<div style="text-align: center"><img src="/images/ajax/bigcircle-loader.gif" alt="Загрузка..." />').dialog( {
+			modal: true,
+			title: 'Редактирование комментария',
+			width: 800,
+			height: 'auto',
+			close: function() {
+				$('input', this).datetimepicker('destroy');
+				try
+				{
+					$('textarea', this).ckeditorGet().destroy();
+				} catch (e)
+				{
+					// TODO: handle exception
+				}
+				$(this).dialog('destroy').remove();
+			},
+			open: function() {
+				os.query('/ajax/comments/', {
+					cmd: 'get edit dialog',
+					comment_id: comment_id
+				}, function(data, errors) {
+					if (!data.success)
+						return;
+
+					if (data.error == 'NO_RIGHTS')
+					{
+						if (data.comment.expert == 1)
+						{
+							os.alert('Для редактирования этого комментария, Вы должны обладать правом редактирования комментариев экспертов.');
+						} else {
+							os.alert('У Вас недостаточно прав для редактирования этого комментария.');
+						}
+					}
+
+					js.include('jquery/plugins/timepicker/jquery-ui-timepicker-addon.js');
+					dlg.css({'text-align':'left'}).html('Дата: <input type="text" style="cursor:pointer" readonly value="'+data.comment.published+'" /><textarea style="width: 100%" rows="18" cols="10">'+data.comment.text_source+'</textarea>').dialog('option', {
+						height: 'auto'
+					}).dialog('option', {
+						position: 'auto'
+					}).find('input').datetimepicker({
+						dateFormat: 'yy-mm-dd',
+						timeFormat: 'hh:mm:ss',
+						timeText: 'Время',
+						hourText: 'Часы',
+						minuteText: 'Минуты',
+						currentText: 'Сейчас',
+						closeText: 'Ок',
+						maxDate: data.comment.max_date,
+						minDate: data.comment.min_date
+					});
+
+					if (data.comment.expert == 1)
+						$('textarea', dlg).ckeditor();
+
+				}, true);
+			},
+			buttons: {
+				'Сохранить': function() {
+					var text = $('textarea', $(this).dialog()).val();
+					var date = $('input', $(this).dialog()).val();
+
+					os.query('/ajax/comments/', {
+						cmd: 'edit comment',
+						comment_id: comment_id,
+						text: text,
+						date: date
+					}, function(data, errors) {
+						if (!data.success)
+							return;
+
+						var comment = $('#comment-' + comment_id);
+						var new_comment = $(data.comment).css({'background-color': comment.css('background-color')});
+						new_comment.append($('.child-comments-wrapper', comment));
+						comment.replaceWith(new_comment);
+
+						dlg.dialog('close');
+					}, true);
+				}
+			}
+		});
+
+/*		var form = $('#comment-form');
+
+		os.debug($(':input', form));
+
+		var comm_id_elm = $('#comm_id', form);
+		comm_id_elm.val(comment_id);
+
+		form.dialog({
+			modal: true,
+			title: 'Редактирование комментария',
+			width: 800,
+			height: 'auto',
+			close: function(){
+				$(this).dialog('destroy');
+				comm_id_elm.val('0');
+			}
+		});
+*/	});
+
+	// Удаление комментария
+	$('body').delegate('.delete-comment', 'click', function(event){
+		event.preventDefault();
+
+		var comment_id = $(this).closest('.comment').data('comment-id');
+
+		if (confirm('Удалить комментарий?'))
+		{
+			os.query('/ajax/comments/', {
+				cmd: 'delete comment',
+				comment_id: comment_id,
+				tree_comment: $('#tree_comment').val()
+			}, function(data, errors){
+				if (errors)
+					os.debug(errors);
+
+				if (!data.success)
+					os.whatHappened($data);
+
+				var comment = $('#comment-' + comment_id);
+				var new_comment = $(data.html).css({'background-color': comment.css('background-color')});
+				new_comment.append($('.child-comments-wrapper', comment));
+				comment.replaceWith(new_comment);
+			}, true);
+		}
+	});
+
+	// Восстановление комментария
+	$('#comments').on('click', '.restore-comment', function(event){
+		event.preventDefault();
+
+		var comment_id = $(this).closest('.comment').data('comment-id');
+
+		if (confirm('Восстановить комментарий?'))
+		{
+			os.query('/ajax/comments/', {
+				cmd: 'restore comment',
+				comment_id: comment_id,
+				tree_comment: $('#tree_comment').val()
+			}, function(data, errors){
+				if (errors)
+					os.debug(errors);
+
+				if (!data.success)
+					os.whatHappened($data);
+
+				var comment = $('#comment-' + comment_id);
+				var new_comment = $(data.html).css({'background-color': comment.css('background-color')});
+				new_comment.append($('.child-comments-wrapper', comment));
+				comment.replaceWith(new_comment);
+			}, true);
+		}
+	});
+
+	// Скрытие комментария для главной
+	$('#comments').on('click', '.hide-comment-for-mainpage', function(event){
+		event.preventDefault();
+
+		var btn = $(this);
+
+		var comment_id = $(this).closest('.comment').data('comment-id');
+
+		os.query('/ajax/comments/', {
+			cmd: 'toggle comment hidden on main',
+			comment_id: comment_id
+		}, function(data, errors){
+			if (!data.success)
+				os.whatHappened(data);
+
+			if (data.hidden_on_main==1)
+				btn.text('Показать на главной');
+			else
+				btn.text('Скрыть на главной');
+		}, true);
+	});
+
+	// Превью удалённого комментария
+	$('#comments').on('click', '.view-deleted', function(e){
+		e.preventDefault();
+
+		$('#comment-loader').show();
+		var comment_id = $(this).closest('.comment').data('comment-id');
+		os.query('/ajax/comments/', {
+			cmd: 'view deleted comment',
+			comment_id: comment_id,
+			tree_comment: $('#tree_comment').val()
+		}, function(data, text){
+			$('#comment-loader').hide();
+			if (!data.success)
+				return;
+
+			var comment = $(data.comment);
+			$('a[href="#"]', comment).remove();
+			if (data.deleted_by.user) comment.append('<p>Удалён под учётной записью пользователя <span class="user-place" style="font-weight: bold"></span></p>').find('.user-place').text(data.deleted_by.user);
+			if (data.deleted_by.admin) comment.append('<p>Удалён под учётной записью администратора <span class="admin-place" style="font-weight: bold"></span></p>').find('.admin-place').text(data.deleted_by.admin);
+			$('<div class="comment-preview"></div>').append(comment).dialog({
+				title: 'Просмотр комментария',
+				modal: true,
+				resizable: false,
+				width: 783,
+				close: function(){
+					$(this).dialog('destroy').remove();
+				}
+			}).dialog('option', {
+				height: 'auto'
+			}).dialog('option', {
+				position: [Math.ceil($('.content:first').position().left), 'center']
+			});
+
+		}, true);
+	});
+
+	// Превью комментария
+	$('body').on('click', '#comment-preview', function(e){
+		e.preventDefault();
+		$('#comment-loader').show();
+
+		var comment_text = '';
+		if (!$('#comment-form-ckeditor') || $('#comment-form-textarea').css('display') != 'none')
+		{
+			comment_text = $('#comment-text').val();
+		} else {
+			comment_text = $('#comment-form-ckeditor .ckeditor').val();
+		}
+
+		os.query('/ajax/comments/', {
+			cmd: 'preview comment',
+			text: comment_text,
+			tree_comment: $('#tree_comment').val(),
+			parent_id: $('#comm_parent_id').val(),
+			expert: $('#comment-form input[name=expert]:checked').val()>0,
+			user: $('#comment-form input[name=user]').val(),
+			partner: $('#comment-form select[name=partner] option:selected').val()
+		}, function(data, errors){
+			$('#comment-loader').hide();
+			if (!data.success)
+				return;
+
+			$('<div class="comment-preview">'+data.comment+'</div>').dialog({
+				title: 'Предварительный просмотр комментария',
+				modal: true,
+				resizable: false,
+				width: 783,
+				close: function(){
+					$(this).dialog('destroy').remove();
+				}
+			}).dialog('option', {
+				height: 'auto'
+			}).dialog('option', {
+				position: [Math.ceil($('.content:first').position().left), 'center']
+			});
+
+		}, true);
+	});
+
+	// Отправка комментария
+	$('#comment-submit').click(function(e){
+		e.preventDefault();
+		$('#comment-loader').show();
+
+		var comment_text = '';
+		if (!$('#comment-form-ckeditor') || $('#comment-form-textarea').css('display') != 'none')
+		{
+			comment_text = $('#comment-text').val();
+		} else {
+			comment_text = $('#comment-form-ckeditor .ckeditor').val();
+		}
+		var max_comment_id = 0;
+		$('#comments .comment').each(function(){
+			var current_comment_id = $(this).data('comment-id')*1;
+			if (current_comment_id > max_comment_id)
+				max_comment_id = current_comment_id;
+		});
+
+		os.query('/ajax/comments/', {
+			cmd: 'post comment',
+			mat_id: mat_id,
+			parent_id: $('#comm_parent_id').val(),
+			comm_id: $('#comm_id').val(),
+			last_comment_id: max_comment_id,
+			tree_comment: $('#tree_comment').val(),
+			tmp_rights_id: tmp_rights_id,
+			tmp_key: tmp_key,
+			text: comment_text,
+			expert: $('#comment-form input[name=expert]:checked').val(),
+			user: $('#comment-form input[name=user]').val(),
+			partner: $('#comment-form select[name=partner] option:selected').val()
+		}, function(data, errors){
+			$('#comment-text').val('');
+			$('#comment-form-ckeditor .ckeditor').val('');
+			$('#comment-form input[name=user]').val('');
+			$('#comment-form input[name=expert]:checked').click();
+			$('#comment-loader').hide();
+			$('#comment-form').fadeOut();
+
+			if (data.error == 'NO_USER')
+			{
+				alert('Для добавления комментария необходимо выполнить вход на сайт');
+				return;
+			}
+
+			if (!data.tree) // Линейные комментарии
+			{
+				var $td = $('#comments .comment').first();
+				if (!data.new_comments) // Уже есть комментарии
+				{
+					var $row = $td.closest('div');
+					var $comments = $(data.comments);
+					$row.before($comments);
+				} else { // Комментариев пока нет
+					var $comments = $(data.comments);
+					$('#comments-placeholder').replaceWith($comments);
+				}
+			} else { // Древовидные комментарии
+				var parent_id = $('#comm_parent_id').val();
+
+				if (data.new_comments)
+				{
+					$('#comments-placeholder').replaceWith(data.comment);
+				} else {
+					var $comments = $('#comments');
+					var $parent = $comments.find('#comment-' + parent_id);
+
+					if ($parent.size() == 0)
+					{
+						$place = $comments;
+					} else {
+						var $place = $parent.find('.child-comments-wrapper .child-comments:first');
+
+						if ($place.size() == 0)
+						{
+							$place = $('<div class="child-comments-wrapper"><div class="child-comments"></div></div>');
+							$parent.append($place);
+							$place = $place.find('.child-comments:first');
+						}
+					}
+
+					var $comment = $(data.comment);
+					var bg_color = $place.closest('.comment').find('.comment-wrapper').css('background-color');
+					if (bg_color == 'rgb(255, 255, 255)')
+						$('.comment-wrapper:first', $comment).removeAttr('style');
+					else
+						$('.comment-wrapper:first', $comment).css('background-color', '#fff');
+
+					$place.append($comment);
+					setTimeout(function(){
+						location.hash = 'comment-'+data.comment_id;
+					}, 800);
+				}
+			}
+
+			try {
+				$('#comment-form-textarea textarea.ckeditor').ckeditorGet().destroy();
+			}
+			catch (e) {
+				// TODO: handle exception
+			}
+
+//			var ckeditor = $('#comment-form-textarea textarea.ckeditor').ckeditorGet();
+//			if (ckeditor) ckeditor.destroy();
+		}, true);
+		$('#comm_id').val('0');
+	});
+
+	// Панель инструментов для клиентских комментариев
+	$('.comment-toolbar')
+	.find('a.img').click(function(e){
+		e.preventDefault();
+
+		function insertText(element,text)
+		{
+			if (element && element.caretPos)
+				element.caretPos.text=text;
+			else if (element && element.selectionStart+1 && element.selectionEnd+1)
+				element.value=element.value.substring(0,element.selectionStart)+text+element.value.substring(element.selectionEnd,element.value.length);
+			else if (element)
+				element.value+=text;
+		}
+
+		var dlg = $(os.dlg).dialog({
+			modal: true,
+			title: 'Ваши изображения',
+			close: function(){
+				$(this).dialog('destroy').remove();
+			},
+			buttons: [{
+				text: 'Вставить',
+				click: function(){
+					insertText($('#comment-text').get(0), '[img]'+$('select.images :selected', dlg).text()+'[/img]');
+					$(this).dialog('close');
+				}
+			}],
+			minWidth: 500,
+			minHeight: 300,
+			height: 300,
+			open: function(){
+				os.query('/ajax/users/', {
+					cmd: 'show files dialog'
+				}, function(data, errors){
+					if (!data.success)
+					{
+						if (data.no_user)
+							os.alert('Для использования данной функции необходимо войти на сайт');
+						else
+							os.alert('Произошла ошибка');
+						dlg.dialog('close');
+						return;
+					}
+
+					dlg.data('user-id', data.user_id).html(data.dialog).dialog('option', {position:'auto'})
+					.find('select.images').change(function(){
+						if ($(':selected', this).text())
+							$('.preview', dlg).html('<img src="/images/r/200x200/uploads/u-'+data.user_id+'/'+$(':selected', this).text()+'" />');
+						else
+							$('.preview', dlg).html('');
+					}).dblclick(function(){
+						insertText($('#comment-text').get(0), '[img]'+$('select.images :selected', dlg).text()+'[/img]');
+						dlg.dialog('close');
+					})
+					.find('option:first').attr('selected', 'selected')
+					.end().change()
+					.end().find('.upload-bar a').click(function uploadFile(e){
+						if (e) e.preventDefault();
+						var file = $('input[type=file]', dlg);
+
+						if (file.val() == '')
+						{
+							return;
+						}
+
+						os.query('/ajax/users/', {
+							cmd: 'upload user file check',
+							filename: file.val()
+						}, function(data, errors){
+							if (!data.success){
+								os.alert('При загрузке файла произошла ошибка');
+								return;
+							}
+
+							if (data.file_exists && !dlg.data('replace'))
+							{
+								$(data.dialog).dialog({
+									dialogClass: 'ui-dialog-warning',
+									modal: true,
+									title: 'Файл существует',
+									resizable: false,
+									close: function(){
+										$(this).dialog('destroy').remove();
+									},
+									width: 'auto',
+									height: 'auto',
+									position: 'auto',
+									buttons: {
+										'Отменить': function(){
+											$(this).dialog('close');
+										},
+										'Заменить': function(){
+											dlg.data('filename', $('input', this).val()).data('replace', true);
+											uploadFile();
+											$(this).dialog('close');
+										}
+									},
+									open: function() {
+										var button = $('.ui-dialog-buttonpane .ui-dialog-buttonset .ui-button', $(this).dialog('widget')).get(1);
+										$('input', this).keyup(function(){
+											if ($(this).val() != $(this).data('original-filename'))
+												$('span', button).text('Переименовать');
+											else
+												$('span', button).text('Заменить');
+										});
+									}
+								});
+							} else {
+								$('.loading', dlg).show();
+								os.query('/ajax/users/', {
+									cmd: 'upload user file',
+									file: file.get(0),
+									filename: dlg.data('filename')
+								}, function(data, errors){
+									$('.loading', dlg).hide();
+									$('input[type=file]', dlg).val('');
+									if (!data.success){
+										if (data.bad_image)
+											os.alert('При загрузке файла произошла ошибка. Файл, похоже, не является изображением.');
+										else if (data.bad_filename)
+											os.alert('При загрузке файла произошла ошибка. Проверьте, что имя файла не содержит неверных символов. Допустимо использовать цифры, буквы латинского алфавита, знак минус и знак подчёркивания.');
+										else
+											os.alert('При загрузке файла произошла ошибка');
+										return;
+									}
+
+									dlg.data('filename', '').data('replace', false);
+									if ($('select.images option[value="'+data.filename+'"]', dlg).size()==0)
+										$('select.images', dlg).append('<option value="'+data.filename+'">'+data.filename+'</option>');
+
+									$('select.images option[value="'+data.filename+'"]', dlg).attr('selected', 'selected');
+									$('select.images', dlg).change();
+								}, true);
+							}
+						}, true);
+
+					});
+				}, true);
+			}
+		}).data('filename', '').data('replace', false);
+	}).end();
+	//.find('a').qtip();
+
+	// Показываем любящих юзеров
+	$('#comments-placeholder, #hivemind-comments').on('mouseenter', '.like-comment', function(){
+		$('#comments .likes').each(function(){
+			$('>div:first', this).addClass('slide-hide');
+		});
+
+		var comment_id = $(this).closest('.comment').data('comment-id');
+		var plate = $(this).closest('.likes').find('>div:first');
+		var portraits = $('.photos', plate);
+
+		var count = $('.likes-count', this);
+		var count_plural = $('.likes-count-plural', plate);
+
+		plate.removeClass('hide-me');
+
+		os.query('/ajax/comments/', {
+			cmd: 'get likes users',
+			comment_id: comment_id
+		}, function(data, errors){
+			if (!data.success)
+				return;
+
+			var p = $('<div>');
+			$(data.users).each(function(){
+				p.append('<div class="p"><a href="/cabinet/'+this.id+'/"><img class="avatar-50" src="/images/r/48x48p/'+this.avatar+'" alt="" /></div>')
+					.find('img:last').attr('title', this.name+' '+this.fio);
+			});
+			p.append('<div class="clear"></div>');
+			portraits.html(p);
+
+			count.text(data.likes_count);
+			count_plural.text(data.likes_count?('Понравилось '+data.likes_count+' '+os.pluralRu(data.likes_count, 'человеку|людям')):'Пока никому не понравилось');
+
+			if (data.users.length > 0)
+				plate.removeClass('slide-hide');
+		}, true);
+
+
+	// Скрываем любящих юзеров
+	}).on('mouseleave', '.like-comment', function(){
+
+		var plate = $(this).closest('.likes').find('>div:first');
+
+		plate.addClass('hide-me');
+
+		setTimeout(function(){
+			if ($(plate).hasClass('hide-me'))
+				$(plate).addClass('slide-hide');
+		}, 1000);
+
+
+
+	}).on('mouseenter', '.likes-plate', function(){
+		$(this).removeClass('hide-me');
+
+
+
+	}).on('mouseleave', '.likes-plate', function(){
+		var plate = $(this);
+		plate.addClass('hide-me');
+
+		setTimeout(function(){
+			if ($(plate).hasClass('hide-me'))
+				$(plate).addClass('slide-hide');
+		}, 1000);
+
+
+	// Тогглим лайк
+	}).on('click', '.like-comment', function(e){
+		e.preventDefault();
+		if ($(this).data('anonymous')) os.login('Для комментирования необходимо войти на сайт или зарегистрироваться.', 'Необходима авторизация');
+
+		var comment_id = $(this).closest('.comment').data('comment-id');
+		var img = $('img', this);
+		var count = $('.likes-count', this);
+
+		var img_src = img.attr('src');
+		img.attr('src', '/os/css/img/comments/liked-load.gif');
+
+		var plate = $(this).closest('.likes').find('>div:first');
+		var count_plural = $('.likes-count-plural', plate);
+		var portraits = $('.photos', plate);
+
+		os.query('/ajax/comments/', {
+			cmd: 'toggle like',
+			comment_id: comment_id
+		}, function(data, errors){
+			if (!data.success)
+			{
+				img.attr('src', img_src);
+				return;
+			}
+
+			var p = $('<div>');
+			$(data.users).each(function(){
+				p.append('<div class="p"><a href="/cabinet/'+this.id+'/"><img class="avatar-50" src="/images/r/48x48p/'+this.avatar+'" alt="" /></div>')
+					.find('img:last').attr('title', this.name+' '+this.fio);
+			});
+			p.append('<div class="clear"></div>');
+			portraits.html(p);
+
+			if (data.users.length > 0)
+			{
+				plate.removeClass('slide-hide');
+			} else {
+				plate.addClass('slide-hide');
+			}
+
+			if (data.liked)
+			{
+				img.attr('src', '/os/css/img/comments/liked.gif');
+			} else {
+				img.attr('src', '/os/css/img/comments/not-liked.gif');
+			}
+
+			count.text(data.likes_count);
+			count_plural.text(data.likes_count?('Понравилось '+data.likes_count+' '+os.pluralRu(data.likes_count, 'человеку|людям')):'Пока никому не понравилось');
+
+		}, true);
+	});
+});</script>
+
+
+<div class="cmntdiv">
+	<a class="cmnt" href="#" title="" onclick="os.login('Для комментирования необходи- мо войти на сайт или зарегистри- роваться. <br><br>', 'Необходима авторизация'); return false">
+	<img src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/comment.jfif">
+	</a>
+</div>
+
+<div class="clear"></div>
+<div id="comments-placeholder" style="margin-top:0;min-height:45px">
+			<div id="comments" class="comments-tree">
+			<span style="padding:8px 0;font-size: 15px;margin: 0 0 10px">Комментарии: </span>
+			<div class="clear"></div>
+							
+
+
+<!--suppress SpellCheckingInspection -->
+<div class="comment" id="comment-2318" data-comment-id="2318" data-parent-id="0" data-level="0">
+	 
+		<div class="comment-wrapper new-comment" style="background-color: #fff">
+			 
+				<div class="avatar">
+					<a href="https://sapland.ru/cabinet/180/" oldtitle="Просмотреть профиль" title="" data-hasqtip="true">
+						<img src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/180-1912.jfif" alt="" class="avatar-50 comment-author">
+					</a>
+				</div>
+				<div class="comment-content" style="margin-left:0">
+					<p class="username">
+						<a href="https://sapland.ru/cabinet/180/" oldtitle="Просмотреть профиль" title="" data-hasqtip="true">Павел Мартынов</a>
+						<span class="userdate">(Рейтинг: 615)</span>
+						<span class="date actions">
+					<span class="time">11:45,</span>
+					<span class="userdate">04 января 2016</span>
+											</span>
+					</p>
+				</div>
+			 
+
+			
+			<div class="comment-text">Здравствуйте, небольшое дополнение 
+технология SDA имеет лицензионные ограничения. Например на уровне 
+runtime for BW использовать SDA можно только для конекта к другой HANA 
+базе.</div>
+			<div class="actions noprint">
+				<a href="#" class="answ" onclick="os.login('Для комментирования необходимо войти на сайт или зарегистрироваться.'); return false"><img src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/ans.jfif"></a>				<div class="likes">
+					<div class="likes-plate slide-hide">
+						<div class="pop">
+							<div class="pop-top">
+								<p class="likes-count-plural">Пока никому не понравилось</p>
+							</div>
+							<div class="popbg">
+								<div class="photos">
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="pop-bottom"></div>
+						</div>
+					</div>
+					<a title="Мне нравится" href="#" class="like-comment" data-anonymous="1"><img alt="" src="SAP%20HANA%20SDA%20-%20%D0%98%D0%BD%D1%82%D0%B5%D0%BB%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF%20%D0%BA%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC_files/not-liked.gif">
+						<span class="likes-count">0</span></a>
+				</div>
+
+			</div>
+
+		</div>
+	
+	</div>
+					</div>
+	</div>
+</div></div></div>
+			</div>
+		</div>
+	</div>
+		<footer class="page-footer">
+			<div>
+				<div>
+					<span class="ado">18+</span>
+					© 2009 - 2019, <a href="http://exrp.ru/" rel="nofollow">Издательство ООО «Эксперт РП»</a>. Все права защищены
+				</div>
+				<div>
+					<span>Сообщество</span>
+					<ul class="social-list">
+						<li><a href="https://www.linkedin.com/groups?mostRecent=&amp;gid=6797279&amp;trk=my_groups-tile-flipgrp" class="social-ico social-ln"></a>
+						</li>
+						<li><a href="https://www.facebook.com/pages/SAPLand/127114854020362" class="social-ico social-fb"></a></li>
+						<li><a href="https://twitter.com/SAPLand" class="social-ico social-tw"></a></li>
+						<li><a href="http://vk.com/club4419971" class="social-ico social-vk"></a></li>
+					</ul>
+				</div>
+				<div class="links">
+					<span>Разработка и поддержка сайта — <a href="http://www.openstart.ru/" target="_blank" rel="nofollow">OpenStart</a></span>
+					<p><span>Связаться с нами <a href="mailto:support@sapland.ru">support@sapland.ru</a></span></p>
+					<p><a href="https://sapland.ru/security-policy/" class="privacy">Политика конфиденциальности</a></p>
+				</div>
+			</div>
+			<div>
+				<p class="legal">Републикация материалов — только со ссылкой на SAPLAND.RU, с разрешения редакции сайта.
+								 Редакция не несет ответственности за высказывания пользователей на сайте.</p>
+			</div>
+		</footer>
+	</div>
+</div>
+<script>
+	try {
+		$(window).load(function () {
+						yaCounter1375405.reachGoal("MATERIAL_FULL_VIEW", {"materialId":11315})
+						yaCounter1375405.reachGoal("MATERIAL_FULL_VIEW_11315")
+					})
+	}
+	catch (e) {
+		// Do nothing
+	}
+</script>
+
+<iframe name="ym-native-frame" title="ym-native-frame" style="opacity: 0; width: 0px; height: 0px; position: absolute; left: 100%; bottom: 100%; border: 0px none !important;" aria-hidden="true" frameborder="0"></iframe><ym-measure class="ym-viewport" style="display: block; inset: 0px; position: fixed; transform: translate(0px, -100%); transform-origin: 0px 0px 0px;"></ym-measure><ym-measure class="ym-zoom" style="bottom: 100%; position: fixed; width: 100vw;"></ym-measure></body></html>

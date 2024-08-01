@@ -1,0 +1,1833 @@
+*&---------------------------------------------------------------------*
+*& Report  ZMDM_EXCH_RATES
+*&
+*&---------------------------------------------------------------------*
+*& Описание         : DEV.030.05-53I Обновление курсов
+*& Код ТС           : MDM #1545 DEV.030.05-53I Обновление курсов
+*& Разработчик      :
+*& Постановка задачи:
+*&---------------------------------------------------------------------*
+* 02.09.2014 L.Kornikov исправление отрицательных значений при выгрузке курсов валют
+* 08.10.2014 L.Kornikov Добавить возможность: Выгрузку курсов производить сегодня на завтра,
+* т.е. сегодня 8.10.2014 в 15-45 должны выгружаться курсы валют с датой ввода в действие 9.10.2014
+*
+* Это новая версия программы. Старая версия программы ZMDM_EXCH_RATES_IN.
+* А до неё ZMDM_EXCH_RATES
+* Программа выполняет только ЗАГРУЗКУ курсов в ERP
+* Ссылка на получение курсов в формате XML
+* ЦБ РБ http://www.nbrb.by/Services/XmlExRates.aspx?ondate=01/11/2016
+* ЦБ РФ http://www.cbr.ru/scripts/XML_daily.asp?date_req=11/01/2016
+* Польша http://www.nbp.pl/kursy/xml/LastA.xml
+* Инструкция по польскому сайту
+* http://www.nbp.pl/homen.aspx?f=/kursy/instrukcja_pobierania_kursow_walut_en.html
+* Другой пример парсинга XML http://scn.sap.com/docs/DOC-24791
+*
+* 21.05.2016 Добавлены тестовые данные для деноминации
+* При сохранении курсов записываем их в свою таблицу ZMDM_EXCHRATES в нужном для выгрузки формате
+* При выгрузке программой ZMDM_EXCH_RATES_OUT считываем их сразу из ZMDM_EXCHRATES
+*
+* 02.11.2016 VSasnouski Поправлен шаблон для обработки ситуации со спецсимволами - !, /, например, класс сообщений E!
+*
+* 27.12.2018 V.Matsygud Для системы SHV предложены использовать ссылки:
+* ЦБ РБ http://extsys.it.beloil.by/Services/XmlExRates.aspx?ondate=01/11/2016
+* ЦБ РФ http://extsys.it.beloil.by/scripts/XML_daily.asp?date_req=11/01/2016
+* Польша http://extsys.it.beloil.by/kursy/xml/LastA.xml
+* Украина http://extsys.it.beloil.by/NBU_Exchange/exchange?date=DD.MM.YYYY
+* http://extsys.it.beloil.by/service/currency/?date=DDMMYYYY был временный сбой (выдавал неправильные курсы)
+*
+* Для Украины можно использовать также
+* https://bank.gov.ua/control/uk/publish/article?art_id=38441973
+* и запрос курса:
+* https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?date=20181227
+* Халамов Сергей сделал также http://extsys.it.beloil.by/NBUStatService/v1/statdirectory/exchange?date=20181225
+* 10.09.2019 дополнительно попросил http://extsys.it.beloil.by/NBU_Exchange/exchange?date=DD.MM.YYYY
+*
+
+*&---------------------------------------------------------------------*
+report  zmdm_exch_rates_in_v3.
+include zmdm_exch_rates_classes_in_v3.
+
+type-pools: truxs.
+
+selection-screen begin of block sel1 with frame title text-001.
+parameters: p_datum type sy-datum default sy-datum,       " Дата
+            "p_daily RADIOBUTTON GROUP gr1,                " Ежедневные
+            "p_month RADIOBUTTON GROUP gr1,                " Ежемесячные
+            p_nextd as checkbox default '',               " Взять курсы на следующий день от указанной даты
+            p_save  as checkbox default ''.
+selection-screen end of block sel1.
+
+selection-screen begin of block sel2 with frame title text-002.
+selection-screen begin of line.
+selection-screen position 1.
+parameters: p_bel as checkbox.
+selection-screen comment 3(15) text-003.
+selection-screen position 20.
+parameters: p_beltst as checkbox .
+selection-screen comment 22(20) text-004.
+selection-screen end of line.
+selection-screen begin of line.
+selection-screen position 1.
+parameters: p_rus as checkbox.
+selection-screen comment 3(15) text-005.
+selection-screen position 20.
+parameters: p_rustst as checkbox .
+selection-screen comment 22(20) text-004.
+selection-screen end of line.
+
+
+selection-screen begin of line.
+selection-screen position 1.
+parameters: p_pln as checkbox.
+selection-screen comment 3(15) text-006.
+selection-screen position 20.
+selection-screen end of line.
+
+parameters: p_ukr as checkbox.
+parameters: p_opzr as checkbox.
+
+parameters: p_kzt as checkbox.
+parameters: p_azn as checkbox.
+parameters: p_gel as checkbox.
+parameters: p_kgs as checkbox.
+
+selection-screen end of block sel2.
+
+data: bel_cur_code   type fcurr_curr. " код валюты РБ возьмём из данных нашей БЕ
+data: gr_logger      type ref to lcl_logger.
+
+types:
+  begin of ty_alv,
+    id       like vwrpltaf-feldname,
+    from     like tcurr-fcurr,
+    to       like tcurr-tcurr,
+    rate     type zdailyexrates_str-rate,
+    scale    type tcurr-tfact,
+    one_unit type p decimals 4, "UKURSM
+  end of ty_alv,
+* Список имён файлов с курсами с сайта Польши
+  begin of ty_nbp_dir,
+    line type char11,
+  end of ty_nbp_dir,
+  tt_nbp_dir type table of ty_nbp_dir.
+
+data: gt_courses_alv type standard table of ty_alv with header line.
+
+*--------------------------------------------------------------------*
+* START-OF-SELECTION
+*--------------------------------------------------------------------*
+start-of-selection.
+
+  perform check_date changing p_datum.
+
+*--------------------------------------------------------------------*
+* START-OF-SELECTION
+*--------------------------------------------------------------------*
+end-of-selection.
+
+  perform find_out_belarus_currency_code changing bel_cur_code.
+
+  perform update_exch_rates using p_datum.
+
+  perform show_alv using p_datum.
+
+*--------------------------------------------------------------------*
+* FORMS
+*--------------------------------------------------------------------*
+
+*&---------------------------------------------------------------------*
+*&      Form  CHECK_DATE
+*&---------------------------------------------------------------------*
+*       Если установили галку "след.день", то изменить дату курсов
+*----------------------------------------------------------------------*
+*      <-- P_DATUM  Дата загрузки
+*----------------------------------------------------------------------*
+form check_date  changing p_datum.
+  if p_nextd eq 'X'. " если пользователь запросил курс на следующий день от указанного - изменить дату
+    call function 'CALCULATE_DATE'
+      exporting
+        days        = '1'
+        months      = '0'
+        start_date  = p_datum
+      importing
+        result_date = p_datum.
+  endif.
+endform.
+
+*&---------------------------------------------------------------------*
+*&      Form  UPDATE_EXCH_RATES
+*&---------------------------------------------------------------------*
+*       Загрузка курсов с сайтов РБ,РФ,Польши
+*----------------------------------------------------------------------*
+form update_exch_rates  using  pv_datum type sy-datum.
+
+  perform create_log using  pv_datum.
+
+  perform update_exch_rates_bel using pv_datum.
+  perform update_exch_rates_rus using pv_datum.
+  perform update_exch_rates_pln using pv_datum.
+  perform update_exch_rates_ukr using pv_datum.
+
+  perform update_exch_rates_opzr using pv_datum.
+
+  perform update_exch_rates_kzt using pv_datum.
+  perform update_exch_rates_azn using pv_datum.
+  perform update_exch_rates_gel using pv_datum.
+  perform update_exch_rates_kgs using pv_datum.
+
+  perform save_log.
+
+  message s000(zbn) with 'Выполнено!'.
+
+endform.                    " UPDATE_EXCH_RATES
+
+*&---------------------------------------------------------------------*
+*&      Form  UPDATE_EXCH_RATES_BEL
+*&---------------------------------------------------------------------*
+*       Загрузка курсов с НБ РБ
+*----------------------------------------------------------------------*
+*      --> PV_DATUM  Дата загрузки курсов
+*----------------------------------------------------------------------*
+form update_exch_rates_bel  using pv_datum  type sy-datum.
+
+  check p_bel eq 'X'.
+
+  data:
+    dailyexrates   type zdailyexrates_tt,
+    valcurs_xml    type string,
+    length         type i,
+    http_load_data type truxs_xml_table,
+    uri            type mmpur_url.
+
+  gr_logger->add( iv_message = 'i000(ZBN)'
+    iv_var1 = 'Нац.банк РБ'
+    iv_var2 = ''
+    iv_var3 = '' ).
+
+* Сформировать строку адреса
+  perform make_uri_bel changing uri pv_datum.
+
+* Загрузить XML с сайта НБ РБ
+  perform upload_xml
+           using pv_datum
+                 uri
+        changing http_load_data
+                 length.
+
+* Преобразование XML файла в таблицу
+  perform parse_xml using    http_load_data
+                                     length
+                             'BEL'
+                            changing dailyexrates.
+
+* Если вкл.тестовые данные для деноминации
+  if p_beltst = 'X'.
+    perform load_test_data using 'BEL' changing dailyexrates.
+  endif.
+
+* Сохранить в глоб.таблицу для вывода на экран в тестовом режиме
+  perform add_rates_alv using dailyexrates 'BEL'.
+
+* Сохранить курсы в системе
+  perform save_rates using 'BEL' dailyexrates pv_datum.
+endform.
+
+*&---------------------------------------------------------------------*
+*&      Form  UPDATE_EXCH_RATES_RUS
+*&---------------------------------------------------------------------*
+*       Загрузка курсов с ЦБ РФ
+*----------------------------------------------------------------------*
+*      --> PV_DATUM  Дата загрузки курсов
+*----------------------------------------------------------------------*
+form update_exch_rates_rus  using pv_datum  type sy-datum.
+
+  check p_rus eq 'X'.
+
+  data:
+    valcurs        type zvalcurs_tt,
+    valcurs_xml    type string,
+    length         type i,
+    http_load_data type truxs_xml_table,
+    uri            type mmpur_url.
+
+  gr_logger->add( iv_message = 'i000(ZBN)'
+      iv_var1 = 'Центробанк России'
+      iv_var2 = ''
+      iv_var3 = '' ).
+
+* Сформировать строку адреса
+  perform make_uri_rus changing uri pv_datum.
+
+* Загрузить XML с сайта НБ РБ
+  perform upload_xml
+           using pv_datum
+                 uri
+        changing http_load_data
+                 length.
+
+* Преобразование XML файла в таблицу
+  perform parse_xml using    http_load_data
+                                     length
+                             'RUS'
+                            changing valcurs.
+
+* Если вкл.тестовые данные для деноминации
+  if p_rustst = 'X'.
+    perform load_test_data using 'RUS' changing valcurs.
+  endif.
+
+* Сохранить в глоб.таблицу для вывода на экран в тестовом режиме
+  perform add_rates_alv using valcurs 'RUS'.
+
+* Сохранить курсы в системе
+  perform save_rates using 'RUS' valcurs pv_datum.
+endform.
+
+*&---------------------------------------------------------------------*
+*&      Form  UPDATE_EXCH_RATES_PLN
+*&---------------------------------------------------------------------*
+*       Загрузка курсов с НБ Польши
+*----------------------------------------------------------------------*
+*      --> PV_DATUM  Дата загрузки курсов
+*----------------------------------------------------------------------*
+form update_exch_rates_pln  using pv_datum  type sy-datum.
+
+  check p_pln eq 'X'.
+
+  data:
+    tabela_kursow  type ztabela_kursow_tt,
+    valcurs_xml    type string,
+    length         type i,
+    http_load_data type truxs_xml_table,
+    uri            type mmpur_url.
+
+  gr_logger->add( iv_message = 'i000(ZBN)'
+      iv_var1 = 'Польша'
+      iv_var2 = ''
+      iv_var3 = '' ).
+
+* Сформировать строку адреса
+  perform make_uri_pln changing uri pv_datum.
+
+* Загрузить XML с сайта НБ Польши
+  perform upload_xml
+           using pv_datum
+                 uri
+        changing http_load_data
+                 length.
+
+* Преобразование XML файла в таблицу
+  perform parse_xml using    http_load_data
+                                     length
+                             'PLN'
+                            changing tabela_kursow.
+
+* Сохранить в глоб.таблицу для вывода на экран в тестовом режиме
+  perform add_rates_alv using tabela_kursow 'PLN'.
+
+* Сохранить курсы в системе
+  perform save_rates using 'PLN' tabela_kursow pv_datum.
+endform.
+
+*&---------------------------------------------------------------------*
+*&      Form  UPDATE_EXCH_RATES_KZT
+*&---------------------------------------------------------------------*
+*       Загрузка курсов с НБ Казахстан
+*----------------------------------------------------------------------*
+*      --> PV_DATUM  Дата загрузки курсов
+*----------------------------------------------------------------------*
+form update_exch_rates_kzt  using pv_datum  type sy-datum.
+
+  check p_kzt eq 'X'.
+
+  data:
+    dailyexrates   type zdailyexrates_kzt_tt,
+    valcurs_xml    type string,
+    length         type i,
+    http_load_data type truxs_xml_table,
+    uri            type mmpur_url.
+
+  gr_logger->add( iv_message = 'i000(KZT)' iv_var1 = 'Казахстан' iv_var2 = '' iv_var3 = '' ).
+
+* Сформировать строку адреса
+  perform make_uri_kzt changing uri pv_datum.
+* Загрузить XML с сайта НБ Казахстан
+  perform upload_xml using pv_datum uri changing http_load_data length.
+* Преобразование XML файла в таблицу
+  perform parse_xml using  http_load_data  length  'KZT'  changing dailyexrates.
+* Сохранить в глоб.таблицу для вывода на экран в тестовом режиме
+  perform add_rates_alv using dailyexrates 'KZT'.
+* Сохранить курсы в системе
+  perform save_rates using 'KZT' dailyexrates pv_datum.
+endform.
+
+*&---------------------------------------------------------------------*
+*&      Form  UPDATE_EXCH_RATES_AZN
+*&---------------------------------------------------------------------*
+*       Загрузка курсов с НБ Азербайджан
+*----------------------------------------------------------------------*
+*      --> PV_DATUM  Дата загрузки курсов
+*----------------------------------------------------------------------*
+form update_exch_rates_azn  using pv_datum  type sy-datum.
+
+  check p_azn eq 'X'.
+
+  data:
+    dailyexrates   type zdailyexrates_azn_tt,
+    valcurs_xml    type string,
+    length         type i,
+    http_load_data type truxs_xml_table,
+    uri            type mmpur_url.
+
+  gr_logger->add( iv_message = 'i000(AZN)' iv_var1 = 'Азербайджан' iv_var2 = '' iv_var3 = '' ).
+
+* Сформировать строку адреса
+  perform make_uri_azn changing uri pv_datum.
+* Загрузить XML с сайта НБ Казахстан
+  perform upload_xml using pv_datum uri changing http_load_data length.
+* Преобразование XML файла в таблицу
+  perform parse_xml using  http_load_data  length  'AZN'  changing dailyexrates.
+* Сохранить в глоб.таблицу для вывода на экран в тестовом режиме
+  perform add_rates_alv using dailyexrates 'AZN'.
+* Сохранить курсы в системе
+  perform save_rates using 'AZN' dailyexrates pv_datum.
+endform.
+
+*&---------------------------------------------------------------------*
+*&      Form  UPDATE_EXCH_RATES_GEL
+*&---------------------------------------------------------------------*
+*       Загрузка курсов с НБ Грузия
+*----------------------------------------------------------------------*
+*      --> PV_DATUM  Дата загрузки курсов
+*----------------------------------------------------------------------*
+form update_exch_rates_gel  using pv_datum  type sy-datum.
+
+
+  check p_gel eq 'X'.
+
+  data:
+    dailyexrates   type zdailyexrates_gel_tt,
+    valcurs_xml    type string,
+    length         type i,
+    http_load_data type truxs_xml_table,
+    uri            type mmpur_url.
+
+  gr_logger->add( iv_message = 'i000(GEL)' iv_var1 = 'Грузия' iv_var2 = '' iv_var3 = '' ).
+
+* Сформировать строку адреса
+  perform make_uri_gel changing uri pv_datum.
+* Загрузить XML с сайта НБ Казахстан
+  perform upload_xml using pv_datum uri changing http_load_data length.
+* Преобразование XML файла в таблицу
+  perform parse_xml using  http_load_data  length  'GEL'  changing dailyexrates.
+* Сохранить в глоб.таблицу для вывода на экран в тестовом режиме
+  perform add_rates_alv using dailyexrates 'GEL'.
+* Сохранить курсы в системе
+  perform save_rates using 'GEL' dailyexrates pv_datum.
+endform.
+
+
+*&---------------------------------------------------------------------*
+*&      Form  UPDATE_EXCH_RATES_KGS
+*&---------------------------------------------------------------------*
+*       Загрузка курсов с НБ Кыргызстан
+*----------------------------------------------------------------------*
+*      --> PV_DATUM  Дата загрузки курсов
+*----------------------------------------------------------------------*
+form update_exch_rates_kgs using pv_datum  type sy-datum.
+
+
+  check p_kgs eq 'X'.
+
+  data:
+    dailyexrates   type zdailyexrates_kgs_tt,
+    valcurs_xml    type string,
+    length         type i,
+    http_load_data type truxs_xml_table,
+    uri            type mmpur_url.
+
+  gr_logger->add( iv_message = 'i000(KGS)' iv_var1 = 'Кыргызстан' iv_var2 = '' iv_var3 = '' ).
+
+* Сформировать строку адреса
+  perform make_uri_kgs changing uri pv_datum.
+* Загрузить XML с сайта НБ Азербайджан
+  perform upload_xml using pv_datum uri changing http_load_data length.
+* Преобразование XML файла в таблицу
+  perform parse_xml using  http_load_data  length  'KGS'  changing dailyexrates.
+* Сохранить в глоб.таблицу для вывода на экран в тестовом режиме
+  perform add_rates_alv using dailyexrates 'KGS'.
+* Сохранить курсы в системе
+  perform save_rates using 'KGS' dailyexrates pv_datum.
+endform.
+
+
+
+*&---------------------------------------------------------------------*
+*&      Form  UPDATE_EXCH_RATES_UKR
+*&---------------------------------------------------------------------*
+*       Загрузка курсов с НБ Украины
+*----------------------------------------------------------------------*
+*      --> PV_DATUM  Дата загрузки курсов
+*----------------------------------------------------------------------*
+form update_exch_rates_ukr  using pv_datum  type sy-datum.
+
+  check p_ukr eq 'X'.
+
+  data:
+*    valcurs        TYPE zvalcurs_tt,
+    valcurs        type zvalcurs_ukr_tt,
+    valcurs_xml    type string,
+    length         type i,
+    http_load_data type truxs_xml_table,
+    uri            type mmpur_url.
+
+  gr_logger->add( iv_message = 'i000(ZBN)'
+      iv_var1 = 'Украина'
+      iv_var2 = ''
+      iv_var3 = '' ).
+
+* Сформировать строку адреса
+  perform make_uri_ukr changing uri pv_datum.
+
+* Загрузить XML с сайта НБ Украины
+  perform upload_xml
+           using pv_datum
+                 uri
+        changing http_load_data
+                 length.
+
+* Преобразование XML файла в таблицу
+  perform parse_xml using    http_load_data
+                                     length
+                             'UKR'
+                            changing valcurs.
+
+* Сохранить в глоб.таблицу для вывода на экран в тестовом режиме
+  perform add_rates_alv using valcurs 'UKR'.
+*
+* Сохранить курсы в системе
+  perform save_rates using 'UKR' valcurs pv_datum.
+endform.
+
+form update_exch_rates_opzr  using pv_datum  type sy-datum.
+
+  check p_opzr eq 'X'.
+
+  data:
+    dailyexrates   type zdailyexrates_tt,
+    valcurs_xml    type string,
+    length         type i,
+    http_load_data type truxs_xml_table,
+    uri            type mmpur_url.
+
+
+  data: l_datum like sy-datum.
+
+  call function 'RP_LAST_DAY_OF_MONTHS'
+    exporting
+      day_in            = pv_datum
+    importing
+      last_day_of_month = l_datum
+    exceptions
+      day_in_no_date    = 1
+      others            = 2.
+
+  if pv_datum = l_datum.
+
+    gr_logger->add( iv_message = 'i000(ZBN)'
+      iv_var1 = 'Нац.банк РБ для ОПЗР'
+      iv_var2 = ''
+      iv_var3 = '' ).
+
+* Сформировать строку адреса
+    perform make_uri_bel changing uri pv_datum.
+
+* Загрузить XML с сайта НБ РБ
+    perform upload_xml
+             using pv_datum
+                   uri
+          changing http_load_data
+                   length.
+
+* Преобразование XML файла в таблицу
+    perform parse_xml using    http_load_data
+                                       length
+                               'OPZR'
+                              changing dailyexrates.
+
+
+* Сохранить в глоб.таблицу для вывода на экран в тестовом режиме
+    perform add_rates_alv using dailyexrates 'OPZR'.
+
+* Сохранить курсы в системе
+    perform save_rates using 'OPZR' dailyexrates pv_datum.
+
+  else.
+    gr_logger->add( iv_message = 'i000(ZBN)'
+     iv_var1 = 'Нац.банк РБ для ОПЗР'
+     iv_var2 = 'Дата должна быть конца месяца'
+     iv_var3 = '' ).
+    perform add_rates_alv using dailyexrates 'OPZR'.
+  endif.
+endform.
+
+*&---------------------------------------------------------------------*
+*&      Form  MAKE_URI_BEL
+*&---------------------------------------------------------------------*
+*       Ссылка на скачивание курсов ежедневных РБ
+*----------------------------------------------------------------------*
+form make_uri_bel changing p_uri type mmpur_url  pv_datum type sy-datum.
+  constants: daily_bel type mmpur_url
+*    VALUE 'http://www.nbrb.by/Services/XmlExRates.aspx?ondate=MM/DD/YYYY'.
+*    VALUE 'http://tunnel.it.beloil.by:8081/Services/XmlExRates.aspx?ondate=MM/DD/YYYY'.
+"    VALUE 'http://extsys.it.beloil.by/Services/XmlExRates.aspx?ondate=MM/DD/YYYY'.
+    value 'http://extsys-bank-by.it.beloil.by/Services/XmlExRates.aspx?ondate=MM/DD/YYYY'.
+
+  p_uri = daily_bel.
+  replace all occurrences of:
+    'DD' in p_uri with pv_datum+6(2),
+    'MM' in p_uri with pv_datum+4(2),
+    'YYYY' in p_uri with pv_datum+0(4).
+endform.
+*&---------------------------------------------------------------------*
+*&      Form  MAKE_URI_RUS
+*&---------------------------------------------------------------------*
+*       Ссылка на скачивание курсов ежедневных Россия
+*----------------------------------------------------------------------*
+form make_uri_rus changing p_uri type mmpur_url  pv_datum type sy-datum.
+*  p_uri = 'http://www.cbr.ru/scripts/XML_daily.asp?date_req=DD/MM/YYYY'.
+*   p_uri = 'http://extsys.it.beloil.by/scripts/XML_daily.asp?date_req=DD/MM/YYYY'.
+  p_uri = 'http://extsys-bank-ru.it.beloil.by/scripts/XML_daily.asp?date_req=DD/MM/YYYY'.
+
+  replace all occurrences of:
+    'DD' in p_uri with pv_datum+6(2),
+    'MM' in p_uri with pv_datum+4(2),
+    'YYYY' in p_uri with pv_datum+0(4).
+endform.
+*&---------------------------------------------------------------------*
+*&      Form  MAKE_URI_PLN
+*&---------------------------------------------------------------------*
+*       Ссылка на скачивание курсов ежедневных Польша
+*----------------------------------------------------------------------*
+form make_uri_pln changing p_uri type mmpur_url  pv_datum type sy-datum.
+
+* На польском сайте получить ссылку сложнее.
+* http://www.nbp.pl/homen.aspx?f=/kursy/instrukcja_pobierania_kursow_walut_en.html
+
+* Скачать таблицу имён файлов по ссылке http://www.nbp.pl/kursy/xml/dir.txt (для текущего года)
+* или по ссылке http://www.nbp.pl/kursy/xml/dir2015.txt для любого другого
+  data nbp_dir type tt_nbp_dir.
+*  PERFORM upload_dir USING pv_datum CHANGING nbp_dir. !!!!!!!!!!!!!!! Вернуть
+
+* Найти нужный нам день и получить имя файла XML
+  data xml_name type char11.
+*  PERFORM find_polan_xml_name USING pv_datum CHANGING nbp_dir xml_name.!!!!!!!!!!!!!!!!!!!!! Вернуть
+
+* В поле xml_name теперб имя файла в виде a002z160105
+  if xml_name ne ''.
+*    p_uri = 'http://www.nbp.pl/kursy/xml/' && xml_name && '.xml'.
+*    p_uri = 'http://extsys.it.beloil.by/kursy/xml/' && xml_name && '.xml'.
+    p_uri = 'http://extsys-bank-pl.it.beloil.by/kursy/xml/' && xml_name && '.xml'.
+
+  else.
+*    p_uri = 'http://www.nbp.pl/kursy/xml/LastA.xml'.
+*    p_uri = 'http://extsys.it.beloil.by/kursy/xml/LastA.xml'.
+    p_uri = 'http://extsys-bank-pl.it.beloil.by/kursy/xml/LastA.xml'.
+  endif.
+
+* Текущие курсы
+*  p_uri = 'http://www.nbp.pl/kursy/xml/LastA.xml'.
+endform.
+
+*&---------------------------------------------------------------------*
+*&      Form  MAKE_URI_KZT
+*&---------------------------------------------------------------------*
+*       Ссылка на скачивание курсов ежедневных Казахстан
+*----------------------------------------------------------------------*
+form make_uri_kzt changing p_uri type mmpur_url  pv_datum type sy-datum.
+  p_uri = 'http://extsys-bank-kz.it.beloil.by/rss/get_rates.cfm?fdate=DD.MM.YYYY'.
+
+  replace all occurrences of:
+    'DD' in p_uri with pv_datum+6(2),
+    'MM' in p_uri with pv_datum+4(2),
+    'YYYY' in p_uri with pv_datum+0(4).
+endform.
+
+
+*&---------------------------------------------------------------------*
+*&      Form  MAKE_URI_AZN
+*&---------------------------------------------------------------------*
+*       Ссылка на скачивание курсов ежедневных Азербайджан
+*----------------------------------------------------------------------*
+form make_uri_azn changing p_uri type mmpur_url  pv_datum type sy-datum.
+  p_uri = 'http://extsys-bank-az.it.beloil.by/currencies/DD.MM.YYYY.xml'.
+
+  replace all occurrences of:
+    'DD' in p_uri with pv_datum+6(2),
+    'MM' in p_uri with pv_datum+4(2),
+    'YYYY' in p_uri with pv_datum+0(4).
+endform.
+
+*&---------------------------------------------------------------------*
+*&      Form  MAKE_URI_GEL
+*&---------------------------------------------------------------------*
+*       Ссылка на скачивание курсов ежедневных Грузия
+*----------------------------------------------------------------------*
+form make_uri_gel changing p_uri type mmpur_url  pv_datum type sy-datum.
+  p_uri = 'http://extsys-bank-ge.it.beloil.by/rss.php?&date=YYYY-MM-DD'.
+
+
+  replace all occurrences of:
+    'DD' in p_uri with pv_datum+6(2),
+    'MM' in p_uri with pv_datum+4(2),
+    'YYYY' in p_uri with pv_datum+0(4).
+endform.
+
+*&---------------------------------------------------------------------*
+*&      Form  MAKE_URI_KGS
+*&---------------------------------------------------------------------*
+*       Ссылка на скачивание курсов ежедневных Кыргызстан
+*----------------------------------------------------------------------*
+form make_uri_kgs changing p_uri type mmpur_url  pv_datum type sy-datum.
+*  p_uri = 'http://extsys-bank-kz.it.beloil.by/rss/get_rates.cfm?fdate=DD.MM.YYYY'.
+  p_uri = 'http://extsys-bank-kg.it.beloil.by/XML/daily.xml'.
+
+*Кыргызстан
+*http://extsys-bank-kg.it.beloil.by/XML/daily.xml
+*http://extsys-bank-kg.it.beloil.by/XML/weekly.xml
+
+
+  replace all occurrences of:
+    'DD' in p_uri with pv_datum+6(2),
+    'MM' in p_uri with pv_datum+4(2),
+    'YYYY' in p_uri with pv_datum+0(4).
+endform.
+
+
+*&---------------------------------------------------------------------*
+*&      Form  MAKE_URI_UKR
+*&---------------------------------------------------------------------*
+*       Ссылка на скачивание курсов ежедневных Украины
+*----------------------------------------------------------------------*
+form make_uri_ukr changing p_uri type mmpur_url  pv_datum type sy-datum.
+*  p_uri = 'http://pf-soft.net/service/currency/?date=DDMMYYYY'.
+* V.Matsygud 28.12.2018
+*  p_uri = 'http://extsys.it.beloil.by/service/currency/?date=DDMMYYYY'. Грузились неправильные курсы
+*  p_uri =  'http://extsys.it.beloil.by/NBUStatService/v1/statdirectory/exchange?date=YYYYMMDD'.
+*p_uri = 'http://extsys.it.beloil.by/NBU_Exchange/exchange?date=DD.MM.YYYY'.
+  p_uri = 'http://extsys-bank-ua.it.beloil.by/NBU_Exchange/exchange?date=DD.MM.YYYY'.
+
+  replace all occurrences of:
+    'DD' in p_uri with pv_datum+6(2),
+    'MM' in p_uri with pv_datum+4(2),
+    'YYYY' in p_uri with pv_datum+0(4).
+endform.
+
+*&---------------------------------------------------------------------*
+*&      Form  UPLOAD_DIR
+*&---------------------------------------------------------------------*
+*       text
+*----------------------------------------------------------------------*
+*      <--P_NBP_DIR  text
+*----------------------------------------------------------------------*
+form upload_dir  using pv_datum type sy-datum changing p_nbp_dir type tt_nbp_dir.
+  data:
+    uri              type mmpur_url,
+    uri2(132)        type c,
+    dest             like rfcdes-rfcdest value 'SAPHTTP',
+    btocrlf          type c value 'Y',
+    user(30)         type c,
+    pwd(30)          type c,
+    status(3)        type c,
+    statustext(128)  type c,
+    rlength          type i,
+    response         type table of text with header line,
+    response_headers type table of text with header line.
+
+* Для фонового режима работы
+  case sy-batch.
+    when ''. dest = 'SAPHTTP'.
+    when 'X'. dest = 'SAPHTTPA'.
+  endcase.
+* Ссылка http://www.nbp.pl/kursy/xml/dir.txt (для текущего года)
+* или ссылка http://www.nbp.pl/kursy/xml/dir2015.txt для любого другого
+*  IF pv_datum(4) EQ sy-datum(4).
+*    uri = 'http://www.nbp.pl/kursy/xml/dir.txt'.
+*  ELSE.
+*    uri = 'http://www.nbp.pl/kursy/xml/dir' && pv_datum(4) && '.txt'.
+*  ENDIF.
+
+*V.Matsygud 28.12.2018 Замена ссылки
+  if pv_datum(4) eq sy-datum(4).
+    uri = 'http://extsys.it.beloil.by/kursy/xml/dir.txt'.
+  else.
+    uri = 'http://extsys.it.beloil.by/kursy/xml/dir' && pv_datum(4) && '.txt'.
+  endif.
+
+  call function 'HTTP_GET'
+    exporting
+      absolute_uri                = uri
+      rfc_destination             = dest
+      user                        = user
+      password                    = pwd
+      blankstocrlf                = btocrlf
+    importing
+      status_code                 = status
+      status_text                 = statustext
+      response_entity_body_length = rlength
+    tables
+      response_entity_body        = response
+      response_headers            = response_headers.
+
+  data line type ty_nbp_dir.
+  loop at response into data(response_content_line).
+    if response_content_line cp 'a+++z*'. " нас интересуют только курсы тип A
+      line-line = response_content_line.
+      append line to p_nbp_dir.
+    endif.
+  endloop.
+
+  call function 'RFC_CONNECTION_CLOSE'
+    exporting
+      destination = dest
+    exceptions
+      others      = 0.
+endform.
+*&---------------------------------------------------------------------*
+*&      Form  FIND_POLAN_XML_NAME
+*&---------------------------------------------------------------------*
+form find_polan_xml_name  using pv_datum type sy-datum changing p_nbp_dir type tt_nbp_dir  p_xml_name type char11.
+  data find_date(8).
+  find_date = pv_datum+2(2) && pv_datum+4(2) && pv_datum+6(2).
+  loop at p_nbp_dir into data(wa).
+    if wa-line+5(6) > find_date.
+      exit.
+    endif.
+    p_xml_name = wa-line.
+  endloop.
+* Если какого-то дня не будет, то в P_XML_NAME запишется предыдущий день
+endform.
+*&---------------------------------------------------------------------*
+form upload_xml using pv_datum type sy-datum
+        pv_uri type mmpur_url
+       changing http_load_data type truxs_xml_table
+                             length type i.
+*&---------------------------------------------------------------------*
+  clear http_load_data[].
+
+  perform upload_xml_background using pv_datum pv_uri changing http_load_data length.
+
+
+  "  CASE sy-batch.
+  "    WHEN ''. "r_dialog.
+  "* Загрузка в диалоговом режиме с сайта CB.RU
+  "      PERFORM upload_xml_dialog USING pv_datum pv_uri CHANGING http_load_data length.
+  "    WHEN 'X'. "r_bakgrd.
+  "* Фотоный режим с сайта CB.RU
+  "      PERFORM upload_xml_background USING pv_datum pv_uri CHANGING http_load_data length.
+  "  ENDCASE.
+
+endform.                    " UPLOAD_XML
+
+*&---------------------------------------------------------------------*
+*&      Form  UPLOAD_XML_BEL
+*&---------------------------------------------------------------------*
+*       text
+*----------------------------------------------------------------------*
+*  -->  p1        text
+*  <--  p2        text
+*----------------------------------------------------------------------*
+form upload_xml_dialog using pv_datum type sy-datum
+                pv_uri type mmpur_url
+                    changing http_load_data type truxs_xml_table
+                             length type i.
+  data: http_load_headers type table of char256.
+  call function 'HTTP2_GET'
+    exporting
+      absolute_uri                = pv_uri
+      rfc_destination             = 'SAPHTTP'
+    importing
+      response_entity_body_length = length
+    tables
+      response_entity_body        = http_load_data
+      response_headers            = http_load_headers
+    exceptions
+      connect_failed              = 1
+      timeout                     = 2
+      internal_error              = 3
+      tcpip_error                 = 4
+      data_error                  = 5
+      system_failure              = 6
+      communication_failure       = 7
+      others                      = 8.
+  if sy-subrc <> 0.
+    write: / sy-subrc.
+  endif.
+
+endform.
+
+*&---------------------------------------------------------------------*
+*&      Form  UPLOAD_XML_BACKGROUND
+*&---------------------------------------------------------------------*
+*       Загрузка в фоновом режиме (пока не работает !!!!!!!!!!!)
+*----------------------------------------------------------------------*
+*  -->  p1        text
+*  <--  p2        text
+*----------------------------------------------------------------------*
+form upload_xml_background using pv_datum type sy-datum
+                pv_uri type mmpur_url
+                    changing http_load_data type truxs_xml_table
+                             length type i.
+
+  data: http_load_headers type table of char256.
+  call function 'HTTP2_GET'
+    exporting
+      absolute_uri                = pv_uri
+      rfc_destination             = 'SAPHTTPA'
+    importing
+      response_entity_body_length = length
+    tables
+      response_entity_body        = http_load_data
+      response_headers            = http_load_headers
+    exceptions
+      connect_failed              = 1
+      timeout                     = 2
+      internal_error              = 3
+      tcpip_error                 = 4
+      data_error                  = 5
+      system_failure              = 6
+      communication_failure       = 7
+      others                      = 8.
+  if sy-subrc <> 0.
+    write: / 'Ошибка при загрузке курсов в фоновом режиме. Ошибка №', sy-subrc.
+  endif.
+
+endform.
+
+*&---------------------------------------------------------------------*
+* Универсальный парсер XML
+* На вход таблица одного из трёх типов, в том числе ZDAILYEXRATES_TT
+form parse_xml using http_load_data  type truxs_xml_table
+                     length          type i
+                     p_source        type char10
+               changing
+                     pt_rates        type table. "ZDAILYEXRATES_TT.
+  data:
+    xml_in    type xstring,
+    xml_gel   type string,
+    xml_out   type table of smum_xmltb,
+    return    type table of bapiret2,
+    fieldname type fieldname,
+    fcat      type slis_t_fieldcat_alv,
+    title     type text70.
+
+  call function 'SCMS_BINARY_TO_XSTRING'
+    exporting
+      input_length = length
+    importing
+      buffer       = xml_in
+    tables
+      binary_tab   = http_load_data
+    exceptions
+      others       = 1.
+  if sy-subrc <> 0.
+    write: / 'Ошибка при парсинге XML'.
+  endif.
+
+  field-symbols: <field>, <row>.
+
+  if p_source = 'GEL'.
+
+    call function 'HR_KR_XSTRING_TO_STRING'
+      exporting
+        in_xstring = xml_in
+      importing
+        out_string = xml_gel.
+
+    data: lt_html type table of string,
+          lv_txt  type string,
+          lv_cur  type char50,
+          isdig   type c,
+          n       type i,
+          lv_eur  type char50.
+
+    lv_eur = 'EUR'.
+
+    split xml_gel at cl_abap_char_utilities=>newline into table lt_html.
+
+    loop at lt_html into lv_txt.
+      if lv_txt cs lv_eur.
+
+        read table lt_html into lv_cur index ( sy-tabix + 2 ).
+
+        describe field lv_cur length n in character mode.
+
+        while not n is initial.
+          n = n - 1.
+          if lv_cur+n(1) ca '1234567890'.
+            isdig = 'X'.
+          elseif not isdig is initial and lv_cur+n(1) na '.,1234567890'.
+            clear isdig.
+          endif.
+          if isdig is initial.
+            clear lv_cur+n(1).
+          endif.
+        endwhile.
+
+        condense lv_cur.
+
+*        WRITE: lv_cur.
+      endif.
+
+    endloop.
+
+    append initial line to pt_rates assigning <row>.
+
+    assign component 'CODE' of structure <row> to <field>.
+    check sy-subrc is initial.
+    move lv_eur to <field>.
+
+    assign component 'NOMINAL' of structure <row> to <field>.
+    check sy-subrc is initial.
+    move 1 to <field>.
+
+    assign component 'VALUE' of structure <row> to <field>.
+    check sy-subrc is initial.
+    move lv_cur to <field>.
+
+    exit.
+  endif.
+
+
+  call function 'SMUM_XML_PARSE'
+    exporting
+      xml_input = xml_in
+    tables
+      xml_table = xml_out
+      return    = return.
+
+  read table return transporting no fields
+    with key type = 'E'.
+  if sy-subrc is initial.
+    call function 'C14ALD_BAPIRET2_SHOW'
+      tables
+        i_bapiret2_tab = return.
+    exit.
+  endif.
+
+  append initial line to pt_rates assigning <row>.
+
+  loop at xml_out into data(xml_line).
+
+    translate xml_line-cname to upper case.
+    assign component xml_line-cname of structure <row> to <field>.
+    check sy-subrc is initial.
+
+* В XML РБ курс в теге RATE. В России и Украине в теге VALUE. В Польше это KURS_SREDNI.
+    if xml_line-cname eq 'RATE'  or
+       xml_line-cname eq 'VALUE' or
+       xml_line-cname eq 'DESCRIPTION' or
+       xml_line-cname eq 'KURS_SREDNI' or
+       xml_line-cname eq 'AMOUNT'.
+      replace first occurrence of ',' in xml_line-cvalue with '.'.
+
+      move xml_line-cvalue to <field>.
+      append initial line to pt_rates assigning <row>.
+
+    else.
+      move xml_line-cvalue to <field>.
+    endif.
+  endloop.
+
+endform.                    " PARSE_XML
+
+*&---------------------------------------------------------------------*
+*&      Form  ADD_RATES_ALV
+*&---------------------------------------------------------------------*
+*       Добавляем курсы в отдельную таблицу для вывода на экран
+*----------------------------------------------------------------------*
+*      --> pt_rates  Таблица с курсами
+*----------------------------------------------------------------------*
+form add_rates_alv  using    pt_rates type table  p_source type char10.
+* Имена тегов в XML файлах РБ,РФ,Польши
+  data: code_field_name  type char20,
+        rate_field_name  type char20,
+        scale_field_name type char20,
+* Интересующие нас курсы показываем, остальные - пропускаем
+        proceed          like abap_true.
+* Ссылки на поля структуры курса
+  field-symbols: <rate>, <field>, <charcode_field>, <rate_field>, <scale_field>.
+  loop at pt_rates assigning <rate>.
+    case p_source.
+      when 'BEL' or 'OPZR'.
+        code_field_name = 'CHARCODE'.
+        rate_field_name = 'RATE'.
+        scale_field_name = 'SCALE'.
+      when 'RUS'. "OR 'UKR'.
+        code_field_name = 'CHARCODE'.
+        rate_field_name = 'VALUE'.
+        scale_field_name = 'NOMINAL'.
+      when 'UKR'.
+        code_field_name = 'CURRENCYCODEL'.
+        rate_field_name = 'AMOUNT'.
+        scale_field_name = 'UNITS'.
+      when 'PLN'.
+        code_field_name = 'KOD_WALUTY'.
+        rate_field_name = 'KURS_SREDNI'.
+        scale_field_name = 'PRZELICZNIK'.
+
+      when 'KZT' .
+        code_field_name = 'TITLE'.
+        rate_field_name = 'DESCRIPTION'.
+        scale_field_name = 'QUANT'.
+
+      when 'AZN' .
+        code_field_name = 'CODE'.
+        rate_field_name =  'VALUE'.
+        scale_field_name = 'NOMINAL'.
+
+      when 'GEL' .
+        code_field_name = 'CODE'.
+        rate_field_name =  'VALUE'.
+        scale_field_name = 'NOMINAL'.
+
+      when 'KGS' .
+        code_field_name = 'ISOCODE'.
+        rate_field_name = 'VALUE'.
+        scale_field_name = 'NOMINAL'.
+
+
+    endcase.
+
+    assign component code_field_name of structure <rate> to <charcode_field>.
+    assign component rate_field_name of structure <rate> to <rate_field>.
+    assign component scale_field_name of structure <rate> to <scale_field>.
+
+    proceed = ''.
+
+* Какие мы курсы сохраняем и выводим на экран?
+* Для России ->
+    if <charcode_field> is assigned and  p_source eq 'RUS'
+      and ( <charcode_field> eq 'USD' or <charcode_field> eq 'EUR' or <charcode_field> eq 'PLN'
+         or <charcode_field> eq 'RUB' or <charcode_field> eq 'UAH' "OR <charcode_field> EQ 'CNY'
+         or <charcode_field> eq bel_cur_code or <charcode_field> eq 'BYN' ).
+      proceed = 'X'.
+    endif.
+
+* Для РБ ->
+    if <charcode_field> is assigned and p_source eq 'BEL'
+      and ( <charcode_field> ne 'XDR' ).
+      proceed = 'X'.
+    endif.
+* Для Польши только курс PLN - EUR
+    if <charcode_field> is assigned and p_source eq 'PLN' and  <charcode_field> eq 'EUR'.
+      proceed = 'X'.
+    endif.
+* Для Украины только курс UAH - EUR
+    if <charcode_field> is assigned and p_source eq 'UKR' and  ( <charcode_field> eq 'EUR' or <charcode_field> eq 'USD' ) .
+      proceed = 'X'.
+    endif.
+* НБРБ для ОПЗР
+    if <charcode_field> is assigned and p_source eq 'OPZR' and  ( <charcode_field> eq 'EUR' or <charcode_field> eq 'USD' ) .
+      concatenate <charcode_field> '1' into <charcode_field>.
+      proceed = 'X'.
+    endif.
+
+    if <charcode_field> is assigned and p_source eq 'KZT' and  <charcode_field> eq 'EUR'.
+      proceed = 'X'.
+    endif.
+
+    if <charcode_field> is assigned and p_source eq 'AZN' and  <charcode_field> eq 'EUR'.
+      proceed = 'X'.
+    endif.
+
+    if <charcode_field> is assigned and p_source eq 'GEL' and  <charcode_field> eq 'EUR'.
+      proceed = 'X'.
+    endif.
+
+    if <charcode_field> is assigned and p_source eq 'KGS' and  <charcode_field> eq 'EUR'.
+      proceed = 'X'.
+    endif.
+
+*    IF <charcode_field> IS ASSIGNED
+*      AND ( <charcode_field> EQ 'USD' OR <charcode_field> EQ 'EUR' OR <charcode_field> EQ 'PLN'
+*         OR <charcode_field> EQ 'RUB' OR <charcode_field> EQ 'UAH' OR <charcode_field> EQ 'CNY'
+*         OR <charcode_field> EQ bel_cur_code OR <charcode_field> EQ 'BYN' ).
+    if proceed = 'X'.
+
+      clear gt_courses_alv.
+      case p_source.
+        when 'BEL'.
+          gt_courses_alv-id = 'M'.   gt_courses_alv-from = bel_cur_code.
+          if p_beltst = 'X'.
+            gt_courses_alv-from = 'BYN'.
+          endif.
+        when 'RUS'. gt_courses_alv-id = 'CBR'. gt_courses_alv-from = 'RUS'.
+        when 'PLN'. gt_courses_alv-id = 'NBP'. gt_courses_alv-from = 'PLN'.
+        when 'UKR'. gt_courses_alv-id = 'NBU'. gt_courses_alv-from = 'UKR'.
+        when 'OPZR'.
+          gt_courses_alv-id = 'M'.   gt_courses_alv-from = bel_cur_code.
+
+        when 'KZT'. gt_courses_alv-id = 'KZT'. gt_courses_alv-from = 'KZT'.
+        when 'AZN'. gt_courses_alv-id = 'AZN'. gt_courses_alv-from = 'AZN'.
+        when 'GEL'. gt_courses_alv-id = 'GEL'. gt_courses_alv-from = 'GEL'.
+        when 'KGS'. gt_courses_alv-id = 'KGS'. gt_courses_alv-from = 'KGS'.
+
+      endcase.
+      gt_courses_alv-to = <charcode_field>.
+      gt_courses_alv-rate = <rate_field>.
+      gt_courses_alv-scale = <scale_field>.
+** До деноминации курс RUB - BY* передается за 10'000 единиц BY* и следовательно <scale_field> > 1
+** После деноминации деление будет не нужно
+*      IF p_source EQ 'RUS' AND <charcode_field> = bel_cur_code AND <scale_field> > 1.
+*        gt_courses_alv-one_unit = <scale_field> / <rate_field>. " Косв. курс за 1 ед.
+** Курс RUB-UAH передается за 10 UAH
+*      ELSEIF p_source EQ 'RUS' AND <charcode_field> = 'UAH'.
+*        gt_courses_alv-one_unit = <rate_field> / <scale_field>.
+      if <scale_field> > 1.
+* Переводим в косвенный курс за единицу
+        gt_courses_alv-one_unit = <scale_field> / <rate_field>.
+** Округлить до 4 знаков до запятой
+*        CALL FUNCTION 'ROUND'
+*          EXPORTING
+*            DECIMALS            = 4
+*            input               = gt_courses_alv-one_unit
+*          IMPORTING
+*            OUTPUT              = gt_courses_alv-one_unit.
+      else.
+        gt_courses_alv-one_unit = <rate_field>.
+      endif.
+      append gt_courses_alv.
+    endif.
+  endloop.
+endform.
+
+*&---------------------------------------------------------------------*
+*&      Form  SAVE_RATES
+*&---------------------------------------------------------------------*
+*       Сохранить курсы в системе
+*----------------------------------------------------------------------*
+*      --> P_SOURCE  Источник курсов: BEL, RUS, PLN
+*      --> PT_RATES  Таблица с курсами
+*      --> PV_DATUM  Дата курсов
+*----------------------------------------------------------------------*
+form save_rates  using p_source type char10
+                       pt_rates type table
+                       pv_datum type sy-datum.
+  types: begin of lty_s_tcurc,
+           waers type tcurc-waers,
+           isocd type tcurc-isocd,
+           altwr type tcurc-altwr,
+         end of lty_s_tcurc.
+  data: ls_exch_rate      type bapi1093_0,
+        ls_ret1           type bapiret1,
+        ls_ret2           type bapiret2,
+        lv_rate           type string,
+        ls_zmdm_exchrates type zmdm_exchrates,
+        lt_curc           type table of lty_s_tcurc.
+  data: begin of codes_table occurs 0,
+          charcode type fcurr_curr,
+        end of codes_table.
+
+  field-symbols: <ls_curr>  type zmdm_exch_rate,
+                 <ls_tcurc> type lty_s_tcurc,
+                 <ls_rate>  type zdailyexrates_str.
+
+  check p_save eq 'X'.
+
+* Имена тегов в XML файлах РБ,РФ,Польши
+  data: code_field_name  type char20,
+        rate_field_name  type char20,
+        scale_field_name type char20.
+* Ссылки на поля структуры курса
+  field-symbols: <rate>, <field>, <charcode_field>, <rate_field>, <scale_field>.
+
+* Для интересующих нас курсов вызываем сохранение, остальные - пропускаем
+  data proceed like abap_true.
+  data pv_datum_first type sy-datum.
+  loop at pt_rates assigning <rate>.
+    clear proceed.
+
+    case p_source.
+      when 'BEL' or 'OPZR'.
+        code_field_name = 'CHARCODE'.
+        rate_field_name = 'RATE'.
+        scale_field_name = 'SCALE'.
+      when 'RUS'. " OR 'UKR'.
+        code_field_name = 'CHARCODE'.
+        rate_field_name = 'VALUE'.
+        scale_field_name = 'NOMINAL'.
+      when 'UKR'.
+        code_field_name = 'CURRENCYCODEL'.
+        rate_field_name = 'AMOUNT'.
+        scale_field_name = 'UNITS'.
+      when 'PLN'.
+        code_field_name = 'KOD_WALUTY'.
+        rate_field_name = 'KURS_SREDNI'.
+        scale_field_name = 'PRZELICZNIK'.
+
+      when 'KZT' .
+        code_field_name  = 'TITLE'.
+        rate_field_name  = 'DESCRIPTION'.
+        scale_field_name = 'QUANT'.
+      when 'AZN' .
+        code_field_name  = 'CODE'.
+        rate_field_name  = 'VALUE'.
+        scale_field_name = 'NOMINAL'.
+      when 'GEL' .
+        code_field_name  = 'CODE'.
+        rate_field_name  = 'VALUE'.
+        scale_field_name = 'NOMINAL'.
+      when 'KGS' .
+        code_field_name  = 'ISOCODE'.
+        rate_field_name  = 'VALUE'.
+        scale_field_name = 'NOMINAL'.
+
+    endcase.
+    assign component code_field_name of structure <rate> to <charcode_field>.
+* Какие мы курсы сохраняем ?
+* Для России  ->
+    if <charcode_field> is assigned and ( p_source eq 'RUS' )
+      and ( <charcode_field> eq 'USD' or <charcode_field> eq 'EUR' or <charcode_field> eq 'PLN'
+         or <charcode_field> eq 'RUB' or <charcode_field> eq 'UAH'
+         or <charcode_field> eq bel_cur_code or <charcode_field> eq 'BYN' ).
+      proceed = 'X'.
+    endif.
+* Для РБ  ->
+    if <charcode_field> is not initial and ( p_source eq 'BEL' )
+      and ( <charcode_field> ne 'XDR' ).
+      proceed = 'X'.
+    endif.
+* Для Польши только курс PLN - EUR
+    if <charcode_field> is assigned and p_source eq 'PLN' and  <charcode_field> eq 'EUR'.
+      proceed = 'X'.
+    endif.
+* Для Украины только курс UAH - EUR
+    if <charcode_field> is assigned and p_source eq 'UKR' and  ( <charcode_field> eq 'EUR' or <charcode_field> eq 'USD' ).
+      proceed = 'X'.
+    endif.
+* Для ОПЗР курс USD EUR
+    if <charcode_field> is assigned and p_source eq 'OPZR' and  ( <charcode_field> eq 'EUR1' or <charcode_field> eq 'USD1' ).
+      proceed = 'X'.
+    endif.
+
+    if <charcode_field> is assigned and p_source eq 'KZT' and  <charcode_field> eq 'EUR'.
+      proceed = 'X'.
+    endif.
+    if <charcode_field> is assigned and p_source eq 'AZN' and  <charcode_field> eq 'EUR'.
+      proceed = 'X'.
+    endif.
+    if <charcode_field> is assigned and p_source eq 'GEL' and  <charcode_field> eq 'EUR'.
+      proceed = 'X'.
+    endif.
+    if <charcode_field> is assigned and p_source eq 'KGS' and  <charcode_field> eq 'EUR'.
+      proceed = 'X'.
+    endif.
+
+    if proceed ne 'X'.
+      continue.
+    endif.
+
+    assign component rate_field_name of structure <rate> to <rate_field>.
+    if <rate_field> is not assigned.
+      gr_logger->add( iv_message = 'e000(ZMDM_INT)' iv_var1 = 'ошибка'
+        iv_var2 = '<rate_field> is not ASSIGNED'
+        iv_var3 = '' ).
+      leave program.
+    endif.
+
+    assign component scale_field_name of structure <rate> to <scale_field>.
+    if not <scale_field> is assigned.
+      gr_logger->add( iv_message = 'e000(ZMDM_INT)' iv_var1 = 'ошибка'
+        iv_var2 = '<scale_field> is not ASSIGNED'
+        iv_var3 = '' ).
+      leave program.
+    endif.
+
+    gr_logger->add( iv_message = 'i064(ZMDM_INT)' iv_var1 = <charcode_field>
+      iv_var2 = <rate_field>
+      iv_var3 = <scale_field> ).
+
+    lv_rate = <rate_field>.
+    replace all occurrences of ',' in lv_rate with '.'.
+
+    clear: ls_ret2.
+
+    clear: ls_exch_rate.
+
+* Какой код локальной валюты (код валюты веб-сайта) ?
+    data charcode_from type fcurr_curr.
+    case p_source.
+      when 'BEL' or 'OPZR'.
+        charcode_from = bel_cur_code.
+        if p_beltst = 'X'.
+          charcode_from = 'BYN'.
+        endif.
+      when 'RUS'. charcode_from = 'RUB'.
+      when 'PLN'. charcode_from = 'PLN'.
+      when 'UKR'. charcode_from = 'UAH'.
+      when 'KZT'. charcode_from = 'KZT'.
+      when 'AZN'. charcode_from = 'AZN'.
+      when 'GEL'. charcode_from = 'GEL'.
+      when 'KGS'. charcode_from = 'KGS'.
+    endcase.
+* Какой тип курса ?
+    data course_type type kurst_curr.
+    case p_source.
+      when 'BEL' or 'OPZR'. course_type = 'M'.
+      when 'RUS'. course_type = 'CBR'.
+      when 'PLN'. course_type = 'NBP'.
+      when 'UKR'. course_type = 'NBU'.
+      when 'KZT'. course_type = 'KZT'.
+      when 'AZN'. course_type = 'AZN'.
+      when 'GEL'. course_type = 'GEL'.
+      when 'KGS'. course_type = 'KGS'.
+    endcase.
+
+*   КОСВЕННАЯ КОТИРОВКА
+* Из национальной в иностранную
+* в косвенной котировке номинал хранится в поле TFACT
+    clear ls_exch_rate.
+    perform set_rates using 'V' charcode_from <charcode_field> pv_datum lv_rate course_type <scale_field>
+          changing ls_exch_rate ls_ret2.
+    if p_source eq 'OPZR'.
+      pv_datum_first = pv_datum.
+      pv_datum_first+6(2) = '01'.
+      perform set_rates using 'V' charcode_from <charcode_field> pv_datum_first lv_rate course_type <scale_field>
+      changing ls_exch_rate ls_ret2.
+    endif.
+
+*   ПРЯМАЯ КОТИРОВКА
+* Из иностранной в национальную
+* Номинал в FFACT
+* Номинал там где иностр валюта кроме НБ РБ
+    clear: ls_exch_rate.
+    perform set_rates using '' <charcode_field> charcode_from pv_datum lv_rate course_type <scale_field>
+          changing ls_exch_rate ls_ret2.
+    if p_source eq 'OPZR'.
+      pv_datum_first = pv_datum.
+      pv_datum_first+6(2) = '01'.
+      perform set_rates using '' <charcode_field> charcode_from pv_datum_first lv_rate course_type <scale_field>
+          changing ls_exch_rate ls_ret2.
+    endif.
+
+**  Если ошибок нет - сохраняем в Z Таблицу для последующей выгрузки
+*      ls_zmdm_exchrates-kurst = ls_exch_rate-rate_type.   " *
+*      ls_zmdm_exchrates-fcurr = ls_exch_rate-from_curr.   " *
+*      ls_zmdm_exchrates-gdatu = pv_datum.                 " *
+*
+*      SELECT SINGLE isocd altwr FROM tcurc
+*        INTO (ls_zmdm_exchrates-isocd,ls_zmdm_exchrates-altwr)
+*        WHERE waers = ls_exch_rate-from_curr.
+*      ls_zmdm_exchrates-tcurr = ls_exch_rate-to_currncy.
+*      SELECT SINGLE altwr FROM tcurc
+*        INTO ls_zmdm_exchrates-taltwr
+*        WHERE waers = ls_exch_rate-to_currncy.
+*      ls_zmdm_exchrates-ukurs = ls_exch_rate-exch_rate.
+*      ls_zmdm_exchrates-ffact = ls_exch_rate-from_factor.
+*      ls_zmdm_exchrates-tfact = ls_exch_rate-to_factor.
+*      ls_zmdm_exchrates-reverse = 0.
+*
+*      MODIFY zmdm_exchrates FROM ls_zmdm_exchrates.
+
+
+*      CALL FUNCTION 'BAPI_TRANSACTION_COMMIT'
+*        EXPORTING
+*          wait = 'X'.
+  endloop.
+endform.
+
+*&---------------------------------------------------------------------*
+*&      Form  SET_RATES
+*&---------------------------------------------------------------------*
+*    pv_type =   V - косвенная котировка , '' - прямая
+*----------------------------------------------------------------------*
+form set_rates  using    pv_type        type char01
+                         pv_from        type zmdm_exch_rate-currency_code
+                         pv_to          type zmdm_exch_rate-currency_code
+                         pv_date        type sy-datum
+                         pv_rate        type string "zmdm_exch_rate-official_rate
+                         pv_rate_type   type kurst_curr
+                         pv_scale       type any
+                changing ps_exch_rate   type bapi1093_0
+                         ps_ret2        type bapiret2.
+  data: ls_ret1 type bapiret1.
+
+  data: s_from type table of bapi1093_3 with header line,
+        s_to   type table of bapi1093_4 with header line.
+  data: lt_kurs type table of bapi1093_0,
+        ls_kurs type bapi1093_0,
+        lt_ret  type table of bapiret1,
+        l_type  type bapi1093_1-rate_type.
+
+  data: lv_from_factor_fld type dd03p_d-fieldname,
+        lv_to_factor_fld   type dd03p_d-fieldname,
+        lv_rate_fld        type dd03p_d-fieldname.
+
+  field-symbols: <lv_from_factor> type bapi1093_0-from_factor,
+                 <lv_to_factor>   type bapi1093_0-to_factor,
+                 <lv_rate>        type bapi1093_0-exch_rate.
+
+  lv_from_factor_fld = 'FROM_FACTOR'.
+  lv_to_factor_fld   = 'TO_FACTOR'.
+  lv_rate_fld        = 'EXCH_RATE'.
+
+  if pv_type = 'V'.
+    concatenate: lv_from_factor_fld '_' pv_type into lv_from_factor_fld,
+                 lv_to_factor_fld   '_' pv_type into lv_to_factor_fld,
+                 lv_rate_fld        '_' pv_type into lv_rate_fld.
+  endif.
+
+  assign component: lv_from_factor_fld of structure ps_exch_rate to <lv_from_factor>,
+                    lv_to_factor_fld   of structure ps_exch_rate to <lv_to_factor>,
+                    lv_rate_fld        of structure ps_exch_rate to <lv_rate>.
+
+  ps_exch_rate-rate_type   = pv_rate_type. " для курсов с ЦБ РФ будем использовать не 'M' а CBR.
+  ps_exch_rate-from_curr   = pv_from.
+  ps_exch_rate-to_currncy  = pv_to.
+  ps_exch_rate-valid_from  = pv_date.
+  call function 'BAPI_EXCHANGERATE_GETFACTORS'
+    exporting
+      rate_type   = ps_exch_rate-rate_type
+      from_curr   = ps_exch_rate-from_curr
+      to_currncy  = ps_exch_rate-to_currncy
+      date        = pv_date
+    importing
+      from_factor = <lv_from_factor>
+      to_factor   = <lv_to_factor>
+      return      = ls_ret1.
+
+  if ls_ret1 is not initial.
+    gr_logger->add_bapiret1( is_bapiret1 = ls_ret1 ).
+*    <lv_from_factor> = 1.
+*    <lv_to_factor> = 1.
+* Если не настроен курс пересчета то выдать ошибку
+    move-corresponding ls_ret1 to ps_ret2.
+    ps_ret2-type = 'E'.
+    return.
+  endif.
+
+  if pv_rate_type is initial.
+    l_type = 'M'.
+  else.
+    l_type = pv_rate_type.
+  endif.
+
+* Для курсов с НБ РБ  BYR к USD/EUR и наоборот курсы хранятся в САП в соотношении 1:1000
+  if ( l_type = 'M' and pv_from = bel_cur_code and ( pv_to = 'USD'   or pv_to   = 'EUR' ) )
+    or
+     ( l_type = 'M' and pv_to   = bel_cur_code and ( pv_from = 'USD' or pv_from = 'EUR' ) ) .
+    try.
+        if pv_type = 'V'.
+          <lv_rate> = pv_rate * <lv_to_factor> / <lv_from_factor>.
+        else.
+          <lv_rate> = pv_rate * <lv_from_factor> / <lv_to_factor>.
+        endif.
+      catch cx_sy_arithmetic_overflow.
+        gr_logger->add( iv_message = 'e120(ZMDM_INT)' iv_var1 = ps_exch_rate-from_curr iv_var2
+        = ps_exch_rate-to_currncy ).
+        return.
+    endtry.
+  else.
+* Значение курса заносим в поле LV_RATE_FLD структуры ps_exch_rate
+    <lv_rate> = pv_rate.
+
+* Если курс пересчета не совпадает с веб-сайтом, то выдать ошибку
+* Для  КОСВЕННОЙ КОТИРОВКИ (Из национальной в иностранную) номинал хранится в поле TFACT
+* Для  ПРЯМОЙ КОТИРОВКИ (Из иностранной в национальную) Номинал в FFACT
+* Номинал там где иностр валюта кроме НБ РБ
+* Такие курсы не сохраняем. Остальные сохраняем
+    if pv_type = 'V' and <lv_to_factor> <> pv_scale.
+      gr_logger->add( iv_message = 'e000(ZMDM_INT)' iv_var1 = 'tfact <> nominal'
+        iv_var2 = <lv_to_factor> iv_var3 = pv_scale ).
+      ps_ret2-type = 'E'. ps_ret2-id = 'ZMDM_INT'.
+      ps_ret2-number = '000'. ps_ret2-message_v1 = 'нет коэф.'.
+      return.
+    endif.
+    if pv_type = '' and <lv_from_factor> <> pv_scale.
+      gr_logger->add( iv_message = 'e000(ZMDM_INT)' iv_var1 = 'ffact <> nominal'
+        iv_var2 = <lv_from_factor> iv_var3 = pv_scale ).
+      ps_ret2-type = 'E'.ps_ret2-id = 'ZMDM_INT'.
+      ps_ret2-number = '000'. ps_ret2-message_v1 = 'нет коэф.'.
+      return.
+    endif.
+
+  endif.
+
+* Обновить курс
+* Сообщение об успехе - 005(E!). Неправильный перевод на русский
+* Правильный - "К обновлению одна запись"
+  call function 'BAPI_EXCHANGERATE_CREATE'
+    exporting
+      exch_rate = ps_exch_rate
+      upd_allow = abap_true
+      chg_fixed = abap_true
+    importing
+      return    = ps_ret2.
+
+  if ps_ret2-type = 'E' or ps_ret2-type = 'A'.
+    call function 'BAPI_TRANSACTION_ROLLBACK'.
+    gr_logger->add( iv_message = 'e' && ps_ret2-number && '(' && ps_ret2-id && ')'
+    iv_var1 = ps_ret2-message_v1
+    iv_var2 = ps_ret2-message_v2
+    iv_var3 = ps_ret2-message_v3
+    iv_var4 = ps_ret2-message_v4 ).
+
+    return.
+  endif.
+
+* Если ошибок нет то сохранить
+  call function 'BAPI_TRANSACTION_COMMIT'
+    exporting
+      wait = 'X'.
+
+*  s_from-sign = s_to-sign = 'I'.
+*  s_from-option = s_to-option = 'EQ'.
+*  s_from-low = s_to-low = pv_from.
+*  APPEND s_from.
+*  APPEND s_to.
+*  CALL FUNCTION 'BAPI_EXCHRATE_GETCURRENTRATES'
+*    EXPORTING
+*      date             = pv_date
+*      rate_type        = l_type " Тип курса: M/CBR/NBP
+*    TABLES
+*      from_curr_range  = s_from
+*      to_currncy_range = s_to
+*      exch_rate_list   = lt_kurs
+*      return           = lt_ret.
+*  IF lt_kurs[] IS INITIAL.
+*    CALL FUNCTION 'BAPI_EXCHANGERATE_CREATE'
+*      EXPORTING
+*        exch_rate = ps_exch_rate
+*        upd_allow = abap_true
+*        chg_fixed = abap_true
+*      IMPORTING
+*        return    = ps_ret2.
+*  ELSE.
+*    LOOP AT lt_kurs INTO ls_kurs.
+*      IF ls_kurs-valid_from <> pv_date.
+*        CALL FUNCTION 'BAPI_EXCHANGERATE_CREATE'
+*          EXPORTING
+*            exch_rate = ps_exch_rate
+*            upd_allow = abap_true
+*            chg_fixed = abap_true
+*          IMPORTING
+*            return    = ps_ret2.
+*      ENDIF.
+*    ENDLOOP.
+*  ENDIF.
+endform.                    " SET_RATES
+
+
+*&---------------------------------------------------------------------*
+*&      Form  CREATE_LOG   Создать журнал-лог
+*&---------------------------------------------------------------------*
+form create_log using  pv_datum type sy-datum.
+  data lv_date type c length 10.
+  create object gr_logger.
+  gr_logger->create_with_defaults( exporting iv_obj = 'ZMM_EXCH_RATES' ).
+  concatenate pv_datum+6(2) pv_datum+4(2) pv_datum(4) into lv_date separated by '.'.
+  gr_logger->add( iv_message = 'i115(ZMDM_INT)' iv_var1 = lv_date ).
+endform.
+
+*&---------------------------------------------------------------------*
+*&      Form  SAVE_LOG    Сохранение журнала в SLG1
+*&---------------------------------------------------------------------*
+form save_log.
+  check p_save eq 'X'. " в режиме только просмотр в лог не сохранять
+  gr_logger->save( ).
+endform.
+
+*&---------------------------------------------------------------------*
+*&      Form  SHOW_ALV
+*&---------------------------------------------------------------------*
+*       Показать курсы на экране в ALV-grid
+*----------------------------------------------------------------------*
+form show_alv using pv_datum type sy-datum.
+  check p_save ne 'X'.
+
+* alv
+  data: gr_table  type ref to cl_salv_table.
+  data: gr_functions type ref to cl_salv_functions.
+  data: gr_display  type ref to cl_salv_display_settings.
+  data: gr_columns  type ref to cl_salv_columns_table.
+  data: gr_column  type ref to cl_salv_column_table.
+  data: gr_sorts  type ref to cl_salv_sorts.
+  data: gr_agg  type ref to cl_salv_aggregations.
+  data: color type lvc_s_colo.
+  data: gr_layout  type ref to cl_salv_layout.
+  data: key type salv_s_layout_key.
+
+  try.
+      cl_salv_table=>factory( importing r_salv_table = gr_table
+                            changing t_table = gt_courses_alv[] ).
+* activate all functions
+      gr_functions = gr_table->get_functions( ).
+      gr_functions->set_all( abap_true ).
+      gr_table->get_columns( )->set_optimize( ).
+      gr_display = gr_table->get_display_settings( ).
+      gr_display->set_striped_pattern( cl_salv_display_settings=>true ).
+      data date(10).
+      write pv_datum to date.
+      gr_display->set_list_header( 'Курсы (Тестовый режим)' && date ).
+      gr_columns = gr_table->get_columns( ).
+      gr_column ?= gr_columns->get_column( 'RATE').
+      gr_column->set_long_text( 'Курс').
+      gr_column->set_medium_text( 'Курс').
+      gr_column->set_short_text( 'Курс').
+      gr_column ?= gr_columns->get_column( 'ONE_UNIT').
+      gr_column->set_long_text( 'За 1 ед.').
+      gr_column->set_medium_text( 'За 1 ед.').
+      gr_column->set_short_text( 'За 1 ед.').
+
+      gr_table->display( ).
+    catch cx_salv_msg.
+    catch cx_salv_not_found.
+      message e000(zbn) with 'ошибка при выводе ALV'.
+  endtry.
+
+endform.
+*&---------------------------------------------------------------------*
+*&      Form  FIND_OUT_BELARUS_CURRENCY_CODE
+*&---------------------------------------------------------------------*
+*       text
+*----------------------------------------------------------------------*
+*      <--P_BEL_CUR_CODE  text
+*----------------------------------------------------------------------*
+form find_out_belarus_currency_code  changing cur_code type fcurr_curr.
+
+  select single waers from t001 into cur_code
+    where bukrs eq '01'. " код валюты РБ возьмём из данных нашей БЕ №01 "ЦА", после деноминации код валюты изменится
+  if sy-subrc ne 0.
+    leave program.
+  endif.
+
+endform.
+* Загрузка тестовых данных
+* На вход таблица одного из трёх типов, в том числе ZDAILYEXRATES_TT
+form load_test_data using p_source type char10 changing pt_rates type table. "ZDAILYEXRATES_TT.
+  data: code_field_name    type char20,
+        rate_field_name    type char20,
+        scale_field_name   type char20,
+        numcode_field_name type char20,
+        name_field_name    type char20,
+        counter            type i.
+* Ссылки на поля структуры курса
+  field-symbols: <line>, <charcode_field>, <rate_field>, <scale_field>, <numcode_field>, <name_field>.
+  case p_source.
+    when 'BEL'.
+      numcode_field_name = 'NUMCODE'.
+      code_field_name    = 'CHARCODE'.
+      scale_field_name   = 'SCALE'.
+      name_field_name    = 'NAME'.
+      rate_field_name    = 'RATE'.
+    when 'RUS'." OR 'UKR'.
+      numcode_field_name = 'NUMCODE'.
+      code_field_name = 'CHARCODE'.
+      name_field_name    = 'NAME'.
+      scale_field_name = 'NOMINAL'.
+      rate_field_name = 'VALUE'.
+    when 'UKR'.
+      numcode_field_name = 'CURRENSYCODE'.
+      code_field_name = 'CURRENSYCODEL'.
+*      name_field_name    = 'NAME'.
+      scale_field_name = 'UNITS'.
+      rate_field_name = 'AMOUNT'.
+    when 'PLN'.
+      code_field_name = 'KOD_WALUTY'.
+      rate_field_name = 'KURS_SREDNI'.
+      scale_field_name = 'PRZELICZNIK'.
+  endcase.
+
+* Очистить существующие данные
+  free pt_rates.
+
+  define def_assign.
+    APPEND INITIAL LINE TO pt_rates.
+    read table pt_rates ASSIGNING <line> INDEX &1.
+    ASSIGN COMPONENT numcode_field_name OF STRUCTURE <line> TO <numcode_field>.
+    ASSIGN COMPONENT code_field_name OF STRUCTURE <line> TO <charcode_field>.
+    ASSIGN COMPONENT scale_field_name OF STRUCTURE <line> TO <scale_field>.
+    ASSIGN COMPONENT name_field_name OF STRUCTURE <line> TO <name_field>.
+    ASSIGN COMPONENT rate_field_name OF STRUCTURE <line> TO <rate_field>.
+    add 1 to counter.
+  end-of-definition.
+* Далее собственно тестовые данные
+  if p_source = 'BEL'.
+    counter = 1.
+    def_assign counter.
+    <numcode_field> = '840'.
+    <charcode_field> = 'USD'.
+    <scale_field> = '1'.
+    <name_field> = 'Доллар США'.
+    <rate_field> = '2.0139'.
+
+    def_assign counter.
+    <numcode_field> = '978'.
+    <charcode_field> = 'EUR'.
+    <scale_field> = '1'.
+    <name_field> = 'Евро'.
+    <rate_field> = '2.2828'.
+
+    def_assign counter.
+    <numcode_field> = '643'.
+    <charcode_field> = 'RUB'.
+    <scale_field> = '100'.
+    <name_field> = 'Российский рубль'.
+    <rate_field> = '2.9702'.
+
+    def_assign counter.
+    <numcode_field> = '985'.
+    <charcode_field> = 'PLN'.
+    <scale_field> = '10'.
+    <name_field> = 'Злотый'.
+    <rate_field> = '5.3621'.
+
+    def_assign counter.
+    <numcode_field> = '980'.
+    <charcode_field> = 'UAH'.
+    <scale_field> = '100'.
+    <name_field> = 'Гривна'.
+    <rate_field> = '7.6866'.
+  endif.
+
+  if p_source = 'RUS'.
+    counter = 1.
+    def_assign counter.
+    <numcode_field> = '840'.
+    <charcode_field> = 'USD'.
+    <scale_field> = '1'.
+    <name_field> = 'Доллар США'.
+    <rate_field> = '66.3775'.
+
+    def_assign counter.
+    <numcode_field> = '978'.
+    <charcode_field> = 'EUR'.
+    <scale_field> = '1'.
+    <name_field> = 'Евро'.
+    <rate_field> = '74.4623'.
+
+    def_assign counter.
+    <numcode_field> = '643'.
+    <charcode_field> = 'BYN'.
+    <scale_field> = '1'.
+    <name_field> = 'Белорусский рубль'.
+    <rate_field> = '33.6678'.
+
+    def_assign counter.
+    <numcode_field> = '985'.
+    <charcode_field> = 'PLN'.
+    <scale_field> = '1'.
+    <name_field> = 'Злотый'.
+    <rate_field> = '16.8822'.
+
+    def_assign counter.
+    <numcode_field> = '980'.
+    <charcode_field> = 'UAH'.
+    <scale_field> = '10'.
+    <name_field> = 'Гривна'.
+    <rate_field> = '26.3194'.
+  endif.
+
+
+endform.

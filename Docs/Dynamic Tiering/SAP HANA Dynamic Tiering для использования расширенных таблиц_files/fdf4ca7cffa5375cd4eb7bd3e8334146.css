@@ -1,0 +1,30 @@
+.noprint,.admin-actions,.read-late,.b-share, #ui-tooltip-1 object {
+	display: none !important;
+}
+
+div.ftxt2 span:first-child{display:none;}
+.nodisp{display:block;float:right;}
+.header1 h2{float:left;}
+.header1 img{float:right;}
+
+body {
+	background: none !important;
+}
+
+.mainframe .left-column {
+	display: none;
+}
+
+.mainframe .content-column {
+	width: 100%;
+}
+
+.mainframe .content-column .col4 {
+	width: auto;
+	margin: 0;
+}
+
+.page-footer {
+	background: none;
+	color: black;
+}

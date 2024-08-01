@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US" prefix="og: //ogp.me/ns#"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-US" prefix="og: //ogp.me/ns#"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-US" prefix="og: //ogp.me/ns#"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths js csstransforms csstransforms3d csstransitions js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" prefix="og: //ogp.me/ns#" style="" lang="en-US"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script async="" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/shares.json"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/css_002.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="//www.just-bi.nl">
+<link rel="alternate" type="application/rss+xml" title="Just-BI Feed" href="https://www.just-bi.nl/feed/">
+<title>How to go Virtual in BW Part I: The Open ODS View – Just-BI</title>
+
+<script async="" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/analytics.js"></script><script async="" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/a" data-sumo-site-id="f4ab0f007b5a9f00d74c0f000a81f7001940cf00252b64005849a00067419300" data-sumo-platform="wordpress"></script><script async="" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/analytics.js"></script><script type="text/template" id="pvc-stats-view-template">
+    <i class="fa fa-bar-chart pvc-stats-icon medium" aria-hidden="true"></i> 
+	<% if ( total_view > 0 ) { %>
+		<%= total_view %> <%= total_view > 1 ? "total views" : "total view" %>,
+		<% if ( today_view > 0 ) { %>
+			<%= today_view %> <%= today_view > 1 ? "views today" : "view today" %>
+		<% } else { %>
+		no views today		<% } %>
+	<% } else { %>
+	No views yet	<% } %>
+	</script>
+
+<link rel="canonical" href="https://www.just-bi.nl/virtual-bw-open-ods-view/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to go Virtual in BW Part I: The Open ODS View – Just-BI">
+<meta property="og:description" content="The Age of Virtual Reality Read in In the days of old when Wi-Fi wasn’t readily available and Google was nothing but a misspelling of the word googly, BW could not join virtual InfoProviders based on external data. Not any longer. Why? Because of the Open ODS View (OODS) &amp; the HANA CompositeProvider (HCPR). How...">
+<meta property="og:url" content="//www.just-bi.nl/virtual-bw-open-ods-view/">
+<meta property="og:site_name" content="Just-BI">
+<meta property="article:publisher" content="//www.facebook.com/justbi2003">
+<meta property="article:tag" content="BW">
+<meta property="article:tag" content="BW4HANA">
+<meta property="article:tag" content="Eclipse">
+<meta property="article:tag" content="HANA">
+<meta property="article:tag" content="OODS">
+<meta property="article:tag" content="Open ODS View">
+<meta property="article:tag" content="Virtual">
+<meta property="article:section" content="News">
+<meta property="article:published_time" content="2017-07-23T14:04:11+00:00">
+<meta property="article:modified_time" content="2017-08-28T06:17:36+00:00">
+<meta property="og:updated_time" content="2017-08-28T06:17:36+00:00">
+<meta property="og:image" content="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/How-to-go-Virtual-in-BW-Part-I-The-Open-ODS-View-v3-1024x683.png">
+<meta property="og:image:secure_url" content="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/How-to-go-Virtual-in-BW-Part-I-The-Open-ODS-View-v3-1024x683.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="683">
+<meta property="og:image:alt" content="How to go Virtual in BW Part I The Open ODS View v3">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="The Age of Virtual Reality Read in In the days of old when Wi-Fi wasn’t readily available and Google was nothing but a misspelling of the word googly, BW could not join virtual InfoProviders based on external data. Not any longer. Why? Because of the Open ODS View (OODS) &amp; the HANA CompositeProvider (HCPR). How...">
+<meta name="twitter:title" content="How to go Virtual in BW Part I: The Open ODS View – Just-BI">
+<meta name="twitter:site" content="@fairfocusfun">
+<meta name="twitter:image" content="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/How-to-go-Virtual-in-BW-Part-I-The-Open-ODS-View-v3.png">
+<meta name="twitter:creator" content="@fairfocusfun">
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Organization","url":"https:\/\/www.just-bi.nl\/","sameAs":["http:\/\/www.facebook.com\/justbi2003","https:\/\/www.linkedin.com\/company\/just-bi","https:\/\/twitter.com\/fairfocusfun"],"@id":"https:\/\/www.just-bi.nl\/#organization","name":"Just-BI BV.","logo":"http:\/\/just-bi.nl\/wp-content\/uploads\/posts\/2016\/post_\/Just-BI.jpg"}</script>
+
+<link rel="dns-prefetch" href="https://www.gstatic.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Just-BI » Feed" href="https://www.just-bi.nl/feed/">
+<link rel="alternate" type="application/rss+xml" title="Just-BI » Comments Feed" href="https://www.just-bi.nl/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Just-BI » How to go Virtual in BW Part I: The Open ODS View Comments Feed" href="https://www.just-bi.nl/virtual-bw-open-ods-view/feed/">
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.just-bi.nl\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/contact-bank-stylesheet.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/system-message.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/front.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/font-awesome_005.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/style_003.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/crp-main-front.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/crp-tc-buttons.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/crp-tiled-layer.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/font-awesome_003.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/settings.css">
+<style id="rs-plugin-settings-inline-css" type="text/css">
+.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}
+</style>
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/genericons.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/bg-show-hide.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/css.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/font-awesome_002.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/jquery-ui.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/simple-job-board-public.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/font-awesome_004.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/bootstrap-front.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/team1.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/team2.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/main.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/prettyPhoto.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/media.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/font-awesome.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/skin.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/retina.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/style.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/widget.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/pvc.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/frontend.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/shortcode.css">
+<link rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/style_002.css">
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/jquery_008.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/jquery-migrate.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/jquery_002.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/jquery.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/plupload.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/modernizr.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/jquery_004.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/runtime.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/microformats-shiv.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/underscore.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/backbone.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var vars = {"rest_api_url":"https:\/\/www.just-bi.nl\/wp-json\/pvc\/v1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/pvc.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/crp-main-front.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/crp-helper.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/jquery_005.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/crp-tiled-layer.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/crp-fs-viewer.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/jquery_007.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/jquery_006.js"></script>
+<link rel="//api.w.org/" href="https://www.just-bi.nl/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.just-bi.nl/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.just-bi.nl/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 4.9.8">
+<link rel="shortlink" href="https://www.just-bi.nl/?p=5048">
+<link rel="alternate" type="application/json+oembed" href="https://www.just-bi.nl/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.just-bi.nl%2Fvirtual-bw-open-ods-view%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.just-bi.nl/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.just-bi.nl%2Fvirtual-bw-open-ods-view%2F&amp;format=xml">
+<style type="text/css" media="screen">
+</style><script type="text/javascript">/* <![CDATA[ */ jQuery.post("//www.just-bi.nl/wp-admin/admin-ajax.php", { action: "wmp_update", id: 5048, token: "4821fecac5" }); /* ]]> */</script>
+
+<link rel="shortcut icon" href="https://just-bi.nl/wp-content/uploads/posts/2013/post_/just_logo1.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:url" content="//www.just-bi.nl/virtual-bw-open-ods-view/">
+<meta name="twitter:title" content="How to go Virtual in BW Part I: The Open ODS View">
+<meta name="twitter:description" content="The Age of Virtual Reality Read in In the days of old when Wi-Fi wasn’t readily available and Google was nothing but a misspelling of the word googly, BW could not join virtual InfoProviders based on external data. Not any longer. Why? Because of the Open ODS View (OODS) &amp; the HANA CompositeProvider (HCPR). How much storage space does it take to store both these InfoProviders? The answer: virtually nothing (pun intended). These virtual InfoProviders">
+<meta name="twitter:image" content="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/How-to-go-Virtual-in-BW-Part-I-The-Open-ODS-View-v3.png">
+<meta name="twitter:image:width" content="1368">
+<meta name="twitter:image:height" content="912">
+<meta name="generator" content="Powered by Slider Revolution 5.3.1.5 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface.">
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-86482906-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<style type="text/css" id="wp-custom-css">
+			.cookie-notice-container{
+    border-top-color: #e8e8e8;
+    border-top-style: solid;
+    border-top-width: 1px;
+}		</style>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="156085c5-0017-4150-b225-a731ad248f38/service" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/service.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="services/services" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/services.js"></script><link type="text/css" rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/listbuilder-popup.css"><style>@-webkit-keyframes insQ_100 {  from {  outline: 1px solid transparent  } to {  outline: 0px solid transparent }  }
+#menufication-top { animation-duration: 0.001s; animation-name: insQ_100; -webkit-animation-duration: 0.001s; -webkit-animation-name: insQ_100;  } </style><link type="text/css" rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/sumome-image-sharer.css"><link type="text/css" rel="stylesheet" href="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/sumome-share-client.css"></head>
+<body class="post-template-default single single-post postid-5048 single-format-standard layout_right_sidebar  churchope cookies-set cookies-accepted">
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="//browsehappy.com/">Upgrade to a different browser</a> or <a href="//www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+<header class="clearfix header">
+<div class="header_bottom">
+<div class="header_top clearfix">
+<div class="row">
+<div class="logo grid grid_5">
+<a href="https://www.just-bi.nl/"><img src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/logo3.png" alt="Just-BI" data-retina=""><span class="hidden">Just-BI</span></a>
+</div>
+
+
+</div>
+</div>
+</div>
+</header>
+<section id="color_header" class="clearfix">
+<div class="mainmenu "><div class="mainmenu_inner"><div class="row clearfix"><div class="grid_12">
+<nav class="main_menu"><div id="menu-icon"><div><em></em><em></em><em></em></div>Navigation</div><ul id="menu-main" class="sf-menu clearfix mobile-menu superfish"><li id="menu-item-1704" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1704"><a href="https://www.just-bi.nl/">Home</a></li>
+<li id="menu-item-1698" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-1698"><em class="display-child-ul"></em><a href="https://www.just-bi.nl/products/services/">Services</a>
+<ul class="sub-menu" style="display: none; visibility: hidden;">
+<li id="menu-item-3615" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3615"><a href="https://www.just-bi.nl/products/services/consultancy/">Consultancy</a></li>
+<li id="menu-item-3622" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3622"><a href="https://www.just-bi.nl/projects/">Projects</a></li>
+<li id="menu-item-3623" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-3623"><em class="display-child-ul"></em><a href="https://www.just-bi.nl/products/services/solutions-innovations/">Innovations</a>
+<ul class="sub-menu" style="display: none; visibility: hidden;">
+<li id="menu-item-1697" class="menu-item menu-item-type-post_type menu-item-object-page current-post-parent menu-item-1697"><a href="https://www.just-bi.nl/products/">Products</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-4168"><em class="display-child-ul"></em><a href="https://www.just-bi.nl/portfolio/">Portfolio</a>
+<ul class="sub-menu" style="display: none; visibility: hidden;">
+<li id="menu-item-3647" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3647"><a href="https://www.just-bi.nl/just-portfolio/big-data-warehousing/">(BIG) Data Warehousing</a></li>
+<li id="menu-item-3648" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3648"><a href="https://www.just-bi.nl/just-portfolio/visualization/">Reporting &amp; Visualization</a></li>
+<li id="menu-item-3676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3676"><a href="https://www.just-bi.nl/just-portfolio/planning-forecast/">Business Planning &amp; Forecasting</a></li>
+<li id="menu-item-3726" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3726"><a href="https://www.just-bi.nl/just-portfolio/custom-development/">Custom Development</a></li>
+<li id="menu-item-3725" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3725"><a href="https://www.just-bi.nl/just-portfolio/information-management/">Information Management</a></li>
+<li id="menu-item-3646" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3646"><a href="https://www.just-bi.nl/just-portfolio/data-science/">Advanced Analytics</a></li>
+</ul>
+</li>
+<li id="menu-item-1695" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-1695"><em class="display-child-ul"></em><a href="https://www.just-bi.nl/people/">People</a>
+<ul class="sub-menu" style="display: none; visibility: hidden;">
+<li id="menu-item-3857" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3857"><a href="https://www.just-bi.nl/just-team/">Just-Team</a></li>
+<li id="menu-item-3865" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3865"><a href="https://www.just-bi.nl/careers/">Join our Just-Team</a></li>
+</ul>
+</li>
+<li id="menu-item-1934" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-1934"><em class="display-child-ul"></em><a href="https://www.just-bi.nl/newsroom/">Newsroom</a>
+<ul class="sub-menu" style="display: none; visibility: hidden;">
+<li id="menu-item-3729" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3729"><a href="https://www.just-bi.nl/category/news/">News</a></li>
+<li id="menu-item-3728" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3728"><a href="https://www.just-bi.nl/category/blog-posts/">Blog Posts</a></li>
+<li id="menu-item-3731" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3731"><a href="https://www.just-bi.nl/category/articles/">Articles</a></li>
+<li id="menu-item-3730" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3730"><a href="https://www.just-bi.nl/category/reviews/">Reviews</a></li>
+<li id="menu-item-3727" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3727"><a href="https://www.just-bi.nl/category/tutorials/">Tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-5413" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-5413"><em class="display-child-ul"></em><a href="https://www.just-bi.nl/contactus/">Contact Us</a>
+<ul class="sub-menu" style="display: none; visibility: hidden;">
+<li id="menu-item-1759" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1759"><a href="https://www.just-bi.nl/contactus/contactnl/">Contact-Netherlands</a></li>
+<li id="menu-item-5420" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5420"><a href="https://www.just-bi.nl/contactus/contact-malaysia/">Contact-Malaysia</a></li>
+</ul>
+</li>
+</ul></nav>
+</div></div></div></div>
+</section>
+<section class="gray_line clearfix" id="title_sidebar">
+<div class="row"><div class="grid_12">
+</div></div>
+</section>
+<div role="main" id="main">
+<div id="contentarea" class="row clearfix">
+<div class="main-content grid_8">
+<div class="grid_bg">
+<article class="clearfix post-5048 post type-post status-publish format-standard has-post-thumbnail hentry category-blog-posts category-news category-tutorials tag-bw tag-bw4hana tag-eclipse tag-hana tag-oods tag-open-ods-view tag-virtual">
+<div class="post_title_area">
+<div class="postdate"><span></span><strong class="day" style="height: 88px;">23</strong><strong class="month">Jul</strong></div>
+<div class="blogtitles "><h1 class="entry-title"><span>How to go Virtual in BW Part I: The Open ODS View</span></h1>
+<p class="post_tags">
+Tags: <a href="https://www.just-bi.nl/tag/bw/" rel="tag">BW</a>, <a href="https://www.just-bi.nl/tag/bw4hana/" rel="tag">BW4HANA</a>, <a href="https://www.just-bi.nl/tag/eclipse/" rel="tag">Eclipse</a>, <a href="https://www.just-bi.nl/tag/hana/" rel="tag">HANA</a>, <a href="https://www.just-bi.nl/tag/oods/" rel="tag">OODS</a>, <a href="https://www.just-bi.nl/tag/open-ods-view/" rel="tag">Open ODS View</a>, <a href="https://www.just-bi.nl/tag/virtual/" rel="tag">Virtual</a>
+</p>
+<p class="post_categories">Categories: <a href="https://www.just-bi.nl/category/blog-posts/" rel="category tag">Blog Posts</a>,<a href="https://www.just-bi.nl/category/news/" rel="category tag">News</a>,<a href="https://www.just-bi.nl/category/tutorials/" rel="category tag">Tutorials</a></p>
+</div>
+</div>
+<div class="entry-content">
+<h3 id="pagejump1">The Age of Virtual Reality</h3>
+<p>Read in 19 minutes</p>
+<p>In the days of old when Wi-Fi wasn’t readily available and Google was
+ nothing but a misspelling of the word googly, BW could not join virtual
+ InfoProviders based on external data. Not any longer. Why? Because of 
+the Open ODS View (OODS) &amp; the HANA CompositeProvider (HCPR). How 
+much storage space does it take to store both these InfoProviders? The 
+answer: virtually nothing (pun intended).</p>
+<p>These virtual InfoProviders are not new and neither is their 
+platform, SAP HANA. The OODS &amp; HCPR have been available since BW 
+7.40. To use them you need to <a href="https://www.just-bi.nl/installing-necessary-tools-use-bw4hana/">install Eclipse and the BW Modeling Tools</a>.
+ After that, you can start modeling them in the BW Modeling Perspective 
+(instead of RSA1). However, as an SAP BI consultant I’ve noticed that 
+most customers have often either:</p>
+<p>1) Made the step to HANA, without utilizing the new modeling possibilities or</p>
+<p>2) Not yet made the step to HANA at all.</p>
+<p>Furthermore, amongst my fellow consultants I have noticed a strong 
+movement towards discovering the full potential of virtual modeling and 
+HANA. Part I and <a href="https://www.just-bi.nl/virtual-bw-hana-compositeprovider/">Part II of this article</a> will give you a general idea about how the Open ODS View and CompositeProvider work, so you can understand their potential.</p>
+<p>Here’s an overview of the topics discussed in Part I of this article. You can click them to jump to that section:</p>
+<ul>
+<li><a href="#pagejump1">Intro</a></li>
+<li><a href="#pagejump2">What are the OODS &amp; HCPR and what are they not?</a></li>
+<li><a href="#pagejump3">Open ODS View Source Types</a>
+<ul>
+<li><a href="#pagejump4">1. DataSource (BW)</a></li>
+<li><a href="#pagejump5">2. Database Table or View</a>
+<ul>
+<li><a href="#pagejump21">Existing Source System</a></li>
+<li><a href="#pagejump22">How to create a HANA Source System</a></li>
+<li><a href="#pagejump23">Owner / Schema</a></li>
+<li><a href="#pagejump24">Privileges</a></li>
+</ul>
+</li>
+<li><a href="#pagejump6">3. Virtual table using SAP HANA Smart Data Access</a>
+<ul>
+<li><a href="#pagejump31">Existing Source System</a></li>
+<li><a href="#pagejump32">Owner / Schema</a></li>
+</ul>
+</li>
+<li><a href="#pagejump7">4. DataStoreObject (advanced)</a></li>
+<li><a href="#pagejump8">5. Transformation</a></li>
+</ul>
+</li>
+<li><a href="#pagejump9">General Tab</a></li>
+<li><a href="#pagejump100">Semantics</a>
+<ul>
+<li><a href="#pagejump10">Facts</a></li>
+<li><a href="#pagejump11">Master Data</a></li>
+<li><a href="#pagejump12">Texts</a></li>
+</ul>
+</li>
+<li><a href="#pagejump13">Pros &amp; cons</a></li>
+<li><a href="#pagejump14">Recap</a></li>
+</ul>
+<h3 id="pagejump2">What are the OODS &amp; HCPR and what are they not?</h3>
+<p>When I talk to people about the Open ODS View and the 
+CompositeProvider, the first thing they usually ask is: what’s the 
+difference?</p>
+<p>The difference between the two InfoProviders can be summed up as follows:</p>
+<p><img class="imgborder alignnone wp-image-5052" title="Table 1: the difference between an Open ODS View and a CompositeProvider" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/HCPR_OODS-Difference.png" alt="Table 1: the difference between an Open ODS View and a CompositeProvider" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/HCPR_OODS-Difference.png 901w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/HCPR_OODS-Difference-300x83.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/HCPR_OODS-Difference-768x213.png 768w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="159"><br>
+<em>Table 1: The difference between an Open ODS View and a CompositeProvider</em></p>
+<p>From Table 1 we can gather that although they are both virtual 
+objects, we use them for different purposes. Usually when I hear 
+somebody describing a CompositeProvider they might say: “A 
+CompositeProvider is like a MultiProvider”. However, this is only 
+partially true. The CompositeProvider and the MultiProvider we know from
+ older BW versions can both execute Unions. The CompositeProvider is 
+more advanced though, as we can gather from Table 1, because it can also
+ perform Joins (like the old InfoSet). The difference between a Join and
+ Union? Simply said, a Union adds the rows of two datasets on top of 
+eachother. A Join adds columns of one table to another based on matching
+ values in shared columns.</p>
+<p>If the CompositeProvider is so advanced, why then use an Open ODS 
+View? The main reason is the Open ODS View’s ability to connect to 
+external tables. Let’s say you have data sitting on an external database
+ that you want to use in BW, however you don’t want to persist it. You 
+can then set up a SDA (Smart Data Access) Connection to that database 
+and create a Virtual Table.</p>
+<p>After setting up an SDA connection and creating a Virtual Table, you 
+can create an Open ODS View based on that connection and voilà: you have
+ a virtual connection to that table. Any query on this Open ODS View 
+will then connect to an external table at runtime. However, the query 
+will be dependent on the external system, the connection to the external
+ system and the amount of data pulled in, for performance and 
+availability. Querying external data at runtime can save space though 
+(and therefore money). For those reasons, you need to think about both 
+cost and performance, when choosing whether or not to use an OODS, .</p>
+<p>In the following sections, I’ll walk you through the Open ODS View creation process. In <a href="https://www.just-bi.nl/virtual-bw-hana-compositeprovider/">Part II of this article</a> I’ll discuss the HANA CompositeProvider and its properties.</p>
+<p>&nbsp;</p>
+<h3 id="pagejump3">Open ODS View Source Types</h3>
+<p>There are a lot of options to pick from when creating an OODS, as we 
+can see from Figure 1 below. I’ll (briefly) discuss each of the 5 
+different Source Types and Semantics. I’ll start with the Source Types.</p>
+<p><img class="imgborder alignnone wp-image-5053" title="Figure 1. The 1st screen you see when creating an Open ODS View" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/Virtual_2_First-Screen_Paint.png" alt="Figure 1. The 1st screen you see when creating an Open ODS View" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/Virtual_2_First-Screen_Paint.png 875w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/Virtual_2_First-Screen_Paint-257x300.png 257w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/Virtual_2_First-Screen_Paint-768x897.png 768w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="670"><br>
+<em>Figure 1. The 1<sup>st</sup> screen you see when creating an Open ODS View</em></p>
+<p>&nbsp;</p>
+<h4 id="pagejump4">1. Source Type: DataSource (BW)</h4>
+<p>Let’s start off with the first Source Type option. The DataSource 
+(BW) option refers to the DataSources you probably know all too well, if
+ you have prior experience with BW. Using these DataSources, you can 
+connect to an underlying SAP ECC system for instance. You need to have 
+first created and configured the DataSources first, of course. Also, the
+ OODS does not accept File-based DataSources.</p>
+<p>Creating an Open ODS View using this option is quite straightforward.
+ First you right-click one of your InfoAreas in Eclipse, or right-click 
+your <a href="https://www.just-bi.nl/say-goodbye-to-old-school-bw-data-flows/">Graphical Data Flow Modeler</a> if you’re using <a href="https://www.just-bi.nl/bw4hana-fantastic-journey/">BW/4HANA,</a>
+ and choose to create an OODS. After selecting DataSource (BW) and a 
+Semantics type (any type will do for now), you press “Next”.</p>
+<p>&nbsp;</p>
+<p><img class="imgborder alignnone wp-image-5054" title="Figure 2. 2nd screen when creating an Open ODS View" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/Virtual_3_DataSource_Second_Screen.png" alt="Figure 2. 2nd screen when creating an Open ODS View" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/Virtual_3_DataSource_Second_Screen.png 875w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/Virtual_3_DataSource_Second_Screen-300x193.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/Virtual_3_DataSource_Second_Screen-768x495.png 768w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="370"><br>
+<em>Figure 2. Second&nbsp;screen when creating an Open ODS View</em></p>
+<p>After pressing “Next”, all you have to do is select the DataSource 
+you want (see Figure 2) and you’ve finished setting up the Source Type!</p>
+<p>&nbsp;</p>
+<h4 id="pagejump5" style="text-align: left">2. Source Type: Database Table or View</h4>
+<p>Database Table or View is the option you choose when you want to 
+build an Open ODS View on a table residing in your local HANA database. 
+Right off the bat we can see there’s something distinctly different in 
+Figure 3.</p>
+<p><img class="imgborder alignnone wp-image-5057" title="Open ODS View - Figure 4 Database Table First Screen " src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/Virtual_4_Database_Table_First_Screen_Paint.png" alt="Open ODS View - Figure 4 Database Table First Screen " srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/Virtual_4_Database_Table_First_Screen_Paint.png 875w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/Virtual_4_Database_Table_First_Screen_Paint-256x300.png 256w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/Virtual_4_Database_Table_First_Screen_Paint-768x900.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/Virtual_4_Database_Table_First_Screen_Paint-874x1024.png 874w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="672"><br>
+<em>Figure 3. Extra options appear when you select Database Table or View</em></p>
+<p>We are prompted by the screen to choose between Existing Source 
+System and Owner / Schema. What could that possibly mean? I’ll explain:</p>
+<p>&nbsp;</p>
+<h5 id="pagejump21">Existing Source System</h5>
+<p>When you select Existing Source System the system checks whether you 
+have a HANA Source System (see Figure 4). A HANA Source System points 
+towards a specific schema in your HANA Database. HANA Source Systems let
+ you use any tables in that schema you want for your Open ODS View.</p>
+<p><img class="imgborder alignnone wp-image-5058" title="Open ODS View - Figure 4. Select a Source System screen" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-4-Virtual_5.png" alt="Open ODS View - Figure 4. Select a Source System screen" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-4-Virtual_5.5_Database_Table_Select_Source_System_Filled.png 876w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-4-Virtual_5.5_Database_Table_Select_Source_System_Filled-300x194.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-4-Virtual_5.5_Database_Table_Select_Source_System_Filled-768x496.png 768w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="371"><br>
+<em>Figure 4. Select a Source System screen</em></p>
+<p>&nbsp;</p>
+<h5 id="pagejump22">How to create a HANA Source System</h5>
+<p>If your first reaction to the words “HANA Source System” is one of 
+bewilderment and confusion, no worries: I’ll explain how to create one. 
+First, head to transaction RSA1 in the SAP GUI and go to Source Systems.
+ Then, right-click your SAP HANA folder and select “Create”. You’ll then
+ see the following screen:</p>
+<p><img class="imgborder alignnone wp-image-5059" title="Open ODS View - Figure 5. Create Source System screen" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-5-Virtual_7_Create_HANA_Source_System.png" alt="Open ODS View - Figure 5. Create Source System screen" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-5-Virtual_7_Create_HANA_Source_System.png 823w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-5-Virtual_7_Create_HANA_Source_System-300x71.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-5-Virtual_7_Create_HANA_Source_System-768x181.png 768w" sizes="(max-width: 500px) 100vw, 500px" width="500" height="118"><br>
+<em>Figure 5. Create Source System screen</em></p>
+<p>Enter a Logical System Name, which will be the technical name of your
+ Source System. You could for instance give it the name of your schema, 
+so you know with which schema it connects. Also, you need to give your 
+new Source System a description. After that, press the green button.</p>
+<p><img class="imgborder alignnone wp-image-5061" title="Open ODS View - Figure 6. SAP HANA Connection Parameters" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-6-Virtual_7_Create_HANA_Source_System_HANA_Conne.png" alt="Open ODS View - Figure 6. SAP HANA Connection Parameters" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-6-Virtual_7_Create_HANA_Source_System_HANA_Connection_Parameters_paint.png 637w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-6-Virtual_7_Create_HANA_Source_System_HANA_Connection_Parameters_paint-300x80.png 300w" sizes="(max-width: 450px) 100vw, 450px" width="450" height="119"><br>
+<em>Figure 6. SAP HANA Connection Parameters</em></p>
+<p>Now we’re only one step away from completing our Source System. In 
+Figure 6 we see the different possible Connection Types. If you have a 
+local SAP HANA database schema, you choose the first option. If you want
+ to set up a Smart Data Access connection to an external table, you 
+choose the second. Because “Database Table or View” concern local HANA 
+tables, we’re going to pick “Local SAP HANA Database Schema”.</p>
+<p><img class="imgborder alignnone wp-image-5062" title="Open ODS View - Figure 7. After pressing the green arrow, your new Source System will appear in the SAP HANA folder" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-7-Virtual_5.png" alt="Open ODS View - Figure 7. After pressing the green arrow, your new Source System will appear in the SAP HANA folder" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-7-Virtual_5.5_Database_Table_Surprise_Schema.png 669w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-7-Virtual_5.5_Database_Table_Surprise_Schema-300x45.png 300w" sizes="(max-width: 450px) 100vw, 450px" width="450" height="68"><br>
+<em>Figure 7. After pressing the green arrow, your new Source System will appear in the SAP HANA folder</em></p>
+<p>Now you can pick any table in the schema your Source System points 
+to, when creating an Open ODS View based on a database table or view. 
+You simply select the Source System you just made and press “Next”. On 
+the next screen you’ll be able to pick any table in the schema your 
+Source System points to.</p>
+<p>&nbsp;</p>
+<h5 id="pagejump23">Owner / Schema</h5>
+<p>Whenever you select “Owner / Schema” on the first OODS creation screen, the next screen will ask you to select a schema.</p>
+<p><img class="imgborder alignnone wp-image-5063" title="Open ODS View - Figure 8. Select a DB object schema screen" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-8-Virtual_5_Database_Table_Select_Schema_Filled.png" alt="Open ODS View - Figure 8. Select a DB object schema screen" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-8-Virtual_5_Database_Table_Select_Schema_Filled.png 876w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-8-Virtual_5_Database_Table_Select_Schema_Filled-300x192.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-8-Virtual_5_Database_Table_Select_Schema_Filled-768x493.png 768w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="368"><br>
+<em>Figure 8. Select a DB object schema&nbsp;</em></p>
+<p>After you’ve selected a schema, you need to choose the table you want:</p>
+<p><img class="imgborder alignnone wp-image-5064" title="Open ODS View - Figure 9. Select a DB Object" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-9-Virtual_5_Database_Table_Select_DB_Object2_Fil.png" alt="Open ODS View - Figure 9. Select a DB Object" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-9-Virtual_5_Database_Table_Select_DB_Object2_Filled.png 875w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-9-Virtual_5_Database_Table_Select_DB_Object2_Filled-300x208.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-9-Virtual_5_Database_Table_Select_DB_Object2_Filled-768x532.png 768w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="398"><br>
+<em>Figure 9. Select a DB Object</em></p>
+<p>After we press “Next” in Figure 9, we can tell the difference between
+ the “Existing Source System” and “Owner / Schema” options (see Figure 
+10):</p>
+<p><img class="imgborder alignnone wp-image-5065" title="Open ODS View - Figure 10. Select a Source System" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-10-Virtual_5_Database_Table_Create_Source_System.png" alt="Open ODS View - Figure 10. Select a Source System" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-10-Virtual_5_Database_Table_Create_Source_System.png 876w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-10-Virtual_5_Database_Table_Create_Source_System-300x271.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-10-Virtual_5_Database_Table_Create_Source_System-768x693.png 768w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="518"><br>
+<em>Figure 10. Select a Source System</em></p>
+<p>You can either select an existing Source System or create a new one 
+in Figure 10. Either way, you’re going to need a HANA Source System, 
+before you can start modeling your OODS.</p>
+<p>Conclusion: the “Existing Source System” and “Owner / Schema” options are basically 2 sides of the same coin.</p>
+<ol>
+<li>When you pick “Existing Source System”, you pick a Source System 
+that points to a particular schema and then you pick the table you want.</li>
+<li>When you pick “Owner / Schema”, you first pick a schema and then 
+pick the table you want. After that you can select an existing Source 
+System that points to the schema you chose. If you haven’t created a 
+Source System for that schema yet, you can create a Source System on the
+ spot. Disclaimer: the automatic Source System creation option does not 
+always work, I got an error message (see Figure 11). If creating a 
+Source System via the Owner/Schema option does not work, follow the 
+instructions that accompany Figure 5 – 7 to create one manually.</li>
+</ol>
+<p><img class="imgborder alignnone wp-image-5066 size-full" title="Open ODS View - Figure 11. Error I got when trying to create a HANA Source System automatically via OODS" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-11-Adapter-issue.png" alt="Open ODS View - Figure 11. Error I got when trying to create a HANA Source System automatically via OODS" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-11-Adapter-issue.png 511w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-11-Adapter-issue-300x116.png 300w" sizes="(max-width: 511px) 100vw, 511px" width="511" height="197"><br>
+<em>Figure 11. Error I got when trying to create a HANA Source System automatically via OODS</em></p>
+<p>&nbsp;</p>
+<h5 id="pagejump24">Privileges</h5>
+<p>After you create an Open ODS View based on a database table or view, you might see the following error:</p>
+<p><img class="imgborder alignnone wp-image-5067" title="Open ODS View - Figure 12. Insufficient privilege" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-12-Virtual_5.png" alt="Open ODS View - Figure 12. Insufficient privilege" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-12-Virtual_5.5_Database_Table_Not_Authorized.png 840w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-12-Virtual_5.5_Database_Table_Not_Authorized-300x143.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-12-Virtual_5.5_Database_Table_Not_Authorized-768x365.png 768w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="273"><br>
+<em>Figure 12. Insufficient privilege</em></p>
+<p>If you get this error you need to grant your BW system user rights to
+ whatever schema you want to build an OODS on. You do so by opening the 
+SQL Editor in Eclipse and using the following statement in Figure 13 
+(don’t forget to replace my schema with yours):</p>
+<p><img class="imgborder alignnone wp-image-5068" title="Open ODS View - Figure 13. How to grant Select privileges to the BW user in HANA" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-13-Virtual_5.png" alt="Open ODS View - Figure 13. How to grant Select privileges to the BW user in HANA" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-13-Virtual_5.5_Database_Table_SQL_Auth_Code.png 639w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-13-Virtual_5.5_Database_Table_SQL_Auth_Code-300x26.png 300w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="49"><br>
+<em>Figure 13. How to grant Select privileges to the BW user in HANA</em></p>
+<p>If you wrote the statement correctly, you should see the message in Figure 14:</p>
+<p><img class="imgborder alignnone wp-image-5069" title="Open ODS View - Figure 14. Select privileges successfully granted" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-14-Virtual_5.png" alt="Open ODS View - Figure 14. Select privileges successfully granted" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-14-Virtual_5.5_Database_Table_SQL_Success_Yay.png 1016w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-14-Virtual_5.5_Database_Table_SQL_Success_Yay-300x22.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-14-Virtual_5.5_Database_Table_SQL_Success_Yay-768x57.png 768w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="42"><br>
+<em>Figure 14. Select privileges successfully granted</em></p>
+<p>After that you should be able to start modelling and finish creating your OODS, without worrying about privileges!</p>
+<h3></h3>
+<h4 id="pagejump6">3. Source Type: Virtual table using SAP HANA Smart Data Access</h4>
+<p>This is the option you choose when you want to connect to an external
+ table, such as a Hadoop table, without using a DataSource. Creating an 
+Open ODS View using a virtual table is very similar to creating one 
+based on a database table or view.</p>
+<p>&nbsp;</p>
+<h5 id="pagejump31">Existing Source System</h5>
+<p>If you’ve already created a Source System that points to the right 
+schema, you simply select “Existing Source System” and pick the table 
+you want (see Figure 15).</p>
+<p><img class="imgborder alignnone wp-image-5070" title="Open ODS View - Figure 15. Selecting a table from a Remote Source." src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-15-Virtual_8_SDA_DB_Objects.png" alt="Open ODS View - Figure 15. Selecting a table from a Remote Source." srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-15-Virtual_8_SDA_DB_Objects.png 876w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-15-Virtual_8_SDA_DB_Objects-300x252.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-15-Virtual_8_SDA_DB_Objects-768x645.png 768w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="482"><br>
+<em>Figure 15. Selecting a table from a Remote Source.</em></p>
+<p>If there’s no Source System yet, you can create one as we did in 
+Figure 5-6. Instead of selecting “Local SAP HANA Database Schema”, this 
+time you select “SAP HANA Smart Data Access”. I hereby assume that 
+you’ve already set up a working connection to a Remote Source, which is 
+outside of the scope of this article. Also, remember that you need to 
+have the necessary privileges, otherwise you’ll get an error while 
+creating a Remote Source. You need the CREATE REMOTE SOURCE system 
+privilege. Also, you need to create a Virtual Table on the table you 
+want to base this OODS on. For that, you need the object privilege 
+CREATE VIRTUAL TABLE.</p>
+<p>&nbsp;</p>
+<h5 id="pagejump32">Owner / Schema</h5>
+<p>If you select the “Owner / Schema” option on the first screen, you’ll
+ be prompted to select a Remote Source on the second (See Figure 16).</p>
+<p><img class="imgborder alignnone wp-image-5072" title="Open ODS View - Figure 16. Select a remote source screen" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-16-Virtual_8_SDA_Second_RemoteEmpty.png" alt="Open ODS View - Figure 16. Select a remote source screen" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-16-Virtual_8_SDA_Second_RemoteEmpty.png 872w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-16-Virtual_8_SDA_Second_RemoteEmpty-300x190.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-16-Virtual_8_SDA_Second_RemoteEmpty-768x485.png 768w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="363"><br>
+<em>Figure 16. Select a remote source&nbsp;</em></p>
+<p>This remote source can be Hadoop for instance. Once you click next you’ll have to select a remote database:</p>
+<p><img class="imgborder alignnone wp-image-5073" title="Open ODS View - Figure 17. Select a Remote Database " src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-17-Virtual_8_SDA_Third_RemoteNull.png" alt="Open ODS View - Figure 17. Select a Remote Database " srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-17-Virtual_8_SDA_Third_RemoteNull.png 873w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-17-Virtual_8_SDA_Third_RemoteNull-300x212.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-17-Virtual_8_SDA_Third_RemoteNull-768x543.png 768w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="406"><br>
+<em>Figure 17. Select a Remote Database</em></p>
+<p>Depending on your Remote Connection, you might end up in a situation 
+comparable to Figure 17 where your only option is [&lt;NULL&gt;]. No 
+reason for panic! If you see this just select [&lt;NULL&gt;], then press
+ Next and you’ll be able to continue. In the next screen, you’ll have 
+the option to create a new Source System or use an existing one 
+(comparable to Figure 11). After that you provide the semantics to your 
+fields (which I will explain later).</p>
+<p>&nbsp;</p>
+<h4 id="pagejump7">4. DataStore Object (advanced)</h4>
+<p>You can base an Open ODS View on <a href="https://www.just-bi.nl/all-you-need-to-know-about-adso/">an ADSO</a>
+ using this option. Open ODS Views are generally used to pull in data 
+from external systems.&nbsp;However, the ADSO Source Type can still be 
+of use if you want to specify whether a field-based ADSO contains text, 
+master data or fact data. Field-based means: fields modeled without 
+InfoObjects.</p>
+<p>You might wonder: why would you want to do that? By basing an OODS on
+ an ADSO, you can define that ADSO as Master Data. Defining an ADSO as 
+Master Data lets you use the underlying ADSO as Master Data for 
+Fact-table type Open ODS Views and CompositeProviders. Also, if you want
+ to convert the data type of your ADSO fields, you can use an OODS View 
+on an ADSO to convert the fields by associating them with an InfoObject.
+ That way you can convert the fields at runtime and you don’t have to 
+create another ADSO to convert the fields. Converting the fields at 
+runtime saves space (but costs performance).</p>
+<p>After you select an ADSO on the first screen, you’ll come across Figure 18:</p>
+<p><img class="imgborder alignnone wp-image-5074" title="Open ODS View - Figure 18. Select a DataStore Object (advanced)" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-18-Virtual_9_ADSO_Select.png" alt="Open ODS View - Figure 18. Select a DataStore Object (advanced)" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-18-Virtual_9_ADSO_Select.png 874w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-18-Virtual_9_ADSO_Select-300x201.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-18-Virtual_9_ADSO_Select-768x514.png 768w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="384"><br>
+<em>Figure 18. Select a DataStore Object (advanced)</em></p>
+<p>You simply pick the ADSO you want, and press Finish to start modeling your OODS.</p>
+<p>&nbsp;</p>
+<h4 id="pagejump8">5. Transformation</h4>
+<p>After having read all of these Source Types you might be wondering: how do I <em>transform</em>
+ my virtual data at runtime? After all, if you right-click an Open ODS 
+View you do not see any option to create a Transformation (see Figure 
+19).</p>
+<p><img class="imgborder alignnone wp-image-5075" title="Open ODS View - Figure 19. No Transformation option available from the drop-down menu in BW/4HANA" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-19-Virtual_10_No-transformation_Paint.png" alt="Open ODS View - Figure 19. No Transformation option available from the drop-down menu in BW/4HANA" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-19-Virtual_10_No-transformation_Paint.png 721w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-19-Virtual_10_No-transformation_Paint-300x250.png 300w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="479"><br>
+<em>Figure 19. No Transformation option available from the drop-down menu in BW/4HANA</em></p>
+<p>Well, I’m here to deliver you the good news: you can transform your 
+virtual data while you pull it in from an external source.&nbsp;However,
+ to do so you need 3 objects: a DataSource, an InfoSource and a 
+Transformation. Keep in mind: there will be a performance penalty, 
+dependent on the complexity of the transformations you use. Also, you 
+can neither use an OODS as a source or as a target of a Transformation 
+in the Create Transformation screen. You can only base an OODS on a 
+Transformation by following the procedure I describe below.</p>
+<p>To create an OODS based on a Transformation take the following steps:</p>
+<ol>
+<li>If you haven’t done so already, first create a DataSource.</li>
+<li>After that, create an InfoSource. By first creating a DataSource and
+ then an InfoSource, you can use the DataSource as a template and save 
+time.</li>
+<li>After you’ve created both objects, create a Transformation by 
+right-clicking the InfoSource and selecting the Create a Transformation 
+option (see Figure 20).</li>
+</ol>
+<p><img class="imgborder alignnone wp-image-5076" title="Open ODS View - Figure 20. Create Transformation screen" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-20-Virtual_10_Transformation_Transformation.png" alt="Open ODS View - Figure 20. Create Transformation screen" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-20-Virtual_10_Transformation_Transformation.png 909w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-20-Virtual_10_Transformation_Transformation-300x117.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-20-Virtual_10_Transformation_Transformation-768x300.png 768w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="224"><br>
+<em>Figure 20. Create Transformation screen</em></p>
+<p>4. Create an OODS and select Transformation as Source Type. On the 
+following screen, you’ll be prompted to select a DataSource or 
+InfoSource (seeFigure 21).</p>
+<p><img class="imgborder alignnone wp-image-5077" title="Open ODS View - Figure 21. Select a Transformation screen" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-21-Virtual_10_Transformation_Paint.png" alt="Open ODS View - Figure 21. Select a Transformation screen" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-21-Virtual_10_Transformation_Paint.png 874w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-21-Virtual_10_Transformation_Paint-300x104.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-21-Virtual_10_Transformation_Paint-768x265.png 768w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="198"><br>
+<em>Figure 21. Select a Transformation screen</em></p>
+<p>5. Select the DataSource you made during step 1, and the InfoSource 
+you created during step 3. BW will automatically select the 
+Transformation between your DataSource and your InfoSource.</p>
+<p>Now you’ll be able to transform your data during runtime, when you 
+execute a query based on your Open ODS View. However, I would only 
+recommend using this Source Type for small datasets and for datasets 
+with simple logic. For more complicated logic and larger datasets, 
+you’ll probably be better off transforming and persisting the data with 
+an ADSO.</p>
+<p>&nbsp;</p>
+<h3 id="pagejump9">General Tab</h3>
+<p>After you’ve picked a Source Type, you end up at the General Tab. 
+Here you can persist the OODS by clicking “Generate Dataflow” (see 
+Figure 22). This option automatically creates an ADSO, Transformation 
+and DTP for you. Alternatively, it can also create an InfoSource, 
+Transformation and DTP.</p>
+<p>In the General Tab you can also change the OODS description, remove a
+ Source and add a new one. If CalcScenario Used: yes, you can use the 
+OODS in Join in a CompositeProvider, otherwise not. You can also change 
+the source of the OODS by pressing “Edit” in the Semantics section of 
+the General Tab.</p>
+<p><img class="imgborder alignnone wp-image-5080" title="Figure 22. General tab Open ODS View" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-22-Virtual_11_Combine_MD_TEXT.png" alt="Figure 22. General tab Open ODS View" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-22-Virtual_11_Combine_MD_TEXT.png 765w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-22-Virtual_11_Combine_MD_TEXT-300x233.png 300w" sizes="(max-width: 450px) 100vw, 450px" width="450" height="349"></p>
+<p><em>Figure 22. General tab Open ODS View</em></p>
+<p>After you click “Edit”, you get the following screen:</p>
+<p><img class="imgborder alignnone wp-image-5081" title="Figure 23. Change the Source object screen Open ODS View" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-23-Virtual_11_Change_Source.png" alt="Figure 23. Change the Source object screen Open ODS View" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-23-Virtual_11_Change_Source.png 727w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-23-Virtual_11_Change_Source-291x300.png 291w" sizes="(max-width: 450px) 100vw, 450px" width="450" height="464"><br>
+<em>Figure 23. Change the Source object screen Open ODS View</em></p>
+<p>You can change the source of your OODS by following the steps and selecting a different source object.</p>
+<p>&nbsp;</p>
+<h3 id="pagejump100">Semantics</h3>
+<p>What are Open ODS semantics? Semantics let us categorize the data we 
+use in the OODS. You can categorize the Source data as either Facts, 
+Master Data or Texts. You can associate Fact-type Open ODS Views with 
+Master Data and Text Open ODS Views. Association lets you use the Master
+ Data OODS characteristics as Navigational Attributes and the Texts in 
+the Text OODS for text handling, when you run a query on an Open ODS 
+View or CompositeProvider.&nbsp;I demonstrate how association works in <a href="https://www.just-bi.nl/virtual-bw-hana-compositeprovider/">Part II of this article</a>.</p>
+<p>Which type of fields, such as Characteristics, Timestamps and Valid 
+From fields, are available in your OODS,&nbsp;depends on whether you 
+define an OODS as a Fact, Master Data or Text OODS. BW automatically 
+maps the Source Fields to the View Fields, but you can change the 
+mapping if it’s incorrect or incomplete. You can also add the same field
+ to multiple target fields, and give those extra target fields different
+ descriptions and associations. This makes the OODS flexible. In the 
+following sections, I’ll further explain the difference between the 
+different Semantics.</p>
+<p>&nbsp;</p>
+<h4 id="pagejump10">Facts</h4>
+<p>When you select Facts in Figure 1, a tab called Facts appears in the 
+modeling section of the OODS after you’ve completed the Source Type 
+section. In Figure 24 we can see all the Source fields (on the left) and
+ the View fields (in the middle). Adding fields to your View is easy due
+ to the drag &amp; drop-interface. You define your Source Fields as 
+Characteristics, Key Figures, Currency etc. by dragging them to the 
+corresponding folder in the View Fields section. &nbsp;If you’re 
+planning on persisting your OODS, it’s important to drag the key fields 
+to the Characteristics (Key) folder. The fields you drag to this folder 
+will turn into key fields in your generated ADSO.</p>
+<p>Because we modeled this OODS without InfoObjects, each field gets a 
+system-wide Unique Name. The system-wide Unique Name includes the 
+InfoProvider in the name and the technical name of the field. For 
+example, in Figure 24, our Transaction Code field has the name: 
+2FZOO_TR_ADSO-TRANSACTIONC.</p>
+<p><img class="imgborder alignnone wp-image-5082" title="Figure 24. Open ODS View Facts Tab" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-24-Virtual_11_Facts_Association_Options.png" alt="Figure 24. Open ODS View Facts Tab" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-24-Virtual_11_Facts_Association_Options.png 1510w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-24-Virtual_11_Facts_Association_Options-300x145.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-24-Virtual_11_Facts_Association_Options-768x371.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-24-Virtual_11_Facts_Association_Options-1024x494.png 1024w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="277"><br>
+<em>Figure 24. Facts tab of Open ODS View</em></p>
+<p>Facts is the Semantic type you should use if you want to model a 
+source table as transactional data. You can associate fields with Master
+ Data/Texts Open ODS Views and InfoObjects in the Association area in 
+the right panel. You thereby gain access to their metadata, 
+authorization properties and Navigational Attributes (if you associate a
+ characteristic field). Warning: if you do not associate fields with 
+InfoObjects, there can be a performance penalty. This performance 
+penalty is due to the field structure having to be interpreted at query 
+runtime.</p>
+<p>&nbsp;</p>
+<h4 id="pagejump11">Master Data</h4>
+<p>When you choose Master Data during the OODS screen, you can use this 
+OODS as a dimension/master data when modeling your HANA 
+CompositeProvider (HCPR). How? By associating your fields with a Master 
+Data OODS when you’re modeling a Fact OODS or a HCPR.</p>
+<p>The Representative Key Field is the field you use to link your Master
+ Data OODS to a Fact OODS or HCPR. Therefore, the field you drag to the 
+Representative Key Field folder needs to be present in the Fact OODS 
+/HCPR you want to link to your Master Data OODS. By associating a field 
+in a Fact OODS /HCPR with a Master Data OODS, you can use the rest of 
+the Master Data OODS fields as Navigational Attributes. Just don’t 
+forget to drag them to the Characteristics folder in the View Fields 
+section while modeling.</p>
+<p><img class="imgborder alignnone wp-image-5083" title="Figure 25. Master Data Open ODS View" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-25-Virtual_11_Master_Data_Representative.png" alt="Figure 25. Master Data Open ODS View" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-25-Virtual_11_Master_Data_Representative.png 1821w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-25-Virtual_11_Master_Data_Representative-300x145.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-25-Virtual_11_Master_Data_Representative-768x370.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-25-Virtual_11_Master_Data_Representative-1024x494.png 1024w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="277"><br>
+<em>Figure 25. Master Data Open ODS View</em></p>
+<p>In Figure 25 we can see that a Master Data Open ODS View contains 
+more View Field types than a Facts Open ODS View. The additional fields 
+are:</p>
+<ul>
+<li>Representative Key Field: this field is used to link the Master Data
+ OODS to a Fact OODS or a CompositeProvider through Association. The 
+Characteristics (Key) field in a Master Data OODS, is only used for 
+additional compounded keys.</li>
+<li>Valid From / Valid To: in case you have time-dependent data, you can drag the valid from and valid to fields to this folder.</li>
+<li>Short / Medium / Long Text: drag any text fields one or more of these folders for text handling.</li>
+</ul>
+<p>&nbsp;</p>
+<h4>Texts</h4>
+<p>There is a 3<sup>rd</sup> type of Semantics: Texts (see Figure 26). 
+You can already guess what it’s about: text tables (surprise, surprise).
+ Master Data Open ODS Views contain all the field semantics a Text Open 
+ODS Views have, except for one: Language. You might recognize Language 
+as a standard field included in SAP Text tables.</p>
+<p><img class="imgborder alignnone wp-image-5084" title="Figure 26. Texts Open ODS View" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-26-Virtual_11_Texts.png" alt="Figure 26. Texts Open ODS View" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-26-Virtual_11_Texts.png 1855w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-26-Virtual_11_Texts-300x145.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-26-Virtual_11_Texts-768x372.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-26-Virtual_11_Texts-1024x496.png 1024w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="278"><br>
+<em>Figure 26. Texts Open ODS View</em></p>
+<p><img class="imgborder alignnone wp-image-5085" title="Figure 27. Warning during activation of Text Open ODS View " src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/OODS-Figure-27-Virtual_what-happens-if-you-use-text-semantic.png" alt="Figure 27. Warning during activation of Text Open ODS View " srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-27-Virtual_what-happens-if-you-use-text-semantics.png 662w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/OODS-Figure-27-Virtual_what-happens-if-you-use-text-semantics-300x87.png 300w" sizes="(max-width: 450px) 100vw, 450px" width="450" height="130"><br>
+<em>Figure 27. Warning during activation of Text Open ODS View</em></p>
+<p>You cannot use Text Open ODS Views in a CalcScenario (see Figure 27).
+ If CalcScenario: no, you cannot create a join using this OODS in a 
+HCPR. The only way to add a Text OODS View to a CompositeProvider is by 
+Association, as I will explain next.</p>
+<p>A Text OODS works very similarly to a Master Data OODS. The field you
+ use as Representative Key Field needs to be present in the Fact OODS or
+ HCPR you want to link to the Text OODS. By associating that field with 
+the Text OODS in the Fact OODS/HCPR, you can use the text fields you 
+defined in that Text OODS when executing a query. Don’t forget to drag 
+the text fields to the Short/Medium/Long Text folders while modeling 
+your Text OODS.</p>
+<p>You can also combine a Text OODS and a Master Data OODS. You can 
+combine them in the General tab of the OODS in the Semantics part (see 
+Figure 22).&nbsp;To add a Text OODS to a Master Data OODS press “New” on
+ the General Tab. After pressing “New” you can either add a Text OODS to
+ a Master OODS or vice versa.</p>
+<p>&nbsp;</p>
+<h3 id="pagejump13">Pros &amp; cons</h3>
+<p>Finally, here’s an overview of the pros and cons of the Open ODS View:<br>
+<img class="imgborder alignnone wp-image-5193" title="Open ODS View pros and cons" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/10.png" alt="Open ODS View pros and cons" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/10.-Table-1-v2.png 694w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/10.-Table-1-v2-255x300.png 255w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="674"><br>
+<em>Table 2. Open ODS View pros &amp; cons</em></p>
+<p>&nbsp;</p>
+<h3 id="pagejump14">The Road to Virtuality</h3>
+<p>On the road to having a more virtual data warehouse, you can easily 
+get lost. We’ve seen that Open ODS Views are very versatile. Therefore, 
+to explore them properly you need to have patience and perhaps read a 
+blog or two (wink, wink).</p>
+<p>You now know all the different Source Types you can use in an Open 
+ODS View. For instance, you now know how to transform data during 
+runtime by basing your Open ODS View on a Transformation. Whether or not
+ that’s sensible, I’ll leave up to you. We also created a Source System,
+ to set up a connection between our Open ODS View and a local database 
+table or an external virtual table. We also briefly discussed 
+Association and the difference between the three Semantic Types, 
+including when to use which one.</p>
+<p>Armed with this knowledge you’re now almost ready for the Virtual BW 
+world. There is one last stop on the road to a virtual BW: the HANA 
+CompositeProvider. You can read Part II of this article&nbsp;<a href="https://www.just-bi.nl/virtual-bw-hana-compositeprovider/">here</a>. Bon voyage!</p>
+<div class="pvc_clear"></div>
+<p id="pvc_stats_5048" class="pvc_stats pvc_load_by_ajax_update" data-element-id="5048"><span>
+    <i class="fa fa-bar-chart pvc-stats-icon medium" aria-hidden="true"></i> 
+	
+		14569 total views,
+		
+			13 views today
+		
+	
+	</span></p>
+<div class="pvc_clear"></div>
+</div>
+<div id="authorbox">
+<img src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <div>
+<h5>Author: <span>Michael Hendrik Bussink</span></h5>
+<p></p>
+</div>
+</div>
+<div class="comments clearfix">
+<h3 id="comments">19 Responses to "How to go Virtual in BW Part I: The Open ODS View"</h3>
+<ol class="commentlist">
+<li class="comment even thread-even depth-1" id="li-comment-48070">
+<div id="comment-48070" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Chowdary" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/a6bae36fd5d46f7465f423b9bc24b6b5.jpg" srcset="//secure.gravatar.com/avatar/a6bae36fd5d46f7465f423b9bc24b6b5?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48070" onclick='return addComment.moveForm( "comment-48070", "48070", "respond", "5048" )' aria-label="Reply to Chowdary">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Chowdary</cite>
+<span>Posted on August 11, 2017 at 8:34 am</span>
+</div>
+<div class="comment-entry">
+<p>Your blogs are very informative, thank you. How can we transport 
+these new objects (OODS view , Advanced DSO, Composite provider ) from 
+one system to another?</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-mbussink bypostauthor odd alt depth-2" id="li-comment-48076">
+<div id="comment-48076" class="comment-body clearfix">
+<div class="avatars">
+<img src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48076" onclick='return addComment.moveForm( "comment-48076", "48076", "respond", "5048" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on August 22, 2017 at 9:17 pm</span>
+</div>
+<div class="comment-entry">
+<p>Thank you Chowdary! Concerning your question, I believe the transport
+ concept in 7.5 and BW/4HANA has not yet changed substantially from 
+earlier versions. Have you tried using the Transport Connection in RSA1 
+when you open the SAP GUI?</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-48072">
+<div id="comment-48072" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Gaurav" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/9de5a4b6c405c69b3b75f3e240c83068.jpg" srcset="//secure.gravatar.com/avatar/9de5a4b6c405c69b3b75f3e240c83068?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48072" onclick='return addComment.moveForm( "comment-48072", "48072", "respond", "5048" )' aria-label="Reply to Gaurav">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Gaurav</cite>
+<span>Posted on August 20, 2017 at 12:34 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hi Michael,</p>
+<p>Great Info. Appreciate it.<br>
+Just one query regarding the transformation option here. I have followed
+ the same steps but when I preview the data, nothing is coming. The 
+Datasource is showing data on preview though. Any idea?</p>
+<p>Thanks,<br>
+Gaurav</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-mbussink bypostauthor odd alt depth-2" id="li-comment-48075">
+<div id="comment-48075" class="comment-body clearfix">
+<div class="avatars">
+<img src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48075" onclick='return addComment.moveForm( "comment-48075", "48075", "respond", "5048" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on August 22, 2017 at 9:11 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hi Gaurav, </p>
+<p>Thanks for your feedback! I can’t say for certain what the cause is, 
+but from my experience data preview can take rather long, if there is 
+either 1. a lot of underlying data or if 2. multiple transformation 
+rules are applied to the data. Hope this helps you.</p>
+<p>Kind regards,<br>
+Michael</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-48084">
+<div id="comment-48084" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Chowdary" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/a6bae36fd5d46f7465f423b9bc24b6b5.jpg" srcset="//secure.gravatar.com/avatar/a6bae36fd5d46f7465f423b9bc24b6b5?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48084" onclick='return addComment.moveForm( "comment-48084", "48084", "respond", "5048" )' aria-label="Reply to Chowdary">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Chowdary</cite>
+<span>Posted on September 13, 2017 at 7:12 am</span>
+</div>
+<div class="comment-entry">
+<p>Thank you for your reply. I haven’t got an opportunity to work on BW 
+on HANA, but I have experience with BW on traditional databases. Can we 
+still use the standard transport connection even though we create 
+objects using new HANA studio/BWMT/Abap development tools. What happens 
+to the HANA views created for these objects Like Calculation views on 
+top of ADSO, opend ODS views when we transport the original object say 
+ADSO. the relevant object will be transported or a new object will be 
+created in the new system?</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-mbussink bypostauthor odd alt depth-2" id="li-comment-48123">
+<div id="comment-48123" class="comment-body clearfix">
+<div class="avatars">
+<img src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48123" onclick='return addComment.moveForm( "comment-48123", "48123", "respond", "5048" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on October 23, 2017 at 3:37 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hi Chowdary,</p>
+<p>Good question. You can use the standard transport connection for BW 
+objects created with BWMT. For objects created with the ABAP development
+ tools you can use the Transport Organizer view that is available there.
+ HANA Views are not automatically transported along with BW objects, nor
+ are they automatically generated upon transportation. However, you can 
+transport them using transaction SCTS_HTA in the SAP GUI. Alternatively,
+ you can (i) create a Delivery Unit in Eclipse/HANA Studio, (ii) Assign 
+the package containing your required HANA entities to it, (iii) create a
+ HANA Transport Container and (iv) attach the HANA Transport Container 
+to a BW transport request &amp; release the tasks. Hope this helps.</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-48138">
+<div id="comment-48138" class="comment-body clearfix">
+<div class="avatars">
+<img alt="kannan Natarajan" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/4ac64b18d125867eb7a2989c0cebd2f5.jpg" srcset="//secure.gravatar.com/avatar/4ac64b18d125867eb7a2989c0cebd2f5?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48138" onclick='return addComment.moveForm( "comment-48138", "48138", "respond", "5048" )' aria-label="Reply to kannan Natarajan">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.linkedin.com/in/kannan-natarajan" rel="external nofollow" class="url">kannan Natarajan</a></cite>
+<span>Posted on November 9, 2017 at 5:37 am</span>
+</div>
+<div class="comment-entry">
+<p>Hi Micheal,<br>
+Appreciate the detailed blog and covering all the scenarios.<br>
+Couple of questions.<br>
+1. Any thumb rule for maximum data volume for OODS?<br>
+2. What is the recommended reporting layer? i.e., Will creating 
+Composite provider on OODS give any performance leverage assuming I 
+wanted to report only on the OODS data?<br>
+3. When have few fields in OODS assosiated to Infoobject and others not.
+ Is there any switch between engines i.e., between Analytic engine, calc
+ engine etc leading to performance issue.</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-48140">
+<div id="comment-48140" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Pradeep" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/40124329a5c9d4b0f63f9c070cc01258.jpg" srcset="//secure.gravatar.com/avatar/40124329a5c9d4b0f63f9c070cc01258?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48140" onclick='return addComment.moveForm( "comment-48140", "48140", "respond", "5048" )' aria-label="Reply to Pradeep">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Pradeep</cite>
+<span>Posted on November 14, 2017 at 12:21 am</span>
+</div>
+<div class="comment-entry">
+<p>Thanks Michael,</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-mbussink bypostauthor even depth-2" id="li-comment-48161">
+<div id="comment-48161" class="comment-body clearfix">
+<div class="avatars">
+<img src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48161" onclick='return addComment.moveForm( "comment-48161", "48161", "respond", "5048" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on December 13, 2017 at 1:31 pm</span>
+</div>
+<div class="comment-entry">
+<p>You’re welcome Pradeep!</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-48148">
+<div id="comment-48148" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Jayesh" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/ee20a2bb775d9ae3049ea70caddbb6ff.jpg" srcset="//secure.gravatar.com/avatar/ee20a2bb775d9ae3049ea70caddbb6ff?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48148" onclick='return addComment.moveForm( "comment-48148", "48148", "respond", "5048" )' aria-label="Reply to Jayesh">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Jayesh</cite>
+<span>Posted on November 27, 2017 at 8:37 am</span>
+</div>
+<div class="comment-entry">
+<p>Hi Michael,<br>
+Awesome Block. Its a great information for a beginner in SAP BW on HANA.
+ Can you elaborate the difference and how we can relate between the 
+Inforproviders used in BW and BW on HANA.</p>
+<p>Regards,<br>
+Jayesh</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-mbussink bypostauthor even depth-2" id="li-comment-48167">
+<div id="comment-48167" class="comment-body clearfix">
+<div class="avatars">
+<img src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48167" onclick='return addComment.moveForm( "comment-48167", "48167", "respond", "5048" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on December 13, 2017 at 3:04 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hi Jayesh,</p>
+<p>Thank you for your feedback! I believe the main differences are as follows:</p>
+<p>1. In classic BW you have DSOs and InfoCubes as persistent InfoProviders, in BW on HANA you mainly use ADSOs<br>
+2. In BW on HANA you can use Open ODS Views to create a view on external
+ data, also you can mark any table as i.e. Master Data or Text and use 
+it as Master or Text: which increases flexibility<br>
+3. In BW you have MultiProviders (execute a Union on underlying 
+InfoProviders), in BW on HANA you have the HANA CompositeProvider which 
+can not only execute a Union, but also a Join, plus can integrate Native
+ HANA Views.</p>
+<p>Hopefully this helps you to get an idea about the difference between InfoProviders in BW and BW on HANA.</p>
+<p>Regards,<br>
+Michael</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-48174">
+<div id="comment-48174" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Madhu" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/0939f3382b18c73b697437c0ee232136.jpg" srcset="//secure.gravatar.com/avatar/0939f3382b18c73b697437c0ee232136?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48174" onclick='return addComment.moveForm( "comment-48174", "48174", "respond", "5048" )' aria-label="Reply to Madhu">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Madhu</cite>
+<span>Posted on December 26, 2017 at 10:52 am</span>
+</div>
+<div class="comment-entry">
+<p>Hi Michael,</p>
+<p>Thanks for the information!! It’s really very helpful for a beginner like me.</p>
+<p>We have a scenario where in we should load data from an External system to Master data Info Object.</p>
+<p>We can extract the data using an Open ODS from external system but how do we load that data to Info Object.</p>
+<p>Thanks,<br>
+Madhu.</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-48182">
+<div id="comment-48182" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Sheetal Waghmare" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/1d4c33f5fe9b3c5b06d3d9d23bfea4cb.jpg" srcset="//secure.gravatar.com/avatar/1d4c33f5fe9b3c5b06d3d9d23bfea4cb?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48182" onclick='return addComment.moveForm( "comment-48182", "48182", "respond", "5048" )' aria-label="Reply to Sheetal Waghmare">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Sheetal Waghmare</a></cite>
+<span>Posted on January 8, 2018 at 5:04 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hallo,<br>
+I have tried to create Open Ods on the basis of Master data extractor in
+ SAP BW but I do not know how to load the data in open ODS view. I also 
+created infopackage and run it but i could not see the data in it. Could
+ you please tell me, how can we load the data or do I need to create 
+different data flow for Open ODS view like creating infosource and so 
+on.</p>
+<p>Thanks in advance.</p>
+<p>Regards,<br>
+Sheetal</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-48187">
+<div id="comment-48187" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Mukesh Sharma" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/c92cb777fd0b0d4f26c3308648b08f10.jpg" srcset="//secure.gravatar.com/avatar/c92cb777fd0b0d4f26c3308648b08f10?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48187" onclick='return addComment.moveForm( "comment-48187", "48187", "respond", "5048" )' aria-label="Reply to Mukesh Sharma">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Mukesh Sharma</cite>
+<span>Posted on January 19, 2018 at 5:12 am</span>
+</div>
+<div class="comment-entry">
+<p>Hi Michael,<br>
+A great blog.<br>
+We are new to BW 7.5 on HANA .<br>
+We have questions like<br>
+1. Can we join 17-20 simple ADSOs in Composite Providers ( CP).<br>
+2. Does BW queries on CP gives bad performance ? Like when we have 10 
+fields from 3 ADSO , will remaining 14 ADSO data will be loaded in 
+Memory ?<br>
+3. Can we filter few particular ADSos in CP, like ADSO which has 
+Articles in it , we want to filter that ADSo with particular material 
+Type like X, Y , Z .</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-48191">
+<div id="comment-48191" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Jagaadish" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/2defa8f3ab1b55f5e1c6ba212a8ffd8c.jpg" srcset="//secure.gravatar.com/avatar/2defa8f3ab1b55f5e1c6ba212a8ffd8c?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48191" onclick='return addComment.moveForm( "comment-48191", "48191", "respond", "5048" )' aria-label="Reply to Jagaadish">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Jagaadish</cite>
+<span>Posted on January 23, 2018 at 3:34 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hi Michael,</p>
+<p>Nice document , I have one question</p>
+<p>Now we are using BW4HANA , We have created one Generic View in ECC DEV and we have created OPEN ODS in SAP BW4HANA DEV,</p>
+<p>Now we want to transport the OPEN ODS to BW4HANA QAS,<br>
+First we transported the Generic view from ECC Dev to ECC Qas<br>
+Migrated to BW4HANA Qas,<br>
+Now we are collected the Open ODS in BW4HANA DEV and Trnasport to BW4HANA QAS,</p>
+<p>We getting the issue like “SOURCE FIELD DOES NOT EXIST”</p>
+<p>Can you please tell me the exact process of this.</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-48215">
+<div id="comment-48215" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Bala" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/ce5326d08e46a3a24481d3a000cea1e7.jpg" srcset="//secure.gravatar.com/avatar/ce5326d08e46a3a24481d3a000cea1e7?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48215" onclick='return addComment.moveForm( "comment-48215", "48215", "respond", "5048" )' aria-label="Reply to Bala">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Bala</cite>
+<span>Posted on March 1, 2018 at 1:48 am</span>
+</div>
+<div class="comment-entry">
+<p>Hi Michael,<br>
+This is one of the best blog I have seen so far. Topics covered BW on HANA are very detailed.</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-48216">
+<div id="comment-48216" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Bala" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/ce5326d08e46a3a24481d3a000cea1e7.jpg" srcset="//secure.gravatar.com/avatar/ce5326d08e46a3a24481d3a000cea1e7?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48216" onclick='return addComment.moveForm( "comment-48216", "48216", "respond", "5048" )' aria-label="Reply to Bala">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Bala</cite>
+<span>Posted on March 1, 2018 at 1:51 am</span>
+</div>
+<div class="comment-entry">
+<p>In one of my scenario we have created a cds view and replicated cds 
+view in be as data source and we created open ods.Complex business 
+logics were implemented in cds view so that we actually avoided multiple
+ layers of storing information in BW. This is one of example difference 
+between composite provider and ods view.</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-48252">
+<div id="comment-48252" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Martin Chambers" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/600b87e36106c3d6fd8a0cd4d1391542.jpg" srcset="//secure.gravatar.com/avatar/600b87e36106c3d6fd8a0cd4d1391542?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48252" onclick='return addComment.moveForm( "comment-48252", "48252", "respond", "5048" )' aria-label="Reply to Martin Chambers">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Martin Chambers</cite>
+<span>Posted on April 11, 2018 at 8:50 am</span>
+</div>
+<div class="comment-entry">
+<p>Hi Michael,</p>
+<p>I agree with the other posted Messages – this is a very well done blog!<br>
+I also have a question. I would like to create an OODSV on a DSO with a transformation. Is that possible?<br>
+Or can I only use a transformation that starts with a DataSource and 
+ends with an InfoSource? In that case, how would I create a DataSource 
+for a DSO?</p>
+<p>Martin</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-48285">
+<div id="comment-48285" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Preethi Sharma" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/36604285b63529106baaf603f3ba7732.jpg" srcset="//secure.gravatar.com/avatar/36604285b63529106baaf603f3ba7732?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48285" onclick='return addComment.moveForm( "comment-48285", "48285", "respond", "5048" )' aria-label="Reply to Preethi Sharma">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://asha24.com/sap-hana-certification-training" rel="external nofollow" class="url">Preethi Sharma</a></cite>
+<span>Posted on May 30, 2018 at 11:51 am</span>
+</div>
+<div class="comment-entry">
+<p>Hi There,</p>
+<p>THANKS SO MUCH for sharing this! I would love to buy you a coffee 
+since I now won’t be up all night that has been driving me crazy (until 
+now!!). I just wish I knew what was going wrong but so glad it’s in the 
+right place now! Thanks again:) </p>
+<p>hana log volume disk is full and i cannot start it. can i create symbolic link<br>
+of hdb00001 to other location and restart it ??<br>
+In a transformation I am using a field AMDP routine.<br>
+Here is the scenario:<br>
+Let’s say this is the input data<br>
+NAME | CITY | SYSTEM<br>
+———————————<br>
+name1 | Vienna | TBW<br>
+name 2 | Berlin | QBW<br>
+name 3 | Budapest | PBW<br>
+I want to select the name and city depending on the system name. <a href="https://asha24.com/sap-hana-certification-training" rel="nofollow">SAP HANA tutorial USA </a> when the system is TBW then select this, else select the first line.<br>
+The field should be filled like this:<br>
+NAME | CITY | SYSTEM<br>
+———————————<br>
+name1 | Vienna | TBW<br>
+name 2 | Berlin | QBW</p>
+<p>Anyways great write up, your efforts are much appreciated. </p>
+<p>Cheers,<br>
+Preethi.</p>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://www.just-bi.nl/virtual-bw-open-ods-view/#respond" style="display:none;">Cancel reply</a></small></h3> <form action="//www.just-bi.nl/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="novalidate">
+<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" class="required"></textarea></p><p class="comment-form-author clearfix"><span class="comment-input-wrap"><input id="author" name="author" placeholder="Name" size="30" class="required" aria-required="true" type="text"></span>
+<span class="comment-input-wrap"><input id="email" name="email" placeholder="E-mail" size="30" class="required" aria-required="true" type="text"></span></p>
+<p class="comment-form-url"><input id="url" name="url" placeholder="Website" size="30" type="text"></p>
+<label>
+Enter Code <span style="color: #b94a48;">*</span>
+</label>
+<input name="captcha_challenge_field" id="captcha_challenge_field" class="captcha_challenge_field" type="text">
+<label style="display:block;">Captcha</label>
+<img src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/admin-ajax.png" class="captcha_code_img" id="captcha_code_img" title="Captcha to send message" style="margin-top:10px; cursor:pointer;">
+<img style="vertical-align: top !important; margin-top:9px; cursor:pointer;" onclick="refresh(); " alt="Reload Image" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/refresh-icon.png" width="25" height="25">
+<script type="text/javascript">
+			function refresh()
+			{
+				var randNum = Math.floor((Math.random() * 99999) + 1);
+				jQuery("#captcha_code_img").attr("src","//www.just-bi.nl/wp-admin/admin-ajax.php?captcha_code="+randNum);
+				return true;
+			}
+		</script>
+<p class="form-submit"><input name="submit" id="submit" class="submit" value="Post Comment" type="submit"> <input name="comment_post_ID" value="5048" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p><p style="display: none;"></p> <input id="ak_js" name="ak_js" value="1538031380445" type="hidden"></form>
+</div>
+</article>
+</div>
+</div>
+<aside class="grid_4 right-sidebar">
+</aside>
+</div>
+</div>
+<footer>
+<section id="footer_widgets" class="clearfix row">
+<aside class="grid_4">
+<div id="text-2" class="widget widget_text"><h4 class="widget-title">How to reach us</h4> <div class="textwidget"><p>Just-BI BV<br>
+Laan van Zuidhoorn 37<br>
+2289 DC Rijswijk – the Netherlands<br>
+Tel: +31 (0)70 – 4154806<br>
+Fax: +31 (0)70 – 4159787<br>
+KvK Haaglanden: 27256964<br>
+BTW.&nbsp;NL8115.65.567.B01</p>
+<p>Just-BI Sdn Bhd<br>
+Unit 12-06, Tower A Vertical Business Suite, Bangsar South City,<br>
+Jalan Kerinchi 59200 Kuala Lumpur<br>
+Malaysia<br>
+Company No. 1236682-K</p>
+<a class="simple_button_link " style="background-color: #b70004" href="https://www.just-bi.nl/contactus/"><span>more info</span></a>
+</div>
+</div> </aside>
+<aside class="grid_4">
+<div id="churchope-social-links-2" class="widget widget_social_links"><h4 class="widget-title">Follow us</h4><ul><li><a href="https://twitter.com/fairfocusfun" class="twitter_account">Twitter</a></li><li><a href="https://facebook.com/justbi2003" class="facebook_account">Facebook</a></li><li><a href="https://linkedin.com/company/just-bi" class="linked_in_account">Linkedin</a></li></ul></div><div id="text-5" class="widget widget_text"><h4 class="widget-title">Privacy Statement</h4> <div class="textwidget"><ul>
+<li><a href="https://www.just-bi.nl/privacy-statement-just-bi-bv/">Privacy Statement</a></li>
+</ul>
+</div>
+</div> </aside>
+<aside class="grid_4">
+<div id="churchope-popular-posts-4" class="widget widget_popular_posts"><h4 class="widget-title">Most Popular</h4> <ul>
+<li>
+<a href="https://www.just-bi.nl/all-you-need-to-know-about-adso/" title="All you need to know about Advanced DSOs…" class="imgborder"><span class="placeholder">
+<img src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/allyouneed-75x50.png" class="attachment-recent_posts size-recent_posts wp-post-image" alt="" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4572/allyouneed-75x50.png 75w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4572/allyouneed-150x100.png 150w" sizes="(max-width: 75px) 100vw, 75px">
+</span></a>
+<div class="recent_txt">
+<a href="https://www.just-bi.nl/all-you-need-to-know-about-adso/" title="All you need to know about Advanced DSOs…">All you need to know about Advanced DSOs…</a>
+<p><a href="https://www.just-bi.nl/all-you-need-to-know-about-adso/#comments" class="comments">46 - Comments</a></p> </div>
+</li>
+<li>
+<a href="https://www.just-bi.nl/bw4hana-fantastic-journey/" title="SAP BW/4HANA: My fantastic journey!" class="imgborder"><span class="placeholder">
+<img src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/just-bi-bw4hana-75x50.png" class="attachment-recent_posts size-recent_posts wp-post-image" alt="" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4575/just-bi-bw4hana-75x50.png 75w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4575/just-bi-bw4hana-150x100.png 150w" sizes="(max-width: 75px) 100vw, 75px">
+</span></a>
+<div class="recent_txt">
+<a href="https://www.just-bi.nl/bw4hana-fantastic-journey/" title="SAP BW/4HANA: My fantastic journey!">SAP BW/4HANA: My fantastic journey!</a>
+<p><a href="https://www.just-bi.nl/bw4hana-fantastic-journey/#comments" class="comments">15 - Comments</a></p> </div>
+</li>
+</ul>
+</div> </aside>
+<div class="grid_12 dotted"></div>
+</section>
+<div class="clearfix row" id="copyright">
+<div class="grid_5"><p>Just-BI 2016 © </p></div>
+<nav class="grid_7 clearfix"><ul id="menu-main-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1704"><a href="https://www.just-bi.nl/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1698"><a href="https://www.just-bi.nl/products/services/">Services</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3615"><a href="https://www.just-bi.nl/products/services/consultancy/">Consultancy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3622"><a href="https://www.just-bi.nl/projects/">Projects</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3623"><a href="https://www.just-bi.nl/products/services/solutions-innovations/">Innovations</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-post-parent menu-item-1697"><a href="https://www.just-bi.nl/products/">Products</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4168"><a href="https://www.just-bi.nl/portfolio/">Portfolio</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3647"><a href="https://www.just-bi.nl/just-portfolio/big-data-warehousing/">(BIG) Data Warehousing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3648"><a href="https://www.just-bi.nl/just-portfolio/visualization/">Reporting &amp; Visualization</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3676"><a href="https://www.just-bi.nl/just-portfolio/planning-forecast/">Business Planning &amp; Forecasting</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3726"><a href="https://www.just-bi.nl/just-portfolio/custom-development/">Custom Development</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3725"><a href="https://www.just-bi.nl/just-portfolio/information-management/">Information Management</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3646"><a href="https://www.just-bi.nl/just-portfolio/data-science/">Advanced Analytics</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1695"><a href="https://www.just-bi.nl/people/">People</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3857"><a href="https://www.just-bi.nl/just-team/">Just-Team</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3865"><a href="https://www.just-bi.nl/careers/">Join our Just-Team</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1934"><a href="https://www.just-bi.nl/newsroom/">Newsroom</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3729"><a href="https://www.just-bi.nl/category/news/">News</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3728"><a href="https://www.just-bi.nl/category/blog-posts/">Blog Posts</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3731"><a href="https://www.just-bi.nl/category/articles/">Articles</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3730"><a href="https://www.just-bi.nl/category/reviews/">Reviews</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3727"><a href="https://www.just-bi.nl/category/tutorials/">Tutorials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5413"><a href="https://www.just-bi.nl/contactus/">Contact Us</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1759"><a href="https://www.just-bi.nl/contactus/contactnl/">Contact-Netherlands</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5420"><a href="https://www.just-bi.nl/contactus/contact-malaysia/">Contact-Malaysia</a></li>
+</ul>
+</li>
+</ul></nav> </div>
+</footer>
+<script async="">(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='f4ab0f007b5a9f00d74c0f000a81f7001940cf00252b64005849a00067419300';j.dataset.sumoPlatform='wordpress';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script> <script type="application/javascript">
+      var ajaxurl = "//www.just-bi.nl/wp-admin/admin-ajax.php";
+
+      function sumo_add_woocommerce_coupon(code) {
+        jQuery.post(ajaxurl, {
+          action: 'sumo_add_woocommerce_coupon',
+          code: code,
+        });
+      }
+
+      function sumo_remove_woocommerce_coupon(code) {
+        jQuery.post(ajaxurl, {
+          action: 'sumo_remove_woocommerce_coupon',
+          code: code,
+        });
+      }
+
+      function sumo_get_woocommerce_cart_subtotal(callback) {
+        jQuery.ajax({
+          method: 'POST',
+          url: ajaxurl,
+          dataType: 'html',
+          data: {
+            action: 'sumo_get_woocommerce_cart_subtotal',
+          },
+          success: function(subtotal) {
+            return callback(null, subtotal);
+          },
+          error: function(err) {
+            return callback(err, 0);
+          }
+        });
+      }
+    </script>
+
+<script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', UA-86482906-1, 'auto');
+            ga('send', 'pageview');
+        </script>
+
+<script type="text/javascript">function showhide_toggle(a,b,d,f){var e=jQuery("#"+a+"-link-"+b),c=jQuery("a",e),g=jQuery("#"+a+"-content-"+b);a=jQuery("#"+a+"-toggle-"+b);e.toggleClass("sh-show sh-hide");g.toggleClass("sh-show sh-hide").toggle();"true"===c.attr("aria-expanded")?c.attr("aria-expanded","false"):c.attr("aria-expanded","true");a.text()===d?a.text(f):a.text(d)};</script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/superfish.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/jquery_009.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/velocity.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var ThemeData = {"admin_url":"https:\/\/www.just-bi.nl\/wp-admin\/admin-ajax.php","directory_uri":"https:\/\/www.just-bi.nl\/wp-content\/themes\/churchope"};
+var Theme_i18n = {"wrong_connection":"Something going wrong with connection...","error_author":"Please specify your name.","error_comment":"Please enter your message.","error_email_wrong":"Your email address must be in the format of name@domain.com","error_email_required":"We need your email address to contact you."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/script.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var cnArgs = {"ajaxurl":"https:\/\/www.just-bi.nl\/wp-admin\/admin-ajax.php","hideEffect":"fade","onScroll":"no","onScrollOffset":"100","cookieName":"cookie_notice_accepted","cookieValue":"true","cookieTime":"604800","cookiePath":"\/","cookieDomain":"","redirection":"","cache":"1","refuse":"no","revoke_cookies":"0","revoke_cookies_opt":"automatic","secure":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/front.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/imagesloaded.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/masonry.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var dportfolio_data = {"thumbnails_gutter":"20"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/frontend.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/effect.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/effect-slide.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/effect-highlight.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/effect-fold.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/effect-blind.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/bg-show-hide.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var DialogContactForm = {"ajaxurl":"https:\/\/www.just-bi.nl\/wp-admin\/admin-ajax.php","nonce":"372817729b","selector":".dcf-form","fieldClass":".dcf-has-error","errorClass":".dcf-error-message","loadingClass":".is-loading","submitBtnClass":".dcf-submit","spam_message":"One or more fields have an error. Please check and try again.","mail_sent_ok":"Thank you for your message. It has been sent successfully.","mail_sent_ng":"There was an error trying to send your message. Please try again later.","validation_error":"One or more fields have an error. Please check and try again.","generic_error":"The value you entered for this field is invalid.","invalid_required":"Please fill out this field.","required_select":"Please choose a value.","required_select_multi":"Please choose at least one value.","required_checkbox":"Please check this field.","invalid_too_long":"Please shorten this text to no more than {maxLength} characters. You are currently using {length} characters.","invalid_too_short":"Please lengthen this text to {minLength} characters or more. You are currently using {length} characters.","number_too_small":"Please select a value that is no less than {min}.","number_too_large":"Please select a value that is no more than {max}.","invalid_email":"Please enter an email address.","invalid_url":"Please enter an URL.","invalid_number":"Please enter a number.","invalid_date":"Please enter a date.","invalid_ip":"Please enter an IP address.","invalid_recaptcha":"Please check the checkbox.","step_mismatch":"Please select a valid value.","pattern_mismatch":"Please match the requested format.","bad_input":"Please enter a number.","file_generic_error":"Unknown upload error.","required_file":"Please upload a file.","required_file_multi":"Please upload at least one file.","unsupported_file_multi":"Multiple files are not allowed.","file_too_large":"Please upload a file no more than {maxSize}.","invalid_file_format":"File format is invalid."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/form.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/wp-embed.js"></script>
+<script type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/jquery_003.js"></script>
+<script async="async" type="text/javascript" src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/form_002.js"></script>
+<div id="cookie-notice" role="banner" class="cn-bottom wp-default" style="color: #271b1d; background-color: #ffffff;"><div class="cookie-notice-container"><span id="cn-notice-text">We
+ use cookies to ensure that we give you the best experience on our 
+website. If you continue to use this site we will assume that you are 
+happy with it. If you want to disable cookies please change this in your
+ browser settings. Please also refer to our Privacy Statement.</span><a href="#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie cn-button wp-default button">Ok</a><a href="https://www.just-bi.nl/privacy-statement-just-bi/%20" target="_blank" id="cn-more-info" class="cn-more-info cn-button wp-default button">Read more</a>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<iframe style="display: none;" id="sumome-jquery-iframe" title="Sumo Hidden Content"></iframe><a href="javascript:void(0);" title="Sumo" style="background-color: rgb(0, 115, 183); border-radius: 3px 0px 0px 3px; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 10px; position: fixed; display: none !important; z-index: 2147483647; padding: 0px; width: 44px; height: 40px; text-indent: -10000px; opacity: 1;"><span style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">Sumo</span><span style="display:block;width:40px;height:40px;background:white;margin-left:4px;-webkit-border-radius: 3px 0 0 3px;-moz-border-radius: 3px 0 0 3px;-ms-border-radius: 3px 0 0 3px;-o-border-radius: 3px 0 0 3px;border-radius: 3px 0 0 3px;background-repeat:no-repeat;background-position:8px 8px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxZDQ2MjI4YS03NWY2LTRkZTQtOGJjYy1hODc1NjRkMjYxYTUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDQ3MUVFMDFFMjVDMTFFNjlFQjhBRjdGODU5MDJBMDUiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDQ3MUVFMDBFMjVDMTFFNjlFQjhBRjdGODU5MDJBMDUiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxZDQ2MjI4YS03NWY2LTRkZTQtOGJjYy1hODc1NjRkMjYxYTUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MWQ0NjIyOGEtNzVmNi00ZGU0LThiY2MtYTg3NTY0ZDI2MWE1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+8JtvywAAAKhQTFRFzOPxSJvLA3W4Mo7FBna5w97u8vj7EHy8a67VhbzdsdTpVaLPh73d9/v9C3m6QZfJbq/WXKbR3u32JIfB3ez1KorDir/eBHW4+/3+rtPoZarUG4K/LIvDDnu7ocvkf7nbdrTY9fr8E328WKPQO5PITJ3MPpXJstXptdbq+Pv9cbHXaq3VU6HOkMLgnMnjDHq62uv1/P3+6/T53Oz1cLDX/f7+AHO3////ptOZ5QAAADh0Uk5T/////////////////////////////////////////////////////////////////////////wA7XBHKAAAAmUlEQVR42sSRRxLCMAxFRSq9907ovebr/jdDMWYGxmZL3sIqbyFbJv4B/VlkVlerKALTD3G46Mx3AOR1UZ/TsDxW6W0gfYRNVfTCFu2AWpAMgMItMW+zQJU2UjWI29D0+e5KWNPMk+A9Om+B/UgOJyCuwMJCrpuziYkIsglfRByZ/XM3eXnBFEu1kpMpjq9dxQYp/OAXTwEGAB7Rc1xVnPemAAAAAElFTkSuQmCC);"></span></a><iframe style="display: none;"></iframe><div style="position:fixed;top:0;left:0;overflow:hidden;"><label for="focus_retriever" style="position:absolute;left:-1000px;">Focus Retriever</label><input style="position:absolute;left:-1000px;" name="focus_retriever" id="focus_retriever" readonly="true" type="text"></div><div class="sumome-image-sharer" style="width: 40px; height: 120px; top: 7185.62px; left: 495px; position: absolute; display: block;"><a href="javascript:void(0);" class="sumome-image-sharer-facebook sumome-image-sharer-vertical" style="border-radius: 3px 3px 0px 0px; border-width: 2px 2px 0px;"><div></div></a><a href="javascript:void(0);" class="sumome-image-sharer-twitter sumome-image-sharer-vertical" style="border-radius: 0px; border-width: 0px 2px;"><div></div></a><a href="javascript:void(0);" class="sumome-image-sharer-pinterest sumome-image-sharer-vertical" style="border-radius: 0px 0px 3px 3px; border-width: 0px 2px 2px;"><div></div></a></div><div class="sumome-share-client-wrapper sumome-share-client-wrapper-left-page sumome-share-client-light sumome-share-client-small" style="top: 247px;"><div class="sumome-share-client-show"><span></span></div><div data-sumome-share-pos="lp" class="sumome-share-client sumome-share-client-left-page sumome-share-client-light sumome-share-client-small sumome-share-client-circle"><a title="LinkedIn" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="linkedin" href="javascript:void(0);" style="background: rgb(0, 123, 182) none repeat scroll 0% 0%; color: rgb(255, 255, 255);"><img src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/linkedin-white-60.png" alt="LinkedIn"></a><a title="Twitter" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="twitter" href="javascript:void(0);" style="background: rgb(0, 172, 237) none repeat scroll 0% 0%; color: rgb(255, 255, 255);"><img src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/twitter-white-60.png" alt="Twitter"></a><a title="Facebook" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="facebook" href="javascript:void(0);" style="background: rgb(59, 89, 152) none repeat scroll 0% 0%; color: rgb(255, 255, 255);"><img src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/facebook-white-60.png" alt="Facebook"></a><a title="Google+" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="googleplus" href="javascript:void(0);" style="background: rgb(221, 75, 57) none repeat scroll 0% 0%; color: rgb(255, 255, 255);"><img src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/googleplus-white-60.png" alt="Google+"></a><a title="SumoMe" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="sumome" href="javascript:void(0);" style="background: rgb(15, 82, 186) none repeat scroll 0% 0%; color: rgb(255, 255, 255);"><img src="How%20to%20go%20Virtual%20in%20BW%20Part%20I%20%20The%20Open%20ODS%20View_files/sumome-white-60.png" alt="SumoMe"></a></div><div class="sumome-share-client-hide"><span></span></div></div></body></html>

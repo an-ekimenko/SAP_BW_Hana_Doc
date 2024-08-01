@@ -1,0 +1,53 @@
+
+/* custom footer */
+.footer-body #poweredby {
+    display: none!important;
+}
+.footer-body #footer-logo {
+    display: none!important;
+}
+#footer>.footer-body>.license {
+    display: none!important;
+}
+#footer .footer-body,
+#footer-logo a {
+    background-image: none!important;
+}
+/* override existing rules, add custom  */
+
+#footer .footer-body {
+    padding: 0 10px 0px 10px!important;
+    min-height: 0px!important;
+}
+#footer .sap-footer>ul {
+    display: block;
+    list-style: none;
+}
+#footer .sap-footer>ul>li {
+    display: inline-block;
+    font-size: 12px;
+    white-space: nowrap;
+    margin-right: 0.75rem;
+}
+#footer .sap-footer>ul>li a {
+    font-size: 0.75rem;
+    font-family: "SAPRegular", "Helvetica Neue", Arial, sans-serif;
+    color: #000;
+    font-weight: 400;
+}
+#footer .sap-footer>ul>li a:visited {
+    color: #000;
+}
+#footer .sap-footer>ul>li a:focus {
+    text-decoration: underline;
+}
+/* end custom footer */
+
+/*  EC-5891 + EWU-565 hide 'Share with groups' option from the share panel. */
+#inline-dialog-shareContentPopup  > div.aui-inline-dialog-contents.contents > form >*:not(:nth-child(1)):not(:nth-child(2)),
+#inline-dialog-inviteToEditPopup  > div.aui-inline-dialog-contents.contents > form >*:not(:nth-child(1)):not(:nth-child(2))  {
+     display: none;
+}
+
+
+

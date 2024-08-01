@@ -1,0 +1,185 @@
+<!--?xml version="1.0" encoding="UTF-8"?-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="abstract" content="">
+<meta name="description" content="">
+<meta name="LOIO.FOLDER.IWB_FOLDER_ID" content="4A11606A9D131B41E10000000A42189C">
+<meta name="LOIO.FOLDER.IWB_TECH_NAME" content="HELPX.BW_OLAP">
+<meta name="LOIO.FOLDER.IWB_FOLDER_GROUP" content="BW_ABAP">
+<meta name="LOIO.FOLDER.IWB_SHH_KEY" content="00022113">
+<meta name="LOIO.FOLDER.IWB_TRANSLATION_MEMORY" content="">
+<meta name="LOIO.FOLDER.TERM_DOMAIN" content="BW">
+<meta name="LOIO.IWB_TYPE" content="ICP">
+<meta name="LOIO.IWB_SHH_KEY" content="">
+<meta name="LOIO.KW_CONVREF.CLASS" content="">
+<meta name="LOIO.KW_CONVREF.OBJID" content="">
+<meta name="PHIO.IWB_INDUSTRY" content="BW_ABAP">
+<meta name="PHIO.RELEASE" content="159">
+<meta name="PHIO.CREATED_AT" content="20130130120528">
+<meta name="PHIO.LAST_CHANGED_AT" content="20130130120529">
+<meta name="PHIO.IWB_LEVEL" content="">
+
+<link rel="stylesheet" type="text/css" href="content_data/SAPDITAStyleHelpPortal.css">
+<title>Creating TransientProviders on SAP HANA Models</title>
+<!--[if lte IE 7]><style>
+      .codeblock{
+          overflow:visible;
+      }</style><![endif]-->
+<script type="text/javascript" defer="defer" async="" src="privacy.js"></script><script type="text/javascript" src="content_data/jquery-1.js"> </script><script type="text/javascript"><!-- 
+        var loops = 10; 
+        function GetLoio() { return "loio1169442974eb49aaa08ee5c225766858";
+        } 
+        function Sync() { if (parent.SAP_TOC && parent.SAP_TOC.gMenu) {parent.SAP_TOC.gMenu.SelectEntry(GetLoio()); } 
+        else if (parent != self && loops-- > 0) { window.setTimeout( "Sync()",500 ); } } 
+        Sync(); 
+
+//-->
+</script>
+
+<script>var swa = {pubToken: '718b3282-5ed7-4564-84ea-c32f7a91e7f7-uacp2',baseUrl: 'https://webanalytics.cfapps.eu10.hana.ondemand.com/tracker/',visitorCookieTimeout: 63113852,dntLevel: 1,bannerEnabled: false,owner: '221f8f84afef43d29ad37ef2af0c4adf' };function logLoioValue() {return 'saphelp_nw73';}function logVersionValue() {return '7.3.16';}function logLanguageValue() {return 'en-US';}function logTopicLoioValue() {return '11/69442974eb49aaa08ee5c225766858/content.htm';}function logStandardPath () {return window.location.protocol + '//' + window.location.host + window.location.pathname;}function logHostName () {return window.location.host;}function logProductId() {return 'SAP_NETWEAVER_730';}swa.custom1={ref:'logLoioValue'};swa.custom2={ref:'logVersionValue'};swa.custom3={ref:'logLanguageValue'};swa.custom4={ref:'logTopicLoioValue'};swa.custom5={ref:'logStandardPath'};swa.custom6={ref:'logHostName'};swa.custom7={ref:'logProductId'};(function(){var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];g.type='text/javascript'; g.defer=true; g.async=true; g.src=swa.baseUrl+'js/privacy.js';s.parentNode.insertBefore(g,s);})(); var waitForSWA = setInterval(function() {if(swa.enable) { clearInterval(waitForSWA);swa.enable();}}, 500);</script>
+
+<script src="satelliteLib-222fcd02094fc2c0af0f935964002013aaa11660.js"></script><script src="mbox-contents-c997f7c0e4403b81734d1756e48efebc9ca34767.js"></script><style>.mboxDefault { visibility:hidden; }</style><script src="target.js"></script><script src="ip.json" type="text/javascript"></script><script src="satellite-59449a3064746d68b800aa9a.js"></script><script src="satellite-59449ab164746d6f1a00a730.js"></script>
+
+<meta name="product" content="SAP NetWeaver 7.3">
+<meta name="version" content="SPS16">
+<meta name="language" content="en-US">
+<meta name="contenthash" content="e8221ea8ddfd5255775c0574a10014a6927306243a31c8e4993feedce98921770041692be9e6dd876c8488a6c878c8975e3a6c0bb50c3b34a0d5e9e5235a02a9">
+<meta name="contentloio" content="saphelp_nw73">
+<meta name="created_timestamp" content="2016-11-25 16:06.57">
+<meta name="updated_timestamp" content="2016-11-25 10:00.00">
+<link rel="canonical" href="https://help.sap.com/doc/saphelp_nw73/7.3.16/en-US/11/69442974eb49aaa08ee5c225766858/content.htm">
+</head>
+<body class="" id="loio1169442974eb49aaa08ee5c225766858">
+<div id="wrapper"><div id="container">
+<h1 class="title topictitle1">Creating TransientProviders on SAP HANA Models<a xmlns:sapfunc="http://www.sap.com/2013/DITA/Transform" xmlns:fn="http://www.w3.org/2005/xpath-functions" href="https://help.sap.com/saphelp_nw73/helpdata/en/11/69442974eb49aaa08ee5c225766858/frameset.htm" target="_top"><img alt="Locate this document in the navigation structure" class="refreshIcon" src="content_data/locate.gif" title="Locate this document in the navigation structure"></a></h1>
+<div class="body taskbody"><p class="shortdesc">
+</p><div class="section context"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Context</h2></div>
+         <p class="p">You can create a TransientProvider by publishing 
+SAP HANA models in the BW system. The SAP HANA models published in the 
+BW system are saved as an analytic index. This represents a view of the 
+data in the SAP HANA model.
+</p>
+
+         <p class="p">A TransientProvider is generated on this analytic 
+index. A TransientProvider based on an SAP HANA model is suitable for ad
+ hoc data or scenarios that change frequently.
+</p>
+
+         <p class="p">These TransientProviders can then be linked to 
+other BW InfoProviders in a CompositeProvider. This enables you to 
+combine ad-hoc data with consolidated data from the BW system and also 
+use the OLAP functions of the BW system for analysis. If the SAP HANA 
+model is changed, the analytic index is adjusted automatically at 
+runtime.
+</p>
+
+         <div class="note note"><span class="notetitle">Note</span> 
+            <p class="p">A TransientProvider on an SAP HANA model cannot be used as a data target in Analysis Process Designer.
+</p>
+
+         </div>
+
+         <p class="p">An analytic index created as described above is also displayed in the analytic index overview. More information: <a class="xref" href="https://help.sap.com/saphelp_nw73/helpdata/en/8d/9bdcb2b5e04772b727baaa1405e10f/frameset.htm" title="" target="_top">Managing Analytic Indexes</a>
+</p>
+
+         <p class="p">To publish an SAP HANA model in the BW system, the
+ system reads the structure of the SAP HANA model from the SAP HANA 
+database. The BW system applies the structure to an analytic index. 
+Models from any schema can be used here. The system automatically maps 
+the authorizations from <span class="ph pname">SAP HANA</span> to the BW analysis authorizations:
+</p>
+
+         <p class="p">In the SAP HANA database, analytic privileges are 
+used to define which users are allowed to view which data records for 
+analysis purposes. Analytic privileges are handled as filters for 
+database queries. Users only see the data for which they have an 
+analytic privilege. In BW, however, authorizations do not work as 
+filters. Here, users can only execute a query if their analysis 
+authorizations completely cover the relevant selection. If this is not 
+the case, an error message is displayed. Analytic privileges are 
+persisted on the BW system and in the SAP HANA database.
+</p>
+
+         <p class="p">To publish SAP HANA models on the BW system, a generic R/3 user needs complete authorization for the SAP HANA model.
+</p>
+
+         <p class="p">The user specified in the BW system is used for 
+read-only access during the execution of a query. The analytic 
+privileges of this user are checked in the SAP HANA model. The analysis 
+authorizations are also checked in the BW system when an InfoObject is 
+assigned. If a TransientProvider characteristic has restrictions on 
+analytic privileges and on analysis authorizations, the conditions are 
+joined using <span class="ph uicontrol">Union</span>.
+</p>
+
+         <div class="note note"><span class="notetitle">Note</span> 
+            <p class="p">The BW database user is always used every time 
+the SAP HANA database is accessed. The BW database user and the BW user 
+must be identical (1:1 user mapping), so that the analytic privileges of
+ a BW database user can be mapped to the virtual analysis authorizations
+ of a BW system user.
+</p>
+
+         </div>
+
+         <p class="p">More information:
+</p>
+
+         <p class="p"><a class="xref" href="https://help.sap.com/saphelp_nw73/helpdata/en/4c/65fcd82f841f3ce10000000a42189c/frameset.htm" title="" target="_top">Analysis Authorizations</a>
+</p>
+
+         <p class="p"><a class="xref" href="https://help.sap.com/saphelp_nw73/helpdata/en/4c/68c57cfbb208c0e10000000a42189c/frameset.htm" title="" target="_top">BAdI for Virtual Analysis Authorizations</a>
+</p>
+
+         <p class="p">For more information about analytical privileges, see <a class="xref" href="http://help.sap.com/hana" target="_blank" alt="http://help.sap.com/hana" title="http://help.sap.com/hana">http://help.sap.com/hana</a> in the <span class="ph pname">SAP HANA</span> Database Security Guide.
+</p>
+
+      </div><div class="tasklabel"><h2 class="sectiontitle tasklabel">Procedure</h2></div><ol class="ol steps"><li class="li step stepexpand"><span class="ph cmd">Run transaction RSDD_HM_PUBLISH.</span><div class="itemgroup info"></div></li>
+<li class="li step stepexpand"><span class="ph cmd">Select an SAP HANA model. The SAP HANA model is uniquely identifiable from the catalog that it is located in.</span><div class="itemgroup info"></div></li>
+<li class="li step stepexpand"><span class="ph cmd">Choose <img class="image" src="content_data/loio58cb165007914e5ca2a0734ac628a95d_LowRes.png"><span class="ph uicontrol">Create</span>.</span><div class="itemgroup info"></div></li>
+<li class="li step stepexpand"><span class="ph cmd">The system uses the 
+name of the SAP HANA model to generate a proposal for the name of the 
+analytic index to be created. You can change this name. Choose <img class="image" src="content_data/loioc5340ad8f5564cf0aff2a6f12fc5460a_LowRes.png"><span class="ph uicontrol">Continue</span>. The definition of the analytic index is displayed.</span><div class="itemgroup info"></div></li>
+<li class="li step stepexpand"><span class="ph cmd">On the <span class="ph uicontrol">Properties</span> tab page, you can assign an InfoArea to the analytic index.</span><div class="itemgroup info"></div></li>
+<li class="li step stepexpand"><span class="ph cmd">On the <span class="ph uicontrol">Characteristics</span> and <span class="ph uicontrol">Key Figures</span>
+ tab pages, you can assign BW InfoObjects to the fields. This means the 
+metadata (of characteristics and key figures) on the flat view of the 
+data is turned into a multidimensional view. The attributes of the 
+referenced InfoObject are then displayed in the query. However, these 
+attributes cannot be used as navigation attributes. It also means the 
+authorizations on these InfoObjects are taken into account. SID are 
+created for any master data values that do not exist in the BW system. 
+Check/decide whether this is required.</span><div class="itemgroup info"><div class="note note"><span class="notetitle">Note</span> <p class="p">The
+ data types of the SAP HANA model must match the data types of the 
+InfoObject. Otherwise, no data is displayed (due to the consistency 
+checks).
+</p>
+</div>
+</div></li>
+<li class="li step stepexpand"><span class="ph cmd">Choose <img class="image" src="content_data/loio19eb1772fd1746f28160d899892da9f6_LowRes.png"><span class="ph uicontrol">Save</span>.
+ The analytic index is created, and the TransientProvider is generated. 
+It is given a generated name in the following format 
+@3&lt;Name_Analytic_Index&gt;. The InfoObjects are given a generic name 
+following the pattern &lt;Providername&gt;@&lt;column_name/alias&gt;.</span><div class="itemgroup info"></div></li>
+</ol>
+<div class="section result"><div class="tasklabel"><h2 class="sectiontitle tasklabel">Results</h2></div>
+         <p class="p">You can use the analytic index in CompositeProviders.
+</p>
+
+      </div></div>
+</div></div>
+
+
+<script> try { 
+var trackingData = {};
+trackingData.pageUrl = location.href
+trackingData.pageName = "Creating TransientProviders on SAP HANA Models"
+trackingData.prop2 = "en-US"
+trackingData.prop9 = "logN"
+trackingData.channel = "SAP_NETWEAVER_730:saphelp_nw73"
+sap_s.trackData(trackingData); 
+}catch(e){console.log(e);} </script>
+<script> try{_satellite.pageBottom();}catch(e){console.log(e);} </script><script src="content_data/satellite-5b89869364746d2cea00bef9.js"></script><script src="content_data/satellite-59449bb364746d56ee00b9c4.js"></script><iframe sandbox="allow-scripts allow-same-origin" title="Adobe ID Syncing iFrame" id="destination_publishing_iframe_sap_0" name="destination_publishing_iframe_sap_0_name" style="display: none; width: 0px; height: 0px;" src="content_data/dest5.htm" class="aamIframeLoaded"></iframe>
+
+<script type="text/javascript" defer="defer" async="" src="piwik.js"></script><script type="text/javascript" defer="defer" async="" src="piwik_plugin.js"></script></body></html>

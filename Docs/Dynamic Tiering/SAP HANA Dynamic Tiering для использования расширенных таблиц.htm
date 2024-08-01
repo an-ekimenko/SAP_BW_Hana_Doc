@@ -1,0 +1,2105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>SAP HANA Dynamic Tiering для использования расширенных таблиц / Авторские колонки / База знаний / SAPLand — Мир решений SAP</title>
+<meta name="keywords" content="SAP HANA Функциональные возможности SAP HANA, Functionality of SAP HANA, SAP HANA, SAP HANA, SAP Консультант, Consultant">
+<meta name="description" content="Для внедрения стратегии multi-temperature в рамках SAP BW может использоваться концепция расширенных таблиц с технологией SAP HANA Dynamic Tiering. Эта концепция позволяет хранить «теплые» данные  в расширенных таблицах, управление которыми осуществляет SAP HANA. Это позволяет оптимизировать использование основной памяти в SAP HANA.
+Находящиеся в хранилище данные разбиваются на три категории с учетом частоты доступа к ним: «горячие», «теплые», «холодные». В хранилище данных также имеют место различные профили использования данных, которые соотносятся с указанной классификацией по частоте доступа. Температурная Стратегия multi-temperature, применяющаяся в организации, определяет (в зависимости от частоты доступа к данным и соответственно их использованию) какие участки памяти задействуются для хранения данных.">
+
+	<meta property="og:url" content="http://sapland.ru/material/13917/">
+<meta property="og:title" content="SAP HANA Dynamic Tiering для использования расширенных таблиц">
+<meta property="og:image" content="http://sapland.ru/files/materials/picture/17/prr.png">
+<meta property="og:description" content="Для внедрения стратегии multi-temperature в рамках SAP BW может использоваться концепция расширенных таблиц с технологией SAP HANA Dynamic Tiering. Эта концепция позволяет хранить «теплые» данные  в расширенных таблицах, управление которыми осуществляет SAP HANA. Это позволяет оптимизировать использование основной памяти в SAP HANA.
+Находящиеся в хранилище данные разбиваются на три категории с учетом частоты доступа к ним: «горячие», «теплые», «холодные». В хранилище данных также имеют место различные профили использования данных, которые соотносятся с указанной классификацией по частоте доступа. Температурная Стратегия multi-temperature, применяющаяся в организации, определяет (в зависимости от частоты доступа к данным и соответственно их использованию) какие участки памяти задействуются для хранения данных.">
+
+	<meta charset="UTF-8">
+	<!--[if lt IE 7]>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>        <![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://sapland.ru/rss/">
+	<link href="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/css.css" rel="stylesheet" type="text/css">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://sapland.ru/os/appearances/sapland-2014/shared/fav/apple-touch-icon-144x144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://sapland.ru/os/appearances/sapland-2014/shared/fav/apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://sapland.ru/os/appearances/sapland-2014/shared/fav/apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="https://sapland.ru/os/appearances/sapland-2014/shared/fav/apple-touch-icon-precomposed.png">
+
+	<link type="text/css" rel="stylesheet" href="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/25489769721b7bcea755cff180f83f71.css">
+	<link type="text/css" rel="stylesheet" href="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/d41d8cd98f00b204e9800998ecf8427e.css">
+	<link type="text/css" rel="stylesheet" href="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/b1bf2769d1417965bffa030887f7d637.css">
+	<link type="text/css" rel="stylesheet" href="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/d41d8cd98f00b204e9800998ecf8427e.css">
+	<link type="text/css" rel="stylesheet" href="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/80815141de3651f8c6553c7f2cfd03b9.css">
+	<link type="text/css" rel="stylesheet" href="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/fdf4ca7cffa5375cd4eb7bd3e8334146.css" media="print"><link type="text/css" rel="stylesheet" href="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/jquery.css"><link type="text/css" rel="stylesheet" href="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/jquery_002.css"><link type="text/css" rel="stylesheet" href="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/user-profile.css">
+
+	
+	
+	
+	
+	
+
+	
+
+	
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="/os/js/ie/html5.js"></script><![endif]-->
+
+	
+
+			<script type="text/javascript" async="" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/tag.js"></script><script type="text/javascript" async="" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/ga.js"></script><script src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/cbgapi.loaded_0" async=""></script><script src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/jquery.js"></script>
+		<script src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/jquery-migrate.js"></script>
+	
+	<script type="text/javascript" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/jquery_006.js"></script>
+	<script type="text/javascript" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/jquery-ui.js"></script>
+
+	<!-- /os/js/js.js --><script type="text/javascript">window.js = {
+	rootUrl     : "/os/js/",
+	styleRootUrl: "/os/css/",
+
+	loadedModules: {},
+	addedCss     : {},
+
+	/**
+	 * @deprecated Используйте require
+	 * @param path
+	 */
+	include: function (path) {
+		if (this.loadedModules[path]) {
+			return;
+		}
+
+		os.error("Warning! Used js.include('" + path + "')", true);
+
+		var js = this;
+
+		$.ajax({
+			url     : this.rootUrl + path,
+			async   : false,
+			dataType: "text",
+			cache   : true,
+			success : function (data) {
+				// noinspection WithStatementJS
+				with (window) {
+					eval(data);
+				}
+				js.module(path);
+			}
+		});
+	},
+
+	module: function (path) {
+		this.loadedModules[path] = true;
+	},
+
+	css: function (path) {
+		if (this.addedCss[path]) {
+			return;
+		}
+
+		var $link = $("<link/>").attr("type", "text/css").attr("rel", "stylesheet").attr("href",
+			this.styleRootUrl + path);
+		$("head link:last").after($link);
+
+		this.addedCss[path] = true;
+	}
+};
+
+if (RegExp.quote === undefined) {
+	RegExp.quote = function (str) {
+		return (str + "").replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
+	};
+}
+
+Number.prototype.numberFormat = function (_c, _d, _t) {
+	var j;
+	var n = this,
+		c = isNaN(_c = Math.abs(_c)) ? 2 : _c,
+		d = _d === undefined ? "." : _d,
+		t = _t === undefined ? "," : _t,
+		s = n < 0 ? "-" : "",
+		i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "";
+
+	j = (j = i.length) > 3 ? j % 3 : 0;
+
+	return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+};
+
+if (!("keys" in Object)) {
+	Object.prototype.keys = function (data) {
+		var keys = [];
+		for (var prop in data) {
+			if (data.hasOwnProperty(prop)) {
+				keys.push(prop);
+			}
+		}
+		return keys;
+	};
+}
+
+// attach the .equals method to Array's prototype to call it on any array
+Array.prototype.equals = function (array) {
+	if (!array) {
+		return false;
+	}
+
+	// compare lengths - can save a lot of time
+	if (this.length !== array.length) {
+		return false;
+	}
+
+	for (var i = 0, l = this.length; i < l; i++) {
+		// Check if we have nested arrays
+		if (this[i] instanceof Array && array[i] instanceof Array) {
+			// recurse into the nested arrays
+			if (!this[i].equals(array[i])) {
+				return false;
+			}
+		}
+		else if (this[i] !== array[i]) {
+			// Warning - two different object instances will never be equal: {x:20} != {x:20}
+			return false;
+		}
+	}
+	return true;
+};</script>
+	<script type="text/javascript" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/os_002.js"></script>
+	<script type="text/javascript">
+		os.seed       = 122;
+		os.debug_mode = 0;
+	</script>
+
+		<script type="text/javascript">
+		document.write("<scr" + "ipt type=\"text/javascript\" src=\"https://apis.google.com/js/plusone.js\">{lang: \"ru\"}</" + "script>");
+	</script><script type="text/javascript" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/plusone.js" gapi_processed="true">{lang: "ru"}</script>
+
+	<meta name="google-site-verification" content="K5eZ_X5skEJE3PK9tq-lyMUqUGHTx7v46KQQZUc-TYM">
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(["_setAccount", "UA-28264801-1"]);
+		_gaq.push(["_trackPageview"]);
+		_gaq.push(["_trackPageLoadTime"]);
+
+		(function () {
+			var ga   = document.createElement("script");
+			ga.type  = "text/javascript";
+			ga.async = true;
+			ga.src   = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+			var s    = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+		(function (d, w, c) {
+			(w[c] = w[c] || []).push(function () {
+				try {
+					w.yaCounter1375405 = new Ya.Metrika2({
+						id                 : 1375405,
+						clickmap           : true,
+						trackLinks         : true,
+						accurateTrackBounce: true,
+						webvisor           : true,
+						trackHash          : true
+					});
+				}
+				catch (e) {
+				}
+			});
+
+			var n   = d.getElementsByTagName("script")[0],
+				s   = d.createElement("script"),
+				f   = function () {
+					n.parentNode.insertBefore(s, n);
+				};
+			s.type  = "text/javascript";
+			s.async = true;
+			s.src   = "https://mc.yandex.ru/metrika/tag.js";
+
+			if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f, false);
+			}
+			else {
+				f();
+			}
+		})(document, window, "yandex_metrika_callbacks2");
+	</script>
+	<noscript>
+		<div><img src="https://mc.yandex.ru/watch/1375405" style="position:absolute; left:-9999px;" alt=""/></div>
+	</noscript>
+	<!-- /Yandex.Metrika counter -->
+
+
+	<script src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/require.js"></script>
+	<script src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/require-config.js"></script>
+	<script>
+		require.config({
+			urlArgs: String(122)
+		});
+	</script>
+
+	<script type="text/javascript" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/common.js"></script>
+	<script type="text/javascript" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/print-button.js"></script><script type="text/javascript" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/like.js"></script><script type="text/javascript" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/main-drop-down.js"></script><script type="text/javascript" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/user-plate.js"></script><script type="text/javascript" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/materials-list.js"></script><script type="text/javascript" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/slide.js"></script>
+
+	
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery/plugins/os.dd-menu/drop-down-menu" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/drop-down-menu.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="../appearances/sapland-2012/users/widgets/user-profile" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/user-profile.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery/plugins/bsmselect/jquery.bsmselect" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/jquery_003.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery/plugins/os.nice-tables" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/os.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery-qtip" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/jquery_002.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="../lib/qtip2/jquery.qtip.min" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/jquery_005.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery/plugins/bsmselect/jquery.bsmselect.sortable" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/jquery_004.js"></script></head>
+
+<body>
+<div class="wrap">
+	<div class="wrap2">
+		<div class="top-banner" style="display: none;"><div><span class="close-ico"></span></div></div>
+	<script>
+		(function () {
+			var $topBanner = $(".top-banner");
+			if ($topBanner.find("img").length === 0)
+			{
+				$topBanner.hide();
+			}
+			else
+			{
+				$(function () {
+					$topBanner.find(".close-ico").click(function () {
+						var cookieId     = "hide_banners";
+						var hide_banners = ($.cookie(cookieId) || "").split(",");
+						var banner_id    = Number($(this).prev().find("img").data("id"));
+
+						var is = false;
+
+						$.each(hide_banners, function (i) {
+							if (Number(hide_banners[i]) === banner_id) is = true;
+						});
+						if (!is)
+						{
+							hide_banners.push(banner_id);
+						}
+						$.cookie(cookieId, hide_banners.join(","), {expires: 365, path: "/"});
+						$topBanner.hide();
+					});
+				});
+			}
+		})();
+	</script>
+
+		<div class="head">
+			<div class="head2 noprint">
+				
+<div class="nav1">
+		<ul>
+		<li><a href="https://sapland.ru/kb/articles/spj/"><img alt="SPJ" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/nav1_02.png"></a></li>
+		<li><a href="https://sapland.ru/kb/articles/stats/"><img alt="Сапёр" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/nav1_03.png"></a></li>
+		<li><a href="https://sapland.ru/kb/articles/experts/"><img alt="SAP experts" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/nav1_04.png"></a></li>
+		<li><a href="https://sapland.ru/books/sap-press/"><img alt="SAP Press" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/nav1_06.png"></a></li>
+	</ul>
+</div>
+				
+<div class="site-logo">
+		<a href="https://sapland.ru/"></a>
+		<p>
+		Интернет проект<br> SAP Professional Journal Россия
+	</p>
+</div>
+				<div class="nav2">
+					
+<!--noindex-->
+<div class="search drop-down-h">
+	<p class="se-t">Поиск</p>
+	<div class="search-drop">
+		<h3>Расширенный поиск знаний</h3>
+		<form action="/search/" method="get">
+			<div class="shb">
+				<p class="sh">Найти страницы, которые содержат...</p>
+				<table>
+					<tbody><tr>
+						<td><p class="sh2">Точную формулировку или фразу:</p>
+							<input name="search[exact]" type="text">
+						</td>
+						<td><p class="sh2">Все эти слова:</p>
+							<input name="search[all]" type="text">
+						</td>
+						<td><p class="sh2">Любые из этих слов:</p>
+							<input name="search[query]" type="text">
+						</td>
+					</tr>
+				</tbody></table>
+			</div>
+			<div class="shb">
+				<table>
+					<tbody><tr>
+						<td><p class="sh2">Функциональная область:</p>
+							<div class="bsmContainer" id="bsmContainer0"><select class="bsmSelect" name="bsmSelectbsmContainer0" id="bsmSelectbsmContainer0"><option value="" selected="selected">Выберите...</option><option value="775">SAP Cloud / SAP Cloud</option><option value="773">SAP HANA / SAP HANA</option><option value="774">SAP Mobility / SAP Mobility</option><option value="445">Бизнес аналитика / BI</option><option value="15">Информационные технологии / IT, Basis, ABAP</option><option value="697">Обучение / Education</option><option value="696">Поддержка / Support, Solution manager</option><option value="446">Управление взаимоотношениями с клиентами / CRM</option><option value="491">Управление документооборотом / Document Management</option><option value="13">Управление логистической сетью / SCM</option><option value="444">Управление персоналом / HR</option><option value="14">Управление проектами / Project management</option><option value="443">Управление рисками / GRC</option><option value="12">Финансы и управленческий учет / Financials</option></select><ol id="bsmListbsmContainer0" class="bsmList bsmListSortable ui-sortable"></ol><select name="dsf[areas][]" multiple="multiple" title="Выберите..." style="display: none;">
+<option value="775">SAP Cloud / SAP Cloud</option>
+<option value="773">SAP HANA / SAP HANA</option>
+<option value="774">SAP Mobility / SAP Mobility</option>
+<option value="445">Бизнес аналитика / BI</option>
+<option value="15">Информационные технологии / IT, Basis, ABAP</option>
+<option value="697">Обучение / Education</option>
+<option value="696">Поддержка / Support, Solution manager</option>
+<option value="446">Управление взаимоотношениями с клиентами / CRM</option>
+<option value="491">Управление документооборотом / Document Management</option>
+<option value="13">Управление логистической сетью / SCM</option>
+<option value="444">Управление персоналом / HR</option>
+<option value="14">Управление проектами / Project management</option>
+<option value="443">Управление рисками / GRC</option>
+<option value="12">Финансы и управленческий учет / Financials</option>
+</select></div>
+
+						</td>
+						<td><p class="sh2">Ролевое назначение:</p>
+							<div class="bsmContainer" id="bsmContainer1"><select class="bsmSelect" name="bsmSelectbsmContainer1" id="bsmSelectbsmContainer1"><option value="" selected="selected">Выберите...</option><option value="11">SAP Консультант / Consultant</option><option value="10">Ключевой пользователь / Expert</option><option value="801">Конечный пользователь / End user</option><option value="9">Руководитель / Manager</option></select><ol id="bsmListbsmContainer1" class="bsmList bsmListSortable ui-sortable"></ol><select name="dsf[roles][]" multiple="multiple" title="Выберите..." style="display: none;">
+<option value="11">SAP Консультант / Consultant</option>
+<option value="10">Ключевой пользователь / Expert</option>
+<option value="801">Конечный пользователь / End user</option>
+<option value="9">Руководитель / Manager</option>
+</select></div>
+
+						</td>
+						<td><p class="sh2">Рубрики:</p>
+							<div class="bsmContainer" id="bsmContainer2"><select class="bsmSelect" name="bsmSelectbsmContainer2" id="bsmSelectbsmContainer2"><option value="" selected="selected">Выберите...</option><option value="1">Статьи</option><option value="2">Авторские колонки </option><option value="5">Интервью</option><option value="6">Материалы мероприятий</option><option value="7">Вебинары</option><option value="10">Исследования</option><option value="8">Новости</option><option value="3">Видео</option><option value="9">Книги</option></select><ol id="bsmListbsmContainer2" class="bsmList bsmListSortable ui-sortable"></ol><select name="mview[]" multiple="multiple" title="Выберите..." style="display: none;">
+<option value="1">Статьи</option>
+<option value="2">Авторские колонки </option>
+<option value="5">Интервью</option>
+<option value="6">Материалы мероприятий</option>
+<option value="7">Вебинары</option>
+<option value="10">Исследования</option>
+<option value="8">Новости</option>
+<option value="3">Видео</option>
+<option value="9">Книги</option>
+</select></div>
+
+						</td>
+					</tr>
+				</tbody></table>
+			</div>
+			<div style="text-align: center; padding: 11px;">
+				<button type="submit">
+					<img alt="Искать" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/bu1.jpg">
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+<!--/noindex-->
+					
+<div class="shop-pls">
+        
+    <a href="https://sapland.ru/books/">Магазин</a> <a href="https://sapland.ru/basket/"><span class="icon1"></span>0<span class="icon2"></span></a>
+</div>
+				</div>
+									
+
+
+
+
+
+
+<div class="main-menu-wrap">
+	<div class="nav main-menu-h">
+		<table>
+			<tbody>
+			<tr data-hide-time="1000">
+				<td class="drop-down-h inactive">
+					<span><a class="drop-menu-link inactive" href="#" style="cursor: default;"><i></i></a></span>
+
+					<div class="drop-menu">
+						<div class="drop-menu-inner">
+							<div class="drop-main-menu">
+
+								<ul>
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=15" class="has-child">ADMIN/DEV</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=15&amp;dsf[areas][]=15">Информационные технологии / IT, Basis, ABAP</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=445" class="has-child">BI</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=445&amp;dsf[areas][]=445">Бизнес аналитика / BI</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=446" class="has-child">CRM</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=446&amp;dsf[areas][]=446">Управление взаимоотношениями с клиентами / CRM</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=697" class="has-child">EDUCATION &amp; SUPPORT</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=697&amp;dsf[areas][]=697">Обучение / Education</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=12" class="has-child">Financials</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=12&amp;dsf[areas][]=12">Финансы и управленческий учет / Financials</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=14" class="has-child">FOR CxO</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=14&amp;dsf[areas][]=14">Управление проектами/ Project management</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=444" class="has-child">HR</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=444&amp;dsf[areas][]=444">Управление персоналом / HR</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=775" class="has-child">SAP Mobility / SAP Mobility</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=775&amp;dsf[areas][]=775">SAP Cloud / SAP Cloud</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=13" class="has-child">SCM</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=13&amp;dsf[areas][]=13">Управление логистической сетью / SCM</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=773" class="has-child">TRENDING TOPICS</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=773&amp;dsf[areas][]=773">SAP HANA / SAP HANA</a>
+														</p>
+														
+													</div>
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=774&amp;dsf[areas][]=773">SAP Mobility / SAP Mobility</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=445" class="has-child">Бизнес аналитика / BI</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=445&amp;dsf[areas][]=445">Бизнес аналитика / BI</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=446" class="has-child">Управление взаимоотношениями с клиентами / CRM</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=446&amp;dsf[areas][]=446">Управление взаимоотношениями с клиентами</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=13" class="has-child">Управление логистической сетью / SCM</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=13&amp;dsf[areas][]=13">Управление логистической цепочкой</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=444" class="has-child">Управление персоналом / HR</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=444&amp;dsf[areas][]=444">SAP BusinessObjects Strategic Workforce Planning</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																																
+									<li class="drop-down-h" data-show-time="1">
+										<span><a href="https://sapland.ru/latest/?dsf[areas][]=12" class="has-child">Финансы и управленческий учет / Financials</a></span>
+																					<div class="submenu" style="display: none;">
+																									<div class="sub-col">
+														<p class="L1">
+															<a href="https://sapland.ru/latest/?dsf[areas][]=12&amp;dsf[areas][]=12">SAP Invoice Management</a>
+														</p>
+														
+													</div>
+																							</div>
+																			</li>
+
+																</ul>
+							</div>
+						</div>
+					</div>
+				</td>
+				<td class="drop-down-h">
+					<span><a href="https://sapland.ru/kb/">База знаний</a></span>
+					<div class="drop-menu" style="display:none">
+						<div class="drop-main-menu">
+							
+<ul><li class="drop-down-h" data-show-time="1"><span><a href="https://sapland.ru/kb/articles/" class="has-child">Статьи</a></span><div class="submenu" style="display: none;"><div class="sub-col"><p class="L1"><a href="https://sapland.ru/kb/articles/spj/">SPJ Россия</a></p></div><div class="sub-col"><p class="L1"><a href="https://sapland.ru/kb/articles/stats/">Сапёр</a></p></div><div class="sub-col"><p class="L1"><a href="https://sapland.ru/kb/articles/experts/">SAP Experts</a></p></div></div></li><li><span><a href="https://sapland.ru/kb/blogs/">Авторские колонки</a></span><div></div></li><li><span><a href="https://sapland.ru/kb/interview/">Интервью</a></span><div></div></li><li><span><a href="https://sapland.ru/kb/materials-of-events/">Материалы мероприятий</a></span><div></div></li><li><span><a href="https://sapland.ru/kb/webinars/">Вебинары</a></span><div></div></li><li><span><a href="https://sapland.ru/kb/research/">Исследования</a></span><div></div></li><li><span><a href="https://sapland.ru/kb/goldenhistory/">Истории успеха</a></span><div></div></li></ul>
+						</div>
+					</div>
+				</td>
+				<td class="drop-down-h">
+					<span><a href="https://sapland.ru/courses/">Курсы и тренинги</a></span>
+					<div class="drop-menu" style="display:none">
+						<div class="drop-main-menu">
+							
+<ul><li><span><a href="https://sapland.ru/courses/events/">Календарь мероприятий</a></span><div></div></li><li><span><a href="https://sapland.ru/courses/for-order/">Мероприятия под заказ</a></span><div></div></li><li><span><a href="https://sapland.ru/courses/companies/">Обучающие компании</a></span><div></div></li></ul>
+						</div>
+					</div>
+				</td>
+				<td class="drop-down-h">
+					<span><a href="https://sapland.ru/p-events/">События</a></span>
+					<div class="drop-menu" style="display:none">
+						<div class="drop-main-menu">
+							
+<ul><li><span><a href="https://sapland.ru/p-events/calendar/">Ближайшие</a></span><div></div></li><li><span><a href="https://sapland.ru/p-events/archive/">Архив</a></span><div></div></li><li><span><a href="https://sapland.ru/p-events/news/">Новости</a></span><div></div></li></ul>
+						</div>
+					</div>
+				</td>
+				<td class="drop-down-h">
+					<span><a href="https://sapland.ru/partners/partners/">Компании и проекты</a></span>
+					<div class="drop-menu" style="display:none">
+						<div class="drop-main-menu">
+							<ul>
+								<li><span><a href="https://sapland.ru/partners/partners/">Интеграторы</a></span><div></div></li>
+								<li><span><a href="https://sapland.ru/projects/partners/">Проекты</a></span><div></div></li>
+								<li><span><a href="https://sapland.ru/solutions/partners/">Решения</a></span><div></div></li>
+							</ul>
+						</div>
+					</div>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+								<div class="nav3">
+					
+<div class="nav3-box">
+	<a href="https://sapland.ru/latest/" class="link1">Все обновления <strong>+2</strong></a>
+</div>
+					
+<div class="nav3-box drop-down-h">
+	<a href="#" class="link1 link2" onclick="return false;">О портале</a>
+	<div class="guide-menu">
+		<ul>
+			<li><a title="" href="https://sapland.ru/kontsept/">Концепт</a></li>
+			<li><a title="" href="https://sapland.ru/navigation/">Навигация</a></li>
+			<li><a title="" href="https://sapland.ru/club_sl/">Участники</a></li>
+			<li><a title="" href="https://sapland.ru/contacts/">Контакты</a></li>
+		</ul>
+	</div>
+</div>
+					
+<div class="nav3-box drop-down-h" id="log">
+	<div class="profile h-user-plate">
+				
+		<a href="https://sapland.ru/cabinet/">
+		<img class="profile-link" title="Сменить портрет" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/a_003.htm" style="width:25;height:25;cursor:pointer" alt="">Личный кабинет</a>
+			</div>
+	<div class="auth">
+				<ul class="profile-menu">
+			<li><a href="https://sapland.ru/cabinet/">Мой профиль</a></li>
+						<li><a href="https://sapland.ru/invite/" title="">Пригласить коллегу</a></li>
+			<li><a href="https://sapland.ru/kb/blogs/sap-hana-dynamic-tiering-dlya-ispolizovaniya-rasshirennih-tablits-2.html?auth%5Blogout%5D">Выйти</a></li>
+		</ul>
+			</div>
+</div>
+					<img src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/bb.gif" style="border:none !important;position:absolute" alt="">
+				</div>
+			</div>
+		</div>
+		<div class="center">
+		
+	<div class="breadcrumbs noprint">
+		<div class="links">
+			<span class="back">Вернуться:</span>
+							<a href="https://sapland.ru/kb/articles/spj/polnaya-integratsiya-protsedur-bazi-dannih-sap-hana-v-abap-s-pomoschiyu-amdp-2.html">Полная интеграция процедур базы данных SAP HANA...</a>
+									<span class="arrow"></span>
+											<a href="https://sapland.ru/kb/articles/spj/Ispolizovanie_peremennih_ierarhii_dlya_ekonomii_vremeni_i_usilii_pri_sozdanii_otchetov.html">Использование переменных иерархии для экономии...</a>
+									</div>
+		<div class="clear"></div>
+	</div>
+
+			
+		<div class="mainframe">
+			<div class="left-column">
+				<div class="col1">
+<div class="mv-menu-shadow">
+	<div class="mv-menu">
+		<h3>Рубрики:</h3>
+		<ul>
+																								<li>
+					<span class="i">
+					3035
+					</span>
+																<a href="https://sapland.ru/kb/articles/" style="background-image:url('/files/materials-menu-items/1/icon.png')">Статьи</a>
+									</li>
+																								<li>
+					<span class="i">
+					629
+					</span>
+																<a href="https://sapland.ru/kb/blogs/" style="background-image:url('/files/materials-menu-items/2/icon.png')">Авторские колонки</a>
+									</li>
+																								<li>
+					<span class="i">
+					46
+					</span>
+																<a href="https://sapland.ru/kb/interview/" style="background-image:url('/files/materials-menu-items/3/icon.png')">Интервью</a>
+									</li>
+																								<li>
+					<span class="i">
+					1573
+					</span>
+																<a href="https://sapland.ru/kb/materials-of-events/" style="background-image:url('/files/materials-menu-items/4/icon.png')">Материалы мероприятий</a>
+									</li>
+																								<li>
+					<span class="i">
+					156
+					</span>
+																<a href="https://sapland.ru/kb/webinars/" style="background-image:url('/files/materials-menu-items/5/icon.png')">Вебинары</a>
+									</li>
+																								<li>
+					<span class="i">
+					14
+					</span>
+																<a href="https://sapland.ru/kb/research/" style="background-image:url('/files/materials-menu-items/6/icon.png')">Исследования</a>
+									</li>
+																								<li>
+					<span class="i">
+					8
+					</span>
+																<a href="https://sapland.ru/kb/goldenhistory/" style="background-image:url('/files/materials-menu-items/7/icon.png')">Истории успеха</a>
+									</li>
+																								<li>
+					<span class="i">
+					
+					</span>
+																<a href="https://sapland.ru/books/novelty/" style="background-image:url('/files/materials-menu-items/8/icon.png')">Книги</a>
+									</li>
+					</ul>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	<div class="block3">
+		<div class="news3 block-similar slider-books">
+			<div class="news-header">
+				<p>Ещё по теме</p>
+			</div>
+			<div class="_slider">
+															<img class="material-type-icon" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/shop-icon.png">
+										<div style="background-color: #fff" class="new2">
+	<div class="foto2">
+		<a title="" href="https://sapland.ru/books/implementing-sap-hana.html"><img alt="" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/8391.jpg" style="height: auto; border: none"></a>
+	</div>
+
+																	
+	<p><a href="https://sapland.ru/books/implementing-sap-hana.html">Implementing SAP HANA</a></p>
+	<div class="clear"></div>
+					<span style="float:left;line-height:26px;white-space:nowrap;margin-top:5px">
+			<strong>6950 руб.</strong></span>
+		<div style="text-align:right;margin-top:5px">
+			<a href="https://sapland.ru/books/implementing-sap-hana.html"><img alt="Заказать" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/order-button.png" style="margin-top:5px"></a>
+		</div>
+		<div class="clear"></div>
+	</div>
+														<div class="video">
+	<p title="Миграция на SAP HANA с помощью Database Migration Option">
+		<a href="https://sapland.ru/kb/webinars/migratsiya-na-sap-hana-s-pomoschiyu-database-migration-option.html"><img class="play" alt="" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/play-43.png"><img alt="" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/10419.jpg" class="video_img"></a>
+	</p>
+	<p class="name">
+		<a title="" href="https://sapland.ru/kb/webinars/migratsiya-na-sap-hana-s-pomoschiyu-database-migration-option.html">Миграция на SAP HANA с помощью Database Migration Option</a>
+	</p>
+	<div class="clear"></div>
+</div>
+
+
+														<div class="new2">
+		<div class="foto2">
+		<a title="" href="https://sapland.ru/kb/materials-of-events/kak-osuschestviti-migratsiyu-na-sap-hana-c-minimalinimi-srokami-i-riskami.html"><img alt="" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/5331.png"></a>
+	</div>
+		<p><a title="" href="https://sapland.ru/kb/materials-of-events/kak-osuschestviti-migratsiyu-na-sap-hana-c-minimalinimi-srokami-i-riskami.html">Как осуществить миграцию на SAP HANA c минимальными сроками и рисками</a></p>
+	<div class="clear"></div>
+</div>
+
+														<div class="new2">
+		<div class="foto2">
+		<a title="" href="https://sapland.ru/kb/materials-of-events/vozmozhnosti-sap-enterprise-support-dlya-klientov-sap-hana.html"><img alt="" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/5331.png"></a>
+	</div>
+		<p><a title="" href="https://sapland.ru/kb/materials-of-events/vozmozhnosti-sap-enterprise-support-dlya-klientov-sap-hana.html">Возможности SAP Enterprise Support для клиентов SAP HANA</a></p>
+	<div class="clear"></div>
+</div>
+
+														<div class="new2">
+		<div class="foto2">
+		<a title="" href="https://sapland.ru/kb/blogs/nechitaylov-26.html"><img class="avatar-50" alt="Нечитайлов Юрий Вячеславович" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/151.JPG"></a>
+	</div>
+			<div class="opis3">
+		<p>
+			<a href="https://sapland.ru/kb/blogs/nechitaylov-26.html">Нечитайлов Юрий<br>Вячеславович</a>
+		</p>
+	</div>
+	<div class="clear"></div>
+		<p>
+		<a title="" href="https://sapland.ru/kb/blogs/nechitaylov-26.html">HANA и BW 7.30 - Часть 2</a>
+	</p>
+	<div class="clear"></div>
+</div>
+														<div class="new2">
+		<div class="foto2">
+		<a title="" href="https://sapland.ru/kb/materials-of-events/migratsiya-sap-erp-na-sap-hana.html"><img alt="" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/5331.png"></a>
+	</div>
+		<p><a title="" href="https://sapland.ru/kb/materials-of-events/migratsiya-sap-erp-na-sap-hana.html">Планирование проекта: Миграция SAP ERP на SAP HANA</a></p>
+	<div class="clear"></div>
+</div>
+
+															<img class="material-type-icon" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/nav1_03.png">
+										<div class="new2">
+		<div class="foto2">
+		<a title="" href="https://sapland.ru/kb/articles/stats/abap-dlya-sap-hana.html"><img class="avatar-50" alt="" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/male.jpg"></a>
+	</div>
+			<p>
+		<a title="" href="https://sapland.ru/kb/articles/stats/abap-dlya-sap-hana.html">ABAP для SAP HANA</a>
+	</p>
+	<div class="clear"></div>
+</div>
+															<img class="material-type-icon" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/nav1_02.png">
+										<div class="new2">
+		<div class="foto2">
+		<a title="" href="https://sapland.ru/kb/articles/spj/proektirovanie-arhitekturi-i-razrabotka-prilozheniya-dlya-raboti-s-internetom-ve.html"><img class="avatar-50" alt="" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/male.jpg"></a>
+	</div>
+			<p>
+		<a title="" href="https://sapland.ru/kb/articles/spj/proektirovanie-arhitekturi-i-razrabotka-prilozheniya-dlya-raboti-s-internetom-ve.html">Проектирование архитектуры и разработка приложения для работы с интернетом вещей в SAP HANA Cloud Platform</a>
+	</p>
+	<div class="clear"></div>
+</div>
+															<img class="material-type-icon" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/nav1_02.png">
+										<div class="new2">
+		<div class="foto2">
+		<a title="" href="https://sapland.ru/kb/articles/spj/neskoliko-slov-o-nastroike-registrov-i-valyut-a-takzhe-o-pereschete-valyut-v-sap.html"><img class="avatar-50" alt="" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/male.jpg"></a>
+	</div>
+			<p>
+		<a title="" href="https://sapland.ru/kb/articles/spj/neskoliko-slov-o-nastroike-registrov-i-valyut-a-takzhe-o-pereschete-valyut-v-sap.html">Несколько слов о настройке регистров и валют, а также о пересчете валют в SAP S/4HANA Finance 1610</a>
+	</p>
+	<div class="clear"></div>
+</div>
+														<div class="new2">
+		<div class="foto2">
+		<a title="" href="https://sapland.ru/kb/materials-of-events/novii-vzglyad-na-bazi-dannih-sybase-hana-bw-on-hana.html"><img alt="" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/5331.png"></a>
+	</div>
+		<p><a title="" href="https://sapland.ru/kb/materials-of-events/novii-vzglyad-na-bazi-dannih-sybase-hana-bw-on-hana.html">Новый взгляд на базы данных: Sybase, HANA, BW on HANA</a></p>
+	<div class="clear"></div>
+</div>
+
+							</div>
+		</div>
+	</div>
+	
+
+
+</div>
+			</div>
+			<div class="content-column">
+				<div class="col4">
+	
+		<div class="header1">
+		
+		
+													
+										
+							
+							<h1>
+											База знаний
+									</h1>
+				
+								
+					
+				<img class="nodisp" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/logo.jpg">
+
+		<div class="clear"></div>
+	</div>
+	
+	
+			
+	
+<div class="content-inner">
+
+
+
+<div class="tx">
+			Вы <strong>не подписаны</strong> на колонки этого автора [ <strong><a href="https://sapland.ru/kb/blogs/sap-hana-dynamic-tiering-dlya-ispolizovaniya-rasshirennih-tablits-2.html?action=subscribe&amp;redirect=%2Fkb%2Fblogs%2Fsap-hana-dynamic-tiering-dlya-ispolizovaniya-rasshirennih-tablits-2.html">подписаться</a></strong> ]
+	</div>
+
+		  
+
+
+<div class="content-inner blog" itemscope="" itemtype="http://schema.org/Blog">
+
+	
+
+
+ 
+	
+<div class="blog-head">
+	<div class="photo" itemscope="" itemtype="http://schema.org/Person" itemprop="author">
+		<meta itemprop="name" content="Табаков Вадим">
+		<a href="https://sapland.ru/cabinet/9792/" data-hasqtip="true">
+							<img src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/9792-1154_002.jpg" alt="Табаков Вадим" style="height:100px; display: block;" itemprop="image">
+					</a>
+	</div>
+
+	<div class="description">
+		
+					<div class="company">
+				<img src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/sap-expert.jpg" alt="SAP" title="SAP">
+			</div>
+		
+		<a href="https://sapland.ru/cabinet/9792/" data-hasqtip="true">Табаков Вадим</a>
+		<meta itemprop="name" content="SAP HANA">
+		<h2><a href="https://sapland.ru/blogs/tabakov/">
+																<span style="display: none" class="hint">Настоящая авторская колонка посвящена флагманской технологии SAP по управлению и обработке данных в оперативной памяти SAP HANA.<br>
+<br>
+В ней мы будем публиковать материалы по следующим темам:<br>
+  - технико-экономические аспекте эффективности SAP HANA;<br>
+  - технологические особенности и преимущества HANA в контексте прикладного использования<br>
+  - обсуждение подходов предприятий различных отраслей к решению 
+операционных задач эксплуатации ИТ с помощью SAP HANA и достигнутых 
+технических и экономических результатов.<br>
+<br>
+Мы будем делиться с вами наиболее актуальными вопросами, обсуждать 
+свежие новости и события, происходящие не только вокруг SAP HANA, но и в
+ развитии самого продукта.<br>
+<br>
+Вадим Табаков,<br>
+менеджер по развитию направления Database&amp;Technology SAP CIS</span>SAP HANA</a>
+		</h2>
+											<a class="all-posts" href="https://sapland.ru/material/17352/?filter%5Bauthors%5D%5Bby-authors%5D%5B%5D=934">Все публикации автора</a>
+	</div>
+</div>
+
+	<span style="float:right;margin-top: 1em">
+<button class="button-b print-button-h noprint" style="" onclick="window.print();" type="button"><span>Распечатать</span></button></span>
+
+	<h2>SAP HANA Dynamic Tiering для использования расширенных таблиц</h2>
+
+	<p class="date">06 марта 2015, 09:18</p>
+
+	
+	<div class="user-content" itemprop="blogPost" itemscope="" itemtype="http://schema.org/BlogPosting">
+		<meta itemprop="name" content="SAP HANA Dynamic Tiering для использования расширенных таблиц">
+					<img src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/prr_002.png" alt="" class="post-picture" itemprop="image">
+				<div itemprop="articleBody">
+							<p>Для внедрения стратегии multi-temperature в рамках SAP BW 
+может использоваться концепция расширенных таблиц с технологией SAP HANA
+ Dynamic Tiering. Эта концепция позволяет хранить «теплые» данные&nbsp; в
+ расширенных таблицах, управление которыми осуществляет SAP HANA. Это 
+позволяет оптимизировать использование основной памяти в SAP HANA.</p>
+
+<p>Находящиеся в хранилище данные разбиваются на три категории с учетом 
+частоты доступа к ним: «горячие», «теплые», «холодные». В хранилище 
+данных также имеют место различные профили использования данных, которые
+ соотносятся с указанной классификацией по частоте доступа. 
+Температурная Стратегия multi-temperature, применяющаяся в организации, 
+определяет (в зависимости от частоты доступа к данным и соответственно 
+их использованию) какие участки памяти задействуются для хранения 
+данных.</p>
+
+<h2>Концепция расширенных таблиц</h2>
+
+<p>Концепция расширенных таблиц применима к «теплым» данным. Доступ к 
+«теплым» данным осуществляется не на постоянной основе, вследствие чего 
+отсутствует необходимость хранить их в основной памяти SAP HANA. Исходя 
+из этого, схожая концепция активных и неактивных данных не так давно 
+была внедрена в SAP BW на платформе SAP HANA. Эта концепция 
+предполагает, что при возникновении узких мест в памяти отдельные 
+таблицы перемещаются из основной памяти для баз данных в файловую 
+систему SAP HANA. Несмотря на то что такое решение обеспечивало наиболее
+ оптимальное использование памяти, необходимость в планировании объемов 
+оперативной памяти все равно сохранялась, поскольку перед перемещением 
+данных было необходимо загрузить их в память.</p>
+
+<p>Технология <strong>SAP HANA Dynamic Tiering </strong>позволяет оптимизировать управление ресурсами основной памяти в SAP HANA за счет использования <strong>расширенных</strong> <strong>таблиц</strong> для объектов SAP BW с «теплыми» данными.</p>
+
+<p>Под расширенными таблицами понимаются таблицы, управление которыми 
+осуществляет SAP HANA. На логическом уровне они располагаются в каталоге
+ баз данных SAP HANA и могут использоваться так же, как если бы они были
+ сохраняемыми таблицами SAP HANA. Однако физически они размещаются в 
+дисковом хранилище, которое может быть интегрировано в SAP HANA. Для 
+пользователя вся система выглядит как единая база данных. Под 
+сохраняемостью данных, записанных в расширенную таблицу, понимается то, 
+что они хранятся на жестком диске, а не в оперативной памяти. Доступ к 
+этим данным в «теплой» памяти осуществляется с использованием 
+алгоритмов, оптимизированных для работы с дисковыми хранилищами. В 
+отличие от концепции активных и неактивных данных, оперативноая память в
+ SAP HANA не требуется для обеспечения сохраняемости данных (в 
+расширенных таблицах).</p>
+
+<p>В SAP BW «теплые» данные, обычно сохраняются в&nbsp; PSA таблицах и 
+оптимизированных для записи объектах DataStore. При использовании SAP 
+HANA Dynamic Tiering можно настроить данные DataSource (PSA) и 
+оптимизированные для записи объекты DataStore таким образом, чтобы SAP 
+HANA создавала расширенную таблицу вместо собственной таблицы SAP HANA. 
+Данные, записанные в такую таблицу, записываются непосредственно в 
+дисковое хранилище. Поскольку расширенная таблица логически размещается в
+ SAP HANA, оптимизатор SAP HANA получает доступ к ней так же, как и к 
+любой другой таблице SAP HANA.</p>
+
+<p>На <strong>Рис.1 </strong>показано, как осуществляется управление 
+«горячими» и «теплыми» данными для BW при использовании SAP HANA Dynamic
+ Tiering: для «горячих» данных, например данных стандартного объекта 
+DataStore, обеспечивается хранение данных в оперативной памяти (основной
+ памяти), для «теплых» данных, например данных DataSource или данных 
+оптимизированного для записи объекта DataStore, обеспечивается 
+сохраняемость на диске.</p>
+
+<p><img alt="" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/prr.png" style="height:549px; width:577px"></p>
+
+<p><strong>Рисунок 1</strong>. Управление горячими и теплыми двнными в SAP BW на SAP HANA</p>
+
+<p>Таким образом, концепция расширенных таблиц позволяет выполнять следующие действия:</p>
+
+<p>создавать область в SAP HANA, готовую для хранения «теплых» данных и 
+использующуюся в области сбора и в области корпоративной памяти без 
+функциональных ограничений и без существенных затрат использовать SAP BW
+ на платформе SAP HANA для обработки больших объемов данных в области 
+PB.</p>
+
+<h3>Снижение ребований к аппаратному обеспечению</h3>
+
+<p>Концепция расширенных таблиц позволяет оптимизировать управление 
+ресурсами оперативной памяти в еще большей степени, нежели концепция 
+активных и неактивных данных. Это означает снижение требований к 
+аппаратному обеспечению, в частности, если речь идет о больших объемах 
+«теплых данных» в таблицах PSA и оптимизированных для записи объектах 
+DataStore, которые должны быть доступны для расширенных таблиц. При 
+необходимости объем основной памяти можно уменьшить. Более подробная 
+информация приводится в SAP-ноте 1736976 .</p>
+
+<h3>Обязательные требования</h3>
+
+<p>При использовании расширенных таблиц в SAP BW должны быть выполнены следующие требования:</p>
+
+<p>Установлена и сконфигурирована функция SAP HANA Dynamic Tiering (поставляется с SAP HANA SPS09)</p>
+
+<p><strong>Примечание 1.&nbsp;</strong>Изучите условия лицензирования 
+при использовании SAP HANA Dynamic Tiering: &nbsp;В BW в данных 
+DataSource для таблиц PSA и в оптимизированных для записи объектах 
+DataStore указано свойство Extended Tables (Расширенные таблицы).</p>
+
+<p><strong>Примечание 2.&nbsp;</strong>В настоящее время расширенные 
+таблицы для PSA и оптимизированных для записи объектов DataStore могут 
+использоваться при соблюдении следующих условий:</p>
+
+<p>При настройке расширенных таблиц для таблицы PSA, уже содержащей 
+данные, создается новый раздел. В расширенной таблице осуществляется 
+управление только новыми данными PSA.</p>
+
+<p>В случае оптимизированных для записи объектов DataStore расширенные 
+таблицы могут использоваться, если объект DataStore не содержит 
+каких-либо данных.</p>
+
+<h3>Расширенные таблицы и nearline-хранилище</h3>
+
+<p>Данные, доступ к которым вначале осуществляется с высокой 
+периодичностью, а затем, по достижении определенного срока происходит 
+время от времени, классифицируются как «холодные». Из этого следует, что
+ такие данные можно вывести из области сохраняемости данных SAP HANA и 
+хранить их в доступном архиве. В качестве решения SAP предлагает 
+воспользоваться nearline-хранилищем (NLS) на базе системы SAP IQ. 
+Отличие этого решения от расширенных таблиц состоит в том, что 
+изначально областью сохраняемости данных выступает SAP HANA, а после их 
+сохранения в nearline-хранилище (на отдельном сервере) они удаляются из 
+SAP HANA.</p>
+
+<p>Расширенные таблицы и NLS&nbsp;-это разные решения (разные типы 
+хранилищ) для данных из различных категорий доступа и с различными 
+профилями использования. В <strong>Таблице 2</strong> приводятся основные отличия подходов.</p>
+
+<p>&lt;p "=""&gt; <strong>Таблица 2</strong>. Основные отличия подходов&nbsp; Extended Tables и Nearline Storage</p>
+
+<table>
+	<tbody>
+		<tr class="header">
+			<td>
+			<p style="margin-left:1.9pt"><strong>Расширенные</strong> <strong>таблицы</strong></p>
+			</td>
+			<td>
+			<p style="margin-left:1.9pt"><strong>Nearline-</strong><strong>хранилище</strong> <strong>на</strong> <strong>базе</strong><strong> SAP IQ</strong></p>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:18px; width:302px">
+			<p style="margin-left:1.9pt">Использование основной памяти оптимизируется в SAP HANA.</p>
+			</td>
+			<td style="height:18px; width:301px">
+			<p style="margin-left:1.9pt">Сохраняемость данных оптимизируется в системном ландшафте.</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:18px; width:302px">
+			<p style="margin-left:1.9pt">Расширенные таблицы интегрированы в платформу.</p>
+			</td>
+			<td style="height:18px; width:301px">
+			<p style="margin-left:1.9pt">Nearline-хранилище размещается на отдельном сервере.</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:18px; width:302px">
+			<p style="margin-left:1.9pt">Расширенные таблицы оперируют целыми таблицами и разделами.</p>
+			</td>
+			<td style="height:18px; width:301px">
+			<p style="margin-left:1.9pt">NLS оперирует выбранными срезами семантических данных.</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:29px; width:302px">
+			<p style="margin-left:1.9pt">Любые типы обработки данных (создание, чтение, обновление, удаление) являются допустимыми.</p>
+			</td>
+			<td style="height:29px; width:301px">
+			<p style="margin-left:1.9pt">Данные инфо-провайдера однократно записываются в nearline-хранилище и затем считываются оттуда.</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:18px; width:302px">
+			<p style="margin-left:1.9pt">Расширенные таблицы отвечают критически важным для бизнеса требованиям соглашений об уровне обслуживания.</p>
+			</td>
+			<td style="height:18px; width:301px">
+			<p style="margin-left:1.9pt">NLS соответствует SLA на низшем уровне.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Дополнительная информация: SAP IQ&nbsp;— решение для организации nearline-хранилища</p>
+
+<h3>Дополнительная информация</h3>
+
+<p>Более подробную информацию о классификации данных по частоте доступа и профилям использования см. в статье&nbsp;<a href="http://help.sap.com/saphelp_nw74/helpdata/en-us/f6/99e81daef24dfa8414b4e104fd76b7/content.htm" target="_blank">Multi-Temperature Data Management</a>. .</p>
+
+<p>Более подробную информацию об установке и конфигурации SAP HANA 
+Dynamic Tiering см. в разделе SAP HANA Dynamic Tiering на странице SAP 
+Help Portal по адресу http://help.sap.com/hana_options_dt.</p>
+
+<p>Более подробную информацию о параметрах BW см. в SAP-ноте 2057636 .</p>
+
+<h2>1.1&nbsp;&nbsp;&nbsp;&nbsp; Создание расширенных таблиц для объектов BW</h2>
+
+<p>Указание режима ведения объекта позволяет определить на уровне 
+отдельного объекта BW, должна ли таблица, данные которой находятся в 
+«теплой» области, создаваться как расширенная таблица. Если все 
+требования соблюдаются, то при активации объекта создается расширенная 
+таблица.</p>
+
+<h3>Обязательные требования</h3>
+
+<p>Установлена и сконфигурирована функция SAP HANA Dynamic Tiering.</p>
+
+<p>Примечание</p>
+
+<p>Изучите условия лицензирования при использовании SAP HANA Dynamic Tiering.</p>
+
+<p>Для объектов DataStore расширенная таблица создается, только если объект DataStore еще не содержит каких-либо данных.</p>
+
+<h3>Создание расширенной таблицы оптимизированных для записи объектов DataStore</h3>
+
+<p>Порядок работы</p>
+
+<ol>
+	<li>На вкладке Settings (Параметры) в режиме ведения оптимизированного 
+для записи объекта DataStore выберите Extended Table (Расширенная 
+таблица).</li>
+	<li>Активируйте объект DataStore.</li>
+</ol>
+
+<p>Результаты</p>
+
+<p>Если оптимизированный для записи объект DataStore не содержит никаких
+ данных, система генерирует расширенную таблицу. Если оптимизированный 
+для записи объект DataStore уже содержит данные, система выдает 
+предупреждение во время активации.</p>
+
+<h3>Создание расширенной таблицы для таблиц PSA</h3>
+
+<p>Порядок работы</p>
+
+<ol>
+	<li>В режиме ведения данных DataSource в системе BW перейдите на 
+вкладку General (Общие) и выберите PSA as Extended Table (PSA как 
+расширенная таблица).</li>
+	<li>Активируйте DataSource.</li>
+</ol>
+
+<p>Результаты</p>
+
+<p>Если DataSource не содержит никаких данных, система удаляет таблицу PSA и генерирует расширенную таблицу.</p>
+
+<p>Если DataSource уже содержит данные, система выдает предупреждение во
+ время активации и создает новую версию PSA с расширенной таблицей. С 
+этого момента все новые данные PSA будут сохраняться в дисковом 
+хранилище, интегрированном в SAP HANA. Старые данные сохраняются в 
+таблице PSA или в таблицах PSA, принадлежащих к старым версиям PSA.</p>
+
+<h3>Создание расширенной таблицы для объектов DataStore (дополнительно)</h3>
+
+<p>Обязательные требования</p>
+
+<p>Используются инструменты моделирования BW версии 1.5 или выше.</p>
+
+<p>Объект DataStore создается в функции оптимизированного для записи 
+объекта DataStore, то есть без активации и только с входящей таблицей.</p>
+
+<p>Порядок работы</p>
+
+<ol>
+	<li>В режиме ведения объектов DataStore (дополнительно) в инструментах 
+моделирования BW перейдите на вкладку Overview (Обзор) и выберите 
+Inbound Table as Extended Table (Входящая таблица как расширенная 
+таблица).</li>
+	<li>Активируйте объект DataStore.</li>
+</ol>
+
+<p>Результаты</p>
+
+<p style="margin-left:26.0pt">Если объект DataStore не содержит никаких 
+данных, система генерирует расширенную таблицу. Если объект DataStore 
+уже содержит данные, система выдает предупреждение во время активации.</p>
+
+<h2>1.2&nbsp;&nbsp;&nbsp;&nbsp; Перенос объектов BW с помощью расширенных таблиц</h2>
+
+<p>Примите во внимание следующую информацию, касающуюся переноса 
+объектов BW с помощью расширенных таблиц:Убедитесь, что для целевой 
+системы BW сконфигурирована функция SAP HANA Dynamic Tiering.</p>
+
+<p><strong>Примечание 1</strong>.&nbsp;Если функция SAP HANA Dynamic 
+Tiering не сконфигурирована для целевой системы, таблицы в объектах BW 
+будут создаваться как обычные таблицы SAP HANA, даже если объект 
+переносился с включенным параметром создания расширенных таблиц.</p>
+
+<p>Для создания расширенных таблиц в целевой системе активируйте в ней соответствующие объекты BW.</p>
+
+<p><strong>Примечание 2.</strong>&nbsp;Изучите условия лицензирования при использовании SAP HANA Dynamic Tiering.</p>
+					</div>
+	</div>
+
+	
+
+<div class="likes likes-h" data-material-id="13917">
+	<div class="likes-plate slide-hide likes-plate-h">
+		<div class="pop">
+			<div class="pop-top">
+				<p class="likes-count-plural likes-count-plural-h">Понравилось 3 людям</p>
+			</div>
+			<div class="popbg">
+				<div class="photos photos-h">
+										<div class="p"><a href="https://sapland.ru/cabinet/12179/" data-hasqtip="true"><img alt="" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/12179.jpg" class="avatar-50" title="Олег Башкатов"></a></div>
+										<div class="p"><a href="https://sapland.ru/cabinet/1168/" data-hasqtip="true"><img alt="" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/img1168.jpg" class="avatar-50" title="Олег Шкуренков"></a></div>
+										<div class="p"><a href="https://sapland.ru/cabinet/9792/" data-hasqtip="true"><img alt="" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/9792-1154.jpg" class="avatar-50" title="Вадим Табаков"></a></div>
+										<div class="clear"></div>
+				</div>
+			</div>
+			<div class="pop-bottom"></div>
+		</div>
+	</div>
+	<a class="like like-material like-material-h" href="#" title="Мне нравится"><span>Нравится</span></a>
+
+    <span class="yes likes-count likes-count-h positive">3</span>
+
+	<a class="unlike like-material dislike-material-h" href="#" title="Мне не нравится"><span>Не нравится</span></a>
+</div>
+
+			<div style="float: right">
+				<table style="border-collapse:collapse;width:215px;height:30px;table-layout:fixed" class="noprint">
+		<tbody><tr>
+			<td style="width: 130px">
+				
+<div class="yashare-auto-init" data-yasharel10n="ru" data-yasharetype="button" data-yasharequickservices="" style="display: inline-block"></div> 
+
+			</td>
+		</tr>
+	</tbody></table>
+
+		</div>
+		<div class="clear"></div>
+
+	
+<div class="data-support">
+		<p><strong>
+				Ролевое назначение			</strong>:
+			<a href="https://sapland.ru/filter/results/?dsf%5Broles%5D%5B%5D=11">SAP Консультант / Consultant</a>	</p>
+		<p><strong>
+						Ключевые слова	</strong>:
+			<a href="https://sapland.ru/filter/results/?dsf%5Bcats%5D%5B%5D=422">SAP HANA </a>, 			<a href="https://sapland.ru/filter/results/?dsf%5Bcats%5D%5B%5D=760">Функциональные возможности SAP HANA / Functionality of SAP HANA</a>	</p>
+		<p><strong>
+		Функциональная область					</strong>:
+			<a href="https://sapland.ru/filter/results/?dsf%5Bareas%5D%5B%5D=773">SAP HANA / SAP HANA</a>	</p>
+	</div>
+
+
+
+	<p>
+				
+	</p>
+	
+<!-- /os/appearances/sapland-2012/comments/../../../modules/comments/comments.js --><script type="text/javascript">$(document).ready(function(){
+	if ($('.transition-index').size() > 0)
+		os.require('modules/comments/transition-index');
+
+	// Показываем форму
+	$('#show-comment-form').click(function(){
+		var $parent = $(this).parent();
+		$parent.after($('#comment-form'));
+
+		$('#comment-form #comm_parent_id').val(0);
+
+		$('#comment-form').slideDown();
+		$('#comment-text').focus();
+
+		return false;
+	});
+
+	// Показываем форму в древовидных комментариях
+	$('body').delegate('.show-comment-form', 'click', function(){
+		var $parent = $(this).closest('.actions');
+		$parent.after($('#comment-form'));
+
+		$('#comment-form #comm_parent_id').val($(this).closest('.comment').data('comment-id'));
+
+		$('#comment-form').fadeIn();
+		$('#comment-text').focus();
+
+		return false;
+	});
+
+	// Редактирование комментария
+	$('#comments').on('click', '.edit-comment', function(e){
+		e.preventDefault();
+
+		var comment = $(this).closest('.comment');
+		var comment_id = comment.data('comment-id');
+
+		var dlg = $('<div style="text-align: center"><img src="/images/ajax/bigcircle-loader.gif" alt="Загрузка..." />').dialog( {
+			modal: true,
+			title: 'Редактирование комментария',
+			width: 800,
+			height: 'auto',
+			close: function() {
+				$('input', this).datetimepicker('destroy');
+				try
+				{
+					$('textarea', this).ckeditorGet().destroy();
+				} catch (e)
+				{
+					// TODO: handle exception
+				}
+				$(this).dialog('destroy').remove();
+			},
+			open: function() {
+				os.query('/ajax/comments/', {
+					cmd: 'get edit dialog',
+					comment_id: comment_id
+				}, function(data, errors) {
+					if (!data.success)
+						return;
+
+					if (data.error == 'NO_RIGHTS')
+					{
+						if (data.comment.expert == 1)
+						{
+							os.alert('Для редактирования этого комментария, Вы должны обладать правом редактирования комментариев экспертов.');
+						} else {
+							os.alert('У Вас недостаточно прав для редактирования этого комментария.');
+						}
+					}
+
+					js.include('jquery/plugins/timepicker/jquery-ui-timepicker-addon.js');
+					dlg.css({'text-align':'left'}).html('Дата: <input type="text" style="cursor:pointer" readonly value="'+data.comment.published+'" /><textarea style="width: 100%" rows="18" cols="10">'+data.comment.text_source+'</textarea>').dialog('option', {
+						height: 'auto'
+					}).dialog('option', {
+						position: 'auto'
+					}).find('input').datetimepicker({
+						dateFormat: 'yy-mm-dd',
+						timeFormat: 'hh:mm:ss',
+						timeText: 'Время',
+						hourText: 'Часы',
+						minuteText: 'Минуты',
+						currentText: 'Сейчас',
+						closeText: 'Ок',
+						maxDate: data.comment.max_date,
+						minDate: data.comment.min_date
+					});
+
+					if (data.comment.expert == 1)
+						$('textarea', dlg).ckeditor();
+
+				}, true);
+			},
+			buttons: {
+				'Сохранить': function() {
+					var text = $('textarea', $(this).dialog()).val();
+					var date = $('input', $(this).dialog()).val();
+
+					os.query('/ajax/comments/', {
+						cmd: 'edit comment',
+						comment_id: comment_id,
+						text: text,
+						date: date
+					}, function(data, errors) {
+						if (!data.success)
+							return;
+
+						var comment = $('#comment-' + comment_id);
+						var new_comment = $(data.comment).css({'background-color': comment.css('background-color')});
+						new_comment.append($('.child-comments-wrapper', comment));
+						comment.replaceWith(new_comment);
+
+						dlg.dialog('close');
+					}, true);
+				}
+			}
+		});
+
+/*		var form = $('#comment-form');
+
+		os.debug($(':input', form));
+
+		var comm_id_elm = $('#comm_id', form);
+		comm_id_elm.val(comment_id);
+
+		form.dialog({
+			modal: true,
+			title: 'Редактирование комментария',
+			width: 800,
+			height: 'auto',
+			close: function(){
+				$(this).dialog('destroy');
+				comm_id_elm.val('0');
+			}
+		});
+*/	});
+
+	// Удаление комментария
+	$('body').delegate('.delete-comment', 'click', function(event){
+		event.preventDefault();
+
+		var comment_id = $(this).closest('.comment').data('comment-id');
+
+		if (confirm('Удалить комментарий?'))
+		{
+			os.query('/ajax/comments/', {
+				cmd: 'delete comment',
+				comment_id: comment_id,
+				tree_comment: $('#tree_comment').val()
+			}, function(data, errors){
+				if (errors)
+					os.debug(errors);
+
+				if (!data.success)
+					os.whatHappened($data);
+
+				var comment = $('#comment-' + comment_id);
+				var new_comment = $(data.html).css({'background-color': comment.css('background-color')});
+				new_comment.append($('.child-comments-wrapper', comment));
+				comment.replaceWith(new_comment);
+			}, true);
+		}
+	});
+
+	// Восстановление комментария
+	$('#comments').on('click', '.restore-comment', function(event){
+		event.preventDefault();
+
+		var comment_id = $(this).closest('.comment').data('comment-id');
+
+		if (confirm('Восстановить комментарий?'))
+		{
+			os.query('/ajax/comments/', {
+				cmd: 'restore comment',
+				comment_id: comment_id,
+				tree_comment: $('#tree_comment').val()
+			}, function(data, errors){
+				if (errors)
+					os.debug(errors);
+
+				if (!data.success)
+					os.whatHappened($data);
+
+				var comment = $('#comment-' + comment_id);
+				var new_comment = $(data.html).css({'background-color': comment.css('background-color')});
+				new_comment.append($('.child-comments-wrapper', comment));
+				comment.replaceWith(new_comment);
+			}, true);
+		}
+	});
+
+	// Скрытие комментария для главной
+	$('#comments').on('click', '.hide-comment-for-mainpage', function(event){
+		event.preventDefault();
+
+		var btn = $(this);
+
+		var comment_id = $(this).closest('.comment').data('comment-id');
+
+		os.query('/ajax/comments/', {
+			cmd: 'toggle comment hidden on main',
+			comment_id: comment_id
+		}, function(data, errors){
+			if (!data.success)
+				os.whatHappened(data);
+
+			if (data.hidden_on_main==1)
+				btn.text('Показать на главной');
+			else
+				btn.text('Скрыть на главной');
+		}, true);
+	});
+
+	// Превью удалённого комментария
+	$('#comments').on('click', '.view-deleted', function(e){
+		e.preventDefault();
+
+		$('#comment-loader').show();
+		var comment_id = $(this).closest('.comment').data('comment-id');
+		os.query('/ajax/comments/', {
+			cmd: 'view deleted comment',
+			comment_id: comment_id,
+			tree_comment: $('#tree_comment').val()
+		}, function(data, text){
+			$('#comment-loader').hide();
+			if (!data.success)
+				return;
+
+			var comment = $(data.comment);
+			$('a[href="#"]', comment).remove();
+			if (data.deleted_by.user) comment.append('<p>Удалён под учётной записью пользователя <span class="user-place" style="font-weight: bold"></span></p>').find('.user-place').text(data.deleted_by.user);
+			if (data.deleted_by.admin) comment.append('<p>Удалён под учётной записью администратора <span class="admin-place" style="font-weight: bold"></span></p>').find('.admin-place').text(data.deleted_by.admin);
+			$('<div class="comment-preview"></div>').append(comment).dialog({
+				title: 'Просмотр комментария',
+				modal: true,
+				resizable: false,
+				width: 783,
+				close: function(){
+					$(this).dialog('destroy').remove();
+				}
+			}).dialog('option', {
+				height: 'auto'
+			}).dialog('option', {
+				position: [Math.ceil($('.content:first').position().left), 'center']
+			});
+
+		}, true);
+	});
+
+	// Превью комментария
+	$('body').on('click', '#comment-preview', function(e){
+		e.preventDefault();
+		$('#comment-loader').show();
+
+		var comment_text = '';
+		if (!$('#comment-form-ckeditor') || $('#comment-form-textarea').css('display') != 'none')
+		{
+			comment_text = $('#comment-text').val();
+		} else {
+			comment_text = $('#comment-form-ckeditor .ckeditor').val();
+		}
+
+		os.query('/ajax/comments/', {
+			cmd: 'preview comment',
+			text: comment_text,
+			tree_comment: $('#tree_comment').val(),
+			parent_id: $('#comm_parent_id').val(),
+			expert: $('#comment-form input[name=expert]:checked').val()>0,
+			user: $('#comment-form input[name=user]').val(),
+			partner: $('#comment-form select[name=partner] option:selected').val()
+		}, function(data, errors){
+			$('#comment-loader').hide();
+			if (!data.success)
+				return;
+
+			$('<div class="comment-preview">'+data.comment+'</div>').dialog({
+				title: 'Предварительный просмотр комментария',
+				modal: true,
+				resizable: false,
+				width: 783,
+				close: function(){
+					$(this).dialog('destroy').remove();
+				}
+			}).dialog('option', {
+				height: 'auto'
+			}).dialog('option', {
+				position: [Math.ceil($('.content:first').position().left), 'center']
+			});
+
+		}, true);
+	});
+
+	// Отправка комментария
+	$('#comment-submit').click(function(e){
+		e.preventDefault();
+		$('#comment-loader').show();
+
+		var comment_text = '';
+		if (!$('#comment-form-ckeditor') || $('#comment-form-textarea').css('display') != 'none')
+		{
+			comment_text = $('#comment-text').val();
+		} else {
+			comment_text = $('#comment-form-ckeditor .ckeditor').val();
+		}
+		var max_comment_id = 0;
+		$('#comments .comment').each(function(){
+			var current_comment_id = $(this).data('comment-id')*1;
+			if (current_comment_id > max_comment_id)
+				max_comment_id = current_comment_id;
+		});
+
+		os.query('/ajax/comments/', {
+			cmd: 'post comment',
+			mat_id: mat_id,
+			parent_id: $('#comm_parent_id').val(),
+			comm_id: $('#comm_id').val(),
+			last_comment_id: max_comment_id,
+			tree_comment: $('#tree_comment').val(),
+			tmp_rights_id: tmp_rights_id,
+			tmp_key: tmp_key,
+			text: comment_text,
+			expert: $('#comment-form input[name=expert]:checked').val(),
+			user: $('#comment-form input[name=user]').val(),
+			partner: $('#comment-form select[name=partner] option:selected').val()
+		}, function(data, errors){
+			$('#comment-text').val('');
+			$('#comment-form-ckeditor .ckeditor').val('');
+			$('#comment-form input[name=user]').val('');
+			$('#comment-form input[name=expert]:checked').click();
+			$('#comment-loader').hide();
+			$('#comment-form').fadeOut();
+
+			if (data.error == 'NO_USER')
+			{
+				alert('Для добавления комментария необходимо выполнить вход на сайт');
+				return;
+			}
+
+			if (!data.tree) // Линейные комментарии
+			{
+				var $td = $('#comments .comment').first();
+				if (!data.new_comments) // Уже есть комментарии
+				{
+					var $row = $td.closest('div');
+					var $comments = $(data.comments);
+					$row.before($comments);
+				} else { // Комментариев пока нет
+					var $comments = $(data.comments);
+					$('#comments-placeholder').replaceWith($comments);
+				}
+			} else { // Древовидные комментарии
+				var parent_id = $('#comm_parent_id').val();
+
+				if (data.new_comments)
+				{
+					$('#comments-placeholder').replaceWith(data.comment);
+				} else {
+					var $comments = $('#comments');
+					var $parent = $comments.find('#comment-' + parent_id);
+
+					if ($parent.size() == 0)
+					{
+						$place = $comments;
+					} else {
+						var $place = $parent.find('.child-comments-wrapper .child-comments:first');
+
+						if ($place.size() == 0)
+						{
+							$place = $('<div class="child-comments-wrapper"><div class="child-comments"></div></div>');
+							$parent.append($place);
+							$place = $place.find('.child-comments:first');
+						}
+					}
+
+					var $comment = $(data.comment);
+					var bg_color = $place.closest('.comment').find('.comment-wrapper').css('background-color');
+					if (bg_color == 'rgb(255, 255, 255)')
+						$('.comment-wrapper:first', $comment).removeAttr('style');
+					else
+						$('.comment-wrapper:first', $comment).css('background-color', '#fff');
+
+					$place.append($comment);
+					setTimeout(function(){
+						location.hash = 'comment-'+data.comment_id;
+					}, 800);
+				}
+			}
+
+			try {
+				$('#comment-form-textarea textarea.ckeditor').ckeditorGet().destroy();
+			}
+			catch (e) {
+				// TODO: handle exception
+			}
+
+//			var ckeditor = $('#comment-form-textarea textarea.ckeditor').ckeditorGet();
+//			if (ckeditor) ckeditor.destroy();
+		}, true);
+		$('#comm_id').val('0');
+	});
+
+	// Панель инструментов для клиентских комментариев
+	$('.comment-toolbar')
+	.find('a.img').click(function(e){
+		e.preventDefault();
+
+		function insertText(element,text)
+		{
+			if (element && element.caretPos)
+				element.caretPos.text=text;
+			else if (element && element.selectionStart+1 && element.selectionEnd+1)
+				element.value=element.value.substring(0,element.selectionStart)+text+element.value.substring(element.selectionEnd,element.value.length);
+			else if (element)
+				element.value+=text;
+		}
+
+		var dlg = $(os.dlg).dialog({
+			modal: true,
+			title: 'Ваши изображения',
+			close: function(){
+				$(this).dialog('destroy').remove();
+			},
+			buttons: [{
+				text: 'Вставить',
+				click: function(){
+					insertText($('#comment-text').get(0), '[img]'+$('select.images :selected', dlg).text()+'[/img]');
+					$(this).dialog('close');
+				}
+			}],
+			minWidth: 500,
+			minHeight: 300,
+			height: 300,
+			open: function(){
+				os.query('/ajax/users/', {
+					cmd: 'show files dialog'
+				}, function(data, errors){
+					if (!data.success)
+					{
+						if (data.no_user)
+							os.alert('Для использования данной функции необходимо войти на сайт');
+						else
+							os.alert('Произошла ошибка');
+						dlg.dialog('close');
+						return;
+					}
+
+					dlg.data('user-id', data.user_id).html(data.dialog).dialog('option', {position:'auto'})
+					.find('select.images').change(function(){
+						if ($(':selected', this).text())
+							$('.preview', dlg).html('<img src="/images/r/200x200/uploads/u-'+data.user_id+'/'+$(':selected', this).text()+'" />');
+						else
+							$('.preview', dlg).html('');
+					}).dblclick(function(){
+						insertText($('#comment-text').get(0), '[img]'+$('select.images :selected', dlg).text()+'[/img]');
+						dlg.dialog('close');
+					})
+					.find('option:first').attr('selected', 'selected')
+					.end().change()
+					.end().find('.upload-bar a').click(function uploadFile(e){
+						if (e) e.preventDefault();
+						var file = $('input[type=file]', dlg);
+
+						if (file.val() == '')
+						{
+							return;
+						}
+
+						os.query('/ajax/users/', {
+							cmd: 'upload user file check',
+							filename: file.val()
+						}, function(data, errors){
+							if (!data.success){
+								os.alert('При загрузке файла произошла ошибка');
+								return;
+							}
+
+							if (data.file_exists && !dlg.data('replace'))
+							{
+								$(data.dialog).dialog({
+									dialogClass: 'ui-dialog-warning',
+									modal: true,
+									title: 'Файл существует',
+									resizable: false,
+									close: function(){
+										$(this).dialog('destroy').remove();
+									},
+									width: 'auto',
+									height: 'auto',
+									position: 'auto',
+									buttons: {
+										'Отменить': function(){
+											$(this).dialog('close');
+										},
+										'Заменить': function(){
+											dlg.data('filename', $('input', this).val()).data('replace', true);
+											uploadFile();
+											$(this).dialog('close');
+										}
+									},
+									open: function() {
+										var button = $('.ui-dialog-buttonpane .ui-dialog-buttonset .ui-button', $(this).dialog('widget')).get(1);
+										$('input', this).keyup(function(){
+											if ($(this).val() != $(this).data('original-filename'))
+												$('span', button).text('Переименовать');
+											else
+												$('span', button).text('Заменить');
+										});
+									}
+								});
+							} else {
+								$('.loading', dlg).show();
+								os.query('/ajax/users/', {
+									cmd: 'upload user file',
+									file: file.get(0),
+									filename: dlg.data('filename')
+								}, function(data, errors){
+									$('.loading', dlg).hide();
+									$('input[type=file]', dlg).val('');
+									if (!data.success){
+										if (data.bad_image)
+											os.alert('При загрузке файла произошла ошибка. Файл, похоже, не является изображением.');
+										else if (data.bad_filename)
+											os.alert('При загрузке файла произошла ошибка. Проверьте, что имя файла не содержит неверных символов. Допустимо использовать цифры, буквы латинского алфавита, знак минус и знак подчёркивания.');
+										else
+											os.alert('При загрузке файла произошла ошибка');
+										return;
+									}
+
+									dlg.data('filename', '').data('replace', false);
+									if ($('select.images option[value="'+data.filename+'"]', dlg).size()==0)
+										$('select.images', dlg).append('<option value="'+data.filename+'">'+data.filename+'</option>');
+
+									$('select.images option[value="'+data.filename+'"]', dlg).attr('selected', 'selected');
+									$('select.images', dlg).change();
+								}, true);
+							}
+						}, true);
+
+					});
+				}, true);
+			}
+		}).data('filename', '').data('replace', false);
+	}).end();
+	//.find('a').qtip();
+
+	// Показываем любящих юзеров
+	$('#comments-placeholder, #hivemind-comments').on('mouseenter', '.like-comment', function(){
+		$('#comments .likes').each(function(){
+			$('>div:first', this).addClass('slide-hide');
+		});
+
+		var comment_id = $(this).closest('.comment').data('comment-id');
+		var plate = $(this).closest('.likes').find('>div:first');
+		var portraits = $('.photos', plate);
+
+		var count = $('.likes-count', this);
+		var count_plural = $('.likes-count-plural', plate);
+
+		plate.removeClass('hide-me');
+
+		os.query('/ajax/comments/', {
+			cmd: 'get likes users',
+			comment_id: comment_id
+		}, function(data, errors){
+			if (!data.success)
+				return;
+
+			var p = $('<div>');
+			$(data.users).each(function(){
+				p.append('<div class="p"><a href="/cabinet/'+this.id+'/"><img class="avatar-50" src="/images/r/48x48p/'+this.avatar+'" alt="" /></div>')
+					.find('img:last').attr('title', this.name+' '+this.fio);
+			});
+			p.append('<div class="clear"></div>');
+			portraits.html(p);
+
+			count.text(data.likes_count);
+			count_plural.text(data.likes_count?('Понравилось '+data.likes_count+' '+os.pluralRu(data.likes_count, 'человеку|людям')):'Пока никому не понравилось');
+
+			if (data.users.length > 0)
+				plate.removeClass('slide-hide');
+		}, true);
+
+
+	// Скрываем любящих юзеров
+	}).on('mouseleave', '.like-comment', function(){
+
+		var plate = $(this).closest('.likes').find('>div:first');
+
+		plate.addClass('hide-me');
+
+		setTimeout(function(){
+			if ($(plate).hasClass('hide-me'))
+				$(plate).addClass('slide-hide');
+		}, 1000);
+
+
+
+	}).on('mouseenter', '.likes-plate', function(){
+		$(this).removeClass('hide-me');
+
+
+
+	}).on('mouseleave', '.likes-plate', function(){
+		var plate = $(this);
+		plate.addClass('hide-me');
+
+		setTimeout(function(){
+			if ($(plate).hasClass('hide-me'))
+				$(plate).addClass('slide-hide');
+		}, 1000);
+
+
+	// Тогглим лайк
+	}).on('click', '.like-comment', function(e){
+		e.preventDefault();
+		if ($(this).data('anonymous')) os.login('Для комментирования необходимо войти на сайт или зарегистрироваться.', 'Необходима авторизация');
+
+		var comment_id = $(this).closest('.comment').data('comment-id');
+		var img = $('img', this);
+		var count = $('.likes-count', this);
+
+		var img_src = img.attr('src');
+		img.attr('src', '/os/css/img/comments/liked-load.gif');
+
+		var plate = $(this).closest('.likes').find('>div:first');
+		var count_plural = $('.likes-count-plural', plate);
+		var portraits = $('.photos', plate);
+
+		os.query('/ajax/comments/', {
+			cmd: 'toggle like',
+			comment_id: comment_id
+		}, function(data, errors){
+			if (!data.success)
+			{
+				img.attr('src', img_src);
+				return;
+			}
+
+			var p = $('<div>');
+			$(data.users).each(function(){
+				p.append('<div class="p"><a href="/cabinet/'+this.id+'/"><img class="avatar-50" src="/images/r/48x48p/'+this.avatar+'" alt="" /></div>')
+					.find('img:last').attr('title', this.name+' '+this.fio);
+			});
+			p.append('<div class="clear"></div>');
+			portraits.html(p);
+
+			if (data.users.length > 0)
+			{
+				plate.removeClass('slide-hide');
+			} else {
+				plate.addClass('slide-hide');
+			}
+
+			if (data.liked)
+			{
+				img.attr('src', '/os/css/img/comments/liked.gif');
+			} else {
+				img.attr('src', '/os/css/img/comments/not-liked.gif');
+			}
+
+			count.text(data.likes_count);
+			count_plural.text(data.likes_count?('Понравилось '+data.likes_count+' '+os.pluralRu(data.likes_count, 'человеку|людям')):'Пока никому не понравилось');
+
+		}, true);
+	});
+});</script>
+
+
+<script type="text/javascript">
+<!--
+	window.mat_id = '13917';
+	window.tmp_key = '36696f8025f16767855186e96e174903';
+	window.tmp_rights_id = '';
+//-->
+</script>
+<div class="cmntdiv"><a class="cmnt" href="#" title="" id="show-comment-form">
+	<img src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/comment.jpg">
+	</a>
+</div>
+<div class="uninner" style="display: none;margin:0 0 10px;" id="comment-form">
+<div class="block9">
+	<p class="title6">Ваш комментарий:</p>
+
+		
+	<div id="comment-form-textarea">
+	<div class="inf4 user">
+		<p class="title7">Вы:</p>
+		
+		<div class="new3">
+			<div class="foto2">
+				<a href="https://sapland.ru/cabinet/7784/" title="" data-hasqtip="true"><img src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/a_002.htm" class="avatar-50" alt=""></a>
+			</div>
+			<div class="opis3">
+				<p>Екименко</p>
+				<p>Алексей </p>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+	<div class="opis4"><form enctype="multipart/form-data" method="post" action="/kb/blogs/sap-hana-dynamic-tiering-dlya-ispolizovaniya-rasshirennih-tablits-2.html">
+		<p class="title7">Ваш комментарий:</p>
+				
+		<div class="block10">
+			<span class="ic"><img alt="" src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/arrow.gif"></span>
+			<div class="comment-toolbar">
+				<a href="#" class="img" title="Вставить изображение"></a>
+			</div>
+			<textarea rows="10" cols="30" id="comment-text"></textarea>
+		</div>
+		
+		<div class="links3">
+					
+			<a class="button2" href="#" title="" id="comment-submit">
+				<span>Отправить</span>
+			</a>
+			<a class="button2" href="#" title="" id="comment-preview">
+				<span>Посмотреть</span>
+			</a>
+
+			
+			
+			
+		</div>
+		
+		<img src="SAP%20HANA%20Dynamic%20Tiering%20%D0%B4%D0%BB%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D1%85%20%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86_files/arrows-loader.gif" alt="Обработка" style="display: none; vertical-align: top;" id="comment-loader"> 
+		<input id="comm_parent_id" value="0" type="hidden">
+		<input id="comm_id" value="0" type="hidden">
+		<input id="tree_comment" value="1" type="hidden">
+
+	</form></div>
+	<div class="clear"></div>
+	</div>
+	
+	
+</div>
+</div>
+
+
+<div class="clear"></div>
+<div id="comments-placeholder" style="margin-top:0;min-height:45px">
+	</div>
+</div></div></div>
+			</div>
+		</div>
+	</div>
+		<footer class="page-footer">
+			<div class="ftxt1">
+				<span class="ado">18+</span>
+				© 2009 - 2018, <a href="http://exrp.ru/" rel="nofollow">Издательство ООО «Эксперт РП»</a>. Все права защищены
+			</div>
+			<div class="ftxt2">
+				<span>Разработка и поддержка сайта — <a href="http://www.openstart.ru/" target="_blank" rel="nofollow">OpenStart</a></span>
+				<p><span>Связаться с нами <a href="mailto:support@sapland.ru">support@sapland.ru</a></span></p>
+			</div>
+			<div class="ftxt3">
+				<span>Сообщество</span>
+				<ul class="social-list">
+					<li><a href="https://www.linkedin.com/groups?mostRecent=&amp;gid=6797279&amp;trk=my_groups-tile-flipgrp" class="social-ico social-ln"></a>
+					</li>
+					<li><a href="https://www.facebook.com/pages/SAPLand/127114854020362" class="social-ico social-fb"></a></li>
+					<li><a href="https://twitter.com/SAPLand" class="social-ico social-tw"></a></li>
+					<li><a href="http://vk.com/club4419971" class="social-ico social-vk"></a></li>
+				</ul>
+			</div>
+			<p>Републикация материалов — только со ссылкой на SAPLAND.RU, с разрешения редакции сайта. Редакция не несет ответственности за
+			   высказывания пользователей на сайте.</p>
+		</footer>
+	</div>
+</div>
+
+
+<iframe name="_ym_native" style="opacity: 0; width: 0px; height: 0px; position: absolute; left: 100%; bottom: 100%;" frameborder="0"></iframe><div class="_ym_zoom" style="bottom: 100%; position: fixed; width: 100vw;"></div><div class="_ym_viewport" style="bottom: 100%; position: fixed; width: 100%; height: 100%;"></div></body></html>

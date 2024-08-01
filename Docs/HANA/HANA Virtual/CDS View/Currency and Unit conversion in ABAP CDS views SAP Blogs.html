@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if gte IE 9]>
+<html class="ie" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US"><!--<![endif]--><head class="at-element-marker">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar" content="black">
+    <title>Currency and Unit conversion in ABAP CDS views | SAP Blogs</title>
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+
+    
+    
+    <!--[if lt IE 9]>
+    <script src="https://blogs.sap.com/wp-content/themes/sap-v3-neo/js/html5.min.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <link rel="icon" type="image" href="https://static.community.services.sap/com-hdr/v5/393.181/shared-ui/1dx-assets/images/favicon.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.community.services.sap/com-hdr/v5/393.181/shared-ui/1dx-assets/images/favicon.ico"><link rel="apple-touch-icon" href="https://static.community.services.sap/com-hdr/v5/393.181/shared-ui/1dx-assets/images/apple-touch-icon.png"><link rel="dns-prefetch" href="https://static.community.services.sap/">
+<link rel="dns-prefetch" href="https://accounts.sap.com/">
+<link rel="dns-prefetch" href="https://assets.adobedtm.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="SAP Blogs » Feed" href="https://blogs.sap.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="SAP Blogs » Comments Feed" href="https://blogs.sap.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="SAP Blogs » Currency and Unit conversion in ABAP CDS views Comments Feed" href="https://blogs.sap.com/2019/07/11/currency-and-unit-conversion-in-abap-cds-views/feed/">
+		<script type="text/javascript" defer="defer" async="" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/privacy.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/blogs.sap.com\/res1dx-3207\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="twentytwelve-fonts-css" href="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="twentytwelve-style-css" href="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/style_002.css" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentytwelve-ie-css'  href='https://blogs.sap.com/res1dx-3207/wp-content/themes/sap-v3-neo/css/ie.css' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="designmate_styles-css" href="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/designmate.css" type="text/css" media="all">
+<link rel="stylesheet" id="designsystem_styles-css" href="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/main.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="prism-css" href="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/prism.css" type="text/css" media="all">
+<link rel="stylesheet" id="sap_lightbox_gallery_css-css" href="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/lightbox-gallery.css" type="text/css" media="all">
+<link rel="stylesheet" id="pt_style_css-css" href="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/pt_style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wordpress-popular-posts-css-css" href="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/wpp.css" type="text/css" media="all">
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/jquery.js"></script>
+<script type="text/javascript">
+if (jQuery !== undefined) {
+                jQuery(window).load(function(){
+                    var _wpWindowLoaded = document.createElement("div");
+                    _wpWindowLoaded.setAttribute("class", "hidden");
+                    _wpWindowLoaded.setAttribute("id", "wp_window_loaded");
+                    document.body.appendChild(_wpWindowLoaded);
+                });
+            }
+</script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/jquery-migrate.js"></script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/launch-f095fbc32a96.js"></script><script src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/EX122990d7753a4b598773843c00258060-libraryCode_source.js" async=""></script><script src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/notice" async="async" id="truste_0.3181397190421057"></script>            
+<script>
+window.addEventListener('message', function (event) {
+              if (event.origin.indexOf("consent-pref.trustarc.com") < 0)
+              return;
+
+              var data = JSON.parse(event.data);
+              if (data && data.message === 'remove_iframe') {
+                sessionStorage.setItem("referrerBeforeTrustArcReload", document.referrer);
+                sessionStorage.setItem("referrerBeforeTrustArcReloadUpdateTime", new Date().getTime());
+                window.location.reload();
+    }
+});
+</script>
+<style id="at-makers-style" class="at-flicker-control">
+.mboxDefault {visibility: hidden;}
+</style><script src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/RC746651f653a24e67939e12d1a632eb8f-source.js" async=""></script><script src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/RCb5593b27384d430bb6161313e56d3b12-source.js" async=""></script><link rel="stylesheet" type="text/css" id="u0" href="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/skin.css"></head><body class="post-template-default single single-post postid-811933 single-format-standard custom-font-enabled"><div id="consent_blackbar" style="position:fixed; bottom:0px; z-index:1000000"></div><script>
+window._trackData = function(data, linkObject, eventObject) {
+    try {
+        /* debugging */
+        try {
+            if ( _satellite.getVar('isLaunchStagingDebug') ) {
+                console.log('LAUNCH: _trackData: arguments: ', arguments);
+                var d = JSON.parse(JSON.stringify(data));
+                console.log('LAUNCH: _trackData: data: ', d);
+                console.log('LAUNCH: _trackData: data (stringified): ', JSON.stringify(data));
+            }
+        } catch (e) {window.console&&console.error(e);}
+    } catch (e) {window.console&&console.error(e);}
+};
+</script><script>
+(function() {
+    try {
+        var data = JSON.parse(localStorage.getItem('_6senseCompanyDetails')) || false;
+        // force api call periodically to enforce changes on 6s end
+		var cacheExpire = 60 * 60 * 24 * 1000 * 1; // 1 day
+        var currentTime = (new Date()).getTime();
+        if (data) {
+            if (data._sap && data._sap._lastAPIRefresh) {
+                if ((currentTime - +data._sap._lastAPIRefresh) >= cacheExpire) {
+                    data = false;
+                }
+            } else {
+                data = false;
+            }
+        }
+        // no data or expired data - execute 6s script to make api call, set local storage
+        if (!data) {
+            window._6si = window._6si || [];
+            window._6si.push(['enableEventTracking', true]);
+            window._6si.push(['setToken', 'b4f19dbc1b83183be9c498ba672b753c']);
+            // 6s api response callback function
+            window._6si.push(['enableCompanyDetails', true, function(response) {
+                // throw timestamp into local storage object to check for cache expire refresh above
+                var data = JSON.parse(localStorage.getItem('_6senseCompanyDetails')) || {};
+                var currentTime = (new Date()).getTime();
+                data._sap = {
+                    "_lastAPIRefresh": currentTime
+                };
+                localStorage.setItem('_6senseCompanyDetails', JSON.stringify(data));
+
+                // broadcast custom event for other things to listen for and consume
+                var event = document.createEvent("CustomEvent");
+                event.initCustomEvent("6sense-request-success", true, true, response);
+                document.dispatchEvent(event);
+            }]);
+            window._6si.push(['setEpsilonKey', '9dba8466d7cb8d6d6155236c8f7c2f70425f2705']);
+            (function() {
+                var gd = document.createElement('script');
+                gd.type = 'text/javascript';
+                gd.innerHTML = '!function(a,b){function c(a){var b,c="";for(b=0;b<=3;b++)c+=ua.charAt(a>>8*b+4&15)+ua.charAt(a>>8*b&15);return c}function d(a){var b,c=1+(a.length+8>>6),d=new Array(16*c);for(b=0;b<16*c;b++)d[b]=0;for(b=0;b<a.length;b++)d[b>>2]|=a.charCodeAt(b)<<b%4*8;return d[b>>2]|=128<<b%4*8,d[16*c-2]=8*a.length,d}function e(a,b){var c=(65535&a)+(65535&b);return(a>>16)+(b>>16)+(c>>16)<<16|65535&c}function f(a,b){return a<<b|a>>>32-b}function g(a,b,c,d,g,h){return e(f(e(e(b,a),e(d,h)),g),c)}function h(a,b,c,d,e,f,h){return g(b&c|~b&d,a,b,e,f,h)}function i(a,b,c,d,e,f,h){return g(b&d|c&~d,a,b,e,f,h)}function j(a,b,c,d,e,f,h){return g(b^c^d,a,b,e,f,h)}function k(a,b,c,d,e,f,h){return g(c^(b|~d),a,b,e,f,h)}function l(a){var b,f=d(a),g=1732584193,l=-271733879,m=-1732584194,n=271733878;for(b=0;b<f.length;b+=16){var o=g,p=l,q=m,r=n;g=h(g,l,m,n,f[b+0],7,-680876936),n=h(n,g,l,m,f[b+1],12,-389564586),m=h(m,n,g,l,f[b+2],17,606105819),l=h(l,m,n,g,f[b+3],22,-1044525330),g=h(g,l,m,n,f[b+4],7,-176418897),n=h(n,g,l,m,f[b+5],12,1200080426),m=h(m,n,g,l,f[b+6],17,-1473231341),l=h(l,m,n,g,f[b+7],22,-45705983),g=h(g,l,m,n,f[b+8],7,1770035416),n=h(n,g,l,m,f[b+9],12,-1958414417),m=h(m,n,g,l,f[b+10],17,-42063),l=h(l,m,n,g,f[b+11],22,-1990404162),g=h(g,l,m,n,f[b+12],7,1804603682),n=h(n,g,l,m,f[b+13],12,-40341101),m=h(m,n,g,l,f[b+14],17,-1502002290),l=h(l,m,n,g,f[b+15],22,1236535329),g=i(g,l,m,n,f[b+1],5,-165796510),n=i(n,g,l,m,f[b+6],9,-1069501632),m=i(m,n,g,l,f[b+11],14,643717713),l=i(l,m,n,g,f[b+0],20,-373897302),g=i(g,l,m,n,f[b+5],5,-701558691),n=i(n,g,l,m,f[b+10],9,38016083),m=i(m,n,g,l,f[b+15],14,-660478335),l=i(l,m,n,g,f[b+4],20,-405537848),g=i(g,l,m,n,f[b+9],5,568446438),n=i(n,g,l,m,f[b+14],9,-1019803690),m=i(m,n,g,l,f[b+3],14,-187363961),l=i(l,m,n,g,f[b+8],20,1163531501),g=i(g,l,m,n,f[b+13],5,-1444681467),n=i(n,g,l,m,f[b+2],9,-51403784),m=i(m,n,g,l,f[b+7],14,1735328473),l=i(l,m,n,g,f[b+12],20,-1926607734),g=j(g,l,m,n,f[b+5],4,-378558),n=j(n,g,l,m,f[b+8],11,-2022574463),m=j(m,n,g,l,f[b+11],16,1839030562),l=j(l,m,n,g,f[b+14],23,-35309556),g=j(g,l,m,n,f[b+1],4,-1530992060),n=j(n,g,l,m,f[b+4],11,1272893353),m=j(m,n,g,l,f[b+7],16,-155497632),l=j(l,m,n,g,f[b+10],23,-1094730640),g=j(g,l,m,n,f[b+13],4,681279174),n=j(n,g,l,m,f[b+0],11,-358537222),m=j(m,n,g,l,f[b+3],16,-722521979),l=j(l,m,n,g,f[b+6],23,76029189),g=j(g,l,m,n,f[b+9],4,-640364487),n=j(n,g,l,m,f[b+12],11,-421815835),m=j(m,n,g,l,f[b+15],16,530742520),l=j(l,m,n,g,f[b+2],23,-995338651),g=k(g,l,m,n,f[b+0],6,-198630844),n=k(n,g,l,m,f[b+7],10,1126891415),m=k(m,n,g,l,f[b+14],15,-1416354905),l=k(l,m,n,g,f[b+5],21,-57434055),g=k(g,l,m,n,f[b+12],6,1700485571),n=k(n,g,l,m,f[b+3],10,-1894986606),m=k(m,n,g,l,f[b+10],15,-1051523),l=k(l,m,n,g,f[b+1],21,-2054922799),g=k(g,l,m,n,f[b+8],6,1873313359),n=k(n,g,l,m,f[b+15],10,-30611744),m=k(m,n,g,l,f[b+6],15,-1560198380),l=k(l,m,n,g,f[b+13],21,1309151649),g=k(g,l,m,n,f[b+4],6,-145523070),n=k(n,g,l,m,f[b+11],10,-1120210379),m=k(m,n,g,l,f[b+2],15,718787259),l=k(l,m,n,g,f[b+9],21,-343485551),g=e(g,o),l=e(l,p),m=e(m,q),n=e(n,r)}return c(g)+c(l)+c(m)+c(n)}var m={};m.hash=function(a){a=a.utf8Encode();var b=[1518500249,1859775393,2400959708,3395469782];a+=String.fromCharCode(128);for(var c=a.length/4+2,d=Math.ceil(c/16),e=new Array(d),f=0;f<d;f++){e[f]=new Array(16);for(var g=0;g<16;g++)e[f][g]=a.charCodeAt(64*f+4*g)<<24|a.charCodeAt(64*f+4*g+1)<<16|a.charCodeAt(64*f+4*g+2)<<8|a.charCodeAt(64*f+4*g+3)}e[d-1][14]=8*(a.length-1)/Math.pow(2,32),e[d-1][14]=Math.floor(e[d-1][14]),e[d-1][15]=8*(a.length-1)&4294967295;var h,i,j,k,l,n=1732584193,o=4023233417,p=2562383102,q=271733878,r=3285377520,s=new Array(80);for(f=0;f<d;f++){for(var t=0;t<16;t++)s[t]=e[f][t];for(t=16;t<80;t++)s[t]=m.ROTL(s[t-3]^s[t-8]^s[t-14]^s[t-16],1);for(h=n,i=o,j=p,k=q,l=r,t=0;t<80;t++){var u=Math.floor(t/20),v=m.ROTL(h,5)+m.f(u,i,j,k)+l+b[u]+s[t]&4294967295;l=k,k=j,j=m.ROTL(i,30),i=h,h=v}n=n+h&4294967295,o=o+i&4294967295,p=p+j&4294967295,q=q+k&4294967295,r=r+l&4294967295}return m.toHexStr(n)+m.toHexStr(o)+m.toHexStr(p)+m.toHexStr(q)+m.toHexStr(r)},m.f=function(a,b,c,d){switch(a){case 0:return b&c^~b&d;case 1:return b^c^d;case 2:return b&c^b&d^c&d;case 3:return b^c^d}},m.ROTL=function(a,b){return a<<b|a>>>32-b},m.toHexStr=function(a){for(var b,c="",d=7;d>=0;d--)b=a>>>4*d&15,c+=b.toString(16);return c},void 0===String.prototype.utf8Encode&&(String.prototype.utf8Encode=function(){return unescape(encodeURIComponent(this))}),void 0===String.prototype.utf8Decode&&(String.prototype.utf8Decode=function(){try{return decodeURIComponent(escape(this))}catch(a){return this}});var n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,$,_,aa,ba,ca,da,ea,fa,ga,ha,ia,ja,ka,la,ma,na,oa,pa,qa,ra,sa,ta,ua="0123456789abcdef",va={},wa={};Z=window._6si=window._6si||[],ga="",z=!1,A=!1,ma=!1,ta=!1,oa="",window._storagePopulated=!1,n={},qa=!1,ra=!1,sa=!1,B={_VIDEO:"VIDEO",_FORM:"FORM",_DIV:"DIV",_A:"A",_BUTTON:"BUTTON",_INPUT:"INPUT",_OBJECT:"OBJECT",_SELECT:"SELECT",_TEXTAREA:"TEXTAREA"},ca=[],ba="",aa={},y=[],q=[],ka=[],pa="https:"===document.location.protocol,T=pa?"https://":"http://","undefined"!=typeof JSON&&null!==JSON||(R=p().createElement("script"),R.type="text/javascript",R.async=!0,R.src=T+"d1lm7kd3bd3yo9.cloudfront.net/json2.min.js",R.onload=function(){return window._6si.push(["clearQueue"])},S=p().getElementsByTagName("script")[0],S.parentNode.insertBefore(R,S)),ha=T+"b.6sc.co/img.gif",ia=63072e6,da=null,ea=null,fa=144e5,ja=6048e5,va={setToken:function(a){ga=a,va.clearQueue.apply()},setEndpoint:function(a){ha=T+a+"/v1/beacon/img.gif"},disableCookies:function(a){sa=a},setEpsilonKey:function(a){oa="Token "+a},clearQueue:function(){var a,b,c;if(P()){for(a=0,b=ca.length;a<b;a++)c=ca[a],va.send.apply(this,c);return ca=[]}},setPageAttributes:function(a){aa=a},setSessionTimeout:function(a){fa=a},enableCompanyDetails:function(a,b){ma=a,b&&(na=b)},enableEventTracking:function(a,b){var c,d,e=[];if(z=a,a){for(c in B)B.hasOwnProperty(c)&&e.push(B[c]);if(b){for(d=0;d<b.length;d++){if(e.indexOf(b[d])<0)throw new Error("One or more of the event trackingattributes is incorrect");n[b[d]]=!0}B._FORM in n&&(n[B._INPUT]=!0,n[B._SELECT]=!0,n[B._TEXTAREA]=!0)}else for(d=0;d<e.length;d++)n[e[d]]=!0}},enableRetargeting:function(a){A=a},setCustomMetatags:function(a){y=a},setWhiteListFields:function(a){q=q.concat(a)},setBlacklistFields:function(){},setThirdPartyValues:function(a){var b,c,d="Third party value is in the wrongformat";for(c=0;c<a.length;c++){if(b=a[c],"[object Array]"!==Object.prototype.toString.call(b))throw new Error(d);if(!b[0]||!b[1])throw new Error(d);ka.push(b)}},send:function(a,b){var c,d,e,f,g,h,i,j,k,l,m,n,q,r,t=N(),u=o();if(!qa){if(!P())return void ca.push([a,b]);l=E("_gd_svisitor"),k=L(),h=K(),g=J(),f=s(),q=la(b,aa),e=encodeURIComponent(JSON.stringify(q)),m=encodeURIComponent(JSON.stringify(u)),i=encodeURIComponent(JSON.stringify(t)),c=(+new Date).toString().substring(5),j=[ha,"?token=",ga,"&svisitor=",l,"&visitor=",k,"&session=",h,"&event=",a,"&q=",e,"&isIframe=",f,"&m=",m,"&cb=",c,"&r=",g,"&thirdParty=",i].join(""),sa&&(j+="&d=1"),!0===A&&null!==(r=X())&&(j+="&an_uid="+r),d=new Image,d.src=j,n=p().getElementById(b.id),null===n||null===n.href&&null===n.length&&null===n.method&&null===n.elements||(d.onload=function(){U(n)},d.onerror=function(){U(n)})}},loadVisitorData:function(a,b){var c,d=window.localStorage;XMLHttpRequest&&a&&"withCredentials"in(c=new XMLHttpRequest)&&(c.onreadystatechange=function(){4===c.readyState&&200===c.status&&(d.setItem("_6senseCompanyDetails",c.response),window._storagePopulated=!0,void 0!==b&&b(c.response))},c.open("GET","https://epsilon.6sense.com/v1/company/details",0),c.setRequestHeader("Authorization",oa),c.withCredentials=!0,c.setRequestHeader("EpsilonCookie",E("_gd_svisitor")),c.send())},optOut:function(a){qa=a},loadAppNexusUID:function(){var a,b,c;XMLHttpRequest&&"withCredentials"in(a=new XMLHttpRequest)&&(a.onreadystatechange=function(){4===a.readyState&&(b=200===a.status?JSON.parse(a.response).uid:-1,W(b),this.push(["send","a_pageload",aa]))}.bind(this),c=pa?"https://secure.adnxs.com/getuidj":"http://ib.adnxs.com/getuidj",a.open("GET",c,!0),a.withCredentials=!0,a.send())}},wa={push:function(){var a,b,c,d,e;for(d=0,e=arguments.length;d<e;d++){c=arguments[d],a=c.shift();try{va[a].apply(this,c)}catch(f){throw"non_object_property_call"===f.type?(b="Command could not be resolved.",new Error(b)):f}}},init:function(a){var b,c,d,e,f,g,h,i,j,k,l={};if(!a)for($=0,_=Z.length;$<_;$++)Q=Z[$],this.push(Q);if(b=this,k=(new Date).getTime(),Y(function(){(new Date).getTime()-k<150&&!ta&&(!0!==ma||a||(ta=!0,b.push(["loadVisitorData",oa,na])))}),setTimeout(function(){ta||!0!==ma||a||(ta=!0,b.push(["loadVisitorData",oa,na]))},150),!0===z&&!ra){if(ra=!0,a||(!0===A&&null===X()?this.push(["loadAppNexusUID"]):this.push(["send","a_pageload",aa])),b=this,null!==(c=p().querySelector("body"))&&(c.addEventListener("click",function(a){for(d=a||window.event,e=d.srcElement||d.target;e.parentNode&&"BODY"!==e.tagName;){if(n[e.tagName])return l={srcElement:e,type:d.type},void b.send(l);e=e.parentNode}},!1),n.hasOwnProperty(B._FORM)&&null!==(f=p().querySelectorAll("form"))))for(g=0;g<f.length;g++)f[g].addEventListener("submit",function(a){a?b.send(a):b.send(this)});if(n.hasOwnProperty(B._OBJECT)&&null!==(h=p().querySelectorAll("object")))for(i=0;i<h.length;i++)h[i].addEventListener("mousedown",function(a){b.send(a)},!1);n.hasOwnProperty(B._VIDEO)&&null!==(j=p().querySelector("body"))&&(j.addEventListener("play",function(a){b.send(a)},!0),j.addEventListener("pause",function(a){b.send(a)},!0),j.addEventListener("loadeddata",function(a){b.send(a)},!0))}},send:function(){var a,b,c,d,e,f,g,h,i,j=arguments[0];if(j&&void 0!==j.type){if(a=j.srcElement||j.target,"loadeddata"===j.type)return;c=a,b=c.getAttribute("id"),g=j.type}else b=j?j.getAttribute("id"):null,c=j||null,g="unknown";if(d="",e="send",c&&void 0!==c.length&&void 0!==c.method&&void 0!==c.elements)d=F(c);else if(c&&null!==C(c)&&"submit"===c.type)f=C(c),b=f.getAttribute("id"),d=M(f),g="submit";else if(c&&void 0!==c.href)d=c.href;else if(c&&void 0!==c.data)d=c.data;else if(c&&(void 0!==c.src||void 0!==c.controls))if(void 0===c.src||""===c.src)for(h=0;h<c.getElementsByTagName("source").length;h++)i=c.getElementsByTagName("source"),d+=i[h].src,h<c.getElementsByTagName("source").length-1&&(d+=",");else d=c.src;null===b&&(b=""),this.push([e,g,{event_id:b,event_value:d}])},enable:function(){var a;a=this,z||(window._6si.push(["optOut",!1]),window._6si.push(["enableEventTracking",!0]),a.init(!0))},disable:function(){var a;a=this,window._6si.push(["optOut",!0]),window._6si.push(["enableEventTracking",!1]),a.init(!0)}},V=function(a,b,c){var d,e;d=new Date,d.setTime(d.getTime()+c),e=encodeURIComponent(b),p().cookie=[a,"=",e,";expires=",d.toGMTString(),";path=/;secure;samesite=none"].join("")},E=function(a){var b,c;return c=new RegExp("(?:^|;)\\s?"+a+"(.*?)(?:;|$)","i"),b=c.exec(p().cookie),null===b?null:decodeURIComponent(b[1].substring(1))},la=function(a,b){var c;for(c in b)b.hasOwnProperty(c)&&(a[c]=b[c]);return a},J=function(){return ba=encodeURIComponent(p().referrer)},s=function(){return window.top!==window.self},O=function(){return(""+1e7+-1e3+-4e3+-8e3+-1e11).replace(/1|0/g,function(){return(0|16*Math.random()).toString(16)})},N=function(){var a,b,c,d={};for(a=0;a<ka.length;a++)b=ka[a],c=E(b[1]),d[b[0]]=c;return d},v=function(){return da=O(),V("_gd_session",da,fa),da},w=function(){return ea=O(),V("_gd_visitor",ea,ia),ea},K=function(){return null===da&&(da=E("_gd_session")),null===da&&(da=v()),da},L=function(){return null===ea&&(ea=E("_gd_visitor")),null===ea&&(ea=w()),ea},P=function(){var a;return a="undefined"!=typeof JSON&&null!==JSON,a=a&&ga.length>0},G=function(){var a="",b=p().getElementsByTagName("title");return b.length>0&&(a=b[0].innerHTML),a},p=function(){try{if(!(x=parent.document))throw new Error("Unaccessible");return x}catch(a){return document}},H=function(a){var b,c;for(c=p().getElementsByTagName("meta"),b=0;b<c.length;){if(c[b].getAttribute("name")===a)return c[b].getAttribute("content");b++}return""},r=function(a){var b=/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;return!!b.test(a)},t=function(a){if(/company|country|title|state|city|prov|job|role/.test(a.toLowerCase()))return!0},o=function(){var a,b,c={description:H("description"),keywords:H("keywords"),title:G()};for(a=0;a<y.length;a++)b=y[a].name,c[b]=H(b);return c},u=function(a){if("string"==typeof a){var b;if(t(a))return!0;for(b=0;b<q.length;b++)if(a.toLowerCase()===q[b].toLowerCase())return!0}return!1},C=function(a){for(var b=a.parentNode;"TABLE"!==b.tagName;){if(void 0===b.tagName)return null;if(null===(b=b.parentNode))return null}return b},F=function(a){var b,c,d,e,f,g,h,i,j,k,l;for(e=0,g=[];e<a.elements.length;){if(l=a.elements[e],b=encodeURIComponent(l.name),c=encodeURIComponent(l.id),d=encodeURIComponent(l.placeholder).split(" ").join(""),!b&&!c&&!d){if(h=l.parentNode,!((i=h.getAttribute("name"))||(h=h.parentNode,i=h.getAttribute("name")))){e++;continue}b=encodeURIComponent(l.id)||encodeURIComponent(l.tagName),b=i+"_"+b}j="radio"===l.type&&!l.checked,k="fieldset"===l.type||"fieldset"===(l.tagName||"").toLowerCase(),j||k?e++:(f=I(b||c||d,l),f.length>0&&g.push(f),e++)}return g.join("&")},I=function(a,b){var c,d,e,f="",g=b.type,h=b.tagName||"",i=r(b.value),j="hidden"===g,k="password"===g,n="fieldset"===h.toLowerCase(),o=!n&&!k&&!j&&(i||u(a));return!b||n||!n&&b.value.length>100?f:(o&&(i?(c=m.hash(b.value),d=a+"_emaildomain="+b.value.split("@")[1],e=a+"_MD5="+l(b.value)):c=b.value,c=D(c),c=encodeURIComponent(c),"button"!==b.type&&"submit"!==b.type&&(d?(f+=a+"_Hash="+c,f+="&"+e,f+="&"+d):f+=a+"="+c)),f)},M=function(a){var b,c,d,e,f;for(c=0,d="",f=a.querySelectorAll("input, select, button, textarea");c<f.length;)e=f[c],b=encodeURIComponent(e.name),"radio"!==e.type||e.checked?(d+=I(b,e),c++):c++;return d.indexOf("&",d.length-3)>=0&&(d=d.substring(0,d.lastIndexOf("&"))+""),d},D=function(a){var b,c,d;return d=new RegExp("\\t","g"),b=new RegExp("\\n","g"),c=new RegExp("\\r","g"),a.replace(d,"").replace(b,"").replace(c,"")},U=function(a){return a},Y=function(a){var b;E("_gd_svisitor")||XMLHttpRequest&&"withCredentials"in(b=new XMLHttpRequest)&&(b.onreadystatechange=function(){var c,d=b.responseText;4===b.readyState&&200===b.status&&d.match("6suuid=")&&(c=d.split("=")[1],V("_gd_svisitor",c,ia),void 0!==a&&a())},sa?b.open("GET","//c.6sc.co/?d=1",!0):b.open("GET","//c.6sc.co/",!0),b.withCredentials=!0,b.send())},W=function(a){return V("_an_uid",a,ja),a},X=function(){var a;return a=E("_an_uid"),-1!==[-1,"-1","",0,"0",void 0].indexOf(a)&&(a=null),a},wa.init(),window._6si=wa,b.true=a}({},function(){return this}());';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gd, s);
+            })();
+        } else {
+            // broadcast custom event for other things to listen for and consume
+            var event = document.createEvent("CustomEvent");
+            event.initCustomEvent("6sense-request-success", true, true, {});
+            document.dispatchEvent(event);
+        }
+    } catch (e) {
+        data = false
+    }
+})();
+</script><script>
+window.fireGlobalMboxRequest = function() {
+  _satellite.logger.log("fireGlobalMboxRequest function fired");
+  try {
+      var globalMboxName = 'sap_global_target',
+          mboxParams = window.targetGlobalMboxParamsObj || {};
+      if(typeof adobe === 'object' && typeof adobe.target === 'object') {
+          adobe.target.getOffer({
+              mbox: globalMboxName,
+              params: mboxParams || {},
+              success: function(offer) {
+                  adobe.target.applyOffer({
+                      mbox: globalMboxName,
+                      offer: offer
+                  });
+                  if(document.readyState !== "loading" && typeof window.picturefill === 'function') {
+                      window.picturefill();
+                  }
+              },
+              error: function(status, error) {
+                  _satellite.logger.error('Target error:' + status + ' ' + error);
+                 /* Show the original content if opted out of tracking */
+                 var style = document.createElement("style");
+                 style.type = "text/css";
+                 style.innerHTML = ".mboxDefault { visibility: visible !important; }";
+                 document.getElementsByTagName('head')[0].appendChild(style);
+              },
+              timeout: function() {
+                console.log('Adobe Target Timeout');
+
+                /* Show the original content if opted out of tracking */
+                var style = document.createElement("style");
+                style.type = "text/css";
+                style.innerHTML = ".mboxDefault { visibility: visible !important; }";
+                document.getElementsByTagName('head')[0].appendChild(style);
+              }
+          });
+      } else {
+          _satellite.logger.log('Target library not loaded');
+      }
+  } catch(e) {
+      _satellite.logger.error(e.message);
+  }
+}
+</script><script>
+(function() { 
+    var config = _satellite.getVar("targetConfig") || {"_6sense": false, "target": false};
+    window.mboxCreate=function(){ return undefined; }; // failsafe to prevent JS errors on orphan DTM page load rules
+    window.adobe = window.adobe || {};
+    window.adobe.target = window.adobe.target || {};
+    window.adobe.mboxRequestFired = false;
+
+if (config.target) {
+    window.targetGlobalSettings = { "bodyHidingEnabled":  false };
+    window.sap_target_activities = [];
+
+    /* Debugging Activity information */
+    document.addEventListener(adobe.target.event.REQUEST_SUCCEEDED, function(e) {
+            var tokens = e.detail.responseTokens;
+        if (tokens !== null && typeof tokens === 'object') {
+            tokens.forEach(function(token) {
+                var info = {
+                    "campaign": {
+                        "id": token["activity.id"],
+                        "name": token["activity.name"]
+                    },
+                    "experience": {
+                        "id": token["experience.name"],
+                        "name": token["experience.name"]
+                    },
+                    "offer": {
+                        "id": token["option.id"],
+                        "name": token["option.name"]
+                    },
+                    "mbox": e.detail.mbox
+                };
+              
+                window.sap_target_activities.push(info);
+                _satellite.logger.log('Target Activity: ' + JSON.stringify(info, null, "\t"));
+            });
+        }
+    });
+
+    window.targetPageParamsObj = {};
+    window.targetPageParamsAll = function() {
+        return window.targetPageParamsObj || {};
+    };
+
+    if(typeof config.globalParams === "object" && config.globalParams !== null) {
+        /* Force the target property in the event that demandbase fails */
+        window.targetPageParamsObj = config.globalParams;
+    }
+
+    /* Fix for delaying content insertion */
+    if(typeof mboxFactoryDefault === 'undefined' || typeof mboxFactoryDefault.addOnLoad !== 'function') {
+        window.mboxFactoryDefault = { "addOnLoad": function(f) {
+            _satellite.logger.log('mboxFactoryDefault.addOnLoad is deprecated and should be replaced with a DOMContentLoaded event listener instead');
+            document.addEventListener("DOMContentLoaded", function(e) { f.call(window); });
+        }}
+    }
+} else { _satellite.logger.log('Target | at.js excluded'); }
+
+/**All below is related to SAPONEDX-22062 ticket
+ * List with valid parameters. 
+ * It's being used as a filter.
+ */
+var targetParams = [
+    "url_id",
+    "campaigncode",
+    "source"
+];
+
+var tracking = {};
+
+var createTargetProfileObject = function(){
+    window.targetPageParamsObj = window.targetPageParamsObj ? window.targetPageParamsObj : {};
+    window.targetPageParamsObj.profile = window.targetPageParamsObj.profile ? window.targetPageParamsObj.profile : {};
+};
+
+var addToTrackingObject = function(key, value){
+    tracking["tracking.cmp_" + key] = value;
+}
+
+/**
+ * Validates key and adds value to object.
+ * @param {object} trackObj 
+ * @param {regex execution result} regResult 
+ */
+var addParametersToTrackingObject = function (regResult) {
+    if (regResult && regResult[1] && regResult[2]) {
+        var name = regResult[1];
+        if (targetParams.indexOf(name) !== -1) {
+            addToTrackingObject(name, regResult[2]);
+        }
+    }
+};
+
+/**
+ * Adds referrer if it exists to object.
+ */
+var addReferrerToTrackingObject = function(){
+    var docReferrer = document.referrer;
+    if(docReferrer.length > 0){
+        addToTrackingObject("referer", docReferrer);
+    }
+}
+
+/**
+ * Processing url parameters, filters them with targetParams list,
+ * separatelly processing document referrer
+ * and includes resulting object to target params object profile.
+ */
+var addTrackingCodes = function () {
+    var str = window.location.href.replace(/.*\?/, "");
+    var paramRegex = /\&/;
+    var paramList = str.split(paramRegex);
+    for (var i = 0; i < paramList.length; i++) {
+        var reg = /(.*)=(.*)/;
+        var regResult = reg.exec(paramList[i]);
+        addParametersToTrackingObject(regResult);
+    }
+    addReferrerToTrackingObject();
+    if(Object.keys(tracking).length >0){
+        createTargetProfileObject();
+        window.targetPageParamsObj.profile = Object.assign(tracking, window.targetPageParamsObj.profile);
+    }
+}; addTrackingCodes();
+
+/**
+ * Processing session storage object to store it in target param obj profile.
+ */
+var getFormValues = function () {
+    var formvalues = JSON.parse(sessionStorage.getItem("formvalues"));
+    if(formvalues){
+        createTargetProfileObject();
+        window.targetPageParamsObj.profile = Object.assign(formvalues, window.targetPageParamsObj.profile);
+    }    
+}; getFormValues();
+
+var setSessionProfileParameters = function () {
+  var sessionProfile = sessionStorage.getItem("profile");
+  var changedProfile = {};
+  if (sessionProfile && sessionProfile.length > 0) {
+    var sessionProfileObject = JSON.parse(sessionProfile);
+    for(var key in sessionProfileObject){
+      changedProfile["userlogin_" + key] = sessionProfileObject[key];
+    }             
+    createTargetProfileObject();
+    window.targetPageParamsObj.profile = Object.assign(changedProfile, window.targetPageParamsObj.profile);
+  }  
+}
+setSessionProfileParameters();
+
+var hitToTarget = function () {
+    if (window.adobe.mboxRequestFired != true) {
+        fireGlobalMboxRequest();
+        window.adobe.mboxRequestFired = true;
+        return true;
+    } else return false;
+}
+
+var setSixSenseParams = function(_6s) {
+    if (_6s && typeof _6s.company === "object") {
+        var _6sense_profile = {};
+        for (var i in _6s.company)  {
+            _6sense_profile["ss_"+i] = _6s.company[i];
+        }
+        if (typeof _6s.segments === "object") {
+            for (i in _6s.segments)  {
+                if (_6s.segments[i].indexOf("[")>-1) {
+                    var segmentName = _6s.segments[i].substring( _6s.segments[i].lastIndexOf("[") + 1, _6s.segments[i].lastIndexOf("]")).replace(/^\s*|\s*$/g, '');
+                    var segmentValue = _6s.segments[i].substring(_6s.segments[i].lastIndexOf("]")+1).replace(/^\s*|\s*$/g, '');
+                    if (segmentName === "status") {
+                        if (typeof _6sense_profile["ss_status"] === "undefined") {
+                            _6sense_profile["ss_status"] = segmentValue;
+                        }
+                    } else if (segmentName === "intent") {
+                        if (typeof _6sense_profile["ss_intent"] === "undefined") {
+                            _6sense_profile["ss_intent"] = segmentValue;
+                        } else {
+                            _6sense_profile["ss_intent"] += "|" + segmentValue;
+                        }  
+                    } else {
+                        _6sense_profile["ss_"+segmentName] = segmentValue;
+                    }
+                }
+            }
+        }
+        window.targetPageParamsObj.profile = Object.assign(_6sense_profile, window.targetPageParamsObj.profile);
+    }
+}
+
+/**
+ * Execute the Target Global Mbox inmediately if the 6sense data is already available. 
+ * Otherwise wait for 6sense's response. 
+ */
+if (config._6sense) {
+    var _6s = _satellite.getVar('localStorage - _6senseCompanyDetails') || '';
+    if (_6s === ""){
+        _satellite.logger.log("6sense-request-success event handler created");
+        document.addEventListener("6sense-request-success", function() {
+            _satellite.logger.log("6sense data receipt. Sending Target Global Mbox request.");
+            _6s = _satellite.getVar('localStorage - _6senseCompanyDetails') || '';
+            setSixSenseParams(_6s);
+            hitToTarget();
+        });
+    } else {
+        setSixSenseParams(_6s);
+        hitToTarget();   
+    } 
+} else {
+    hitToTarget();
+}
+
+/** 
+ * In case the 6sense service is unavailable the Target Global Mbox will not be produced by the '6sense-request-success' event.
+ * The timeout will execute the Target Global Mbox at 2000ms after Launch loads if the hit was not produced earlier.
+ */
+setTimeout(function() {
+    if (hitToTarget()) { _satellite.logger.log("Target Global Mbox request triggered on timeout.");}
+}, 2000);
+
+})();
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpp_params = {"sampling_active":"","sampling_rate":"100","ajax_url":"https:\/\/blogs.sap.com\/wp-admin\/admin-ajax.php","action":"update_views_ajax","ID":"811933","token":"ac48fd815b"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/wpp.js"></script>
+<link rel="https://api.w.org/" href="https://blogs.sap.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blogs.sap.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blogs.sap.com/wp-includes/wlwmanifest.xml"> 
+
+<link rel="canonical" href="https://blogs.sap.com/2019/07/11/currency-and-unit-conversion-in-abap-cds-views/">
+<link rel="shortlink" href="https://blogs.sap.com/?p=811933">
+<script type="text/javascript">var ajaxurl = "https://blogs.sap.com/wp-admin/admin-ajax.php";var likePostLabel = "Like";var unLikePostLabel = "Liked";var likeCommentLabel = "Like";var unLikeCommentLabel = "Liked";</script><meta name="type" content="Blog"><meta name="description" content="Recently, I’ve been checking some examples of unit and currency conversions based on ABAP CDS views and I noticed is quite common to find people applying manual conversions in the formulas. A simple">    <!--[if IE ]>
+    <link rel="stylesheet" id="scn-ie-styles" href="https://blogs.sap.com/wp-content/themes/sap-v3-neo/css/ie.css"
+          type="text/css" media="all">
+    <link id="ids-popup-css" href="https://accounts.sap.com/universalui/shared/stylesheets/idsPopup.css"
+          rel="stylesheet"
+          type="text/css">
+    <![endif]-->
+
+
+
+
+
+
+
+<div class="page-wrapper">
+<b class="cn-accessibility"><a href="#main" tabindex="0" accesskey="S">Skip to Content</a></b>
+<div id="page" class="hfeed site">
+
+<header id="masthead" class="blogs-nav sap-header">
+    <header id="comm-hdr-Header" role="masthead"><div class="dm-header"><div class="dm-header__inner"><div class="dm-header__logo-wrapper"><a class="dm-logo--header" href="http://www.sap.com/" title="SAP"></a></div><nav id="comm-hdr-Navigation" class="dm-mainNav"><div class="dm-mobileSearch"><form class="dm-header__search-form" action="https://community.sap.com/search"><div class="dm-search-container dm-input dm-search__input"><label class="dm-input__box"><input class="dm-input__control" placeholder="Search SAP Community" name="filter-search" type="search" required=""><button class="dm-search__button dm-search__button-clear" type="reset" role="button" title="Reset Search"><span class="dm-search__buttonIcon dm-icon-encoded--close" role="img" aria-labelledby="title"><title>Reset</title></span></button><button class="dm-search__button dm-search__button-submit" type="submit" role="button" title="Search SAP Community"><span class="dm-search__buttonIcon dm-icon-encoded--search" role="img" aria-labelledby="title"><title>Search</title></span></button></label></div></form></div><ul class="dm-mainNav__menu"><li class="dm-header__homeItem" role="none"><a class="dm-header__homeItem-link" role="menuitem" aria-label="Community Home" target="_self" href="https://community.sap.com/">Community</a></li><li class="dm-mainNav__menuItem" role="none"><a class="dm-mainNav__menuItem-link" href="https://community.sap.com/topics" aria-label="" aria-haspopup="false" role="menuitem">Topics<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a></li><li class="dm-mainNav__menuItem dm-mainNav--hasSubMenu" role="none"><a class="dm-mainNav__menuItem-link" href="https://answers.sap.com/index.html" aria-label="Answers. Press Arrow Down to expand the submenu and navigate with arrow keys." aria-haspopup="true" role="menuitem">Answers<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a><div class="dm-mainNav__menuItem-dropdownContainer"><ul class="dm-mainNav__subMenu" role="menu"><li class="dm-mainNav__subMenu-mobileTitle"><a class="dm-mainNav__subMenu-title-link" target="_self" href="https://answers.sap.com/index.html" role="button">Answers<span class="dm-mainNav__subMenu-title-arrow dm-icon-encoded dm-icon-encoded--arrow-left"></span></a></li><li class="dm-mainNav__subMenu-item--overview" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://answers.sap.com/index.html" role="">All Questions</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://answers.sap.com/questions/ask.html" role="menuitem">Ask a question</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_blank" href="https://developers.sap.com/tutorials/community-qa.html" role="menuitem">How to ask a question</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/using-tags" role="menuitem">Using Tags</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://answers.sap.com/tags.html" role="menuitem">All Tags</a></li></ul></div></li><li class="dm-mainNav__menuItem dm-mainNav--hasSubMenu" role="none"><a class="dm-mainNav__menuItem-link" href="https://blogs.sap.com/" aria-label="Blogs. Press Arrow Down to expand the submenu and navigate with arrow keys." aria-haspopup="true" role="menuitem">Blogs<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a><div class="dm-mainNav__menuItem-dropdownContainer"><ul class="dm-mainNav__subMenu" role="menu"><li class="dm-mainNav__subMenu-mobileTitle"><a class="dm-mainNav__subMenu-title-link" target="_self" href="https://blogs.sap.com/" role="button">Blogs<span class="dm-mainNav__subMenu-title-arrow dm-icon-encoded dm-icon-encoded--arrow-left"></span></a></li><li class="dm-mainNav__subMenu-item--overview" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://blogs.sap.com/" role="">All Blog Posts</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://blogs.sap.com/wp-admin/post-new.php" role="menuitem">Write a blog post</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/blogging" role="menuitem">How to write a blog post</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/using-tags" role="menuitem">Using Tags</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/blogging#Using_categories" role="menuitem">Using Categories</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://blogs.sap.com/tags/" role="menuitem">All tags</a></li></ul></div></li><li class="dm-mainNav__menuItem dm-mainNav--hasSubMenu" role="none"><a class="dm-mainNav__menuItem-link" href="https://community.sap.com/events" aria-label="Events. Press Arrow Down to expand the submenu and navigate with arrow keys." aria-haspopup="true" role="menuitem">Events<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a><div class="dm-mainNav__menuItem-dropdownContainer"><ul class="dm-mainNav__subMenu" role="menu"><li class="dm-mainNav__subMenu-mobileTitle"><a class="dm-mainNav__subMenu-title-link" target="_self" href="https://community.sap.com/events" role="button">Events<span class="dm-mainNav__subMenu-title-arrow dm-icon-encoded dm-icon-encoded--arrow-left"></span></a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/events/codejam" role="menuitem">SAP Code Jam</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/community-calls" role="menuitem">SAP Community Calls</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/events/inside-track" role="menuitem">SAP Inside Track</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/events/stammtisch" role="menuitem">SAP Stammtisch</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_blank" href="https://events.sap.com/teched-global/en/home" role="menuitem">SAP TechEd</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/events" role="menuitem">All Events</a></li></ul></div></li><li class="dm-mainNav__menuItem dm-mainNav--hasSubMenu" role="none"><a class="dm-mainNav__menuItem-link" href="https://community.sap.com/programs" aria-label="Programs. Press Arrow Down to expand the submenu and navigate with arrow keys." aria-haspopup="true" role="menuitem">Programs<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a><div class="dm-mainNav__menuItem-dropdownContainer"><ul class="dm-mainNav__subMenu" role="menu"><li class="dm-mainNav__subMenu-mobileTitle"><a class="dm-mainNav__subMenu-title-link" target="_self" href="https://community.sap.com/programs" role="button">Community Programs<span class="dm-mainNav__subMenu-title-arrow dm-icon-encoded dm-icon-encoded--arrow-left"></span></a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/programs/influencer-programs" role="menuitem">Influencers</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/programs/spotlight-interviews" role="menuitem">Spotlight Interviews</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/media" role="menuitem">Community Live</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://answers.sap.com/content/kbentry/list.html" role="menuitem">Coffee Corner Discussions</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/programs" role="menuitem">All Programs</a></li></ul></div></li><li class="dm-mainNav__menuItem dm-mainNav--hasSubMenu" role="none"><a class="dm-mainNav__menuItem-link" href="https://community.sap.com/resources" aria-label="Resources. Press Arrow Down to expand the submenu and navigate with arrow keys." aria-haspopup="true" role="menuitem">Resources<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a><div class="dm-mainNav__menuItem-dropdownContainer"><ul class="dm-mainNav__subMenu" role="menu"><li class="dm-mainNav__subMenu-mobileTitle"><a class="dm-mainNav__subMenu-title-link" target="_self" href="https://community.sap.com/resources" role="button">Resources<span class="dm-mainNav__subMenu-title-arrow dm-icon-encoded dm-icon-encoded--arrow-left"></span></a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_blank" href="https://developers.sap.com/tutorials/community-start.html" role="menuitem">Getting started</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/tutorials" role="menuitem">Community Tutorials</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/tip-in-a-minute#Videos" role="menuitem">Community Videos</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/voice-nl" role="menuitem">Community Voice Newsletter</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/reputation" role="menuitem">Reputation</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/missions-badges" role="menuitem">Missions &amp; Badges</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/moderation" role="menuitem">Moderation</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/rules-of-engagement" role="menuitem">Rules of Engagement</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources" role="menuitem">All Resources</a></li></ul></div></li><li class="dm-mainNav__menuItem" role="none"><a class="dm-mainNav__menuItem-link" href="https://community.sap.com/resources/what-is-new" aria-label="" aria-haspopup="false" role="menuitem">What's New<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a></li></ul></nav><ul class="dm-header__actions" role="menu"><li id="comm-hdr-Search" class="dm-header__actions-item dm-headerSearch"><a class="dm-search-action dm-icon-encoded dm-header__search-icon" aria-label="Search the SAP Community" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Search"></a><div class="dm-headerSearch__wrapper" role="menu"><form class="dm-searchdropdown dm-align-center" action="https://community.sap.com/search"><div class="dm-search__input dm-input" role="search"><label class="dm-input__box"><input class="dm-input__control" placeholder="Search the SAP Community" name="filter-search" type="input"><button class="dm-search__button dm-search__button-clear" type="reset" title="Reset"><span class="dm-search__buttonIcon dm-icon-encoded--clear" role="img" aria-labelledby="title"><title>Reset</title></span></button><button class="dm-search__button dm-search__button-submit" type="submit" title="Search the SAP Community"><span class="dm-search__buttonIcon dm-icon-encoded--search" role="img" aria-labelledby="title"><title>Search</title></span></button></label></div></form><a class="dm-headerSearch__closeButton" type="submit" role="button" title="Close search input"><span class="dm-icon-encoded dm-icon-encoded--close" role="img" aria-labelledby="title"></span></a></div></li><li id="comm-hdr-Authentication" class="dm-header__actions-item dm-header__account"><a id="comm-hdr-SignIn" class="dm-user__login-button--wrapper" aria-haspopup="true" aria-expanded="false" role="button" href="https://blogs.sap.com/wp-login.php?redirect_to=%2F2019%2F07%2F11%2Fcurrency-and-unit-conversion-in-abap-cds-views%2F" rel="IDS_login" title="Log On"><div id="comm-hdr-AnonymousIcon" class="dm-icon-encoded dm-icon-encoded--account" aria-label="login"></div><div id="comm-hdr-Avatar" class="dm-user dm-header__avatar"><img class="dm-header__avatar-image dm-hidden" data-src="" src="" width="24px" height="24px"><span class="dm-header__notifications dm-hidden js-notification-indicator"></span></div></a><ul id="comm-hdr-UserProfileMenu" class="dm-header__actionsSubMenu dm-profileMenu" role="menu" aria-label="People profile" data-name="actionsMenu"><div class="dm-mobileSearch"><form class="dm-header__search-form" action="https://community.sap.com/search"><div class="dm-search-container dm-input dm-search__input"><label class="dm-input__box"><input class="dm-input__control" placeholder="Search SAP Community" name="filter-search" type="search" required=""><button class="dm-search__button dm-search__button-clear" type="reset" role="button" title="Reset Search"><span class="dm-search__buttonIcon dm-icon-encoded--close" role="img" aria-labelledby="title"><title>Reset</title></span></button><button class="dm-search__button dm-search__button-submit" type="submit" role="button" title="Search SAP Community"><span class="dm-search__buttonIcon dm-icon-encoded--search" role="img" aria-labelledby="title"><title>Search</title></span></button></label></div></form></div><li class="dm-header__actionsSubMenu-title"><a id="comm-hdr-SubMenuTitleLink" class="dm-header__actionsSubMenu-title-link" href="" role="button">My profile<span class="dm-header__actionsSubMenu-title-arrow dm-icon-encoded--arrow-left"></span></a></li><li class="dm-profileMenu__userData"><div class="dm-profileMenu__avatar dm-author"><a id="comm-hdr-MenuAvatar" class="dm-profileMenu__avatar__image" href="" title=""><img data-src="" src=""></a></div><div id="comm-hdr-Username" class="dm-profileMenu__userName"></div><div id="comm-hdr-Email" class="dm-profileMenu__userEmail"></div></li><li id="comm-hdr-ProfileMenuTopSection" class="dm-profileMenu__section"><ul class="dm-profileMenu__list"></ul></li><li id="comm-hdr-ProfileMenuMiddleSection" class="dm-profileMenu__section"><ul class="dm-profileMenu__list"></ul></li><li class="dm-profileMenu__section"><ul class="dm-profileMenu__list dm-profileMenu__logout"><li class="dm-profileMenu__item"><a id="comm-hdr-LogOut" class="dm-profileMenu__link" href="#">Logout</a></li></ul></li></ul></li><li class="dm-header__actions-item dm-header__mobileMenu"><a id="comm-hdr-MobileMenuBtn" class="dm-mobileMenuButton" aria-label="Search SAP community"><span class="dm-icon-encoded dm-icon-encoded--mobile-menu"></span><span style="display:none;">Search</span></a></li></ul></div></div></header><div class="dm-wrapper dm-subheader dm-subheader--wrapper  dm-user--unauthenticated "><div class="dm-grid"><div class="dm-breadcrumb dm-user--unauthenticated" role="menubar">
+    <ul class="dm-breadcrumb-nav" role="navigation" aria-label="breadcrumb navigation">
+        
+        <li><a id="comm-shdr-breadcrumb-home" href="https://www.sap.com/" title="Home">Home</a></li>
+        
+        <li><a id="comm-shdr-breadcrumb-community" href="https://community.sap.com/" title="Community">Community</a></li>
+        
+    <li><a href="https://blogs.sap.com/" title="Blogs">Blogs</a></li></ul>
+    <ul class="dm-breadcrumb-actions" role="menu">
+        
+        <li><a id="comm-shdr-AskQuestion" href="https://answers.sap.com/questions/ask.html" title="Ask a Question">Ask a Question</a></li>
+        
+        <li><a id="comm-shdr-WriteBlogPost" href="https://blogs.sap.com/wp-admin/post-new.php" title="Write a Blog Post">Write a Blog Post</a></li>
+        
+        <li class="dm-user__login-button--wrapper"><a class="dm-button-small dm-button--primary" role="button" rel="IDS_login" aria-label="Login or Sign up. Click here to log in or sign up" href="https://blogs.sap.com/wp-login.php?redirect_to=%2F2019%2F07%2F11%2Fcurrency-and-unit-conversion-in-abap-cds-views%2F"><span class="dm-button-text">Login / Sign-up</span></a></li>
+        <li class="dm-breadcrumb-actions__dropdown">
+            <span id="comm-shdr-actions-opener" class="dm-breadcrumb-actions__dropdown-toggle" title="Community actions">
+                 <span class="dm-icon-encoded dm-icon-encoded--3dots"></span>
+            </span>
+            <ul id="comm-shdr-user-actions-ul" class="dm-breadcrumb-actions__dropdown-menu dm_actions--populated" role="menu"><li id="comm-shdr-SendMessage"><a href="https://messages.sap.com/" title="Send a Message">Send a Message</a></li><li id="comm-shdr-ManageBlogPosts"><a href="https://blogs.sap.com/wp-admin/edit.php?post_type=post&amp;author=currentUser" title="Manage My Blog Posts">Manage My Blog Posts</a></li><li id="comm-shdr-GetStarted"><a href="https://community.sap.com/resources/getting-started" title="Quick Start Guide">Quick Start Guide</a></li></ul>
+        </li>
+    </ul>
+</div>
+</div></div>    <!-- #site-navigation -->
+
+</header>
+
+<!-- #masthead -->
+<div id="main" tabindex="0" class="wrapper">
+
+
+
+<div class="dm-wrapper">
+  <div class="dm-grid">
+    <div class="dm-section dm-section--first">
+      <div class="dm-layout__flexRow">
+        <div class="dm-layout__flexColumn">
+          <!-- Hero unit start -->
+          
+<div class="dm-contentHero">
+    <div class="dm-contentHero__row">
+        <div class="dm-contentHero__category">
+            <span class="dm-contentHero__category-item">Technical Articles</span>        </div>
+    </div>
+    <div class="dm-contentHero__row">
+        <div class="dm-contentHero__column">
+            <div class="dm-contentHero__author-avatar">
+                <a class="dm-author__image " href="https://people.sap.com/felipedemello.rodrigues">
+                    <img alt="Author's profile photo Felipe de Mello Rodrigues" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/felipedemello.png" class="avatar avatar-48 photo avatar-default dm-author__image" width="48" height="48">                </a>
+            </div>
+        </div>
+        <div class="dm-contentHero__column dm-contentHero__flexColumn--wrap">
+            <div class="dm-contentHero__author">
+                <div class="dm-author__data">
+                    <div class="dm-author__heading">
+                        <a class="dm-author__name " aria-label="Author name Felipe de Mello Rodrigues" href="https://people.sap.com/felipedemello.rodrigues">Felipe de Mello Rodrigues</a>
+                                            </div>
+                    <div class="dm-contentHero__metadata">
+                        <span class="dm-contentHero__metadata--item">
+                            <span class="dm-accesible-hidden"> Posted on</span> 
+                            July 11, 2019                        </span>
+                        <span class="dm-contentHero__metadata--item">5 minute read</span>
+                    </div>
+                </div>
+            </div>
+            <div class="dm-contentHero__headline">
+                <h1 class="dm-contentHero__title">Currency and Unit conversion in ABAP CDS views</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="dm-contentHero__actions">
+        <div class="dm-contentFollow dm-contentHero__contentFollow onscroll_sticky" style="z-index: 0;">
+            <a class="dm-button-small dm-button--callToAction sap-button-follow" id="sap-button-follow-hdr-id" href="https://blogs.sap.com/wp-login.php?redirect_to=https%3A%2F%2Fblogs.sap.com%2F2019%2F07%2F11%2Fcurrency-and-unit-conversion-in-abap-cds-views%2F%3Fs_action%3Dss_change_follow_status%26nonce%3D8d96fcdd50&amp;nonce=1598357152169.5933" rel="IDS_login" role="button" data-content-type="blogpost" data-content-id="811933" data-nonce="8d96fcdd50" title="Please log into the system to use follow/unfollow functionality."><span class="dm-button-text">Follow</span></a>            <a class="dm-button-small dm-button--secondary" role="button" type="button" href="https://blogs.sap.com/2019/07/11/currency-and-unit-conversion-in-abap-cds-views/feed/"><span class="dm-button-text">RSS feed</span></a>
+            <a class="dm-button-small dm-button--secondary likes-post-link dolike " rel="IDS_login" href="https://blogs.sap.com/wp-login.php?redirect_to=https%3A%2F%2Fblogs.sap.com%2F2019%2F07%2F11%2Fcurrency-and-unit-conversion-in-abap-cds-views%2F%3Fs_action%3Dss_change_like_status%26nonce%3D329c161de1&amp;nonce=1598357152169.5933" role="button" type="button" title="Like" data-nonce="329c161de1" data-post-id="811933"><span class="dm-button-text">Like</span></a>        </div>
+        <div class="dm-contentHero__statistics">
+            <div class="dm-contentHero__metadata">
+                <span id="dm-contentHero__metadata--likes" class="dm-contentHero__metadata--item">
+                    6 Likes                </span>
+                <span class="dm-contentHero__metadata--item">
+                    6,342 Views                </span>
+                <span class="dm-contentHero__metadata--item">
+                    10 Comments                </span>
+                <span class="dm-contentHero__metadata--item">
+                                    </span>
+            </div>
+        </div>
+    </div>
+</div>          <!-- Hero unit end -->
+          <div class="dm-contentDetail">
+            <div class="dm-contentDetail__body-content">
+                <p>Recently, I’ve been checking some examples of unit and currency conversions based on <strong>ABAP CDS views</strong> and I noticed is quite common to find people applying manual conversions in the formulas.</p>
+<p>A simple example of a <em><strong>days</strong> </em>to <em><strong>years</strong></em>
+ conversion is conceived with a multiplication of the original value by 
+365, for more complex situations like an expansion of this same 
+conversion from <em><strong>days</strong></em> to <em><strong>months</strong></em> and <em><strong>years</strong></em> a <strong>CASE</strong> statement is implemented to adjust the output of the value.</p>
+<p><img class="aligncenter dm-lightbox__img" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/money-bags.jpg" data-index="1" data-id="plbox-811933" width="348" height="263"></p>
+<p>But what happens when you have conversion of an amount to different currencies or a unit conversion based on dynamic values?</p>
+<p>In these cases is impossible to apply a fixed calculation in the code
+ due to the variations of the currency or unit, but what most part of 
+the consultants don’t know is that <strong>ABAP CDS views</strong> provide support to set of functions conceived specifically for this kind of scenario:</p>
+<ul>
+<li><strong><span class="qtext400">UNIT_CONVERSION</span></strong></li>
+<li><strong><span class="qtext400">CURRENCY_CONVERSION</span></strong></li>
+</ul>
+<p>You can find more information in the official documentation through the link below:</p>
+<blockquote><p><a href="https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-US/abencds_f1_conv_func_unit_curr.htm">ABAP CDS – Conversion Functions for Units and Currencies</a></p></blockquote>
+<h1>But how these functions work?</h1>
+<p>Unit conversion has 3 mandatory parameters + 2 optional parameters to
+ support client verification and error handling. The specification is 
+available below:</p>
+<table width="437">
+<tbody>
+<tr>
+<td width="151"><strong>Formal Parameter</strong></td>
+<td width="61"><strong>Optional</strong></td>
+<td width="225"><strong>Data Type</strong></td>
+</tr>
+<tr>
+<td width="151">quantity</td>
+<td width="61">–</td>
+<td width="225">QUAN,&nbsp;DEC,&nbsp;INT1,&nbsp;INT2,&nbsp;INT4,&nbsp;FLTP</td>
+</tr>
+<tr>
+<td width="151">source_unit</td>
+<td width="61">–</td>
+<td width="225">UNIT</td>
+</tr>
+<tr>
+<td width="151">target_unit</td>
+<td width="61">–</td>
+<td width="225">UNIT</td>
+</tr>
+<tr>
+<td width="151">client</td>
+<td width="61">X,&nbsp;–</td>
+<td width="225">CLNT</td>
+</tr>
+<tr>
+<td width="151">error_handling</td>
+<td width="61">X</td>
+<td width="225">CHAR&nbsp;with length 20</td>
+</tr>
+</tbody>
+</table>
+<p>Currency conversion has 4 mandatory parameters + 6 optional 
+parameters to support fine adjustments in the output, client 
+verification and error handling. The specification is available below:</p>
+<table width="370">
+<tbody>
+<tr>
+<td width="153"><strong>Formal Parameter</strong></td>
+<td width="67"><strong>Optional</strong></td>
+<td width="150"><strong>Data Type</strong></td>
+</tr>
+<tr>
+<td width="153">amount</td>
+<td width="67">–</td>
+<td width="150">CURR</td>
+</tr>
+<tr>
+<td width="153">source_currency</td>
+<td width="67">–</td>
+<td width="150">CUKY</td>
+</tr>
+<tr>
+<td width="153">target_currency</td>
+<td width="67">–</td>
+<td width="150">CUKY</td>
+</tr>
+<tr>
+<td width="153">exchange_rate_date</td>
+<td width="67">–</td>
+<td width="150">DATS</td>
+</tr>
+<tr>
+<td width="153">exchange_rate_type</td>
+<td width="67">X</td>
+<td width="150">CHAR&nbsp;with length 4</td>
+</tr>
+<tr>
+<td width="153">client</td>
+<td width="67">X,&nbsp;–</td>
+<td width="150">CLNT</td>
+</tr>
+<tr>
+<td width="153">round</td>
+<td width="67">X</td>
+<td width="150">CHAR</td>
+</tr>
+<tr>
+<td width="153">decimal_shift</td>
+<td width="67">X</td>
+<td width="150">CHAR</td>
+</tr>
+<tr>
+<td width="153">decimal_shift_back</td>
+<td width="67">X</td>
+<td width="150">CHAR</td>
+</tr>
+<tr>
+<td width="153">error_handling</td>
+<td width="67">X</td>
+<td width="150">CHAR&nbsp;with length 20</td>
+</tr>
+</tbody>
+</table>
+<p>In this short post we are going to create a demo exploring both functions based on two different entities from the <em><strong>Flights</strong> demo </em>tables:</p>
+<ul>
+<li><strong>SAPLANE</strong></li>
+<li><strong>SFLIGHT</strong></li>
+</ul>
+<p><img class=" dm-lightbox__img" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/DB.png" data-index="2" data-id="plbox-811933"></p>
+<p>In the diagram above you can find the connection between both tables. Notice that <strong>SAPLANE </strong>holds the data of the planes and <strong>SFLIGHT </strong>stores data of the flights.</p>
+<h1>Example #1: Unit Conversion</h1>
+<p>For the unit conversion we will use one of the fields from <strong>SAPLANE</strong> table.</p>
+<p>There are 3 valid options based on the C<em>urrency/Quantity Fields</em>:</p>
+<p><img class=" dm-lightbox__img" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/SAPPLANE.png" data-index="3" data-id="plbox-811933"></p>
+<p>For this example, I am using a conversion based on <strong>Maximum fuel capacity (TANKCAP)</strong>. The objective is to demonstrate multiple conversions based on the same dimension.</p>
+<p>To check the valid options to convert this field you can open the table <strong>T006</strong> and search units based on the <strong>Volume</strong> dimension.</p>
+<p><img class="aligncenter dm-lightbox__img" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/UOM.png" data-index="4" data-id="plbox-811933" width="420" height="736"></p>
+<p>Checking the data available in the table we can notice <strong>TANKCAP</strong> is usually referred by <strong>Liters (L)</strong>. Let’s try to create conversions to <strong>Cubic Meters (M3)</strong> and <strong>Cubic Yards (YD3)</strong> via this standard function.</p>
+<p>The code and delivery are pretty simple, create a new <em><strong>Data Definition</strong> </em>via <em><strong>HANA Studio</strong></em> with the name of <strong>ZCDS_UNIT_CONVERSION</strong> and include the following code.</p>
+<pre class=" language-sql"><code class=" language-sql"><span class="token variable">@AbapCatalog.sqlViewName</span>: <span class="token string">'ZCDSUNITCONV'</span>
+<span class="token variable">@AbapCatalog.compiler.compareFilter</span>: <span class="token boolean">true</span>
+<span class="token variable">@AccessControl.authorizationCheck</span>: <span class="token comment">#CHECK</span>
+<span class="token variable">@EndUserText.label</span>: <span class="token string">'CDS Demo by Felipe Rodrigues'</span>
+
+define <span class="token keyword">view</span> ZCDS_UNIT_CONVERSION
+  <span class="token keyword">as</span> <span class="token keyword">select</span> <span class="token keyword">from</span> saplane
+{
+      <span class="token variable">@EndUserText.label</span>: <span class="token string">'Plane Type'</span>
+  <span class="token keyword">key</span> planetype <span class="token keyword">as</span> PlaneType<span class="token punctuation">,</span>
+
+      <span class="token variable">@EndUserText.label</span>: <span class="token string">'Tank Cap'</span>
+      tankcap   <span class="token keyword">as</span> TankCapacity<span class="token punctuation">,</span>
+
+      <span class="token variable">@EndUserText.label</span>: <span class="token string">'Tank Cap (UOM)'</span>
+      cap_unit  <span class="token keyword">as</span> CapacityUnit<span class="token punctuation">,</span>
+
+      <span class="token variable">@EndUserText.label</span>: <span class="token string">'Tank Cap (in Cubic Meters)'</span>
+      unit_conversion<span class="token punctuation">(</span>
+        quantity    <span class="token operator">=</span><span class="token operator">&gt;</span> tankcap<span class="token punctuation">,</span>
+        source_unit <span class="token operator">=</span><span class="token operator">&gt;</span> cap_unit<span class="token punctuation">,</span>
+        target_unit <span class="token operator">=</span><span class="token operator">&gt;</span> cast<span class="token punctuation">(</span><span class="token string">'M3'</span> <span class="token keyword">as</span> abap<span class="token punctuation">.</span>unit<span class="token punctuation">)</span>
+      <span class="token punctuation">)</span>         <span class="token keyword">as</span> TankCapacityInM3<span class="token punctuation">,</span>
+
+      <span class="token variable">@EndUserText.label</span>: <span class="token string">'Tank Cap (in Cubic Yard)'</span>
+      unit_conversion<span class="token punctuation">(</span>
+        quantity    <span class="token operator">=</span><span class="token operator">&gt;</span> tankcap<span class="token punctuation">,</span>
+        source_unit <span class="token operator">=</span><span class="token operator">&gt;</span> cap_unit<span class="token punctuation">,</span>
+        target_unit <span class="token operator">=</span><span class="token operator">&gt;</span> cast<span class="token punctuation">(</span><span class="token string">'YD3'</span> <span class="token keyword">as</span> abap<span class="token punctuation">.</span>unit<span class="token punctuation">)</span>
+      <span class="token punctuation">)</span>         <span class="token keyword">as</span> TankCapacityInYD3
+}</code></pre>
+<p>Run the&nbsp;<em><strong>Data Preview</strong></em> and check the result:</p>
+<p><img class=" dm-lightbox__img" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/Unit-Conversion-Result.png" data-index="5" data-id="plbox-811933"></p>
+<p>Let’s re-conciliate the data from the first record via google assistant.</p>
+<h2>Liters (L) to Cubic Meters (M3)</h2>
+<p><img class=" dm-lightbox__img" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/Liters-to-M3.png" data-index="6" data-id="plbox-811933"></p>
+<h2>Liters (L) to Cubic Yards (YD3)</h2>
+<p><img class=" dm-lightbox__img" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/Liters-to-YD3.png" data-index="7" data-id="plbox-811933"></p>
+<p><strong>Important Note</strong>: Due to a small difference in the 
+number of decimal places in the conversion factor used by SAP and Google
+ you can notice also a small difference between the results, just 
+remember the conversion factor can be adjusted in SAP depending on your 
+needs.</p>
+<h1>Example #2: Currency Conversion</h1>
+<p>For the currency conversion we are going to use some of the fields from <b>SFLIGHT </b>table.</p>
+<p><img class=" dm-lightbox__img" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/SFLIGHT.png" data-index="8" data-id="plbox-811933"></p>
+<p>For this example, I am using <strong>Airfare (PRICE)</strong> and converting the value to <strong>Australian Dollars (AUD)</strong>.</p>
+<p>This is a pretty interesting scenario because the prices usually vary
+ depending depending on the flight and company, with the standard 
+function we are able to convert the values dynamically.</p>
+<p>To achieve this result let’s create a new <em><strong>Data Definition</strong> </em>via <em><strong>HANA Studio</strong></em> with the name of <strong>ZCDS_CURRENCY_CONVERSION</strong> and include the following code.</p>
+<pre class=" language-sql"><code class=" language-sql"><span class="token variable">@AbapCatalog.sqlViewName</span>: <span class="token string">'ZCDSCURRCONV'</span>
+<span class="token variable">@AbapCatalog.compiler.compareFilter</span>: <span class="token boolean">true</span>
+<span class="token variable">@AccessControl.authorizationCheck</span>: <span class="token comment">#CHECK</span>
+<span class="token variable">@EndUserText.label</span>: <span class="token string">'CDS Demo by Felipe Rodrigues'</span>
+
+define <span class="token keyword">view</span> ZCDS_CURRENCY_CONVERSION
+  <span class="token keyword">as</span> <span class="token keyword">select</span> <span class="token keyword">from</span> sflight
+{
+      <span class="token variable">@EndUserText.label</span>: <span class="token string">'Airline Code'</span>
+  <span class="token keyword">key</span> carrid   <span class="token keyword">as</span> AirlineCode<span class="token punctuation">,</span>
+
+      <span class="token variable">@EndUserText.label</span>: <span class="token string">'Connection No.'</span>
+  <span class="token keyword">key</span> connid   <span class="token keyword">as</span> ConnectionNumber<span class="token punctuation">,</span>
+
+      <span class="token variable">@EndUserText.label</span>: <span class="token string">'Flight Date'</span>
+  <span class="token keyword">key</span> fldate   <span class="token keyword">as</span> FlightDate<span class="token punctuation">,</span>
+
+      <span class="token variable">@EndUserText.label</span>: <span class="token string">'Price'</span>
+      price    <span class="token keyword">as</span> Price<span class="token punctuation">,</span>
+
+      <span class="token variable">@EndUserText.label</span>: <span class="token string">'Currency'</span>
+      currency <span class="token keyword">as</span> Currency<span class="token punctuation">,</span>
+
+      <span class="token variable">@EndUserText.label</span>: <span class="token string">'Price (in Australian Dollars)'</span>
+      currency_conversion<span class="token punctuation">(</span>
+        amount             <span class="token operator">=</span><span class="token operator">&gt;</span> price<span class="token punctuation">,</span>
+        source_currency    <span class="token operator">=</span><span class="token operator">&gt;</span> currency<span class="token punctuation">,</span>
+        target_currency    <span class="token operator">=</span><span class="token operator">&gt;</span> cast<span class="token punctuation">(</span><span class="token string">'AUD'</span> <span class="token keyword">as</span> abap<span class="token punctuation">.</span>cuky<span class="token punctuation">)</span><span class="token punctuation">,</span>
+        exchange_rate_date <span class="token operator">=</span><span class="token operator">&gt;</span> fldate
+      <span class="token punctuation">)</span>        <span class="token keyword">as</span> PriceInAUD
+}</code></pre>
+<p>Notice the <strong>CURRENCY_CONVERSION</strong> has a mandatory parameter named <strong>EXCHANGE_RATE_DATE</strong>, for this scenario we need to assign the <em><strong>Flight Date</strong> </em>for the exchange date, the system is going to analyse the options available in the table <strong>TCURR</strong> automatically and provide the proper conversion rate based on the date the customer acquired the flight ticket.</p>
+<p>Run the&nbsp;<em><strong>Data Preview</strong></em> and check the result below:</p>
+<p><img class=" dm-lightbox__img" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/Currency-Conversion-Result.png" data-index="9" data-id="plbox-811933"></p>
+<p><strong>Important Note</strong>: The accuracy of your currency conversion will depend on how often you update the <em><strong>Exchange Rate</strong></em> in your SAP system. In my case the conversion is not accurate because this data is from a <em>development</em> <em>environment</em> but if you have updated conversion rates in your system you will find the proper values in the output of this CDS view.</p>
+<p>For more information about this topic you can find some quick explanation about <strong>Exchange Rates</strong> configuration in SAP through the following link:</p>
+<blockquote><p><a href="https://www.guru99.com/how-to-maintain-exchange-rates.html">How to Maintain Exchange Rates in SAP</a></p></blockquote>
+<p>And this is the end! I hope you enjoyed the content and see you next time. 🙂</p>
+            </div>
+            <ul class="dm-sharing-icons">
+               <li class="dm-sharing-icons--item"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblogs.sap.com%2F2019%2F07%2F11%2Fcurrency-and-unit-conversion-in-abap-cds-views%2F" title="Share on Facebook" target="_blank"><span class="dm-icon-encoded--facebook"></span></a></li><li class="dm-sharing-icons--item"><a href="https://twitter.com/share?url=https%3A%2F%2Fblogs.sap.com%2F2019%2F07%2F11%2Fcurrency-and-unit-conversion-in-abap-cds-views%2F&amp;text=Currency+and+Unit+conversion+in+ABAP+CDS+views" title="Share on Twitter" target="_blank"><span class="dm-icon-encoded--twitter"></span></a></li><li class="dm-sharing-icons--item"><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblogs.sap.com%2F2019%2F07%2F11%2Fcurrency-and-unit-conversion-in-abap-cds-views%2F&amp;title=Currency+and+Unit+conversion+in+ABAP+CDS+views" title="Share on LinkedIn" target="_blank"><span class="dm-icon-encoded--linkedin"></span></a></li>            </ul>
+            <div class="dm-actionbar__wrapper dm-collapse__wrapper">
+               <ul class="dm-actionbar dm-actionbar--links">
+                   <li class="dm-actionbar__item">
+    <a class="dm-actionbar__link dm-button--disabled" data-toggle="collapse" data-hide-class="dm-is-collapsed" data-triggers=".alertModerator" aria-expanded="false" href="javascript:void(0);">Alert Moderator</a>
+  </li>
+               </ul>
+               
+  <div class="dm-actionbar__forms wprc-content-v3">
+    <div class="dm-actionsForm dm-is-collapsed alertModerator wprc-form-v3" data-toggle="collapseComponent" data-name="alertModerator">
+          </div>
+  </div>
+            </div>
+          </div>
+        </div>
+        <div class="dm-layout__flexColumn dm-layout--pullRight dm-layout--contentSidebar">
+            <div id="sapassignedtagswidget-v3-2" class="dm-widget widget_sapassignedtagswidget-v3 dm-widget--assignedTags"><h3 class="dm-widget__heading--small">Assigned tags</h3><ul class="dm-assignedTagsList dm-widgetlist--default-items"><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tags/833755570260738661924709785639136/">ABAP Development</a></li><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tags/73554900100700000996/">SAP HANA</a></li><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tags/73554900100800000266/">SAP S/4HANA</a></li><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tag/abap-cds/">abap cds</a></li><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tag/core-data-services/">core data services</a></li></ul><ul class="dm-assignedTagsList dm-widgetlist--extra-items dm-hidden"><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tag/core-data-services-cds/">Core Data Services (CDS)</a></li><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tag/currency/">currency</a></li><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tag/currency-conversion/">currency conversion</a></li><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tag/exchange-rate/">exchange rate</a></li><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tag/unit/">unit</a></li><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tag/unit-conversion/">unit conversion</a></li></ul><a class="dm-link dm-widget__more-link" data-toggle="viewAll">View more...</a></div><div id="sap-relatedcontent-widget-v3-2" class="dm-widget widget_sap-relatedcontent-widget-v3 dm-widget--relatedContent"><h3 class="dm-widget__heading--small">Related Blog Posts</h3><ul class="dm-widgetlist" data-types="blogpost" data-limit="3"><li class="dm-widgetlist__item"><div class="dm-widget__article">
+                                 <div class="dm-widget__article-content-box">
+                                    <div class="dm-widget__article-text">
+                                        <a class="dm-widget__article-title" href="https://blogs.sap.com/2017/02/21/standart-demo-examples-of-abap-cds-views/" title="">Standard DEMO Examples of ABAP CDS views</a>
+                                        <div class="dm-widget__article-metadata">By 
+                                            <a class="dm-widget__article-username" href="https://people.sap.com/maksim.alyapyshev" title="">Maksim Alyapyshev</a>, Feb 21, 2017</div>
+                                    </div>
+                                 </div>
+                            </div></li><li class="dm-widgetlist__item"><div class="dm-widget__article">
+                                 <div class="dm-widget__article-content-box">
+                                    <div class="dm-widget__article-text">
+                                        <a class="dm-widget__article-title" href="https://blogs.sap.com/?p=370385" title="">Getting Started with ABAP Core Data Services</a>
+                                        <div class="dm-widget__article-metadata">By 
+                                            <a class="dm-widget__article-username" href="https://people.sap.com/carine.tchoutouodjomo" title="">Carine Tchoutouo Djomo</a>, Feb 01, 2016</div>
+                                    </div>
+                                 </div>
+                            </div></li><li class="dm-widgetlist__item"><div class="dm-widget__article">
+                                 <div class="dm-widget__article-content-box">
+                                    <div class="dm-widget__article-text">
+                                        <a class="dm-widget__article-title" href="https://blogs.sap.com/2016/02/22/core-data-services-in-abap/" title="">Core Data Services in ABAP</a>
+                                        <div class="dm-widget__article-metadata">By 
+                                            <a class="dm-widget__article-username" href="https://people.sap.com/pavankumar.reddy90" title="">Pavankumar Reddy</a>, Feb 22, 2016</div>
+                                    </div>
+                                 </div>
+                            </div></li></ul></div><div id="sap-relatedcontent-widget-v3-3" class="dm-widget widget_sap-relatedcontent-widget-v3 dm-widget--relatedContent"><h3 class="dm-widget__heading--small">Related Questions</h3><ul class="dm-widgetlist" data-types="question" data-limit="3"><li class="dm-widgetlist__item"><div class="dm-widget__article">
+                                 <div class="dm-widget__article-content-box">
+                                    <div class="dm-widget__article-text">
+                                        <a class="dm-widget__article-title" href="https://answers.sap.com/questions/470052/conversion-of-raw-data-types-into-string-in-abap-c.html" title="">Conversion of Raw Data Types into String in ABAP CDS Views</a>
+                                        <div class="dm-widget__article-metadata">By 
+                                            <a class="dm-widget__article-username" href="https://people.sap.com/deodutt.dwivedi" title="">Deodutt Dwivedi</a>, Mar 30, 2018</div>
+                                    </div>
+                                 </div>
+                            </div></li><li class="dm-widgetlist__item"><div class="dm-widget__article">
+                                 <div class="dm-widget__article-content-box">
+                                    <div class="dm-widget__article-text">
+                                        <a class="dm-widget__article-title" href="https://answers.sap.com/questions/563390/abap-cds-unit-conversion.html" title="">ABAP CDS unit conversion</a>
+                                        <div class="dm-widget__article-metadata">By 
+                                            <a class="dm-widget__article-username" href="https://people.sap.com/madhu21vari" title="">madhu vari</a>, Jul 09, 2018</div>
+                                    </div>
+                                 </div>
+                            </div></li><li class="dm-widgetlist__item"><div class="dm-widget__article">
+                                 <div class="dm-widget__article-content-box">
+                                    <div class="dm-widget__article-text">
+                                        <a class="dm-widget__article-title" href="https://answers.sap.com/questions/342564/calculation-views-or-hana-cds-views.html" title="">Calculation views or HANA CDS views</a>
+                                        <div class="dm-widget__article-metadata">By 
+                                            <a class="dm-widget__article-username" href="https://people.sap.com/sreekanth.s3" title="">Sreekanth Surampally</a>, Oct 30, 2017</div>
+                                    </div>
+                                 </div>
+                            </div></li></ul></div>        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="content-lightbox-modal" class="dm-lightbox" data-id="plbox-811933"><div class="dm-lightbox__box"><div class="dm-lightbox__slideNumber"><span class="dm-lightbox__slideNumber--current"></span>/<span class="dm-lightbox__slideNumber--total"></span></div><div class="lightbox__header"><span class="dm-icon-encoded--close" data-id="plbox-811933"></span></div><div class="dm-lightbox__content--scrollable dm-lightbox__content"><div class="dm-lightbox__slide"><img class="dm-lightbox__slide--img" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/money-bags.jpg" alt=""></div><div class="dm-lightbox__slide"><img class="dm-lightbox__slide--img" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/DB.png" alt=""></div><div class="dm-lightbox__slide"><img class="dm-lightbox__slide--img" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/SAPPLANE.png" alt=""></div><div class="dm-lightbox__slide"><img class="dm-lightbox__slide--img" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/UOM.png" alt=""></div><div class="dm-lightbox__slide"><img class="dm-lightbox__slide--img" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/Unit-Conversion-Result.png" alt=""></div><div class="dm-lightbox__slide"><img class="dm-lightbox__slide--img" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/Liters-to-M3.png" alt=""></div><div class="dm-lightbox__slide"><img class="dm-lightbox__slide--img" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/Liters-to-YD3.png" alt=""></div><div class="dm-lightbox__slide"><img class="dm-lightbox__slide--img" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/SFLIGHT.png" alt=""></div><div class="dm-lightbox__slide"><img class="dm-lightbox__slide--img" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/Currency-Conversion-Result.png" alt=""></div><a class="lightbox-gallery-button--prev" href="javascript:void(0);" aria-label="Show previous image"> <span class="dm-icon-encoded--arrow-left dm-lightbox--previous"></span></a><a class="lightbox-gallery-button--next" href="javascript:void(0);" aria-label="Show next image"> <span class=" dm-icon-encoded--arrow-right dm-lightbox--next"></span></a></div><div class="zoom-buttons"><span class="lightbox-zoom-out dm-icon-encoded--minus"></span><span class="lightbox-zoom-in dm-icon-encoded--plus"></span></div></div></div><div class="dm-wrapper">
+  <div class="dm-grid">
+    
+<div id="comments" class="dm-section dm-section--last">
+      <div class="dm-section-header">
+      <div class="dm-section-header__title" title="Number of Comments">
+      10 Comments      </div>
+              <div class="dm-section dm-align-center dm-section-header__title" title="Please log on to comment" aria-role="alert">
+                You must be <a href="https://blogs.sap.com/wp-login.php?redirect_to=2019/07/11/currency-and-unit-conversion-in-abap-cds-views" class="opener js-idspopup" rel="IDS_login" title="Log On">Logged on</a> to comment or reply to a post.
+        </div>
+          </div>
+
+    <div class="dm-filter-results dm-border--top">
+          <div class="dm-layout__flexRow">
+        <div class="dm-commentsbox dm-commentsbox--blogs">
+          <ul class="dm-list-comments">
+                <li class="comment byuser comment-author-wagner_abaper even thread-even depth-1 dm-list-comments__item" id="li-comment-465810">
+        <article id="comment-465810">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Wagner Dias de Assis" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/wagner_abaper_small.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a aria-label="Author name Wagner Dias de Assis" href="https://people.sap.com/wagner_abaper" rel="external nofollow" class="url ">Wagner Dias de Assis</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on July 11, 2019" href="https://blogs.sap.com/2019/07/11/currency-and-unit-conversion-in-abap-cds-views/#comment-465810"><time datetime="2019-07-11T10:58:33+00:00">July 11, 2019 at 10:58 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>Amazing as always my friend, this one is gonna be very usefull!</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-465810" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_465810">(1)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            <ul class="dm-list-comments">
+    <li class="comment byuser comment-author-felipedemellorodrigues bypostauthor odd alt depth-2 dm-list-comments__item" id="li-comment-465896">
+        <article id="comment-465896">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Felipe de Mello Rodrigues" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/felipedemello.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a aria-label="Author name Felipe de Mello Rodrigues" href="https://people.sap.com/felipedemello.rodrigues" rel="external nofollow" class="url ">Felipe de Mello Rodrigues</a> <span class="dm-user__category">Post author</span></div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on July 12, 2019" href="https://blogs.sap.com/2019/07/11/currency-and-unit-conversion-in-abap-cds-views/#comment-465896"><time datetime="2019-07-12T04:50:50+00:00">July 12, 2019 at 4:50 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>Hey <a href="https://people.sap.com/wagner_abaper" rel="nofollow">Wagner Dias de Assis</a>,</p>
+<p>Hope everything is okay and thank you for the message my friend.</p>
+<p>All the best!</p>
+<p>Cheers,</p>
+<p>Felipe</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-465896" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_465896">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment byuser comment-author-jelenaperfiljeva2 even thread-odd thread-alt depth-1 dm-list-comments__item" id="li-comment-467176">
+        <article id="comment-467176">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Jelena Perfiljeva" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/jelena.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"><span class="dm-user__roles"><span class="dm-icon-encoded--mentor-alumni" title="This user is an SAP Mentor Alumnus" data-role-name="Mentor Alumni"></span></span> <a aria-label="Author name Jelena Perfiljeva" href="https://people.sap.com/jelena.perfiljeva2" rel="external nofollow" class="url ">Jelena Perfiljeva</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on July 23, 2019" href="https://blogs.sap.com/2019/07/11/currency-and-unit-conversion-in-abap-cds-views/#comment-467176"><time datetime="2019-07-23T18:25:38+00:00">July 23, 2019 at 6:25 pm</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>Nice blog, thanks for sharing!</p>
+<p>Well formatted and a good explanation too.</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-467176" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_467176">(1)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            <ul class="dm-list-comments">
+    <li class="comment byuser comment-author-felipedemellorodrigues bypostauthor odd alt depth-2 dm-list-comments__item" id="li-comment-479055">
+        <article id="comment-479055">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Felipe de Mello Rodrigues" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/felipedemello.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a aria-label="Author name Felipe de Mello Rodrigues" href="https://people.sap.com/felipedemello.rodrigues" rel="external nofollow" class="url ">Felipe de Mello Rodrigues</a> <span class="dm-user__category">Post author</span></div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on October 31, 2019" href="https://blogs.sap.com/2019/07/11/currency-and-unit-conversion-in-abap-cds-views/#comment-479055"><time datetime="2019-10-31T02:15:36+00:00">October 31, 2019 at 2:15 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>Thank you for the good feedback, greatly&nbsp;appreciated 🙂</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-479055" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_479055">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment byuser comment-author-mohitbansal3 even thread-even depth-1 dm-list-comments__item" id="li-comment-467414">
+        <article id="comment-467414">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Mohit Bansal" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/mohit.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a aria-label="Author name Mohit Bansal" href="https://people.sap.com/mohit.bansal3" rel="external nofollow" class="url ">Mohit Bansal</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on July 25, 2019" href="https://blogs.sap.com/2019/07/11/currency-and-unit-conversion-in-abap-cds-views/#comment-467414"><time datetime="2019-07-25T09:09:13+00:00">July 25, 2019 at 9:09 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>Well done Felipe !! Really appreciate the way , it is explained 🙂</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-467414" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_467414">(1)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            <ul class="dm-list-comments">
+    <li class="comment byuser comment-author-felipedemellorodrigues bypostauthor odd alt depth-2 dm-list-comments__item" id="li-comment-479056">
+        <article id="comment-479056">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Felipe de Mello Rodrigues" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/felipedemello.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a aria-label="Author name Felipe de Mello Rodrigues" href="https://people.sap.com/felipedemello.rodrigues" rel="external nofollow" class="url ">Felipe de Mello Rodrigues</a> <span class="dm-user__category">Post author</span></div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on October 31, 2019" href="https://blogs.sap.com/2019/07/11/currency-and-unit-conversion-in-abap-cds-views/#comment-479056"><time datetime="2019-10-31T02:16:05+00:00">October 31, 2019 at 2:16 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>Thanks mate!</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-479056" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_479056">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment byuser comment-author-chandubalu even thread-odd thread-alt depth-1 dm-list-comments__item" id="li-comment-481133">
+        <article id="comment-481133">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo bala krishna" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/chandubalu_small.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a aria-label="Author name bala krishna" href="https://people.sap.com/chandubalu" rel="external nofollow" class="url ">bala krishna</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on November 16, 2019" href="https://blogs.sap.com/2019/07/11/currency-and-unit-conversion-in-abap-cds-views/#comment-481133"><time datetime="2019-11-16T18:50:18+00:00">November 16, 2019 at 6:50 pm</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>hi <a class="url " href="https://people.sap.com/felipedemello.rodrigues" rel="external nofollow">Felipe de Mello Rodrigues</a>,</p>
+<p>thank you for sharing very useful information. i have some confusion can you please help me out.</p>
+<p>how can i restrict no of decimal places in quantity converted (target) field to two decimal places?</p>
+<p>&nbsp;</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-481133" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_481133">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            </li><!-- #comment-## -->
+    <li class="comment byuser comment-author-puresoftware odd alt thread-even depth-1 dm-list-comments__item" id="li-comment-489709">
+        <article id="comment-489709">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo PureSoftware Ltd" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/puresoftware_small.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a aria-label="Author name PureSoftware Ltd" href="https://people.sap.com/puresoftware" rel="external nofollow" class="url ">PureSoftware Ltd</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on January 14, 2020" href="https://blogs.sap.com/2019/07/11/currency-and-unit-conversion-in-abap-cds-views/#comment-489709"><time datetime="2020-01-14T06:29:08+00:00">January 14, 2020 at 6:29 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>The way you have used images to portray examples made
+ me understand things easily. Looking forward for some more interesting 
+information like this.</p>
+<p>Currently, I am working with <a href="https://puresoftware.com/" rel="nofollow">PureSoftware.com</a></p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-489709" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_489709">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            </li><!-- #comment-## -->
+    <li class="comment byuser comment-author-arttha even thread-odd thread-alt depth-1 dm-list-comments__item" id="li-comment-490262">
+        <article id="comment-490262">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Arttha Fintech" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/arttha_small.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a aria-label="Author name Arttha Fintech" href="https://people.sap.com/arttha" rel="external nofollow" class="url ">Arttha Fintech</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on January 17, 2020" href="https://blogs.sap.com/2019/07/11/currency-and-unit-conversion-in-abap-cds-views/#comment-490262"><time datetime="2020-01-17T10:26:15+00:00">January 17, 2020 at 10:26 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>I work with <a href="http://arttha.com/" rel="nofollow ugc">Arttha</a> and the information seems really interesting to me.</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-490262" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_490262">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            </li><!-- #comment-## -->
+    <li class="comment byuser comment-author-kulkasoh odd alt thread-even depth-1 dm-list-comments__item" id="li-comment-508609">
+        <article id="comment-508609">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Soham Kulkarni" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/kulkasoh_small.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a aria-label="Author name Soham Kulkarni" href="https://people.sap.com/kulkasoh" rel="external nofollow" class="url ">Soham Kulkarni</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on May 19, 2020" href="https://blogs.sap.com/2019/07/11/currency-and-unit-conversion-in-abap-cds-views/#comment-508609"><time datetime="2020-05-19T04:08:01+00:00">May 19, 2020 at 4:08 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>Hi <a class="url " href="https://people.sap.com/felipedemello.rodrigues" rel="external nofollow">Felipe de Mello Rodrigues</a>,</p>
+<p>Do we have any blogs specifying the actual logic/code written for currency conversion inside <strong>CURRENCY_CONVERSION</strong> function?</p>
+<p>Thank You.</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-508609" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_508609">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            </li><!-- #comment-## -->
+          </ul><!-- .commentlist -->
+
+          
+        </div> <!-- .dm-commentsbox -->
+
+      </div> <!-- .dm-layout__flexRow -->
+        </div> <!-- main comments content area -->
+  
+          
+</div><!-- #comments .dm-section.dm-section--last -->  </div>
+</div>
+                </div> <!-- #main -->
+                <div id="shared_footer" class="dm-container dm-wrapper">
+                    <footer class="dm-footer">
+    <div class="dm-footer__inner-wrapper">
+        <div class="dm-socialmedia">
+            <h5 class="dm-socialmedia__headline" id="hl-sharefollow">Find us on</h5>
+            <ul class="dm-socialmedia__links" aria-labelledby="hl-sharefollow">
+                <li><a href="https://www.facebook.com/sapcommunity" title="Facebook"><span class="dm-icon-encoded--facebook"></span></a></li>
+                <li><a href="https://twitter.com/SAPCommunity" title="Twitter"><span class="dm-icon-encoded--twitter"></span></a></li>
+                <li><a href="https://www.youtube.com/c/SAPCommunities" title="YouTube"><span class="dm-icon-encoded--youtube"></span></a></li>
+                <li><a href="https://www.linkedin.com/company/sap" title="LinkedIn"><span class="dm-icon-encoded--linkedin"></span></a></li>
+                <li><a href="https://instagram.com/sap/" title="Instagram"><span class="dm-icon-encoded--instagram"></span></a></li>
+                <li><a href="http://www.slideshare.net/SAP" title="Slideshare"><span class="dm-icon-encoded--slideshare"></span></a></li>
+                <li><a href="mailto:?subject='SAP Community'" title="Email Share"><span class="dm-icon-encoded--email"></span></a></li>
+            </ul>
+        </div>
+        <nav role="navigation" class="dm-footer__navigation">
+            <ul class="dm-footer__navigation__list" aria-label="footer navigation">
+                <li><a href="http://sap.com/about/legal/privacy.html" target="_blank">Privacy</a></li>
+                <li><a href="http://sap.com/corporate/en/legal/terms-of-use.html" target="_blank">Terms of Use</a></li>
+                <li><a href="http://sap.com/about/legal/impressum.html" target="_blank">Legal Disclosure</a></li>
+                <li><a href="http://sap.com/about/legal/copyright.html" target="_blank">Copyright</a></li>
+                <li><a href="http://sap.com/about/legal/trademark.html" target="_blank">Trademark</a></li>
+                <li id="teconsent" consent="0,1" aria-label="Open Cookie Preferences Modal" role="complementary" style="display: block;"><script async="async" type="text/javascript" crossorigin="" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/v1.js"></script><a id="icon-id035309477306438364" tabindex="0" role="link" style="cursor: pointer;" lang="ru">Настройки параметра cookie</a></li>
+                <li><a href="https://www.sap.com/cmp/nl/sap-community-voice/index.html" target="_blank">Newsletter</a></li>
+                <li><a href="mailto:sapnetwork@sap.com" target="_blank">Support</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>                </div>
+            </div> <!-- #page -->
+            <script type="application/ld+json" data-schema="811933-post-Default">{"@context":"http:\/\/schema.org\/","@type":"BlogPosting","@id":"https:\/\/blogs.sap.com\/2019\/07\/11\/currency-and-unit-conversion-in-abap-cds-views\/#BlogPosting","mainEntityOfPage":"https:\/\/blogs.sap.com\/2019\/07\/11\/currency-and-unit-conversion-in-abap-cds-views\/","headline":"Currency and Unit conversion in ABAP CDS views","name":"Currency and Unit conversion in ABAP CDS views","description":"Recently, I&#8217;ve been checking some examples of unit and currency conversions based on ABAP CDS views and I noticed is quite common to find people applying manual conversions in the formulas. A simple example of","datePublished":"2019-07-11","dateModified":"2019-07-11","author":{"@type":"Person","@id":"https:\/\/blogs.sap.com\/author\/felipedemello.rodrigues\/#Person","name":"Felipe de Mello Rodrigues","url":"https:\/\/blogs.sap.com\/author\/felipedemello.rodrigues\/","image":{"@type":"ImageObject","@id":"https:\/\/avatars.services.sap.com\/images\/felipedemello.rodrigues_small.png","url":"https:\/\/avatars.services.sap.com\/images\/felipedemello.rodrigues_small.png","height":96,"width":96}},"publisher":{"@type":"Organization","name":"SAP Community Blogs","logo":{"@type":"ImageObject","@id":"https:\/\/blogs.sap.com\/wp-content\/uploads\/2020\/03\/SAP_scrn_R-2.png","url":"https:\/\/blogs.sap.com\/wp-content\/uploads\/2020\/03\/SAP_scrn_R-2.png","width":600,"height":60}},"image":{"@type":"ImageObject","@id":"https:\/\/blogs.sap.com\/wp-content\/uploads\/2019\/07\/money-bags.jpg","url":"https:\/\/blogs.sap.com\/wp-content\/uploads\/2019\/07\/money-bags.jpg","height":"263","width":"348"},"url":"https:\/\/blogs.sap.com\/2019\/07\/11\/currency-and-unit-conversion-in-abap-cds-views\/","about":["Technical Articles"],"wordCount":1536,"keywords":["abap cds","core data services","Core Data Services (CDS)","currency","currency conversion","exchange rate","unit","unit conversion"]}</script>
+<script type="application/ld+json" data-schema="Breadcrumb">{"@context":"http:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/blogs.sap.com\/#breadcrumbitem","name":"SAP Blogs"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/blogs.sap.com\/2019\/07\/11\/currency-and-unit-conversion-in-abap-cds-views\/#breadcrumbitem","name":"Currency and Unit conversion in ABAP CDS views"}}]}</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var headerInitArgs = {"system":"blogs","wrapperID":"page","breadcrumbItems":[{"text":"Blogs","href":"https:\/\/blogs.sap.com"}]};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/scn-header.js"></script>
+<script type="text/javascript">
+            scnHeader.init(headerInitArgs);
+            setCookie("userArgs", headerInitArgs.user ? JSON.stringify(headerInitArgs.user) : "", { path : "/" });
+    
+</script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/header.js"></script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/subheader.js"></script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/designmate.js"></script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/SAP_IDS.js"></script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/comment-reply.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var satmContentSelectors = ["div.dm-contentDetail__body-content","div.dm-list-comments__item-content"];
+var satmProfileBaseUrl = "people.sap.com\/";
+var satmChangeableElementsSelectors = ["div.dm-list-comments__item-content"];
+var satmPluginEnabled = "1";
+var satmApiUrl = "https:\/\/uss.api.community.sap.com";
+var satmApiCallWithCredentials = "1";
+var satmRequestDelayMs = "100";
+/* ]]> */
+</script>
+<script type="text/javascript" defer="defer" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/sap-at-mention.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var commentValidation = {"validateMaxLinks":"1","max_links_number":"7","BLOGS_PAGE":"single"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/sap-comment-validation.js"></script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/sap-post-status.js"></script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/jquery-plugins.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sapLoginCookieConfig = {"cookieName":"SAP_BLOGS_ANONYMOUS_NONCE","sapActionName":"s_action"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/sap-login-csrf-cookie.js"></script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/lightbox-gallery.js"></script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/choices.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wprcajaxhandler = {"ajaxurl":"https:\/\/blogs.sap.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/scripts.js"></script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/single.js"></script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/onscroll-sticky.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var assignedTagsWidgetSettings = {"maxItemsBeforeHide":"5","data":{"ABAP Development":"https:\/\/blogs.sap.com\/tags\/833755570260738661924709785639136\/","SAP HANA":"https:\/\/blogs.sap.com\/tags\/73554900100700000996\/","SAP S\/4HANA":"https:\/\/blogs.sap.com\/tags\/73554900100800000266\/","abap cds":"https:\/\/blogs.sap.com\/tag\/abap-cds\/","core data services":"https:\/\/blogs.sap.com\/tag\/core-data-services\/","Core Data Services (CDS)":"https:\/\/blogs.sap.com\/tag\/core-data-services-cds\/","currency":"https:\/\/blogs.sap.com\/tag\/currency\/","currency conversion":"https:\/\/blogs.sap.com\/tag\/currency-conversion\/","exchange rate":"https:\/\/blogs.sap.com\/tag\/exchange-rate\/","unit":"https:\/\/blogs.sap.com\/tag\/unit\/","unit conversion":"https:\/\/blogs.sap.com\/tag\/unit-conversion\/"},"widgetClassname":".widget_sapassignedtagswidget-v3"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/sap-assigned-tags-widget.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var relatedContentWidgetSettings = {"widgetSelector":".widget_sap-relatedcontent-widget-v3","contentServiceUrl":"https:\/\/content.services.sap.com\/cs\/topicsearches\/topicPage","profileUrl":"https:\/\/people.sap.com","targetContentItem":{"id":811933,"type":"blogpost","title":"Currency and Unit conversion in ABAP CDS views","primary_tag":"833755570260738661924709785639136"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/sap-related-content-widget.js"></script>
+<div id="wp-load_tinymce-wrap" class="wp-core-ui wp-editor-wrap tmce-active"><link rel="stylesheet" id="dashicons-css" href="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/dashicons.css" type="text/css" media="all">
+<link rel="stylesheet" id="editor-buttons-css" href="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/editor.css" type="text/css" media="all">
+<style>#wp-load_tinymce-wrap {display:none;}</style>
+<div id="wp-load_tinymce-editor-tools" class="wp-editor-tools hide-if-no-js"><div class="wp-editor-tabs"><button type="button" id="load_tinymce-tmce" class="wp-switch-editor switch-tmce" data-wp-editor-id="load_tinymce">Visual</button>
+<button type="button" id="load_tinymce-html" class="wp-switch-editor switch-html" data-wp-editor-id="load_tinymce">Text</button>
+</div>
+</div>
+<div id="wp-load_tinymce-editor-container" class="wp-editor-container"><div id="qt_load_tinymce_toolbar" class="quicktags-toolbar"></div><div id="mceu_25" class="mce-tinymce mce-container mce-panel" hidefocus="1" tabindex="-1" role="group"><div id="mceu_25-body" class="mce-container-body mce-stack-layout"><div id="mceu_26" class="mce-top-part mce-container mce-stack-layout-item mce-first"><div id="mceu_26-body" class="mce-container-body"><div id="mceu_27" class="mce-toolbar-grp mce-container mce-panel mce-first mce-last" hidefocus="1" tabindex="-1" role="group"><div id="mceu_27-body" class="mce-container-body mce-stack-layout"><div id="mceu_28" class="mce-container mce-toolbar mce-stack-layout-item mce-first" role="toolbar"><div id="mceu_28-body" class="mce-container-body mce-flow-layout"><div id="mceu_29" class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"><div id="mceu_29-body"><div id="mceu_0" class="mce-widget mce-btn mce-menubtn mce-fixed-width mce-listbox mce-first mce-btn-has-text" tabindex="-1" aria-labelledby="mceu_0" role="button" aria-haspopup="true"><button id="mceu_0-open" role="presentation" type="button" tabindex="-1"><span class="mce-txt">Paragraph</span> <i class="mce-caret"></i></button></div><div id="mceu_1" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Bold (Ctrl+B)"><button id="mceu_1-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bold"></i></button></div><div id="mceu_2" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Italic (Ctrl+I)"><button id="mceu_2-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-italic"></i></button></div><div id="mceu_3" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Bulleted list (Shift+Alt+U)"><button id="mceu_3-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bullist"></i></button></div><div id="mceu_4" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Numbered list (Shift+Alt+O)"><button id="mceu_4-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-numlist"></i></button></div><div id="mceu_5" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Blockquote (Shift+Alt+Q)"><button id="mceu_5-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-blockquote"></i></button></div><div id="mceu_6" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Align left (Shift+Alt+L)"><button id="mceu_6-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignleft"></i></button></div><div id="mceu_7" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Align center (Shift+Alt+C)"><button id="mceu_7-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-aligncenter"></i></button></div><div id="mceu_8" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Align right (Shift+Alt+R)"><button id="mceu_8-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignright"></i></button></div><div id="mceu_9" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Insert/edit link (Ctrl+K)"><button id="mceu_9-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-link"></i></button></div><div id="mceu_10" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Fullscreen"><button id="mceu_10-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-fullscreen"></i></button></div><div id="mceu_11" class="mce-widget mce-btn" tabindex="-1" role="button" aria-label="Toolbar Toggle (Shift+Alt+Z)"><button id="mceu_11-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-wp_adv"></i></button></div><div id="mceu_12" class="mce-widget mce-btn mce-last" tabindex="-1"><button id="mceu_12-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-codesample"></i></button></div></div></div></div></div><div id="mceu_30" class="mce-container mce-toolbar mce-stack-layout-item mce-last" role="toolbar"><div id="mceu_30-body" class="mce-container-body mce-flow-layout"><div id="mceu_31" class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"><div id="mceu_31-body"><div id="mceu_13" class="mce-widget mce-btn mce-first" tabindex="-1" aria-pressed="false"><button id="mceu_13-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-strikethrough"></i></button></div><div id="mceu_14" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_14-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-hr"></i></button></div><div id="mceu_15" class="mce-widget mce-btn mce-splitbtn mce-colorbutton" role="button" tabindex="-1" aria-haspopup="true"><button role="presentation" hidefocus="1" type="button" tabindex="-1"><i class="mce-ico mce-i-forecolor"></i><span id="mceu_15-preview" class="mce-preview"></span></button><button type="button" class="mce-open" hidefocus="1" tabindex="-1"> <i class="mce-caret"></i></button></div><div id="mceu_16" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false"><button id="mceu_16-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-pastetext"></i></button></div><div id="mceu_17" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_17-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-removeformat"></i></button></div><div id="mceu_18" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_18-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-charmap"></i></button></div><div id="mceu_19" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_19-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-outdent"></i></button></div><div id="mceu_20" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_20-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-indent"></i></button></div><div id="mceu_21" class="mce-widget mce-btn mce-menubtn" tabindex="-1" aria-labelledby="mceu_21"><button id="mceu_21-open" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-table"></i> <i class="mce-caret"></i></button></div><div id="mceu_22" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_22-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-undo"></i></button></div><div id="mceu_23" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_23-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-redo"></i></button></div><div id="mceu_24" class="mce-widget mce-btn mce-last" tabindex="-1"><button id="mceu_24-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-wp_help"></i></button></div></div></div></div></div></div></div></div></div><div id="mceu_32" class="mce-edit-area mce-container mce-panel mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group"></div><div id="mceu_33" class="mce-statusbar mce-container mce-panel mce-stack-layout-item mce-last" hidefocus="1" tabindex="-1" role="group"><div id="mceu_33-body" class="mce-container-body mce-flow-layout"><div id="mceu_34" class="mce-path mce-flow-layout-item mce-first"><div class="mce-path-item">&nbsp;</div></div><div id="mceu_35" class="mce-flow-layout-item mce-last mce-resizehandle"><i class="mce-ico mce-i-resize"></i></div></div></div></div></div><textarea class="wp-editor-area" rows="20" autocomplete="off" cols="40" name="load_tinymce" id="load_tinymce" style="visibility: hidden;"></textarea></div>
+</div>
+
+
+		<script type="text/javascript">
+		tinyMCEPreInit = {
+			baseURL: "https://blogs.sap.com/wp-includes/js/tinymce",
+			suffix: ".min",
+						mceInit: {'load_tinymce':{theme:"modern",skin:"lightgray",language:"en",formats:{alignleft: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"left"}},{selector: "img,table,dl.wp-caption", classes: "alignleft"}],aligncenter: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"center"}},{selector: "img,table,dl.wp-caption", classes: "aligncenter"}],alignright: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"right"}},{selector: "img,table,dl.wp-caption", classes: "alignright"}],strikethrough: {inline: "del"}},relative_urls:false,remove_script_host:false,convert_urls:false,browser_spellcheck:true,fix_list_elements:true,entities:"38,amp,60,lt,62,gt",entity_encoding:"raw",keep_styles:false,cache_suffix:"wp-mce-4960-20190918",resize:"vertical",menubar:false,branding:false,preview_styles:"font-family font-size font-weight font-style text-decoration text-transform",end_container_on_empty_block:true,wpeditimage_html5_captions:true,wp_lang_attr:"en-US",wp_keep_scroll_position:false,wp_shortcut_labels:{"Heading 1":"access1","Heading 2":"access2","Heading 3":"access3","Heading 4":"access4","Heading 5":"access5","Heading 6":"access6","Paragraph":"access7","Blockquote":"accessQ","Underline":"metaU","Strikethrough":"accessD","Bold":"metaB","Italic":"metaI","Code":"accessX","Align center":"accessC","Align right":"accessR","Align left":"accessL","Justify":"accessJ","Cut":"metaX","Copy":"metaC","Paste":"metaV","Select all":"metaA","Undo":"metaZ","Redo":"metaY","Bullet list":"accessU","Numbered list":"accessO","Insert\/edit image":"accessM","Insert\/edit link":"metaK","Remove link":"accessS","Toolbar Toggle":"accessZ","Insert Read More tag":"accessT","Insert Page Break tag":"accessP","Distraction-free writing mode":"accessW","Add Media":"accessM","Keyboard Shortcuts":"accessH"},content_css:"https://blogs.sap.com/wp-includes/css/dashicons.min.css?ver=3207,https://blogs.sap.com/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=3207,https://fonts.googleapis.com/css?family=Open+Sans:400italic%2C700italic%2C400%2C700&subset=latin%2Clatin-ext,https://blogs.sap.com/wp-content/themes/sap-v3-neo/editor-style.css",plugins:"charmap,colorpicker,hr,lists,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpautoresize,wpeditimage,wpemoji,wpgallery,wplink,wpdialogs,wptextpattern,wpview,image,codesample",external_plugins:{"table":"https:\/\/blogs.sap.com\/wp-content\/plugins\/mce-table-buttons\/tinymce47-table\/plugin.min.js"},selector:"#load_tinymce",wpautop:true,indent:false,toolbar1:"formatselect,bold,italic,bullist,numlist,blockquote,alignleft,aligncenter,alignright,link,spellchecker,fullscreen,wp_adv,codesample",toolbar2:"strikethrough,hr,forecolor,pastetext,removeformat,charmap,outdent,indent,table,undo,redo,wp_help",toolbar3:"",toolbar4:"",tabfocus_elements:":prev,:next",body_class:"load_tinymce post-type-post post-status-publish post-format-standard page-template-default locale-en-us",table_toolbar:"",extended_valid_elements:"div"}},
+			qtInit: {'load_tinymce':{id:"load_tinymce",buttons:"strong,em,link,block,del,ins,img,ul,ol,li,code,more,close"}},
+			ref: {plugins:"charmap,colorpicker,hr,lists,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpautoresize,wpeditimage,wpemoji,wpgallery,wplink,wpdialogs,wptextpattern,wpview,image,codesample",theme:"modern",language:"en"},
+			load_ext: function(url,lang){var sl=tinymce.ScriptLoader;sl.markDone(url+'/langs/'+lang+'.js');sl.markDone(url+'/langs/'+lang+'_dlg.js');}
+		};
+		</script>
+		<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/tinymce.js"></script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/plugin.js"></script>
+<script type="text/javascript">
+tinymce.addI18n( 'en', {"Ok":"OK","Bullet list":"Bulleted list","Insert\/Edit code sample":"Insert\/edit code sample","Url":"URL","Spellcheck":"Check Spelling","Row properties":"Table row properties","Cell properties":"Table cell properties","Paste row before":"Paste table row before","Paste row after":"Paste table row after","Cut row":"Cut table row","Copy row":"Copy table row","Merge cells":"Merge table cells","Split cell":"Split table cell","Paste is now in plain text mode. Contents will now be pasted as plain text until you toggle this option off.":"Paste is now in plain text mode. Contents will now be pasted as plain text until you toggle this option off.\n\nIf you\u2019re looking to paste rich content from Microsoft Word, try turning this option off. The editor will clean up text pasted from Word automatically.","Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":"Rich Text Area. Press Alt-Shift-H for help.","You have unsaved changes are you sure you want to navigate away?":"The changes you made will be lost if you navigate away from this page.","Your browser doesn't support direct access to the clipboard. Please use the Ctrl+X\/C\/V keyboard shortcuts instead.":"Your browser does not support direct access to the clipboard. Please use keyboard shortcuts or your browser\u2019s edit menu instead.","Edit|button":"Edit"});
+tinymce.ScriptLoader.markDone( 'https://blogs.sap.com/wp-includes/js/tinymce/langs/en.js' );
+</script>
+<script type="text/javascript" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/wp-langs-en.js"></script>
+		<script type="text/javascript">
+		tinyMCEPreInit.load_ext("https://blogs.sap.com/wp-content/plugins/mce-table-buttons/tinymce47-table", "en");
+
+var ajaxurl = "/wp-admin/admin-ajax.php";
+		( function() {
+			var init, id, $wrap;
+
+			if ( typeof tinymce !== 'undefined' ) {
+				if ( tinymce.Env.ie && tinymce.Env.ie < 11 ) {
+					tinymce.$( '.wp-editor-wrap ' ).removeClass( 'tmce-active' ).addClass( 'html-active' );
+					return;
+				}
+
+				for ( id in tinyMCEPreInit.mceInit ) {
+					init = tinyMCEPreInit.mceInit[id];
+					$wrap = tinymce.$( '#wp-' + id + '-wrap' );
+
+					if ( ( $wrap.hasClass( 'tmce-active' ) || ! tinyMCEPreInit.qtInit.hasOwnProperty( id ) ) && ! init.wp_skip_init ) {
+						tinymce.init( init );
+
+						if ( ! window.wpActiveEditor ) {
+							window.wpActiveEditor = id;
+						}
+					}
+				}
+			}
+
+			if ( typeof quicktags !== 'undefined' ) {
+				for ( id in tinyMCEPreInit.qtInit ) {
+					quicktags( tinyMCEPreInit.qtInit[id] );
+
+					if ( ! window.wpActiveEditor ) {
+						window.wpActiveEditor = id;
+					}
+				}
+			}
+		}());
+		</script>
+				<div id="wp-link-backdrop" style="display: none"></div>
+		<div id="wp-link-wrap" class="wp-core-ui" style="display: none" role="dialog" aria-labelledby="link-modal-title">
+		<form id="wp-link" tabindex="-1">
+		<input type="hidden" id="_ajax_linking_nonce" name="_ajax_linking_nonce" value="c83ff4c088">		<h3 id="link-modal-title">Insert/edit link</h3>
+		<button type="button" id="wp-link-close"><span class="screen-reader-text">Close</span></button>
+		<div id="link-selector">
+			<div id="link-options">
+				<p class="howto" id="wplink-enter-url">Enter the destination URL</p>
+				<div>
+					<label><span>URL</span>
+					<input id="wp-link-url" type="text" aria-describedby="wplink-enter-url"></label>
+				</div>
+				<div class="wp-link-text-field">
+					<label><span>Link Text</span>
+					<input id="wp-link-text" type="text"></label>
+				</div>
+				<div class="link-target">
+					<label><span></span>
+					<input type="checkbox" id="wp-link-target"> Open link in a new tab</label>
+				</div>
+			</div>
+			<p class="howto" id="wplink-link-existing-content">Or link to existing content</p>
+			<div id="search-panel">
+				<div class="link-search-wrapper">
+					<label>
+						<span class="search-label">Search</span>
+						<input type="search" id="wp-link-search" class="link-search-field" autocomplete="off" aria-describedby="wplink-link-existing-content">
+						<span class="spinner"></span>
+					</label>
+				</div>
+				<div id="search-results" class="query-results" tabindex="0">
+					<ul></ul>
+					<div class="river-waiting">
+						<span class="spinner"></span>
+					</div>
+				</div>
+				<div id="most-recent-results" class="query-results" tabindex="0">
+					<div class="query-notice" id="query-notice-message">
+						<em class="query-notice-default">No search term specified. Showing recent items.</em>
+						<em class="query-notice-hint screen-reader-text">Search or use up and down arrow keys to select an item.</em>
+					</div>
+					<ul></ul>
+					<div class="river-waiting">
+						<span class="spinner"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="submitbox">
+			<div id="wp-link-cancel">
+				<button type="button" class="button">Cancel</button>
+			</div>
+			<div id="wp-link-update">
+				<input type="submit" value="Add Link" class="button button-primary" id="wp-link-submit" name="wp-link-submit">
+			</div>
+		</div>
+		</form>
+		</div>
+		<script type="text/javascript">jQuery(window).load( function() {tinymce.codesampleplugin.Prism.highlightAll();});</script><script type="text/javascript">_satellite.pageBottom();</script><script>
+    var swa = {
+        pubToken: '33255556-c863-4a29-9bda-1309df0cff50',
+        baseUrl: 'https://webanalytics.cfapps.eu10.hana.ondemand.com/tracker/',
+        dntLevel: 1,
+        subSiteId:"blogs.sap.com"
+    };
+    (function(){
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.defer=true; g.async=true; g.src=swa.baseUrl+'js/privacy.js';
+        s.parentNode.insertBefore(g,s); g.onload = function() { swa.enable(); };
+     })();
+</script>        </div> <!-- .page-wrapper -->
+    
+
+<style>#swa_background{position:fixed;top:0px;left:0px;height:100%;width:100%;display:none;background-color: black;z-index:100;}#swa_license{font-family:Arial,Helvetica,sans-serif;background-color: white;color: black;border: 1px solid gray;position:absolute;display:none;z-index:11100;padding: 30px; display:none;background: #FFF;border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;box-shadow: 0px 0px 4px rgba(0,0,0,0.7); -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7); -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);}.close_license{ position: absolute; top: 12px; right: 12px; display: block; width: 14px; height: 14px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEUAAACIiIhaeOqmAAAAAXRSTlMAQObYZgAAAC9JREFUaN5jYGBgEOBgsJBhqLFjsKthkP/BwP+Bgf0BCAEZQC5QECgFVABUxsAAAOcxCbuaDAybAAAAAElFTkSuQmCC); z-index: 2;}.swabutton{display:inline;position: absolute;right: 25px;margin: 0px}.swalicensetxt{width:100%; height:100%; overflow-y: hidden;overflow-x: hidden;}</style><div id="swa_background"></div><div id="swa_license"><div id="swa_header"><table><tbody><tr><td><strong>Privacy Statement</strong></td></tr></tbody></table><a class="close_license" href="#"></a></div><iframe id="swa_licence_window" class="swalicensetxt" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/a.html" scrolling="yes"></iframe><div id="swa_form"><p></p><p></p><input type="checkbox" class="swa_checkid" id="swa_p_checkid"><label for="swa_p_checkid" id="l_swa_p_checkid">&nbsp;Allow use of SAP Web Analytics</label>&nbsp;&nbsp;<button class="swabutton" type="button" id="swa_save_modal" onclick="frame_save(event);">Save</button></div></div><script type="text/javascript" defer="defer" async="" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/piwik.js"></script><script type="text/javascript" defer="defer" async="" src="Currency%20and%20Unit%20conversion%20in%20ABAP%20CDS%20views%20SAP%20Blogs_files/piwik_plugin.js"></script><script>_satellite["__runScript1"](function(event, target) {
+function handleQueryAjaxActions(c){var r=function(t){return t.split("&").reduce(function(t,n){var e=n.split("=");return t[e[0]]=e[1],t},{})};jQuery(document).ajaxSuccess(function(t,n,e){if(e.data)for(var o=r(e.data),a=0;a<c.length;a++){var i=c[a][0],s=c[a][1];if(i(o))return void s()}})}function handleFetchActions(c){var t=fetch;fetch=function(){var s=arguments;return t.apply(this,arguments).then(function(t){if(s&&s[1]&&s[1].body){var i=t.clone();i.json().then(function(t){for(var n=Array.from(s[1].body.entries()).reduce(function(t,n){return t[n[0]]=n[1],t},t),e=0;e<c.length;e++){var o=c[e][0],a=c[e][1];if(o(n))return a(),i}})}return t})}}function hasAction(n){return function(t){return"undefined"!=typeof t.action&&t.action===n}}function hasParams(e){return function(t){for(var n in e)if(!t[n]||t[n]!==e[n])return!1;return!0}}function sentActivity(e,o){return function(){var t={objectType:o,actionType:e},n=window.location;t.contentURL=n.host+getRootPagePath(n.pathname),sap_s.trackActivity(t)}}function getRootPagePath(t){var n=t,e=/.*comment-page-\d+$/,o=!1;n.endsWith("/")&&(n=n.slice(0,-1),o=!0);var a=n.split("/");return e.test(n)&&6===a.length?(a.pop(),a.join("/")+(o?"/":"")):t}handleQueryAjaxActions([[hasParams({action:"like_a_post",actionLike:"doLike"}),sentActivity("like","blogpost")],[hasParams({action:"like_a_comment",actionLike:"doLike"}),sentActivity("like","comment")],[hasParams({action:"like_a_post",actionLike:"doUnLike"}),sentActivity("cancel-like","blogpost")],[hasParams({action:"like_a_comment",actionLike:"doUnLike"}),sentActivity("cancel-like","comment")],[hasAction("sap-update-comment"),sentActivity("update","comment")],[hasAction("sap-delete-comment"),sentActivity("delete","comment")],[hasParams({action:"delete-comment",trash:"1"}),sentActivity("delete","comment")],[hasParams({action:"delete-comment",untrash:"1"}),sentActivity("publish","comment")],[hasAction("wprc_add_report"),sentActivity("publish","alert")],[hasAction("report_agree_post"),sentActivity("confirm","alert")],[hasAction("report_disagree_post"),sentActivity("reject","alert")]]),handleFetchActions([[hasParams({last_status:"follow",action:"ss_change_follow_status",content_type:"blogpost"}),sentActivity("follow","blogpost")],[hasParams({last_status:"follow",action:"ss_change_follow_status",content_type:"sap_tag"}),sentActivity("follow","tag")],[hasParams({last_status:"not-follow",action:"ss_change_follow_status",content_type:"blogpost"}),sentActivity("stop-following","blogpost")],[hasParams({last_status:"not-follow",action:"ss_change_follow_status",content_type:"sap_tag"}),sentActivity("stop-following","tag")]]);
+});</script><script>_satellite["__runScript2"](function(event, target) {
+function fillStorageForTrackingActivity(){setUpDeleteBlogpost(),setUpPublishBlogpost(),setUpPublishComment()}function setUpPublishComment(){var t=jQuery("form#commentform");t.submit(function(){t.find("#new_comment_nonce").length&&saveToSessionStorage("comment","publish")})}function setUpDeleteBlogpost(){jQuery(".submitdelete").click(function(){saveToSessionStorage("blogpost","delete")})}function setUpPublishBlogpost(){var o=jQuery("form#post"),i="";o.find('input[value="Publish"][type="Submit"]').click(function(){i="publish"}),o.find('input[value="Needs More Work"][type="Submit"]').click(function(){i="needs_more_work"}),o.find('input[value="Submit for Review"][type="Submit"]').click(function(){i="submit_for_review"}),o.find('input[value="Update"][type="Submit"]').click(function(){i="update"}),o.find('input[value="Save"][type="Submit"]').click(function(){i="update"});var n=!1;o.find("#primary-tag").change(function(){n=!0});var s="Not Saved"===o.find("#custom-post-status-display").text();o.submit(function(){var t=o.find("#original_post_status").attr("value"),e=n&&("needs-more-work"===t||"pending"===t||"update"===i&&!s);i&&saveToSessionStorage("blogpost",i),e&&saveToSessionStorage("blogpost","update-tag-assignment")})}function saveToSessionStorage(t,e){var o=[],i=sessionStorage.getItem(STORAGE_KEY);i&&(o=JSON.parse(i)),o.push(createActivity(t,e)),sessionStorage.setItem(STORAGE_KEY,JSON.stringify(o))}function createActivity(t,e){var o={objectType:t,actionType:e},i=window.location;return o.contentURL=i.host+getRootPagePath(i.pathname),o}function sendActionsFromSessionStorage(){var t=sessionStorage.getItem(STORAGE_KEY);if(t){var e=JSON.parse(t);sessionStorage.removeItem(STORAGE_KEY);var o=window.location.host+getRootPagePath(window.location.pathname);e.forEach(function(t){t.contentURL=o,sap_s.trackActivity(t)})}}function getRootPagePath(t){var e=t,o=/.*comment-page-\d+$/,i=!1;e.endsWith("/")&&(e=e.slice(0,-1),i=!0);var n=e.split("/");return o.test(e)&&6===n.length?(n.pop(),n.join("/")+(i?"/":"")):t}var STORAGE_KEY="DTM_RELOAD_ACTION";fillStorageForTrackingActivity(),sendActionsFromSessionStorage();
+});</script><div class="hidden" id="wp_window_loaded"></div></body></html>

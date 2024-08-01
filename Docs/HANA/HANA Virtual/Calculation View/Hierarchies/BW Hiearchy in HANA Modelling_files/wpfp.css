@@ -1,0 +1,4 @@
+.wpfp-hide { display: none; }
+.wpfp-img {content:"\e901"; border: 0; vertical-align: middle; margin-right: 2px; }
+.wpfp-link {font-family: "Times New Roman", Times, serif; font-weight: bold; color: red; }
+.ffa-heart::before {font-family: FontAwesome; content:"✖";background-color:#eee; color: red;}

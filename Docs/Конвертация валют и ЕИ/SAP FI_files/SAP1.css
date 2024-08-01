@@ -1,0 +1,2352 @@
+ @font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:ЛОМе;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 680460288 22 0 262145 0;}
+@font-face
+	{font-family:"Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1 -369098753 63 0 4129279 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520077569 -1073717157 41 0 66047 0;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073743103 0 0 415 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073786111 1 0 415 0;}
+@font-face
+	{font-family:"Monotype Corsiva";
+	panose-1:3 1 1 1 1 2 1 1 1 1;
+	mso-font-charset:204;
+	mso-generic-font-family:script;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 680460288 22 0 262145 0;}
+@font-face
+	{font-family:"\@Arial Unicode MS";
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1 -369098753 63 0 4129279 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	mso-style-next:Обычный;
+	margin-top:24.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:18.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:Cambria;
+	mso-fareast-font-family:Calibri;
+	color:#365F91;
+	mso-font-kerning:0pt;
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	mso-style-next:Обычный;
+	margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:16.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:Cambria;
+	mso-fareast-font-family:Calibri;
+	color:#1F497D;
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;
+	font-weight:bold;}
+h3
+	{mso-style-update:auto;
+	mso-style-link:"Heading 3 Char";
+	mso-style-next:Обычный;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:25.2pt;
+	text-align:center;
+	text-indent:-25.2pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	tab-stops:list 36.0pt;
+	font-size:14.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:Calibri;
+	color:#4F81BD;
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;
+	font-weight:bold;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+h4
+	{mso-style-link:"Heading 4 Char";
+	mso-style-next:Обычный;
+	margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:35.4pt;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:Cambria;
+	mso-fareast-font-family:Calibri;
+	color:#4F81BD;
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;
+	font-weight:bold;
+	font-style:italic;}
+h5
+	{mso-style-parent:"Заголовок 4";
+	mso-style-link:"Heading 5 Char";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:50.4pt;
+	text-indent:-50.4pt;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	tab-stops:list 50.4pt;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	color:navy;
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+h6
+	{mso-style-parent:"Заголовок 5";
+	mso-style-link:"Heading 6 Char";
+	mso-style-next:Обычный;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:57.6pt;
+	text-indent:-57.6pt;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:6;
+	tab-stops:list 90.0pt;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	color:navy;
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.MsoHeading7, li.MsoHeading7, div.MsoHeading7
+	{mso-style-parent:"Заголовок 6";
+	mso-style-link:"Heading 7 Char";
+	mso-style-next:Обычный;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:64.8pt;
+	text-indent:-64.8pt;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:7;
+	tab-stops:list 64.8pt;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	color:navy;
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.MsoHeading8, li.MsoHeading8, div.MsoHeading8
+	{mso-style-parent:"Заголовок 7";
+	mso-style-link:"Heading 8 Char";
+	mso-style-next:Обычный;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:72.0pt;
+	text-indent:-72.0pt;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:8;
+	tab-stops:list 72.0pt;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	color:navy;
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.MsoHeading9, li.MsoHeading9, div.MsoHeading9
+	{mso-style-link:"Heading 9 Char";
+	mso-style-next:Обычный;
+	margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:9;
+	font-size:10.0pt;
+	font-family:Cambria;
+	mso-fareast-font-family:Calibri;
+	mso-bidi-font-family:"Times New Roman";
+	color:#404040;
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;
+	font-style:italic;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{mso-style-update:auto;
+	mso-style-next:Обычный;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{mso-style-update:auto;
+	mso-style-next:Обычный;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:10.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{mso-style-update:auto;
+	mso-style-next:Обычный;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:20.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.MsoToc4, li.MsoToc4, div.MsoToc4
+	{mso-style-update:auto;
+	mso-style-next:Обычный;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:30.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.MsoToc5, li.MsoToc5, div.MsoToc5
+	{mso-style-update:auto;
+	mso-style-next:Обычный;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:48.25pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoToc6, li.MsoToc6, div.MsoToc6
+	{mso-style-update:auto;
+	mso-style-next:Обычный;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:60.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:SimSun;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoToc7, li.MsoToc7, div.MsoToc7
+	{mso-style-update:auto;
+	mso-style-next:Обычный;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:72.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:SimSun;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoToc8, li.MsoToc8, div.MsoToc8
+	{mso-style-update:auto;
+	mso-style-next:Обычный;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:84.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:SimSun;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoToc9, li.MsoToc9, div.MsoToc9
+	{mso-style-update:auto;
+	mso-style-next:Обычный;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:96.0pt;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:SimSun;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-name:"Верхний колонтитул\,-Manuals\,Linie";
+	mso-style-link:"Header Char\,-Manuals Char\,Linie Char\,header Char";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	tab-stops:center 235.15pt right 470.3pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-name:"Нижний колонтитул\,Fusszeile\,Fusszeile1\,Fusszeile2\,Fusszeile3\,Fusszeile4\,Fusszeile5\,Fusszeile6\,Fusszeile7\,Fusszeile11\,Fusszeile21\,Fusszeile12\,Fusszeile22\,Fusszeile31\,Fusszeile32\,Fusszeile13\,Fusszeile23\,Fusszeile33";
+	mso-style-link:"Footer Char\,Fusszeile Char\,Fusszeile1 Char\,Fusszeile2 Char\,Fusszeile3 Char\,Fusszeile4 Char\,Fusszeile5 Char\,Fusszeile6 Char\,Fusszeile7 Char\,Fusszeile11 Char\,Fusszeile21 Char\,Fusszeile12 Char\,Fusszeile22 Char\,Fusszeile31 Char\,Fusszeile32 Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:center 8.0cm right 16.0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:Calibri;
+	mso-ansi-language:FR;
+	mso-fareast-language:FR;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{mso-style-next:Обычный;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.MsoLineNumber
+	{font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoToaHeading, li.MsoToaHeading, div.MsoToaHeading
+	{mso-style-noshow:yes;
+	mso-style-next:Обычный;
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;
+	font-weight:bold;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{mso-style-noshow:yes;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:28.1pt;
+	text-indent:-16.6pt;
+	mso-pagination:widow-orphan;
+	tab-stops:list 28.1pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:Calibri;
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;}
+p.MsoListNumber, li.MsoListNumber, div.MsoListNumber
+	{mso-style-noshow:yes;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:18.0pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l5 level1 lfo9;
+	tab-stops:list 18.0pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoListNumberCxSpFirst, li.MsoListNumberCxSpFirst, div.MsoListNumberCxSpFirst
+	{mso-style-noshow:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l5 level1 lfo9;
+	tab-stops:list 18.0pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoListNumberCxSpMiddle, li.MsoListNumberCxSpMiddle, div.MsoListNumberCxSpMiddle
+	{mso-style-noshow:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l5 level1 lfo9;
+	tab-stops:list 18.0pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoListNumberCxSpLast, li.MsoListNumberCxSpLast, div.MsoListNumberCxSpLast
+	{mso-style-noshow:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:18.0pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l5 level1 lfo9;
+	tab-stops:list 18.0pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoList2, li.MsoList2, div.MsoList2
+	{margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:36.0pt;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.MsoList3, li.MsoList3, div.MsoList3
+	{margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:54.0pt;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.MsoListBullet2, li.MsoListBullet2, div.MsoListBullet2
+	{mso-style-noshow:yes;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:32.15pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l4 level1 lfo13;
+	tab-stops:list 32.15pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoListBullet2CxSpFirst, li.MsoListBullet2CxSpFirst, div.MsoListBullet2CxSpFirst
+	{mso-style-noshow:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:32.15pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l4 level1 lfo13;
+	tab-stops:list 32.15pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoListBullet2CxSpMiddle, li.MsoListBullet2CxSpMiddle, div.MsoListBullet2CxSpMiddle
+	{mso-style-noshow:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:32.15pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l4 level1 lfo13;
+	tab-stops:list 32.15pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoListBullet2CxSpLast, li.MsoListBullet2CxSpLast, div.MsoListBullet2CxSpLast
+	{mso-style-noshow:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:32.15pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l4 level1 lfo13;
+	tab-stops:list 32.15pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoListBullet4, li.MsoListBullet4, div.MsoListBullet4
+	{mso-style-noshow:yes;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:126.0pt;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	tab-stops:list 126.0pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:Calibri;
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;}
+p.MsoListNumber2, li.MsoListNumber2, div.MsoListNumber2
+	{mso-style-noshow:yes;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:32.15pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l2 level1 lfo10;
+	tab-stops:list 32.15pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoListNumber2CxSpFirst, li.MsoListNumber2CxSpFirst, div.MsoListNumber2CxSpFirst
+	{mso-style-noshow:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:32.15pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l2 level1 lfo10;
+	tab-stops:list 32.15pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoListNumber2CxSpMiddle, li.MsoListNumber2CxSpMiddle, div.MsoListNumber2CxSpMiddle
+	{mso-style-noshow:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:32.15pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l2 level1 lfo10;
+	tab-stops:list 32.15pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoListNumber2CxSpLast, li.MsoListNumber2CxSpLast, div.MsoListNumber2CxSpLast
+	{mso-style-noshow:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:32.15pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l2 level1 lfo10;
+	tab-stops:list 32.15pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoListNumber4, li.MsoListNumber4, div.MsoListNumber4
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:60.45pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l1 level1 lfo12;
+	tab-stops:list 60.45pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoListNumber4CxSpFirst, li.MsoListNumber4CxSpFirst, div.MsoListNumber4CxSpFirst
+	{mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:60.45pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l1 level1 lfo12;
+	tab-stops:list 60.45pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoListNumber4CxSpMiddle, li.MsoListNumber4CxSpMiddle, div.MsoListNumber4CxSpMiddle
+	{mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:60.45pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l1 level1 lfo12;
+	tab-stops:list 60.45pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoListNumber4CxSpLast, li.MsoListNumber4CxSpLast, div.MsoListNumber4CxSpLast
+	{mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:60.45pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l1 level1 lfo12;
+	tab-stops:list 60.45pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoListNumber5, li.MsoListNumber5, div.MsoListNumber5
+	{mso-style-noshow:yes;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:74.6pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l0 level1 lfo11;
+	tab-stops:list 74.6pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoListNumber5CxSpFirst, li.MsoListNumber5CxSpFirst, div.MsoListNumber5CxSpFirst
+	{mso-style-noshow:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:74.6pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l0 level1 lfo11;
+	tab-stops:list 74.6pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoListNumber5CxSpMiddle, li.MsoListNumber5CxSpMiddle, div.MsoListNumber5CxSpMiddle
+	{mso-style-noshow:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:74.6pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l0 level1 lfo11;
+	tab-stops:list 74.6pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoListNumber5CxSpLast, li.MsoListNumber5CxSpLast, div.MsoListNumber5CxSpLast
+	{mso-style-noshow:yes;
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:74.6pt;
+	mso-add-space:auto;
+	text-indent:-18.0pt;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	mso-list:l0 level1 lfo11;
+	tab-stops:list 74.6pt;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	tab-stops:21.25pt 42.55pt 63.8pt 3.0cm 106.3pt 127.6pt 148.85pt 6.0cm;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:Calibri;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;
+	font-weight:bold;}
+p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
+	{mso-style-link:"Body Text Char";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	color:green;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;
+	font-style:italic;}
+p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
+	{mso-style-link:"Body Text Indent Char";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.MsoListContinue, li.MsoListContinue, div.MsoListContinue
+	{margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:17.85pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.MsoListContinue2, li.MsoListContinue2, div.MsoListContinue2
+	{mso-style-parent:"Продолжение списка";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:35.7pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.MsoListContinue3, li.MsoListContinue3, div.MsoListContinue3
+	{mso-style-parent:"Продолжение списка";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:53.85pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-link:"Subtitle Char";
+	mso-style-next:Обычный;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Cambria;
+	mso-fareast-font-family:Calibri;
+	mso-bidi-font-family:"Times New Roman";
+	color:#4F81BD;
+	letter-spacing:.75pt;
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;
+	font-style:italic;}
+p.MsoDate, li.MsoDate, div.MsoDate
+	{mso-style-link:"Date Char";
+	mso-style-next:Обычный;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+a:link, span.MsoHyperlink
+	{font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+strong
+	{font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.MsoDocumentMap, li.MsoDocumentMap, div.MsoDocumentMap
+	{mso-style-noshow:yes;
+	mso-style-link:"Document Map Char";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	background:navy;
+	font-size:10.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:SimSun;
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{mso-style-link:"Plain Text Char";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p
+	{margin-top:5.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-link:"Balloon Text Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:Tahoma;
+	mso-fareast-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.ListParagraph, li.ListParagraph, div.ListParagraph
+	{mso-style-name:"List Paragraph";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	mso-add-space:auto;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.ListParagraphCxSpFirst, li.ListParagraphCxSpFirst, div.ListParagraphCxSpFirst
+	{mso-style-name:"List ParagraphCxSpFirst";
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.ListParagraphCxSpMiddle, li.ListParagraphCxSpMiddle, div.ListParagraphCxSpMiddle
+	{mso-style-name:"List ParagraphCxSpMiddle";
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+p.ListParagraphCxSpLast, li.ListParagraphCxSpLast, div.ListParagraphCxSpLast
+	{mso-style-name:"List ParagraphCxSpLast";
+	mso-style-type:export-only;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:36.0pt;
+	mso-add-space:auto;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 2";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-hansi-font-family:Cambria;
+	mso-bidi-font-family:"Times New Roman";
+	color:#1F497D;
+	font-weight:bold;}
+span.Heading4Char
+	{mso-style-name:"Heading 4 Char";
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 4";
+	mso-ansi-font-size:12.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-hansi-font-family:Cambria;
+	mso-bidi-font-family:"Times New Roman";
+	color:#4F81BD;
+	font-weight:bold;
+	font-style:italic;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-noshow:yes;
+	mso-style-locked:yes;
+	mso-style-link:"Текст выноски";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:Tahoma;
+	mso-ascii-font-family:Tahoma;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+span.FooterChar
+	{mso-style-name:"Footer Char\,Fusszeile Char\,Fusszeile1 Char\,Fusszeile2 Char\,Fusszeile3 Char\,Fusszeile4 Char\,Fusszeile5 Char\,Fusszeile6 Char\,Fusszeile7 Char\,Fusszeile11 Char\,Fusszeile21 Char\,Fusszeile12 Char\,Fusszeile22 Char\,Fusszeile31 Char\,Fusszeile32 Char";
+	mso-style-noshow:yes;
+	mso-style-locked:yes;
+	mso-style-link:"Нижний колонтитул\,Fusszeile\,Fusszeile1\,Fusszeile2\,Fusszeile3\,Fusszeile4\,Fusszeile5\,Fusszeile6\,Fusszeile7\,Fusszeile11\,Fusszeile21\,Fusszeile12\,Fusszeile22\,Fusszeile31\,Fusszeile32\,Fusszeile13\,Fusszeile23\,Fusszeile33";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-ascii-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:FR;
+	mso-fareast-language:FR;}
+p.NoSpacing, li.NoSpacing, div.NoSpacing
+	{mso-style-name:"No Spacing";
+	mso-style-parent:"";
+	mso-style-link:"No Spacing Char";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:Calibri;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 3";
+	mso-ansi-font-size:14.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	color:#4F81BD;
+	font-weight:bold;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 1";
+	mso-ansi-font-size:14.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-hansi-font-family:Cambria;
+	mso-bidi-font-family:"Times New Roman";
+	color:#365F91;
+	font-weight:bold;}
+span.NoSpacingChar
+	{mso-style-name:"No Spacing Char";
+	mso-style-locked:yes;
+	mso-style-link:"No Spacing";
+	mso-ansi-font-size:11.0pt;
+	mso-bidi-font-size:11.0pt;
+	font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;
+	mso-bidi-language:AR-SA;}
+span.Heading9Char
+	{mso-style-name:"Heading 9 Char";
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 9";
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-hansi-font-family:Cambria;
+	mso-bidi-font-family:"Times New Roman";
+	color:#404040;
+	font-style:italic;}
+span.Heading5Char
+	{mso-style-name:"Heading 5 Char";
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 5";
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	color:navy;
+	mso-ansi-language:DE;
+	mso-fareast-language:X-NONE;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.Heading6Char
+	{mso-style-name:"Heading 6 Char";
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 6";
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	color:navy;
+	mso-ansi-language:DE;
+	mso-fareast-language:X-NONE;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.Heading7Char
+	{mso-style-name:"Heading 7 Char";
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 7";
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	color:navy;
+	mso-ansi-language:DE;
+	mso-fareast-language:X-NONE;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.Heading8Char
+	{mso-style-name:"Heading 8 Char";
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 8";
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	color:navy;
+	mso-ansi-language:DE;
+	mso-fareast-language:X-NONE;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.HeaderChar
+	{mso-style-name:"Header Char\,-Manuals Char\,Linie Char\,header Char";
+	mso-style-locked:yes;
+	mso-style-link:"Верхний колонтитул\,-Manuals\,Linie";
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:X-NONE;}
+p.NoteIcon, li.NoteIcon, div.NoteIcon
+	{mso-style-name:"Note Icon";
+	mso-style-next:Обычный;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:54.0pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.NoteList, li.NoteList, div.NoteList
+	{mso-style-name:"Note List";
+	mso-style-parent:Список;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:90.0pt;
+	text-indent:-17.85pt;
+	mso-pagination:widow-orphan;
+	tab-stops:list 19.8pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.NoteList2, li.NoteList2, div.NoteList2
+	{mso-style-name:"Note List 2";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:126.0pt;
+	text-indent:-18.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.NoteListContinue, li.NoteListContinue, div.NoteListContinue
+	{mso-style-name:"Note List Continue";
+	mso-style-parent:"Продолжение списка";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:72.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.NoteParagraph, li.NoteParagraph, div.NoteParagraph
+	{mso-style-name:"Note Paragraph";
+	mso-style-link:"Note Paragraph Char";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:54.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+span.NoteParagraphChar
+	{mso-style-name:"Note Paragraph Char";
+	mso-style-locked:yes;
+	mso-style-link:"Note Paragraph";
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:X-NONE;}
+span.Object
+	{mso-style-name:Object;
+	mso-ansi-font-size:10.0pt;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+span.ScreenOutput
+	{mso-style-name:"Screen Output";
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+span.ScreenOutputLong
+	{mso-style-name:"Screen Output Long";
+	mso-ansi-font-size:9.0pt;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+p.TableHeading, li.TableHeading, div.TableHeading
+	{mso-style-name:"Table Heading";
+	mso-style-link:"Table Heading Char";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.TableHeadingChar
+	{mso-style-name:"Table Heading Char";
+	mso-style-locked:yes;
+	mso-style-link:"Table Heading";
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:X-NONE;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.TableText, li.TableText, div.TableText
+	{mso-style-name:"Table Text";
+	mso-style-parent:"Table Heading";
+	mso-style-link:"Table Text Char";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+span.TableTextChar
+	{mso-style-name:"Table Text Char";
+	mso-style-locked:yes;
+	mso-style-link:"Table Text";
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:X-NONE;}
+span.UserInput
+	{mso-style-name:"User Input";
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.UserInputLong
+	{mso-style-name:"User Input Long";
+	mso-ansi-font-size:9.0pt;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.UserKey
+	{mso-style-name:"User Key";
+	mso-ansi-font-size:8.0pt;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+p.ListNumbered, li.ListNumbered, div.ListNumbered
+	{mso-style-name:"List Numbered";
+	mso-style-parent:Список;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+span.Name
+	{mso-style-name:Name;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+span.PlainTextChar
+	{mso-style-name:"Plain Text Char";
+	mso-style-locked:yes;
+	mso-style-link:Текст;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:SimSun;
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:X-NONE;}
+p.CoverPageSub-Title, li.CoverPageSub-Title, div.CoverPageSub-Title
+	{mso-style-name:"Cover Page Sub-Title";
+	mso-style-update:auto;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	mso-pagination:widow-orphan;
+	mso-element:frame;
+	mso-element-frame-width:11.0cm;
+	mso-element-frame-height:581.2pt;
+	mso-element-frame-hspace:7.1pt;
+	mso-element-wrap:around;
+	mso-element-anchor-vertical:page;
+	mso-element-anchor-horizontal:page;
+	mso-element-left:204.15pt;
+	mso-element-top:158.8pt;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.CoverPageTitle, li.CoverPageTitle, div.CoverPageTitle
+	{mso-style-name:"Cover Page Title";
+	mso-style-update:auto;
+	margin-top:270.0pt;
+	margin-right:0cm;
+	margin-bottom:9.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:22.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.CoverPageTop, li.CoverPageTop, div.CoverPageTop
+	{mso-style-name:"Cover Page Top";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan lines-together;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.Copyright, li.Copyright, div.Copyright
+	{mso-style-name:Copyright;
+	mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+span.tw4winMark
+	{mso-style-name:tw4winMark;
+	mso-style-parent:"";
+	mso-ansi-font-size:12.0pt;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	color:purple;
+	display:none;
+	mso-hide:all;
+	vertical-align:sub;}
+p.TableText2, li.TableText2, div.TableText2
+	{mso-style-name:"Table Text2";
+	mso-style-parent:"Table Heading";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.tabletext20, li.tabletext20, div.tabletext20
+	{mso-style-name:tabletext2;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Arial Unicode MS";
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+p.TableHeading3, li.TableHeading3, div.TableHeading3
+	{mso-style-name:"Table Heading3";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.TableHeading1, li.TableHeading1, div.TableHeading1
+	{mso-style-name:"Table Heading1";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.TableHeading2, li.TableHeading2, div.TableHeading2
+	{mso-style-name:"Table Heading2";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.NoteParagraph1, li.NoteParagraph1, div.NoteParagraph1
+	{mso-style-name:"Note Paragraph1";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:54.0pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.TableHeading4, li.TableHeading4, div.TableHeading4
+	{mso-style-name:"Table Heading4";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.TableText1, li.TableText1, div.TableText1
+	{mso-style-name:"Table Text1";
+	mso-style-parent:"Table Heading";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.TableText4, li.TableText4, div.TableText4
+	{mso-style-name:"Table Text4";
+	mso-style-parent:"Table Heading";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.TableText3, li.TableText3, div.TableText3
+	{mso-style-name:"Table Text3";
+	mso-style-parent:"Table Heading";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.NoteIcon1, li.NoteIcon1, div.NoteIcon1
+	{mso-style-name:"Note Icon1";
+	mso-style-next:Обычный;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:54.0pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+p.TableHeading5, li.TableHeading5, div.TableHeading5
+	{mso-style-name:"Table Heading5";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;
+	font-weight:bold;}
+p.TableText5, li.TableText5, div.TableText5
+	{mso-style-name:"Table Text5";
+	mso-style-parent:"Table Heading";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;
+	mso-bidi-font-weight:bold;}
+p.tableheading40, li.tableheading40, div.tableheading40
+	{mso-style-name:tableheading4;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Arial Unicode MS";
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;
+	font-weight:bold;}
+span.BodyTextIndentChar
+	{mso-style-name:"Body Text Indent Char";
+	mso-style-locked:yes;
+	mso-style-link:"Основной текст с отступом";
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	mso-fareast-language:X-NONE;}
+p.Heading45, li.Heading45, div.Heading45
+	{mso-style-name:"Heading 45";
+	mso-style-parent:"Заголовок 5";
+	margin-top:6.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:50.4pt;
+	text-indent:-50.4pt;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	tab-stops:list 50.4pt;
+	font-size:8.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	color:navy;
+	mso-ansi-language:EN-GB;
+	mso-fareast-language:EN-US;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.BodyTextChar
+	{mso-style-name:"Body Text Char";
+	mso-style-locked:yes;
+	mso-style-link:"Основной текст";
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	color:green;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:X-NONE;
+	font-style:italic;}
+p.Linesofcode, li.Linesofcode, div.Linesofcode
+	{mso-style-name:"Lines of code";
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:2.0pt;
+	margin-left:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:9.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:EN-US;
+	mso-fareast-language:DE;}
+p.TableList, li.TableList, div.TableList
+	{mso-style-name:"Table List";
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:17.85pt;
+	text-indent:-17.85pt;
+	mso-pagination:widow-orphan;
+	tab-stops:18.45pt;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:EN-US;}
+span.DocumentMapChar
+	{mso-style-name:"Document Map Char";
+	mso-style-noshow:yes;
+	mso-style-locked:yes;
+	mso-style-link:"Схема документа";
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Tahoma;
+	mso-ascii-font-family:Tahoma;
+	mso-fareast-font-family:SimSun;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;
+	background:navy;
+	mso-ansi-language:DE;
+	mso-fareast-language:X-NONE;}
+span.DateChar
+	{mso-style-name:"Date Char";
+	mso-style-locked:yes;
+	mso-style-link:Дата;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-ansi-language:DE;
+	mso-fareast-language:X-NONE;}
+span.postbody
+	{mso-style-name:postbody;
+	font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+span.sapxdpdoculink
+	{mso-style-name:sapxdpdoculink;
+	font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+span.sapxdptitle
+	{mso-style-name:sapxdptitle;
+	font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.sapxdpparagraph, li.sapxdpparagraph, div.sapxdpparagraph
+	{mso-style-name:sapxdpparagraph;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:Calibri;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;}
+span.sapxdpnavigationpath
+	{mso-style-name:sapxdpnavigationpath;
+	font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+span.urtxth1
+	{mso-style-name:urtxth1;
+	font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-locked:yes;
+	mso-style-link:Название;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:bold;}
+p.Pagedegarde, li.Pagedegarde, div.Pagedegarde
+	{mso-style-name:"Page de garde";
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	text-align:center;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:Calibri;
+	text-transform:uppercase;
+	mso-ansi-language:EN-US;
+	mso-fareast-language:EN-US;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+p.xl65, li.xl65, div.xl65
+	{mso-style-name:xl65;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	background:#DDDDDD;
+	border:none;
+	mso-border-alt:solid windowtext .5pt;
+	padding:0cm;
+	mso-padding-alt:0cm 0cm 0cm 0cm;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:Calibri;
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;}
+p.1, li.1, div.1
+	{mso-style-name:Стиль1;
+	mso-style-parent:"Заголовок 1";
+	mso-style-link:"Стиль1 Знак";
+	margin-top:18.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	text-align:center;
+	text-indent:-.35pt;
+	mso-pagination:none;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:18.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-bidi-font-family:"Times New Roman";
+	color:navy;
+	mso-ansi-language:RU;
+	mso-fareast-language:EN-US;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.10
+	{mso-style-name:"Стиль1 Знак";
+	mso-style-locked:yes;
+	mso-style-parent:"Heading 1 Char";
+	mso-style-link:Стиль1;
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:SimSun;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	color:navy;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
+span.SubtitleChar
+	{mso-style-name:"Subtitle Char";
+	mso-style-locked:yes;
+	mso-style-link:Подзаголовок;
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Cambria;
+	mso-ascii-font-family:Cambria;
+	mso-hansi-font-family:Cambria;
+	mso-bidi-font-family:"Times New Roman";
+	color:#4F81BD;
+	letter-spacing:.75pt;
+	font-style:italic;}
+span.BookTitle
+	{mso-style-name:"Book Title";
+	font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-variant:small-caps;
+	letter-spacing:.25pt;
+	font-weight:bold;}
+p.noteicon0, li.noteicon0, div.noteicon0
+	{mso-style-name:noteicon;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:59.05pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:Calibri;
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;}
+p.noteparagraph0, li.noteparagraph0, div.noteparagraph0
+	{mso-style-name:noteparagraph;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:59.05pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:Calibri;
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;}
+p.tabletext45, li.tabletext45, div.tabletext45
+	{mso-style-name:tabletext45;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:Calibri;
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;}
+p.tableheading11, li.tableheading11, div.tableheading11
+	{mso-style-name:tableheading11;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:Calibri;
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	font-weight:bold;}
+span.object2
+	{mso-style-name:object2;
+	font-family:Arial;
+	mso-ascii-font-family:Arial;
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
+	font-style:italic;}
+span.userinput2
+	{mso-style-name:userinput2;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;
+	font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+p.tableheading0, li.tableheading0, div.tableheading0
+	{mso-style-name:tableheading;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:Calibri;
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	font-weight:bold;}
+p.tabletext0, li.tabletext0, div.tabletext0
+	{mso-style-name:tabletext;
+	margin-top:3.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:Calibri;
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;}
+p.a, li.a, div.a
+	{mso-style-name:"Обычный курсив";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-indent:36.0pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:Calibri;
+	color:blue;
+	mso-ansi-language:RU;
+	mso-fareast-language:RU;
+	font-style:italic;
+	mso-bidi-font-style:normal;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 21.2pt 35.45pt 2.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-page-numbers:0;
+	mso-title-page:yes;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:-132;
+	mso-list-type:simple;
+	mso-list-template-ids:-133633862;}
+@list l0:level1
+	{mso-level-style-link:"Нумерованный список 5";
+	mso-level-tab-stop:74.6pt;
+	mso-level-number-position:left;
+	margin-left:74.6pt;
+	text-indent:-18.0pt;
+	mso-bidi-font-family:"Times New Roman";}
+@list l1
+	{mso-list-id:-131;
+	mso-list-type:simple;
+	mso-list-template-ids:1822561854;}
+@list l1:level1
+	{mso-level-style-link:"Нумерованный список 4";
+	mso-level-tab-stop:60.45pt;
+	mso-level-number-position:left;
+	margin-left:60.45pt;
+	text-indent:-18.0pt;
+	mso-bidi-font-family:"Times New Roman";}
+@list l2
+	{mso-list-id:-129;
+	mso-list-type:simple;
+	mso-list-template-ids:1618112658;}
+@list l2:level1
+	{mso-level-style-link:"Нумерованный список 2";
+	mso-level-tab-stop:32.15pt;
+	mso-level-number-position:left;
+	margin-left:32.15pt;
+	text-indent:-18.0pt;
+	mso-bidi-font-family:"Times New Roman";}
+@list l3
+	{mso-list-id:-127;
+	mso-list-type:simple;
+	mso-list-template-ids:1745002448;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:"Маркированный список 4";
+	mso-level-text:;
+	mso-level-tab-stop:60.45pt;
+	mso-level-number-position:left;
+	margin-left:60.45pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l4
+	{mso-list-id:-125;
+	mso-list-type:simple;
+	mso-list-template-ids:-340524838;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:"Маркированный список 2";
+	mso-level-text:;
+	mso-level-tab-stop:32.15pt;
+	mso-level-number-position:left;
+	margin-left:32.15pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l5
+	{mso-list-id:-120;
+	mso-list-type:simple;
+	mso-list-template-ids:687798638;}
+@list l5:level1
+	{mso-level-style-link:"Нумерованный список";
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	mso-bidi-font-family:"Times New Roman";}
+@list l6
+	{mso-list-id:-119;
+	mso-list-type:simple;
+	mso-list-template-ids:-2063686404;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-style-link:"Маркированный список";
+	mso-level-text:;
+	mso-level-tab-stop:18.0pt;
+	mso-level-number-position:left;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l7
+	{mso-list-id:772676255;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1852776980 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l7:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-bidi-font-family:"Times New Roman";}
+@list l8
+	{mso-list-id:1796605667;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1033089012 68747279 68747289 68747291 68747279 68747289 68747291 68747279 68747289 68747291;}
+@list l8:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-bidi-font-family:"Times New Roman";}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Calibri;
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+table.MsoTableGrid
+	{mso-style-name:"Сетка таблицы";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin-top:3.0pt;
+	mso-para-margin-right:0cm;
+	mso-para-margin-bottom:3.0pt;
+	mso-para-margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:SimSun;
+	mso-ansi-language:EN-US;}
+

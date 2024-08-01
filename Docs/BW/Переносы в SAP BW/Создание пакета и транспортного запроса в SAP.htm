@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="ru-RU"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		
+		<script src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/osd.js"></script><script src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/ca-pub-6294683267888988.js"></script><script src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/show_ads_impl.js" id="google_shimpl"></script><script type="text/javascript" async="" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/watch.js"></script><script async="" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/analytics.js"></script><script async="" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/adsbygoogle.js"></script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6294683267888988",
+            enable_page_level_ads: true
+          });
+        </script>
+		
+        <meta charset="utf-8">
+        <title>Fibed - 2.Создание пакета и транспортного запроса в SAP</title>
+        <meta name="robots" content="follow, all">
+        <meta name="viewport" content="width=980px, initial-scale=1.0">
+        <meta name="description" content="Логинимся в систему.">
+        <meta name="keywords" content="SAP,ABAP,SAP GUI,SE80,SE10,Package,Transport requestage,SE21,WebDynpro">
+        <meta name="author" content="">
+        
+    <meta name="generator" content="Zinnia 0.15.2">
+
+        <link rel="pingback" href="https://fibed.net/xmlrpc/">
+        <link rel="home" href="https://fibed.net/page/1/">
+        <link href="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/bootstrap.css" rel="stylesheet">
+        <link href="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/bootstrap-responsive.css" rel="stylesheet">
+        <link rel="stylesheet" href="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/default.css">
+        <script src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/jquery-1.js"></script>
+        <script src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/bootstrap.js"></script>
+        <script src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/default.js"></script>
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        
+    
+    <link rel="index" href="https://fibed.net/page/1/">
+    <link rel="author" type="text/plain" href="https://fibed.net/humans.txt">
+    <link rel="EditURI" type="application/rsd+xml" href="https://fibed.net/rsd.xml">
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://fibed.net/wlwmanifest.xml">
+    <link rel="search" type="application/opensearchdescription+xml" title="Zinnia's Blog" href="https://fibed.net/opensearch.xml">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed of latest entries" href="https://fibed.net/feeds/">
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed of latest discussions" href="https://fibed.net/feeds/discussions/">
+    
+
+    <link rel="stylesheet" type="text/css" href="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/comment-reply.css">
+    
+    
+        <link rel="prev" title="1.Введение - Курсы ABAP программирования " href="https://fibed.net/2013/08/12/vvedenie-v-kursy-abap-programmirovaniya/">
+    
+  
+    
+        <link rel="next" title="3.Создание домена в SAP" href="https://fibed.net/2013/08/12/sozdanie-domena-v-sap/">
+    
+  
+    <link rel="shortlink" href="http://fibed.net/6/">
+    <link rel="canonical" href="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/a_004.htm">
+    
+        <link rel="alternate" type="application/rss+xml" title="RSS Feed of discussions on '2.Создание пакета и транспортного запроса в SAP'" href="https://fibed.net/feeds/discussions/2013/08/12/sozdanie-paketa-SAP/">
+        <link rel="alternate" type="application/rss+xml" title="RSS Feed of comments on '2.Создание пакета и транспортного запроса в SAP'" href="https://fibed.net/feeds/comments/2013/08/12/sozdanie-paketa-SAP/">
+        <link rel="alternate" type="application/rss+xml" title="RSS Feed of pingbacks on '2.Создание пакета и транспортного запроса в SAP'" href="https://fibed.net/feeds/pingbacks/2013/08/12/sozdanie-paketa-SAP/">
+        <link rel="alternate" type="application/rss+xml" title="RSS Feed of trackbacks on '2.Создание пакета и транспортного запроса в SAP'" href="https://fibed.net/feeds/trackbacks/2013/08/12/sozdanie-paketa-SAP/">
+    
+
+        
+    
+    <script type="text/javascript" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/comment-reply.js"></script>
+
+    <link rel="preload" href="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/integrator.js" as="script"><script type="text/javascript" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/integrator.js"></script><link rel="preload" href="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/show_ads_impl.js" as="script"></head>
+  <body class="entry entry-6 year-2013 month-08 week-33 day-12" style="padding-top: 40px">
+    <header class="navbar navbar-fixed-top">
+      <div class="navbar-inner" role="navigation">
+        <div class="container">
+            <a href="https://fibed.net/" title="Fibed" class="brand" rel="home">
+            Fibed
+          </a>
+          <ul class="nav pull-left">
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="dLabel" role="button" data-target="#">Категории <b class="caret"></b></a>
+              <ul class="dropdown-menu" role="menu" aria-label="" ledby="dLabel">
+                
+  
+  <li><a href="https://fibed.net/categories/devops/" title="Показать все записи в категории DevOps">DevOps</a></li>
+
+    
+        
+  <li><a href="https://fibed.net/categories/devops/ansible/" title="Показать все записи в категории Ansible">Ansible</a></li>
+
+    
+
+  
+  <li><a href="https://fibed.net/categories/devops/apache-ant/" title="Показать все записи в категории Apache Ant">Apache Ant</a></li>
+
+    
+
+  
+    
+
+  
+  <li><a href="https://fibed.net/categories/programmirovanie/" title="Показать все записи в категории Программирование">Программирование</a></li>
+
+    
+        
+  <li><a href="https://fibed.net/categories/programmirovanie/sap/" title="Показать все записи в категории SAP">SAP</a></li>
+
+    
+        
+  <li><a href="https://fibed.net/categories/programmirovanie/sap/kursy-abap-programmirovaniya/" title="Показать все записи в категории Курсы ABAP программирования">Курсы ABAP программирования</a></li>
+
+    
+
+  
+    
+
+  
+    
+
+  
+  
+              </ul>
+            </li>
+
+            <!--
+            <li >
+              <a href="/authors/" title="Список авторов">
+                Авторы
+              </a>
+            </li>-->
+            
+            <li>
+              <a href="https://fibed.net/tags/" title="Список тегов">
+                Теги
+              </a>
+            </li>
+            <!--<li class="divider-vertical"></li>-->
+            
+            <!--
+                <li><a href="/accounts/login/" title="Вход">Вход</a></li>
+                <li><a href="/accounts/register/" title="Регистрация">Регистрация</a></li>
+            -->
+            
+            <li>
+              <a href="https://fibed.net/sitemap/" title="Карта сайта" class="sitemap">
+                Карта сайта
+              </a>
+            </li>
+            <!--<li class="divider-vertical"></li>-->
+            <li>
+              <a href="https://fibed.net/feeds/" title="RSS Feed of latest entries" class="feeds">
+                RSS Feed
+              </a>
+            </li>
+            <!--<li class="divider-vertical"></li>-->
+          </ul>
+          
+          <ul class="nav pull-right">
+  		      <form method="get" action="/search/" class="navbar-search pull-left">
+              <input class="search-query" placeholder="Поиск" name="pattern" type="text">
+            </form>
+              <!--
+            <li >
+            <li>
+              <a href="/sitemap/" title="Карта сайта" class="sitemap">
+                Карта сайта
+              </a>
+            </li>
+            <li class="divider-vertical"></li>
+            <li>
+              <a href="/feeds/" title="RSS Feed of latest entries" class="feeds">
+                RSS Feed
+              </a>
+            </li>-->
+            
+                <li><a href="https://fibed.net/accounts/login/" title="Вход">Вход</a></li>
+                <li><a href="https://fibed.net/accounts/register/" title="Регистрация">Регистрация</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      
+    <ul class="breadcrumb">
+  
+  <li>
+    
+    <a href="https://fibed.net/" title="Fibed">Fibed</a> <span class="divider">/</span>
+    
+  </li>
+  
+  <li>
+    
+    <a href="https://fibed.net/2013/" title="2013">2013</a> <span class="divider">/</span>
+    
+  </li>
+  
+  <li>
+    
+    <a href="https://fibed.net/2013/08/" title="Август">Август</a> <span class="divider">/</span>
+    
+  </li>
+  
+  <li>
+    
+    <a href="https://fibed.net/2013/08/12/" title="12">12</a> <span class="divider">/</span>
+    
+  </li>
+  
+  <li class="active">
+    
+    2.Создание пакета и транспортного запроса в SAP
+    
+  </li>
+  
+</ul>
+
+
+    </div>
+    <div class="container">
+      
+<script async="" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/adsbygoogle.js"></script>
+<!-- третий рекламный блок -->
+<ins class="adsbygoogle" style="display: block; height: 90px;" data-ad-client="ca-pub-6294683267888988" data-ad-slot="6255338858" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:940px;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:940px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0px;width:940px;height:90px;" width="940" height="90" frameborder="0"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+    </div>
+    
+    <div class="container">
+      <div class="row">
+        <div id="content" class="hfeed span8">
+          
+    
+        
+
+
+<article id="entry-6" class="hentry">
+  
+  <header class="entry-header">
+    
+    <h3 class="entry-title">
+      <a href="https://fibed.net/2013/08/12/sozdanie-paketa-SAP/" title="2.Создание пакета и транспортного запроса в SAP" rel="bookmark">
+        2.Создание пакета и транспортного запроса в SAP
+      </a>
+    </h3>
+    
+    
+    <p class="entry-info">
+      <!--
+      
+      Автор
+      
+      <span class="vcard author">
+        <a href="/authors/roonyk/" class="fn url" rel="author"
+           title="R K: показать все записи">R K</a></span>
+      
+      on
+      
+      -->
+      <time datetime="2013-08-12T01:32:55+03:00" pubdate="pubdate">12 августа 2013 г.</time>
+      
+      
+      в
+      
+      <a href="https://fibed.net/categories/programmirovanie/sap/kursy-abap-programmirovaniya/" title="Показать все записи в категории Курсы ABAP программирования" rel="tag category">Курсы ABAP программирования</a>.
+    </p>
+    
+  </header>
+  
+
+  
+  <div class="entry-body">
+    
+    <div class="entry-content">
+      <p style="text-align: justify;">Здесь создадим пакет и 
+транспортный запрос, что это такое и для чего нужно рассказывается 
+дальше в этой статье. Выполнив все установки и запустив сервер 
+разработки логинимся в систему, используя SAP GUI.</p>
+<p><img title="image_1" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/image_1.png" alt="image_1"></p>
+<p style="text-align: justify;">Графический интерфейс пользователя — 
+клиент в трехуровневой архитектуре SAP R/3. Интерфейс SAP GUI реализован
+ на основе Windows Style Guide, стандартов EG 90/270 и ISO9241, 
+определяющих эргономику интерфейсов. SAP GUI является универсальным 
+клиентом SAP для доступа к функциям SAP приложений, таких как SAP - SAP 
+ERP, SAP Business Suite (SAP CRM, SAP SCM и SAP PLM), SAP Business 
+Intelligence и так далее. SAP GUI функционирует как браузер. Он получает
+ информацию с сервера, чтобы отобразить содержимое в своем окне. Все 
+члены семейства SAP GUI имеют уникальные свойства, которые делают их 
+особенно подходящими для различных пользовательских сред. На данный 
+момент реализованы интерфейсы для Windows, Unix, MacOS. В настоящий 
+момент очень широкое распространение получает технология <strong>Web Dynpro</strong>, позволяющая для отображения информации использовать обычный браузер.</p>
+<p style="text-align: justify;">Появляется окно входа. Для входа в систему используем стандартного пользователя <strong>BCUSER</strong> и пароль который установили во время установки, а также <strong>Clien (Мандант)</strong> 001</p>
+<p><img src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/image_2.png" alt=""></p>
+<p style="text-align: justify;">Система R/3 является системой, 
+поддерживающей концепцию мандантов. Концепция мандантов позволяет 
+нескольким разным, не зависящим друг от друга предприятиям выполнять 
+совместные операции в одной системе. При каждом пользовательском сеансе 
+возможен доступ только к данным манданта, выбранного при регистрации в 
+системе. Таким образом, SAP R/3 позволяет вести учет нескольким разным 
+предприятиям в одной системе R/3.<br>Мандант - это организационно 
+независимая часть в системе R/3. Каждый мандант имеет собственную среду 
+данных, т.е. собственные основные и переменные данные, присвоенные 
+основные записи пользователей, планы счетов и специфические параметры 
+настройки. Номер манданта находится в диапазоне от 000 до 999. <br>Технически мандант организован как дополнительное ключевое поле в таблицах базы данных.</p>
+<p style="text-align: justify;">Кроме параметров настройки для определенного манданта, т.н. <strong>мандантозависимые</strong> настройки, &nbsp;существуют также <strong>мандантонезависимые</strong>
+ настройки, устанавливаемые один раз для всех активных мандантов. К 
+таким общим для всех мандантов параметрам настройки относятся, например,
+ настройки принтеров. <br>Репозитарий также является независящим от 
+манданта объектом. Он содержит все объекты словаря (таблицы, элементы 
+данных и домены), а также ABAP-программы, меню, экраны и т.п. <br>Вследствие
+ того, что объекты репозитария являются общими для всех мандантов, 
+разработанный в каком-либо манданте объект будет идентичным во всех 
+мандантах этой системы.</p>
+<p style="text-align: justify;">Для обеспечения системной целостности при разработке рекомендуется сформировать системный ландшафт, состоящий из трех систем:<br>
+ &nbsp;&nbsp;&nbsp;1.&nbsp; Система для разработки и настройки. В этой 
+системе ведется &nbsp;разработка программ, специфичных для предприятия, а
+ также выполнение необходимой пользовательской настройки. Поскольку 
+объекты репозитария являются общими для всех мандантов, система 
+разработок не может одновременно использоваться для продуктивной 
+эксплуатации. Это был бы слишком большой риск в плане нарушения 
+целостности данных.<br> &nbsp;&nbsp;&nbsp;2. Система для тестирования 
+разработок. Все параметры пользовательской настройки, а также изменения 
+репозитария (разработки, корректировки или модификации) переносятся в 
+систему обеспечения качества (или "тестовую систему") для их проверки 
+без связи с продуктивной эксплуатацией.<br> &nbsp;&nbsp;&nbsp;3. 
+"Продуктивная" система для производственной эксплуатации. &nbsp;Все 
+объекты и настройки, импортированные в тестовую систему и прошедшие 
+тестирование, могут быть затем перенесены в одну или несколько 
+продуктивных систем.</p>
+<p style="text-align: justify;">Трехсистемный ландшафт позволяет также 
+тестировать обновления и помогает минимизировать время простоя во время 
+обновления продуктивной системы</p>
+<p style="text-align: justify;">С началом нового проекта разработок в 
+рамках проекта внедрения, руководитель проекта создает запрос на 
+изменение и назначает разработчиков - &nbsp;членов проектной группы. 
+Организатор переносов присваивает запросу на изменение определенный 
+номер (например, C11K900001). Запрос на изменение должен содержать 
+логически взаимосвязанные изменяемые объекты, так как в дальнейшем в 
+тестовую и затем в продуктивную систему будет переноситься запрос 
+целиком вместе со всеми разработками, содержащимися в запросе. Таким 
+образом, запросы на изменение позволяют осуществлять перенос и 
+управление логически завершенными разработками. <br>Каждый раз, когда 
+разработчик изменяет или добавляет объект репозитария, необходимо 
+выбрать для этого изменяемого объекта класс разработок. Класс разработок
+ представляет собой укрупненную тему проекта и предназначен для 
+объединения логически связанных разработок. Например, может быть класс 
+разработок для объединения приложений по финансам, сбыту и т.д.<br>Далее
+ система запрашивает номер запроса, в который следует поместить объект. 
+Автоматически для данного разработчика создается задача в рамках 
+выбранного запроса, в которую помещается ссылка на изменяемый объект. 
+Таким образом, каждый разработчик собирает в своих задачах все объекты, 
+которые он создал или которые подверглись с его стороны модификации.<br>Если
+ какой либо другой разработчик выберет тот же запрос для своих объектов,
+ для него в пределах этого запроса будет создана задача, в которую будут
+ помещены ссылки на измененные или созданные им объекты.<br>Таким 
+образом, запрос объединяет усилия нескольких разработчиков для решения 
+какой либо логически законченной задачи. При завершении своей части 
+проекта разработок каждый участник проектной группы деблокирует свою 
+задачу, после чего объекты задачи передаются в запрос на изменение. 
+Запрос на изменение объединяет все объекты репозитария, которые были 
+созданы или изменены в ходе проекта разработок.<br>После деблокирования 
+всеми участниками группы своих задач руководитель проекта может 
+деблокировать запрос на изменение, который затем может быть импортирован
+ в систему тестирования. Параметры пользовательской настройки 
+регистрируются точно таким же образом.<br>Изменения в репозитарии разделяются на три большие группы: разработки, расширения и модификации.<br>Клиенты
+ могут добавлять в репозитарий свои собственные разработки. 
+&nbsp;&nbsp;Все разработки клиента выполняются с использованием области 
+имен для клиента. Это значит, что все объекты, созданные клиентом, имеют
+ имена, соответствующие определенной области имен. Например, 
+ABAP-программы клиента должны начинаться с символов Y или Z, а 
+функциональные модули – с символов Y_ или Z_.<br>Кроме того, клиенты 
+могут добавлять так называемые "расширения клиента" - объекты клиента, 
+добавляемые к существующим объектам в стандартной системе SAP. Клиенты 
+добавляют свои расширения через так называемые <strong>customer exit'ы</strong> ("выходы в программы клиента"). &nbsp;&nbsp;<br>Модификации
+ изменяют такие объекты SAP, как отчеты и определения таблиц. 
+Репозитарий, поставляемый SAP, может быть не только расширен, но и 
+изменен. Именно поэтому модификации могут потребовать адаптации в 
+соответствии с новым репозитарием, инсталлированным в ходе последнего 
+обновления системы SAP.</p>
+<p style="text-align: justify;">Используя транзакцию <strong>SE80, </strong>перейдем в навигатор объектов<strong> Object Navigator</strong> . Название говорит само за себя, с помощью этой транзакции, мы получаем быстрый доступ ко всем объектам системы. Транзакция <strong>SE80</strong> - основная транзакция для разработчика.</p>
+<p><img src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/image_3.png" alt="">&nbsp;</p>
+<p>Попадаем в навигатор объектов.</p>
+<p>&nbsp;<img src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/image_3-1.png" alt=""></p>
+<p style="text-align: justify;">Для группировки(структуризации) наших объектов разработки cоздадим пакет <strong>Package</strong>. В процессе создания различных объектов системы будем применять названия из определенной области имен-<strong>namespace</strong> <strong>ZKRE*.</strong> Пакет можно создать с помощью транзакции <strong>SE21 </strong>или через <strong>SE80</strong>(мы воспользуемся именно <strong>SE80</strong>) Из выпадающего списка выбираем <strong>Package</strong>, вводим название пакета <strong>ZKRE_PRO1</strong> и нажимаем кнопку <strong>Dispaly.</strong></p>
+<p><img src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/image_4.png" alt=""></p>
+<p style="text-align: justify;">Появилось диалоговое окно, где система предлагает создать пакет.</p>
+<p style="text-align: justify;"><img title="image_5" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/image_5.png" alt="image_5"></p>
+<p style="text-align: justify;">Нажимаем <strong>YES</strong>, после чего появляется следующее окно.</p>
+<p><img title="image_6" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/image_6.png" alt="image_6"></p>
+<p style="text-align: justify;">Вводим необходимые атрибуты и нажимаем Enter<strong>. </strong>Для полей <strong>Application Component, Software Component, Transport Layer </strong>доступно средство поиска - <strong>Search Help</strong> нажатием клавиши <strong>F4</strong>. В стандартном девелопменте SAP, когда он сам ведет разработку очень важно указывать <strong>Application Component</strong> (влияет на хелп, на поиск и т.д), в нашем случае <strong>Z-девелопменте</strong> можно было бы ничего не указывать, но по правилам хорошего тона приассайним что-то типа <strong>AP</strong>. Поле <strong>Software Component </strong>опять таки важно для стандартной разработки, в нашем случае укажем <strong>HOME</strong>, что означает, что этот объект не покинет эту систему. <strong>Transport Layer </strong>выбираем <strong>ZNSP</strong>. Для <strong>Package Type </strong>выбираем <strong>Not a Main Package</strong>.&nbsp;
+ Нажимаем Ввод и переходим к следующему диалоговому окну,&nbsp; где нам 
+необходимо ввести номер нашего транспортного запроса, который еще не 
+создан.</p>
+<p><img title="image_7" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/image_7.png" alt="image_7"></p>
+<p style="text-align: justify;">Если воспользоваться средством поиска увидим экран на котором нет ни одного запроса для юзера <strong>BCUSER</strong>.</p>
+<p><img title="image_7-1" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/image_7-1.png" alt="image_7-1"></p>
+<p style="text-align: justify;">Запрос можно было создать заранее используя транзакцию <strong>SE10</strong>, но можно создать прямо сейчас нажав &nbsp;кнопку <strong>Create (F8).</strong></p>
+<p><img title="image_7-2" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/image_7-2.png" alt="image_7-2"></p>
+<p style="text-align: justify;">Появляется окно, где необходимо ввести краткое описание для запроса.</p>
+<p><img src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/image_8.png" alt=""></p>
+<p style="text-align: justify;">Нажимаем <strong>Сохранить(Save)</strong>. После того как запрос создан, система отобразит его техническое имя.</p>
+<p><img title="image_9" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/image_9.png" alt="image_9"></p>
+<p style="text-align: justify;">Где виден номер только что созданного 
+запроса (может отличаться от вашего). Нажимаем Enter и на этом все - наш
+ пакет создан(он отобразился в навигаторе объектов).</p>
+<p><img title="image_10" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/image_10.png" alt="image_10"></p>
+<p style="text-align: justify;">Используя транзакцию <strong>SE10 </strong>можно посмотреть что у нас получилось.</p>
+<p><img title="image_11" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/image_11.png" alt="image_11"></p>
+<p style="text-align: justify;">Нажимаем кнопку <strong>Display. </strong>И видим созданный нами запрос и пакет.</p>
+<p><img title="image_12" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/image_12.png" alt="image_12"></p>
+<p style="text-align: justify;">Раскрыв дерево увидим что там уже 
+имеется наш пакет. В дальнейшем все наши создаваемые объекты мы будем 
+помещать в только что созданный пакет и запрос.</p>
+<p><img title="image_13" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/image_13.png" alt="image_13"></p>
+<p style="text-align: justify;">Теперь можно приступать к созданию 
+таблиц нашего магазина, но для этого необходимо создать соответствующие 
+домены и элементы данных. Сделаем это в следующей статье&nbsp;<a title="Краткая ссылка для 3.Создание домена в SAP" href="https://fibed.net/7/" rel="shortlink">http://fibed.net/7/</a>.</p>
+<p style="text-align: justify;">&nbsp;</p>
+    </div>
+    
+    
+    
+    
+  </div>
+  
+
+  
+  <footer class="entry-footer well">
+    
+    <p class="entry-tags">
+      <i class="icon-tags"></i> <strong>Теги</strong> :
+      
+      <a href="https://fibed.net/tags/ABAP/" title="Показать все записи с тэгом ABAP" rel="tag">ABAP</a>
+      
+      <a href="https://fibed.net/tags/Package/" title="Показать все записи с тэгом Package" rel="tag">Package</a>
+      
+      <a href="https://fibed.net/tags/SAP/" title="Показать все записи с тэгом SAP" rel="tag">SAP</a>
+      
+      <a href="https://fibed.net/tags/SAP%20GUI/" title="Показать все записи с тэгом SAP GUI" rel="tag">SAP GUI</a>
+      
+      <a href="https://fibed.net/tags/SE10/" title="Показать все записи с тэгом SE10" rel="tag">SE10</a>
+      
+      <a href="https://fibed.net/tags/SE21/" title="Показать все записи с тэгом SE21" rel="tag">SE21</a>
+      
+      <a href="https://fibed.net/tags/SE80/" title="Показать все записи с тэгом SE80" rel="tag">SE80</a>
+      
+      <a href="https://fibed.net/tags/Transport%20requestage/" title="Показать все записи с тэгом Transport requestage" rel="tag">Transport requestage</a>
+      
+      <a href="https://fibed.net/tags/WebDynpro/" title="Показать все записи с тэгом WebDynpro" rel="tag">WebDynpro</a>
+      
+    </p>
+    
+    
+    <p class="entry-shorturl">
+      <i class="icon-bookmark"></i> <strong>Краткая ссылка</strong> :
+      <a href="http://fibed.net/6/" title="Краткая ссылка для 2.Создание пакета и транспортного запроса в SAP" rel="shortlink">
+        http://fibed.net/6/
+      </a>
+    </p>
+    
+    
+    <p class="entry-comments">
+      <i class="icon-comment"></i> <strong>Обсуждения</strong> :
+      
+      
+      <a href="https://fibed.net/2013/08/12/sozdanie-paketa-SAP/#comments" title="Комментарии для 2.Создание пакета и транспортного запроса в SAP">
+        8 комментариев
+      </a>
+      
+      
+      
+      
+      
+      
+      
+      
+    </p>
+    
+  </footer>
+  
+</article>
+
+    
+
+    
+    <div id="comments">
+        <h4>Комментарии</h4>
+        
+            
+            <ul id="comment-list" class="media-list">
+                
+                    
+                        <li class="media comment vcard box1" id="comment-8-by-">
+                    
+                            <a class="pull-left">
+                                <img src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/337026f8f82485306ab918ada9467329.jpg" class="media-object" alt="Дмитрий">
+                            </a>
+                            
+                            <div class="media-body">
+                                <h5 class="media-heading">
+                                    
+                                        <span class="fn">Дмитрий</span>
+                                    
+                                </h5>
+                                
+                                <p>Класс!. Все понятно. Я начал что - то понимать. Спасибо</p>
+                                
+                                
+                                    <div class="pull-right comment-reply">
+                                        <a href="#comment-form" onclick="return addComment.moveForm('comment-8-by-', '8', 'comment-form')">Ответить</a>
+                                    </div>
+                                
+                                
+                                on
+                                <abbr class="comment-published" title="2013-11-21T21:49:56+03:00">
+                                    21.11.2013 21:49
+                                </abbr>
+                                
+                                
+                                    
+                    
+                        <div class="media comment vcard box1" id="comment-9-by-r-k">
+                    
+                            <a class="pull-left">
+                                <img src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/80499ce0267fda267a929c8e4d9618e8.jpg" class="media-object" alt="R K">
+                            </a>
+                            
+                            <div class="media-body">
+                                <h5 class="media-heading">
+                                    
+                                        <span class="fn">R K</span>
+                                    
+                                </h5>
+                                
+                                <p>Чтож, если это  так, я рад)), что эти статьи действительно полезны! </p>
+                                
+                                
+                                    <div class="pull-right comment-reply">
+                                        <a href="#comment-form" onclick="return addComment.moveForm('comment-9-by-r-k', '9', 'comment-form')">Ответить</a>
+                                    </div>
+                                
+                                
+                                on
+                                <abbr class="comment-published" title="2013-11-23T14:39:18+03:00">
+                                    23.11.2013 14:39
+                                </abbr>
+                                
+                                
+                            </div>
+                    
+                        </div>
+                    
+                
+                                
+                            </div>
+                    
+                        </li>
+                    
+                
+                    
+                        <li class="media comment vcard box2" id="comment-54-by-">
+                    
+                            <a class="pull-left">
+                                <img src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/ab4ff177c491ea060bd401e86df09dac.jpg" class="media-object" alt="Леонид">
+                            </a>
+                            
+                            <div class="media-body">
+                                <h5 class="media-heading">
+                                    
+                                        <span class="fn">Леонид</span>
+                                    
+                                </h5>
+                                
+                                <p>Спасибо за  труд. Информации на русском по SAP мало,  а надо.</p>
+                                
+                                
+                                    <div class="pull-right comment-reply">
+                                        <a href="#comment-form" onclick="return addComment.moveForm('comment-54-by-', '54', 'comment-form')">Ответить</a>
+                                    </div>
+                                
+                                
+                                on
+                                <abbr class="comment-published" title="2015-07-01T11:27:11+03:00">
+                                    01.07.2015 11:27
+                                </abbr>
+                                
+                                
+                            </div>
+                    
+                        </li>
+                    
+                
+                    
+                        <li class="media comment vcard box1" id="comment-59-by-">
+                    
+                            <a class="pull-left">
+                                <img src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/41798d2e5187646ab1ed8fdb5ab14b89.jpg" class="media-object" alt="Антон">
+                            </a>
+                            
+                            <div class="media-body">
+                                <h5 class="media-heading">
+                                    
+                                        <span class="fn">Антон</span>
+                                    
+                                </h5>
+                                
+                                <p>Спасибо за уроки:)<br>Возник вопрос:<br>Вы вот написали "Transport Layer выбираем ZNSP", а когда мы его создали?<br>У меня кроме Transport Layer SAP другого нет...</p>
+                                
+                                
+                                    <div class="pull-right comment-reply">
+                                        <a href="#comment-form" onclick="return addComment.moveForm('comment-59-by-', '59', 'comment-form')">Ответить</a>
+                                    </div>
+                                
+                                
+                                on
+                                <abbr class="comment-published" title="2015-10-07T11:58:59+03:00">
+                                    07.10.2015 11:58
+                                </abbr>
+                                
+                                
+                                    
+                    
+                        <div class="media comment vcard box2" id="comment-60-by-rk">
+                    
+                            <a class="pull-left">
+                                <img src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/80499ce0267fda267a929c8e4d9618e8.jpg" class="media-object" alt="RK">
+                            </a>
+                            
+                            <div class="media-body">
+                                <h5 class="media-heading">
+                                    
+                                        <span class="fn">RK</span>
+                                    
+                                </h5>
+                                
+                                <p>Ох давно это было:) Все примеры 
+делались в SAP NetWeaver AS ABAP 7.02 SP6 64-bit Trial, я ZNSP не 
+создавал, он там уже был, нажатие F4 не помогает?. Transport layer это 
+Zxxx (xxx=System ID системы, в моем случае это NSP). Если делали все 
+step-by-step, то у вас тоже все должно быть. В любом случае, для 
+тренировок(если вы не собираетесь переносить объекты разработок из одной
+ системы в другую), абсолютно не важно какой transport layer, можно 
+вообще не создавать пакет, а использовать $TMP.</p>
+                                
+                                
+                                    <div class="pull-right comment-reply">
+                                        <a href="#comment-form" onclick="return addComment.moveForm('comment-60-by-rk', '60', 'comment-form')">Ответить</a>
+                                    </div>
+                                
+                                
+                                on
+                                <abbr class="comment-published" title="2015-10-07T22:43:33+03:00">
+                                    07.10.2015 22:43
+                                </abbr>
+                                
+                                
+                            </div>
+                    
+                        </div>
+                    
+                
+                                
+                            </div>
+                    
+                        </li>
+                    
+                
+                    
+                        <li class="media comment vcard box2" id="comment-67-by-">
+                    
+                            <a class="pull-left">
+                                <img src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/35cb9fd375b759af15350127d83b6838.png" class="media-object" alt="Михаил">
+                            </a>
+                            
+                            <div class="media-body">
+                                <h5 class="media-heading">
+                                    
+                                        <span class="fn">Михаил</span>
+                                    
+                                </h5>
+                                
+                                <p>а если требуется перенести наработки в другую систему, какой софтваре компонент надо выбрать?</p>
+                                
+                                
+                                    <div class="pull-right comment-reply">
+                                        <a href="#comment-form" onclick="return addComment.moveForm('comment-67-by-', '67', 'comment-form')">Ответить</a>
+                                    </div>
+                                
+                                
+                                on
+                                <abbr class="comment-published" title="2015-12-28T09:36:02+03:00">
+                                    28.12.2015 09:36
+                                </abbr>
+                                
+                                
+                                    
+                    
+                        <div class="media comment vcard box1" id="comment-68-by-rk">
+                    
+                            <a class="pull-left">
+                                <img src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/80499ce0267fda267a929c8e4d9618e8.jpg" class="media-object" alt="RK">
+                            </a>
+                            
+                            <div class="media-body">
+                                <h5 class="media-heading">
+                                    
+                                        <span class="fn">RK</span>
+                                    
+                                </h5>
+                                
+                                <p>Не уверен, что в триальной версии 
+доступны какие-либо другие компоненты кроме HOME, 
+https://help.sap.com/saphelp_nw70ehp2/helpdata/en/ef/f43220b19b11d596c100a0c94260a5/content.htm.</p>
+                                
+                                
+                                    <div class="pull-right comment-reply">
+                                        <a href="#comment-form" onclick="return addComment.moveForm('comment-68-by-rk', '68', 'comment-form')">Ответить</a>
+                                    </div>
+                                
+                                
+                                on
+                                <abbr class="comment-published" title="2015-12-29T03:21:46+03:00">
+                                    29.12.2015 03:21
+                                </abbr>
+                                
+                                
+                            </div>
+                    
+                        </div>
+                    
+                
+                                
+                            </div>
+                    
+                        </li>
+                    
+                
+                
+            </ul>
+            
+        
+            
+        
+    </div>
+    
+
+    
+        
+
+
+
+
+    <p>Чтобы оставить комментарий, необходимо <a href="https://fibed.net/accounts/login/">Войти</a> или <a href="https://fibed.net/accounts/register/">Зарегистрироваться</a>.</p>
+
+
+
+    
+
+        </div>
+        <div id="sidebar" class="span4">
+          
+<aside id="widget-categories" class="widget">
+  <h4>Категории</h4>
+  
+
+<style>
+    .cat-link:hover {
+        text-decoration: none;
+    }
+    .ul-treefree li {
+        padding-left: 14px !important;
+    }
+    .ul-treefree > li {
+        padding-left: 0px !important;
+    }
+</style>
+<ul class="ul-treefree ul-dropfree" style="margin-left: 0px;">
+  
+  <li>
+    <a class="cat-link" href="https://fibed.net/categories/devops/" title="Показать все записи в категории DevOps"><i class="cat-drop icon-chevron-right" style="margin-right: 5px;"></i>DevOps
+    <!--(0 записей)--></a>
+    
+    <ul style="display: none;">
+      
+  <li>
+    <a class="cat-link" href="https://fibed.net/categories/devops/ansible/" title="Показать все записи в категории Ansible"><i class="cat-drop icon-chevron-right" style="margin-right: 5px;"></i>Ansible
+    <!--(1 запись)--></a>
+    
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2016/10/29/ansible-i-restricted-sudo/">Ansible и restricted sudo</a></li>
+            </ul>
+        
+    
+  </li>
+  
+  <li>
+    <a class="cat-link" href="https://fibed.net/categories/devops/apache-ant/" title="Показать все записи в категории Apache Ant"><i class="cat-drop icon-chevron-right" style="margin-right: 5px;"></i>Apache Ant
+    <!--(5 записей)--></a>
+    
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2016/10/29/apache-ant-ispolzovanie-vneshnih-bibliotek-log4j-junit/">5. Apache Ant использование внешних библиотек log4j и JUnit</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2015/12/24/ispolzovanie-apache-ant-dlya-sborki-java-prilozhenij/">4. Использование Apache Ant для сборки Java приложений</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2015/12/21/ustanovka-apache-ant-na-centos-7/">3. Установка Apache Ant на CentOS 7</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2015/12/20/ustanovka-apache-ant-na-ubuntu/">2. Установка Apache Ant на Ubuntu</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2015/12/18/ustanovka-apache-ant-na-mac-os-x/">1. Установка Apache Ant на Mac OS X</a></li>
+            </ul>
+        
+    
+  </li>
+  
+    </ul>
+    
+  </li>
+  
+  <li>
+    <a class="cat-link" href="https://fibed.net/categories/programmirovanie/" title="Показать все записи в категории Программирование"><i class="cat-drop icon-chevron-right" style="margin-right: 5px;"></i>Программирование
+    <!--(0 записей)--></a>
+    
+    <ul style="display: none;">
+      
+  <li>
+    <a class="cat-link" href="https://fibed.net/categories/programmirovanie/sap/" title="Показать все записи в категории SAP"><i class="cat-drop icon-chevron-right" style="margin-right: 5px;"></i>SAP
+    <!--(0 записей)--></a>
+    
+    <ul style="display: none;">
+      
+  <li>
+    <a class="cat-link" href="https://fibed.net/categories/programmirovanie/sap/kursy-abap-programmirovaniya/" title="Показать все записи в категории Курсы ABAP программирования"><i class="cat-drop icon-chevron-right" style="margin-right: 5px;"></i>Курсы ABAP программирования
+    <!--(29 записей)--></a>
+    
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2015/06/07/29-7-ya-programma-v-sap-ispolzovanie-alv/">29. 7-я программа в SAP. Использование ALV. </a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2015/05/28/28-6-ya-programma-v-sap-oop-v-abap-pattern-mvc/">28. 6-я программа в SAP. ООП в ABAP. Паттерн MVC.</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2014/12/20/27-5-ya-programma-v-sap-sozdanie-application-log/">27. 5-я программа в SAP. Создание Application Log.</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2014/12/18/26-5-ya-programma-v-sap-ispolzovanie-authorization-prodolzhenie/">26. 5-я программа в SAP. Использование Authorization продолжение.</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2014/12/18/25-5-ya-programma-v-sap-sozdanie-polzovatelya-v-sap/">25. 5-я программа в SAP. Создание пользователя в SAP.</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2014/12/16/24-5-ya-programma-v-sap-ispolzovanie-authorization/">24. 5-я программа в SAP. Использование Authorization.</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2014/12/14/23-5-ya-programma-v-sap-privyazka-search-help-k-programme/">23. 5-я программа в SAP. Привязка Search Help к программе.</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2014/12/14/22-5-ya-programma-v-sap-sozdanie-sredstva-poiska-search-help/">22. 5-я программа в SAP. Создание средства поиска - Search Help.</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2014/12/03/21-5-ya-programma-v-sap-rabota-s-soobsheniyami-message-class/">21. 5-я программа в SAP. Работа с сообщениями - Message class.</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2014/12/02/20-5-ya-programma-v-sap-sozdanie-gui-status-prodolzhenie/">20. 5-я программа в SAP. Создание GUI status продолжение.</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2014/10/07/19-5-ya-programma-v-sap-sozdanie-ekrana-screen/">19. 5-я программа в SAP. Создание экрана (screen).</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2014/10/07/18-5-ya-programma-v-sap-sozdanie-gui-statusa/">18. 5-я программа в SAP. Создание GUI status.</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2014/10/06/17-4-ya-programma-v-sap-sozdanie-range-tables/">17. 4-я программа в SAP. Создание Range Tables. </a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2014/06/02/16-4-ya-programma-v-sap-rabota-s-ekranami-vybora-selection-screens-1/">16. 4-я программа в SAP. Работа с экранами выбора Selection Screens часть 1</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2014/03/13/3-ya-programma-v-sap-rabota-s-include-i-formami-form/">15. 3-я программа в SAP. Работа с INCLUDE и формами FORM.</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2013/12/04/sozdanie-2-oj-programy-v-sap/">14.Создание 2-ой програмы в SAP</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2013/11/28/sozdanie-funkcionalnogo-modulya-v-sap/">13.Создание функционального модуля в SAP.</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2013/11/18/sozdanie-1-oj-programmy-v-sap/">12.Создание 1-ой программы в SAP</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2013/08/12/sozdanie-tablichnogo-tipa-v-sap/">11.Создание табличного типа в SAP</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2013/08/12/sozdanie-struktury-v-sap/">10.Создание структуры в SAP</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2013/08/12/sozdanie-tranzakcii-v-sap/">9.Создание транзакции в SAP</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2013/08/12/sozdanie-maintenance-viewrakursa-v-sap/">8.Создание Maintenance view(ракурса) в SAP</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2013/08/12/sozdanie-indeksa-dlya-tablicy-sap/">7.Создание индекса для таблицы SAP</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2013/08/12/sozdanie-tekstovoj-tablicy-v-sap/">6.Создание текстовой таблицы в SAP</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2013/08/12/sozdanie-tablicy-v-sap/">5.Создание таблицы в SAP</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2013/08/12/sozdanie-elementa-dannyh-v-sap/">4.Создание элемента данных в SAP</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2013/08/12/sozdanie-domena-v-sap/">3.Создание домена в SAP</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2013/08/12/sozdanie-paketa-SAP/">2.Создание пакета и транспортного запроса в SAP</a></li>
+            </ul>
+        
+            <ul style="display: none;">
+                <li><a href="https://fibed.net/2013/08/12/vvedenie-v-kursy-abap-programmirovaniya/">1.Введение - Курсы ABAP программирования </a></li>
+            </ul>
+        
+    
+  </li>
+  
+    </ul>
+    
+  </li>
+  
+    </ul>
+    
+  </li>
+  
+  
+</ul>
+
+
+
+</aside>
+
+<aside id="widget-authors" class="widget">
+  <script async="" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/adsbygoogle.js"></script>
+  <!-- первый рекламный блок -->
+  <ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-6294683267888988" data-ad-slot="3902368952" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;"><ins id="aswift_2_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;border:0px;width:336px;height:280px;" width="336" height="280" frameborder="0"></iframe></ins></ins></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</aside>
+
+<!--<aside id="widget-authors" class="widget">
+	<iframe frameborder="0" allowtransparency="true" 
+		scrolling="no" 
+		src="https://money.yandex.ru/quickpay/shop-widget?account=410013706727187&quickpay=shop&payment-type-choice=on&mobile-payment-type-choice=on&writer=seller&targets=%D0%9F%D0%BE%D0%B4%D0%B4%D0%B5%D1%80%D0%B6%D0%BA%D0%B0+%D1%81%D0%B0%D0%B9%D1%82%D0%B0+fibed.net%2C+%D0%BD%D0%B0+%D1%85%D0%BE%D1%81%D1%82%D0%B8%D0%BD%D0%B3+%3A)&targets-hint=&default-sum=100&button-text=04&successURL=" 
+		width="450" 
+		height="199">
+	</iframe>
+</aside> -->
+
+<script async="" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/adsbygoogle.js"></script>
+<!-- второй рекламный блок -->
+<ins class="adsbygoogle" style="display: block; height: 250px;" data-ad-client="ca-pub-6294683267888988" data-ad-slot="4298548917" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_3_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0px;width:300px;height:250px;" width="300" height="250" frameborder="0"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!--<aside id="widget-authors" class="widget">
+  <h3>Авторы</h3>
+  
+<ul class="nav nav-tabs nav-stacked">
+  
+  <li class="vcard>">
+    <a href="/authors/roonyk/"
+       title="R K: показать все записи"
+       class="fn nickname url">R K
+      <span class="label label-info">
+        35 записей
+      </span>
+    </a>
+  </li>
+  
+</ul>
+
+</aside>-->
+
+
+<aside id="widget-tags" class="widget">
+  <h4>Теги</h4>
+  
+
+<ul class="tags">
+  
+  <li>
+    <a href="https://fibed.net/tags/ABAP/" title="8 записей с тегом ABAP" class="tag-6">ABAP</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/ABAP%20Dictionary/" title="1 запись с тегом ABAP Dictionary" class="tag-1">ABAP Dictionary</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/ABAP%20List%20Viewer/" title="1 запись с тегом ABAP List Viewer" class="tag-1">ABAP List Viewer</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/ABAP%20Workbench/" title="2 записи с тегом ABAP Workbench" class="tag-2">ABAP Workbench</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/ALV/" title="1 запись с тегом ALV" class="tag-1">ALV</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/ALV%20Grid/" title="1 запись с тегом ALV Grid" class="tag-1">ALV Grid</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/ALV%20List/" title="1 запись с тегом ALV List" class="tag-1">ALV List</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/ansible/" title="1 запись с тегом ansible" class="tag-1">ansible</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/ant/" title="5 записей с тегом ant" class="tag-4">ant</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/apache/" title="4 записи с тегом apache" class="tag-4">apache</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Application%20log/" title="1 запись с тегом Application log" class="tag-1">Application log</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Authorization%20object/" title="3 записи с тегом Authorization object" class="tag-3">Authorization object</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/CentOS/" title="1 запись с тегом CentOS" class="tag-1">CentOS</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/connection_plugins/" title="1 запись с тегом connection_plugins" class="tag-1">connection_plugins</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Data%20Element/" title="4 записи с тегом Data Element" class="tag-4">Data Element</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/DevOps/" title="2 записи с тегом DevOps" class="tag-2">DevOps</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Domain/" title="3 записи с тегом Domain" class="tag-3">Domain</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/EXP/" title="1 запись с тегом EXP" class="tag-1">EXP</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Form/" title="1 запись с тегом Form" class="tag-1">Form</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Function%20Group/" title="4 записи с тегом Function Group" class="tag-4">Function Group</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Function%20Module/" title="3 записи с тегом Function Module" class="tag-3">Function Module</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/GUI%20status/" title="3 записи с тегом GUI status" class="tag-3">GUI status</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/GUI%20title/" title="2 записи с тегом GUI title" class="tag-2">GUI title</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/IMP/" title="1 запись с тегом IMP" class="tag-1">IMP</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/INCLUDE/" title="1 запись с тегом INCLUDE" class="tag-1">INCLUDE</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Index/" title="1 запись с тегом Index" class="tag-1">Index</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Internal%20Table/" title="1 запись с тегом Internal Table" class="tag-1">Internal Table</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/jar/" title="1 запись с тегом jar" class="tag-1">jar</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Java/" title="3 записи с тегом Java" class="tag-3">Java</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/javac/" title="1 запись с тегом javac" class="tag-1">javac</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/JuniorAbap/" title="1 запись с тегом JuniorAbap" class="tag-1">JuniorAbap</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/JUnit/" title="1 запись с тегом JUnit" class="tag-1">JUnit</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Linux/" title="3 записи с тегом Linux" class="tag-3">Linux</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/log4j/" title="1 запись с тегом log4j" class="tag-1">log4j</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/LPos/" title="1 запись с тегом LPos" class="tag-1">LPos</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/MacOS/" title="1 запись с тегом MacOS" class="tag-1">MacOS</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Maintenance%20dialog/" title="1 запись с тегом Maintenance dialog" class="tag-1">Maintenance dialog</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Maintenance%20generator/" title="1 запись с тегом Maintenance generator" class="tag-1">Maintenance generator</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Maintenance%20view/" title="1 запись с тегом Maintenance view" class="tag-1">Maintenance view</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/make_become_cmd/" title="1 запись с тегом make_become_cmd" class="tag-1">make_become_cmd</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Message%20class/" title="1 запись с тегом Message class" class="tag-1">Message class</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/MVC/" title="2 записи с тегом MVC" class="tag-2">MVC</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/nslg1/" title="1 запись с тегом nslg1" class="tag-1">nslg1</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Object%20class/" title="2 записи с тегом Object class" class="tag-2">Object class</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/OOP/" title="1 запись с тегом OOP" class="tag-1">OOP</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Package/" title="1 запись с тегом Package" class="tag-1">Package</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/PAI/" title="1 запись с тегом PAI" class="tag-1">PAI</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Parameters/" title="1 запись с тегом Parameters" class="tag-1">Parameters</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/PFCG/" title="2 записи с тегом PFCG" class="tag-2">PFCG</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Pretty/" title="1 запись с тегом Pretty" class="tag-1">Pretty</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Printer/" title="1 запись с тегом Printer" class="tag-1">Printer</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/python/" title="1 запись с тегом python" class="tag-1">python</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Range%20Tables/" title="2 записи с тегом Range Tables" class="tag-2">Range Tables</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/raw/" title="1 запись с тегом raw" class="tag-1">raw</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SA38/" title="1 запись с тегом SA38" class="tag-1">SA38</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SAP/" title="8 записей с тегом SAP" class="tag-6">SAP</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SAP%20GUI/" title="1 запись с тегом SAP GUI" class="tag-1">SAP GUI</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SAP%20NetWeaver/" title="1 запись с тегом SAP NetWeaver" class="tag-1">SAP NetWeaver</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Screens/" title="2 записи с тегом Screens" class="tag-2">Screens</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SE10/" title="3 записи с тегом SE10" class="tag-3">SE10</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SE11/" title="8 записей с тегом SE11" class="tag-6">SE11</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SE16/" title="3 записи с тегом SE16" class="tag-3">SE16</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SE21/" title="1 запись с тегом SE21" class="tag-1">SE21</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SE24/" title="2 записи с тегом SE24" class="tag-2">SE24</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SE37/" title="2 записи с тегом SE37" class="tag-2">SE37</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SE38/" title="3 записи с тегом SE38" class="tag-3">SE38</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SE39/" title="1 запись с тегом SE39" class="tag-1">SE39</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SE80/" title="11 записей с тегом SE80" class="tag-6">SE80</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/se91/" title="1 запись с тегом se91" class="tag-1">se91</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Search%20Help/" title="2 записи с тегом Search Help" class="tag-2">Search Help</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Select-Options/" title="1 запись с тегом Select-Options" class="tag-1">Select-Options</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Selection%20Screens/" title="3 записи с тегом Selection Screens" class="tag-3">Selection Screens</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SFunction%20Group/" title="2 записи с тегом SFunction Group" class="tag-2">SFunction Group</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SLG0/" title="1 запись с тегом SLG0" class="tag-1">SLG0</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SM30/" title="1 запись с тегом SM30" class="tag-1">SM30</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SPos/" title="1 запись с тегом SPos" class="tag-1">SPos</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/ssh/" title="1 запись с тегом ssh" class="tag-1">ssh</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Structure/" title="2 записи с тегом Structure" class="tag-2">Structure</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SU01/" title="3 записи с тегом SU01" class="tag-3">SU01</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/SU21/" title="2 записи с тегом SU21" class="tag-2">SU21</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/sudo/" title="1 запись с тегом sudo" class="tag-1">sudo</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/T100/" title="1 запись с тегом T100" class="tag-1">T100</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Table/" title="1 запись с тегом Table" class="tag-1">Table</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Table%20Control/" title="1 запись с тегом Table Control" class="tag-1">Table Control</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Table%20Type/" title="1 запись с тегом Table Type" class="tag-1">Table Type</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/TCURC/" title="1 запись с тегом TCURC" class="tag-1">TCURC</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Text%20Table/" title="1 запись с тегом Text Table" class="tag-1">Text Table</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/TextTable/" title="1 запись с тегом TextTable" class="tag-1">TextTable</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Transaction/" title="1 запись с тегом Transaction" class="tag-1">Transaction</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Transport%20requestage/" title="1 запись с тегом Transport requestage" class="tag-1">Transport requestage</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/ubuntu/" title="1 запись с тегом ubuntu" class="tag-1">ubuntu</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/WebDynpro/" title="1 запись с тегом WebDynpro" class="tag-1">WebDynpro</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/Work%20Area/" title="1 запись с тегом Work Area" class="tag-1">Work Area</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/%D0%92%D0%BD%D1%83%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D1%8F%D1%8F%20%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0/" title="1 запись с тегом Внутренняя Таблица" class="tag-1">Внутренняя Таблица</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/%D0%94%D0%BE%D0%BC%D0%B5%D0%BD/" title="3 записи с тегом Домен" class="tag-3">Домен</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/%D0%9E%D0%9E%D0%9F/" title="1 запись с тегом ООП" class="tag-1">ООП</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/%D0%A1%D0%90%D0%9F/" title="1 запись с тегом САП" class="tag-1">САП</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/%D0%A1%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%D0%BE_%D0%9F%D0%BE%D0%B8%D1%81%D0%BA%D0%B0/" title="1 запись с тегом Средство_Поиска" class="tag-1">Средство_Поиска</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0/" title="2 записи с тегом Структура" class="tag-2">Структура</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0/" title="2 записи с тегом Таблица" class="tag-2">Таблица</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/%D0%A2%D0%B0%D0%B1%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%B9_%D1%82%D0%B8%D0%BF/" title="2 записи с тегом Табличный_тип" class="tag-2">Табличный_тип</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/%D0%A2%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%D0%B0%D1%8F_%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0/" title="1 запись с тегом Текстовая_таблица" class="tag-1">Текстовая_таблица</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/tags/%D0%AD%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82_%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85/" title="3 записи с тегом Элемент_данных" class="tag-3">Элемент_данных</a>
+  </li>
+  
+</ul>
+
+</aside>
+<aside id="widget-comments" class="widget">
+  <h4>Последние комментарии</h4>
+  
+<ul class="nav nav-tabs nav-stacked">
+  
+  <li>
+    
+    <a href="https://fibed.net/2014/03/13/3-ya-programma-v-sap-rabota-s-include-i-formami-form/#comment-3115-by-roonyk" title="Comment on 15. 3-я программа в SAP. Работа с INCLUDE и формами FORM.">
+      roonyk в
+      15. 3-я программа в SAP. Работа с INCLUDE и формами FORM.
+    </a>
+    
+  </li>
+  
+  <li>
+    
+    <a href="https://fibed.net/2014/10/07/19-5-ya-programma-v-sap-sozdanie-ekrana-screen/#comment-478-by-R%20K" title="Comment on 19. 5-я программа в SAP. Создание экрана (screen).">
+      R K в
+      19. 5-я программа в SAP. Создание экрана (screen).
+    </a>
+    
+  </li>
+  
+  <li>
+    
+    <a href="https://fibed.net/2014/10/07/19-5-ya-programma-v-sap-sozdanie-ekrana-screen/#comment-435-by-%D0%98%D1%80%D0%B8%D0%BD%D0%B0" title="Comment on 19. 5-я программа в SAP. Создание экрана (screen).">
+      Ирина в
+      19. 5-я программа в SAP. Создание экрана (screen).
+    </a>
+    
+  </li>
+  
+  <li>
+    
+    <a href="https://fibed.net/2013/08/12/sozdanie-tekstovoj-tablicy-v-sap/#comment-368-by-%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9" title="Comment on 6.Создание текстовой таблицы в SAP">
+      Дмитрий в
+      6.Создание текстовой таблицы в SAP
+    </a>
+    
+  </li>
+  
+  <li>
+    
+    <a href="https://fibed.net/2013/08/12/sozdanie-tekstovoj-tablicy-v-sap/#comment-367-by-%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9" title="Comment on 6.Создание текстовой таблицы в SAP">
+      Дмитрий в
+      6.Создание текстовой таблицы в SAP
+    </a>
+    
+  </li>
+  
+</ul>
+
+</aside>
+<aside id="widget-recents" class="widget">
+  <h4>Последние записи</h4>
+  
+<ul class="nav nav-tabs nav-stacked">
+  
+  <li>
+    <a href="https://fibed.net/2016/10/29/ansible-i-restricted-sudo/" title="Ansible и restricted sudo" rel="bookmark">Ansible и restricted sudo</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/2016/10/29/apache-ant-ispolzovanie-vneshnih-bibliotek-log4j-junit/" title="5. Apache Ant использование внешних библиотек log4j и JUnit" rel="bookmark">5. Apache Ant использование внешних библиотек log4j и JUnit</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/2015/12/24/ispolzovanie-apache-ant-dlya-sborki-java-prilozhenij/" title="4. Использование Apache Ant для сборки Java приложений" rel="bookmark">4. Использование Apache Ant для сборки Java приложений</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/2015/12/21/ustanovka-apache-ant-na-centos-7/" title="3. Установка Apache Ant на CentOS 7" rel="bookmark">3. Установка Apache Ant на CentOS 7</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/2015/12/20/ustanovka-apache-ant-na-ubuntu/" title="2. Установка Apache Ant на Ubuntu" rel="bookmark">2. Установка Apache Ant на Ubuntu</a>
+  </li>
+  
+</ul>
+
+</aside>
+<aside id="widget-randoms" class="widget">
+  <h4>Случайные записи</h4>
+  
+<ul class="nav nav-tabs nav-stacked">
+  
+  <li>
+    <a href="https://fibed.net/2015/12/24/ispolzovanie-apache-ant-dlya-sborki-java-prilozhenij/" title="4. Использование Apache Ant для сборки Java приложений" rel="bookmark">4. Использование Apache Ant для сборки Java приложений</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/2013/08/12/sozdanie-tablicy-v-sap/" title="5.Создание таблицы в SAP" rel="bookmark">5.Создание таблицы в SAP</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/2014/10/06/17-4-ya-programma-v-sap-sozdanie-range-tables/" title="17. 4-я программа в SAP. Создание Range Tables. " rel="bookmark">17. 4-я программа в SAP. Создание Range Tables. </a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/2013/08/12/sozdanie-tekstovoj-tablicy-v-sap/" title="6.Создание текстовой таблицы в SAP" rel="bookmark">6.Создание текстовой таблицы в SAP</a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/2015/12/18/ustanovka-apache-ant-na-mac-os-x/" title="1. Установка Apache Ant на Mac OS X" rel="bookmark">1. Установка Apache Ant на Mac OS X</a>
+  </li>
+  
+</ul>
+
+</aside>
+<aside id="widget-populars" class="widget">
+  <h4>Популярные записи</h4>
+  
+<ul class="nav nav-tabs nav-stacked">
+  
+  <li>
+    <a href="https://fibed.net/2013/08/12/sozdanie-tablicy-v-sap/" title="5.Создание таблицы в SAP" rel="bookmark">5.Создание таблицы в SAP
+      <span class="badge badge-info">
+        49
+      </span>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/2013/08/12/sozdanie-struktury-v-sap/" title="10.Создание структуры в SAP" rel="bookmark">10.Создание структуры в SAP
+      <span class="badge badge-info">
+        41
+      </span>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/2014/10/07/18-5-ya-programma-v-sap-sozdanie-gui-statusa/" title="18. 5-я программа в SAP. Создание GUI status." rel="bookmark">18. 5-я программа в SAP. Создание GUI status.
+      <span class="badge badge-info">
+        21
+      </span>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/2014/03/13/3-ya-programma-v-sap-rabota-s-include-i-formami-form/" title="15. 3-я программа в SAP. Работа с INCLUDE и формами FORM." rel="bookmark">15. 3-я программа в SAP. Работа с INCLUDE и формами FORM.
+      <span class="badge badge-info">
+        19
+      </span>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://fibed.net/2015/12/24/ispolzovanie-apache-ant-dlya-sborki-java-prilozhenij/" title="4. Использование Apache Ant для сборки Java приложений" rel="bookmark">4. Использование Apache Ant для сборки Java приложений
+      <span class="badge badge-info">
+        11
+      </span>
+    </a>
+  </li>
+  
+</ul>
+
+</aside>
+
+
+        </div>
+      </div>
+    </div>
+    <footer class="container">
+    <p>©  :)</p>
+
+    <!--LiveInternet counter--><script type="text/javascript"><!--
+    document.write("<a href='http://www.liveinternet.ru/click' "+
+    "target=_blank><img src='//counter.yadro.ru/hit?t14.10;r"+
+    escape(document.referrer)+((typeof(screen)=="undefined")?"":
+    ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+    screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+    ";"+Math.random()+
+    "' alt='' title='LiveInternet: показано число просмотров за 24"+
+    " часа, посетителей за 24 часа и за сегодня' "+
+    "border='0' width='88' height='31'><\/a>")
+    //--></script><a href="http://www.liveinternet.ru/click" target="_blank"><img src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/hit.gif" alt="" title="LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня" width="88" height="31" border="0"></a><!--/LiveInternet-->
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-72381549-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter34678050 = new Ya.Metrika({
+                    id:34678050,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/34678050" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+    </footer>
+  
+
+<ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0px;width:0px;height:0px;" frameborder="0"></iframe></ins></ins></ins><iframe id="google_osd_static_frame_867680910856" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body><iframe id="google_esf" name="google_esf" src="%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%20%D0%B8%20%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%BF%D1%80%D0%BE%D1%81%D0%B0%20%D0%B2%20SAP_files/zrt_lookup.htm" style="display: none;" data-ad-client="ca-pub-6294683267888988"></iframe></html>

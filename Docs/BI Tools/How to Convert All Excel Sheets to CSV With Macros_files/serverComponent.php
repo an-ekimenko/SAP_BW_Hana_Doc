@@ -1,0 +1,2 @@
+
+Bootstrapper._serverTime = '2021-03-24 10:46:41'; Bootstrapper._clientIP = '0.0.0.0'; Bootstrapper.insertPageFiles(['https://nexus.ensighten.com/hearst/news-3p/code/03a666120e1cbe4180969354b160f9ba.js?conditionId0=385458','https://nexus.ensighten.com/hearst/news-3p/code/99dd17d2f660bee9842186767bbb26c5.js?conditionId0=422740']);Bootstrapper.setPageSpecificDataDefinitionIds([]);

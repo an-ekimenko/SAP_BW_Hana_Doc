@@ -1,0 +1,372 @@
+/*
+Theme Name: SAP HANA Blog
+Theme URI: 
+Author: BlogConsulting.com
+Author URI: http://www.blogconsulting.com
+Description: A Blog Theme for SAP HANA 
+Version: 1.0
+Text Domain: saphana
+*/
+
+@import url('css/style-default.css');
+@import url('css/ie8-and-down.css');
+img{
+	max-width: 100%;
+}
+code {
+	color: #000;
+	background-color: #F0F0F0;
+}
+.error404 #content{
+	min-height: 500px;
+}
+.wp-pagenavi{
+	display: inline-block;
+	padding-left: 0;
+	margin: 20px 0;
+	border-radius: 4px;
+}
+.navbar-brand{
+	width: 161px;
+	height: 33px;
+}
+.wp-pagenavi .pages, .wp-pagenavi .nextpostslink, .wp-pagenavi .previouspostslink {
+	display: none;
+}
+.wp-pagenavi a, .wp-pagenavi span {
+	margin: 0 !important;
+	position: relative;
+	float: left;
+	padding: 6px 12px !important;
+	line-height: 1.42857143;
+	text-decoration: none !important;
+	color: #008fd3;
+	background-color: #fff;
+	border: 1px solid #ddd !important;
+	margin-left: -1px !important;
+}
+.wp-pagenavi .current,  .wp-pagenavi a:hover, .wp-pagenavi a:focus {
+	color: #0076cb;
+	background-color: #eee;
+	border-color: #ddd;
+}
+.homepage-slider{
+	padding: 0 !important;
+	margin: 0 !important;
+	background: none !important;
+}
+.soliloquy-fc-slider .soliloquy-caption{
+	width: 455px !important;
+	right: auto !important;
+	left: 130px !important;
+	bottom: 70px !important;
+}
+.soliloquy-container .soliloquy-caption-inside{
+	padding: 0 !important;
+	background: none !important;
+	color: #2c2c2c !important;
+}
+.soliloquy-container .soliloquy-caption-inside h1{
+	color: #222 !important;
+}
+.soliloquy-container .soliloquy-caption-inside .fa-3x{
+	font-size: 3em !important;
+}
+.tag .jumbotron{
+	min-height: 0;
+}
+.tag .jumbotron h1, .page .jumbotron h1, .single .jumbotron h1, .category .jumbotron h1{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.jumbotron.blog-post .list-inline{
+	padding-top: 10px;
+}
+.breadcrumb i{
+	padding-right: 10px;
+}
+.jumbotron{
+	min-height: 100px;
+}
+#content{
+	min-height: 500px;
+}
+.featured-bloggers img{
+	border-radius: 50%;
+}
+.navbar {
+	z-index: 1;
+} 
+
+.soliloquy-container, .soliloquy-container .soliloquy-item, .soliloquy-container .soliloquy-wrapper, .soliloquy-viewport {
+	height: 545px !important;
+}
+.soliloquy-container .soliloquy-item{
+	overflow: hidden;
+}
+.soliloquy-container .soliloquy-image{
+	min-height: 100%;
+	min-width: 1024px;
+	width: 100%;
+	height: 545px !important;
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	overflow: hidden;
+}
+.soliloquy-container .soliloquy-caption-inside h1{
+	margin-bottom: 20px;
+}
+#respond .input-text{
+	max-width: 400px;
+	width: 100%;
+	padding: 4px 8px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+ul.tagcloud, ul.tagcloud li{
+	font-size: 1em;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul.tagcloud li{
+	display: inline;
+}
+
+ul.tagcloud a{
+	text-decoration: none;
+	padding: 3px 4px;
+}
+a.tagged1 { font-size: 14px }
+a.tagged2 { font-size: 18px }
+a.tagged3 { font-size: 22px }
+a.tagged4 { font-size: 24px }
+a.tagged5 { font-size: 25px }
+a.tagged6 { font-size: 26px }
+a.tagged7 { font-size: 27px }
+a.tagged8 { font-size: 28px }
+a.tagged9 { font-size: 30px; }
+a.tagged10 { font-size: 32px; }
+
+.search .dropdown-toggle{
+	width: 200px;
+}
+.comments h3{
+	margin: 30px 0;
+}
+#form-sort{
+	float: right;
+}
+.search .dropdown-toggle{
+	float: left;
+}
+.search .dropdown-menu{
+	top: 30px;
+}
+select#sortby{
+	width: 160px;
+	height: 22px;
+	padding: 0px 12px;
+}
+
+#navbar-collapse  .login-section {
+	float: left;
+	margin-top: 0;	
+	margin-bottom: 10px;
+}
+
+#navbar-collapse  .login-section a {
+	font: 14px/1 BentonSansBold,Arial,sans-serif;
+	text-align: left;
+	color: #777;
+	padding: 10px 15px;
+	line-height: 1;
+	display: block;
+}
+
+#navbar-collapse  .login-section a:hover {	
+	color: #333;	
+	text-decoration: none;
+}
+
+.container  .hreview-aggregate {display: none;}
+
+.container .ratingblock {
+	background: #fff;
+	border: none;
+	-webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.25);
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.25);
+	min-height: 55px;
+	margin: 25px 0 15px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;	
+	padding: 10px;
+	border-top: 1px solid #ccc;
+}
+
+.container  .ratingtext {
+	margin-top: 2px;
+}
+
+/* Alignment */
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption.alignleft,
+.blog-post img.alignleft {
+	margin: 7px 24px 7px 0;
+}
+
+.wp-caption.alignleft {
+	margin: 7px 14px 7px 0;
+}
+
+.wp-caption.alignright,
+.blog-post img.alignright {
+	margin: 7px 0 7px 24px;
+}
+
+.wp-caption.alignright {
+	margin: 7px 0 7px 14px;
+}
+
+.blog-post img.aligncenter,
+.wp-caption.aligncenter {
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
+
+.wp-caption {
+	margin-bottom: 24px;
+}
+
+.wp-caption img {
+	display: block;
+	margin: 0;
+}
+
+.wp-caption {
+	/*color: #767676;*/
+}
+
+.wp-caption-text {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;	
+	font-style: italic;
+	line-height: 1.5;
+	margin: 9px 0;
+}
+
+div.wp-caption .wp-caption-text {
+	padding-right: 10px;
+}
+
+div.wp-caption.alignright img,
+div.wp-caption.alignright .wp-caption-text {
+	padding-left: 10px;
+	padding-right: 0;
+}
+
+.soliloquy-container  .soliloquy-wrapper  .soliloquy-caption .soliloquy-caption-inside {
+	  text-align: left;
+}
+
+@media (min-width: 768px) {
+	#navbar-collapse  .login-section {
+		float: right;
+		margin-top: 10px;	
+	}
+	
+	#navbar-collapse  .login-section a {
+		font: 12px/1 BentonSansBold,Arial,sans-serif;
+		text-align: right;
+		color: #777;
+		padding: 3px 15px;
+		line-height: 1;
+		display: block;
+	}
+
+	#navbar-collapse  .login-section a:hover {	
+		color: #333;	
+		text-decoration: none;
+	}	
+	
+}
+
+@media (max-width: 990px){
+	.soliloquy-container .soliloquy-caption{
+		width: 100% !important;
+		left: 0 !important;
+		right: 0 !important;
+		bottom: 100px !important;
+		padding: 0 50px;
+	}
+}
+
+@media (max-width: 800px){	
+	.wp-caption.alignleft,
+	.wp-caption.alignleft img,
+	.wp-caption.alignright,
+	.wp-caption.alignright img,
+	.wp-caption.aligncenter, 
+	.wp-caption.aligncenter  img	{
+		width: 100% !important;
+		height: auto;
+		float: none;
+		margin: 7px auto;		
+	}	
+	
+	.blog-post img.aligncenter, 
+	.blog-post img.alignleft, 
+	.blog-post img.alignright {
+		width: 100% !important;
+		max-width: 100%;
+		height: auto;
+		float: none;
+		margin: 7px auto;
+	}
+}
+
+
+@media (max-width: 600px){
+	.container {
+	
+	}
+	.soliloquy-container .soliloquy-caption{
+		display: block !important;
+		padding: 0 20px !important;
+		bottom: 30px !important;
+	}
+}
+
+.col-md-8 .post-listing header, .col-md- .post-listing header, .col-md-8 .post-listing section, .col-md-12 .post-listing header, .col-md-12 .post-listing section{margin-left:20px;}
+
+.single table  tr  td {
+	padding: 15px  20px 15px 0;
+}
+
+.single .blog-post img.aligncenter, .single .wp-caption.aligncenter {
+	margin: 7px auto;
+}

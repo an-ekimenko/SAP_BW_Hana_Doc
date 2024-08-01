@@ -1,0 +1,3 @@
+(function() {
+  swaOptInStatus = true;
+})();

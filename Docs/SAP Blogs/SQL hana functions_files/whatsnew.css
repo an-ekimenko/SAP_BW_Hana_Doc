@@ -1,0 +1,335 @@
+
+div.modal-dialog .wn_modal-dialog {
+	overflow: hidden; 
+	/*margin-bottom:0.2cm;
+	background-color:#fbfbfb;*/
+	
+}
+/*
+div.modal-dialog .wn_modal-dialog div.modal-header{
+	background-color:#009DE0;
+	margin-bottom: 15px;
+	height: 40px;
+}
+.btntest{
+	height:75px;
+	width:75px;
+    position:relative;
+    line-height:50px;
+	
+}
+div.modal-dialog .wn_modal-dialog div.modal-header .close{
+	opacity:.5;
+	margin:20px 20px 0 0;
+}*/
+ .notification {
+    position:absolute;
+    right:-7px;
+    top:-7px;
+    background-color:red;
+    line-height:20px;
+    width:20px;
+    height:20px;
+    border-radius:10px;
+}
+ 
+div.modal-dialog .wn_modal-dialog div.modal-title{
+	
+	line-height:2.3;
+	font-size: 200%;
+	padding-left:1em;
+	color:white;
+}
+
+div.modal-dialog .wn_modal-dialog div.modal-body {
+	
+	/*margin:0;
+	overflow:auto;*/
+}
+
+div.modal-dialog .wn_modal-dialog div.carousel_container div.title,
+div.carousel_container div.description {
+	
+	text-align: center;
+}
+div.modal-dialog .wn_modal-dialog .carousel_container div.wn_title {
+	font-size: 2.714em;
+	line-height: 1.1em;
+	color: rgba(0,0,0,0.9);
+}
+
+div.modal-dialog .wn_modal-dialog .carousel_container div.description {
+	color: rgba(0,0,0,0.7);
+	font-size: 1.343em;
+}/*
+div.modal-dialog .wn_modal-dialog .carousel-control.left, .carousel-control.right {
+    background-image: none;
+}
+
+div.modal-dialog .wn_modal-dialog .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right  {
+  color:#009DE0;
+  font-size: 55px;
+ 
+}
+
+div.modal-dialog .wn_modal-dialog .carousel-control .glyphicon-chevron-left{
+	left: 3px;
+    margin-left: 0;
+}
+
+div.modal-dialog .wn_modal-dialog .carousel-control .glyphicon-chevron-right{
+	right:20px;
+    margin-right: 0;
+}*/
+div.modal-dialog .wn_modal-dialog .carousel-indicators {
+    bottom: 3px;
+}
+
+
+div.modal-dialog .wn_modal-dialog .carousel-indicators li{
+  width: 12px;
+    height: 12px;
+    overflow: hidden;
+    text-indent: -9999px;
+    color: transparent;
+    background: rgba(0,0,0,0.2);
+    border-radius: 6px;
+    border: 0;
+    outline-offset: 2px;
+    margin: 0 2px;
+  }
+  
+div.modal-dialog .wn_modal-dialog .carousel-indicators .active,
+div.modal-dialog .wn_modal-dialog .carousel-indicators li:hover {
+     background: rgba(0,0,0,0.4);
+    cursor: pointer;
+}
+
+div.modal-dialog .wn_modal-dialog .carousel-inner {
+   position: relative;
+    width: calc(100% - 180px);
+    margin: 0 auto;
+    min-height: 385px;
+    overflow: hidden;
+    font-size: 0.929em;
+}
+
+div.modal-dialog .wn_modal-dialog div.wn_slide {
+	position: relative;
+	max-width: 100%;
+	display: inline-block;
+	background-color:none;
+}
+
+div.modal-dialog .wn_modal-dialog .wn_slide div.section_title, 
+div.modal-dialog .wn_modal-dialog .wn_slide div.section_title + div > *:not(img)   {
+	position: relative;
+	box-sizing: border-box;
+	float: right;
+    width: 40%;
+}
+
+html[dir="ltr"] div.modal-dialog .wn_modal-dialog .wn_slide div.section_title, 
+html[dir="ltr"] div.modal-dialog .wn_modal-dialog .wn_slide div.section_title + div > *:not(img) {
+	text-align: left;
+}
+
+html[dir="rtl"] div.modal-dialog .wn_modal-dialog .wn_slide div.section_title, 
+html[dir="rtl"] div.modal-dialog .wn_modal-dialog .wn_slide div.section_title + div > *:not(img) {
+	text-align: right;
+}
+	
+div.modal-dialog .wn_modal-dialog .wn_slide div.section_title{
+	display:inline-block;
+	font-size: 2.143em;
+    line-height: 1.1em;
+    color: rgba(0,0,0,0.9);
+    font-size: 1.429rem;
+    margin: 0 0 0.6em 0;
+}
+
+div.modal-dialog .wn_modal-dialog .wn_slide div.section_title + div > *:not(img) {
+	clear:right;
+	color: rgba(0,0,0,0.8)
+}
+
+div.modal-dialog .wn_modal-dialog .wn_slide .wn_slide_media p:first-of-type {
+	margin-top: 0;
+}
+ 
+ div.modal-dialog .wn_modal-dialog div.allFeatures{
+ 	display:inherit;
+    text-align:center;
+    margin-top: 20px;
+ }
+ 
+div.modal-dialog .wn_modal-dialog div.carousel {
+	/*max-width: auto;
+	height: 480px;
+	margin-top:0.5cm;
+    overflow: hidden;*/
+ }
+
+div.modal-dialog .wn_modal-dialog .wn_slide img.image {
+	max-width: calc(60% - 25px);
+    clear: none;
+    margin-left: -25px;
+}
+
+/*div.modal-dialog .wn_modal-dialog div.modal-footer{
+	margin-left:50px;
+	padding: 0.5em 1.5em 2em 1.5em;
+}*/
+
+/*div.modal-dialog .wn_modal-dialog .modal-footer .btn {
+	margin: -10px 15px 15px 0px;
+	float:right;
+}*/
+
+div.modal-dialog .wn_modal-dialog .modal-footer .closeButton, .radio-inline{
+	padding-left:0;
+}
+/*div.modal-dialog .wn_modal-dialog .modal-footer div.closeButton {
+	padding-right:1000px;
+	display: inline ;
+	font-size: 1.143em;
+	color: rgba(0,0,0,0.9);
+	margin:inherit;
+}*/
+
+a.left.carousel-control,
+a.right.carousel-control {
+	opacity: 1;
+    position: absolute;
+    border: 0;
+    background: transparent;
+    color: rgba(0,119,200,0.9);
+    top: calc(50% - 55px);
+    font-family: sap-icons;
+    height: 110px;
+    width: 90px;
+    font-size: 100px;
+    line-height: 90px;
+    padding: 0;
+    outline-offset: -5px;
+    font-family: sap-icons;
+    text-shadow: none;
+}
+
+a.left.carousel-control:hover,
+a.right.carousel-control:hover {
+	text-decoration: none;
+	color: #003283;
+}
+
+a.left.carousel-control:focus,
+a.right.carousel-control:focus {
+	text-decoration: none;
+	color: #003283;
+	outline: 1px dotted rgba(0,0,0,0.45) !important;
+}
+
+html[dir='ltr'] a.left.carousel-control,
+html[dir='rtl'] a.right.carousel-control {
+	left: 0;
+}
+
+html[dir='rtl'] a.left.carousel-control,
+html[dir='ltr'] a.right.carousel-control {
+	right: 0;
+}
+
+div.modal-dialog .wn_modal-dialog a.carousel-control span.glyphicon.glyphicon-chevron-left,
+div.modal-dialog .wn_modal-dialog a.carousel-control span.glyphicon.glyphicon-chevron-right {
+	left: initial;
+    margin: initial;
+    color: inherit;
+    font-size: inherit;
+    width: initial;
+    height: initial;
+    position: static;
+    top: initial;
+    display: initial;
+    font-family: inherit;
+    line-height: 110px;
+    vertical-align: top;
+}
+
+html[dir="ltr"] .glyphicon-chevron-left:before,
+html[dir="rtl"] .glyphicon-chevron-right:before {
+    content: "\e1ee";
+}
+
+html[dir="rtl"] .glyphicon-chevron-left:before,
+html[dir="ltr"] .glyphicon-chevron-right:before {
+    content: "\e1ed";
+}
+
+@media screen and (max-width: 1024px) {
+	
+	div.modal-dialog .wn_modal-dialog .wn_slide div.section_title, 
+	div.modal-dialog .wn_modal-dialog .wn_slide div.section_title + div > *:not(img) {
+		float: none;
+	    width: calc(100% - 25px);
+	}
+	
+	div.modal-dialog .wn_modal-dialog .wn_slide img.image {
+		max-width: calc(100% - 25px);
+	}
+	
+	div.modal-dialog .wn_modal-dialog .carousel-inner {
+		margin-bottom: 60px;
+	}
+	
+	div.modal-dialog .wn_modal-dialog .carousel-indicators {
+		bottom: -53px; 
+	}
+	
+	div.modal-dialog .wn_modal-dialog .carousel-indicators li {
+		margin: 0 3px;
+	}
+	
+	div.modal-dialog .wn_modal-dialog {
+		/*min-width: 500px;*/
+	}
+	div.modal-dialog .wn_modal-dialog a.carousel-control span.glyphicon.glyphicon-chevron-left,
+	div.modal-dialog .wn_modal-dialog a.carousel-control span.glyphicon.glyphicon-chevron-right {
+		margin: 0;
+	}
+	
+}
+
+@media screen and (max-width: 900px) {
+	div.modal-dialog .wn_modal-dialog .carousel-inner {
+		width: calc(100% - 90px);
+	}
+	a.left.carousel-control, a.right.carousel-control {
+		width: 45px;
+		font-size: 80px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	div.modal-dialog .wn_modal-dialog div.allFeatures {
+		margin-top: 50px
+	}
+	div.modal-dialog .wn_modal-dialog .modal-header {
+		margin-bottom: 1em;
+	}
+	.modal-header h2.modal-title {
+		width: calc(100% - 20px);	
+	}
+	div.modal-dialog .wn_modal-dialog .carousel-inner {
+		margin: 75px 0 0 0;
+	    width: 100%;
+    }
+    a.left.carousel-control, a.right.carousel-control {
+		top: -70px;
+	    font-size: 60px;
+	    height: 60px;
+	    line-height: 60px;
+	}
+	div.modal-dialog .wn_modal-dialog a.carousel-control span.glyphicon.glyphicon-chevron-left, div.modal-dialog .wn_modal-dialog a.carousel-control span.glyphicon.glyphicon-chevron-right {
+		line-height: 50px;
+	}
+}

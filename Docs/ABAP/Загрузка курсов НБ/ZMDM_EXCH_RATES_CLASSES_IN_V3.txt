@@ -1,0 +1,347 @@
+*&---------------------------------------------------------------------*
+*&  Include           ZMDM_EXCH_RATES_CLASSES
+*&---------------------------------------------------------------------*
+*----------------------------------------------------------------------*
+*       CLASS lcl_batcher DEFINITION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS lcl_logger DEFINITION FINAL.
+  PUBLIC SECTION.
+
+    class-METHODS: class_constructor.
+    METHODS:
+      create
+        IMPORTING is_log    TYPE bal_s_log,
+      create_with_defaults
+        IMPORTING
+          iv_obj            TYPE  balobj_d
+          iv_subobj         TYPE  balsubobj OPTIONAL
+          iv_extnum         TYPE  balnrext OPTIONAL,
+*          iv_callback       TYPE  BALUEF,
+      add
+        IMPORTING
+          iv_message        TYPE string
+          iv_logindex       TYPE i            OPTIONAL
+          iv_var1           TYPE any          OPTIONAL
+          iv_var2           TYPE any          OPTIONAL
+          iv_var3           TYPE any          OPTIONAL
+          iv_var4           TYPE any          OPTIONAL
+          iv_id             TYPE any          OPTIONAL
+          is_params         TYPE bal_s_parm   OPTIONAL,
+
+      add_sy_message,
+
+      add_bapiret2
+        IMPORTING
+          is_bapiret2       TYPE bapiret2
+          iv_logindex       TYPE i            OPTIONAL
+          is_params         TYPE bal_s_parm   OPTIONAL,
+
+      add_bapiret1
+        IMPORTING
+          is_bapiret1       TYPE bapiret1
+          iv_logindex       TYPE i            OPTIONAL
+          is_params         TYPE bal_s_parm   OPTIONAL,
+
+      add_bapireturn
+        IMPORTING
+          is_bapireturn     TYPE bapireturn
+          iv_logindex       TYPE i            OPTIONAL
+          is_params         TYPE bal_s_parm   OPTIONAL,
+
+      add_bapiret_table
+        IMPORTING
+          it_bapiret        TYPE icl_t_bapireturn
+          iv_logindex       TYPE i            OPTIONAL
+          is_params         TYPE bal_s_parm   OPTIONAL,
+
+      add_bapiret1_table
+        IMPORTING
+          it_bapiret        TYPE fm_t_bapireturn1
+          iv_logindex       TYPE i            OPTIONAL
+          is_params         TYPE bal_s_parm   OPTIONAL,
+
+      add_bapiret2_table
+        IMPORTING
+          it_bapiret2       TYPE bapiret2_t,
+
+      add_bal
+        IMPORTING
+*          iv_message        TYPE string
+          is_bal_msg        TYPE bal_s_msg
+          iv_logindex       TYPE i            OPTIONAL,
+
+      delete
+        IMPORTING
+          iv_obj            TYPE  balobj_d
+          iv_subobj         TYPE  balsubobj   OPTIONAL
+          iv_extnum         TYPE  balnrext    OPTIONAL,
+
+      save.
+
+  PRIVATE SECTION.
+    DATA:
+          ct_handles        TYPE      bal_t_logh.
+ENDCLASS.                    "lcl_logger DEFINITION
+
+*----------------------------------------------------------------------*
+*       CLASS lcl_logger IMPLEMENTATION
+*----------------------------------------------------------------------*
+*
+*----------------------------------------------------------------------*
+CLASS lcl_logger IMPLEMENTATION.
+  method class_constructor.
+    check 1 = 1.
+  endmethod.
+
+  METHOD delete.
+    DATA:
+    l_s_log_filter     TYPE bal_s_lfil,
+    l_s_obj            TYPE bal_s_obj,
+    l_s_extn           TYPE bal_s_extn,
+    l_t_log_header     TYPE balhdr_t.
+
+* create filter to search for this log on db
+    CLEAR l_s_log_filter-object.
+    CLEAR l_s_obj.
+    l_s_obj-sign = 'I'.
+    l_s_obj-option = 'EQ'.
+    l_s_obj-low    = iv_obj.
+    APPEND l_s_obj TO l_s_log_filter-object.
+
+    CLEAR l_s_extn.
+    l_s_extn-sign = 'I'.
+    l_s_extn-option = 'EQ'.
+    l_s_extn-low    = iv_extnum.
+    APPEND l_s_extn TO l_s_log_filter-extnumber.
+
+* search for this log
+    CALL FUNCTION 'BAL_DB_SEARCH'
+      EXPORTING
+        i_s_log_filter = l_s_log_filter
+      IMPORTING
+        e_t_log_header = l_t_log_header
+      EXCEPTIONS
+        OTHERS         = 1.
+    IF sy-subrc <> 0.
+      MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+              WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+    ENDIF.
+
+* delete these logs
+    CALL FUNCTION 'BAL_DB_DELETE'
+      EXPORTING
+        i_t_logs_to_delete = l_t_log_header
+      EXCEPTIONS
+        OTHERS             = 1.
+    IF sy-subrc <> 0.
+      MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+              WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4.
+    ENDIF.
+
+  ENDMETHOD.                    "delete
+
+  METHOD create_with_defaults.
+    DATA: ls_log TYPE bal_s_log.
+
+    ls_log-object     = iv_obj.
+    ls_log-aldate_del = sy-datum + 1.
+    ls_log-del_before = 'X'.
+    ls_log-aldate     = sy-datum.
+    ls_log-altime     = sy-uzeit.
+    ls_log-aluser     = sy-uname.
+    ls_log-altcode    = sy-tcode.
+    ls_log-alprog     = sy-repid.
+    ls_log-subobject  = iv_subobj.
+    ls_log-extnumber  = iv_extnum.
+    me->create( EXPORTING is_log = ls_log ).
+  ENDMETHOD.                    "create_with_defaults
+
+  METHOD create.
+    DATA: ls_handle TYPE balloghndl.
+    CALL FUNCTION 'BAL_LOG_CREATE'
+      EXPORTING
+        i_s_log      = is_log
+      IMPORTING
+        e_log_handle = ls_handle.
+
+    APPEND ls_handle TO ct_handles.
+  ENDMETHOD.                    "create
+
+  METHOD add.
+    DATA: lc_patt TYPE string VALUE '(\S|\s)(\d+)\(([\w!/]+)\)'.               "02.11.2016 VSasnouski Поправлен шаблон для обработки ситуации со спецсимволами - !, /, например, класс сообщений E!
+    DATA: ls_msg TYPE bapiret2.
+
+    ls_msg-message_v1 = iv_var1.
+    ls_msg-message_v2 = iv_var2.
+    ls_msg-message_v3 = iv_var3.
+    ls_msg-message_v4 = iv_var4.
+
+    FIND REGEX lc_patt IN iv_message SUBMATCHES ls_msg-type ls_msg-number ls_msg-id.
+    TRANSLATE ls_msg-type TO UPPER CASE.
+
+    IF iv_id IS NOT INITIAL.
+      ls_msg-id = iv_id.
+    ENDIF.
+    me->add_bapiret2( is_bapiret2 = ls_msg  iv_logindex = iv_logindex is_params = is_params ).
+  ENDMETHOD.
+
+  METHOD add_sy_message.
+    DATA: ls_msg TYPE bapiret2.
+
+    ls_msg-type = sy-msgty.
+    ls_msg-number = sy-msgno.
+    ls_msg-id = sy-msgid.
+    ls_msg-message_v1 = sy-msgv1.
+    ls_msg-message_v2 = sy-msgv2.
+    ls_msg-message_v3 = sy-msgv3.
+    ls_msg-message_v4 = sy-msgv4.
+
+    me->add_bapiret2( is_bapiret2 = ls_msg ).
+  ENDMETHOD.
+
+  METHOD add_bal.
+    DATA: lv_idx    TYPE i.
+    FIELD-SYMBOLS: <ls_handle> TYPE balloghndl.
+
+    lv_idx = 1.
+    IF iv_logindex IS NOT INITIAL.
+      lv_idx = iv_logindex.
+    ENDIF.
+
+    READ TABLE ct_handles ASSIGNING <ls_handle> INDEX lv_idx.
+    IF sy-subrc EQ 0.
+      CALL FUNCTION 'BAL_LOG_MSG_ADD'
+        EXPORTING
+          i_log_handle = <ls_handle>
+          i_s_msg      = is_bal_msg.
+    ENDIF.
+  ENDMETHOD.                    "add_bal
+
+  METHOD add_bapiret2_table.
+    FIELD-SYMBOLS: <ls_ret> TYPE bapiret2.
+    LOOP AT it_bapiret2 ASSIGNING <ls_ret>.
+      me->add_bapiret2( is_bapiret2 = <ls_ret> ).
+    ENDLOOP.
+  ENDMETHOD.                    "add_bapiret2_table
+
+  METHOD add_bapiret_table.
+    FIELD-SYMBOLS: <ls_bapiret> TYPE bapireturn.
+    LOOP AT it_bapiret ASSIGNING <ls_bapiret>.
+      me->add_bapireturn( is_bapireturn = <ls_bapiret> ).
+    ENDLOOP.
+  ENDMETHOD.                    "add_bapiret_table
+
+  METHOD add_bapiret1_table.
+    FIELD-SYMBOLS: <ls_bapiret> TYPE bapireturn1.
+    DATA: ls_bapiret2 TYPE bapiret2.
+    LOOP AT it_bapiret ASSIGNING <ls_bapiret>.
+      MOVE-CORRESPONDING <ls_bapiret> TO ls_bapiret2.
+      me->add_bapiret2( is_bapiret2 = ls_bapiret2 ).
+    ENDLOOP.
+  ENDMETHOD.                    "add_bapiret1_table
+
+  METHOD add_bapireturn.
+    DATA: lv_idx    TYPE i,
+          ls_msg      TYPE bal_s_msg.
+    FIELD-SYMBOLS: <ls_handle> TYPE balloghndl.
+
+    lv_idx = 1.
+    IF iv_logindex IS NOT INITIAL.
+      lv_idx = iv_logindex.
+    ENDIF.
+
+    READ TABLE ct_handles ASSIGNING <ls_handle> INDEX lv_idx.
+    IF sy-subrc EQ 0.
+      ls_msg-msgty = is_bapireturn-type.
+*      ls_msg-msgid = is_bapireturn-id.
+      ls_msg-msgno = is_bapireturn-log_msg_no.
+      ls_msg-msgv1 = is_bapireturn-message_v1.
+      ls_msg-msgv2 = is_bapireturn-message_v2.
+      ls_msg-msgv3 = is_bapireturn-message_v3.
+      ls_msg-msgv4 = is_bapireturn-message_v4.
+      IF is_params IS NOT INITIAL.
+        ls_msg-params = is_params.
+      ENDIF.
+
+      CONDENSE: ls_msg-msgv1, ls_msg-msgv2, ls_msg-msgv3, ls_msg-msgv4.
+      CALL FUNCTION 'BAL_LOG_MSG_ADD'
+        EXPORTING
+          i_log_handle = <ls_handle>
+          i_s_msg      = ls_msg.
+      UNASSIGN <ls_handle>.
+    ENDIF.
+
+  ENDMETHOD.                    "Add_bapireturn
+
+  METHOD add_bapiret2.
+    DATA: lv_idx    TYPE i,
+          ls_msg      TYPE bal_s_msg.
+    FIELD-SYMBOLS: <ls_handle> TYPE balloghndl.
+
+    lv_idx = 1.
+    IF iv_logindex IS NOT INITIAL.
+      lv_idx = iv_logindex.
+    ENDIF.
+
+    READ TABLE ct_handles ASSIGNING <ls_handle> INDEX lv_idx.
+    IF sy-subrc EQ 0.
+      ls_msg-msgty = is_bapiret2-type.
+      ls_msg-msgid = is_bapiret2-id.
+      ls_msg-msgno = is_bapiret2-number.
+      ls_msg-msgv1 = is_bapiret2-message_v1.
+      ls_msg-msgv2 = is_bapiret2-message_v2.
+      ls_msg-msgv3 = is_bapiret2-message_v3.
+      ls_msg-msgv4 = is_bapiret2-message_v4.
+      IF is_params IS NOT INITIAL.
+        ls_msg-params = is_params.
+      ENDIF.
+
+      CONDENSE: ls_msg-msgv1, ls_msg-msgv2, ls_msg-msgv3, ls_msg-msgv4.
+      CALL FUNCTION 'BAL_LOG_MSG_ADD'
+        EXPORTING
+          i_log_handle = <ls_handle>
+          i_s_msg      = ls_msg.
+      UNASSIGN <ls_handle>.
+    ENDIF.
+  ENDMETHOD.                    "Add_bapiret2
+
+  METHOD add_bapiret1.
+    DATA: lv_idx    TYPE i,
+          ls_msg      TYPE bal_s_msg.
+    FIELD-SYMBOLS: <ls_handle> TYPE balloghndl.
+
+    lv_idx = 1.
+    IF iv_logindex IS NOT INITIAL.
+      lv_idx = iv_logindex.
+    ENDIF.
+
+    READ TABLE ct_handles ASSIGNING <ls_handle> INDEX lv_idx.
+    IF sy-subrc EQ 0.
+      ls_msg-msgty = is_bapiret1-type.
+      ls_msg-msgid = is_bapiret1-id.
+      ls_msg-msgno = is_bapiret1-number.
+      ls_msg-msgv1 = is_bapiret1-message_v1.
+      ls_msg-msgv2 = is_bapiret1-message_v2.
+      ls_msg-msgv3 = is_bapiret1-message_v3.
+      ls_msg-msgv4 = is_bapiret1-message_v4.
+      IF is_params IS NOT INITIAL.
+        ls_msg-params = is_params.
+      ENDIF.
+
+      CONDENSE: ls_msg-msgv1, ls_msg-msgv2, ls_msg-msgv3, ls_msg-msgv4.
+      CALL FUNCTION 'BAL_LOG_MSG_ADD'
+        EXPORTING
+          i_log_handle = <ls_handle>
+          i_s_msg      = ls_msg.
+      UNASSIGN <ls_handle>.
+    ENDIF.
+
+  ENDMETHOD.                    "Add_bapiret2
+  METHOD save.
+    CALL FUNCTION 'BAL_DB_SAVE'
+      EXPORTING
+        i_save_all = 'X'.
+  ENDMETHOD.                    "save
+ENDCLASS.                    "lcl_logger IMPLEMENTATION

@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html ng-app="cp" ng-controller="headerCtrl" ng-class="
+		viewerOn.value ? {
+			'toc-hidden': tocHidden.value,
+			'rw-shown': rwShown.value
+		} : 'toc-hidden'" dir="ltr" class="ng-scope" style="" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-datepicker-popup.dropdown-menu{display:block;}.uib-button-bar{padding:10px 9px 2px;}</style><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    	<!-- base href="https://help.sap.com/viewer/" -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="https://help.sap.com/viewer/_build_938311c7a845691adeabc837/images/favicon.ico">
+        <title>SQL Functions | SAP HANA Platform | SAP Help Portal</title>
+
+        <!-- jQuery v2.2: used for annotateJS -->
+        <script type="text/javascript" defer="defer" async="" src="SQL%20hana%20functions_files/privacy.js"></script><script src="SQL%20hana%20functions_files/jquery_003.js"></script>
+
+        <!-- Bootstrap 3.1.1: used for the responsive design, mobile layout -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="SQL%20hana%20functions_files/bootstrap.css">
+        <script src="SQL%20hana%20functions_files/bootstrap.js"></script>
+
+        <!-- Core AngularJS 1.4.8-->
+        <script src="SQL%20hana%20functions_files/angular.js"></script>
+        <script src="SQL%20hana%20functions_files/angular-route.js"></script>
+        <script src="SQL%20hana%20functions_files/angular-resource.js"></script>
+        <script src="SQL%20hana%20functions_files/angular-sanitize.js"></script>
+        <script src="SQL%20hana%20functions_files/angular-translate.js"></script>
+        <script src="SQL%20hana%20functions_files/angular-translate-loader-url.js"></script>
+
+         <!-- infinite scrolling -->
+        <script src="SQL%20hana%20functions_files/ng-infinite-scroll.js"></script>
+
+		<!-- angular-cookies: used to access cookies through Angular -->
+        <script src="SQL%20hana%20functions_files/angular-cookies.js"></script>
+
+       	<!-- angular-elastic: auto expanding text box -->
+        <script src="SQL%20hana%20functions_files/angular-elastic.js"></script>
+
+        <!-- angular-animate: used (nonessentially) by the progress bar, also may be used in the future for other animations -->
+        <script src="SQL%20hana%20functions_files/angular-animate.js"></script>
+
+        <!-- angular-bootstrap v1.1.0 : provides certain angular directives for bootstrap elements, faster and more stable -->
+        <script src="SQL%20hana%20functions_files/ui-bootstrap-tpls.js"></script>
+
+        <!-- angular-ui-notifications: displays notifications-->
+        <script src="SQL%20hana%20functions_files/angular-ui-notification.js"></script>
+        <link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/angular-ui-notification.css">
+
+        <!-- angular-loading-bar: displays loading bar during http requests -->
+        <script src="SQL%20hana%20functions_files/loading-bar.js"></script>
+        <link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/loading-bar.css">
+
+        <!-- angular treeview: displays TOC -->
+	    <script type="text/javascript" src="SQL%20hana%20functions_files/angular-tree-control.js"></script>
+        <link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/tree-control.css">
+
+        <!-- angular truncate text: for comments -->
+	    <script type="text/javascript" src="SQL%20hana%20functions_files/ng-text-truncate.js"></script>
+
+	    <!-- angular UUID: manual upload loio generation -->
+        <script src="SQL%20hana%20functions_files/angular-uuid-service.js"></script>
+
+        <!-- angular scroll: scrollSpy -->
+        <script src="SQL%20hana%20functions_files/angular-scroll.js"></script>
+
+		<!-- jQuery/javascript plugins -->
+
+        <!-- annotateJS anchored comments: provides anchored comments -->
+        <link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/annotator.css">
+        <script type="text/javascript" src="SQL%20hana%20functions_files/annotator-full.js"></script>
+
+        <!-- Timezone determination - jstz -->
+        <script src="SQL%20hana%20functions_files/jstz-1.js"></script>
+
+        <!-- lightbox plugin -->
+        <link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/lightbox.css">
+        <script type="text/javascript" src="SQL%20hana%20functions_files/lightbox.js"></script>
+
+        <!-- prettify.js plugin -->
+        <link href="SQL%20hana%20functions_files/prettify.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript" src="SQL%20hana%20functions_files/prettify.js"></script>
+
+        <!-- Imagemapster: Interactive imagemaps -->
+        <script src="SQL%20hana%20functions_files/jquery_006.js"></script>
+
+        <!-- SAP Collapsify -->
+        <link href="SQL%20hana%20functions_files/sap.css" type="text/css" rel="stylesheet">
+        <script src="SQL%20hana%20functions_files/sap.js"></script>
+
+		<!-- Custom styles for this template -->
+
+		<link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/fonts.css">
+		<link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/general.css">
+		<link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/menus.css">
+
+		<link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/cp-header.css">
+		<link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/cp-footer.css">
+
+		<link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/toc.css">
+		<link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/rw.css">
+
+		<link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/modals.css">
+
+		<link href="SQL%20hana%20functions_files/cp.css" rel="stylesheet">
+
+		<link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/rtl.css">
+		<link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/topic.css">
+		<link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/hero.css">
+		<!-- <link rel="stylesheet" type="text/css" href="_build_938311c7a845691adeabc837/css/page.css"> -->
+		<link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/dita.css">
+		<!-- <link rel="stylesheet" type="text/css" href="_build_938311c7a845691adeabc837/css/datatables.css"> -->
+		<!-- <link rel="stylesheet" type="text/css" href="_build_938311c7a845691adeabc837/css/table.css"> -->
+		<!-- <link rel="stylesheet" type="text/css" href="_build_938311c7a845691adeabc837/css/treecontrol.css"> -->
+
+		<link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/toc-hidden.css">
+		<link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/wide-monitors.css">
+		<link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/narrow-monitors.css">
+		<link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/tablet.css">
+		<link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/phone.css">
+		<link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/whatsnew.css">
+
+		<!-- Data Tables CSS & Script -->
+
+            <!-- main -->
+            <link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/jquery.css">
+            <!-- <link rel="stylesheet" type="text/css" href="_build_938311c7a845691adeabc837/css/datatable.css"> -->
+            <script type="text/javascript" charset="utf8" src="SQL%20hana%20functions_files/jquery_004.js"></script>
+
+            <!-- col reorder -->
+            <link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/colReorder.css">
+            <script type="text/javascript" charset="utf8" src="SQL%20hana%20functions_files/dataTables_003.js"></script>
+
+            <!-- buttons -->
+            <link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/buttons.css">
+            <script type="text/javascript" charset="utf8" src="SQL%20hana%20functions_files/dataTables_005.js"></script>
+            <script type="text/javascript" charset="utf8" src="SQL%20hana%20functions_files/buttons_002.js"></script>
+            <script type="text/javascript" charset="utf8" src="SQL%20hana%20functions_files/buttons.js"></script>
+
+            <!-- select -->
+            <link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/select.css">
+            <script type="text/javascript" charset="utf8" src="SQL%20hana%20functions_files/dataTables_002.js"></script>
+
+            <!-- scroller -->
+            <link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/scroller.css">
+            <script type="text/javascript" charset="utf8" src="SQL%20hana%20functions_files/dataTables_004.js"></script>
+
+            <!-- column filter -->
+            <script type="text/javascript" charset="utf8" src="SQL%20hana%20functions_files/jquery.js"></script>
+
+            <!-- double scrollbar -->
+            <script type="text/javascript" charset="utf8" src="SQL%20hana%20functions_files/jquery_005.js"></script>
+
+            <!-- colVis: show/hide columns (SAP legacy) -->
+            <link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/colvis.css">
+            <script type="text/javascript" charset="utf8" src="SQL%20hana%20functions_files/colvis.js"></script>
+            <script type="text/javascript" charset="utf8" src="SQL%20hana%20functions_files/jquery_002.js"></script>
+            <script type="text/javascript" charset="utf8" src="SQL%20hana%20functions_files/dataTables.js"></script>
+        
+
+        <link rel="stylesheet" type="text/css" href="SQL%20hana%20functions_files/dt.css">
+
+
+		<script src="SQL%20hana%20functions_files/angular-ui-router.js"></script>
+		<script src="SQL%20hana%20functions_files/profilingapi.js"></script>
+        <!-- CP Viewer angular code -->
+        <script src="SQL%20hana%20functions_files/cp.js"></script>
+        <script src="SQL%20hana%20functions_files/routing.js"></script>
+        <script src="SQL%20hana%20functions_files/translations.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-controllers.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-homepagecontroller.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-services.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-dashboardssharedservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-loginservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-directives.js"></script>
+        <script src="SQL%20hana%20functions_files/filters.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-searchservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-searchcontroller.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-searchapi.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-resultscontroller.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-advancedSearchService.js"></script>        
+        <script src="SQL%20hana%20functions_files/cp-parametersService.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-filtersService.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-resultsService.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-search-hp-controller.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-contentapiservice.js"></script>
+ 		<script src="SQL%20hana%20functions_files/cp-whatsnewservice.js"></script>
+ 		<script src="SQL%20hana%20functions_files/cp-whatsnewcontroller.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-productpagecontroller.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-productpageservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-usermgmtcontrollers.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-usermgmtservices.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-usermgmtdirectives.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-comment-text.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-headerctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-pagecontentctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-rwctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-pagecommentctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-dashboardctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-publicationctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-uploadstatusjobsctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-manualuploadctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-manualeditctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-manualoperationsservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-addeditversionctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-addeditproductctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-editprojectctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-deleteprojectdependencyctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-addprojectdependencyctrl.js"></script>
+
+        <script src="SQL%20hana%20functions_files/cp-searchoptionsctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-searchoptionsservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-urlmappingsctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-urlmappingsservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-movetoslavectrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-movetoslaveservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-languageservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-viewerfilterctrl.js"></script>
+
+        <script src="SQL%20hana%20functions_files/cp-aliasesctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-editaliasctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-aliasservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-commentsctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-commentservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-feedbackctrl.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-feedbackservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-jobservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-sharedservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-projectservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-versionservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-productservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-projectservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-disclaimerpageservice.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-privacypagecontroller.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-disclaimerpagecontroller.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-contactuscontroller.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-getsupportcontroller.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-errorcontroller.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-nowhitelistcontroller.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-disclaimerfooterpage.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-copyrightpage.js"></script>
+        <script src="SQL%20hana%20functions_files/cp-productfindercontroller.js"></script>
+
+        <!-- JavaScript APIs -->
+		<script src="SQL%20hana%20functions_files/filterlanguage_api.js"></script>
+		<script src="SQL%20hana%20functions_files/filterproduct_api.js"></script>
+		<script src="SQL%20hana%20functions_files/filterstates_api.js"></script>
+		<script src="SQL%20hana%20functions_files/filterversion_api.js"></script>
+		<script src="SQL%20hana%20functions_files/hierarchy_api.js"></script>
+		<script src="SQL%20hana%20functions_files/hierarchy_loader.js"></script>
+		<script src="SQL%20hana%20functions_files/productfinder_api.js"></script>
+		<script src="SQL%20hana%20functions_files/search_api.js"></script>
+		<script src="SQL%20hana%20functions_files/suggestion_api.js"></script>
+		
+		<!-- Adobe Tracking -->
+		<script src="SQL%20hana%20functions_files/adobe_tracking.js"></script>
+		
+		<!-- HTML to PDF temporary plugin -->
+		<script src="SQL%20hana%20functions_files/html2pdf.js"></script>
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="_build_938311c7a845691adeabc837/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="_build_938311c7a845691adeabc837/https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <script>
+				var swa = {
+					pubToken :  '718b3282-5ed7-4564-84ea-c32f7a91e7f7-uacp2',
+					baseUrl : 'https://webanalytics.cfapps.eu10.hana.ondemand.com/tracker/',
+					visitorCookieTimeout : 63113852,
+					dntLevel : 1,
+					bannerEnabled : false
+				};
+
+				var deliverableInfo = {
+						loio: '',
+						version: '',
+						language: '',
+						topicLoio: ''
+				}
+
+				function logLoioValue() {
+					return deliverableInfo.loio;
+				}
+				function logVersionValue() {
+					return deliverableInfo.version;
+				}
+				function logLanguageValue() {
+					return deliverableInfo.language;
+				}
+				function logTopicLoioValue() {
+					return deliverableInfo.topicLoio;
+				}
+				function logStandardPath () {
+					return window.location.protocol + '//' + window.location.host + window.location.pathname;
+				}
+				function logHostName () {
+					return window.location.host;
+				}
+
+				swa.custom1={ref:'logLoioValue'};
+				swa.custom2={ref:'logVersionValue'};
+				swa.custom3={ref:'logLanguageValue'};
+				swa.custom4={ref:'logTopicLoioValue'};
+				swa.custom5={ref:'logStandardPath'};
+				swa.custom6={ref:'logHostName'};
+
+				function runSwa() {
+					var d = document, g = d
+							.createElement('script'), s = d
+							.getElementsByTagName('script')[0];
+					g.type = 'text/javascript';
+					g.defer = true;
+					g.async = true;
+					g.src = swa.baseUrl + 'js/privacy.js';
+					s.parentNode.insertBefore(g, s);
+				};
+	  </script>
+	  <!-- DTM Header Tag -->
+	  <script src="SQL%20hana%20functions_files/satelliteLib-222fcd02094fc2c0af0f935964002013aaa11660.js"></script><script src="SQL%20hana%20functions_files/mbox-contents-c997f7c0e4403b81734d1756e48efebc9ca34767.js"></script><script src="SQL%20hana%20functions_files/ip.json" type="text/javascript"></script><script src="SQL%20hana%20functions_files/satellite-59449a3064746d68b800aa9a.js"></script><script src="SQL%20hana%20functions_files/satellite-59449ab164746d6f1a00a730.js"></script>
+    </head>
+    <body ng-style="bodyStyle()">
+        <cp-header><div class="survey-request ng-hide" ng-show="surveyRequest" style="">
+	<div class="centered-button-container">
+		<p>Would you like to participate in a short survey about the new SAP Help Portal?</p>
+		<button class="button" ng-click="acceptSurvey()">Yes, take me to the survey</button>
+		<button class="button negative" ng-click="rejectSurvey()">No</button>
+	</div>
+</div>
+
+<header id="cp-header" role="navigation">
+    <div class="block-max"><a ng-href="/viewer/index" title="SAP Help Home" href="https://help.sap.com/viewer/index"><img src="SQL%20hana%20functions_files/sap.svg" id="sap-logo" alt="SAP"><h1 id="help-portal">SAP Help Portal</h1></a><!-- ngIf: viewTitle.length > 0 --><h2 id="header-product-title" ng-if="viewTitle.length &gt; 0" class="ng-scope" style=""><a ng-href="/viewer/product/SAP_HANA_PLATFORM/2.0.02/en-US" class="ng-binding" href="https://help.sap.com/viewer/product/SAP_HANA_PLATFORM/2.0.02/en-US">SAP HANA Platform</a></h2><!-- end ngIf: viewTitle.length > 0 -->
+
+		
+		<!-- Banner Actions -->
+		<nav class="actions" role="toolbar">
+				
+
+			<!-- Search -->
+			<!-- ngIf: showSearchIcon && !showByFeatureFlag('HeroicSearch') --><div cpmenu="" class="action ng-scope" id="banner-action-search" ng-if="showSearchIcon &amp;&amp; !showByFeatureFlag('HeroicSearch')" aria-haspopup="true" aria-expanded="false">
+				
+				<button class="menu-trigger" ng-click="headerInputFocus=true" title="Search"></button>	
+			
+				<div class="cp-menu banner-action-search-menu targetmenu" role="menu" aria-hidden="true">
+					<form class="searchbar header-searchbar ng-pristine ng-valid with-scope-toggle" ng-class="{'with-scope-toggle': viewerOn.value}" name="searchForm" ng-submit="goSearch(headerSearch.keywords)" role="search" style="">
+						
+						<!-- ngIf: viewerOn.value --><select ng-model="searchScopeMenu.value" ng-if="viewerOn.value" ng-change="searchScopeChange()" role="listbox" class="ng-pristine ng-untouched ng-valid ng-scope" style="">
+							<option value="this document" selected="selected" class="ng-binding">Search This Document</option>
+							<option value="all products" class="ng-binding">Search All Products</option>
+						</select><!-- end ngIf: viewerOn.value -->
+						
+						<!-- search bar -->
+						<input id="banner search" focus-me="headerInputFocus" name="searchKeywords" ng-model="headerSearch.keywords" ng-model-options="{ getterSetter: true }" placeholder="Enter keywords" class="ng-pristine ng-untouched ng-valid ng-isolate-scope" type="text" contenteditable="true">
+							
+						<!-- search bar submit button -->
+						<button id="submitbutton_header" title="submit keywords" role="button" type="submit" alt="submit"></button>
+					</form>
+					
+				</div>
+			</div><!-- end ngIf: showSearchIcon && !showByFeatureFlag('HeroicSearch') -->
+			
+			
+			<!-- Whatsnew -->
+			<div class="action" id="banner-action-whatsnew" aria-haspopup="true" aria-expanded="">
+				<span class="counter" ng-show="!wncookie"></span>
+				
+				<button class="menu-trigger" title="What's New" ng-click="openDialog()"></button>	
+			</div>
+	
+	
+			<!-- User Account -->
+			<!-- ngIf: logged_on -->
+			
+			
+			<!-- Logon Action -->
+			<!-- ngIf: !logged_on --><div ng-if="!logged_on" id="user-menu" class="action ng-scope" aria-haspopup="false">
+
+					<a class="menu-trigger" ng-href="/http.svc/login?time=1524742859572&amp;url=https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a61f29751910149f99f0300dd95cd9.html" ng-click="logged_on=true; login()" title="Log on" href="https://help.sap.com/http.svc/login?time=1524742859572&amp;url=https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a61f29751910149f99f0300dd95cd9.html"></a>
+			</div><!-- end ngIf: !logged_on -->
+			
+		</nav>
+    </div>
+</header>
+</cp-header>
+	        <div class="view-container" ng-class="{dark: dark}">
+	            <!-- uiView:  --><div ui-view="" class="view-frame ng-scope" style=""><!-- uiView: undefined --><ui-view class="ng-scope">
+<div id="PageContentCtrl" class="secondary-language-level" dir="ltr" lang="en">
+
+<div id="black-blocker" ng-click="blackBlocker()"></div>
+ 
+<div scrollmobile="" id="topic-actions-mobile-fixed" ng-class="{ shown: makefixed }" style="display: none;">
+
+
+
+
+    <button class="left-link ng-binding" title="Table of Contents" tabindex="2" ng-click="tocHidden.value = !tocHidden.value">
+        <span class="icon"></span>
+        Table of Contents
+    </button>
+
+
+    <button class="right-link ng-binding" title="Right Menu" tabindex="2" ng-click="rwShown.value = !rwShown.value;">
+        Menu
+        <span class="icon"></span>
+    </button>
+
+</div>  
+
+<div id="cp-hero" class="cp-viewer-hero">
+		<div class="motion-band"><span class="part1"></span><span class="part2"></span><span class="part3"></span></div>
+		<div class="block-1920px">
+			<div class="hero-content">
+				<h2 id="hero-product-area"><a ng-href="/viewer/product/SAP_HANA_PLATFORM/2.0.02/en-US" class="ng-binding" href="https://help.sap.com/viewer/product/SAP_HANA_PLATFORM/2.0.02/en-US">SAP HANA Platform</a>:</h2>
+				<h1 class="hero-title ng-binding" ng-bind="pageService.deliverable.title" dir="ltr">SAP HANA SQL and System Views Reference</h1>
+				
+				<!-- ngIf: showByFeatureFlag('HeroicSearch') -->
+				
+				<aside class="filtering-note ng-binding ng-hide" ng-show="pageService.deliverable.filteringTokens">You can choose to show or hide content in this document.
+					<span class="wide-desktop ng-binding">View the Filtering pane for options.</span>
+					<span class="mobile ng-binding">View the Filtering options in the Menu.</span></aside>
+			</div>
+			
+			<!-- Release selectors -->
+			<div class="version-selectors">
+
+				<!-- Version selector -->
+				<div class="metadata-selector" cpmenu="" role="menuitem" aria-haspopup="true" aria-expanded="false" ng-attr-aria-haspopup="{{content.versionSelector == 'multiple'}}" ng-class="{'only-one':content.versionSelector == 'single'}" ng-show="content.versionSelector != 'none'">
+					<button class="menu-trigger ng-binding">Version: <span class="ng-binding">2.0 SPS 02</span></button>
+					<div class="cp-menu targetmenu" role="menu" aria-hidden="true">
+						<!-- ngRepeat: version in content.versions --><a ng-repeat="version in content.versions" class="tile ng-binding ng-scope" role="menuitem" ng-class="{'active' : checkActive(version.v, content.selectedRelease.v)}" href="#" ng-click="changeVersion(version.v, version.n)" title="" style="">
+								2.0 SPS 03
+								<!-- ngIf: shouldAddPdfIcon(version.v, content.selectedRelease.l, content.selectedRelease.state) -->
+						</a><!-- end ngRepeat: version in content.versions --><a ng-repeat="version in content.versions" class="tile ng-binding ng-scope active" role="menuitem" ng-class="{'active' : checkActive(version.v, content.selectedRelease.v)}" href="#" ng-click="changeVersion(version.v, version.n)" title="" style="">
+								2.0 SPS 02
+								<!-- ngIf: shouldAddPdfIcon(version.v, content.selectedRelease.l, content.selectedRelease.state) -->
+						</a><!-- end ngRepeat: version in content.versions --><a ng-repeat="version in content.versions" class="tile ng-binding ng-scope" role="menuitem" ng-class="{'active' : checkActive(version.v, content.selectedRelease.v)}" href="#" ng-click="changeVersion(version.v, version.n)" title="">
+								2.0 SPS 01
+								<!-- ngIf: shouldAddPdfIcon(version.v, content.selectedRelease.l, content.selectedRelease.state) -->
+						</a><!-- end ngRepeat: version in content.versions --><a ng-repeat="version in content.versions" class="tile ng-binding ng-scope" role="menuitem" ng-class="{'active' : checkActive(version.v, content.selectedRelease.v)}" href="#" ng-click="changeVersion(version.v, version.n)" title="">
+								2.0 SPS 00
+								<!-- ngIf: shouldAddPdfIcon(version.v, content.selectedRelease.l, content.selectedRelease.state) -->
+						</a><!-- end ngRepeat: version in content.versions --><a ng-repeat="version in content.versions" class="tile ng-binding ng-scope" role="menuitem" ng-class="{'active' : checkActive(version.v, content.selectedRelease.v)}" href="#" ng-click="changeVersion(version.v, version.n)" title="">
+								1.0 SPS 12
+								<!-- ngIf: shouldAddPdfIcon(version.v, content.selectedRelease.l, content.selectedRelease.state) -->
+						</a><!-- end ngRepeat: version in content.versions -->
+					</div>
+				</div> <!-- ngIf: content.versionSelector != 'none' --><br ng-if="content.versionSelector != 'none'" class="ng-scope"><!-- end ngIf: content.versionSelector != 'none' -->
+
+				<!-- Language selector -->
+				<div class="metadata-selector ng-hide only-one" cpmenu="" role="menuitem" aria-haspopup="false" aria-expanded="false" ng-attr-aria-haspopup="{{ content.languages.length &lt; 2 &amp;&amp; 'false' || 'true' }}" ng-class="{'only-one': content.languages.length &lt; 2}" ng-show="showLanguageSelector" style="">
+					<button class="menu-trigger ng-binding">Language: <span class="ng-binding">English (United States of America)</span></button>
+					<div class="cp-menu targetmenu" role="menu" aria-hidden="true">
+						<!-- ngRepeat: language in content.languages | sortLangsViewer:secondaryLanguages track by $index --><a ng-repeat="language in content.languages | sortLangsViewer:secondaryLanguages track by $index" class="tile ng-binding ng-scope active" role="menuitem" style="direction: ltr;" ng-class="{'active' : checkActive(language, content.selectedRelease.l)}" href="#" ng-click="changeLanguage(language)" title="">
+								English (United States of America)
+								<!-- ngIf: shouldAddPdfIcon(content.selectedRelease.v, language, content.selectedRelease.state) -->
+						</a><!-- end ngRepeat: language in content.languages | sortLangsViewer:secondaryLanguages track by $index -->
+						<div role="separator" ng-show="!checkLanguageNew(getTwoDigitPrefLang())" class="ng-hide"></div>
+						<!-- <p 
+							class="note notewarning"
+							ng-show="!checkLanguageNew(getTwoDigitPrefLang())"
+							>{{ 'THIS_CONTENT_NOT_IN_LANGUAGE' | translate }}</p>-->
+					</div>
+				</div> <!-- ngIf: showLanguageSelector -->
+
+				<!-- State selector -->
+				<!-- ngIf: showStateSelector -->
+				
+				<!-- ngRepeat: release in data.releases | filter: matchTrimmedStrings(pageService.deliverable.title) --><div ng-show="data.releases.length == 1" class="pdf-download-box ng-scope" ng-repeat="release in data.releases | filter: matchTrimmedStrings(pageService.deliverable.title)" style="">
+			
+					<button class="motion-button ng-scope" ng-controller="ViewerDownloadCtrl" id="download-deliverable-20431909" ng-click="data.selectedRelease = release; download();">
+						<span class="text ng-binding"><span class="pre-icon"></span>Download PDF</span>
+						<span class="hoverboxes"><span class="part1"></span><span class="part2"></span><span class="part3"></span>
+					</span></button>
+				
+				</div><!-- end ngRepeat: release in data.releases | filter: matchTrimmedStrings(pageService.deliverable.title) -->
+				
+				<div ng-show="data.releases.length &gt; 1" class="pdf-download-box ng-hide">
+			
+					<div id="dropdownMenuDownloads" class="download-menu" cpmenu="" role="menuitem" aria-haspopup="true" aria-expanded="false">
+						<button class="motion-button menu-trigger">
+							<span class="text"><span class="pre-icon"></span>Download options</span>
+							<span class="hoverboxes"><span class="part1"></span><span class="part2"></span><span class="part3"></span>
+						</span></button>
+						<div class="cp-menu targetmenu" role="menu" aria-hidden="true">
+							<!-- ngRepeat: release in data.releases | filter: matchTrimmedStrings(pageService.deliverable.title) --><a ng-repeat="release in data.releases | filter: matchTrimmedStrings(pageService.deliverable.title)" ng-controller="ViewerDownloadCtrl" id="download-deliverable-20431909" class="tile ng-scope ng-binding" role="menuitem" ng-click="data.selectedRelease = release; download();" style=""><span class="pre-icon ng-binding"></span>Download PDF</a><!-- end ngRepeat: release in data.releases | filter: matchTrimmedStrings(pageService.deliverable.title) -->
+						</div>
+					</div>
+				
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+<div id="cp-main" ng-class="{
+		'comments': tab.comments.isopen || tab.customPdf.isopen &amp;&amp; !pdfRestricted,
+		'search': tab.search.isopen,
+		'feedback': tab.feedback.isopen,
+		'info': tab.info.isopen,
+		'fontsize': tab.fontsize.isopen,
+		'share': tab.share.isopen,
+		'download': tab.download.isopen,
+		'filtering': tab.filtering.isopen
+	}">
+
+<!-- TOC -->
+
+	<div id="toc-container" sidebar="" useplaceholder="false" style="height: calc(-154.5px + 100vh); position: absolute;">         
+		<div class="side-widget-title">
+			<h1 class="ng-binding">Table of Contents</h1>
+
+			<div class="side-widget-actions">
+				<button id="toc-contract-all" title="Collapse all" tabindex="0" ng-click="collapseToc()">
+				</button>
+				
+				<button id="toc-expand-all" title="Expand all" tabindex="0" ng-click="expandToc()">
+				</button>
+				
+				<button id="toc-hide-show" title="Show/Hide Table of Contents" tabindex="0" ng-click="toggleToc()">
+				</button>
+			</div>
+		</div>
+
+		<div id="toc" class="cp-toc" dir="ltr">
+           	<treecontrol class="tree-light ng-isolate-scope" tree-model="pageService.treeFamily" expanded-nodes="content.expandedNodes" options="treeOptions" on-selection="showSelected(node)" selected-node="content.selectedNode"><div class="ng-scope"><!-- ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)" style=""><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/b4b0eec1968f41a099c828a4a6c8ca0f.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/b4b0eec1968f41a099c828a4a6c8ca0f.html"><span ng-bind="node.t" class="ng-binding">SAP HANA SQL and System Views Reference</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/f327b70cae564c53a766367a8aad0164.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/f327b70cae564c53a766367a8aad0164.html"><span ng-bind="node.t" class="ng-binding">Introduction</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-expanded" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)" style=""><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed ng-hide"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20ff532c751910148657c32fe3431a9f.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20ff532c751910148657c32fe3431a9f.html"><span ng-bind="node.t" class="ng-binding">SQL Reference</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --><treeitem ng-if="nodeExpanded()" class="ng-scope"><div class="ng-scope"><!-- ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/209e0cde751910149114be53649a1fb7.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/209e0cde751910149114be53649a1fb7.html"><span ng-bind="node.t" class="ng-binding">Notation</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/209f5020751910148fd8fe88aa4d79d9.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/209f5020751910148fd8fe88aa4d79d9.html"><span ng-bind="node.t" class="ng-binding">Introduction to SQL</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-collapsed" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a1569875191014b507cf392724b7eb.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a1569875191014b507cf392724b7eb.html"><span ng-bind="node.t" class="ng-binding">Data Types</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/28bcd6af3eb6437892719f7c27a8a285.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/28bcd6af3eb6437892719f7c27a8a285.html"><span ng-bind="node.t" class="ng-binding">Reserved Words</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a380977519101494ceddd944e87527.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a380977519101494ceddd944e87527.html"><span ng-bind="node.t" class="ng-binding">Operators</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a4389775191014b5a6bf2ccc0df2ed.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a4389775191014b5a6bf2ccc0df2ed.html"><span ng-bind="node.t" class="ng-binding">Expressions</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-collapsed" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a2ab29751910148de0fe7189c330bc.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a2ab29751910148de0fe7189c330bc.html"><span ng-bind="node.t" class="ng-binding">Predicates</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-expanded" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed ng-hide"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label  tree-selected" ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a61f29751910149f99f0300dd95cd9.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a61f29751910149f99f0300dd95cd9.html"><span ng-bind="node.t" class="ng-binding">SQL Functions</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --><treeitem ng-if="nodeExpanded()" class="ng-scope"><div class="ng-scope"><!-- ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-collapsed" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/f12b86a6284c4aeeb449e57eb5dd3ebd.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/f12b86a6284c4aeeb449e57eb5dd3ebd.html"><span ng-bind="node.t" class="ng-binding">Alphabetical List Of Functions</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/6fff7f0ae9184d1db47a25791545a1b6.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/6fff7f0ae9184d1db47a25791545a1b6.html"><span ng-bind="node.t" class="ng-binding">Aggregate Functions</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/e32b3b4076244f63825091adeaba6299.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/e32b3b4076244f63825091adeaba6299.html"><span ng-bind="node.t" class="ng-binding">Array Functions</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/209ddefe75191014ac249bf78ba2a1e9.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/209ddefe75191014ac249bf78ba2a1e9.html"><span ng-bind="node.t" class="ng-binding">Data Type Conversion Functions</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/209f228975191014baed94f1b69693ae.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/209f228975191014baed94f1b69693ae.html"><span ng-bind="node.t" class="ng-binding">Datetime Functions</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a5f0de75191014963fa46cd679166d.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a5f0de75191014963fa46cd679166d.html"><span ng-bind="node.t" class="ng-binding">Fulltext Functions</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/2969da89b87f4abd85fd0b5f9f5bc395.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/2969da89b87f4abd85fd0b5f9f5bc395.html"><span ng-bind="node.t" class="ng-binding">Hierarchy Functions</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/5848028bcd364d9aa0706ae1d7ab4184.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/5848028bcd364d9aa0706ae1d7ab4184.html"><span ng-bind="node.t" class="ng-binding">JSON Functions</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a465cd75191014abacf163b404e930.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a465cd75191014abacf163b404e930.html"><span ng-bind="node.t" class="ng-binding">Miscellaneous Functions</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a190b975191014b769eafa93453d3a.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a190b975191014b769eafa93453d3a.html"><span ng-bind="node.t" class="ng-binding">Numeric Functions</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/2dea02fb9feb451080a8c2ee573a88f9.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/2dea02fb9feb451080a8c2ee573a88f9.html"><span ng-bind="node.t" class="ng-binding">Series Data Functions</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a24d4b75191014afc5ac3b997d3ce2.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a24d4b75191014afc5ac3b997d3ce2.html"><span ng-bind="node.t" class="ng-binding">String Functions</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/287e6e06fd69494488d71863c3e49285.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/287e6e06fd69494488d71863c3e49285.html"><span ng-bind="node.t" class="ng-binding">Security Functions</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-collapsed" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a353327519101495dfd0a87060a0d3.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a353327519101495dfd0a87060a0d3.html"><span ng-bind="node.t" class="ng-binding">Window Functions</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --></div></treeitem><!-- end ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-collapsed" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a6791f751910148d2bfe3814192a01.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a6791f751910148d2bfe3814192a01.html"><span ng-bind="node.t" class="ng-binding">SQL Statements</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a760537519101497e3cfe07b348f3c.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a760537519101497e3cfe07b348f3c.html"><span ng-bind="node.t" class="ng-binding">System Limitations</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a78d3275191014b41bae7c4a46d835.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a78d3275191014b41bae7c4a46d835.html"><span ng-bind="node.t" class="ng-binding">SQL Error Codes</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --></div></treeitem><!-- end ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-collapsed" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)" style=""><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/ccc8b64069104612871be513c9bb7d01.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/ccc8b64069104612871be513c9bb7d01.html"><span ng-bind="node.t" class="ng-binding">SQL Reference for SAP HANA Options</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-collapsed" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20cbb10c75191014b47ba845bfe499fe.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20cbb10c75191014b47ba845bfe499fe.html"><span ng-bind="node.t" class="ng-binding">System Views Reference</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-collapsed" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/108da979c1e641cbb14ff108b7f01509.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/108da979c1e641cbb14ff108b7f01509.html"><span ng-bind="node.t" class="ng-binding">System Views Reference for SAP HANA Options</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --><div class="chapter ng-scope tree-leaf" ng-repeat="node in node.c | filter:filterExpression:filterComparator " ng-class="headClass(node)"><div class="chaptertitleortopichead tree-line chaptertitle" ng-class="isTopicHead(node)" ng-click="node.u ? angular.noop() : selectNodeHead(node)"><div class="collapseicon tree-branch-head" ng-click="node.u ? selectNodeHead(node) : angular.noop()"><span ng-show="!expandedNodesMap[this.$id]" class="cp-collapsed"></span><span ng-show="expandedNodesMap[this.$id]" class="cp-expanded ng-hide"></span></div><div class="emptycollapseicon tree-leaf-head "></div><div class="topictitle tree-label " ng-class="selectedClass()" ng-click="node.u ? selectNodeLabel(node) : angular.noop()" tree-transclude="">
+
+
+               <a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/5796191725b24205a872b95f11883a5a.html" ng-click="$event.preventDefault()" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/5796191725b24205a872b95f11883a5a.html"><span ng-bind="node.t" class="ng-binding">Important Disclaimer for Features in SAP HANA Platform, Options and Capabilities</span></a>
+
+           	</div><div ng-show="node.m &amp;&amp; !featureFlag('navrefsearch')" class="o2oicon ng-hide" title="Related document"></div></div><div class="subchaptersrow tree-line"><div class="collapseiconempty"></div><div class="subchapterscell tree-line"><!-- ngIf: nodeExpanded() --></div></div></div><!-- end ngRepeat: node in node.c | filter:filterExpression:filterComparator --></div></treecontrol>
+		</div>
+	</div>
+
+<!-- **** Right Pane and Widgets ACCORDION **** -->
+
+<div id="rw-container" sidebar="" useplaceholder="false" ng-controller="RwCtrl" class="ng-scope" style="height: calc(-154.5px + 100vh); position: absolute;">
+	
+	<div class="actions">
+		
+		<div class="side-widget-title">
+			<div class="side-widget-actions-left">
+				<button title="Close Menu" tabindex="0" class="rw-hide" ng-click="rwShown.value = false">
+				</button>
+			</div>
+			<h1 class="ng-binding">Menu</h1>
+		</div>
+		
+		<!-- 
+		<div 
+			ng-if="tab.download.isopen == false && data.releases.length > 0"
+			class="action">
+			<button
+				title="{{ 'DOWNLOAD' | translate}}"
+				tabindex="0"
+				ng-click="changeTab('download')">
+				&#xe01a;
+				<label class="iconLabel">{{ 'DOWNLOAD' | translate}}</label>
+			</button>
+		</div>
+		-->
+		
+		<!-- ngIf: tab.filtering.isopen == false 
+				&& pageService.deliverable.filteringTokens -->
+
+		<!-- ngIf: tab.share.isopen == false --><div ng-if="tab.share.isopen == false" class="action ng-scope">
+			<button title="Share" tabindex="0" ng-click="changeTab('share')">
+				
+				<label class="iconLabel ng-binding">Share</label>
+			</button>
+		</div><!-- end ngIf: tab.share.isopen == false -->
+		
+		<div class="action">
+			<button title="Print" tabindex="0" ng-click="print()">
+				
+				<label class="iconLabel ng-binding">Print</label>
+			</button>
+		</div>
+		
+		<!-- ngIf: tab.fontsize.isopen == false --><div ng-if="tab.fontsize.isopen == false" class="action ng-scope">
+			<button title="Change font size" tabindex="0" ng-click="changeTab('fontsize')">
+				Aa
+				<label class="iconLabel ng-binding">Change font size</label>
+			</button>
+		</div><!-- end ngIf: tab.fontsize.isopen == false -->
+		
+		<!-- ngIf: is_employee && tab.info.isopen == false -->
+		
+		<!-- ngIf: tab.feedback.isopen == false --><div ng-if="tab.feedback.isopen == false" class="action ng-scope">
+
+			<button title="Feedback" tabindex="0" ng-click="changeTab('feedback')">
+				
+				<label class="iconLabel ng-binding">Feedback</label>
+			</button>
+
+		</div><!-- end ngIf: tab.feedback.isopen == false -->
+		
+		<!-- ngIf: user.review == 1 && tab.comments.isopen == false -->
+		
+		<!-- ngIf: pane.showSearch && tab.search.isopen == false -->
+		
+		<div class="action ng-hide" ng-show="!pdfRestricted" ng-click="changeTab('customPdf')">
+
+			<button title="Custom PDF" tabindex="0">
+				
+				<label class="iconLabel">Custom PDF</label>
+			</button>
+		</div>
+	
+	</div> <!-- Closes rw actions -->
+	
+	<!-- ngIf: tab.fontsize.isopen -->
+
+	<!-- ngIf: tab.share.isopen -->
+	
+	<!-- 
+	<div class="rw-section" ng-if="tab.download.isopen">
+		<div class="side-widget-title">
+			<div class="side-widget-actions-left">
+				<button 
+					class="rw-hide" 
+					title="{{ 'HIDEMENU' | translate }}" 
+					tabindex="0" 
+					ng-click="tab.download.isopen = false; rwShown.value = false">
+					</button>
+			</div>
+			<h1>{{ 'DOWNLOAD' | translate }}</h1>
+			<div class="side-widget-actions">
+				<button 
+					class="rw-close-tab" 
+					title="{{ 'BACKTOMENU' | translate }}" 
+					ng-click="tab.download.isopen = false">&#xe03e;
+				</button>
+			</div>
+		</div>
+		<div id="rw" 
+			ng-if="data.releases.length > 0">
+			
+			<div class="centered-button-container" ng-repeat="release in data.releases | filter: matchTrimmedStrings(pageService.deliverable.title)" >
+			
+				<button class="motion-button" ng-controller="ViewerDownloadCtrl" id="download-deliverable-{{release.id}}" ng-click="data.selectedRelease = release; download();">
+					<span class="text">{{ translateTranstype(release.transtype) }}</span>
+					<span class="hoverboxes"><span class="part1"></span><span class="part2"></span><span class="part3"></span>
+				</button>
+				
+			</div>
+
+		</div>
+	</div>
+	-->
+
+	<!-- ngIf: tab.filtering.isopen -->
+
+	<div class="rw-section ng-hide" ng-show="user.review == 1 &amp;&amp; tab.comments.isopen">
+		<div class="side-widget-title">
+			<div class="side-widget-actions-left">
+				<button class="rw-hide" title="Close Menu" tabindex="0" ng-click="tab.comments.isopen = false; rwShown.value = false">
+				</button>
+			</div>
+			<h1 class="ng-binding">Comments</h1>
+			<div class="side-widget-actions">
+				<button class="rw-close-tab" title="Go Back to the Menu" tabindex="0" ng-click="tab.comments.isopen = false">
+				</button>
+			</div>
+		</div>
+		<div id="rw">
+			<cp-comments ng-controller="PageCommentCtrl" class="ng-scope"><div class="rw-content ng-isolate-scope" id="PageCommentCtrl" comments="">
+<!-- 	<div class="action-item">{{ 'COMMENTS' | translate }}</div> -->
+	<div class="loading-animation ng-hide" ng-show="commentsLoading" style=""><div class="i"></div><div class="ii"></div><div class="iii"></div></div>
+		<div class="right-widget-actions comments-cog" ng-hide="commentsLoading">
+			<span uib-dropdown="" role="presentation" class="dropdown"> 
+					<a id="comments-gear" href="" uib-dropdown-toggle="" class="dropdown-toggle" data-toggle="dropdown" role="button" area-expanded="false" ng-click="commentpane.updateCount();" aria-haspopup="true" aria-expanded="false"></a>
+					<ul class="uib-dropdown-menu dropdown-menu comment-menu" role="menu" aria-labelledby="comments-gear" ng-click="$event.stopPropagation();">
+						<li role="menuitem"><a href="" ng-click="show = true; expandAll(true);" class="ng-binding">Expand all</a></li>
+						<li role="menuitem"><a href="" ng-click="show = false; expandAll(false);" class="ng-binding">Collapse all</a></li>
+						<li role="menuitem">
+						<a href="" class="filterby ng-binding" ng-click="commentpane.filterByStatus = !commentpane.filterByStatus;">
+                        	<span class="gear-menu-dropdown">
+                        		<span class="gear-menu-collapsed" ng-show="!commentpane.filterByStatus"></span>
+                        		<span class="gear-menu-expanded ng-hide" ng-show="commentpane.filterByStatus" style=""></span>
+                        	</span>
+                        	Filter by Status</a>
+							<div class="filtermenu statusmenu ng-hide" ng-show="commentpane.filterByStatus" style="">
+								
+								<label class="checkbox-label">
+									<input ng-model="commentpane.open" class="ng-pristine ng-untouched ng-valid" checked="checked" type="checkbox">
+									<span dir="ltr" class="ng-binding">Open (<span ng-bind="commentpane.opencomments" class="ng-binding"></span>)</span>
+								</label>
+								
+								<label class="checkbox-label">
+									<input ng-model="commentpane.resolved" class="ng-pristine ng-untouched ng-valid" checked="checked" type="checkbox">
+									<span dir="ltr" class="ng-binding">Resolved (<span ng-bind="commentpane.resolvedcomments" class="ng-binding"></span>)</span>
+								</label>
+								
+							</div>
+						</li>
+						<li role="menuitem filterby">
+						<a href="" class="filterby ng-binding" ng-click="commentpane.filterByType = !commentpane.filterByType;">
+							<span class="gear-menu-dropdown">
+								<span class="gear-menu-collapsed" ng-show="!commentpane.filterByType"></span>
+								<span class="gear-menu-expanded ng-hide" ng-show="commentpane.filterByType" style=""></span>
+							</span>
+							Filter by Type</a>
+							<div class="filtermenu typemenu ng-hide" ng-show="commentpane.filterByType" style="">
+								
+								<label class="checkbox-label">
+									<input ng-model="commentpane.inline" class="ng-pristine ng-untouched ng-valid" checked="checked" type="checkbox">
+									<span dir="ltr" class="ng-binding">Inline (<span ng-bind="commentpane.inlinecomments" class="ng-binding"></span>)</span>
+								</label>
+								
+								<label class="checkbox-label">
+									<input ng-model="commentpane.general" class="ng-pristine ng-untouched ng-valid" checked="checked" type="checkbox">
+									<span dir="ltr" class="ng-binding">General (<span ng-bind="commentpane.generalcomments" class="ng-binding"></span>)</span>
+								</label>
+								
+								<label class="checkbox-label">
+									<input ng-model="commentpane.orphan" class="ng-pristine ng-untouched ng-valid" checked="checked" type="checkbox">
+									<span dir="ltr" class="ng-binding">Orphan (<span ng-bind="commentpane.orphancomments" class="ng-binding"></span>)</span>
+								</label>
+								
+							</div>
+						</li>
+						<li role="menuitem">
+							
+							<label class="checkbox-label"> 
+								<input ng-model="commentpane.show" class="ng-pristine ng-untouched ng-valid" type="checkbox">
+								<span dir="ltr" class="ng-binding">Show Hidden (<span ng-bind="commentpane.hiddencomments" class="ng-binding"></span>)</span>
+							</label>
+							
+						</li>
+						<li role="menuitem" ng-controller="ModalSubscribeCtrl" class="ng-scope"><a href="" ng-click="subscribe()" class="ng-binding">Subscribe to Guide</a></li>
+						<li role="menuitem" ng-show="viewInDashboard" class="ng-hide" style=""><a target="_blank" ng-href="">View All Comments</a></li>
+					</ul>
+				</span>
+			</div>
+
+
+	<div class="comment-count">
+	<div translate="SHOWING" translate-value-visible="0" translate-value-all="" ng-hide="commentsLoading" class="ng-scope">Showing 0 of </div> <a class="link ng-hide" ng-hide="!viewInDashboard || commentsLoading || pageService.data.comments.length == 0" target="_blank" ng-href="" style="">View in Dashboard</a>
+	</div>
+
+	<!-- Add Comment Box -->
+	
+	<cp-add-comment><form ng-submit="addComment(pageService.data.comments, initial)" ng-hide="commentsLoading" class="cp-add-comment ng-pristine ng-valid">
+    <div class="form-group">
+        <textarea msd-elastic="\n" class="form-control comment-box ng-pristine ng-untouched ng-valid" rows="4" placeholder="Enter a general comment here. 
+To enter a comment on a specific part of the text, select the text, then click the Edit icon." ng-model="initial.text" ng-trim="false" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 93px;"></textarea>
+ 		<button type="submit" class="btn btn-link pull-right text-entry-button ng-binding">Add</button>
+	    <button ng-click="clearComment()" class="btn btn-link pull-left text-entry-button ng-binding">Clear</button>
+    </div>
+</form></cp-add-comment>
+	
+	<!-- Comment List -->
+	
+	<!-- ngRepeat: comment in filteredcomments = ( pageService.data.comments 
+		| filterComments: commentpane.open: commentpane.resolved: commentpane.inline: commentpane.general: commentpane.orphan: commentpane.show
+		| inlineOrder | orderBy: [sortComments, 'inlineIndex', 'created_on'] ) -->
+	
+	<br>
+	</div>
+</cp-comments>
+		</div>
+	</div>
+	
+	<!-- ngIf: tab.info.isopen -->
+	
+	<!-- ngIf: tab.feedback.isopen -->
+	
+	<!-- ngIf: pane.showSearch && tab.search.isopen -->
+
+	<!-- ngIf: tab.customPdf.isopen -->
+</div> <!-- closes rw-container -->
+            
+            <!-- **** Middle Pane - Content **** -->   
+         
+	<div id="topic">
+		<div id="breadcrumbs" bclength="">
+			<span><a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US" ng-click="location.path(homecrumb, false)" class="ng-binding" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US">Home</a><span class="breadcrumb-divider">/</span></span><!-- ngRepeat: item in pageContent.data.breadcrumb.slice(1).reverse() --><span ng-repeat="item in pageContent.data.breadcrumb.slice(1).reverse()" class="ng-scope" style=""><a ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20ff532c751910148657c32fe3431a9f.html" ng-click="item.u &amp;&amp; showSelected(item);" title="SQL Reference" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20ff532c751910148657c32fe3431a9f.html"><span class="ng-binding" style="max-width: none;">SQL Reference</span></a><span class="breadcrumb-divider">/</span></span><!-- end ngRepeat: item in pageContent.data.breadcrumb.slice(1).reverse() -->
+		
+		</div> 
+
+                        <div id="page" ng-class="{ 'small-font': currentFontSize.value == 'small',
+										'medium-font': currentFontSize.value == 'medium',
+										'large-font': currentFontSize.value == 'large'
+
+                        			 }" class="small-font">
+                           <div id="topic-actions-mobile">
+
+                               <button class="left-link ng-binding" title="See Table of Contents" tabindex="2" ng-click="tocHidden.value = !tocHidden.value">
+                                   <span class="icon"></span>
+                                   Table of Contents
+                               </button>
+
+
+                               <button class="right-link ng-binding" title="See Menu Options" tabindex="2" ng-click="rwShown.value = !rwShown.value;">
+                                  
+                                   Menu
+                                   <span class="icon"></span>
+                               </button>
+                            </div>
+						<!-- title="{{ topics.previous.t }}" <-- old title in case changes are to be made back -->
+                            <div id="next-and-prev">
+	                            <!-- ngIf: topics.previous.t --><a id="toc-prev" ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20f952437519101487edc3d9aba84238.html" ng-click="$event.preventDefault();" sglclick="showSelected(topics.previous);" title="Previous" ng-if="topics.previous.t" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20f952437519101487edc3d9aba84238.html" style=""><span class="np-label ng-binding">Previous</span></a><!-- end ngIf: topics.previous.t -->
+
+								
+								<!-- ngIf: topics.next.t --><a id="toc-next" ng-href="/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/f12b86a6284c4aeeb449e57eb5dd3ebd.html" ng-click="$event.preventDefault();" sglclick="showSelected(topics.next);" title="Next" ng-if="topics.next.t" class="ng-scope" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/f12b86a6284c4aeeb449e57eb5dd3ebd.html"><span class="np-label ng-binding">Next</span></a><!-- end ngIf: topics.next.t -->
+							</div>
+							
+							<div class="loading-animation ng-hide" ng-show="pageLoading" style=""><div class="i"></div><div class="ii"></div><div class="iii"></div></div>
+                        	
+                        	<div class="content-body ng-isolate-scope" annotator="" control="annotatorControl" accessor="vm.accessor">
+								<div id="print-target">
+									<div class="target-html" id="cp-target-html" dir="ltr">
+
+   
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>SQL Functions</title>
+      <link rel="icon" href="https://help.sap.com/viewer/themes/sap-light/img/favicon.ico" type="image/x-icon">
+      <link rel="shortcut icon" href="https://help.sap.com/viewer/themes/sap-light/img/favicon.ico">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="abstract" content="">
+      
+      <meta name="description" content="">
+      
+      <meta name="keywords" content="SQL Functions">
+      <script type="text/javascript">var d4p = {"relativePath":'',"dev":false,"debug":false,"draft":false,"nextTopicHref":"f12b86a6284c4aeeb449e57eb5dd3ebd.html","previousTopicHref":"20f952437519101487edc3d9aba84238.html"}</script>
+      <link rel="stylesheet" type="text/css" media="screen, projection" href="SQL%20hana%20functions_files/style.htm">
+      <script type="text/javascript">
+      
+        d4p.cssGridPath = d4p.dev ? 'html5-themes/modules/960-Responsive-Grid/css/' : 'themes/dita-d4p-classic/css/';
+        var ADAPT_CONFIG = {
+          // Where is your CSS?
+          path: d4p.relativePath + d4p.cssGridPath,
+
+          // false = Only run once, when page first loads.
+          // true = Change on window resize and page tilt.
+          dynamic: true,
+
+          // Optional callback... myCallback(i, width)
+          callback: doc_resize,
+
+          // First range entry is the minimum.
+          // Last range entry is the maximum.
+          // Separate ranges by "to" keyword.
+          range: [
+             // small (size-0)
+            '0px    to 760px  =',
+             // medium (size-1, size-2)
+            '760px  to 980px  = ',
+            '980px  to 1270px = ',
+             // large (size-3, size-5)
+            '1270px to 1600px = ',
+            '1600px to 1940px = ',
+             // extra large (size-6)
+            '1940px to 2540px = ',
+            '2540px           = '
+          ]
+        };
+
+        function doc_resize(i, width)
+        {
+          d4p.setBodyClassfunction(i, width);
+        }
+
+
+        
+      </script>
+      <script type="text/javascript" src="SQL%20hana%20functions_files/script.htm"></script>
+      
+      		<!--[if lt IE 9]>
+      			<script>
+      			  var e = ("abbr,article,aside,audio,canvas,datalist,details," +
+      			    "figure,footer,header,hgroup,mark,menu,meter,nav,output," +
+      			    "progress,section,time,video").split(',');
+      			  for (var i = 0; i < e.length; i++) {
+      			    document.createElement(e[i]);
+      			  }
+      			</script>
+      		<![endif]-->
+      
+      <script>
+      function addLoadEvent(func) {
+      var oldonload = window.onload;
+      if (typeof window.onload != 'function') {
+      window.onload = func;
+      } else {
+      window.onload = function() {
+      if (oldonload) {
+      oldonload();
+      }
+      func();
+      }
+      }
+      }
+      
+      addLoadEvent(function() { 
+      if ($('#local-navigation').length) {
+      $('#local-navigation').navigation();
+      }
+      
+      
+      });
+      
+      </script>
+      
+   
+      <div id="d4h5-main-container" class="container_12" role="application">
+         
+         
+         <div id="d4h5-section-container" class="grid_12">
+            <div id="d4h5-main-content" class="grid_8 alpha omega">
+               <section>
+                  <div class="page reference  - topic-topic       reference-reference " id="loio20a61f29751910149f99f0300dd95cd9">
+                     
+                     <h1 class="title topictitle1">SQL Functions</h1>
+                     
+                     <div class="body refbody">
+                        <p class="shortdesc"></p>
+                        
+                        
+                        <div class="section" id="loio20a61f29751910149f99f0300dd95cd9___gsql_functions_1sql_functions_introduction">
+                           <section class="section" type="Introduction">
+                              <h2 class="section_title">Introduction</h2>
+                              
+                              
+                              <div class="p">This chapter describes SQL Functions that are provided by SAP HANA database.
+                                 <aside class="note note  insertion"><span class="title">Note</span> 
+                                    
+                                    <p class="p">Analytic Functions can be found in the sections Aggregate Functions and Window
+                                       Functions.
+                                    </p>
+                                    
+                                    
+                                 </aside>
+                                 
+                              </div>
+                              
+                              
+                           </section>
+                        </div>
+                        
+                        
+                     </div>
+                     
+                     <div class="related-links"> <br>
+                        
+                        <ul class="ullinks">
+                           
+                           <div><strong><a class="link" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/f12b86a6284c4aeeb449e57eb5dd3ebd.html">Alphabetical List Of Functions</a></strong><br>
+                              
+                           </div>
+                           
+                           <div><strong><a class="link" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/6fff7f0ae9184d1db47a25791545a1b6.html">Aggregate Functions</a></strong><br>
+                              
+                              <div class="linkdesc">Aggregate functions are analytic functions that calculate an aggregate value based on a
+                                 		group of rows.
+                              </div>
+                           </div>
+                           
+                           <div><strong><a class="link" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/e32b3b4076244f63825091adeaba6299.html">Array Functions</a></strong><br>
+                              
+                              <div class="linkdesc">Array functions take arrays as input.</div>
+                           </div>
+                           
+                           <div><strong><a class="link" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/209ddefe75191014ac249bf78ba2a1e9.html">Data Type Conversion Functions</a></strong><br>
+                              
+                              <div class="linkdesc">Data type conversion functions convert data from one data type to another data
+                                 type.
+                              </div>
+                           </div>
+                           
+                           <div><strong><a class="link" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/209f228975191014baed94f1b69693ae.html">Datetime Functions</a></strong><br>
+                              
+                              <div class="linkdesc">Date and time functions perform operations on date and time data types or return date
+                                 or time information.
+                              </div>
+                           </div>
+                           
+                           <div><strong><a class="link" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a5f0de75191014963fa46cd679166d.html">Fulltext Functions</a></strong><br>
+                              
+                              <div class="linkdesc">Fulltext functions perform operations on data that has a fulltext index.</div>
+                           </div>
+                           
+                           <div><strong><a class="link" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/2969da89b87f4abd85fd0b5f9f5bc395.html">Hierarchy Functions</a></strong><br>
+                              
+                              <div class="linkdesc">Hierarchy functions allow you to work with hierarchical data such as tables with rows
+                                 		arranged in a tree or directed graph.
+                              </div>
+                           </div>
+                           
+                           <div><strong><a class="link" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/5848028bcd364d9aa0706ae1d7ab4184.html">JSON Functions</a></strong><br>
+                              
+                              <div class="linkdesc">JSON functions are functions that return or operate on JSON data.</div>
+                           </div>
+                           
+                           <div><strong><a class="link" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a465cd75191014abacf163b404e930.html">Miscellaneous Functions</a></strong><br>
+                              
+                              <div class="linkdesc">SAP HANA supports many functions that return system values and
+                                 perform various operations on values, expressions, and return values of
+                                 other functions.
+                              </div>
+                           </div>
+                           
+                           <div><strong><a class="link" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a190b975191014b769eafa93453d3a.html">Numeric Functions</a></strong><br>
+                              
+                              <div class="linkdesc">Numeric functions perform mathematical operations on numerical data types or return
+                                 numeric information.
+                              </div>
+                           </div>
+                           
+                           <div><strong><a class="link" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/2dea02fb9feb451080a8c2ee573a88f9.html">Series Data Functions</a></strong><br>
+                              
+                              <div class="linkdesc">Series data functions provide special functionality for series data and series
+                                 		tables.
+                              </div>
+                           </div>
+                           
+                           <div><strong><a class="link" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a24d4b75191014afc5ac3b997d3ce2.html">String Functions</a></strong><br>
+                              
+                              <div class="linkdesc">String functions perform extraction and manipulation on strings, or return information
+                                 about strings.
+                              </div>
+                           </div>
+                           
+                           <div><strong><a class="link" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/287e6e06fd69494488d71863c3e49285.html">Security Functions</a></strong><br>
+                              
+                              <div class="linkdesc">Security functions provide special functionality for security purposes.</div>
+                           </div>
+                           
+                           <div><strong><a class="link" href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a353327519101495dfd0a87060a0d3.html">Window Functions</a></strong><br>
+                              
+                              <div class="linkdesc">Window functions allow you to perform analytic operations over a set of input
+                                 rows.
+                              </div>
+                           </div>
+                           
+                        </ul>
+                        
+                        
+                     </div>
+                  </div>
+                  
+               </section>
+               <div class="clear"></div>
+               
+            </div>
+         </div>
+      </div>
+      <div class="clearfix"></div>
+      <div id="footer-container" class="grid_12">
+         
+         
+         
+      </div>
+   
+</div>
+
+
+								</div>
+								<div class="target-script"></div>
+                        	</div>
+                        </div>   
+                        
+                               
+                </div>
+                
+        </div> <!-- closes #cp-main -->
+</div>
+</ui-view></div>
+	        </div>
+        <cp-footer><div id="cp-footer" ng-class="{dark: dark}">
+	<div class="block-1280px">
+		<div class="footer-links">
+			<div class="footer-section">
+				<h1 class="ng-binding">Legal</h1>
+				<!-- <h2 ng-if="checkCopyrightPage() || checkDisclaimerPage()">{{ 'LEGAL_THIS_DOC' | translate }}</h2> -->
+				<!-- <p ng-if="checkCopyrightPage()"><a ng-href="{{ copyrightUrl() }}" target="_self">{{ 'COPYRIGHT' | translate }}</a></p> -->
+				<!-- <p ng-if="checkDisclaimerPage()"><a ng-href="{{ disclaimerUrl() }}" target="_self">{{ 'IMPORTANT_DISCLAIMER' | translate }}</a></p> -->
+				<!-- <h2 ng-if="checkCopyrightPage() || checkDisclaimerPage()">{{ 'LEGAL_GENERAL' | translate }}</h2> -->
+				<p><a target="_blank" ng-href="http://go.sap.com/about/legal/copyright.html" class="ng-binding" href="http://go.sap.com/about/legal/copyright.html">Copyright</a></p>
+				<p><a target="_blank" href="https://help.sap.com/viewer/disclaimer" class="ng-binding">Disclaimer</a></p>
+				<p><a target="_blank" href="https://help.sap.com/viewer/privacy" class="ng-binding">Privacy Statement</a></p>
+				<p><a target="_blank" ng-href="http://go.sap.com/corporate/en/legal/impressum.html" class="ng-binding" href="http://go.sap.com/corporate/en/legal/impressum.html">Impressum</a></p>
+				<p><a target="_blank" ng-href="http://www.sap.com/corporate/en/legal/terms-of-use.html" class="ng-binding" href="http://www.sap.com/corporate/en/legal/terms-of-use.html">Terms of Use</a></p>
+			</div>
+			<div class="footer-section">
+				<h1 class="ng-binding">SAP Help Portal Links</h1>
+				<p ng-hide="is_employee || is_admin" class=""><a target="_blank" href="https://help.sap.com/viewer/get-support">Need Assistance?</a></p>
+				<!-- ngIf: is_employee || is_admin -->
+				<!-- ngIf: is_employee || is_admin -->
+				<p ng-hide="is_employee || is_admin" class=""><a target="_blank" href="https://saphelp.hana.ondemand.com/system-status/" class="ng-binding">System Status</a></p>
+				<!-- <p><a target="_blank" href="https://support.sap.com/keys-systems-installations/keys.html">{{ 'REQUEST_LICENSE_KEYS' | translate }}</a></p>-->
+			</div>
+			<div class="footer-section">
+				<h1 class="ng-binding">More Links</h1>
+				<!-- <p><a target="_blank" href="https://go.sap.com">SAP Home</a></p>-->
+				<p><a target="_blank" href="http://www.sapterm.com/">SAP Terminology</a></p>
+				<p><a target="_blank" href="http://www.sap.com/support.html">SAP Support</a></p>
+				<p><a target="_blank" href="https://sap.com/community.html">SAP Community</a></p>
+				<p><a target="_blank" href="https://sap.com/developer.html">SAP Developer</a></p>
+				<p><a target="_blank" href="http://www.sap.com/training-certification.html">Training &amp; Certification</a></p>
+			</div>
+			<!-- <div class="footer-section">
+				<h1>{{ 'SAP_LINKS' | translate }}</h1>
+				<p><a target="_blank" href="http://go.sap.com">SAP Home</a></p>
+				<p><a target="_blank" href="https://support.sap.com/">SAP Support Portal</a></p>
+				<p><a target="_blank" href="https://scn.sap.com/">SAP Community Network (SCN)</a></p>
+			</div> -->
+		</div>
+		<div class="footer-section shareandfollow">
+			<h1 class="ng-binding">Share and follow</h1><a target="_blank" href="https://www.facebook.com/SAP" title="Facebook"><img src="SQL%20hana%20functions_files/facebook.svg"></a><a target="_blank" href="https://www.twitter.com/sap" title="Twitter"><img src="SQL%20hana%20functions_files/twitter.svg" title="Twitter"></a><a target="_blank" href="https://www.youtube.com/user/SAP" title="YouTube"><img src="SQL%20hana%20functions_files/youtube.svg" title="YouTube"></a><a target="_blank" href="https://www.linkedin.com/company/sap" title="LinkedIn"><img src="SQL%20hana%20functions_files/linkedin.svg" title="LinkedIn"></a><a target="_blank" href="https://plus.google.com/u/0/+SAP/" title="Google+"><img src="SQL%20hana%20functions_files/googleplus.svg" title="Google+"></a><a target="_blank" href="https://instagram.com/sap/" title="Instagram"><img src="SQL%20hana%20functions_files/instagram.svg" title="Instagram"></a><a target="_blank" href="http://www.slideshare.net/SAP" title="SlideShare"><img src="SQL%20hana%20functions_files/slideshare.svg" title="Slideshare"></a><a target="_blank" ng-href="mailto:?body=SAP Help Portal - SAP HANA Platform at: https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a61f29751910149f99f0300dd95cd9.html&amp;subject=Share: SAP Help Portal - SAP HANA Platform" title="E-Mail" href="mailto:?body=SAP%20Help%20Portal%20-%20SAP%20HANA%20Platform%20at:%20https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/2.0.02/en-US/20a61f29751910149f99f0300dd95cd9.html&amp;subject=Share:%20SAP%20Help%20Portal%20-%20SAP%20HANA%20Platform"><img src="SQL%20hana%20functions_files/email.svg"></a>
+		</div>
+		
+	</div>		
+		<!-- <div class="actions">
+			
+			<div class="action">
+				<a href="http://go.sap.com/corporate/en/legal/copyright.html">{{ 'COPYRIGHT' | translate }}</a>
+			</div>
+
+			<div class="action">
+				<a href="http://help.sap.com/disclaimer-full">{{ 'DISCLAIMER' | translate }}</a>			
+			</div>
+
+		</div>-->
+
+<!-- 			<div id="footer-share-follow"> -->
+
+<!-- 				<span class="caption">{{ 'SHAREFOLLOW' | translate }}</span> -->
+<!-- 				<img src="_build_938311c7a845691adeabc837/images/footer/facebook.svg" title="Facebook" /> -->
+<!-- 				<img src="_build_938311c7a845691adeabc837/images/footer/twitter.svg" title="Twitter" /> -->
+<!-- 				<img src="_build_938311c7a845691adeabc837/images/footer/youtube.svg" title="YouTube" /> -->
+<!-- 				<img src="_build_938311c7a845691adeabc837/images/footer/linkedin.svg" title="LinkedIn" /> -->
+<!-- 				<img src="_build_938311c7a845691adeabc837/images/footer/googleplus.svg" title="Google+" /> -->
+<!-- 				<img src="_build_938311c7a845691adeabc837/images/footer/instagram.svg" title="Instagram" /> -->
+<!-- 				<img src="_build_938311c7a845691adeabc837/images/footer/slideshare.svg" title="Slideshare" /> -->
+<!-- 				<img src="_build_938311c7a845691adeabc837/images/footer/email.svg" title="Email" /> -->
+
+<!-- 			</div> -->
+
+	
+</div></cp-footer>
+
+        <!-- DTM Footer Tag -->
+        <script> try{_satellite.pageBottom();}catch(e){console.log(e);} </script><script src="SQL%20hana%20functions_files/satellite-59449bb364746d56ee00b9c4.js"></script>
+    
+
+<div class="annotator-notice"></div><textarea aria-hidden="true" tabindex="-1" style="position: absolute; top: -999px; right: auto; bottom: auto;left: 0; overflow: hidden; -webkit-box-sizing: content-box;-moz-box-sizing: content-box; box-sizing: content-box;min-height: 0 !important; height: 0 !important; padding: 0;word-wrap: break-word; border: 0;font-family:&quot;Benton Sans&quot;, Arial, sans-serif;font-size:14px;font-weight:400;font-style:normal;letter-spacing:normal;line-height:20px;text-transform:none;word-spacing:0px;text-indent:0px;">
+</textarea><iframe sandbox="allow-scripts allow-same-origin" title="Adobe ID Syncing iFrame" id="destination_publishing_iframe_sap_0" name="destination_publishing_iframe_sap_0_name" style="display: none; width: 0px; height: 0px;" src="SQL%20hana%20functions_files/dest5.htm" class="aamIframeLoaded"></iframe><script type="text/javascript" defer="defer" async="" src="SQL%20hana%20functions_files/piwik.js"></script><script type="text/javascript" defer="defer" async="" src="SQL%20hana%20functions_files/piwik_plugin.js"></script></body></html>

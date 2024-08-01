@@ -1,0 +1,35 @@
+/*
+Theme Name:         Just-BI
+Theme URI:          http://bitbucket.org/mass_im/bedrock
+Description:        Handcrafted theme by Hike
+Version:            4.5.0
+Author:             Hike
+Author URI:         http://www.gohike.nl
+License:            GNU General Public License v2 or later
+License URI:        http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:        bedrock
+
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+*/
+
+/* ----------------------------------------------------------------------------
+
+  Unfortunately WordPress will require a style.css file
+  located in the theme's root folder for stuff to work.
+
+  However, we will not be using vanlilla CSS. We're using Sass.
+
+  Sass is a superset of CSS that adds in amazing features
+  such as variables, nested selectors and loops. It's also
+  the easiest way to customize Foundation.
+
+  All Sass files are located in the /scss folder.
+
+  Please read the README.md file before getting started. More info on how
+  to use Sass with Foundation can be found here:
+  http://foundation.zurb.com/docs/sass.html
+
+---------------------------------------------------------------------------- */

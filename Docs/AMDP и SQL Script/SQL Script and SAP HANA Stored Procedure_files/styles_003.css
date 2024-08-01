@@ -1,0 +1,239 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,500);
+
+#neuvoo-jobs {
+	font-family: "Open Sans";
+	font-size: 13px;
+	font-weight: 400;
+}
+
+.what-where{
+	height:22px;
+}
+
+#neuvoo-jobs .job-container {
+	position: relative;
+	max-width:512px;
+	padding: 13px 0px 13px 5px;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+}
+
+#neuvoo-jobs a {
+	border: 0px !important;
+	text-decoration: none;
+}
+
+
+
+#neuvoo-jobs .j-title a {
+	text-decoration: none;
+	font-size: 16px;
+	padding-bottom: 5px;
+	color: #0e40b2;
+	text-shadow: 0px 0px 0px #333;
+	text-transform: capitalize;
+}
+
+#neuvoo-jobs .j-title{
+  	text-overflow: ellipsis;
+  	height: 22px;
+  	white-space: nowrap;
+  	overflow: hidden;
+}
+
+#neuvoo-jobs .j-title a:visited {
+	color: #609;
+}
+
+#neuvoo-jobs .j-title a:hover {
+	text-decoration: underline;
+}
+
+#neuvoo-jobs .j-empname {
+	color: #D46500;
+	display: inline-block;
+	overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+  	height:22px;
+  	max-width:40%;
+}
+
+#neuvoo-jobs .j-empname .sep {
+	color: #444;
+}
+
+#neuvoo-jobs .j-info {
+	margin-top: 0px;
+	height: 22px;
+	overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+}
+
+#neuvoo-jobs .j-location {
+	display: inline-block;
+	color: #444;
+	white-space: nowrap;
+  	height:22px;
+  	max-width:35%;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+}
+
+#neuvoo-jobs .j-date {
+	text-align: left;
+	color: #808080;
+	display: inline-block;
+	white-space: nowrap;
+  	height:22px;
+  	max-width:25%;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+}
+
+#neuvoo-jobs .j-logo {
+	width: 50px;
+	border-radius: 3px;
+	border: solid 1px #ababab;
+	float: left;
+	margin-right: 15px;
+	margin-top: 2px;
+}
+
+#neuvoo-jobs .j-snippet {
+	color: #545454;
+	text-align: left;
+	text-overflow: initial !important;
+	white-space: normal !important;
+	overflow: hidden !important;
+	height: 54px;
+
+	line-height: 18px;
+	overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+}
+
+#neuvoo_keywords, #neuvoo_location {
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #BFBFBF;
+	font-weight: 300;
+	font-size: 15px;
+	box-shadow: 0px 0px 5px #DFDFDF;
+	background-color: #fff;
+	box-sizing: border-box
+}
+
+.neuvoo-form .neuvoo-row {
+	float: left;
+	width: 40%;
+	box-sizing: border-box;
+	padding-right:5px
+}
+
+.neuvoo-form .neuvoo-row p {
+	margin: 0px;
+}
+
+.neuvoo-form .neuvoo-button {
+	float: left;
+	width: 20%;
+
+	text-align: left;
+}
+
+#neuvoo_submit {
+	padding: 5px;
+	width: 100%;
+	border: none;
+	background-color: #00B0F0;
+	font-weight: 300;
+	font-size: 15px;
+	color: white;
+	border: 1px solid #00B0F0;
+	box-sizing: border-box
+}
+
+.neuvoo-header-info p {
+	float: left;
+}
+
+.total-jobs, .total-jobs-nosearch {
+	color:#bbb;
+}
+
+.neuvoo-header .sort-jobs, .sort-jobs-nosearch {
+
+}
+
+#neuvoo {
+	text-align: right;
+}
+
+#neuvoo a {
+	display: inline-block;
+}
+
+.sort-active {
+	font-weight: 600;
+}
+
+/* Mobile CSS */
+@media (max-width: 500px) {
+
+	
+	.neuvoo-form .neuvoo-row, .neuvoo-form .neuvoo-button {
+		margin: 0px 0px 5px 0px;
+		padding:0px;
+		width: 100%;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	}
+
+	.neuvoo-form .neuvoo-button {
+		text-align: right;
+
+	}
+
+	#neuvoo-jobs .j-snippet {
+		width: 100%;
+	}
+	
+	.neuvoo-header  {
+		position:relative;
+	}
+	
+	.neuvoo-header .total-jobs {
+		color:#bbb;
+
+	}
+	
+	.neuvoo-header .total-jobs-nosearch {
+		width:40%;
+		padding:0px;
+	}
+	
+	.neuvoo-header .sort-jobs {
+
+	}
+	
+	.neuvoo-header .sort-jobs-nosearch{
+		width:60%;
+		padding:0px;
+	}
+	
+	.fireUI_pagination{
+		text-align:center !important;
+	}
+	
+	.fireUI_pagination li {
+		padding: 0px !important;
+		font-size: 12px !important;
+	}
+
+}

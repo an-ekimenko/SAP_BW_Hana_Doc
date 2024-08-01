@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html class="sap-desktop  sapUiMedia-Std-Desktop sapUiMedia-StdExt-Desktop sapUiTheme-sap_belize" dir="ltr" data-sap-ui-browser="ff59" data-sap-ui-os="win7" data-sap-ui-animation="on" data-sap-ui-animation-mode="full" style="height: 100%;" lang="en"><head>
+		<title>2200772 - FAQ: SAP HANA Statement Routing and Client Distribution Mode - SAP ONE Support Launchpad</title>
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		
+		<meta name="description" content="SAP ONE Support Launchpad is an integrated, customizable single access point to support tools and applications.">
+		<meta name="keywords" content="sap one support launchpad, sap, one support, launchpad, support portal, service marketplace, service market place, suppport">
+		
+		<meta name="application-name" content="SAP ONE Support">
+		<meta name="apple-mobile-web-app-title" content="SAP ONE Support">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		
+		<meta name="msapplication-TileColor" content="#009de0">
+		<meta name="msapplication-TileImage" content="/images/msfavicon.png">
+		
+		<link rel="apple-touch-icon" sizes="60x60" href="https://launchpad.support.sap.com/images/apple-touch-icon-60x60.png" type="image/png">
+		<link rel="apple-touch-icon" sizes="76x76" href="https://launchpad.support.sap.com/images/apple-touch-icon-76x76.png" type="image/png">
+		<link rel="apple-touch-icon" sizes="120x120" href="https://launchpad.support.sap.com/images/apple-touch-icon-120x120.png" type="image/png">
+		<link rel="apple-touch-icon" sizes="152x152" href="https://launchpad.support.sap.com/images/apple-touch-icon-152x152.png" type="image/png">
+		<link rel="apple-touch-icon" href="https://launchpad.support.sap.com/images/apple-touch-icon.png" type="image/png">
+		<link rel="shortcut icon" href="https://launchpad.support.sap.com/favicon.ico" type="image/x-icon">
+		<link rel="icon" sizes="any" href="https://launchpad.support.sap.com/favicon.ico" type="image/x-icon">
+		
+		<style>
+			body { margin:0;padding:0 }
+			body.sapUIBody { background-color:#fafafa }
+			#busyIndicator { margin-top:8em;text-align:center;color:#555555 }
+			#systemNews, #sessionExpiryNotification { display:none;position:fixed;z-index:100;bottom:0px;left:0px;margin:10px;padding:10px;color:white;text-align:center }
+			#systemNews.alert { background-color:#ff5400 }
+			#systemNews { min-width:120px;max-width:460px;background-color:#007cc0;cursor:alias }
+			#systemNews .text { padding-bottom:16px }
+			#systemNews span { position:absolute;right:5px;bottom:5px;font-size:0.7em }
+			#systemNews a { color:white }
+			.announceNews #systemNews { display:block }
+			#sessionExpiryNotification { max-width:360px;background-color:#449900 }
+			.sessionExpires #sessionExpiryNotification { display:block }
+			.sessionExpires #systemNews { display:none }
+			.sap-desktop.sapUiMedia-Std-Phone #systemNews, .sap-desktop.sapUiMedia-Std-Phone #sessionExpiryNotification { margin:0;right:0;max-width:none }
+			#loginRequest { position:fixed;z-index:101;top:0;left:0;right:0;bottom:0;width:100%;height:100%;border:0;background:#ffffff;background:-webkit-repeating-linear-gradient(-55deg,#ffffff,#ffffff 20px,#fafafa 20px,#fafafa 40px);background:-o-repeating-linear-gradient(-55deg,#ffffff,#ffffff 20px,#fafafa 20px,#fafafa 40px);background:-moz-repeating-linear-gradient(-55deg,#ffffff,#ffffff 20px,#fafafa 20px,#fafafa 40px);background:repeating-linear-gradient(-55deg,#ffffff,#ffffff 20px,#fafafa 20px,#fafafa 40px);-moz-opacity:0.9;-khtml-opacity:0.9;-webkit-opacity:0.9;opacity:0.9;-ms-filter:progid:DXImageTransform.Microsoft.Alpha(opacity=90);filter:alpha(opacity=90);-webkit-transition:opacity 1s ease-in-out;-moz-transition:opacity 1s ease-in-out;-o-transition:opacity 1s ease-in-out;-ms-transition:opacity 1s ease-in-out;transition:opacity 1s ease-in-out }
+			.loginRequest { height:100% }
+			.loginRequest>div { position:relative;top:50%;-webkit-transform:translateY(-50%);-ms-transform: translateY(-50%);transform:translateY(-50%);text-align:center;font-family:Arial,Helvetica,sans-serif;font-size:1rem;font-weight:bold }
+			#noScript { font-family:Arial,Helvetica,sans-serif;font-size:16px }
+			#noScript a, #noScript a:link, #noScript a:visited, #noScript a:hover, #noScript a:active { color:#0070b1 }
+			#noScript hr.brand { height:4px;background-color:#427cac;border:none;margin:0;padding:0 }
+			#noScript header { height:44px;line-height:39.6px;background-color:#c8d9e7 }
+			#noScript header img { margin-left:10px;vertical-align:middle;margin-top:-4px }
+			#noScript header span { display:inline-block;font-size:13px;font-weight:bold;margin-top:3px }
+			#noScript #content { position:absolute;padding:20px 60px;top:48px;left:0;right:0;bottom:0;color:black;background-color:#fafafa;background-image:linear-gradient(to bottom,#a9c6de,#e7ecf0) }
+			#noScript li { line-height:1.6em }
+			#noScript footer { position:absolute;left:0;right:0;bottom:0;height:2.5rem;text-align:right;background-color:#2f3c48;border-top:1px solid #475b6d;line-height:2.45rem }
+			#noScript footer a { margin:0 5px 0 -3px;padding:5px 7px;font-size:14px;vertical-align:middle;text-decoration:none }
+			#noScript footer a, #noScript footer a:link, #noScript footer a:visited, #noScript footer a:hover, #noScript footer a:active { color:#cae4fb }
+			#noScript footer a:hover { background:#3f5161 }
+			#noScript footer a:active { background:#91c8f6 }
+		</style>
+		<noscript><style> #noScript .hideScript { display:none } </style></noscript>
+		
+		<!-- initialize the sap-ui-config, load the sapui5 libraries and the "sap_belize" theme -->
+		<script type="text/javascript" defer="defer" async="" src="SAP%20HANA%20Statement%20Routing%20and%20Client%20Distribution%20Mode_files/privacy.js"></script><script>
+			window['sap-ui-config'] = {
+				productive: /\.support\.sap\.com$/.test(window.location.hostname),
+				frameOptions: 'trusted',
+				frameOptionsConfig: {
+				 //allowSameOrigin: false,
+					whitelist: ['support.sap.com', 'support.wdf.sap.corp', 'successfactors.com', 'successfactors.eu', 'successfactors.cn', 'sapsf.com', 'sapsf.eu', 'sflab.ondemand.com', 'lab-rot.ondemand.com'],
+					callback: function(bSuccess) {
+						// Close the welcome screen, in case the application is blocked in a frame
+						if(!bSuccess&&window['sap']&&window.sap['ui']&&window.sap.ui['getCore'])
+							(sap.ui.getCore().byId('sapSupportShellWelcome')||{ close: function(){} }).close();
+					}, timeout: 3000
+				}
+			};
+			
+			// Define core cache buster fingerprint and set the initial resource roots
+			var coreCacheBusterFingerprint = ((function(sUrl) { if(!window['XMLHttpRequest']) return; var oXHR = new XMLHttpRequest(); oXHR.open('GET', sUrl, false); oXHR.send(); if(oXHR.status!=200) return; else try { return JSON.parse(oXHR.responseText); } catch(e) { return; }})
+				('version.json?timestamp='+(+new Date))||{}).revision||'137c5bc81589c366c0c99d6049a21f27a7f9dc88', overrideCacheBuster = true, enforceCacheBuster = window.location.hostname!='localhost';
+			// The coreCacheBusterFingerprint[coreCacheBusterFingerprint.length-13] must not be f to support overflowing version numbers
+			coreCacheBusterFingerprint = coreCacheBusterFingerprint.replace(/f(?=(.{12})$)/g, 'a'); //set it to 'a' instead!
+			(function() {
+				var oOverride = /(?:\?|&)sap-support-cache-buster-override=([^&]*)/.exec(window.location.search);
+				overrideCacheBuster = overrideCacheBuster&&(!oOverride||oOverride[1]=='false');
+				var oEnforce = /(?:\?|&)sap-support-cache-buster-enforce=([^&]*)/.exec(window.location.search);
+				enforceCacheBuster = enforceCacheBuster&&(!oEnforce||oEnforce[1]!='false');
+			})();
+			(function cacheBustResourceRoot(sResourceRoot, sPath) { window['sap-ui-config'] = window['sap-ui-config']||{}; window['sap-ui-config'].resourceRoots = window['sap-ui-config'].resourceRoots||{}; window['sap-ui-config'].resourceRoots[sResourceRoot] = sPath+(enforceCacheBuster?'~'+coreCacheBusterFingerprint+'~/':new String); return cacheBustResourceRoot; })
+				('sap.support.uilib', 'resources/sap/support/uilib/')('', 'resources/')('sap.support.shell', 'shell/')('sap.support.landingpage', 'landingpage/')('sap.support.launchpaduserpersona', 'personalization/')('sap.support.searchcenter', 'searchcenter/')('sap.support.search5', 'search5/')('sap.support.notification', 'notification/')('sap.support.help', 'help/')('sap.support.feedback', 'feedback/');
+		</script>
+		<script id="sap-ui-bootstrap" src="SAP%20HANA%20Statement%20Routing%20and%20Client%20Distribution%20Mode_files/sap-ui-core.js" data-sap-ui-theme="sap_belize" data-sap-ui-bindingsyntax="complex" data-sap-ui-compatversion="1.28" data-sap-ui-libs="sap.support.uilib,sap.m,sap.ui.layout,sap.ui.unified,sap.suite.ui.commons,sap.suite.ui.microchart,sap.uxap" data-sap-ui-resourceroots="{
+				&quot;sap.dfa.help&quot;: &quot;resources/sap/dfa/help/&quot; }"> <!-- put resoure paths here, NOT using cache buster -->
+		</script><script src="SAP%20HANA%20Statement%20Routing%20and%20Client%20Distribution%20Mode_files/core-0.js"></script><script src="SAP%20HANA%20Statement%20Routing%20and%20Client%20Distribution%20Mode_files/core-1.js"></script><script src="SAP%20HANA%20Statement%20Routing%20and%20Client%20Distribution%20Mode_files/core-2.js"></script><script src="SAP%20HANA%20Statement%20Routing%20and%20Client%20Distribution%20Mode_files/core-3.js"></script><link type="text/css" rel="stylesheet" href="SAP%20HANA%20Statement%20Routing%20and%20Client%20Distribution%20Mode_files/library.css" id="sap-ui-theme-sap.support.uilib" data-sap-ui-ready="true">
+		
+		<script>
+			// Check for outdated browser (jQuery / jQuery.sap library failed to load)
+			(function() {
+				var oSearch = /(?:\?|&)sap-support-redirect-outdated=([^&]*)/.exec(window.location.search);
+				if((!('jQuery' in window)||!jQuery.sap)&&(!oSearch||oSearch[1]!='false'))
+					window.location.href = '/services/dam/launchpad/en_us/shell/outdated-browser-alert.htm';
+			})();
+			
+			// Register jQuery.ajaxQueue function, use with (jQuery.ajaxQueue||jQuery.ajax)(sUrl,oOptions,sQueueName).done(function(oData) { ... } ).fail(function() { ... } );
+			(function(jQuery) {
+				var mAjaxQueues = {}; // map for all ajaxQueues we are going to create
+				jQuery.ajaxQueue = function(sUrl, oOptions, sQueueName) {
+					if(typeof sUrl==='object') {
+						sQueueName = oOptions;
+						oOptions = sUrl;
+						sUrl = undefined;
+					}
+					if(typeof oOptions==='string') {
+						sQueueName = oOptions;
+						oOptions = undefined;
+					}
+					
+					// Force options to be an object, use default queue if no queue i given
+					oOptions = oOptions||{};
+					sQueueName = sQueueName||'default';
+					
+					// jQuery on an empty object, we are going to use this as our queue
+					var oAjaxQueue = mAjaxQueues[sQueueName]||(mAjaxQueues[sQueueName]=jQuery({}));
+					
+					var oXHR, oDeferred = jQuery.Deferred(), oPromise = oDeferred.promise();
+					function fnRequest(oNext) { (oXHR=jQuery.ajax(sUrl,oOptions))
+						.done(oDeferred.resolve).fail(oDeferred.reject).then(oNext,oNext); }
+					oAjaxQueue.queue(fnRequest);
+					
+					// Add the abort method to the promise
+					oPromise.abort = function(sStatusText) {
+						if(oXHR) return oXHR.abort(sStatusText);
+						
+						// if there wasn't already a jqXHR we need to remove from queue
+						var aQueue = oAjaxQueue.queue(), iIndex = jQuery.inArray(fnRequest, aQueue);
+						if(iIndex>-1) aQueue.splice(index, 1);
+						
+						oDeferred.rejectWith(oOptions.context||oOptions, [oPromise,sStatusText,'']);
+						return oPromise;
+					};
+
+					return oPromise;
+				};
+			})(jQuery);
+			
+			// String hash used for system news
+			String.prototype.hashCode = function() {
+				var iHash = 0;
+				if(!this.length) return iHash;
+				for (var iIndex = 0, iLength = this.length; iIndex<iLength; iIndex++) {
+					iHash  = ((iHash << 5) - iHash) + this.charCodeAt(iIndex);
+					iHash |= 0; // Convert to 32bit integer
+				} return iHash;
+			};
+			
+			// Safe Base64 encoding (see https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/Base64_encoding_and_decoding#The_Unicode_Problem)
+			function base64EncodeUnicode(str) {
+				return window['btoa']?btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
+					function(match, group) { return String.fromCharCode('0x' + group); })):null;
+			}
+			
+			// Register own resource / module path functions
+			jQuery.sap['support'] = jQuery.sap['support']||{};
+			jQuery.sap.support.cacheBusterFingerprint = function(iVersion) { // max. supported version number is capped at 17592186044415 (fffffffffff, 12xf)
+				if(typeof iVersion=='string') {
+					if(/^[0-9A-Fa-f]{40}$/.test(iVersion))
+						return iVersion;
+					iVersion = iVersion.hashCode();
+				}
+				return coreCacheBusterFingerprint.substr(0, coreCacheBusterFingerprint.length-13)+
+					(1e15+(parseInt(coreCacheBusterFingerprint.substr(coreCacheBusterFingerprint.length-13), 16)+
+						Math.min(Number(iVersion), parseInt(Array(13).join('f'), 16))).toString(16)).slice(-13);
+			};
+			jQuery.sap.support.cacheBustUrl = function(sUrl) {
+				// Only apply in case no fingerprint is in the URL already
+				if(sUrl!=jQuery.sap.support.stripCacheBusterUrl(sUrl))
+					return sUrl;
+				
+				// Remove query parameters and/or hash
+				var iQueryOrHashIndex = sUrl.search(/[?#]/);
+				if(iQueryOrHashIndex!==-1) sUrl = sUrl.slice(0, iQueryOrHashIndex);
+
+				// Ensure that the prefix ends with a '/'
+				if(sUrl.slice(-1)!='/') sUrl += '/';
+				
+				// Determine the cache buster version and generate the fingerprint (adding the core fingerprint)
+				var sVersion, oVersion = jQuery.sap.syncGetJSON(sUrl+'version.json', { timestamp:+new Date }, 0);
+				if(jQuery.isPlainObject(oVersion)&&!(sVersion=oVersion.revision)) {
+					if(sVersion=oVersion.version) {
+						sVersion += '-'+(oVersion.buildId||oVersion.buildNumber||'?');
+						sVersion = sVersion.hashCode();
+					} else oVersion = oVersion.buildId||oVersion.buildNumber||oVersion;
+				}
+				
+				// Register the resource path after adding the fingerprint
+				sUrl += '~'+(sVersion||jQuery.sap.support.cacheBusterFingerprint(parseInt((oVersion).toString())||0))+'~/';
+				
+				return sUrl;
+			};
+			jQuery.sap.support.stripCacheBusterUrl = function(sUrl) {
+				return sUrl.replace(/(^|\/)~[0-9A-Fa-f]{40}~\//g, '$1');
+			};
+			jQuery.sap.support.registerResourcePath = function registerResourcePath(sResourceNamePrefix, vUrlPrefix) {
+				if(typeof vUrlPrefix==='string'||vUrlPrefix instanceof String) vUrlPrefix = { 'url' : vUrlPrefix };
+				if(vUrlPrefix&&vUrlPrefix.url&&sResourceNamePrefix!='sap/ui/support')
+					vUrlPrefix.url = jQuery.sap.support.cacheBustUrl(vUrlPrefix.url);
+				return jQuery.sap.registerResourcePath(sResourceNamePrefix, vUrlPrefix, false);
+			};
+			jQuery.sap.support.registerModulePath = function registerModulePath(sModuleName, vUrlPrefix) {
+				jQuery.sap.assert(!/\//.test(sModuleName), "module path must not contain a slash.");
+				return jQuery.sap.support.registerResourcePath(sModuleName.replace(/\./g, '/'), vUrlPrefix||'.');
+			};
+			
+			// Determine if original register resource path methods shall be overwritten
+			if(window['overrideCacheBuster']||window['enforceCacheBuster']) (function() {
+				var fnRegisterResourcePath = jQuery.sap.registerResourcePath, fnRegisterModulePath = jQuery.sap.registerModulePath;
+				jQuery.sap.registerResourcePath = function(sResourceNamePrefix, vUrlPrefix, bBust) {
+					(bBust||(bBust!==false&&window['enforceCacheBuster'])?jQuery.sap.support.registerResourcePath:fnRegisterResourcePath)(sResourceNamePrefix, vUrlPrefix);
+				};
+				jQuery.sap.registerModulePath = function(sModuleName, vUrlPrefix, bBust) {
+					(bBust||(bBust!==false&&window['enforceCacheBuster'])?jQuery.sap.support.registerModulePath:fnRegisterModulePath)(sModuleName, vUrlPrefix);
+				};
+			})();
+		</script>
+		
+		<script>
+			// Display loadingError message in case page takes too long to load
+			jQuery.sap.delayedCall(1e4, this, function() {
+				jQuery('#loadingError').show();
+			});
+			
+			// Get core configuration object
+			var exposedConfiguration; (function() {
+				var fnDebug = sap.ui.core.Configuration.prototype.getDebug; //public "prey" function
+				sap.ui.core.Configuration.prototype.getDebug = function() { var oThis = this; return function() { return oThis; }; };
+				exposedConfiguration = (sap.ui.getCore().getConfiguration().getDebug())();
+				sap.ui.core.Configuration.prototype.getDebug = fnDebug;
+			})();
+			
+			// Handle failover node
+			var isFailover;
+			if(isFailover=window.location.hostname==='failover.support.sap.com') {
+				jQuery('#systemNews').toggleClass('alert', true).find('.text').html('<strong>Attention:</strong> You are currently working on the failover instance of the SAP ONE Support Launchpad. Please expect some non-critical features not working and consider switching to the <a href="https://launchpad.support.sap.com"><b>productive instance</b></a> of the SAP ONE Support Launchpad in the earliest possible convenience.');
+				jQuery('html').toggleClass('announceNews', true);
+			}
+			
+			// Handle overload situations (509)
+			var isOverload = false;
+			function overloadSituation() {
+				if(isOverload) return; else isOverload = true;
+				jQuery('#systemNews').toggleClass('alert', true).find('.text').html('<strong>Attention:</strong> The SAP ONE Support Launchpad is currently experiencing an issue. This may cause some applications to respond slowly or produce an error. We are working to resolve the issue and apologize for any inconvenience.');
+				jQuery('html').toggleClass('announceNews', true);
+				if(swa) swa.trackCustomEvent('overload'); 
+			}
+			
+			// jQuery AJAX prefilter to time AJAX requests, to not break session handling and error handling for overload situations (509)
+			var ajaxTimestamp;
+			jQuery.ajaxPrefilter(function(oOptions, oOriginalOptions, oXHR) {
+				oOptions.complete = function(oXHR, sStatus) { //use complete, also failed requests will extend the session time
+					if(oXHR.status==509) overloadSituation();
+					else if(oXHR.getResponseHeader('com.sap.cloud.security.login')!=='login-request')
+						ajaxTimestamp = Date.now();
+					if(oOriginalOptions.complete)
+						oOriginalOptions.complete.apply(this, arguments);
+				};
+			});
+			
+			// Browser and global language variables, to be used when communicating with the backend, frontend user
+			var frontendUser, browserLanguage = sap.ui.getCore().getConfiguration().getLanguage(), globalLanguage = '*', replaceGlobalLanguage = function(sUrl) {
+				sUrl = sUrl.replace(/(?:\?sap-language=[^&]*$|&sap-language=[^&]*|(\?)sap-language=[^&]*&)/g, '$1'); //remove any sap-language query parameter(s) first
+				return sUrl+(sUrl.indexOf('?')>-1?'&':'?')+'sap-language='+globalLanguage;
+			};
+			
+			// jQuery AJAX prefilter to ignore SAPUI core language, the backend language is key for the first requests
+			jQuery.ajaxPrefilter(function(oOptions, oOriginalOptions, oXHR) {
+			 //oOptions.url = replaceGlobalLanguage(oOptions.url); /* only use sap-language for OData (datajs) calls */
+				oOptions.beforeSend = function(oXHR, oSettings) {
+					if(oOriginalOptions.beforeSend)
+						oOriginalOptions.beforeSend.apply(this, arguments);
+					oXHR.setRequestHeader('Accept-Language', globalLanguage);
+					if(frontendUser) oXHR.setRequestHeader('X-Frontend-User', 
+						base64EncodeUnicode(JSON.stringify(frontendUser)));
+				};
+			});
+			
+			// datajs OData.request modification for time AJAX requests, handle overload situations and ignore SAPUI5 core language
+			jQuery.sap.require('sap.ui.thirdparty.datajs');
+			if(window.OData&&jQuery.isFunction(OData.request)) {
+				var fnOriginalODataRequest = OData.request;
+				OData.request = function(oRequest) {
+					// handle session expiry, if login request frame is open, cancel the request
+					if(window['loginFrame']&&!!window['loginFrame'].parent().length) {
+						var oResult = fnOriginalODataRequest.apply(OData, arguments);
+						oResult.abort(); // immediately abort the request
+						return oResult;
+					}
+					
+					// apply the language by force (!) as 'Accept-Language' is "too soft"
+					oRequest.requestUri = replaceGlobalLanguage(oRequest.requestUri);
+					if(window['enforceCacheBuster']) // never do OData requests to a cache buster URL
+						oRequest.requestUri = jQuery.sap.support.stripCacheBusterUrl(oRequest.requestUri); 
+					(oRequest.headers||(oRequest.headers={}))['Accept-Language'] = globalLanguage;
+					if(frontendUser) oRequest.headers['X-Frontend-User'] =
+						base64EncodeUnicode(JSON.stringify(frontendUser));
+					
+					var fnOriginalSuccess = arguments[1], fnOriginalError = arguments[2], fnHandleResponseOrError = function(oResponse) {
+						if(!oResponse) return;
+						else if(oResponse.statusCode==509) overloadSituation();
+						else if((oResponse.headers||{})['com.sap.cloud.security.login']==='login-request')
+							loginRequest();
+						else ajaxTimestamp = Date.now();
+					};
+					arguments[1] = function(oData, oResponse) {
+						fnHandleResponseOrError(oResponse);
+						if(fnOriginalSuccess) fnOriginalSuccess.apply(this, arguments);
+					};
+					arguments[2] = function(sError, oResponse) {
+						fnHandleResponseOrError(oResponse);
+						if(fnOriginalError) fnOriginalError.apply(this, arguments);
+					};
+					
+					return fnOriginalODataRequest.apply(OData, arguments);
+				};
+			}
+			
+			// Modify OData modrl(s) to ignore SAPUI5 core language
+			jQuery.each([sap.ui.model.odata, sap.ui.model.odata.v2], function(iIndex, oPackage) {
+				if(oPackage.ODataModel._sapUiLazyLoader) oPackage.ODataModel.getMetadata(); // remove lazy stub
+				jQuery.each(['_createBatchRequest'], function(iIndex, sName) {
+					if(oPackage.ODataModel.prototype[sName]) {
+						var fnCreateRequest = oPackage.ODataModel.prototype[sName];
+						oPackage.ODataModel.prototype[sName] = function() {
+							var oRequest = fnCreateRequest.apply(this, arguments);
+							jQuery.each((oRequest.data||{}).__batchRequests||[], function() {
+								(this.headers||{})['Accept-Language'] = globalLanguage;
+							});
+							return oRequest;
+						};
+					}
+				});
+			});
+			
+			// Modify OData model(s), to track resource performance
+			var swaResources = { whitelist: ['/services'], blacklist: ['/services/dam/launchpad/en_us/shell/system-news.htm'] }; // paths in this array are tracked / not tracked in swaResources
+			jQuery.each([sap.ui.model.odata, sap.ui.model.odata.v2], function(iIndex, oPackage) {
+				if(oPackage.ODataModel._sapUiLazyLoader) oPackage.ODataModel.getMetadata(); // remove lazy stub
+				jQuery.each(['_createRequest','_createBatchRequest'], function(iIndex, sName) {
+					if(oPackage.ODataModel.prototype[sName]) {
+						var fnCreateRequest = oPackage.ODataModel.prototype[sName];
+						oPackage.ODataModel.prototype[sName] = function() {
+							var oRequest = fnCreateRequest.apply(this, arguments), sRequestUri = oRequest.requestUri;
+							if(sRequestUri.length&&sRequestUri[0]!=='/') sRequestUri = '/'+sRequestUri;
+							if(!swaResources.whitelist.some(function(sPath) { return sName===sRequestUri; } ))
+							    swaResources.whitelist.push(sRequestUri);
+							return oRequest;
+						};
+					}
+				});
+			});
+
+			// Create the Support Shell and (re-)place it at the content
+			var bSwaReady, fnSwaReady = function() { bSwaReady = true; };
+			sap.ui.getCore().attachInit(function() {
+				// Save certain elements not to be replaced
+				var aSaved = jQuery.map(['#systemNews','#sessionExpiryNotification'], function(sId) {
+					return jQuery(sId).get();
+				});
+				
+				// Load component and place at content
+				new sap.ui.core.ComponentContainer({
+					name: 'sap.support.shell.component',
+					settings: { id: 'shell' }
+				}).placeAt('content');
+				
+				// Prepend the saved elements to content again
+				jQuery.sap.delayedCall(0, this, function() {
+					jQuery.each(aSaved, function(iIndex, oElement) {
+						jQuery('#content').prepend(oElement);
+					});
+				});
+				
+				// Require additional includes (if not already loaded)
+				jQuery.sap.require('sap.ui.core.routing.HashChanger');
+					
+				// Attach to browser / SAPUI5 events, to fire WARP tracker (as soon as SWA is ready)
+				fnSwaReady = function() {
+					// Attach to the SAPUI5 hash changer, to record navigation / searches etc.
+					var oHashChanger = sap.ui.core.routing.HashChanger.getInstance(), fnHashChanged,
+						bInitialized = !!oHashChanger._initialized, bFirst = true;
+					oHashChanger.attachEvent('hashChanged', fnHashChanged=function(oEvent) {
+						var sHash = oEvent?oEvent.getParameter('newHash'):oHashChanger.getHash(),
+							sOldHash = oEvent?oEvent.getParameter('oldHash'):null, aHash, sApplication;
+						jQuery.sap.delayedCall(0, this, function() {
+							// Trigger track load event on page / hash change
+							if(bFirst) bFirst = false; else swa.trackLoad();
+							
+							// Custom search event (triggered on every search)
+							if((aHash=/(?:^\/?search\/(?:[^\/]*\/)?|^\/?solutions\/.*?[?&]q=|\/search\/)([^&]*)/.exec(sHash))&&aHash.length)
+								swa.trackCustomEvent('search',aHash[1].substring(0,255).toLowerCase());
+						});
+					}); if(bInitialized) // in case HashChanger is already initialized, execute the event for the first time
+						fnHashChanged();
+					
+					// Attach to the 'load' event, to execute when the DOM is fully loaded (complete)
+					jQuery(window).load(function() {
+						// Performance / dom content load time event (triggered on page load)
+						jQuery.sap.log.trace('Window load event'); jQuery.sap.delayedCall(0,null,function() { 
+							swaPerformance(); jQuery.sap.intervalCall(10*1000, null, swaResourcePerformance);
+						});
+					});
+				}; if(bSwaReady) // in case SWA is ready already, immediately register to the event
+					fnSwaReady();
+			});
+			
+			// System News (query for system news all 10 minutes [extends dispatcher session])
+			(function() {				
+				var iInterval = 10*60*1000, sInterval, iLastHash = localStorage?parseInt(localStorage.getItem('supportPortalSystemNews')||0):0, fnNews = function() {
+					var fnNoNews = function() {
+						jQuery('html').removeClass('announceNews'); iLastHash = 0;
+						if(localStorage) localStorage.removeItem('supportPortalSystemNews');
+					};
+					jQuery.get('/services/dam/launchpad/en_us/shell/system-news.htm', {
+						host: window.location.hostname, timestamp:+new Date
+					}, function(sHtml, sStatusText, oXHR) {
+						if(oXHR.getResponseHeader('com.sap.cloud.security.login')!=='login-request') {
+							if(sHtml&&(sHtml=sHtml.trim())&&sHtml.length) {
+								var iHash = (sHtml.hashCode?sHtml.hashCode():0)+new Date().getDay(); // calculate hash code for string, to not display the same system news twice per day
+								if(!iLastHash||iHash!=iLastHash) {
+									jQuery('#systemNews').removeClass('alert').find('.text').html(sHtml);
+									jQuery('html').addClass('announceNews'); iLastHash = iHash;
+									if(localStorage) localStorage.setItem('supportPortalSystemNews', iHash);
+								}
+							} else fnNoNews();
+						}
+					}).fail(fnNoNews);
+				}; fnNews(); sInterval = jQuery.sap.intervalCall(iInterval, this, fnNews);
+			})();
+			
+			// Handle interactive re-login after session timeout			
+			var loginFrame;
+			function loginRequest() {
+				if(!loginFrame&&(loginFrame=jQuery('<iframe>', {
+						id: 'loginRequest',
+						frameborder: 0,
+						scrolling: 'no'
+				}))||!loginFrame.parent().length) {
+					loginFrame.on('load', function() {
+						jQuery('<style>').html(jQuery('head>style').html()).appendTo( //jQuery('head>style').clone() doesn't work in IE
+							loginFrame.contents().find('head'));
+						loginFrame.contents().find('body').toggleClass('loginRequest',true).html(
+							'<div><p>Due to inactivity your browser session expired.<br>Reloading may cause any unsaved data to be lost.<p>Please <a href="login.html">click here</a> to log-in again and continue working.</div>');						
+					}).prependTo('body');
+				}
+			}
+			function loginSuccess() {
+				if(!loginFrame||!loginFrame.parent().length)
+					return false;
+				loginFrame.remove();
+				if(window['sessionExtend'])
+					sessionExtend();
+				return true;
+			}
+			(function() {
+				var iTimeout = 105*60*1000, sTimeout, fnAction, fnSend, fnComplete;
+				jQuery(document).mousedown(fnAction=function(oEvent) {
+					// Check if session is still alive (ping doesn't trigger a login request, so request a non-existing page)
+					if(jQuery('html').hasClass('sessionExpires'))
+						jQuery.get('ping_not_found');
+				}).keydown(fnAction).ajaxSend(fnSend=function(oEvent, oXHR) {
+					jQuery.sap.clearDelayedCall(sTimeout);
+					jQuery('html').removeClass('sessionExpires');
+					
+					// Abort any subsequent ajax request, if login request frame is open, as they have no chance to succeed
+					if(loginFrame&&!!loginFrame.parent().length)
+						{ oXHR.abort(); return; }
+					
+					sTimeout = jQuery.sap.delayedCall(iTimeout, this, function() {
+						jQuery('html').addClass('sessionExpires');
+					});
+				}).ajaxComplete(fnComplete=function(oEvent, oXHR) {
+					if(oXHR.getResponseHeader('com.sap.cloud.security.login')==='login-request')
+						loginRequest();
+				}); fnSend(); //start initial timeout
+				
+				// Force login after some time
+				jQuery.sap.delayedCall(864e5, this, function() {
+					jQuery(document).ajaxSend(function(oEvent, oXHR) {
+						loginRequest();
+					});
+				});
+			})();
+			
+			// Handle Cloud Session Management (session expires after 20 minutes of inactivity / no request to dispatcher)
+			var sessionLifetime = 120*60*1000, sessionTimeout, sessionTimesOut;
+			function sessionExtend() {
+				jQuery.sap.clearDelayedCall(sessionTimeout);
+				(sessionTimesOut||(sessionTimesOut=new Date())).setTime(new Date().getTime()+sessionLifetime);
+				sessionTimeout = jQuery.sap.delayedCall(sessionLifetime, this, loginRequest);
+			} (function() { sessionExtend(); jQuery(document).mousedown(sessionExtend).keydown(sessionExtend); })();
+			
+			// Set-up & Load SAP Web Analytics (SWA / WARP) Tracking (delayed loading)
+			var swaDelayed = [], swaDelay = function(sFunction, oArguments) {
+				swaDelayed.push({ name: sFunction, arguments: oArguments });
+			}, swa = {
+				pubToken: 'cd0ce735-ce82-4b83-b008-f1006fcaddde',
+				baseUrl: 'https://webanalytics.cfapps.eu10.hana.ondemand.com/tracker/',
+				bannerEnabled: false, performanceEnabled: true, resourcesEnabled: false, clicksEnabled: true,
+				dntLevel: 1, visitorCookieTimeout: 63113852,
+				trackerReadyCallback: swaReady,
+				custom1: { ref: 'swaApplication' }, custom2: { ref: 'swaType' }, custom3: { ref: 'swaRoles' },
+				trackLoad: function() { swaDelay('trackLoad', arguments); },
+				trackCustomEvent: function() { swaDelay('trackCustomEvent', arguments); }
+			};
+			if(window.location.hostname==='launchpad.support.sap.com')
+				swa.pubToken = '4496c023-84d5-4c6a-9e3b-371583a32c4a';
+			else if(window.location.hostname==='pilot.support.sap.com')
+				swa.pubToken = '9bf22225-bcde-465e-997c-d3ae7ff2fb50';
+			function swaApplication() { return ((((sap||{}).ui||{}).core||{}).routing||{}).Router?sap.ui.core.routing.Router.getRouter('shellRouter').getCurrentRoute().name.substring(0,255):undefined; }
+			function swaProperty(sPath) { return ((sap||{}).ui||{}).getCore?(sap.ui.getCore().getModel('user')||{ getProperty: function() { return undefined; }}).getProperty(sPath):undefined; }
+			function swaType() { return swaProperty('/type')||'unknown'; }
+			function swaRoles() {
+				var aRoles = swaProperty('/profile/role');
+				if(aRoles) {
+					var iMap = 0, oMap = {}; jQuery.each(['OnPremise', 'SF', 'HEC', 'Partner', 'Hybris', 'CCoE'],
+						function(iIndex, sRole) { oMap[sRole] = 1<<iIndex; });
+					jQuery.each(aRoles, function(iIndex, sRole) { iMap |= oMap[sRole]||0; });
+					return iMap;
+				} else return -1;
+			}
+			function swaPerformance() {
+				if(!swa||swa.performanceEnabled===false) return;
+				
+				var oTiming = (window.performance||window.webkitPerformance||window.msPerformance||window.mozPerformance||{}).timing, oTime = {};
+				if(!oTiming) return;
+				
+				// Pre Request (Redirect, Unload Documents, Local Cache)
+				oTime.redirect = oTiming.redirectEnd - oTiming.redirectStart;
+				oTime.unloadEventTime = oTiming.unloadEventEnd - oTiming.unloadEventStart;
+				oTime.cache = oTiming.domainLookupStart - oTiming.fetchStart;
+				oTime.preRequest = oTiming.domainLookupStart - oTiming.navigationStart;
+				
+				// Network (DNS, TCP, SSL)
+				oTime.dns = oTiming.domainLookupEnd - oTiming.domainLookupStart;
+				oTime.tcp = oTiming.connectEnd - oTiming.connectStart;
+				oTime.ssl = (oTiming.secureConnectionStart) ? (oTiming.connectEnd - oTiming.secureConnectionStart) : 0;
+				oTime.network = oTiming.connectEnd - oTiming.domainLookupStart;
+				
+				// Request, Response
+				oTime.request = oTiming.responseStart - oTiming.requestStart;
+				oTime.response = oTiming.responseEnd - oTiming.responseStart;
+				oTime.requestResponse = oTiming.responseEnd - oTiming.requestStart;
+				
+				// Loading/Creating HTML DOM (interactive, content load, ready, total)
+				oTime.domCreateStarted = oTiming.domLoading - oTiming.responseEnd;
+				oTime.domInteractive = oTiming.domInteractive - oTiming.domLoading;
+				oTime.domContentLoad = oTiming.domContentLoadedEventEnd - oTiming.domInteractive;
+				oTime.domReady = oTiming.domComplete - oTiming.domContentLoadedEventEnd;
+				oTime.domTotal = oTiming.domComplete - oTiming.responseEnd;
+				
+				// Total + Trigger SWA custom event
+				oTime.total = oTiming.loadEventEnd - oTiming.navigationStart;
+				swa.trackCustomEvent('performance', oTime.preRequest, oTime.dns, oTime.tcp, oTime.ssl, oTime.request, oTime.response, oTime.domCreateStarted, oTime.domInteractive, oTime.domContentLoad, oTime.domReady);
+			}
+			var swaResource = 0; function swaResourcePerformance() {
+				if(!swa||swa.resourcesEnabled===false) return;
+				
+				var aResources = (window.performance||window.webkitPerformance||window.msPerformance||window.mozPerformance||{ getEntriesByType: function() { return []} }).getEntriesByType('resource');
+				if(!aResources||!aResources.length) return;
+				
+				// Increment resource count, on next call these resources won't be tracked again
+				var iCurrentResource = swaResource;
+				swaResource = aResources.length;
+				
+				for(var iResource=iCurrentResource;iResource<aResources.length;iResource++) {
+					var oResource = aResources[iResource], oResourceTime = {}, sName, fnSome = function(sPath) { return sName.indexOf(sPath)===0; };
+					sName = (sName=oResource.name).substr(sName.indexOf('/',sName.indexOf('//')+2));
+					
+					// Check if resource is whitelisted
+					if(!swaResources.whitelist.some(fnSome)
+					 || swaResources.blacklist.some(fnSome))
+						continue;
+					
+					// Network (DNS, TCP, SSL)
+					oResourceTime.dns = Math.round(oResource.domainLookupEnd - oResource.domainLookupStart);
+					oResourceTime.tcp = Math.round(oResource.connectEnd - oResource.connectStart);
+					oResourceTime.ssl = (oResource.secureConnectionStart) ? Math.round(oResource.connectEnd - oResource.secureConnectionStart) : 0;
+					oResourceTime.network = Math.round(oResource.connectEnd - oResource.domainLookupStart);
+					
+					// Request, Response
+					oResourceTime.request = Math.round(oResource.responseStart - oResource.requestStart);
+					oResourceTime.response = Math.round(oResource.responseEnd - oResource.responseStart);
+					
+					// Trigger SWA custom event
+					swa.trackCustomEvent('resourcePerformance', iResource, oResource.initiatorType, oResource.name, oResourceTime.dns, oResourceTime.tcp, oResourceTime.ssl, oResourceTime.request, oResourceTime.response);
+				}
+			}
+			function swaReady() {
+				jQuery.each(swaDelayed, function(iIndex, oDelayed) {
+					var fnFunction = swa[oDelayed.name];
+					if(jQuery.isFunction(fnFunction))
+						fnFunction.apply(null,oDelayed.arguments);
+				}); fnSwaReady();
+			}
+			(function() {
+				var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+				g.type='text/javascript'; g.defer=true; g.async=true; g.src=swa.baseUrl+'js/privacy.js';
+				s.parentNode.insertBefore(g,s);
+			})(); 
+		</script>
+	<link type="text/css" rel="stylesheet" href="SAP%20HANA%20Statement%20Routing%20and%20Client%20Distribution%20Mode_files/shell.css" data-sap-ui-manifest-uid="id-1524034713650-3" data-sap-ui-ready="true"><style type="text/css">@font-face {font-family: 'SAP-icons';src: url('resources/~024730a60a65da571b82987e822a706da7a837a1~/sap/ui/core/themes/base/fonts/SAP-icons.woff2') format('woff2'),url('resources/~024730a60a65da571b82987e822a706da7a837a1~/sap/ui/core/themes/base/fonts/SAP-icons.woff') format('woff'),url('resources/~024730a60a65da571b82987e822a706da7a837a1~/sap/ui/core/themes/base/fonts/SAP-icons.ttf') format('truetype'),local('SAP-icons');font-weight: normal;font-style: normal;}</style><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><link type="text/css" rel="stylesheet" href="SAP%20HANA%20Statement%20Routing%20and%20Client%20Distribution%20Mode_files/nnfv2-style.css" data-sap-ui-manifest-uid="id-1524034714408-9" data-sap-ui-ready="true"><link type="text/css" rel="stylesheet" href="SAP%20HANA%20Statement%20Routing%20and%20Client%20Distribution%20Mode_files/nnfv2-diff.css" data-sap-ui-manifest-uid="id-1524034714408-9" data-sap-ui-ready="true"><link type="text/css" rel="stylesheet" href="SAP%20HANA%20Statement%20Routing%20and%20Client%20Distribution%20Mode_files/styles.css" data-sap-ui-ready="true"><link type="text/css" rel="stylesheet" href="SAP%20HANA%20Statement%20Routing%20and%20Client%20Distribution%20Mode_files/style.css" id="" data-sap-ui-manifest-uid="id-1524034719112-75" data-sap-ui-ready="true"></head>
+	
+	<body class="sapUiBody" id="content" role="application" data-sap-ui-area="content" style="height: 100%;"><div id="sessionExpiryNotification" data-sap-ui-preserve="sessionExpiryNotification">Your
+ browser session is about to expire soon. Please perform an action, such
+ as clicking or typing with your keyboard, to keep your session alive.</div><div id="systemNews" onclick="jQuery('html').removeClass('announceNews')" data-sap-ui-preserve="systemNews"><div class="text"></div><span>click to close this message</span></div><div id="sap-ui-static" style="height: 0px; width: 0px; overflow: hidden; float: left;" data-sap-ui-area="sap-ui-static"><span id="__text0" data-sap-ui="__text0" class="sapUiInvisibleText" aria-hidden="true">Emphasized</span><span id="__text1" data-sap-ui="__text1" class="sapUiInvisibleText" aria-hidden="true">More</span><div id="sap-ui-blocklayer-popup" tabindex="0" class="sapUiBLy sapMDialogBlockLayerInit" style="z-index: 8; visibility: hidden; display: none;"></div><span id="__text3" data-sap-ui="__text3" class="sapUiInvisibleText" aria-hidden="true">Available Values</span><span id="__text28" data-sap-ui="__text28" class="sapUiInvisibleText" aria-hidden="true">Description</span><span id="__text29" data-sap-ui="__text29" class="sapUiInvisibleText" aria-hidden="true">Product</span><span id="__text30" data-sap-ui="__text30" class="sapUiInvisibleText" aria-hidden="true">References</span><span id="__text31" data-sap-ui="__text31" class="sapUiInvisibleText" aria-hidden="true">Attachments</span><span id="__text32" data-sap-ui="__text32" class="sapUiInvisibleText" aria-hidden="true">Attributes</span><span id="__text33" data-sap-ui="__text33" class="sapUiInvisibleText" aria-hidden="true">Languages</span><span id="__text34" data-sap-ui="__text34" class="sapUiInvisibleText" aria-hidden="true">Customer Ratings</span><span id="__text35" data-sap-ui="__text35" class="sapUiInvisibleText" aria-hidden="true">Press F5 to refresh</span><span id="__item37-info" data-sap-ui="__item37-info" class="sapUiInvisibleText" aria-hidden="true"></span><span id="__item37-__clone40-info" data-sap-ui="__item37-__clone40-info" class="sapUiInvisibleText" aria-hidden="true">Notification read. Created By System News Due in 17.04.2018, 17:26:21, High Priority.</span></div>
+		
+		
+		
+	
+<div aria-hidden="true" id="sap-ui-preserve" class="sapUiHidden sapUiForcedHidden" style="width: 0px; height: 0px; overflow: hidden;"><div id="noScript" data-sap-ui-preserve="noScript">
+			<hr class="brand">
+			<header>
+				<img src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAaCAYAAAD1wA/qAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAXxSURBVFhH3VZpUJVVGD7GNNmPfpRW0w9r0qlpbMYZp2mxqalJ+1E5ZdOUZUqDpBmFuQEuuGKWK4KKggiyuF5MWQTZ1wsqeK/KFS6C7Miq4EVBNp+ec5e4H3AvqMiMfTPP8N3vPOc97/Mu50WI/80T3QTxOOPMLYh4wwrxWIuIYhKimsJMRXWiDkrUm35HmGFcN3/rx+27d6R+0x+jf7UBvZ1xtAZC4hgRWgWxrwxiLxFQDuFPyHd/4mAlxJFqE8/Cl78lT+6xIKgC4riZo+LfcLNNa47lXe4NJv+QlV2LP3b/kn+4KlDZ3iE0JOFTjCdDyjEjpQHrL7fA/2orfPUGrNA244vkerxwlA7tLoHYT6cPUVQo9wSVYTr5szKbMDOjEXOymvD6KTofUAoRZlp/UVVtWs9sNHIkfjC/f5xQh3ERMhjk+xabbIYTcq8tSE5IeVD/O0qK2K7HrOQ6lBs6Yeu509GD6PI7mPQPBfnxUN8iTFBV9qPrbnYwKFchDtC5HUWYnlhn06Zc6Oq+h4zr7ZgRX0u+HiLwGrPPvcE2cODawYEv2i35hllJtXYPs16ceFxmjwdu0mGT9uaA+8aryNlRCLGtANNia4Zse5G6AWLLFYph5vtiP78FFIXanBbP7C0y9D3pHj/k1bUhr74dBmbC8izK5kHrL7LEKMSnANfvdA3opFceb5MNlyD+zsfU6CoFhwlA9e0utFrZtSa8GsaMbNOx54qU2KMPtzvypsdWKIQ0tXfjKT9Gc40GwluHMf56OCbVILiwGWJPASOdTyc1+Ciy3GakK1s7Wa7krdVgamSFgidFPL1Pj7E7dfg6phI37nYr1j3PMVjreLY8a7cFuiODzm3HhEqFkNbOHnwVzdJYdwHC/SzEivMUlQexUWsSsYup98zFIX2z3ZJ5T8XIuqox7WSZgmcUuZXZkvZ/U2NltrKHQmXA5BqFCh+e551/bFARkjD5cHG/0pInX6pvw+q0GkwKYnbW5kIsp6jtdOBPDUb7XEZHd2/JaRvasFXTqHA4MP8GxPx0TIu4pvheYeBl4EVHPXIgfknHxrP1ivXwAgrxPMfyYglv16qGJMJIck9FYmWr3eieKWnBJ2GsWfdsiD8y4RSnLJfdFOGwVauw0drRzWzmYHKIXvG9lqU1bq8OE7Zp8TPt3GYFWD9r1Ly9lqrZ9JoTQxdhFjJ6w3nEFbcMeru4xHKAzU1GqrKt4BjD2TIvBbrGdoWN1wKv4Fnvi/3sWmez7+J4P5aTR/bJ+xNhFiI8shjtLMyOKEZa2S27guZElaKprfe2amGzCk9m6vNIOEYqy2hz9nW8tFOZKXvGPZI4aF3TI+9fhEXIBta/WwabL4WCMvGmrxarzpShpPnuoFmqutWBT0ML8IG3Bl4Z1Qp+yc12zIy4iu578kK3/RSyx5xOcIi6Jkc/mAiLkNVqjPaimN+TIX5NYpkkQnwTTcMpKBuCGHtOxhU3o7m9N4Py3SWmFAtOFsM5sgRTAllKnuyJBYmnH1yEWchEXw2qGdktjOjbPhqM9crBmNVZ+HD/ZTTaGHqDpsqK0NXTmxEZGDoNMfs0b60EU/Dc0+MeToTcPS/ecPhSg/LGYQ8YrPrAltOyZJTjDOi0X0XGgDkwSGJZKsSqTCIj4eFF0MIbO3IHnCNDifimtEq8Qoc+O5iP748W4l3fC3h58zkY+kxra1syww6eFLCY/eiRljQsIqSR5z3TDS4qPdSlzTZ9P3WxHkG5/f+xZBAgvj0F4RzHaznWhO8iEZGvHI7Whtu6euCwMh1iYULKsIkwGlqUaBBz2Ngu8ZjwVw6+ZHSXxJTA7XQJnClwsg+ddYrFEx5peN9Pgyl7Lhjxzi5O56WMqhtLhEPVCA9iYSKeW5f1H8/Ct/x9yzcPo9xT04ZXhOXWkk4sZtPNZ2R/ioH4McoEKdCZUV5Gh13ZmE5sUAvm8n0p90jn3aQgM5an8RqPV3KV+zKGX4S0uIzOjBSWJGU9GhHSqozqSGBJcvajEzFSGVmcmCwERj1KIf8CV1QrccFgXV8AAAAASUVORK5CYII="><!--
+			--><span>ONE Support Launchpad</span>
+			</header>
+			<div id="content">
+				<p class="hideScript" style="font-size:26px">SAP ONE Support Launchpad is loading, please wait...</p>
+				<noscript>
+					<p style="font-size:26px">SAP ONE Support Launchpad can not be displayed.</p>
+					<p>Please enable JavaScript in your browser and try again.</p>
+				</noscript>
+				<p id="loadingError" style="">This is taking longer than usual. <b>Try <a href="javascript:window.location.reload(true)">reloading the page</a>.</b></p>
+				<ul>
+					<li>Information about <a href="https://launchpad.support.sap.com/services/dam/launchpad/en_us/shell/outdated-browser-alert.htm">Outdated Browsers</a></li>
+					<li>Visit <a href="https://support.sap.com/">SAP Support Portal</a> or <a href="https://www.sap.com/">SAP.com</a></li>
+				</ul>
+			</div>
+			<footer>
+				<a href="https://support.sap.com/support-programs-services/about/terms-of-use.html" target="_blank">Terms of Use</a>
+				<a href="http://www.sap.com/about/legal/copyright.html" target="_blank">Copyright and Trademarks</a>
+				<a href="http://www.sap.com/about/legal/impressum.html" target="_blank">Legal Disclosure</a>
+				<a href="http://www.sap.com/about/legal/privacy.html" target="_blank">Privacy</a>
+				<a href="http://www.miibeian.gov.cn/" target="_blank">沪ICP备09046015号-2</a>
+			</footer>
+		</div><div id="__xmlview1" data-sap-ui="__xmlview1" data-sap-ui-preserve="__xmlview1" style="width:100%" class="sapMNavItem sapUiView sapUiXMLView sapUiLocalBusy sapMNavItemHidden" aria-busy="true">
+<div class="sapUiLocalBusyIndicator sapUiLocalBusyIndicatorSizeMedium sapUiLocalBusyIndicatorFade" role="progressbar" aria-valuemin="0" aria-valuemax="100" alt="" tabindex="0" title="Please wait" id="__xmlview1-busyIndicator"><div class="sapUiLocalBusyIndicatorAnimation sapUiLocalBusyIndicatorAnimStandard"><div></div><div></div><div></div></div></div></div><div class="sapMCrslItemTable" data-sap-ui-preserve="__html1" id="__html1"><div class="sapMCrslItemTableCell"></div></div><h1 style="line-height:1.1em;" data-sap-ui-preserve="__html0" id="__html0">April 2018 Launchpad Release: Learn About the Newest Features</h1><p data-sap-ui-preserve="__html0">Welcome SAP Ariba customers! For all our visitors many new features went live on April 9, many of them based on your feedback:</p><ul data-sap-ui-preserve="__html0">
+    <li>A new role <em>SAP Ariba</em> can be added to your profile.</li>
+    <li>Finding an administrator to help you get permissions for tiles 
+in the catalog is more user-friendly thanks to filters and more details 
+being displayed.</li>
+    <li>The <em>Incident Expert Search</em> better takes your user preferences into account.</li>
+    <li>A search tool makes selecting the expert area easier in the <em>Schedule an Expert</em> tool.</li>
+    <li>In the <em>System Data</em> application, deleted systems (including associated license keys) can be reactivated.</li>
+    <li>The <em>SAP Roadmap Viewer</em> application no longer requires 
+you to browse through the entire roadmap to gain a project overview 
+thanks to better separation between the high-level roadmap description 
+and content required for the project.</li>
+    <li>Pilot customers: For SAP Notes and KBAs, machine translation is offered for Spanish, Russian, Chinese (simplified), or Korean.</li>
+  </ul><p data-sap-ui-preserve="__html0">All changes are listed in our <a href="https://support.sap.com/en/my-support.html#section_239170926" target="_blank">April 2018 release notes</a>.</p><div class="sapMGrowingListTrigger" data-sap-ui-preserve="__html5" id="__html5"><div class="sapMSLITitleDiv sapMGrowingListTriggerText"><span class="sapMSLITitle" id="__xmlview2--idTabAttach-triggerText">More</span></div><div class="sapMGrowingListDescription sapMSLIDescription" id="__xmlview2--idTabAttach-triggerInfo"></div></div><div class="sapMGrowingListTrigger" data-sap-ui-preserve="__html6" id="__html6"><div class="sapMSLITitleDiv sapMGrowingListTriggerText"><span class="sapMSLITitle" id="__xmlview2--idTabAttributes-triggerText">More</span></div><div class="sapMGrowingListDescription sapMSLIDescription" id="__xmlview2--idTabAttributes-triggerInfo"></div></div></div><div id="__container0" data-sap-ui="__container0" class="sapUiComponentContainer" style="height: 100%;"><div id="__container0-uiarea" style="height: 100%;"><div id="__jsview0" data-sap-ui="__jsview0" style="width: 100%; height: 100%;" class="sapUiJSView sapUiSizeCompact sapUiView sapUiViewDisplayBlock"><div id="__app0" data-sap-ui="__app0" class="sapMApp sapMNav sapUiGlobalBackgroundColor" style="width:100%"><div id="__app0-BG" class="sapMAppBG sapUiGlobalBackgroundImage"></div><div id="__jsview0--page-Shell" data-sap-ui="__jsview0--page-Shell" class="sapMNavItem sapMPage sapMPageBgStandard sapMPageBusyCoversAll sapMPageWithFooter"><section id="__jsview0--page-Shell-cont"><div id="__jsview0--shell" data-sap-ui="__jsview0--shell" class="sapUiUfdShell sapUiUfdShellAnim sapUiUfdShellCurtainClosed sapUiUfdShellCurtainHidden sapUiUfdShellHeadVisible"><hr id="__jsview0--shell-brand" class="sapUiUfdShellBrand"><header id="__jsview0--shell-hdr" class="sapUiUfdShellHead" role="banner"><div><div id="__jsview0--shell-hdrcntnt" class="sapUiUfdShellCntnt"><div id="__jsview0--shell-header" data-sap-ui="__jsview0--shell-header" data-sap-ui-fastnavgroup="true" class="sapUiUfdShellHeader" role="toolbar"><div id="__jsview0--shell-header-hdr-begin" class="sapUiUfdShellHeadBegin"><div class="sapUiUfdShellHeadContainer"><div tabindex="0" id="__jsview0--headItem-Home" data-sap-ui="__jsview0--headItem-Home" class="sapUiUfdShellHeadItm" title="Home" role="button" aria-pressed="false"><span role="presentation" aria-label="home" style="font-family: &quot;SAP-icons&quot;;"></span><div class="sapUiUfdShellHeadItmMarker"><div></div></div></div><div tabindex="0" id="__jsview0--headItem-Back" data-sap-ui="__jsview0--headItem-Back" class="sapUiUfdShellHeadItm sapUiUfdShellHeadItmSep sapUiUfdShellHidden" title="Back" aria-hidden="true" role="button" aria-pressed="false"><span role="presentation" aria-label="Navigate Back" style="font-family: &quot;SAP-icons&quot;;"></span><div class="sapUiUfdShellHeadItmMarker"><div></div></div></div></div><div class="sapUiUfdShellIco"><img id="__jsview0--shell-header-icon" title="Logo" alt="Logo" src="SAP%20HANA%20Statement%20Routing%20and%20Client%20Distribution%20Mode_files/sap_55x27.png" style=""></div><div class="sapUiUfdShellHeadTitle"><label id="__jsview0--shell-title">SAP Knowledge Base Article</label></div></div><div id="__jsview0--shell-header-hdr-center" class="sapUiUfdShellHeadCenter sapUiUfdShellAnim" style="left: 279px; right: 323px;"><div id="__jsview0--shell-header-hdr-search" role="search" class="sapUiUfdShellSearch"><div><div id="SearchToolbarView" data-sap-ui="SearchToolbarView" style="width:100%" class="sapUiJSView sapUiView"><div id="searchCenterToolbar" data-sap-ui="searchCenterToolbar" data-sap-ui-fastnavgroup="true" role="toolbar" class="sapMIBar sapMTB sapMTB-Auto-CTX sapMTBInactive sapMTBNewFlex" style="height:auto"><div id="search--searchCenterSelectBox" data-sap-ui="search--searchCenterSelectBox" style="width: 100%;" class="AGSSearchSelectBox sapMBarChild sapMSlt sapMSltDefault sapMSltHoverable sapMSltMinWidth sapMSltWithArrow sapMTBShrinkItem" role="combobox" aria-expanded="false" aria-labelledby="search--searchCenterSelectBox-label" tabindex="0"><label id="search--searchCenterSelectBox-label" for="search--searchCenterSelectBox" aria-live="polite" class="sapMSltLabel">Knowledge Base</label><span id="search--searchCenterSelectBox-arrow" class="sapMSltArrow"></span></div><div id="search--searchCenterInputfield" data-sap-ui="search--searchCenterInputfield" data-help-id="searchCenterInputField" class="sapMBarChild sapMSF sapMTBShrinkItem"><form id="search--searchCenterInputfield-F" class="sapMSFF sapMSFNS"><input autocomplete="off" id="search--searchCenterInputfield-I" class="sapMSFI" placeholder="Enter search term" maxlength="150" type="search"><div id="search--searchCenterInputfield-reset" class="sapMSFB sapMSFBF sapMSFNS sapMSFR"></div></form></div><button id="search--searchCenterSearchButton" data-sap-ui="search--searchCenterSearchButton" title="Search" class="sapMBarChild sapMBtn sapMBtnBase"><span id="search--searchCenterSearchButton-inner" class="sapMBtnDefault sapMBtnHoverable sapMBtnIconFirst sapMBtnInner sapMFocusable"><span id="search--searchCenterSearchButton-img" data-sap-ui="search--searchCenterSearchButton-img" role="presentation" aria-hidden="true" data-sap-ui-icon-content="" class="sapMBtnCustomIcon sapMBtnIcon sapMBtnIconLeft sapUiIcon" style="font-family:'SAP-icons'"></span></span></button></div></div></div></div></div><div id="__jsview0--shell-header-hdr-end" class="sapUiUfdShellHeadEnd"><div class="sapUiUfdShellHeadContainer"><div tabindex="0" id="__jsview0--headItem-Notify" data-sap-ui="__jsview0--headItem-Notify" class="sapUiUfdShellHeadItm sapUiUfdShellHeadItmSep sapSupportShellHeadItmBadge sapSupportShellHeadItmBadgeError" title="Notification Area" role="button" aria-pressed="false"><span role="presentation" aria-label="marketing-campaign" style="font-family: &quot;SAP-icons&quot;;"></span><div class="sapSupportShellHeadItmBadgeMarker">1</div><div class="sapUiUfdShellHeadItmMarker"><div></div></div></div><div tabindex="0" id="__jsview0--headItem-Help" data-sap-ui="__jsview0--headItem-Help" class="sapUiUfdShellHeadItm sapUiUfdShellHeadItmSep sapUiUfdShellHidden" title="Help" aria-hidden="true" role="button"><span role="presentation" aria-label="sys-help" style="font-family: &quot;SAP-icons&quot;;"></span><div class="sapUiUfdShellHeadItmMarker"><div></div></div></div><div tabindex="0" id="__jsview0--headItem-Account" data-sap-ui="__jsview0--headItem-Account" class="sapUiUfdShellHeadUsrItm" title="User" role="button" aria-haspopup="true"><span id="__jsview0--headItem-Account-img" aria-hidden="true" class="sapUiUfdShellHeadUsrItmImg" role="presentation" aria-label="account" style="font-family: &quot;SAP-icons&quot;;"></span><span id="__jsview0--headItem-Account-name" class="sapUiUfdShellHeadUsrItmName" title="User Message (S0011318247)">User Message (S0011318247)</span><span class="sapUiUfdShellHeadUsrItmExp" aria-hidden="true"></span></div></div></div></div></div></div></header><section id="__jsview0--shell-curt" class="sapUiUfdShellCntnt sapUiUfdShellCurtain"><div id="__jsview0--shell-curtcntnt" class="sapUiUfdShellCntnt"><div id="__jsview0--shell-curt-container" data-sap-ui="__jsview0--shell-curt-container" class="sapUiUfdSpltCont sapUiUfdSpltContAnim sapUiUfdSpltContH sapUiUfdSpltContPaneHidden"><section id="__jsview0--shell-curt-container-canvas" class="sapUiUfdSpltContCanvas" style="left: 0px;"><div id="__jsview0--shell-curt-container-canvascntnt" class="sapUiUfdSpltContCntnt" data-sap-ui-root-content="true"></div></section><aside id="__jsview0--shell-curt-container-pane" style="width: 240px; left: -240px;" class="sapUiUfdSplitContSecondClosed sapUiUfdSpltContPane"><div id="__jsview0--shell-curt-container-panecntnt" class="sapUiUfdSpltContCntnt" data-sap-ui-root-content="true"></div></aside></div></div><span id="__jsview0--shell-curt-focusDummyOut" tabindex="0"></span></section><div id="__jsview0--shell-cntnt" class="sapUiUfdShellCntnt sapUiUfdShellCanvas sapUiGlobalBackgroundColor sapUiGlobalBackgroundColorForce"><div id="__jsview0--shell-strgbg" class="sapUiUfdShellBG"></div><div class="sapUiGlobalBackgroundImage sapUiGlobalBackgroundImageForce sapUiUfdShellBG"></div><div id="__jsview0--shell-container" data-sap-ui="__jsview0--shell-container" class="sapUiUfdSpltCont sapUiUfdSpltContAnim sapUiUfdSpltContH sapUiUfdSpltContPaneHidden"><section id="__jsview0--shell-container-canvas" class="sapUiUfdSpltContCanvas" style="left: 0px;" role="main"><div id="__jsview0--shell-container-canvascntnt" class="sapUiUfdSpltContCntnt" data-sap-ui-root-content="true"><div id="__jsview0--navContainer" data-sap-ui="__jsview0--navContainer" class="sapMNav" style="width: 100%; height: 100%;"><div id="__container1" data-sap-ui="__container1" style="width:100%;height:100%" class="sapMNavItem sapUiComponentContainer"><div id="__container1-uiarea" style="width:100%;height:100%"><div id="__xmlview0" data-sap-ui="__xmlview0" data-sap-ui-preserve="__xmlview0" style="width: 100%; height: 100%;" class="sapUiView sapUiXMLView">
+	<div id="__xmlview0--idApp" data-sap-ui="__xmlview0--idApp" class="sapMApp sapMNav sapUiGlobalBackgroundColor" style="width:100%"><div id="__xmlview0--idApp-BG" class="sapMAppBG sapUiGlobalBackgroundImage"></div><div id="__xmlview2" data-sap-ui="__xmlview2" data-sap-ui-preserve="__xmlview2" style="width:100%;height:100%" class="sapMNavItem sapUiView sapUiViewDisplayBlock sapUiXMLView">
+	<span id="sap-ui-invisible-__xmlview2--idTranslationMsg" class="sapUiHiddenPlaceholder" data-sap-ui="sap-ui-invisible-__xmlview2--idTranslationMsg" style="display: none;" aria-hidden="true"></span>
+	<div id="__xmlview2--idObjectPageLayout" data-sap-ui="__xmlview2--idObjectPageLayout" aria-label="2200772 - FAQ: SAP HANA Statement Routing and Client Distribution Mode" class="sapUxAPObjectPageLayout sapUxAPObjectPageLayoutTitleClickEnabled sapUxAPObjectPageLayoutWithNavigation" style="height:100%"><div id="__xmlview2--idObjectPageLayout-vertSB" data-sap-ui="__xmlview2--idObjectPageLayout-vertSB" style="overflow:hidden;width:17px;height:100%" class="sapUiScrollBar sapUxAPObjectPageCustomScroller"><div id="__xmlview2--idObjectPageLayout-vertSB-sb" style="width:34px;height:100%;overflow-y:scroll;overflow-x:hidden;margin-left:-17px;"><div id="__xmlview2--idObjectPageLayout-vertSB-sbcnt" style="width: 17px; height: 7406px;"></div></div><div> </div></div><header role="banner" id="__xmlview2--idObjectPageLayout-headerTitle" class="sapContrastPlus sapUxAPObjectPageHeaderTitle sapUxAPObjectPageHeaderStickied" style="padding-right: 17px;"><div id="__xmlview2--idObjectPageHeader" data-sap-ui="__xmlview2--idObjectPageHeader" class="sapUiSelectable sapUxAPObjectPageHeader sapUxAPObjectPageHeaderDesign-Light"><div id="__xmlview2--idObjectPageHeader-identifierLine" class="sapUxAPObjectPageHeaderIdentifier sapUxAPObjectPageHeaderIdentifierForce"><span id="__xmlview2--idObjectPageHeader-identifierLineContainer" class="sapUxAPObjectPageHeaderIdentifierContainer" style="width: 76.2317%;"><h1 class="sapUxAPObjectPageHeaderIdentifierTitle sapUxAPObjectPageHeaderIdentifierTitleForce" id="__xmlview2--idObjectPageHeader-title"><span class="sapUxAPObjectPageHeaderTitleTextWrappable" id="__xmlview2--idObjectPageHeader-innerTitle" style="">2200772 - FAQ: SAP HANA Statement Routing and Client Distribution Mode</span></h1><span class="sapUxAPObjectPageHeaderIdentifierDescription sapUxAPObjectPageHeaderIdentifierDescriptionForce sapOPHSubtitleBlock" id="__xmlview2--idObjectPageHeader-subtitle" style="">Version 14 from 06.04.2017 in English</span></span><span id="__xmlview2--idObjectPageHeader-actions" class="sapUxAPObjectPageHeaderIdentifierActions sapUxAPObjectPageHeaderIdentifierActionsForce"><button id="__xmlview2--idObjectPageHeader-expand" data-sap-ui="__xmlview2--idObjectPageHeader-expand" title="Expand header content" class="sapMBtn sapMBtnBase sapUxAPObjectPageHeaderExpandButton"><span id="__xmlview2--idObjectPageHeader-expand-inner" class="sapMBtnHoverable sapMBtnIconFirst sapMBtnInner sapMBtnTransparent sapMFocusable"><span id="__xmlview2--idObjectPageHeader-expand-img" data-sap-ui="__xmlview2--idObjectPageHeader-expand-img" role="presentation" aria-hidden="true" data-sap-ui-icon-content="" class="sapMBtnCustomIcon sapMBtnIcon sapMBtnIconLeft sapUiIcon sapUiIconMirrorInRTL" style="font-family:'SAP-icons'"></span></span></button><button id="__xmlview2--idBtnPDF" data-sap-ui="__xmlview2--idBtnPDF" title="Export as PDF" class="sapMBtn sapMBtnBase sapUxAPObjectPageHeaderActionButtonHideText" style="display: inline-block;"><span id="__xmlview2--idBtnPDF-inner" class="sapMBtnHoverable sapMBtnIconFirst sapMBtnInner sapMBtnText sapMBtnTransparent sapMFocusable"><span id="__xmlview2--idBtnPDF-img" data-sap-ui="__xmlview2--idBtnPDF-img" role="presentation" aria-hidden="true" data-sap-ui-icon-content="" class="sapMBtnCustomIcon sapMBtnIcon sapMBtnIconLeft sapUiIcon sapUiIconMirrorInRTL" style="font-family:'SAP-icons'"></span><span class="sapMBtnContent" id="__xmlview2--idBtnPDF-content"><bdi>Export as PDF</bdi></span></span></button><button id="__xmlview2--idBtnFavorite" data-sap-ui="__xmlview2--idBtnFavorite" title="Mark as Favorite" class="sapMBtn sapMBtnBase sapUxAPObjectPageHeaderActionButtonHideText" style="display: inline-block;"><span id="__xmlview2--idBtnFavorite-inner" class="sapMBtnHoverable sapMBtnIconFirst sapMBtnInner sapMBtnText sapMBtnTransparent sapMFocusable"><span id="__xmlview2--idBtnFavorite-img" data-sap-ui="__xmlview2--idBtnFavorite-img" role="presentation" aria-hidden="true" data-sap-ui-icon-content="" class="sapMBtnCustomIcon sapMBtnIcon sapMBtnIconLeft sapUiIcon sapUiIconMirrorInRTL" style="font-family:'SAP-icons'"></span><span class="sapMBtnContent" id="__xmlview2--idBtnFavorite-content"><bdi>Mark as Favorite</bdi></span></span></button><button id="__xmlview2--idBtnEmail" data-sap-ui="__xmlview2--idBtnEmail" title="Share by Email" class="sapMBtn sapMBtnBase sapUxAPObjectPageHeaderActionButtonHideText" style="display: inline-block;"><span id="__xmlview2--idBtnEmail-inner" class="sapMBtnHoverable sapMBtnIconFirst sapMBtnInner sapMBtnText sapMBtnTransparent sapMFocusable"><span id="__xmlview2--idBtnEmail-img" data-sap-ui="__xmlview2--idBtnEmail-img" role="presentation" aria-hidden="true" data-sap-ui-icon-content="" class="sapMBtnCustomIcon sapMBtnIcon sapMBtnIconLeft sapUiIcon sapUiIconMirrorInRTL" style="font-family:'SAP-icons'"></span><span class="sapMBtnContent" id="__xmlview2--idBtnEmail-content"><bdi>Share by Email</bdi></span></span></button><button id="__button8" data-sap-ui="__button8" title="Open in New Window" class="sapMBtn sapMBtnBase sapUxAPObjectPageHeaderActionButtonHideText" style="display: inline-block;"><span id="__button8-inner" class="sapMBtnHoverable sapMBtnIconFirst sapMBtnInner sapMBtnText sapMBtnTransparent sapMFocusable"><span id="__button8-img" data-sap-ui="__button8-img" role="presentation" aria-hidden="true" data-sap-ui-icon-content="" class="sapMBtnCustomIcon sapMBtnIcon sapMBtnIconLeft sapUiIcon sapUiIconMirrorInRTL" style="font-family:'SAP-icons'"></span><span class="sapMBtnContent" id="__button8-content"><bdi>Open in New Window</bdi></span></span></button><span id="sap-ui-invisible-__button9" class="sapUiHiddenPlaceholder" data-sap-ui="sap-ui-invisible-__button9" style="display: none;" aria-hidden="true"></span><button id="__xmlview2--idObjectPageHeader-overflow" data-sap-ui="__xmlview2--idObjectPageHeader-overflow" title="More" class="sapMBtn sapMBtnBase" style="display: none;"><span id="__xmlview2--idObjectPageHeader-overflow-inner" class="sapMBtnHoverable sapMBtnIconFirst sapMBtnInner sapMBtnTransparent sapMFocusable"><span id="__xmlview2--idObjectPageHeader-overflow-img" data-sap-ui="__xmlview2--idObjectPageHeader-overflow-img" role="presentation" aria-hidden="true" data-sap-ui-icon-content="" class="sapMBtnCustomIcon sapMBtnIcon sapMBtnIconLeft sapUiIcon sapUiIconMirrorInRTL" style="font-family:'SAP-icons'"></span></span></button></span></div></div><header id="__xmlview2--idObjectPageLayout-stickyHeaderContent" class="sapUxAPObjectPageHeaderDetails sapUxAPObjectPageHeaderDetailsDesign-Light ui-helper-clearfix" data-sap-ui-customfastnavgroup="true"></header><div id="__xmlview2--idObjectPageLayout-stickyAnchorBar" class="sapUxAPObjectPageNavigation sapUxAPObjectPageStickyAnchorBar"><div id="__xmlview2--idObjectPageLayout-anchBar" data-sap-ui="__xmlview2--idObjectPageLayout-anchBar" data-sap-ui-fastnavgroup="true" role="toolbar" class="sapMIBar sapMTB sapMTB-Transparent-CTX sapMTBInactive sapMTBNewFlex sapUxAPAnchorBar sapUxAPAnchorBarOverflow"><div id="__layout13" data-sap-ui="__layout13" class="anchorBarArrow anchorBarArrowLeft sapUiHLayout sapUiHLayoutNoWrap"><div class="sapUiHLayoutChildWrapper"><button id="__xmlview2--idObjectPageLayout-anchBar-arrowScrollLeft" data-sap-ui="__xmlview2--idObjectPageLayout-anchBar-arrowScrollLeft" title="Scroll left" class="sapMBtn sapMBtnBase" tabindex="-1"><span id="__xmlview2--idObjectPageLayout-anchBar-arrowScrollLeft-inner" class="sapMBtnHoverable sapMBtnIconFirst sapMBtnInner sapMBtnTransparent sapMFocusable"><span id="__xmlview2--idObjectPageLayout-anchBar-arrowScrollLeft-img" data-sap-ui="__xmlview2--idObjectPageLayout-anchBar-arrowScrollLeft-img" role="presentation" aria-hidden="true" data-sap-ui-icon-content="" class="sapMBtnCustomIcon sapMBtnIcon sapMBtnIconLeft sapUiIcon sapUiIconMirrorInRTL" style="font-family:'SAP-icons'"></span></span></button></div></div><div id="__xmlview2--idObjectPageLayout-anchBar-scrollContainer" aria-label="Page Navigation" class="sapUxAPAnchorBarScrollContainer" style="overflow: hidden;"><div id="__xmlview2--idObjectPageLayout-anchBar-scroll"><button id="__xmlview2--idObjectPageLayout-anchBar-__section1-anchor" data-sap-ui="__xmlview2--idObjectPageLayout-anchBar-__section1-anchor" class="sapMBarChild sapMBtn sapMBtnBase sapUxAPAnchorBarButton sapUxAPAnchorBarButtonSelected" tabindex="0" aria-controls="__section1" style=""><span id="__xmlview2--idObjectPageLayout-anchBar-__section1-anchor-inner" class="sapMBtnDefault sapMBtnHoverable sapMBtnInner sapMBtnText sapMFocusable"><span class="sapMBtnContent" id="__xmlview2--idObjectPageLayout-anchBar-__section1-anchor-content"><bdi>Description</bdi></span></span></button><button id="__xmlview2--idObjectPageLayout-anchBar-__section3-anchor" data-sap-ui="__xmlview2--idObjectPageLayout-anchBar-__section3-anchor" class="sapMBarChild sapMBtn sapMBtnBase sapUxAPAnchorBarButton" tabindex="-1" aria-controls="__section3" style=""><span id="__xmlview2--idObjectPageLayout-anchBar-__section3-anchor-inner" class="sapMBtnDefault sapMBtnHoverable sapMBtnInner sapMBtnText sapMFocusable"><span class="sapMBtnContent" id="__xmlview2--idObjectPageLayout-anchBar-__section3-anchor-content"><bdi>Product</bdi></span></span></button><button id="__xmlview2--idObjectPageLayout-anchBar-__section6-anchor" data-sap-ui="__xmlview2--idObjectPageLayout-anchBar-__section6-anchor" class="sapMBarChild sapMBtn sapMBtnBase sapUxAPAnchorBarButton" tabindex="-1" aria-haspopup="true" aria-controls="__section6" style=""><span id="__xmlview2--idObjectPageLayout-anchBar-__section6-anchor-inner" class="sapMBtnDefault sapMBtnHoverable sapMBtnIconLast sapMBtnInner sapMBtnText sapMFocusable"><span id="__xmlview2--idObjectPageLayout-anchBar-__section6-anchor-img" data-sap-ui="__xmlview2--idObjectPageLayout-anchBar-__section6-anchor-img" role="presentation" aria-hidden="true" data-sap-ui-icon-content="" class="sapMBtnCustomIcon sapMBtnIcon sapMBtnIconRight sapUiIcon sapUiIconMirrorInRTL" style="font-family:'SAP-icons'"></span><span class="sapMBtnContent" id="__xmlview2--idObjectPageLayout-anchBar-__section6-anchor-content"><bdi>References</bdi></span></span></button><button id="__xmlview2--idObjectPageLayout-anchBar-__section12-anchor" data-sap-ui="__xmlview2--idObjectPageLayout-anchBar-__section12-anchor" class="sapMBarChild sapMBtn sapMBtnBase sapUxAPAnchorBarButton" tabindex="-1" aria-controls="__section12" style=""><span id="__xmlview2--idObjectPageLayout-anchBar-__section12-anchor-inner" class="sapMBtnDefault sapMBtnHoverable sapMBtnInner sapMBtnText sapMFocusable"><span class="sapMBtnContent" id="__xmlview2--idObjectPageLayout-anchBar-__section12-anchor-content"><bdi>Languages</bdi></span></span></button><button id="__xmlview2--idObjectPageLayout-anchBar-__xmlview2--idSectionRating-anchor" data-sap-ui="__xmlview2--idObjectPageLayout-anchBar-__xmlview2--idSectionRating-anchor" class="sapMBarChild sapMBtn sapMBtnBase sapUxAPAnchorBarButton" tabindex="-1" aria-controls="__xmlview2--idSectionRating" style=""><span id="__xmlview2--idObjectPageLayout-anchBar-__xmlview2--idSectionRating-anchor-inner" class="sapMBtnDefault sapMBtnHoverable sapMBtnInner sapMBtnText sapMFocusable"><span class="sapMBtnContent" id="__xmlview2--idObjectPageLayout-anchBar-__xmlview2--idSectionRating-anchor-content"><bdi>Customer Ratings</bdi></span></span></button></div></div><div id="__layout14" data-sap-ui="__layout14" class="anchorBarArrow anchorBarArrowRight sapUiHLayout sapUiHLayoutNoWrap"><div class="sapUiHLayoutChildWrapper"><button id="__xmlview2--idObjectPageLayout-anchBar-arrowScrollRight" data-sap-ui="__xmlview2--idObjectPageLayout-anchBar-arrowScrollRight" title="Scroll right" class="sapMBtn sapMBtnBase" tabindex="-1"><span id="__xmlview2--idObjectPageLayout-anchBar-arrowScrollRight-inner" class="sapMBtnHoverable sapMBtnIconFirst sapMBtnInner sapMBtnTransparent sapMFocusable"><span id="__xmlview2--idObjectPageLayout-anchBar-arrowScrollRight-img" data-sap-ui="__xmlview2--idObjectPageLayout-anchBar-arrowScrollRight-img" role="presentation" aria-hidden="true" data-sap-ui-icon-content="" class="sapMBtnCustomIcon sapMBtnIcon sapMBtnIconLeft sapUiIcon sapUiIconMirrorInRTL" style="font-family:'SAP-icons'"></span></span></button></div></div><div id="__select0" data-sap-ui="__select0" style="max-width:100%" class="sapMBarChild sapMSlt sapMSltAutoAdjustedWidth sapMSltHoverable sapMSltIconOnly sapMSltWithArrow sapMSltWithIcon sapUxAPHierarchicalSelect" role="button" aria-expanded="false" aria-labelledby="__select0-label" aria-haspopup="true" title="More" tabindex="0"><label id="__select0-label" for="__select0" aria-live="polite" class="sapMSltLabel sapUiPseudoInvisibleText">Description</label><span class="sapMSltIcon sapUiIcon sapUiIconMirrorInRTL" style="font-family: SAP-icons;" data-sap-ui-icon-content="" role="presentation" id="__select0-icon" aria-label="More"></span></div></div></div></header><div id="__xmlview2--idObjectPageLayout-opwrapper" class="sapUxAPObjectPageWrapper sapUxAPObjectPageWrapperTransform" style="overflow-x: hidden; overflow-y: auto;"><div id="__xmlview2--idObjectPageLayout-scroll" class="sapUxAPObjectPageScroll"><header id="__xmlview2--idObjectPageLayout-headerContent" class="sapUxAPObjectPageHeaderDetails sapUxAPObjectPageHeaderDetailsDesign-Light ui-helper-clearfix sapUxAPObjectPageHeaderDetailsHidden" data-sap-ui-customfastnavgroup="true" style="overflow: hidden;"><div id="__content0" data-sap-ui="__content0" class="sapUxAPObjectPageContentObjectImage-Circle sapUxAPObjectPageHeaderContent sapUxAPObjectPageHeaderContentDesign-Light ui-helper-clearfix"><div id="__layout0" data-sap-ui="__layout0" class="sapUiVlt sapUxAPObjectPageHeaderContentItem sapuiVlt"><div class="sapUiVltCell sapuiVltCell"><div id="__status0" data-sap-ui="__status0" title="SAP HANA Database" class="sapMObjStatus sapMObjStatusNone sapUiSelectable"><span id="__status0-title" dir="ltr" class="sapMObjStatusTitle">Component:</span><span id="__status0-text" class="sapMObjStatusText">HAN-DB</span></div></div><div class="sapUiVltCell sapuiVltCell"><div id="__status1" data-sap-ui="__status1" class="sapMObjStatus sapMObjStatusNone sapUiSelectable"><span id="__status1-title" dir="ltr" class="sapMObjStatusTitle">Priority:</span><span id="__status1-text" class="sapMObjStatusText">Normal</span></div></div></div><div id="__layout1" data-sap-ui="__layout1" class="sapUiVlt sapUxAPObjectPageHeaderContentItem sapuiVlt"><div class="sapUiVltCell sapuiVltCell"><div id="__status2" data-sap-ui="__status2" class="sapMObjStatus sapMObjStatusNone sapUiSelectable"><span id="__status2-title" dir="ltr" class="sapMObjStatusTitle">Category:</span><span id="__status2-text" class="sapMObjStatusText">How To</span></div></div><div class="sapUiVltCell sapuiVltCell"><div id="__status3" data-sap-ui="__status3" class="sapMObjStatus sapMObjStatusNone sapUiSelectable"><span id="__status3-title" dir="ltr" class="sapMObjStatusTitle">Release Status:</span><span id="__status3-text" class="sapMObjStatusText">Released to Customer</span></div></div></div><div id="__layout3" data-sap-ui="__layout3" class="sapUiHLayout sapUiHLayoutNoWrap sapUxAPObjectPageHeaderContentItem"><div class="sapUiHLayoutChildWrapper"><div id="__layout2" data-sap-ui="__layout2" class="sapUiVlt sapuiVlt"><div class="sapUiVltCell sapuiVltCell"><div id="__indicator0" data-sap-ui="__indicator0" tabindex="-1" aria-readonly="false" style="width:64px;height:12px" class="myNNFV2SmallPaddingTop sapMRI sapMRIDisabled sapUiRatingIndicatorXS sapUiTinyMarginEnd" aria-disabled="true" role="slider" aria-orientation="horizontal" aria-valuemin="0" aria-labelledby="__indicator0-ariaLabel" aria-valuenow="0" aria-valuemax="5" aria-valuetext="0 of 5"><label id="__indicator0-ariaLabel" class="sapMRIAriaLabel" aria-hidden="true">Rating</label><div class="sapMRISel" id="__indicator0-sel" style="width: 0px"><span class="sapUiIcon sapMRIIconSel" style="width:12px;height:12px;line-height:12px;font-size:12px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:12px;height:12px;line-height:12px;font-size:12px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:12px;height:12px;line-height:12px;font-size:12px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:12px;height:12px;line-height:12px;font-size:12px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:12px;height:12px;line-height:12px;font-size:12px;"></span></div><div class="sapMRIUnselWrapper" id="__indicator0-unsel-wrapper" style="width: 64px"><div class="sapMRIUnsel" id="__indicator0-unsel"><span class="sapUiIcon sapMRIIconUnsel" style="width:12px;height:12px;line-height:12px;font-size:12px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:12px;height:12px;line-height:12px;font-size:12px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:12px;height:12px;line-height:12px;font-size:12px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:12px;height:12px;line-height:12px;font-size:12px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:12px;height:12px;line-height:12px;font-size:12px;"></span></div></div><div class="sapMRIHov" id="__indicator0-hov"><span class="sapUiIcon sapMRIIconHov" style="width:12px;height:12px;line-height:12px;font-size:12px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:12px;height:12px;line-height:12px;font-size:12px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:12px;height:12px;line-height:12px;font-size:12px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:12px;height:12px;line-height:12px;font-size:12px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:12px;height:12px;line-height:12px;font-size:12px;"></span></div><div class="sapMRISelector" id="__indicator0-selector"></div></div></div><div class="sapUiVltCell sapuiVltCell"><a id="__xmlview2--idLinkRating" data-sap-ui="__xmlview2--idLinkRating" tabindex="0" role="link" class="sapMLnk sapMLnkMaxWidth sapUiTinyMarginEnd sapUiTinyMarginTop">0 customer ratings</a></div></div></div></div><span style="width:auto" class="sapUxAPObjectPageHeaderContentItem sapUxAPObjectPageHeaderLayoutHiddenS sapUxAPObjectPageHeaderWidthContainer"><div id="__layout4" data-sap-ui="__layout4" class="sapUiHLayout sapUiHLayoutNoWrap"><div class="sapUiHLayoutChildWrapper"><div id="__input0" data-sap-ui="__input0" style="width:200px" class="sapMInput sapMInputBase sapMInputBaseWidthPadding"><div class="sapMInputDivWrapper"><input id="__input0-inner" placeholder="SAP Note/KBA Number" maxlength="10" aria-labelledby="__input0-labelledby" x-moz-errormessage=" " class="sapMInputBaseInner" type="number"></div><span id="__input0-labelledby" aria-hidden="true" class="sapUiInvisibleText">SAP Note/KBA Number</span></div></div><div class="sapUiHLayoutChildWrapper"><button id="__button10" data-sap-ui="__button10" title="Display" class="sapMBtn sapMBtnBase sapUiTinyMarginBegin"><span id="__button10-inner" class="sapMBtnDefault sapMBtnHoverable sapMBtnIconFirst sapMBtnInner sapMFocusable"><span id="__button10-img" data-sap-ui="__button10-img" role="presentation" aria-hidden="true" data-sap-ui-icon-content="" class="sapMBtnCustomIcon sapMBtnIcon sapMBtnIconLeft sapUiIcon sapUiIconMirrorInRTL" style="font-family:'SAP-icons'"></span></span></button></div></div></span></div></header><section id="__xmlview2--idObjectPageLayout-anchorBar" role="navigation" class="sapContrastPlus sapUxAPObjectPageNavigation" style="visibility: hidden; height: auto;"></section><section id="__xmlview2--idObjectPageLayout-sectionsContainer" class="sapUxAPObjectPageContainer ui-helper-clearfix"><section class="sapUxAPObjectPageSection sapUxAPObjectPageSubSectionPromoted" role="region" aria-labelledby="__text28" id="__section1" data-sap-ui="__section1" tabindex="0" style=""><div class="sapUxAPObjectPageSectionContainer"><div role="region" id="__section0" data-sap-ui="__section0" class="sapUiNoMargin sapUxAPObjectPageSubSection sapUxAPObjectPageSubSectionPromoted ui-helper-clearfix" tabindex="-1" style=""><div class="sapUxAPBlockContainer sapUxAPBlockContainerDesktop ui-helper-clearfix"><div id="__section0-innerGrid" data-sap-ui="__section0-innerGrid" class="sapUiRespGrid sapUiRespGridHSpace1 sapUiRespGridVSpace1 sapUiRespGridMedia-Std-Tablet"><div class="sapUiRespGridSpanL12 sapUiRespGridSpanM12 sapUiRespGridSpanS12 sapUiRespGridSpanXL12"><div id="__layout6" data-sap-ui="__layout6" class="sapUiVlt sapuiVlt"><div class="sapUiVltCell sapuiVltCell"><div id="__layout5-__layout6-0" data-sap-ui="__layout5-__layout6-0" class="sapUiVlt sapuiVlt"><div class="sapUiVltCell sapuiVltCell"><h3 id="__title0-__layout6-0" data-sap-ui="__title0-__layout6-0" class="sapMTitle sapMTitleMaxWidth sapMTitleNoWrap sapMTitleStyleH3 sapUiSelectable sapUiTinyMarginBottom sapUiTinyMarginTop"><span id="__title0-__layout6-0-inner">Symptom</span></h3></div><div class="sapUiVltCell sapuiVltCell"><div class="myNNFV2Text sapUiSelectable" data-sap-ui-preserve="__html2-__layout6-0" id="__html2-__layout6-0"> <p>You are interested in details about SAP HANA statement routing and the client distribution mode.</p> </div></div></div></div><div class="sapUiVltCell sapuiVltCell"><div id="__layout5-__layout6-1" data-sap-ui="__layout5-__layout6-1" class="sapUiVlt sapuiVlt"><div class="sapUiVltCell sapuiVltCell"><h3 id="__title0-__layout6-1" data-sap-ui="__title0-__layout6-1" class="sapMTitle sapMTitleMaxWidth sapMTitleNoWrap sapMTitleStyleH3 sapUiSelectable sapUiTinyMarginBottom sapUiTinyMarginTop"><span id="__title0-__layout6-1-inner">Environment</span></h3></div><div class="sapUiVltCell sapuiVltCell"><div class="myNNFV2Text sapUiSelectable" data-sap-ui-preserve="__html2-__layout6-1" id="__html2-__layout6-1"> <p>SAP HANA</p> </div></div></div></div><div class="sapUiVltCell sapuiVltCell"><div id="__layout5-__layout6-2" data-sap-ui="__layout5-__layout6-2" class="sapUiVlt sapuiVlt"><div class="sapUiVltCell sapuiVltCell"><h3 id="__title0-__layout6-2" data-sap-ui="__title0-__layout6-2" class="sapMTitle sapMTitleMaxWidth sapMTitleNoWrap sapMTitleStyleH3 sapUiSelectable sapUiTinyMarginBottom sapUiTinyMarginTop"><span id="__title0-__layout6-2-inner">Cause</span></h3></div><div class="sapUiVltCell sapuiVltCell"><div class="myNNFV2Text sapUiSelectable" data-sap-ui-preserve="__html2-__layout6-2" id="__html2-__layout6-2"> <p>1. What is statement routing in SAP HANA environments?<br>2. How is statement routing implemented?<br>3. What are advantages of statement routing?<br>4. Which limitations exist for statement routing?<br>5. Are there other approaches to distribute load to the SAP HANA nodes?<br>6. Can connection load balancing be configured individually on client side?<br>7. Can statement routing be configured on SQL statement level?<br>8. How can I determine statement routing details for connections?<br>9. How can I trace the SAP HANA statement routing?<br>10. Is the partitioning layout considered when doing statement routing?</p> </div></div></div></div><div class="sapUiVltCell sapuiVltCell"><div id="__layout5-__layout6-3" data-sap-ui="__layout5-__layout6-3" class="sapUiVlt sapuiVlt"><div class="sapUiVltCell sapuiVltCell"><h3 id="__title0-__layout6-3" data-sap-ui="__title0-__layout6-3" class="sapMTitle sapMTitleMaxWidth sapMTitleNoWrap sapMTitleStyleH3 sapUiSelectable sapUiTinyMarginBottom sapUiTinyMarginTop"><span id="__title0-__layout6-3-inner">Resolution</span></h3></div><div class="sapUiVltCell sapuiVltCell"><div class="myNNFV2Text sapUiSelectable" data-sap-ui-preserve="__html2-__layout6-3" id="__html2-__layout6-3"> <h3>1. What is statement routing in SAP HANA environments?</h3>
+<p>Statement routing is used to&nbsp;choose SAP HANA nodes in scale-out 
+environments that are optimal for processing specific SQL statements. It
+ is controlled by the client library (e.g. SQLDBC, JDBC, ODBC, DBSL) and
+ it mainly takes into account the location of the involved tables to 
+make a decision.</p>
+<p>See SAP Note <a target="_blank" href="https://launchpad.support.sap.com/#/notes/2079372">2079372</a>&nbsp;and the statement routing section of&nbsp;<a target="_blank" href="http://scn.sap.com/docs/DOC-63221">SAP HANA TDI - Network Requirements</a>&nbsp;for more information related to SAP HANA statement routing.</p>
+<h3>2. How is statement routing implemented?</h3>
+<p>The following picture shows how statement routing is implemented. 
+During preparation table information is collected and sent back to the 
+client where it is cached. The client library then chooses an optimal 
+host (containing the requested table T1) and executes the database 
+request on that host:</p>
+<p><img alt="Capture2.JPG" id="6CAE8B3E8C4D1ED58EB8AF865C518B1F" src="SAP%20HANA%20Statement%20Routing%20and%20Client%20Distribution%20Mode_files/embedded_image.jpg" title="Capture2.JPG" height="279" width="307"></p>
+<h3>3. What are advantages of statement routing?</h3>
+<p>Statement routing minimizes the network traffic between nodes of a 
+scale-out solution, because database requests are executed on nodes 
+holding (parts of the) accessed tables.</p>
+<h3>4. Which limitations exist for statement routing?</h3>
+<p>The following limitations exist for statement routing:</p>
+<div class="myNNFV2-container"><div class="myNNFV2-table-responsive"><table class="myNNFV2-table" cellspacing="0" cellpadding="3" border="1">
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Limitation</strong></td>
+<td style="text-align: center;"><strong>Details</strong></td>
+</tr>
+<tr>
+<td>Limited to prepared statements</td>
+<td>
+<p>Table locations are determined during preparation, so statement 
+routing only works for prepared SQL statements. If statements are not 
+prepared, you can't take advantage of statement routing. Typical problem
+ scenarios are:</p>
+<div class="myNNFV2-container"><div class="myNNFV2-table-responsive"><table class="myNNFV2-table" cellspacing="0" cellpadding="3" border="1">
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Area</strong></td>
+<td style="text-align: center;"><strong>SAP Note</strong></td>
+<td style="text-align: center;"><strong>Details</strong></td>
+</tr>
+<tr>
+<td>SAP HANA Studio</td>
+<td style="text-align: center;"><a target="_blank" href="https://launchpad.support.sap.com/#/notes/2112849">2112849</a></td>
+<td>Ad-hoc SQL statement executions in SAP HANA Studio aren't prepared 
+and so they don't take advantage of statement routing. You can choose 
+'Prepare statement' in the context menu in order to force a preparation.</td>
+</tr>
+<tr>
+<td>BO Web Intelligence</td>
+<td style="text-align: center;"><a target="_blank" href="https://launchpad.support.sap.com/#/notes/1963887">1963887</a></td>
+<td>WebI 4.x doesn't send prepared statements per default. This can be changed by adjusting 'Optimize Execute'&nbsp;to 'False'.</td>
+</tr>
+<tr>
+<td>Advanced Analysis for Office</td>
+<td style="text-align: center;"><a target="_blank" href="https://launchpad.support.sap.com/#/notes/2141024">2141024</a></td>
+<td>AAO 1.4 SPS 11 and below may use non-prepared SQL statements. Upgrading to AAO 1.4 SPS 12 or higher fixes the problem.</td>
+</tr>
+</tbody>
+</table></div></div>
+</td>
+</tr>
+<tr>
+<td>Strategy when tables are located on several nodes</td>
+<td>
+<p>If accessed tables, partitions or replicas&nbsp;are located on 
+several different nodes, SAP HANA follows a round-robin strategy 
+regardless of the actual table sizes. So it can happen that a high 
+amount of data has to be sent between the SAP HANA nodes if only a 
+rather small table is located on the selected node.</p>
+</td>
+</tr>
+<tr>
+<td>SAP HANA bugs</td>
+<td>
+<p>The following SAP HANA bugs related to statement routing and client distribution mode exist with specific release levels:</p>
+<div class="myNNFV2-container"><div class="myNNFV2-table-responsive"><table class="myNNFV2-table" cellspacing="0" cellpadding="3" border="1">
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>SAP Note</strong></td>
+<td style="text-align: center;"><strong>Rev.</strong></td>
+<td style="text-align: center;"><strong>Details</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"><a target="_blank" href="https://launchpad.support.sap.com/#/notes/1745057">1745057</a></td>
+<td style="text-align: center;">&lt;= 35</td>
+<td>Connections to slave nodes may fail</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a target="_blank" href="https://launchpad.support.sap.com/#/notes/1774187">1774187</a></td>
+<td style="text-align: center;">&lt;= 44</td>
+<td>Terminations with "[7]: feature not supported: not supported to insert table info at remote nodes"</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a target="_blank" href="https://launchpad.support.sap.com/#/notes/1785171">1785171</a></td>
+<td style="text-align: center;">40</td>
+<td>Terminations and crashes</td>
+</tr>
+<tr>
+<td style="text-align: center;"><a target="_blank" href="https://launchpad.support.sap.com/#/notes/2089411">2089411</a></td>
+<td style="text-align: center;">&lt;= 84</td>
+<td>Indexserver crash</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">&lt;= 122.08<br>&lt;= 2.00.002.00</td>
+<td>Prepared statements may use outdated routing after repartitioning / redistribution</td>
+</tr>
+</tbody>
+</table></div></div>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td>Configuration in table replication scenarios</td>
+<td>
+<p>As described in SAP Note <a target="_blank" href="https://launchpad.support.sap.com/#/notes/2381080">2381080</a>,
+ it&nbsp;can be useful to adjust the following parameter in case of 
+statement routing issues in the context of table replication (SAP Note <a target="_blank" href="https://launchpad.support.sap.com/#/notes/2340450">2340450</a>):</p>
+<pre>indexserver.ini -&gt; [sql] -&gt; use_new_placement_scheme_for_replicas = false</pre>
+</td>
+</tr>
+<tr>
+<td>XS API dependencies</td>
+<td>
+<p>The XS engine can be&nbsp;used with different APIs: $.db and $.hdb. See <a target="_blank" href="http://help.sap.com/hana/SAP_HANA_XS_JavaScript_API_Reference_en/">SAP HANA XS JavaScript API Reference</a>&nbsp;for
+ more information. The newer API $.hdb has advantages like a reduced 
+amount of metadata calls, but it doesn't use statement routing and all 
+requests are executed on the SAP HANA master node. The older API $.db 
+uses statement routing, but it has some other disadvantages like a 
+higher amount of metadata calls. If you face issues like a high resource
+ consumption on the master node caused by XS engine calls, you can 
+consider switching to the $.db API in order to take advantage of 
+statement routing and load distribution.</p>
+</td>
+</tr>
+</tbody>
+</table></div></div>
+<h3>5.&nbsp;Are there other approaches to distribute load to the SAP HANA nodes?</h3>
+<p>Statement routing is the most popular implementation of the SAP HANA 
+client distribution mode, but also other algorithms exist. The global 
+client distribution mode is defined with the following parameter:</p>
+<pre>indexserver.ini -&gt; [distribution] -&gt; client_distribution_mode</pre>
+<p>Possible values are:</p>
+<div class="myNNFV2-container"><div class="myNNFV2-table-responsive"><table class="myNNFV2-table" cellspacing="0" cellpadding="3" border="1">
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Client distribution mode</strong></td>
+<td style="text-align: center;"><strong>Details</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">off</td>
+<td>No client distribution</td>
+</tr>
+<tr>
+<td style="text-align: center;">connection</td>
+<td>
+<p>Round-robin execution of database requests</p>
+<p>Used in the following scenarios:</p>
+<ul>
+<li>Prepared statement: Initial connection for prepare</li>
+<li>Unprepared statements</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">statement</td>
+<td>Statement routing based on table locations (default)</td>
+</tr>
+<tr>
+<td style="text-align: center;">all</td>
+<td>Concurrent activation of all distribution features</td>
+</tr>
+</tbody>
+</table></div></div>
+<h3>6. Can&nbsp;connection load balancing be configured individually on client side?</h3>
+<p>Connection&nbsp;load balancing can be configured based on the client connection property DISTRIBUTION (see SAP Note <a target="_blank" href="https://launchpad.support.sap.com/#/notes/2079372">2079372</a>). The default values are marked bold.</p>
+<div class="myNNFV2-container"><div class="myNNFV2-table-responsive"><table class="myNNFV2-table" cellspacing="0" cellpadding="3" border="1">
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>DISTRIBUTION (client SAP HANA SPS &lt;= 10)</strong></td>
+<td style="text-align: center;">
+<p><strong>DISTRIBUTION (client SAP HANA SPS &gt;= 11)</strong></p>
+</td>
+<td style="text-align: center;"><strong>Details</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">OFF</td>
+<td style="text-align: center;">OFF</td>
+<td>No client distribution</td>
+</tr>
+<tr>
+<td style="text-align: center;">CONNECTION</td>
+<td style="text-align: center;">CONNECTION</td>
+<td>
+<p>Round-robin execution of database requests</p>
+<p>Used in the following scenarios:</p>
+<ul>
+<li>Prepared statement: Initial connection for prepare</li>
+<li>Unprepared statements</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">STATEMENT_ONLY</td>
+<td style="text-align: center;"><strong>STATEMENT</strong></td>
+<td>Statement routing based on table locations</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>STATEMENT</strong></td>
+<td style="text-align: center;">ALL</td>
+<td>Concurrent activation of all distribution features</td>
+</tr>
+</tbody>
+</table></div></div>
+<p>In SAP ABAP environments this setting can be implemented with the following SAP profile parameter:</p>
+<pre>dbs/hdb/connect_property = DISTRIBUTION=&lt;distribution_mode&gt;&nbsp;</pre>
+<p>Multiple connection properties can be specified in a comma separated list, e.g.:</p>
+<pre>dbs/hdb/connect_property = DISTRIBUTION=STATEMENT, ENCRYPT=TRUE</pre>
+<h3>7.&nbsp;Can statement routing be configured on SQL statement level?</h3>
+<p>Statement routing can be configured via SQL hints (see SAP Note <a target="_blank" href="https://launchpad.support.sap.com/#/notes/2142945">2142945</a>):</p>
+<div class="myNNFV2-container"><div class="myNNFV2-table-responsive"><table class="myNNFV2-table" cellspacing="0" cellpadding="3" border="1">
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>DISTRIBUTION</strong></td>
+<td style="text-align: center;"><strong>Details</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">ROUTE_BY('&lt;table_name_1&gt;', ..., '&lt;table_name_n&gt;')</td>
+<td>Route SQL statement to hosts related to the specified table(s)</td>
+</tr>
+<tr>
+<td style="text-align: center;">ROUTE_BY_CARDINALITY('&lt;table_name_1&gt;', ..., '&lt;table_name_n&gt;')</td>
+<td>Route SQL statement to host related to the specified table with the highest amount of records</td>
+</tr>
+<tr>
+<td style="text-align: center;">ROUTE_TO(&lt;volume_id_1&gt;, ..., &lt;volume_id_n&gt;)</td>
+<td>Route SQL statement to hosts related to the specified volume ID(s)</td>
+</tr>
+<tr>
+<td style="text-align: center;">NO_ROUTE_TO(&lt;volume_id_1&gt;, ..., &lt;volume_id_n&gt;)</td>
+<td>Exclude routing of SQL statement to host related to the specific volume ID(s)</td>
+</tr>
+</tbody>
+</table></div></div>
+<p>Starting with SAP HANA SPS 11 these hints can also be pinned to SQL statements (SAP Note <a target="_blank" href="https://launchpad.support.sap.com/#/notes/2222321">2222321</a>).</p>
+<p>In BW the TREXviaDBSLWithParameter function is called with a 
+dedicated ROUTE_BY_TABLES parameter&nbsp;that has a similar effect like 
+the ROUTE_BY hint.</p>
+<p><span style="text-decoration: underline;">Example:</span></p>
+<pre>CALL SYS.TREXviaDBSLWithParameter(&nbsp; ? ,&nbsp; ? ,&nbsp; ? , 'ROUTE_BY_TABLES( "&lt;schema&gt;"."&lt;table&gt;" )' )</pre>
+<h3>8. How can I determine statement routing details for connections?</h3>
+<p>You can use the following approaches to check for the mapping of connections to SAP HANA nodes:</p>
+<ul>
+<li>Monitoring view M_CONNECTIONS (CONNECTION_ID, HOST)</li>
+<li><em>SQL: "HANA_Sessions"</em> (SAP Note <a target="_blank" href="https://launchpad.support.sap.com/#/notes/1969700">1969700</a>)</li>
+<li>SAP HANA Studio -&gt; Administration -&gt; Performance -&gt; Sessions</li>
+</ul>
+<p>Furthermore the following columns exist in monitoring views in this context:</p>
+<div class="myNNFV2-container"><div class="myNNFV2-table-responsive"><table class="myNNFV2-table" cellspacing="0" cellpadding="3" border="1">
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Monitoring View&nbsp;</strong></td>
+<td style="text-align: center;"><strong>Column</strong></td>
+<td style="text-align: center;"><strong>Details</strong></td>
+</tr>
+<tr>
+<td>M_CONNECTIONS</td>
+<td>CLIENT_DISTRIBUTION_MODE</td>
+<td>Client distribution mode (OFF, STATEMENT ROUTING, CONNECTION_DISTRIBUTION, ALL)</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>LOGICAL_CONNECTION_ID</td>
+<td>Anchor connection ID (i.e. the connection used to connect to the initial node before routing is done)</td>
+</tr>
+<tr>
+<td>M_CONNECTION_STATISTICS</td>
+<td>
+<p>EXECUTION_COUNT_BY_ROUTING</p>
+</td>
+<td>Number of executions&nbsp;based on&nbsp;client routing</td>
+</tr>
+<tr>
+<td>M_SQL_PLAN_CACHE</td>
+<td>
+<p>EXECUTION_COUNT_BY_ROUTING</p>
+</td>
+<td>Number of executions&nbsp;based on&nbsp;client routing</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+<p>IS_DISTRIBUTED_EXECUTION</p>
+</td>
+<td>TRUE if tables are located on different nodes / services, otherwise FALSE</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+<p>TABLE_LOCATIONS</p>
+</td>
+<td>Locations of involved tables</td>
+</tr>
+</tbody>
+</table></div></div>
+<h3>9. How can I trace the SAP HANA statement routing?</h3>
+<p>You can activate a database trace or user-specific 'statementrouting' trace on 'debug' level&nbsp;(see SAP Note <a target="_blank" href="https://launchpad.support.sap.com/#/notes/2119087">2119087</a>):</p>
+<pre>indexserver.ini -&gt; [trace] -&gt; statementrouting = 'debug'</pre>
+<h3>10. Is&nbsp;the partitioning layout considered when doing statement routing?</h3>
+<p>As described in the <a target="_blank" href="http://help.sap.com/saphelp_hanaplatform/helpdata/en/25/aaa3f8b2f34a2b9c158fff7c2575be/frameset.htm">SAP Online Help for Statement Routing</a>, partitioning information can be included in the statement routing decisions. With SAP HANA SPS 12 the following options exist:</p>
+<div class="myNNFV2-container"><div class="myNNFV2-table-responsive"><table class="myNNFV2-table" cellspacing="0" cellpadding="3" border="1">
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Utilization</strong></td>
+<td style="text-align: center;"><strong>JDBC</strong></td>
+<td style="text-align: center;"><strong>SQLDBC and related (ODBC, DBSL, ...)</strong></td>
+</tr>
+<tr>
+<td>Hash partitioning</td>
+<td style="text-align: center;">yes</td>
+<td style="text-align: center;">yes</td>
+</tr>
+<tr>
+<td>Hash partitioning during split batch insert</td>
+<td style="text-align: center;">split batch not supported</td>
+<td style="text-align: center;">yes</td>
+</tr>
+<tr>
+<td>Range partitioning</td>
+<td style="text-align: center;">no</td>
+<td style="text-align: center;">yes</td>
+</tr>
+<tr>
+<td>Range partitioning during split batch insert</td>
+<td style="text-align: center;">split batch not supported</td>
+<td style="text-align: center;">yes</td>
+</tr>
+</tbody>
+</table></div></div> </div></div></div></div><div class="sapUiVltCell sapuiVltCell"><div id="__layout5-__layout6-4" data-sap-ui="__layout5-__layout6-4" class="sapUiVlt sapuiVlt"><div class="sapUiVltCell sapuiVltCell"><h3 id="__title0-__layout6-4" data-sap-ui="__title0-__layout6-4" class="sapMTitle sapMTitleMaxWidth sapMTitleNoWrap sapMTitleStyleH3 sapUiSelectable sapUiTinyMarginBottom sapUiTinyMarginTop"><span id="__title0-__layout6-4-inner">Keywords</span></h3></div><div class="sapUiVltCell sapuiVltCell"><div class="myNNFV2Text sapUiSelectable" data-sap-ui-preserve="__html2-__layout6-4" id="__html2-__layout6-4"> <p>SAP HANA statement routing client distribution mode client_distribution_mode</p> </div></div></div></div></div></div></div><div class="sapUxAPSubSectionSeeMoreContainer"><button id="__section0--seeMore" data-sap-ui="__section0--seeMore" class="sapMBtn sapMBtnBase sapUxAPSubSectionSeeMoreButton"><span id="__section0--seeMore-inner" class="sapMBtnHoverable sapMBtnInner sapMBtnText sapMBtnTransparent sapMFocusable"><span class="sapMBtnContent" id="__section0--seeMore-content"><bdi>See More</bdi></span></span></button></div></div></div></div></section><section class="sapUxAPObjectPageSection" role="region" aria-labelledby="__text29" id="__section3" data-sap-ui="__section3" tabindex="-1" style=""><div role="heading" aria-level="3" id="__section3-header" class="sapUxAPObjectPageSectionHeader" style=""><div id="__section3-title" class="sapUxAPObjectPageSectionTitle">Product</div><span id="sap-ui-invisible-__button16" class="sapUiHiddenPlaceholder" data-sap-ui="sap-ui-invisible-__button16" style="display: none;" aria-hidden="true"></span><span id="sap-ui-invisible-__button17" class="sapUiHiddenPlaceholder" data-sap-ui="sap-ui-invisible-__button17" style="display: none;" aria-hidden="true"></span></div><div class="sapUxAPObjectPageSectionContainer"><div role="region" id="__section2" data-sap-ui="__section2" class="sapUxAPObjectPageSubSection sapUxAPObjectPageSubSectionPromoted ui-helper-clearfix" tabindex="-1" style=""><div class="sapUxAPBlockContainer sapUxAPBlockContainerDesktop ui-helper-clearfix"><div id="__section2-innerGrid" data-sap-ui="__section2-innerGrid" class="sapUiRespGrid sapUiRespGridHSpace1 sapUiRespGridVSpace1 sapUiRespGridMedia-Std-Tablet"><div class="sapUiRespGridSpanL12 sapUiRespGridSpanM12 sapUiRespGridSpanS12 sapUiRespGridSpanXL12"><div id="__table0" data-sap-ui="__table0" data-sap-ui-fastnavgroup="true" style="width:100%" class="sapMList sapMListBGTranslucent sapMListTblCnt"><div id="__table0-before" tabindex="-1" class="sapMListDummyArea"></div><table id="__table0-listUl" tabindex="0" class="sapMListModeNone sapMListShowSeparatorsAll sapMListTbl sapMListUl"><thead><tr tabindex="-1" id="__table0-tblHeader" class="sapMListTblRow sapMLIBFocusable sapMListTblHeader"><th aria-hidden="true" id="__table0-tblHeadHighlight" class="sapMListTblHighlightCol"></th><th id="__column0" data-sap-ui="__column0" data-sap-width="" class="sapMListTblCell sapMListTblHeaderCell" style="text-align:left"><span id="__text4" data-sap-ui="__text4" class="sapMText sapMTextMaxWidth sapMTextNoWrap sapUiSelectable" style="text-align:left">Product or Product Version</span></th><th aria-hidden="true" id="__table0-tblHeadNav" class="sapMListTblNavCol"></th></tr></thead><tbody id="__table0-tblBody"><tr id="__item0-__table0-0" data-sap-ui="__item0-__table0-0" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item0-__table0-0_cell0" headers="__text4" style="text-align:left" class="sapMListTblCell"><span id="__text5-__table0-0" data-sap-ui="__text5-__table0-0" title="SAP HANA, platform edition all versions " class="sapMText sapMTextMaxWidth sapUiSelectable" style="text-align:left">SAP HANA, platform edition all versions </span></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr></tbody></table><div id="__table0-after" tabindex="0" class="sapMListDummyArea"></div></div></div></div><div class="sapUxAPSubSectionSeeMoreContainer"><button id="__section2--seeMore" data-sap-ui="__section2--seeMore" class="sapMBtn sapMBtnBase sapUxAPSubSectionSeeMoreButton"><span id="__section2--seeMore-inner" class="sapMBtnHoverable sapMBtnInner sapMBtnText sapMBtnTransparent sapMFocusable"><span class="sapMBtnContent" id="__section2--seeMore-content"><bdi>See More</bdi></span></span></button></div></div></div></div></section><section class="sapUxAPObjectPageSection" role="region" aria-labelledby="__text30" id="__section6" data-sap-ui="__section6" tabindex="-1" style=""><div role="heading" aria-level="3" id="__section6-header" class="sapUxAPObjectPageSectionHeader" style=""><div id="__section6-title" class="sapUxAPObjectPageSectionTitle">References</div><span id="sap-ui-invisible-__button18" class="sapUiHiddenPlaceholder" data-sap-ui="sap-ui-invisible-__button18" style="display: none;" aria-hidden="true"></span><span id="sap-ui-invisible-__button19" class="sapUiHiddenPlaceholder" data-sap-ui="sap-ui-invisible-__button19" style="display: none;" aria-hidden="true"></span></div><div class="sapUxAPObjectPageSectionContainer"><div role="region" id="__section4" data-sap-ui="__section4" class="sapUxAPObjectPageSubSection ui-helper-clearfix" tabindex="-1" style=""><div id="__section4-header" class="sapUxAPObjectPageSubSectionHeader"><div role="heading" aria-level="4" id="__section4-headerTitle" class="sapUxAPObjectPageSubSectionHeaderTitle" data-sap-ui-customfastnavgroup="true" style="">This document refers to</div></div><div class="sapUxAPBlockContainer sapUxAPBlockContainerDesktop ui-helper-clearfix"><div id="__section4-innerGrid" data-sap-ui="__section4-innerGrid" class="sapUiRespGrid sapUiRespGridHSpace1 sapUiRespGridVSpace1 sapUiRespGridMedia-Std-Tablet"><div class="sapUiRespGridSpanL12 sapUiRespGridSpanM12 sapUiRespGridSpanS12 sapUiRespGridSpanXL12"><div id="__xmlview2--idTabReferTo" data-sap-ui="__xmlview2--idTabReferTo" data-sap-ui-fastnavgroup="true" style="width:100%" class="sapMList sapMListBGTranslucent sapMListTblCnt"><div id="__xmlview2--idTabReferTo-before" tabindex="-1" class="sapMListDummyArea"></div><table id="__xmlview2--idTabReferTo-listUl" tabindex="0" class="sapMListModeNone sapMListShowSeparatorsAll sapMListTbl sapMListUl"><thead><tr tabindex="-1" id="__xmlview2--idTabReferTo-tblHeader" class="sapMListTblRow sapMLIBFocusable sapMListTblHeader"><th aria-hidden="true" id="__xmlview2--idTabReferTo-tblHeadHighlight" class="sapMListTblHighlightCol"></th><th id="__column1" data-sap-ui="__column1" data-sap-width="8em" class="sapMListTblCell sapMListTblHeaderCell" style="width:8em;text-align:left"><span id="__text6" data-sap-ui="__text6" class="sapMText sapMTextMaxWidth sapMTextNoWrap sapUiSelectable" style="text-align:left">Number</span></th><th id="__column2" data-sap-ui="__column2" data-sap-width="" class="sapMListTblCell sapMListTblHeaderCell" style="text-align:left"><span id="__text7" data-sap-ui="__text7" class="sapMText sapMTextMaxWidth sapMTextNoWrap sapUiSelectable" style="text-align:left">Title</span></th><th aria-hidden="true" id="__xmlview2--idTabReferTo-tblHeadNav" class="sapMListTblNavCol"></th></tr></thead><tbody id="__xmlview2--idTabReferTo-tblBody"><tr id="__item1-__clone0" data-sap-ui="__item1-__clone0" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item1-__clone0_cell0" headers="__text6" style="text-align:left" class="sapMListTblCell"><span id="__text8-__clone0" data-sap-ui="__text8-__clone0" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable" style="text-align:left">2340450</span></td><td id="__item1-__clone0_cell1" headers="__text7" style="text-align:left" class="sapMListTblCell"><a id="__link0-__clone0" data-sap-ui="__link0-__clone0" tabindex="0" title="FAQ: SAP HANA Table Replication" href="https://launchpad.support.sap.com/#/notes/2340450" aria-labelledby="__text7 __link0-__clone0" role="link" class="sapMLnk sapMLnkMaxWidth sapMLnkWrapping" style="text-align:left">FAQ: SAP HANA Table Replication</a></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr><tr id="__item1-__clone1" data-sap-ui="__item1-__clone1" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item1-__clone1_cell0" headers="__text6" style="text-align:left" class="sapMListTblCell"><span id="__text8-__clone1" data-sap-ui="__text8-__clone1" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable" style="text-align:left">2222321</span></td><td id="__item1-__clone1_cell1" headers="__text7" style="text-align:left" class="sapMListTblCell"><a id="__link0-__clone1" data-sap-ui="__link0-__clone1" tabindex="0" title="How-To: Pinning SAP HANA SQL Plans" href="https://launchpad.support.sap.com/#/notes/2222321" aria-labelledby="__text7 __link0-__clone1" role="link" class="sapMLnk sapMLnkMaxWidth sapMLnkWrapping" style="text-align:left">How-To: Pinning SAP HANA SQL Plans</a></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr><tr id="__item1-__clone2" data-sap-ui="__item1-__clone2" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item1-__clone2_cell0" headers="__text6" style="text-align:left" class="sapMListTblCell"><span id="__text8-__clone2" data-sap-ui="__text8-__clone2" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable" style="text-align:left">2142945</span></td><td id="__item1-__clone2_cell1" headers="__text7" style="text-align:left" class="sapMListTblCell"><a id="__link0-__clone2" data-sap-ui="__link0-__clone2" tabindex="0" title="FAQ: SAP HANA Hints" href="https://launchpad.support.sap.com/#/notes/2142945" aria-labelledby="__text7 __link0-__clone2" role="link" class="sapMLnk sapMLnkMaxWidth sapMLnkWrapping" style="text-align:left">FAQ: SAP HANA Hints</a></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr><tr id="__item1-__clone3" data-sap-ui="__item1-__clone3" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item1-__clone3_cell0" headers="__text6" style="text-align:left" class="sapMListTblCell"><span id="__text8-__clone3" data-sap-ui="__text8-__clone3" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable" style="text-align:left">2119087</span></td><td id="__item1-__clone3_cell1" headers="__text7" style="text-align:left" class="sapMListTblCell"><a id="__link0-__clone3" data-sap-ui="__link0-__clone3" tabindex="0" title="How-To: Configuring SAP HANA Traces" href="https://launchpad.support.sap.com/#/notes/2119087" aria-labelledby="__text7 __link0-__clone3" role="link" class="sapMLnk sapMLnkMaxWidth sapMLnkWrapping" style="text-align:left">How-To: Configuring SAP HANA Traces</a></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr><tr id="__item1-__clone4" data-sap-ui="__item1-__clone4" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item1-__clone4_cell0" headers="__text6" style="text-align:left" class="sapMListTblCell"><span id="__text8-__clone4" data-sap-ui="__text8-__clone4" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable" style="text-align:left">2112849</span></td><td id="__item1-__clone4_cell1" headers="__text7" style="text-align:left" class="sapMListTblCell"><a id="__link0-__clone4" data-sap-ui="__link0-__clone4" tabindex="0" title="Hana query only runs on the master node" href="https://launchpad.support.sap.com/#/notes/2112849" aria-labelledby="__text7 __link0-__clone4" role="link" class="sapMLnk sapMLnkMaxWidth sapMLnkWrapping" style="text-align:left">Hana query only runs on the master node</a></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr><tr id="__item1-__clone5" data-sap-ui="__item1-__clone5" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item1-__clone5_cell0" headers="__text6" style="text-align:left" class="sapMListTblCell"><span id="__text8-__clone5" data-sap-ui="__text8-__clone5" class="sapMText sapMTextMaxWidth sapUiSelectable" style="text-align:left"></span></td><td id="__item1-__clone5_cell1" headers="__text7" style="text-align:left" class="sapMListTblCell"><a id="__link0-__clone5" data-sap-ui="__link0-__clone5" tabindex="0" title="SAP HANA XS JavaScript API Reference" href="http://help.sap.com/hana/SAP_HANA_XS_JavaScript_API_Reference_en/" aria-labelledby="__text7 __link0-__clone5" role="link" class="sapMLnk sapMLnkMaxWidth sapMLnkWrapping" style="text-align:left">SAP HANA XS JavaScript API Reference</a></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr><tr id="__item1-__clone6" data-sap-ui="__item1-__clone6" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item1-__clone6_cell0" headers="__text6" style="text-align:left" class="sapMListTblCell"><span id="__text8-__clone6" data-sap-ui="__text8-__clone6" class="sapMText sapMTextMaxWidth sapUiSelectable" style="text-align:left"></span></td><td id="__item1-__clone6_cell1" headers="__text7" style="text-align:left" class="sapMListTblCell"><a id="__link0-__clone6" data-sap-ui="__link0-__clone6" tabindex="0" title="Statement Routing Online Help" href="http://help.sap.com/saphelp_hanaplatform/helpdata/en/25/aaa3f8b2f34a2b9c158fff7c2575be/frameset.htm" aria-labelledby="__text7 __link0-__clone6" role="link" class="sapMLnk sapMLnkMaxWidth sapMLnkWrapping" style="text-align:left">Statement Routing Online Help</a></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr><tr id="__item1-__clone7" data-sap-ui="__item1-__clone7" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item1-__clone7_cell0" headers="__text6" style="text-align:left" class="sapMListTblCell"><span id="__text8-__clone7" data-sap-ui="__text8-__clone7" class="sapMText sapMTextMaxWidth sapUiSelectable" style="text-align:left"></span></td><td id="__item1-__clone7_cell1" headers="__text7" style="text-align:left" class="sapMListTblCell"><a id="__link0-__clone7" data-sap-ui="__link0-__clone7" tabindex="0" title="SAP HANA TDI - Network Requirements" href="http://scn.sap.com/docs/DOC-63221" aria-labelledby="__text7 __link0-__clone7" role="link" class="sapMLnk sapMLnkMaxWidth sapMLnkWrapping" style="text-align:left">SAP HANA TDI - Network Requirements</a></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr></tbody></table><div id="__xmlview2--idTabReferTo-after" tabindex="0" class="sapMListDummyArea"></div><div id="__xmlview2--idTabReferTo-triggerList" class="sapMGrowingList sapMListUl" style="display:none"><div id="__xmlview2--idTabReferTo-trigger" data-sap-ui="__xmlview2--idTabReferTo-trigger" tabindex="0" role="button" aria-selected="false" class="sapMCLI sapMLIB sapMLIB-CTX sapMLIBActionable sapMLIBFocusable sapMLIBHoverable sapMLIBShowSeparator sapMLIBTypeActive" aria-labelledby="__xmlview2--idTabReferTo-triggerText __xmlview2--idTabReferTo-triggerInfo"><div class="sapMLIBContent" id="__xmlview2--idTabReferTo-trigger-content"><div class="sapMGrowingListTrigger" data-sap-ui-preserve="__html3" id="__html3"><div class="sapMSLITitleDiv sapMGrowingListTriggerText"><span class="sapMSLITitle" id="__xmlview2--idTabReferTo-triggerText">More</span></div><div class="sapMGrowingListDescription sapMSLIDescription" id="__xmlview2--idTabReferTo-triggerInfo"></div></div></div></div></div></div></div></div><div class="sapUxAPSubSectionSeeMoreContainer"><button id="__section4--seeMore" data-sap-ui="__section4--seeMore" class="sapMBtn sapMBtnBase sapUxAPSubSectionSeeMoreButton"><span id="__section4--seeMore-inner" class="sapMBtnHoverable sapMBtnInner sapMBtnText sapMBtnTransparent sapMFocusable"><span class="sapMBtnContent" id="__section4--seeMore-content"><bdi>See More</bdi></span></span></button></div></div></div><div role="region" id="__section5" data-sap-ui="__section5" class="sapUxAPObjectPageSubSection ui-helper-clearfix" tabindex="-1" style=""><div id="__section5-header" class="sapUxAPObjectPageSubSectionHeader"><div role="heading" aria-level="4" id="__section5-headerTitle" class="sapUxAPObjectPageSubSectionHeaderTitle" data-sap-ui-customfastnavgroup="true" style="">This document is referenced by</div></div><div class="sapUxAPBlockContainer sapUxAPBlockContainerDesktop ui-helper-clearfix"><div id="__section5-innerGrid" data-sap-ui="__section5-innerGrid" class="sapUiRespGrid sapUiRespGridHSpace1 sapUiRespGridVSpace1 sapUiRespGridMedia-Std-Tablet"><div class="sapUiRespGridSpanL12 sapUiRespGridSpanM12 sapUiRespGridSpanS12 sapUiRespGridSpanXL12"><div id="__table1" data-sap-ui="__table1" data-sap-ui-fastnavgroup="true" style="width:100%" class="sapMList sapMListBGTranslucent sapMListTblCnt"><div id="__table1-before" tabindex="-1" class="sapMListDummyArea"></div><table id="__table1-listUl" tabindex="0" class="sapMListModeNone sapMListShowSeparatorsAll sapMListTbl sapMListUl"><thead><tr tabindex="-1" id="__table1-tblHeader" class="sapMListTblRow sapMLIBFocusable sapMListTblHeader"><th aria-hidden="true" id="__table1-tblHeadHighlight" class="sapMListTblHighlightCol"></th><th id="__column3" data-sap-ui="__column3" data-sap-width="8em" class="sapMListTblCell sapMListTblHeaderCell" style="width:8em;text-align:left"><span id="__text9" data-sap-ui="__text9" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable" style="text-align:left">Number</span></th><th id="__column4" data-sap-ui="__column4" data-sap-width="" class="sapMListTblCell sapMListTblHeaderCell" style="text-align:left"><span id="__text10" data-sap-ui="__text10" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable" style="text-align:left">Title</span></th><th aria-hidden="true" id="__table1-tblHeadNav" class="sapMListTblNavCol"></th></tr></thead><tbody id="__table1-tblBody"><tr id="__item2-__clone8" data-sap-ui="__item2-__clone8" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item2-__clone8_cell0" headers="__text9" style="text-align:left" class="sapMListTblCell"><span id="__text11-__clone8" data-sap-ui="__text11-__clone8" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable" style="text-align:left">2000002</span></td><td id="__item2-__clone8_cell1" headers="__text10" style="text-align:left" class="sapMListTblCell"><a id="__link1-__clone8" data-sap-ui="__link1-__clone8" tabindex="0" title="FAQ: SAP HANA SQL Optimization" href="https://launchpad.support.sap.com/#/notes/2000002" aria-labelledby="__text10 __link1-__clone8" role="link" class="sapMLnk sapMLnkMaxWidth sapMLnkWrapping" style="text-align:left">FAQ: SAP HANA SQL Optimization</a></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr><tr id="__item2-__clone9" data-sap-ui="__item2-__clone9" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item2-__clone9_cell0" headers="__text9" style="text-align:left" class="sapMListTblCell"><span id="__text11-__clone9" data-sap-ui="__text11-__clone9" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable" style="text-align:left">2380176</span></td><td id="__item2-__clone9_cell1" headers="__text10" style="text-align:left" class="sapMListTblCell"><a id="__link1-__clone9" data-sap-ui="__link1-__clone9" tabindex="0" title="FAQ: SAP HANA Database Trace" href="https://launchpad.support.sap.com/#/notes/2380176" aria-labelledby="__text10 __link1-__clone9" role="link" class="sapMLnk sapMLnkMaxWidth sapMLnkWrapping" style="text-align:left">FAQ: SAP HANA Database Trace</a></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr><tr id="__item2-__clone10" data-sap-ui="__item2-__clone10" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item2-__clone10_cell0" headers="__text9" style="text-align:left" class="sapMListTblCell"><span id="__text11-__clone10" data-sap-ui="__text11-__clone10" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable" style="text-align:left">2000000</span></td><td id="__item2-__clone10_cell1" headers="__text10" style="text-align:left" class="sapMListTblCell"><a id="__link1-__clone10" data-sap-ui="__link1-__clone10" tabindex="0" title="FAQ: SAP HANA Performance Optimization" href="https://launchpad.support.sap.com/#/notes/2000000" aria-labelledby="__text10 __link1-__clone10" role="link" class="sapMLnk sapMLnkMaxWidth sapMLnkWrapping" style="text-align:left">FAQ: SAP HANA Performance Optimization</a></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr><tr id="__item2-__clone11" data-sap-ui="__item2-__clone11" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item2-__clone11_cell0" headers="__text9" style="text-align:left" class="sapMListTblCell"><span id="__text11-__clone11" data-sap-ui="__text11-__clone11" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable" style="text-align:left">2142945</span></td><td id="__item2-__clone11_cell1" headers="__text10" style="text-align:left" class="sapMListTblCell"><a id="__link1-__clone11" data-sap-ui="__link1-__clone11" tabindex="0" title="FAQ: SAP HANA Hints" href="https://launchpad.support.sap.com/#/notes/2142945" aria-labelledby="__text10 __link1-__clone11" role="link" class="sapMLnk sapMLnkMaxWidth sapMLnkWrapping" style="text-align:left">FAQ: SAP HANA Hints</a></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr><tr id="__item2-__clone12" data-sap-ui="__item2-__clone12" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item2-__clone12_cell0" headers="__text9" style="text-align:left" class="sapMListTblCell"><span id="__text11-__clone12" data-sap-ui="__text11-__clone12" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable" style="text-align:left">2000003</span></td><td id="__item2-__clone12_cell1" headers="__text10" style="text-align:left" class="sapMListTblCell"><a id="__link1-__clone12" data-sap-ui="__link1-__clone12" tabindex="0" title="FAQ: SAP HANA" href="https://launchpad.support.sap.com/#/notes/2000003" aria-labelledby="__text10 __link1-__clone12" role="link" class="sapMLnk sapMLnkMaxWidth sapMLnkWrapping" style="text-align:left">FAQ: SAP HANA</a></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr><tr id="__item2-__clone13" data-sap-ui="__item2-__clone13" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item2-__clone13_cell0" headers="__text9" style="text-align:left" class="sapMListTblCell"><span id="__text11-__clone13" data-sap-ui="__text11-__clone13" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable" style="text-align:left">2222200</span></td><td id="__item2-__clone13_cell1" headers="__text10" style="text-align:left" class="sapMListTblCell"><a id="__link1-__clone13" data-sap-ui="__link1-__clone13" tabindex="0" title="FAQ: SAP HANA Network" href="https://launchpad.support.sap.com/#/notes/2222200" aria-labelledby="__text10 __link1-__clone13" role="link" class="sapMLnk sapMLnkMaxWidth sapMLnkWrapping" style="text-align:left">FAQ: SAP HANA Network</a></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr><tr id="__item2-__clone14" data-sap-ui="__item2-__clone14" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item2-__clone14_cell0" headers="__text9" style="text-align:left" class="sapMListTblCell"><span id="__text11-__clone14" data-sap-ui="__text11-__clone14" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable" style="text-align:left">2119087</span></td><td id="__item2-__clone14_cell1" headers="__text10" style="text-align:left" class="sapMListTblCell"><a id="__link1-__clone14" data-sap-ui="__link1-__clone14" tabindex="0" title="How-To: Configuring SAP HANA Traces" href="https://launchpad.support.sap.com/#/notes/2119087" aria-labelledby="__text10 __link1-__clone14" role="link" class="sapMLnk sapMLnkMaxWidth sapMLnkWrapping" style="text-align:left">How-To: Configuring SAP HANA Traces</a></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr><tr id="__item2-__clone15" data-sap-ui="__item2-__clone15" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item2-__clone15_cell0" headers="__text9" style="text-align:left" class="sapMListTblCell"><span id="__text11-__clone15" data-sap-ui="__text11-__clone15" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable" style="text-align:left">2220627</span></td><td id="__item2-__clone15_cell1" headers="__text10" style="text-align:left" class="sapMListTblCell"><a id="__link1-__clone15" data-sap-ui="__link1-__clone15" tabindex="0" title="FAQ: SAP HANA LOBs" href="https://launchpad.support.sap.com/#/notes/2220627" aria-labelledby="__text10 __link1-__clone15" role="link" class="sapMLnk sapMLnkMaxWidth sapMLnkWrapping" style="text-align:left">FAQ: SAP HANA LOBs</a></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr><tr id="__item2-__clone16" data-sap-ui="__item2-__clone16" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item2-__clone16_cell0" headers="__text9" style="text-align:left" class="sapMListTblCell"><span id="__text11-__clone16" data-sap-ui="__text11-__clone16" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable" style="text-align:left">2340450</span></td><td id="__item2-__clone16_cell1" headers="__text10" style="text-align:left" class="sapMListTblCell"><a id="__link1-__clone16" data-sap-ui="__link1-__clone16" tabindex="0" title="FAQ: SAP HANA Table Replication" href="https://launchpad.support.sap.com/#/notes/2340450" aria-labelledby="__text10 __link1-__clone16" role="link" class="sapMLnk sapMLnkMaxWidth sapMLnkWrapping" style="text-align:left">FAQ: SAP HANA Table Replication</a></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr><tr id="__item2-__clone17" data-sap-ui="__item2-__clone17" tabindex="-1" class="sapMLIB sapMLIB-CTX sapMLIBFocusable sapMLIBShowSeparator sapMLIBTypeInactive sapMListTblRow"><td class="sapMListTblHighlightCell" aria-hidden="true"></td><td id="__item2-__clone17_cell0" headers="__text9" style="text-align:left" class="sapMListTblCell"><span id="__text11-__clone17" data-sap-ui="__text11-__clone17" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable" style="text-align:left">2591281</span></td><td id="__item2-__clone17_cell1" headers="__text10" style="text-align:left" class="sapMListTblCell"><a id="__link1-__clone17" data-sap-ui="__link1-__clone17" tabindex="0" title="Blocked Transactions from HANA JDBC Client Call - Session Will be Closed due to the Error: [600] failed routed execution" href="https://launchpad.support.sap.com/#/notes/2591281" aria-labelledby="__text10 __link1-__clone17" role="link" class="sapMLnk sapMLnkMaxWidth sapMLnkWrapping" style="text-align:left">Blocked Transactions from HANA JDBC Client Call - Session Will be Closed due to the Error: [600] failed routed execution</a></td><td class="sapMListTblNavCol" aria-hidden="true"></td></tr></tbody></table><div id="__table1-after" tabindex="0" class="sapMListDummyArea"></div><div id="__table1-triggerList" class="sapMGrowingList sapMListUl" style="display:none"><div id="__table1-trigger" data-sap-ui="__table1-trigger" tabindex="0" role="button" aria-selected="false" class="sapMCLI sapMLIB sapMLIB-CTX sapMLIBActionable sapMLIBFocusable sapMLIBHoverable sapMLIBShowSeparator sapMLIBTypeActive" aria-labelledby="__table1-triggerText __table1-triggerInfo"><div class="sapMLIBContent" id="__table1-trigger-content"><div class="sapMGrowingListTrigger" data-sap-ui-preserve="__html4" id="__html4"><div class="sapMSLITitleDiv sapMGrowingListTriggerText"><span class="sapMSLITitle" id="__table1-triggerText">More</span></div><div class="sapMGrowingListDescription sapMSLIDescription" id="__table1-triggerInfo"></div></div></div></div></div></div></div></div><div class="sapUxAPSubSectionSeeMoreContainer"><button id="__section5--seeMore" data-sap-ui="__section5--seeMore" class="sapMBtn sapMBtnBase sapUxAPSubSectionSeeMoreButton"><span id="__section5--seeMore-inner" class="sapMBtnHoverable sapMBtnInner sapMBtnText sapMBtnTransparent sapMFocusable"><span class="sapMBtnContent" id="__section5--seeMore-content"><bdi>See More</bdi></span></span></button></div></div></div></div></section><section class="sapUxAPObjectPageSection" role="region" aria-labelledby="__text33" id="__section12" data-sap-ui="__section12" tabindex="-1" style=""><div role="heading" aria-level="3" id="__section12-header" class="sapUxAPObjectPageSectionHeader" style=""><div id="__section12-title" class="sapUxAPObjectPageSectionTitle">Languages</div><span id="sap-ui-invisible-__button24" class="sapUiHiddenPlaceholder" data-sap-ui="sap-ui-invisible-__button24" style="display: none;" aria-hidden="true"></span><span id="sap-ui-invisible-__button25" class="sapUiHiddenPlaceholder" data-sap-ui="sap-ui-invisible-__button25" style="display: none;" aria-hidden="true"></span></div><div class="sapUxAPObjectPageSectionContainer"><div role="region" id="__section11" data-sap-ui="__section11" class="sapUxAPObjectPageSubSection sapUxAPObjectPageSubSectionPromoted ui-helper-clearfix" tabindex="-1" style=""><div class="sapUxAPBlockContainer sapUxAPBlockContainerDesktop ui-helper-clearfix"><div id="__section11-innerGrid" data-sap-ui="__section11-innerGrid" class="sapUiRespGrid sapUiRespGridHSpace1 sapUiRespGridVSpace1 sapUiRespGridMedia-Std-Tablet"><div class="sapUiRespGridSpanL12 sapUiRespGridSpanM12 sapUiRespGridSpanS12 sapUiRespGridSpanXL12"><div id="__list0" data-sap-ui="__list0" data-sap-ui-fastnavgroup="true" style="width:100%" class="sapMList sapMListBGSolid"><div id="__list0-before" tabindex="-1" class="sapMListDummyArea"></div><ul role="listbox" id="__list0-listUl" tabindex="0" class="sapMListModeNone sapMListShowSeparatorsAll sapMListUl"><li id="__item5-__list0-0" data-sap-ui="__item5-__list0-0" tabindex="-1" role="option" class="sapMLIB sapMLIB-CTX sapMLIBActionable sapMLIBFocusable sapMLIBHoverable sapMLIBShowSeparator sapMLIBTypeActive sapMSLI"><div class="sapMLIBContent" id="__item5-__list0-0-content"><div class="sapMSLIDiv sapMSLITitleDiv"><div class="sapMSLITitleOnly">日本語 (Machine Translation)</div></div><div class="sapMSLIDescriptionDiv"></div></div></li><li id="__item5-__list0-1" data-sap-ui="__item5-__list0-1" tabindex="-1" role="option" class="sapMLIB sapMLIB-CTX sapMLIBActionable sapMLIBFocusable sapMLIBHoverable sapMLIBShowSeparator sapMLIBTypeActive sapMSLI"><div class="sapMLIBContent" id="__item5-__list0-1-content"><div class="sapMSLIDiv sapMSLITitleDiv"><div class="sapMSLITitleOnly">Português (Machine Translation)</div></div><div class="sapMSLIDescriptionDiv"></div></div></li></ul><div id="__list0-after" tabindex="0" class="sapMListDummyArea"></div></div></div></div><div class="sapUxAPSubSectionSeeMoreContainer"><button id="__section11--seeMore" data-sap-ui="__section11--seeMore" class="sapMBtn sapMBtnBase sapUxAPSubSectionSeeMoreButton"><span id="__section11--seeMore-inner" class="sapMBtnHoverable sapMBtnInner sapMBtnText sapMBtnTransparent sapMFocusable"><span class="sapMBtnContent" id="__section11--seeMore-content"><bdi>See More</bdi></span></span></button></div></div></div></div></section><section class="sapUxAPObjectPageSection" role="region" aria-labelledby="__text34" id="__xmlview2--idSectionRating" data-sap-ui="__xmlview2--idSectionRating" tabindex="-1" style=""><div role="heading" aria-level="3" id="__xmlview2--idSectionRating-header" class="sapUxAPObjectPageSectionHeader" style=""><div id="__xmlview2--idSectionRating-title" class="sapUxAPObjectPageSectionTitle">Customer Ratings</div><span id="sap-ui-invisible-__button26" class="sapUiHiddenPlaceholder" data-sap-ui="sap-ui-invisible-__button26" style="display: none;" aria-hidden="true"></span><span id="sap-ui-invisible-__button27" class="sapUiHiddenPlaceholder" data-sap-ui="sap-ui-invisible-__button27" style="display: none;" aria-hidden="true"></span></div><div class="sapUxAPObjectPageSectionContainer"><div role="region" id="__section13" data-sap-ui="__section13" class="sapUxAPObjectPageSubSection sapUxAPObjectPageSubSectionPromoted ui-helper-clearfix" tabindex="-1" style=""><div class="sapUxAPBlockContainer sapUxAPBlockContainerDesktop ui-helper-clearfix"><div id="__section13-innerGrid" data-sap-ui="__section13-innerGrid" class="sapUiRespGrid sapUiRespGridHSpace1 sapUiRespGridVSpace1 sapUiRespGridMedia-Std-Tablet"><div class="sapUiRespGridSpanL12 sapUiRespGridSpanM12 sapUiRespGridSpanS12 sapUiRespGridSpanXL12"><div id="__grid1" data-sap-ui="__grid1" class="sapUiRespGrid sapUiRespGridHSpace1 sapUiRespGridMedia-Std-Desktop sapUiRespGridVSpace1"><div class="sapUiRespGridSpanL12 sapUiRespGridSpanM12 sapUiRespGridSpanS12 sapUiRespGridSpanXL12"><div id="__grid0" data-sap-ui="__grid0" class="sapUiRespGrid sapUiRespGridHSpace1 sapUiRespGridMedia-Std-Desktop sapUiRespGridVSpace1"><div class="sapUiRespGridSpanL4 sapUiRespGridSpanM4 sapUiRespGridSpanS12 sapUiRespGridSpanXL4"><span id="__text20" data-sap-ui="__text20" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable sapUiTinyMargin" style="text-align:left">Overview</span></div><div class="sapUiRespGridSpanL8 sapUiRespGridSpanM8 sapUiRespGridSpanS12 sapUiRespGridSpanXL8"><div id="__layout12" data-sap-ui="__layout12" class="sapUiTinyMargin sapUiVlt sapuiVlt"><div class="sapUiVltCell sapuiVltCell"><div id="__layout7" data-sap-ui="__layout7" class="sapUiHLayout sapUiHLayoutNoWrap"><div class="sapUiHLayoutChildWrapper"><div id="__indicator1" data-sap-ui="__indicator1" tabindex="-1" aria-readonly="false" style="width:98px;height:18px" class="sapMRI sapMRIDisabled sapUiRatingIndicatorS" aria-disabled="true" role="slider" aria-orientation="horizontal" aria-valuemin="0" aria-labelledby="__indicator1-ariaLabel" aria-valuenow="5" aria-valuemax="5" aria-valuetext="5 of 5"><label id="__indicator1-ariaLabel" class="sapMRIAriaLabel" aria-hidden="true">Rating</label><div class="sapMRISel" id="__indicator1-sel" style="width: 98px"><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span></div><div class="sapMRIUnselWrapper" id="__indicator1-unsel-wrapper" style="width: 0px"><div class="sapMRIUnsel" id="__indicator1-unsel"><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span></div></div><div class="sapMRIHov" id="__indicator1-hov"><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span></div><div class="sapMRISelector" id="__indicator1-selector"></div></div></div><div class="sapUiHLayoutChildWrapper"><span id="__text21" data-sap-ui="__text21" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable sapUiTinyMargin" style="text-align:left">0</span></div></div></div><div class="sapUiVltCell sapuiVltCell"><div id="__layout8" data-sap-ui="__layout8" class="sapUiHLayout sapUiHLayoutNoWrap"><div class="sapUiHLayoutChildWrapper"><div id="__indicator2" data-sap-ui="__indicator2" tabindex="-1" aria-readonly="false" style="width:98px;height:18px" class="sapMRI sapMRIDisabled sapUiRatingIndicatorS" aria-disabled="true" role="slider" aria-orientation="horizontal" aria-valuemin="0" aria-labelledby="__indicator2-ariaLabel" aria-valuenow="4" aria-valuemax="5" aria-valuetext="4 of 5"><label id="__indicator2-ariaLabel" class="sapMRIAriaLabel" aria-hidden="true">Rating</label><div class="sapMRISel" id="__indicator2-sel" style="width: 78px"><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span></div><div class="sapMRIUnselWrapper" id="__indicator2-unsel-wrapper" style="width: 20px"><div class="sapMRIUnsel" id="__indicator2-unsel"><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span></div></div><div class="sapMRIHov" id="__indicator2-hov"><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span></div><div class="sapMRISelector" id="__indicator2-selector"></div></div></div><div class="sapUiHLayoutChildWrapper"><span id="__text22" data-sap-ui="__text22" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable sapUiTinyMargin" style="text-align:left">0</span></div></div></div><div class="sapUiVltCell sapuiVltCell"><div id="__layout9" data-sap-ui="__layout9" class="sapUiHLayout sapUiHLayoutNoWrap"><div class="sapUiHLayoutChildWrapper"><div id="__indicator3" data-sap-ui="__indicator3" tabindex="-1" aria-readonly="false" style="width:98px;height:18px" class="sapMRI sapMRIDisabled sapUiRatingIndicatorS" aria-disabled="true" role="slider" aria-orientation="horizontal" aria-valuemin="0" aria-labelledby="__indicator3-ariaLabel" aria-valuenow="3" aria-valuemax="5" aria-valuetext="3 of 5"><label id="__indicator3-ariaLabel" class="sapMRIAriaLabel" aria-hidden="true">Rating</label><div class="sapMRISel" id="__indicator3-sel" style="width: 58px"><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span></div><div class="sapMRIUnselWrapper" id="__indicator3-unsel-wrapper" style="width: 40px"><div class="sapMRIUnsel" id="__indicator3-unsel"><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span></div></div><div class="sapMRIHov" id="__indicator3-hov"><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span></div><div class="sapMRISelector" id="__indicator3-selector"></div></div></div><div class="sapUiHLayoutChildWrapper"><span id="__text23" data-sap-ui="__text23" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable sapUiTinyMargin" style="text-align:left">0</span></div></div></div><div class="sapUiVltCell sapuiVltCell"><div id="__layout10" data-sap-ui="__layout10" class="sapUiHLayout sapUiHLayoutNoWrap"><div class="sapUiHLayoutChildWrapper"><div id="__indicator4" data-sap-ui="__indicator4" tabindex="-1" aria-readonly="false" style="width:98px;height:18px" class="sapMRI sapMRIDisabled sapUiRatingIndicatorS" aria-disabled="true" role="slider" aria-orientation="horizontal" aria-valuemin="0" aria-labelledby="__indicator4-ariaLabel" aria-valuenow="2" aria-valuemax="5" aria-valuetext="2 of 5"><label id="__indicator4-ariaLabel" class="sapMRIAriaLabel" aria-hidden="true">Rating</label><div class="sapMRISel" id="__indicator4-sel" style="width: 38px"><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span></div><div class="sapMRIUnselWrapper" id="__indicator4-unsel-wrapper" style="width: 60px"><div class="sapMRIUnsel" id="__indicator4-unsel"><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span></div></div><div class="sapMRIHov" id="__indicator4-hov"><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span></div><div class="sapMRISelector" id="__indicator4-selector"></div></div></div><div class="sapUiHLayoutChildWrapper"><span id="__text24" data-sap-ui="__text24" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable sapUiTinyMargin" style="text-align:left">0</span></div></div></div><div class="sapUiVltCell sapuiVltCell"><div id="__layout11" data-sap-ui="__layout11" class="sapUiHLayout sapUiHLayoutNoWrap"><div class="sapUiHLayoutChildWrapper"><div id="__indicator5" data-sap-ui="__indicator5" tabindex="-1" aria-readonly="false" style="width:98px;height:18px" class="sapMRI sapMRIDisabled sapUiRatingIndicatorS" aria-disabled="true" role="slider" aria-orientation="horizontal" aria-valuemin="0" aria-labelledby="__indicator5-ariaLabel" aria-valuenow="1" aria-valuemax="5" aria-valuetext="1 of 5"><label id="__indicator5-ariaLabel" class="sapMRIAriaLabel" aria-hidden="true">Rating</label><div class="sapMRISel" id="__indicator5-sel" style="width: 18px"><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span></div><div class="sapMRIUnselWrapper" id="__indicator5-unsel-wrapper" style="width: 80px"><div class="sapMRIUnsel" id="__indicator5-unsel"><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span></div></div><div class="sapMRIHov" id="__indicator5-hov"><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:18px;height:18px;line-height:18px;font-size:18px;"></span></div><div class="sapMRISelector" id="__indicator5-selector"></div></div></div><div class="sapUiHLayoutChildWrapper"><span id="__text25" data-sap-ui="__text25" class="sapMText sapMTextBreakWord sapMTextMaxWidth sapUiSelectable sapUiTinyMargin" style="text-align:left">0</span></div></div></div></div></div></div></div><div class="sapUiRespGridSpanL12 sapUiRespGridSpanM12 sapUiRespGridSpanS12 sapUiRespGridSpanXL12"><div id="__xmlview2--idGridFeedRating" data-sap-ui="__xmlview2--idGridFeedRating" class="sapUiRespGrid sapUiRespGridHSpace1 sapUiRespGridMedia-Std-Desktop sapUiRespGridVSpace1"><div class="sapUiRespGridSpanL4 sapUiRespGridSpanM4 sapUiRespGridSpanS12 sapUiRespGridSpanXL4"><span id="__text26" data-sap-ui="__text26" class="sapMText sapMTextMaxWidth sapUiSelectable sapUiTinyMargin" style="text-align:left">Was this document helpful?</span></div><div class="sapUiRespGridSpanL8 sapUiRespGridSpanM8 sapUiRespGridSpanS12 sapUiRespGridSpanXL8"><div id="__xmlview2--idRatIndicator" data-sap-ui="__xmlview2--idRatIndicator" tabindex="0" aria-readonly="false" style="width:152px;height:28px" class="sapMPointer sapMRI sapUiRatingIndicatorM" role="slider" aria-orientation="horizontal" aria-valuemin="0" aria-disabled="false" aria-labelledby="__xmlview2--idRatIndicator-ariaLabel" aria-valuenow="0" aria-valuemax="5" aria-valuetext="0 of 5"><label id="__xmlview2--idRatIndicator-ariaLabel" class="sapMRIAriaLabel" aria-hidden="true">Rating</label><div class="sapMRISel" id="__xmlview2--idRatIndicator-sel" style="width: 0px"><span class="sapUiIcon sapMRIIconSel" style="width:28px;height:28px;line-height:28px;font-size:28px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:28px;height:28px;line-height:28px;font-size:28px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:28px;height:28px;line-height:28px;font-size:28px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:28px;height:28px;line-height:28px;font-size:28px;"></span><span class="sapUiIcon sapMRIIconSel" style="width:28px;height:28px;line-height:28px;font-size:28px;"></span></div><div class="sapMRIUnselWrapper" id="__xmlview2--idRatIndicator-unsel-wrapper" style="width: 152px"><div class="sapMRIUnsel" id="__xmlview2--idRatIndicator-unsel"><span class="sapUiIcon sapMRIIconUnsel" style="width:28px;height:28px;line-height:28px;font-size:28px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:28px;height:28px;line-height:28px;font-size:28px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:28px;height:28px;line-height:28px;font-size:28px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:28px;height:28px;line-height:28px;font-size:28px;"></span><span class="sapUiIcon sapMRIIconUnsel" style="width:28px;height:28px;line-height:28px;font-size:28px;"></span></div></div><div class="sapMRIHov" id="__xmlview2--idRatIndicator-hov"><span class="sapUiIcon sapMRIIconHov" style="width:28px;height:28px;line-height:28px;font-size:28px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:28px;height:28px;line-height:28px;font-size:28px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:28px;height:28px;line-height:28px;font-size:28px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:28px;height:28px;line-height:28px;font-size:28px;"></span><span class="sapUiIcon sapMRIIconHov" style="width:28px;height:28px;line-height:28px;font-size:28px;"></span></div><div class="sapMRISelector" id="__xmlview2--idRatIndicator-selector"></div></div></div></div></div><div class="sapUiRespGridSpanL12 sapUiRespGridSpanM12 sapUiRespGridSpanS12 sapUiRespGridSpanXL12"><div id="__xmlview2--idGridFeedInput" data-sap-ui="__xmlview2--idGridFeedInput" class="sapUiRespGrid sapUiRespGridHSpace1 sapUiRespGridMedia-Std-Desktop sapUiRespGridVSpace1"><div class="sapUiRespGridSpanL4 sapUiRespGridSpanM4 sapUiRespGridSpanS12 sapUiRespGridSpanXL4"><span id="__text27" data-sap-ui="__text27" class="sapMText sapMTextMaxWidth sapUiSelectable sapUiSmallMarginTop sapUiTinyMargin" style="text-align:left">Tell us what we can do to improve this document</span></div><div class="sapUiRespGridSpanL8 sapUiRespGridSpanM8 sapUiRespGridSpanS12 sapUiRespGridSpanXL8"><div id="__xmlview2--idFeedInput" data-sap-ui="__xmlview2--idFeedInput" class="sapMFeedIn sapMFeedInNoIcon sapUiTinyMarginTop"><div id="__xmlview2--idFeedInput-container" class="sapMFeedInContainer"><div id="__xmlview2--idFeedInput-textArea" data-sap-ui="__xmlview2--idFeedInput-textArea" style="height:100%" class="sapMInputBase sapMInputBaseWidthPadding sapMTextArea sapMTextAreaWithHeight"><div class="sapMInputDivWrapper"><textarea id="__xmlview2--idFeedInput-textArea-inner" placeholder="Please enter your comments" aria-labelledby="__xmlview2--idFeedInput-textArea-labelledby" x-moz-errormessage=" " rows="3" cols="20" class="sapMInputBaseInner sapMTextAreaInner"></textarea></div><span id="sap-ui-invisible-__xmlview2--idFeedInput-textArea-counter" class="sapUiHiddenPlaceholder" data-sap-ui="sap-ui-invisible-__xmlview2--idFeedInput-textArea-counter" style="display: none;" aria-hidden="true"></span><span id="__xmlview2--idFeedInput-textArea-labelledby" aria-hidden="true" class="sapUiInvisibleText">Please enter your comments</span></div><button id="__xmlview2--idFeedInput-button" data-sap-ui="__xmlview2--idFeedInput-button" aria-disabled="true" disabled="disabled" title="Submit" class="sapMBtn sapMBtnBase sapMBtnDisabled"><span id="__xmlview2--idFeedInput-button-inner" class="sapMBtnDefault sapMBtnIconFirst sapMBtnInner"><span id="__xmlview2--idFeedInput-button-img" data-sap-ui="__xmlview2--idFeedInput-button-img" role="presentation" aria-hidden="true" data-sap-ui-icon-content="" class="sapMBtnCustomIcon sapMBtnIcon sapMBtnIconLeft sapUiIcon sapUiIconMirrorInRTL" style="font-family:'SAP-icons'"></span></span></button></div></div></div><div class="sapUiRespGridSpanL8 sapUiRespGridSpanM8 sapUiRespGridSpanS12 sapUiRespGridSpanXL8"><span id="sap-ui-invisible-__xmlview2--idFeedText" class="sapUiHiddenPlaceholder" data-sap-ui="sap-ui-invisible-__xmlview2--idFeedText" style="display: none;" aria-hidden="true"></span></div></div></div></div></div></div><div class="sapUxAPSubSectionSeeMoreContainer"><button id="__section13--seeMore" data-sap-ui="__section13--seeMore" class="sapMBtn sapMBtnBase sapUxAPSubSectionSeeMoreButton"><span id="__section13--seeMore-inner" class="sapMBtnHoverable sapMBtnInner sapMBtnText sapMBtnTransparent sapMFocusable"><span class="sapMBtnContent" id="__section13--seeMore-content"><bdi>See More</bdi></span></span></button></div></div></div></div></section></section><div id="__xmlview2--idObjectPageLayout-spacer" style="height: 51.8334px;"></div></div></div></div>
+</div></div>
+</div></div></div></div></div></section><aside id="__jsview0--shell-container-pane" style="width: 240px; left: -240px;" class="sapUiUfdSplitContSecondClosed sapUiUfdSpltContPane" role="complementary"><div id="__jsview0--shell-container-panecntnt" class="sapUiUfdSpltContCntnt" data-sap-ui-root-content="true"></div></aside></div></div><span id="__jsview0--shell-main-focusDummyOut" tabindex="-1"></span></div></section><footer class="sapMPageFooter"><div id="__toolbar0" data-sap-ui="__toolbar0" data-sap-ui-fastnavgroup="true" role="toolbar" class="sapContrast sapContrastPlus sapMFooter-CTX sapMIBar sapMIBar-CTX sapMTB sapMTB-Auto-CTX sapMTBInactive sapMTBNewFlex"><button id="__jsview0--footerItem-ContactUs" data-sap-ui="__jsview0--footerItem-ContactUs" aria-describedby="__text0" class="sapMBarChild sapMBtn sapMBtnBase sapMBtnInverted"><span id="__jsview0--footerItem-ContactUs-inner" class="sapMBtnEmphasized sapMBtnHoverable sapMBtnInner sapMBtnText sapMFocusable"><span class="sapMBtnContent" id="__jsview0--footerItem-ContactUs-content"><bdi>Contact Us</bdi></span></span></button><button id="__jsview0--footerItem-GiveFeedback" data-sap-ui="__jsview0--footerItem-GiveFeedback" class="sapMBarChild sapMBtn sapMBtnBase"><span id="__jsview0--footerItem-GiveFeedback-inner" class="sapMBtnDefault sapMBtnHoverable sapMBtnInner sapMBtnText sapMFocusable"><span class="sapMBtnContent" id="__jsview0--footerItem-GiveFeedback-content"><bdi>Share Your Feedback</bdi></span></span></button><button id="__button0" data-sap-ui="__button0" class="sapMBarChild sapMBtn sapMBtnBase"><span id="__button0-inner" class="sapMBtnDefault sapMBtnHoverable sapMBtnInner sapMBtnText sapMFocusable"><span class="sapMBtnContent" id="__button0-content"><bdi>About the Launchpad</bdi></span></span></button><button id="__button1" data-sap-ui="__button1" class="sapMBarChild sapMBtn sapMBtnBase"><span id="__button1-inner" class="sapMBtnDefault sapMBtnHoverable sapMBtnInner sapMBtnText sapMFocusable"><span class="sapMBtnContent" id="__button1-content"><bdi>Status</bdi></span></span></button><div id="__spacer0" data-sap-ui="__spacer0" class="sapMBarChild sapMTBSpacer sapMTBSpacerFlex"></div><button id="__button2" data-sap-ui="__button2" class="sapMBarChild sapMBtn sapMBtnBase"><span id="__button2-inner" class="sapMBtnDefault sapMBtnHoverable sapMBtnInner sapMBtnText sapMFocusable"><span class="sapMBtnContent" id="__button2-content"><bdi>Terms of Use</bdi></span></span></button><button id="__button3" data-sap-ui="__button3" class="sapMBarChild sapMBtn sapMBtnBase"><span id="__button3-inner" class="sapMBtnDefault sapMBtnHoverable sapMBtnInner sapMBtnText sapMFocusable"><span class="sapMBtnContent" id="__button3-content"><bdi>Copyright and Trademarks</bdi></span></span></button><button id="__button4" data-sap-ui="__button4" class="sapMBarChild sapMBtn sapMBtnBase"><span id="__button4-inner" class="sapMBtnDefault sapMBtnHoverable sapMBtnInner sapMBtnText sapMFocusable"><span class="sapMBtnContent" id="__button4-content"><bdi>Legal Disclosure</bdi></span></span></button><button id="__button5" data-sap-ui="__button5" class="sapMBarChild sapMBtn sapMBtnBase"><span id="__button5-inner" class="sapMBtnDefault sapMBtnHoverable sapMBtnInner sapMBtnText sapMFocusable"><span class="sapMBtnContent" id="__button5-content"><bdi>Privacy</bdi></span></span></button><button id="__button6" data-sap-ui="__button6" title="SAP ONE Support Launchpad is registered with Chinese telecommunications authorities and the Ministry of Industry and Information Technology. SAP is legally obliged to display this registration label." class="sapMBarChild sapMBtn sapMBtnBase supportShellChineseGovernmentTag"><span id="__button6-inner" class="sapMBtnDefault sapMBtnHoverable sapMBtnInner sapMBtnText sapMFocusable"><span class="sapMBtnContent" id="__button6-content"><bdi>沪ICP备09046015号-2</bdi></span></span></button></div></footer></div></div></div></div></div><script type="text/javascript" defer="defer" async="" src="SAP%20HANA%20Statement%20Routing%20and%20Client%20Distribution%20Mode_files/piwik.js"></script><script type="text/javascript" defer="defer" async="" src="SAP%20HANA%20Statement%20Routing%20and%20Client%20Distribution%20Mode_files/piwik_plugin.js"></script></body></html>

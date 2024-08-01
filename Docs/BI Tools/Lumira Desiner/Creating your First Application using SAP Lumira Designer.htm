@@ -1,0 +1,1051 @@
+<!DOCTYPE html><html
+lang="en-US"><head><meta
+charset="UTF-8" /><meta
+http-equiv="X-UA-Compatible" content="IE=edge"><link
+rel="pingback" href="" /> <script type="text/javascript">document.documentElement.className='js'</script> <script>var et_site_url='https://visualbi.com';var et_post_id='6539';function et_core_page_resource_fallback(a,b){"undefined"===typeof b&&(b=a.sheet.cssRules&&0===a.sheet.cssRules.length);b&&(a.onerror=null,a.onload=null,a.href?a.href=et_site_url+"/?et_core_page_resource="+a.id+et_post_id:a.src&&(a.src=et_site_url+"/?et_core_page_resource="+a.id+et_post_id))}</script><meta
+name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' /><title>Creating your First Application using SAP Lumira Designer - Visual BI Solutions</title><meta
+name="description" content="The workflow for creating an application in SAP Lumira Designer is different from that of its predecessor, SAP Design Studio. Let?s have a look." /><link
+rel="canonical" href="https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/creating-first-application-using-sap-lumira-designer/" /><meta
+property="og:locale" content="en_US" /><meta
+property="og:type" content="article" /><meta
+property="og:title" content="Creating your First Application using SAP Lumira Designer - Visual BI Solutions" /><meta
+property="og:description" content="The workflow for creating an application in SAP Lumira Designer is different from that of its predecessor, SAP Design Studio. Let?s have a look." /><meta
+property="og:url" content="https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/creating-first-application-using-sap-lumira-designer/" /><meta
+property="og:site_name" content="Visual BI Solutions" /><meta
+property="article:publisher" content="https://www.facebook.com/VISUALBI/" /><meta
+property="article:published_time" content="2017-08-22T10:15:52+00:00" /><meta
+property="article:modified_time" content="2021-04-28T05:10:49+00:00" /><meta
+property="og:image" content="https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer.png" /><meta
+property="og:image:width" content="1280" /><meta
+property="og:image:height" content="720" /><meta
+name="twitter:card" content="summary_large_image" /><meta
+name="twitter:creator" content="@Visual_BI" /><meta
+name="twitter:site" content="@Visual_BI" /><meta
+name="twitter:label1" content="Written by"><meta
+name="twitter:data1" content="Eshwar Venkatadri"><meta
+name="twitter:label2" content="Est. reading time"><meta
+name="twitter:data2" content="4 minutes"> <script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://visualbi.com/#organization","name":"Visual BI Solutions","url":"https://visualbi.com/","sameAs":["https://www.facebook.com/VISUALBI/","https://www.linkedin.com/company/visualbi/","https://twitter.com/Visual_BI"],"logo":{"@type":"ImageObject","@id":"https://visualbi.com/#logo","inLanguage":"en-US","url":"https://visualbi.com/wp-content/uploads/visualbi-logo.png","contentUrl":"https://visualbi.com/wp-content/uploads/visualbi-logo.png","width":175,"height":60,"caption":"Visual BI Solutions"},"image":{"@id":"https://visualbi.com/#logo"}},{"@type":"WebSite","@id":"https://visualbi.com/#website","url":"https://visualbi.com/","name":"Visual BI Solutions","description":"Look Forward. Think Ahead.","publisher":{"@id":"https://visualbi.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":"https://visualbi.com/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/creating-first-application-using-sap-lumira-designer/#primaryimage","inLanguage":"en-US","url":"https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer.png","contentUrl":"https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer.png","width":1280,"height":720,"caption":"Creating your First Application using SAP Lumira Designer"},{"@type":"WebPage","@id":"https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/creating-first-application-using-sap-lumira-designer/#webpage","url":"https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/creating-first-application-using-sap-lumira-designer/","name":"Creating your First Application using SAP Lumira Designer - Visual BI Solutions","isPartOf":{"@id":"https://visualbi.com/#website"},"primaryImageOfPage":{"@id":"https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/creating-first-application-using-sap-lumira-designer/#primaryimage"},"datePublished":"2017-08-22T10:15:52+00:00","dateModified":"2021-04-28T05:10:49+00:00","description":"The workflow for creating an application in SAP Lumira Designer is different from that of its predecessor, SAP Design Studio. Let?s have a look.","breadcrumb":{"@id":"https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/creating-first-application-using-sap-lumira-designer/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/creating-first-application-using-sap-lumira-designer/"]}]},{"@type":"BreadcrumbList","@id":"https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/creating-first-application-using-sap-lumira-designer/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://visualbi.com/blogs/","url":"https://visualbi.com/blogs/","name":"Blogs"}},{"@type":"ListItem","position":2,"item":{"@type":"WebPage","@id":"https://visualbi.com/blogs/category/sap/","url":"https://visualbi.com/blogs/category/sap/","name":"SAP"}},{"@type":"ListItem","position":3,"item":{"@type":"WebPage","@id":"https://visualbi.com/blogs/category/sap/sap-businessobjects/","url":"https://visualbi.com/blogs/category/sap/sap-businessobjects/","name":"SAP BusinessObjects"}},{"@type":"ListItem","position":4,"item":{"@type":"WebPage","@id":"https://visualbi.com/blogs/category/sap/sap-businessobjects/design-studio/","url":"https://visualbi.com/blogs/category/sap/sap-businessobjects/design-studio/","name":"SAP Design Studio"}},{"@type":"ListItem","position":5,"item":{"@id":"https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/creating-first-application-using-sap-lumira-designer/#webpage"}}]},{"@type":"Article","@id":"https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/creating-first-application-using-sap-lumira-designer/#article","isPartOf":{"@id":"https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/creating-first-application-using-sap-lumira-designer/#webpage"},"author":{"@id":"https://visualbi.com/#/schema/person/ba36296e7da2057ba9b96d2f5ffde51e"},"headline":"Creating your First Application using SAP Lumira Designer","datePublished":"2017-08-22T10:15:52+00:00","dateModified":"2021-04-28T05:10:49+00:00","mainEntityOfPage":{"@id":"https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/creating-first-application-using-sap-lumira-designer/#webpage"},"wordCount":545,"publisher":{"@id":"https://visualbi.com/#organization"},"image":{"@id":"https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/creating-first-application-using-sap-lumira-designer/#primaryimage"},"thumbnailUrl":"https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer.png","articleSection":["Lumira 2.0","SAP Design Studio","SAP Lumira Designer"],"inLanguage":"en-US"},{"@type":"Person","@id":"https://visualbi.com/#/schema/person/ba36296e7da2057ba9b96d2f5ffde51e","name":"Eshwar Venkatadri","image":{"@type":"ImageObject","@id":"https://visualbi.com/#personlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/390c80621597b77be0be63630f9d1ab1?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/390c80621597b77be0be63630f9d1ab1?s=96&d=mm&r=g","caption":"Eshwar Venkatadri"},"url":"https://visualbi.com/blogs/author/eshwarpv/"}]}</script> <link
+rel='dns-prefetch' href='//js.hs-scripts.com' /><link
+rel='dns-prefetch' href='//fonts.googleapis.com' /><link
+rel="alternate" type="application/rss+xml" title="Visual BI Solutions &raquo; Feed" href="https://visualbi.com/feed/" /><link
+rel="alternate" type="application/rss+xml" title="Visual BI Solutions &raquo; Comments Feed" href="https://visualbi.com/comments/feed/" /><link
+rel="alternate" type="application/rss+xml" title="Visual BI Solutions &raquo; Creating your First Application using SAP Lumira Designer Comments Feed" href="https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/creating-first-application-using-sap-lumira-designer/feed/" /><meta
+content="Divi Child v.1.0.0" name="generator"/><style type="text/css" media="all">@font-face{font-family:'Open Sans';font-style:italic;font-weight:300;font-stretch:normal;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v28/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkaVQ.woff) format('woff')}@font-face{font-family:'Open Sans';font-style:italic;font-weight:400;font-stretch:normal;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v28/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkaVQ.woff) format('woff')}@font-face{font-family:'Open Sans';font-style:italic;font-weight:600;font-stretch:normal;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v28/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjaVQ.woff) format('woff')}@font-face{font-family:'Open Sans';font-style:italic;font-weight:700;font-stretch:normal;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v28/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjaVQ.woff) format('woff')}@font-face{font-family:'Open Sans';font-style:italic;font-weight:800;font-stretch:normal;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v28/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjaVQ.woff) format('woff')}@font-face{font-family:'Open Sans';font-display:block;font-style:normal;font-weight:300;font-stretch:normal;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v28/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4k.woff) format('woff')}@font-face{font-family:'Open Sans';font-display:block;font-style:normal;font-weight:400;font-stretch:normal;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v28/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4k.woff) format('woff')}@font-face{font-family:'Open Sans';font-display:block;font-style:normal;font-weight:600;font-stretch:normal;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v28/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4k.woff) format('woff')}@font-face{font-family:'Open Sans';font-display:block;font-style:normal;font-weight:700;font-stretch:normal;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v28/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4k.woff) format('woff')}@font-face{font-family:'Open Sans';font-display:block;font-style:normal;font-weight:800;font-stretch:normal;font-display:swap;src:url(https://fonts.gstatic.com/s/opensans/v28/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4k.woff) format('woff')}@font-face{font-family:'Red Hat Display';font-style:italic;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/redhatdisplay/v11/8vIh7wUr0m80wwYf0QCXZzYzUoTg-CSvZX4Vlf1fe6TVmgsz_g.woff) format('woff')}@font-face{font-family:'Red Hat Display';font-style:italic;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/redhatdisplay/v11/8vIh7wUr0m80wwYf0QCXZzYzUoTg-CSvZX4Vlf1fe6TVqAsz_g.woff) format('woff')}@font-face{font-family:'Red Hat Display';font-style:italic;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/redhatdisplay/v11/8vIh7wUr0m80wwYf0QCXZzYzUoTg-CSvZX4Vlf1fe6TVfQwz_g.woff) format('woff')}@font-face{font-family:'Red Hat Display';font-style:italic;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/redhatdisplay/v11/8vIh7wUr0m80wwYf0QCXZzYzUoTg-CSvZX4Vlf1fe6TVMwwz_g.woff) format('woff')}@font-face{font-family:'Red Hat Display';font-display:block;font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/redhatdisplay/v11/8vIf7wUr0m80wwYf0QCXZzYzUoTK8RZQvRd-D1NYbmyWcks.woff) format('woff')}@font-face{font-family:'Red Hat Display';font-display:block;font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/redhatdisplay/v11/8vIf7wUr0m80wwYf0QCXZzYzUoTK8RZQvRd-D1NYbl6Wcks.woff) format('woff')}@font-face{font-family:'Red Hat Display';font-display:block;font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/redhatdisplay/v11/8vIf7wUr0m80wwYf0QCXZzYzUoTK8RZQvRd-D1NYbouRcks.woff) format('woff')}@font-face{font-family:'Red Hat Display';font-display:block;font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/redhatdisplay/v11/8vIf7wUr0m80wwYf0QCXZzYzUoTK8RZQvRd-D1NYbsWRcks.woff) format('woff')}@font-face{font-family:'Ubuntu';font-style:italic;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/ubuntu/v19/4iCp6KVjbNBYlgoKejZftWyL.woff) format('woff')}@font-face{font-family:'Ubuntu';font-style:italic;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/ubuntu/v19/4iCu6KVjbNBYlgoKeg7w.woff) format('woff')}@font-face{font-family:'Ubuntu';font-style:italic;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/ubuntu/v19/4iCp6KVjbNBYlgoKejYHtGyL.woff) format('woff')}@font-face{font-family:'Ubuntu';font-style:italic;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/ubuntu/v19/4iCp6KVjbNBYlgoKejZPsmyL.woff) format('woff')}@font-face{font-family:'Ubuntu';font-display:block;font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoC1CzTtA.woff) format('woff')}@font-face{font-family:'Ubuntu';font-display:block;font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/ubuntu/v19/4iCs6KVjbNBYlgo6ew.woff) format('woff')}@font-face{font-family:'Ubuntu';font-display:block;font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCjC3TtA.woff) format('woff')}@font-face{font-family:'Ubuntu';font-display:block;font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoCxCvTtA.woff) format('woff')}</style><style id='global-styles-inline-css' type='text/css'>body{--wp--preset--color--black:#000;--wp--preset--color--cyan-bluish-gray:#abb8c3;--wp--preset--color--white:#ffffff;--wp--preset--color--pale-pink:#f78da7;--wp--preset--color--vivid-red:#cf2e2e;--wp--preset--color--luminous-vivid-orange:#ff6900;--wp--preset--color--luminous-vivid-amber:#fcb900;--wp--preset--color--light-green-cyan:#7bdcb5;--wp--preset--color--vivid-green-cyan:#00d084;--wp--preset--color--pale-cyan-blue:#8ed1fc;--wp--preset--color--vivid-cyan-blue:#0693e3;--wp--preset--color--vivid-purple:#9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple:linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan:linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange:linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red:linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray:linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum:linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple:linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux:linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk:linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean:linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass:linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight:linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale:url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale:url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow:url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red:url('#wp-duotone-blue-red');--wp--preset--duotone--midnight:url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow:url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green:url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange:url('#wp-duotone-blue-orange');--wp--preset--font-size--small:13px;--wp--preset--font-size--medium:20px;--wp--preset--font-size--large:36px;--wp--preset--font-size--x-large:42px;--wp--preset--spacing--20:0.44rem;--wp--preset--spacing--30:0.67rem;--wp--preset--spacing--40:1rem;--wp--preset--spacing--50:1.5rem;--wp--preset--spacing--60:2.25rem;--wp--preset--spacing--70:3.38rem;--wp--preset--spacing--80:5.06rem;--wp--preset--shadow--natural:6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep:12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp:6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined:6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp:6px 6px 0px rgba(0, 0, 0, 1)}:where(.is-layout-flex){gap:.5em}body .is-layout-flow>.alignleft{float:left;margin-inline-start:0;margin-inline-end:2em}body .is-layout-flow>.alignright{float:right;margin-inline-start:2em;margin-inline-end:0}body .is-layout-flow>.aligncenter{margin-left:auto!important;margin-right:auto!important}body .is-layout-constrained>.alignleft{float:left;margin-inline-start:0;margin-inline-end:2em}body .is-layout-constrained>.alignright{float:right;margin-inline-start:2em;margin-inline-end:0}body .is-layout-constrained>.aligncenter{margin-left:auto!important;margin-right:auto!important}body .is-layout-constrained>:where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width:var(--wp--style--global--content-size);margin-left:auto!important;margin-right:auto!important}body .is-layout-constrained>.alignwide{max-width:var(--wp--style--global--wide-size)}body .is-layout-flex{display:flex}body .is-layout-flex{flex-wrap:wrap;align-items:center}body .is-layout-flex>*{margin:0}:where(.wp-block-columns.is-layout-flex){gap:2em}.has-black-color{color:var(--wp--preset--color--black)!important}.has-cyan-bluish-gray-color{color:var(--wp--preset--color--cyan-bluish-gray)!important}.has-white-color{color:var(--wp--preset--color--white)!important}.has-pale-pink-color{color:var(--wp--preset--color--pale-pink)!important}.has-vivid-red-color{color:var(--wp--preset--color--vivid-red)!important}.has-luminous-vivid-orange-color{color:var(--wp--preset--color--luminous-vivid-orange)!important}.has-luminous-vivid-amber-color{color:var(--wp--preset--color--luminous-vivid-amber)!important}.has-light-green-cyan-color{color:var(--wp--preset--color--light-green-cyan)!important}.has-vivid-green-cyan-color{color:var(--wp--preset--color--vivid-green-cyan)!important}.has-pale-cyan-blue-color{color:var(--wp--preset--color--pale-cyan-blue)!important}.has-vivid-cyan-blue-color{color:var(--wp--preset--color--vivid-cyan-blue)!important}.has-vivid-purple-color{color:var(--wp--preset--color--vivid-purple)!important}.has-black-background-color{background-color:var(--wp--preset--color--black)!important}.has-cyan-bluish-gray-background-color{background-color:var(--wp--preset--color--cyan-bluish-gray)!important}.has-white-background-color{background-color:var(--wp--preset--color--white)!important}.has-pale-pink-background-color{background-color:var(--wp--preset--color--pale-pink)!important}.has-vivid-red-background-color{background-color:var(--wp--preset--color--vivid-red)!important}.has-luminous-vivid-orange-background-color{background-color:var(--wp--preset--color--luminous-vivid-orange)!important}.has-luminous-vivid-amber-background-color{background-color:var(--wp--preset--color--luminous-vivid-amber)!important}.has-light-green-cyan-background-color{background-color:var(--wp--preset--color--light-green-cyan)!important}.has-vivid-green-cyan-background-color{background-color:var(--wp--preset--color--vivid-green-cyan)!important}.has-pale-cyan-blue-background-color{background-color:var(--wp--preset--color--pale-cyan-blue)!important}.has-vivid-cyan-blue-background-color{background-color:var(--wp--preset--color--vivid-cyan-blue)!important}.has-vivid-purple-background-color{background-color:var(--wp--preset--color--vivid-purple)!important}.has-black-border-color{border-color:var(--wp--preset--color--black)!important}.has-cyan-bluish-gray-border-color{border-color:var(--wp--preset--color--cyan-bluish-gray)!important}.has-white-border-color{border-color:var(--wp--preset--color--white)!important}.has-pale-pink-border-color{border-color:var(--wp--preset--color--pale-pink)!important}.has-vivid-red-border-color{border-color:var(--wp--preset--color--vivid-red)!important}.has-luminous-vivid-orange-border-color{border-color:var(--wp--preset--color--luminous-vivid-orange)!important}.has-luminous-vivid-amber-border-color{border-color:var(--wp--preset--color--luminous-vivid-amber)!important}.has-light-green-cyan-border-color{border-color:var(--wp--preset--color--light-green-cyan)!important}.has-vivid-green-cyan-border-color{border-color:var(--wp--preset--color--vivid-green-cyan)!important}.has-pale-cyan-blue-border-color{border-color:var(--wp--preset--color--pale-cyan-blue)!important}.has-vivid-cyan-blue-border-color{border-color:var(--wp--preset--color--vivid-cyan-blue)!important}.has-vivid-purple-border-color{border-color:var(--wp--preset--color--vivid-purple)!important}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background:var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple)!important}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background:var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan)!important}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background:var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange)!important}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background:var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red)!important}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background:var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray)!important}.has-cool-to-warm-spectrum-gradient-background{background:var(--wp--preset--gradient--cool-to-warm-spectrum)!important}.has-blush-light-purple-gradient-background{background:var(--wp--preset--gradient--blush-light-purple)!important}.has-blush-bordeaux-gradient-background{background:var(--wp--preset--gradient--blush-bordeaux)!important}.has-luminous-dusk-gradient-background{background:var(--wp--preset--gradient--luminous-dusk)!important}.has-pale-ocean-gradient-background{background:var(--wp--preset--gradient--pale-ocean)!important}.has-electric-grass-gradient-background{background:var(--wp--preset--gradient--electric-grass)!important}.has-midnight-gradient-background{background:var(--wp--preset--gradient--midnight)!important}.has-small-font-size{font-size:var(--wp--preset--font-size--small)!important}.has-medium-font-size{font-size:var(--wp--preset--font-size--medium)!important}.has-large-font-size{font-size:var(--wp--preset--font-size--large)!important}.has-x-large-font-size{font-size:var(--wp--preset--font-size--x-large)!important}.wp-block-navigation a:where(:not(.wp-element-button)){color:inherit}:where(.wp-block-columns.is-layout-flex){gap:2em}.wp-block-pullquote{font-size:1.5em;line-height:1.6}</style><link
+rel='stylesheet' id='wpo_min-header-0-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-styles2.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-1-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-newsfontawesome11.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-2-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-formstyles4.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-3-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-myuploadstyle7.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-4-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-myfontawesome.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-5-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-stylewebinar5.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-6-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-webinarfontawesome.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-7-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-collapscatlist_css.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-8-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-wp-block-library.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-9-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-simple-sitemap-css.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-10-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-classic-theme-styles.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-14-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-video_popup_close_icon.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-15-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-oba_youtubepopup_css.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-17-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-workable-for-wordpress.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-18-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-wdcl-slick.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-19-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-wdcl-slick-theme.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-20-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-wp-pagenavi.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-21-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-et_monarch-css.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-22-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-divi-style.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-23-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-wow-divi-carousel-lite-styles.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-24-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-tablepress-default.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-25-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-dashicons.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-26-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-shiftnav.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-27-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-ubermenu.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-28-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-ubermenu-minimal.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-29-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-ubermenu-font-awesome-all.min.css' type='text/css' media='all' /><link
+rel='stylesheet' id='wpo_min-header-30-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-shiftnav-font-awesome.min.css' type='text/css' media='all' /> <script type='text/javascript' id='wpo_min-header-0-js-extra'>var siteurl={"template_directory_uri":"https:\/\/visualbi.com"}</script> <script type='text/javascript' src='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-header-e9325251.min.js' id='wpo_min-header-0-js'></script> <link
+rel="https://api.w.org/" href="https://visualbi.com/wp-json/" /><link
+rel="alternate" type="application/json" href="https://visualbi.com/wp-json/wp/v2/posts/6539" /><link
+rel="EditURI" type="application/rsd+xml" title="RSD" href="https://visualbi.com/xmlrpc.php?rsd" /><link
+rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://visualbi.com/wp-includes/wlwmanifest.xml" /><link
+rel='shortlink' href='https://visualbi.com/?p=6539' /><link
+rel="alternate" type="application/json+oembed" href="https://visualbi.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fvisualbi.com%2Fblogs%2Fsap%2Fsap-businessobjects%2Fsap-lumira-designer%2Fcreating-first-application-using-sap-lumira-designer%2F" /><link
+rel="alternate" type="text/xml+oembed" href="https://visualbi.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fvisualbi.com%2Fblogs%2Fsap%2Fsap-businessobjects%2Fsap-lumira-designer%2Fcreating-first-application-using-sap-lumira-designer%2F&#038;format=xml" />
+ <script type="text/javascript">var _hsq=_hsq||[];_hsq.push(["setContentType","blog-post"])</script>  <script>(function(){var hbspt=window.hbspt=window.hbspt||{};hbspt.forms=hbspt.forms||{};hbspt._wpFormsQueue=[];hbspt.enqueueForm=function(formDef){if(hbspt.forms&&hbspt.forms.create){hbspt.forms.create(formDef)}else{hbspt._wpFormsQueue.push(formDef)}};if(!window.hbspt.forms.create){Object.defineProperty(window.hbspt.forms,'create',{configurable:!0,get:function(){return hbspt._wpCreateForm},set:function(value){hbspt._wpCreateForm=value;while(hbspt._wpFormsQueue.length){var formDef=hbspt._wpFormsQueue.shift();if(!document.currentScript){var formScriptId='leadin-forms-v2-js';hubspot.utils.currentScript=document.getElementById(formScriptId)}
+hbspt._wpCreateForm.call(hbspt.forms,formDef)}},})}})()</script> <style type="text/css" id="shiftnav-dynamic-css">@media only screen and (min-width:981px){#shiftnav-toggle-main,.shiftnav-toggle-mobile{display:none}.shiftnav-wrap{padding-top:0!important}}@media only screen and (max-width:980px){.et_mobile_nav_menu{display:none!important}}@media only screen and (max-width:979px){.ubermenu,body .ubermenu,.ubermenu.ubermenu-responsive-default,.ubermenu-responsive-toggle,#megaMenu{display:none!important}}#shiftnav-toggle-main.shiftnav-toggle-main-entire-bar:before,#shiftnav-toggle-main .shiftnav-toggle-burger{font-size:22px}.shiftnav.shiftnav-shiftnav-main{background:#f6f6f6;color:#000}.shiftnav.shiftnav-shiftnav-main .shiftnav-site-title{color:#000;font-size:16px;text-align:bold;font-weight:700}.shiftnav.shiftnav-shiftnav-main ul.shiftnav-menu li.menu-item>.shiftnav-target{color:#000;font-size:16px;font-weight:400;text-shadow:none}.shiftnav.shiftnav-shiftnav-main ul.shiftnav-menu li.menu-item.shiftnav-active>.shiftnav-target,.shiftnav.shiftnav-shiftnav-main ul.shiftnav-menu li.menu-item.shiftnav-in-transition>.shiftnav-target,.shiftnav.shiftnav-shiftnav-main ul.shiftnav-menu.shiftnav-active-on-hover li.menu-item>.shiftnav-target:hover,.shiftnav.shiftnav-shiftnav-main ul.shiftnav-menu.shiftnav-active-highlight li.menu-item>.shiftnav-target:active{background:#eee;color:#31a9de}.shiftnav.shiftnav-shiftnav-main ul.shiftnav-menu li.menu-item.current-menu-item>.shiftnav-target,.shiftnav.shiftnav-shiftnav-main ul.shiftnav-menu li.menu-item ul.sub-menu .current-menu-item>.shiftnav-target,.shiftnav.shiftnav-shiftnav-main ul.shiftnav-menu>li.shiftnav-sub-accordion.current-menu-ancestor>.shiftnav-target,.shiftnav.shiftnav-shiftnav-main ul.shiftnav-menu>li.shiftnav-sub-shift.current-menu-ancestor>.shiftnav-target{background:#eee;color:#31a9de}.shiftnav.shiftnav-shiftnav-main ul.shiftnav-menu li.menu-item.shiftnav-highlight>.shiftnav-target,.shiftnav.shiftnav-shiftnav-main ul.shiftnav-menu li.menu-item ul.sub-menu .shiftnav-highlight>.shiftnav-target{background:#eee;color:#31a9de}.shiftnav.shiftnav-shiftnav-main ul.shiftnav-menu>li.menu-item>.shiftnav-target{text-transform:none}.shiftnav.shiftnav-shiftnav-main ul.shiftnav-menu li.menu-item>.shiftnav-submenu-activation{background:#f6f6f6;color:#000}.shiftnav.shiftnav-shiftnav-main ul.shiftnav-menu li.menu-item>.shiftnav-submenu-activation:hover,.shiftnav.shiftnav-shiftnav-main ul.shiftnav-menu li.menu-item.shiftnav-active>.shiftnav-submenu-activation,.shiftnav.shiftnav-shiftnav-main ul.shiftnav-menu li.menu-item.shiftnav-in-transition>.shiftnav-submenu-activation{background:#f6f6f6;color:#31a9de}.shiftnav.shiftnav-shiftnav-main ul.shiftnav-menu li.shiftnav-retract .shiftnav-target{background:#eee;color:#000;text-align:right}.shiftnav.shiftnav-shiftnav-main ul.shiftnav-menu ul.sub-menu li.menu-item>.shiftnav-target{color:#000;font-size:16px;font-weight:400}</style><style id="ubermenu-custom-generated-css">.fa{font-style:normal;font-variant:normal;font-weight:400;font-family:FontAwesome}.ubermenu.ubermenu-main{background:none;border:none;box-shadow:none}.ubermenu.ubermenu-main .ubermenu-item-level-0>.ubermenu-target{border:none;box-shadow:none}.ubermenu.ubermenu-main.ubermenu-horizontal .ubermenu-submenu-drop.ubermenu-submenu-align-left_edge_bar,.ubermenu.ubermenu-main.ubermenu-horizontal .ubermenu-submenu-drop.ubermenu-submenu-align-full_width{left:0}.ubermenu.ubermenu-main.ubermenu-horizontal .ubermenu-item-level-0.ubermenu-active>.ubermenu-submenu-drop,.ubermenu.ubermenu-main.ubermenu-horizontal:not(.ubermenu-transition-shift) .ubermenu-item-level-0>.ubermenu-submenu-drop{margin-top:0}.ubermenu-main .ubermenu-item-level-0>.ubermenu-target{font-size:16px}.ubermenu.ubermenu-main .ubermenu-item-level-0:hover>.ubermenu-target,.ubermenu-main .ubermenu-item-level-0.ubermenu-active>.ubermenu-target{color:#27a7df}.ubermenu-main .ubermenu-item-level-0.ubermenu-current-menu-item>.ubermenu-target,.ubermenu-main .ubermenu-item-level-0.ubermenu-current-menu-parent>.ubermenu-target,.ubermenu-main .ubermenu-item-level-0.ubermenu-current-menu-ancestor>.ubermenu-target{color:#27a7df}.ubermenu-main .ubermenu-item-normal>.ubermenu-target{font-weight:500}.ubermenu.ubermenu-main .ubermenu-item-normal>.ubermenu-target:hover,.ubermenu.ubermenu-main .ubermenu-item-normal.ubermenu-active>.ubermenu-target{background-color:#f8f8f8}.ubermenu .ubermenu-submenu.ubermenu-submenu-id-23{width:340px;min-width:340px}.ubermenu .ubermenu-submenu.ubermenu-submenu-id-25{width:340px;min-width:340px}.ubermenu .ubermenu-submenu.ubermenu-submenu-id-26{width:340px;min-width:340px}.ubermenu .ubermenu-item-339>.ubermenu-target.ubermenu-item-layout-image_left>.ubermenu-target-text{padding-left:70px}.ubermenu .ubermenu-item-424>.ubermenu-target.ubermenu-item-layout-image_left>.ubermenu-target-text{padding-left:70px}.ubermenu .ubermenu-item-548>.ubermenu-target.ubermenu-item-layout-image_left>.ubermenu-target-text{padding-left:70px}.ubermenu .ubermenu-item.ubermenu-item-13157>.ubermenu-target{color:#000}.ubermenu .ubermenu-item.ubermenu-item-13157.ubermenu-active>.ubermenu-target,.ubermenu .ubermenu-item.ubermenu-item-13157:hover>.ubermenu-target,.ubermenu .ubermenu-submenu .ubermenu-item.ubermenu-item-13157.ubermenu-active>.ubermenu-target,.ubermenu .ubermenu-submenu .ubermenu-item.ubermenu-item-13157:hover>.ubermenu-target{color:#000}.ubermenu .ubermenu-item.ubermenu-item-13157.ubermenu-current-menu-item>.ubermenu-target,.ubermenu .ubermenu-item.ubermenu-item-13157.ubermenu-current-menu-ancestor>.ubermenu-target{color:#000}.ubermenu .ubermenu-item.ubermenu-item-13160>.ubermenu-target{color:#000}.ubermenu .ubermenu-item.ubermenu-item-13158>.ubermenu-target{color:#000}.ubermenu .ubermenu-item-14660>.ubermenu-target.ubermenu-item-layout-image_left>.ubermenu-target-text{padding-left:70px}.ubermenu .ubermenu-item-14664>.ubermenu-target.ubermenu-item-layout-image_left>.ubermenu-target-text{padding-left:70px}.ubermenu .ubermenu-item-14665>.ubermenu-target.ubermenu-item-layout-image_left>.ubermenu-target-text{padding-left:70px}.ubermenu .ubermenu-item-14666>.ubermenu-target.ubermenu-item-layout-image_left>.ubermenu-target-text{padding-left:70px}.ubermenu .ubermenu-item-14668>.ubermenu-target.ubermenu-item-layout-image_left>.ubermenu-target-text{padding-left:70px}.ubermenu .ubermenu-item.ubermenu-item-14726>.ubermenu-target{background:#f93;color:#fff}.ubermenu .ubermenu-item-15583>.ubermenu-target.ubermenu-item-layout-image_left>.ubermenu-target-text{padding-left:70px}.ubermenu .ubermenu-item-15582>.ubermenu-target.ubermenu-item-layout-image_left>.ubermenu-target-text{padding-left:70px}.ubermenu .ubermenu-item-15581>.ubermenu-target.ubermenu-item-layout-image_left>.ubermenu-target-text{padding-left:70px}.ubermenu .ubermenu-item-17080>.ubermenu-target.ubermenu-item-layout-image_left>.ubermenu-target-text{padding-left:70px}.ubermenu .ubermenu-item-17084>.ubermenu-target.ubermenu-item-layout-image_left>.ubermenu-target-text{padding-left:70px}#ubermenu-main-3-primary-menu-4{padding:5px 0}</style> <script type='text/javascript'>var video_popup_unprm_general_settings={'unprm_r_border':'true'}</script> <style type="text/css" id="et-bloom-custom-css">.et_bloom .et_bloom_optin_2 .et_bloom_form_content{background-color:#349de8!important}.et_bloom .et_bloom_optin_2 .et_bloom_form_container .et_bloom_form_header{background-color:#ededed!important}.et_bloom .et_bloom_optin_2 .wedge_edge .triangle{fill:#ededed}.et_bloom .et_bloom_optin_2 .et_bloom_form_content button{background-color:#164363!important}.et_bloom .et_bloom_optin_2 .et_bloom_form_content .et_bloom_fields i{color:#164363!important}.et_bloom .et_bloom_optin_2 .et_bloom_form_content .et_bloom_custom_field_radio i:before{background:#164363!important}.et_bloom .et_bloom_optin_2 .et_bloom_border_solid{border-color:#349de8!important}.et_bloom .et_bloom_optin_2 .et_bloom_form_content button{background-color:#164363!important}.et_bloom .et_bloom_optin_2 .et_bloom_form_container h2,.et_bloom .et_bloom_optin_2 .et_bloom_form_container h2 span,.et_bloom .et_bloom_optin_2 .et_bloom_form_container h2 strong{font-family:"Open Sans",Helvetica,Arial,Lucida,sans-serif}.et_bloom .et_bloom_optin_2 .et_bloom_form_container p,.et_bloom .et_bloom_optin_2 .et_bloom_form_container p span,.et_bloom .et_bloom_optin_2 .et_bloom_form_container p strong,.et_bloom .et_bloom_optin_2 .et_bloom_form_container form input,.et_bloom .et_bloom_optin_2 .et_bloom_form_container form button span{font-family:"Open Sans",Helvetica,Arial,Lucida,sans-serif}</style><link
+rel="preload" href="https://visualbi.com/wp-content/themes/Divi/core/admin/fonts/modules.ttf" as="font" crossorigin="anonymous"><style type="text/css" id="et-social-custom-css">.et_monarch .widget_monarchwidget .et_social_icon,.et_monarch .widget_monarchwidget.et_social_networks .et_social_network_label,.et_monarch .widget_monarchwidget .et_social_sidebar_count{color:#27a7df}</style><style type='text/css'>.rp4wp-related-posts{display:none}.et-l--footer .rp4wp-related-posts{display:block}</style><meta
+name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><link
+rel="icon" href="https://visualbi.com/wp-content/uploads/cropped-visualbi-favicon-32x32.png" sizes="32x32" /><link
+rel="icon" href="https://visualbi.com/wp-content/uploads/cropped-visualbi-favicon-192x192.png" sizes="192x192" /><link
+rel="apple-touch-icon" href="https://visualbi.com/wp-content/uploads/cropped-visualbi-favicon-180x180.png" /><meta
+name="msapplication-TileImage" content="https://visualbi.com/wp-content/uploads/cropped-visualbi-favicon-270x270.png" /><link
+rel="stylesheet" id="et-divi-customizer-global-cached-inline-styles" href="https://visualbi.com/wp-content/et-cache/global/et-divi-customizer-global-168545079814.min.css" onerror="et_core_page_resource_fallback(this, true)" onload="et_core_page_resource_fallback(this)" /><link
+rel="stylesheet" id="et-core-unified-tb-442-tb-501-6539-cached-inline-styles" href="https://visualbi.com/wp-content/et-cache/6539/et-core-unified-tb-442-tb-501-6539-16854756692.min.css" onerror="et_core_page_resource_fallback(this, true)" onload="et_core_page_resource_fallback(this)" /></head><body
+class="post-template-default single single-post postid-6539 single-format-standard et-tb-has-template et-tb-has-header et-tb-has-footer et_bloom et_monarch et_pb_button_helper_class et_cover_background et_pb_gutter windows et_pb_gutters2 et_right_sidebar et_divi_theme et-db et_minified_js et_minified_css">
+<svg
+xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter
+id="wp-duotone-dark-grayscale"><feColorMatrix
+color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer
+color-interpolation-filters="sRGB" ><feFuncR
+type="table" tableValues="0 0.498039215686" /><feFuncG
+type="table" tableValues="0 0.498039215686" /><feFuncB
+type="table" tableValues="0 0.498039215686" /><feFuncA
+type="table" tableValues="1 1" /></feComponentTransfer><feComposite
+in2="SourceGraphic" operator="in" /></filter></defs></svg><svg
+xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter
+id="wp-duotone-grayscale"><feColorMatrix
+color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer
+color-interpolation-filters="sRGB" ><feFuncR
+type="table" tableValues="0 1" /><feFuncG
+type="table" tableValues="0 1" /><feFuncB
+type="table" tableValues="0 1" /><feFuncA
+type="table" tableValues="1 1" /></feComponentTransfer><feComposite
+in2="SourceGraphic" operator="in" /></filter></defs></svg><svg
+xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter
+id="wp-duotone-purple-yellow"><feColorMatrix
+color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer
+color-interpolation-filters="sRGB" ><feFuncR
+type="table" tableValues="0.549019607843 0.988235294118" /><feFuncG
+type="table" tableValues="0 1" /><feFuncB
+type="table" tableValues="0.717647058824 0.254901960784" /><feFuncA
+type="table" tableValues="1 1" /></feComponentTransfer><feComposite
+in2="SourceGraphic" operator="in" /></filter></defs></svg><svg
+xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter
+id="wp-duotone-blue-red"><feColorMatrix
+color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer
+color-interpolation-filters="sRGB" ><feFuncR
+type="table" tableValues="0 1" /><feFuncG
+type="table" tableValues="0 0.278431372549" /><feFuncB
+type="table" tableValues="0.592156862745 0.278431372549" /><feFuncA
+type="table" tableValues="1 1" /></feComponentTransfer><feComposite
+in2="SourceGraphic" operator="in" /></filter></defs></svg><svg
+xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter
+id="wp-duotone-midnight"><feColorMatrix
+color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer
+color-interpolation-filters="sRGB" ><feFuncR
+type="table" tableValues="0 0" /><feFuncG
+type="table" tableValues="0 0.647058823529" /><feFuncB
+type="table" tableValues="0 1" /><feFuncA
+type="table" tableValues="1 1" /></feComponentTransfer><feComposite
+in2="SourceGraphic" operator="in" /></filter></defs></svg><svg
+xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter
+id="wp-duotone-magenta-yellow"><feColorMatrix
+color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer
+color-interpolation-filters="sRGB" ><feFuncR
+type="table" tableValues="0.780392156863 1" /><feFuncG
+type="table" tableValues="0 0.949019607843" /><feFuncB
+type="table" tableValues="0.352941176471 0.470588235294" /><feFuncA
+type="table" tableValues="1 1" /></feComponentTransfer><feComposite
+in2="SourceGraphic" operator="in" /></filter></defs></svg><svg
+xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter
+id="wp-duotone-purple-green"><feColorMatrix
+color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer
+color-interpolation-filters="sRGB" ><feFuncR
+type="table" tableValues="0.650980392157 0.403921568627" /><feFuncG
+type="table" tableValues="0 1" /><feFuncB
+type="table" tableValues="0.447058823529 0.4" /><feFuncA
+type="table" tableValues="1 1" /></feComponentTransfer><feComposite
+in2="SourceGraphic" operator="in" /></filter></defs></svg><svg
+xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter
+id="wp-duotone-blue-orange"><feColorMatrix
+color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer
+color-interpolation-filters="sRGB" ><feFuncR
+type="table" tableValues="0.0980392156863 1" /><feFuncG
+type="table" tableValues="0 0.662745098039" /><feFuncB
+type="table" tableValues="0.847058823529 0.419607843137" /><feFuncA
+type="table" tableValues="1 1" /></feComponentTransfer><feComposite
+in2="SourceGraphic" operator="in" /></filter></defs></svg><div
+id="page-container"><div
+id="et-boc" class="et-boc"><header
+class="et-l et-l--header"><div
+class="et_builder_inner_content et_pb_gutters2"><div
+class="et_pb_section et_pb_section_0_tb_header et_pb_sticky_module et_pb_with_background et_section_regular" ><div
+class="et_pb_row et_pb_row_0_tb_header et_pb_equal_columns et_pb_gutters1 et_pb_row--with-menu"><div
+class="et_pb_column et_pb_column_3_4 et_pb_column_0_tb_header  et_pb_css_mix_blend_mode_passthrough et_pb_column--with-menu"><div
+class="et_pb_module et_pb_menu et_pb_menu_0_tb_header et_pb_bg_layout_light  et_pb_text_align_right et_dropdown_animation_fade et_pb_menu--with-logo et_pb_menu--style-left_aligned"><div
+class="et_pb_menu_inner_container clearfix"><div
+class="et_pb_menu__logo-wrap"><div
+class="et_pb_menu__logo">
+<a
+href="/" ><img
+decoding="async" loading="lazy" src="https://visualbi.com/wp-content/uploads/visualbi-logo-light.svg" alt="Visual BI Solutions" height="auto" width="auto" /></a></div></div><div
+class="et_pb_menu__wrap"><div
+class="et_pb_menu__menu"><nav
+class="et-menu-nav"><button
+class="ubermenu-responsive-toggle ubermenu-responsive-toggle-main ubermenu-skin-minimal ubermenu-loc-primary-menu ubermenu-responsive-toggle-content-align-left ubermenu-responsive-toggle-align-full " tabindex="0" data-ubermenu-target="ubermenu-main-3-primary-menu-4"><i
+class="fas fa-bars" ></i>Menu</button><nav
+id="ubermenu-main-3-primary-menu-4" class="ubermenu ubermenu-nojs ubermenu-main ubermenu-menu-3 ubermenu-loc-primary-menu ubermenu-responsive ubermenu-responsive-default ubermenu-responsive-collapse ubermenu-horizontal ubermenu-transition-shift ubermenu-trigger-hover ubermenu-skin-minimal  ubermenu-bar-align-full ubermenu-items-align-auto ubermenu-bound ubermenu-disable-submenu-scroll ubermenu-sub-indicators ubermenu-retractors-responsive ubermenu-submenu-indicator-closes"><ul
+id="ubermenu-nav-main-3-primary-menu" class="ubermenu-nav" data-title="Primary Menu"><li
+class="et_pb_menu_page_id-23 ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-has-children ubermenu-item-23 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-flyout" ><span
+class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only ubermenu-noindicator" tabindex="0"><span
+class="ubermenu-target-title ubermenu-target-text">Services</span></span><ul
+class="ubermenu-submenu ubermenu-submenu-id-23 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"  ><li
+class="et_pb_menu_page_id-13983 ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-14668 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a
+class="ubermenu-target ubermenu-target-with-image ubermenu-item-layout-image_left" href="https://visualbi.com/services/data-architecture-engineering/"><img
+decoding="async" loading="lazy" class="ubermenu-image ubermenu-image-size-full" src="https://visualbi.com/wp-content/uploads/data-engineering-menu-icon.svg" width="60" height="60" alt="Data Engineering"  /><span
+class="ubermenu-target-title ubermenu-target-text">Data Architecture &#038; Engineering</span><span
+class="ubermenu-target-divider"> – </span><span
+class="ubermenu-target-description ubermenu-target-text">Build a modern data foundation that supports your business</span></a></li><li
+class="et_pb_menu_page_id-15544 ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-15583 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a
+class="ubermenu-target ubermenu-target-with-image ubermenu-item-layout-image_left" href="https://visualbi.com/services/strategy-architecture/"><img
+decoding="async" loading="lazy" class="ubermenu-image ubermenu-image-size-full" src="https://visualbi.com/wp-content/uploads/data-warehouse-menu-icon.svg" width="60" height="60" alt="Data Warehouse"  /><span
+class="ubermenu-target-title ubermenu-target-text">Strategy &#038; Architecture</span><span
+class="ubermenu-target-divider"> – </span><span
+class="ubermenu-target-description ubermenu-target-text">Drive successful outcomes with the right data strategy and architecture</span></a></li><li
+class="et_pb_menu_page_id-15557 ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-15582 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a
+class="ubermenu-target ubermenu-target-with-image ubermenu-item-layout-image_left" href="https://visualbi.com/services/modern-bi-analytics/"><img
+decoding="async" loading="lazy" class="ubermenu-image ubermenu-image-size-full" src="https://visualbi.com/wp-content/uploads/bi-analytics-menu-icon.svg" width="60" height="60" alt="BI &amp; Analytics"  /><span
+class="ubermenu-target-title ubermenu-target-text">Modern BI &#038; Analytics</span><span
+class="ubermenu-target-divider"> – </span><span
+class="ubermenu-target-description ubermenu-target-text">Experience the power of data with modern visualization techniques</span></a></li><li
+class="et_pb_menu_page_id-15568 ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-15581 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a
+class="ubermenu-target ubermenu-target-with-image ubermenu-item-layout-image_left" href="https://visualbi.com/services/data-science-ml/"><img
+decoding="async" loading="lazy" class="ubermenu-image ubermenu-image-size-full" src="https://visualbi.com/wp-content/uploads/data-science-ml-menu-icon.svg" width="60" height="60" alt="Data Science &amp; ML"  /><span
+class="ubermenu-target-title ubermenu-target-text">Data Science &#038; ML</span><span
+class="ubermenu-target-divider"> – </span><span
+class="ubermenu-target-description ubermenu-target-text">Unlock endless possibilities with an optimum mix of Data Science and Machine learning</span></a></li></ul></li><li
+class="et_pb_menu_page_id-25 ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-has-children ubermenu-item-25 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-flyout" ><span
+class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only ubermenu-noindicator" tabindex="0"><span
+class="ubermenu-target-title ubermenu-target-text">Insights</span></span><ul
+class="ubermenu-submenu ubermenu-submenu-id-25 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"  ><li
+class="et_pb_menu_page_id-533 ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-current_page_parent ubermenu-item-548 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a
+class="ubermenu-target ubermenu-target-with-image ubermenu-item-layout-image_left" href="https://visualbi.com/blogs/"><img
+decoding="async" loading="lazy" class="ubermenu-image ubermenu-image-size-full" src="https://visualbi.com/wp-content/uploads/blogs-menu-icon.svg" width="60" height="60" alt="Blogs"  /><span
+class="ubermenu-target-title ubermenu-target-text">Blogs</span><span
+class="ubermenu-target-divider"> – </span><span
+class="ubermenu-target-description ubermenu-target-text">Get your inside scoop into our take on the latest developments in BI &#038; Analytics</span></a></li><li
+class="et_pb_menu_page_id-7077 ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-14666 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a
+class="ubermenu-target ubermenu-target-with-image ubermenu-item-layout-image_left" href="https://visualbi.com/case-studies/"><img
+decoding="async" loading="lazy" class="ubermenu-image ubermenu-image-size-full" src="https://visualbi.com/wp-content/uploads/case-studies-menu-icon.svg" width="60" height="60" alt="Case Studies"  /><span
+class="ubermenu-target-title ubermenu-target-text">Case Studies</span><span
+class="ubermenu-target-divider"> – </span><span
+class="ubermenu-target-description ubermenu-target-text">A growing collection of more than 50+ case studies exhibiting our customers’ success</span></a></li><li
+class="et_pb_menu_page_id-7129 ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-14665 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a
+class="ubermenu-target ubermenu-target-with-image ubermenu-item-layout-image_left" href="https://visualbi.com/videos/"><img
+decoding="async" loading="lazy" class="ubermenu-image ubermenu-image-size-full" src="https://visualbi.com/wp-content/uploads/videos-menu-icon.svg" width="60" height="60" alt="Videos"  /><span
+class="ubermenu-target-title ubermenu-target-text">Videos</span><span
+class="ubermenu-target-divider"> – </span><span
+class="ubermenu-target-description ubermenu-target-text">Handpicked video resources showcasing you the latest BI trends and technologies</span></a></li><li
+class="et_pb_menu_page_id-11572 ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-14664 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a
+class="ubermenu-target ubermenu-target-with-image ubermenu-item-layout-image_left" href="https://visualbi.com/webinars/"><img
+decoding="async" loading="lazy" class="ubermenu-image ubermenu-image-size-full" src="https://visualbi.com/wp-content/uploads/webinars-menu-icon.svg" width="60" height="60" alt="Webinars"  /><span
+class="ubermenu-target-title ubermenu-target-text">Webinars</span><span
+class="ubermenu-target-divider"> – </span><span
+class="ubermenu-target-description ubermenu-target-text">Get latest updates on our webinar schedules &#038; register to learn from our experts</span></a></li><li
+class="et_pb_menu_page_id-12459 ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-17084 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a
+class="ubermenu-target ubermenu-target-with-image ubermenu-item-layout-image_left" href="https://visualbi.com/events/"><img
+decoding="async" loading="lazy" class="ubermenu-image ubermenu-image-size-full" src="https://visualbi.com/wp-content/uploads/events-menu-icon.svg" width="60" height="60" alt="Events icon"  /><span
+class="ubermenu-target-title ubermenu-target-text">Events</span><span
+class="ubermenu-target-divider"> – </span><span
+class="ubermenu-target-description ubermenu-target-text">Check out events hosted and attended by Visual BI Solutions</span></a></li></ul></li><li
+class="et_pb_menu_page_id-26 ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-has-children ubermenu-item-26 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-flyout" ><span
+class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only ubermenu-noindicator" tabindex="0"><span
+class="ubermenu-target-title ubermenu-target-text">About Us</span></span><ul
+class="ubermenu-submenu ubermenu-submenu-id-26 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"  ><li
+class="et_pb_menu_page_id-308 ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-339 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a
+class="ubermenu-target ubermenu-target-with-image ubermenu-item-layout-image_left" href="https://visualbi.com/about-us/"><img
+decoding="async" loading="lazy" class="ubermenu-image ubermenu-image-size-full" src="https://visualbi.com/wp-content/uploads/about-visualbi-menu-icon.svg" width="60" height="60" alt="about-visualbi-menu-icon"  /><span
+class="ubermenu-target-title ubermenu-target-text">About Visual BI</span><span
+class="ubermenu-target-divider"> – </span><span
+class="ubermenu-target-description ubermenu-target-text">We make the best in BI possible through our passion and commitment to innovation</span></a></li><li
+class="et_pb_menu_page_id-366 ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-424 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a
+class="ubermenu-target ubermenu-target-with-image ubermenu-item-layout-image_left" href="https://visualbi.com/careers/"><img
+decoding="async" loading="lazy" class="ubermenu-image ubermenu-image-size-full" src="https://visualbi.com/wp-content/uploads/careers-menu-icon.svg" width="60" height="60" alt="careers-menu-icon"  /><span
+class="ubermenu-target-title ubermenu-target-text">Careers</span><span
+class="ubermenu-target-divider"> – </span><span
+class="ubermenu-target-description ubermenu-target-text">Explore intellectually rewarding careers in the field of Business Intelligence &#038; Analytics</span></a></li><li
+class="et_pb_menu_page_id-13986 ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-14660 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a
+class="ubermenu-target ubermenu-target-with-image ubermenu-item-layout-image_left" href="https://visualbi.com/innovation-lab/"><img
+decoding="async" loading="lazy" class="ubermenu-image ubermenu-image-size-full" src="https://visualbi.com/wp-content/uploads/innovation-lab-menu-icon.svg" width="60" height="60" alt="Innovation Lab - Menu Icon"  /><span
+class="ubermenu-target-title ubermenu-target-text">Innovation Lab</span><span
+class="ubermenu-target-divider"> – </span><span
+class="ubermenu-target-description ubermenu-target-text">The Innovation Lab is built with an aim to create market-ready BI &#038; Analytic solutions</span></a></li><li
+class="et_pb_menu_page_id-12443 ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-17080 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a
+class="ubermenu-target ubermenu-target-with-image ubermenu-item-layout-image_left" href="https://visualbi.com/news/"><img
+decoding="async" loading="lazy" class="ubermenu-image ubermenu-image-size-full" src="https://visualbi.com/wp-content/uploads/news-menu-icon.svg" width="60" height="60" alt="News icon"  /><span
+class="ubermenu-target-title ubermenu-target-text">News</span><span
+class="ubermenu-target-divider"> – </span><span
+class="ubermenu-target-description ubermenu-target-text">Check out our most recent news, key announcements &#038; Press releases</span></a></li></ul></li></ul></nav></nav></div>
+<button
+type="button" class="et_pb_menu__icon et_pb_menu__search-button"></button><div
+class="et_mobile_nav_menu">
+<a
+href="#" class="mobile_nav closed">
+<span
+class="mobile_menu_bar"></span>
+</a></div></div><div
+class="et_pb_menu__search-container et_pb_menu__search-container--disabled"><div
+class="et_pb_menu__search"><form
+role="search" method="get" class="et_pb_menu__search-form" action="https://visualbi.com/">
+<input
+type="search" class="et_pb_menu__search-input" placeholder="Search &hellip;" name="s" title="Search for:" /></form>
+<button
+type="button" class="et_pb_menu__icon et_pb_menu__close-search-button"></button></div></div></div></div><div
+class="et_pb_module et_pb_code et_pb_code_0_tb_header"><div
+class="et_pb_code_inner"><a
+class="shiftnav-toggle shiftnav-toggle-shiftnav-main shiftnav-toggle-button" data-shiftnav-target="shiftnav-main"><i
+class="fa fa-bars"></i> </a></div></div></div><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_1_tb_header  et_pb_css_mix_blend_mode_passthrough et-last-child"><div
+class="et_pb_button_module_wrapper et_pb_button_0_tb_header_wrapper et_pb_button_alignment_center et_pb_module ">
+<a
+class="et_pb_button et_pb_button_0_tb_header et_pb_bg_layout_light" href="/contact-us/">Let&#039;s Talk</a></div></div></div></div><div
+class="et_pb_section et_pb_section_1_tb_header et_pb_with_background et_section_regular" ><div
+class="et_pb_row et_pb_row_1_tb_header"><div
+class="et_pb_column et_pb_column_3_4 et_pb_column_2_tb_header  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_module et_pb_text et_pb_text_0_tb_header  et_pb_text_align_left et_pb_bg_layout_dark"><div
+class="et_pb_text_inner"><span><span><a
+href="https://visualbi.com/blogs/">Blogs</a> / <span><a
+href="https://visualbi.com/blogs/category/sap/">SAP</a> / <span><a
+href="https://visualbi.com/blogs/category/sap/sap-businessobjects/">SAP BusinessObjects</a> / <span><a
+href="https://visualbi.com/blogs/category/sap/sap-businessobjects/design-studio/">SAP Design Studio</a> / <span
+class="breadcrumb_last" aria-current="page">Creating your First Application using SAP Lumira Designer</span></span></span></span></span></span></div></div><div
+class="et_pb_module et_pb_post_title et_pb_post_title_0_tb_header et_pb_bg_layout_dark  et_pb_text_align_left"   ><div
+class="et_pb_title_container"><h1 class="entry-title">Creating your First Application using SAP Lumira Designer</h1><p
+class="et_pb_title_meta_container"><div
+class="post-categories"><ul><li><a
+class="post-category lumira-2-0" href="https://visualbi.com/blogs/category/sap/lumira-2-0/">Lumira 2.0</a></li><li><a
+class="post-category design-studio" href="https://visualbi.com/blogs/category/sap/sap-businessobjects/design-studio/">SAP Design Studio</a></li><li><a
+class="post-category sap-lumira-designer" href="https://visualbi.com/blogs/category/sap/sap-businessobjects/sap-lumira-designer/">SAP Lumira Designer</a></li></ul></div></p></div></div></div></div><div
+class="et_pb_row et_pb_row_2_tb_header"><div
+class="et_pb_column et_pb_column_1_3 et_pb_column_3_tb_header  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_module et_pb_post_title et_pb_post_title_1_tb_header et_pb_bg_layout_dark  et_pb_text_align_left"   ><div
+class="et_pb_title_container"><p
+class="et_pb_title_meta_container"><span
+class="author vcard"> by <a
+href="https://visualbi.com/blogs/author/eshwarpv/" title="Posts by Eshwar Venkatadri" class="author url fn" rel="author">Eshwar Venkatadri</a></span></p></div></div></div><div
+class="et_pb_column et_pb_column_1_3 et_pb_column_4_tb_header  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_module et_pb_post_title et_pb_post_title_2_tb_header et_pb_bg_layout_dark  et_pb_text_align_left"   ><div
+class="et_pb_title_container"><p
+class="et_pb_title_meta_container"><span
+class="published">Aug 22, 2017</span></p></div></div></div><div
+class="et_pb_column et_pb_column_1_3 et_pb_column_5_tb_header  et_pb_css_mix_blend_mode_passthrough et-last-child"><div
+class="et_pb_module et_pb_text et_pb_text_1_tb_header et_social_share_button  et_pb_text_align_left et_pb_bg_layout_dark"><div
+class="et_pb_text_inner">SHARE</div></div></div></div></div></div></header><div
+id="et-main-area"><div
+id="main-content"><div
+class="container"><div
+id="content-area" class="clearfix"><div
+id="left-area"><article
+id="post-6539" class="et_pb_post post-6539 post type-post status-publish format-standard has-post-thumbnail hentry category-lumira-2-0 category-design-studio category-sap-lumira-designer"><div
+class="et_post_meta_wrapper"><h1 class="entry-title">Creating your First Application using SAP Lumira Designer</h1><p
+class="post-meta"><div
+class="post-categories"><ul><li><a
+class="post-category lumira-2-0" href="https://visualbi.com/blogs/category/sap/lumira-2-0/">Lumira 2.0</a></li><li><a
+class="post-category design-studio" href="https://visualbi.com/blogs/category/sap/sap-businessobjects/design-studio/">SAP Design Studio</a></li><li><a
+class="post-category sap-lumira-designer" href="https://visualbi.com/blogs/category/sap/sap-businessobjects/sap-lumira-designer/">SAP Lumira Designer</a></li></ul></div><span
+class="published">Aug 22, 2017</span><span
+class="author vcard"> by <a
+href="https://visualbi.com/blogs/author/eshwarpv/" title="Posts by Eshwar Venkatadri" class="author url fn" rel="author">Eshwar Venkatadri</a></span></p></div><div
+class="entry-content"><p>This is part of the&nbsp;<a
+href="https://visualbi.com/blogs/category/sap-lumira-designer" target="_blank" rel="noreferrer noopener">SAP Lumira Designer blog series</a>.</p><p>The workflow for creating an application in SAP Lumira Designer is quite different from that of its predecessor, SAP Design Studio. Let’s review how the process has changed.</p><h4 class="wp-block-heading"><strong>Some Background</strong></h4><p>Before we understand the new process, we need to cover two related items.</p><p><strong>1. File format – BIAPP vs. LUMX</strong><br>For one thing, SAP Design studio used to store the application as a .biapp file. SAP Lumira Designer introduces the concept of a document, represented as a .lumx file. This document can contain one or more applications or composites. (Composites are&nbsp;re-usable groups of components&nbsp;that could be configured by developers. We’ll learn more about composites in one of our later blogs). If you extract the .lumx file, you would be able to see the .biapp files within the app folder and the composites within the components folder.</p><div
+class="wp-block-image"><figure
+class="aligncenter size-large"><img
+loading="lazy" decoding="async" width="217" height="139" src="https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer-1.png" alt="Creating your First Application using SAP Lumira Designer" class="wp-image-6540"/></figure></div><p><strong>2. Preferred Startup Mode –&nbsp;</strong>SAP Lumira Designer provides 3 startup modes, of which the recommended startup mode is ‘SAP BusinessObjects Lumira Documents’. These modes are explained below.</p><div
+class="wp-block-image"><figure
+class="aligncenter size-large"><img
+decoding="async" loading="lazy" width="573" height="159" src="https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer-2.png" alt="Creating your First Application using SAP Lumira Designer" class="wp-image-6541" srcset="https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer-2.png 573w, https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer-2-480x133.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 573px, 100vw" /></figure></div><ul><li>SAP BusinessObjects Lumira Documents: Allows developers to create and use applications designed in SAP Lumira Designer 2.x.</li><li>SAP BusinessObjects BI Platform (Legacy): Allows developers to work with SAP Design Studio 1.x legacy applications on the BI Platform in a compatibility mode, without having to migrate the application to the latest version.</li><li>Local Mode (Legacy): Allows developers to work with SAP Design Studio 1.x legacy applications stored on your local machine in a compatibility mode.</li></ul><p>Having seen how the file format &amp; startup modes have changed, let’s continue to see how an application can be created.</p><h4 class="wp-block-heading"><strong>CREATING YOUR FIRST SAP LUMIRA DESIGNER APPLICATION</strong></h4><p>In SAP Lumira Designer, you could create a new application in the platform, or in the local system. Documents stored in the platform and local repository are grouped separately as shown in the image.</p><div
+class="wp-block-image"><figure
+class="aligncenter size-large"><img
+decoding="async" loading="lazy" width="384" height="247" src="https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer-3.png" alt="Creating your First Application using SAP Lumira Designer" class="wp-image-6542" srcset="https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer-3.png 384w, https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer-3-300x193.png 300w" sizes="(max-width: 384px) 100vw, 384px" /></figure></div><p>This means that the designer would&nbsp;no longer be creating new applications using the Menu Bar at the top, as with SAP Design Studio earlier. Instead, the workflow is as follows:</p><p><strong>Step 1:&nbsp;</strong>First create a new document</p><div
+class="wp-block-image"><figure
+class="aligncenter size-large"><img
+decoding="async" loading="lazy" width="402" height="173" src="https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer-4.png" alt="Creating your First Application using SAP Lumira Designer" class="wp-image-6543" srcset="https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer-4.png 402w, https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer-4-300x129.png 300w, https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer-4-400x173.png 400w" sizes="(max-width: 402px) 100vw, 402px" /></figure></div><p><strong>Step 2:&nbsp;</strong>Once you create a document, you can create an application or a composite within the SAP Lumira document.</p><div
+class="wp-block-image"><figure
+class="aligncenter size-large"><img
+decoding="async" loading="lazy" width="369" height="154" src="https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer-5.png" alt="Creating your First Application using SAP Lumira Designer" class="wp-image-6544" srcset="https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer-5.png 369w, https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer-5-300x125.png 300w" sizes="(max-width: 369px) 100vw, 369px" /></figure></div><p>Note that all applications in SAP Lumira Designer will be on SAPUI5 m mode, unlike in SAP Design Studio where you had options for SAPUI5 and SAPUI5-m.</p><p><strong>Step 3:&nbsp;</strong>You can then save the application by clicking on the save button in the menu</p><div
+class="wp-block-image"><figure
+class="aligncenter size-large"><img
+decoding="async" loading="lazy" width="250" height="64" src="https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer-6.png" alt="Creating your First Application using SAP Lumira Designer" class="wp-image-6545"/></figure></div><p><strong><br>Step 4:&nbsp;</strong>However, note that these changes are not committed to the BI Platform. Even when you create a new application against the BI Platform and save it, you only have a cached version of the application in the local system. To commit these changes, you would need to right-click the document and select ‘<strong>Synchronize with BI Platform</strong>’.</p><div
+class="wp-block-image"><figure
+class="aligncenter size-large"><img
+decoding="async" loading="lazy" width="300" height="217" src="https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer-7.png" alt="Creating your First Application using SAP Lumira Designer" class="wp-image-6546"/></figure></div><p><strong>Step 5:&nbsp;</strong>On the other hand, if you had created an application locally, you could upload it to the BI platform by right clicking and selecting ‘<strong>Upload to BI Platform</strong>’.</p><div
+class="wp-block-image"><figure
+class="aligncenter size-large"><img
+decoding="async" loading="lazy" width="253" height="264" src="https://visualbi.com/wp-content/uploads/creating-first-application-using-sap-lumira-designer-8.png" alt="Creating your First Application using SAP Lumira Designer" class="wp-image-6547"/></figure></div><p>With this, your first SAP Lumira Designer application is ready for consumption by your users.</p><p>Interested to learn how to <a
+href="https://visualbi.com/contact-us/" rel="noreferrer noopener" target="_blank">leverage SAP Lumira</a> for your enterprise. Write to us by clicking <a
+href="mailto:support@visualbi.com" rel="noreferrer noopener" target="_blank">here</a>.</p><div
+class="et_social_inline et_social_mobile_on et_social_inline_bottom"><div
+class="et_social_networks et_social_4col et_social_slide et_social_rounded et_social_left et_social_no_animation et_social_withnetworknames et_social_outer_dark"><ul
+class="et_social_icons_container"><li
+class="et_social_facebook">
+<a
+href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fvisualbi.com%2Fblogs%2Fsap%2Fsap-businessobjects%2Fsap-lumira-designer%2Fcreating-first-application-using-sap-lumira-designer%2F&#038;t=Creating%20your%20First%20Application%20using%20SAP%20Lumira%20Designer" class="et_social_share" rel="nofollow" data-social_name="facebook" data-post_id="6539" data-social_type="share" data-location="inline">
+<i
+class="et_social_icon et_social_icon_facebook"></i><div
+class="et_social_network_label"><div
+class="et_social_networkname">Facebook</div></div><span
+class="et_social_overlay"></span>
+</a></li><li
+class="et_social_twitter">
+<a
+href="http://twitter.com/share?text=Creating%20your%20First%20Application%20using%20SAP%20Lumira%20Designer&#038;url=https%3A%2F%2Fvisualbi.com%2Fblogs%2Fsap%2Fsap-businessobjects%2Fsap-lumira-designer%2Fcreating-first-application-using-sap-lumira-designer%2F&#038;via=Visual_BI" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="6539" data-social_type="share" data-location="inline">
+<i
+class="et_social_icon et_social_icon_twitter"></i><div
+class="et_social_network_label"><div
+class="et_social_networkname">Twitter</div></div><span
+class="et_social_overlay"></span>
+</a></li><li
+class="et_social_linkedin">
+<a
+href="http://www.linkedin.com/shareArticle?mini=true&#038;url=https%3A%2F%2Fvisualbi.com%2Fblogs%2Fsap%2Fsap-businessobjects%2Fsap-lumira-designer%2Fcreating-first-application-using-sap-lumira-designer%2F&#038;title=Creating%20your%20First%20Application%20using%20SAP%20Lumira%20Designer" class="et_social_share" rel="nofollow" data-social_name="linkedin" data-post_id="6539" data-social_type="share" data-location="inline">
+<i
+class="et_social_icon et_social_icon_linkedin"></i><div
+class="et_social_network_label"><div
+class="et_social_networkname">LinkedIn</div></div><span
+class="et_social_overlay"></span>
+</a></li></ul></div></div><div
+class='rp4wp-related-posts'><ul><li><div
+class='rp4wp-related-post-image'>
+<a
+href='https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/upgrading-sap-lumira-designer/'><img
+width="1280" height="720" src="https://visualbi.com/wp-content/uploads/upgrading-sap-lumira-designer.png" class="attachment- size- wp-post-image" alt="Migrating your SAP Design Studio 1.x Application to SAP Lumira Designer" decoding="async" loading="lazy" srcset="https://visualbi.com/wp-content/uploads/upgrading-sap-lumira-designer.png 1280w, https://visualbi.com/wp-content/uploads/upgrading-sap-lumira-designer-980x551.png 980w, https://visualbi.com/wp-content/uploads/upgrading-sap-lumira-designer-480x270.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1280px, 100vw" /></a></div><div
+class='rp4wp-related-post-content'>
+<a
+href='https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/upgrading-sap-lumira-designer/'>Migrating your SAP Design Studio 1.x Application to SAP Lumira Designer</a></div></li><li><div
+class='rp4wp-related-post-image'>
+<a
+href='https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/upgrading-sap-lumira-designer/'><img
+width="1280" height="720" src="https://visualbi.com/wp-content/uploads/upgrading-sap-lumira-designer.png" class="attachment- size- wp-post-image" alt="Migrating your SAP Design Studio 1.x Application to SAP Lumira Designer" decoding="async" loading="lazy" srcset="https://visualbi.com/wp-content/uploads/upgrading-sap-lumira-designer.png 1280w, https://visualbi.com/wp-content/uploads/upgrading-sap-lumira-designer-980x551.png 980w, https://visualbi.com/wp-content/uploads/upgrading-sap-lumira-designer-480x270.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1280px, 100vw" /></a></div><div
+class='rp4wp-related-post-content'>
+<a
+href='https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/upgrading-sap-lumira-designer/'>Migrating your SAP Design Studio 1.x Application to SAP Lumira Designer</a></div></li><li><div
+class='rp4wp-related-post-image'>
+<a
+href='https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira/sap-lumira-designer-export-pdf/'><img
+width="1280" height="720" src="https://visualbi.com/wp-content/uploads/sap-lumira-designer-export-pdf.png" class="attachment- size- wp-post-image" alt="SAP Lumira Designer: Export to PDF" decoding="async" loading="lazy" srcset="https://visualbi.com/wp-content/uploads/sap-lumira-designer-export-pdf.png 1280w, https://visualbi.com/wp-content/uploads/sap-lumira-designer-export-pdf-980x551.png 980w, https://visualbi.com/wp-content/uploads/sap-lumira-designer-export-pdf-480x270.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1280px, 100vw" /></a></div><div
+class='rp4wp-related-post-content'>
+<a
+href='https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira/sap-lumira-designer-export-pdf/'>SAP Lumira Designer: Export to PDF</a></div></li></ul></div>
+<span
+class="et_bloom_bottom_trigger"></span><span
+class="et_social_bottom_trigger"></span></div><div
+class="et_post_meta_wrapper"></div></article></div><div
+id="sidebar"><div
+id="search-2" class="et_pb_widget widget_search"><form
+role="search" method="get" id="searchform" class="searchform" action="https://visualbi.com/"><div>
+<label
+class="screen-reader-text" for="s">Search for:</label>
+<input
+type="text" value="" name="s" id="s" />
+<input
+type="submit" id="searchsubmit" value="Search" /></div></form></div><div
+id="recent-posts-2" class="et_pb_widget widget_recent_entries"><h4 class="widgettitle">FEATURED BLOGS</h4><ul><li>
+<a
+href="https://visualbi.com/blogs/sap/sap-analytics-cloud/planning/planning-in-sap-analytics-cloud-series-7-allocation-process-steps-and-rules/">Planning in SAP Analytics Cloud Series 7: Allocation Process Steps and Rules</a>
+<span
+class="post-date">January 6, 2022</span></li><li>
+<a
+href="https://visualbi.com/blogs/self-service-bi/looker/leveraging-google-bigquery-functionalities-with-looker/">Leveraging Google BigQuery functionalities with Looker</a>
+<span
+class="post-date">January 5, 2022</span></li><li>
+<a
+href="https://visualbi.com/blogs/tableau/whats-your-preferred-data-visualization-tool-tableau-vs-power-bi/">What’s your preferred data visualization tool? (Tableau vs. Power BI)</a>
+<span
+class="post-date">January 3, 2022</span></li></ul></div><div
+id="categories-2" class="et_pb_widget widget_categories"><h4 class="widgettitle">CATEGORIES</h4><ul><li
+class="cat-item cat-item-105 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/about-us/"">About Us</a> (2)</li><li
+class="cat-item cat-item-31 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/big-data/"">Big Data</a> (11)</li><li
+class="cat-item cat-item-32 current-cat current-cat-parent current-cat-parent current-cat-parent current-cat-parent current-cat-parent current-cat-parent current-cat-parent current-cat-parent current-cat-parent"><a
+href="#" class="expand"><i
+class="icon-plus-squared"></i></a> <a
+href="https://visualbi.com/blogs/category/business-intelligence/" collapse" >Business Intelligence</a> (131)<ul
+class='children'><li
+class="cat-item cat-item-33 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/business-intelligence/dashboards/"">Dashboards</a> (34)</li><li
+class="cat-item cat-item-34 current-cat current-cat-parent"><a
+href="#" class="expand"><i
+class="icon-plus-squared"></i></a> <a
+href="https://visualbi.com/blogs/category/business-intelligence/data-discovery/" collapse" >Data Discovery</a> (39)<ul
+class='children'><li
+class="cat-item cat-item-35 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/business-intelligence/data-discovery/sap-lumira-data-discovery/"">SAP Lumira</a> (22)</li></ul></li><li
+class="cat-item cat-item-36 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/business-intelligence/data-science/"">Data Science</a> (6)</li><li
+class="cat-item cat-item-37 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/business-intelligence/database/"">Database</a> (5)</li><li
+class="cat-item cat-item-38 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/business-intelligence/mobile-bi/"">Mobile BI</a> (4)</li><li
+class="cat-item cat-item-39 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/business-intelligence/oil-and-gas/"">Oil and Gas</a> (3)</li><li
+class="cat-item cat-item-40 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/business-intelligence/predictive-analysis/"">Predictive Analysis</a> (4)</li><li
+class="cat-item cat-item-41 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/business-intelligence/roambi/"">RoamBI</a> (1)</li><li
+class="cat-item cat-item-42 current-cat hide"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/business-intelligence/top-business-intelligence-blog-2017/"">Top Business Intelligence Blog 2017</a> (3)</li></ul></li><li
+class="cat-item cat-item-106 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/careers/"">Careers</a> (2)</li><li
+class="cat-item cat-item-43 current-cat-parent current-cat-parent current-cat current-cat-parent current-cat-parent"><a
+href="#" class="expand"><i
+class="icon-plus-squared"></i></a> <a
+href="https://visualbi.com/blogs/category/featured/" collapse" >Featured Blogs</a> (9)<ul
+class='children'><li
+class="cat-item cat-item-268 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/featured/data-architecture-engineering/"">DATA ARCHITECTURE &amp; ENGINEERING</a> (1)</li><li
+class="cat-item cat-item-271 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/featured/data-science-ml/"">DATA SCIENCE &amp; MACHINE LEARNING</a> (1)</li></ul></li><li
+class="cat-item cat-item-44 current-cat-parent current-cat current-cat-parent current-cat-parent"><a
+href="#" class="expand"><i
+class="icon-plus-squared"></i></a> <a
+href="https://visualbi.com/blogs/category/microsoft/" collapse" >Microsoft</a> (106)<ul
+class='children'><li
+class="cat-item cat-item-45 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/microsoft/azure/"">Azure</a> (51)</li><li
+class="cat-item cat-item-46 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/microsoft/office-365/"">Office 365</a> (1)</li><li
+class="cat-item cat-item-47 current-cat-parent current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/microsoft/powerbi/"">Power BI</a> (57)</li></ul></li><li
+class="cat-item cat-item-49 current-cat-parent current-cat-parent current-cat-parent current-cat-parent current-cat-parent current-cat current-cat-parent current-cat-parent current-cat-parent current-cat-parent current-cat-parent current-cat-parent current-cat-parent current-cat-parent current-cat-parent"><a
+href="#" class="expand"><i
+class="icon-plus-squared"></i></a> <a
+href="https://visualbi.com/blogs/category/sap/" collapse" >SAP</a> (425)<ul
+class='children'><li
+class="cat-item cat-item-50 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/analysis-for-office/"">Analysis for Office</a> (7)</li><li
+class="cat-item cat-item-51 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/data-services/"">Data Services</a> (2)</li><li
+class="cat-item cat-item-52 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/fiori/"">Fiori</a> (3)</li><li
+class="cat-item cat-item-54 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/lumira-2-0/"">Lumira 2.0</a> (47)</li><li
+class="cat-item cat-item-55 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/lumira-2-2/"">Lumira 2.2</a> (7)</li><li
+class="cat-item cat-item-56 current-cat-parent current-cat-parent current-cat-parent current-cat-parent current-cat current-cat-parent"><a
+href="#" class="expand"><i
+class="icon-plus-squared"></i></a> <a
+href="https://visualbi.com/blogs/category/sap/sap-analytics-cloud/" collapse" >SAP Analytics Cloud</a> (103)<ul
+class='children'><li
+class="cat-item cat-item-57 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-analytics-cloud/analytic-applications/"">Analytic Applications</a> (17)</li><li
+class="cat-item cat-item-58 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-analytics-cloud/application-design/"">Application Design</a> (31)</li><li
+class="cat-item cat-item-59 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-analytics-cloud/planning/"">Planning</a> (9)</li><li
+class="cat-item cat-item-60 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-analytics-cloud/r-visualizations/"">R Visualizations</a> (6)</li><li
+class="cat-item cat-item-61 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-analytics-cloud/whats-new/"">What’s New?</a> (6)</li></ul></li><li
+class="cat-item cat-item-62 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-bi-version-management/"">SAP BI Version Management</a> (9)</li><li
+class="cat-item cat-item-63 current-cat current-cat-parent current-cat-parent current-cat-parent current-cat-parent"><a
+href="#" class="expand"><i
+class="icon-plus-squared"></i></a> <a
+href="https://visualbi.com/blogs/category/sap/sap-businessobjects/" collapse" >SAP BusinessObjects</a> (197)<ul
+class='children'><li
+class="cat-item cat-item-64 current-cat-parent current-cat-parent current-cat-parent current-cat current-cat-parent"><a
+href="#" class="expand"><i
+class="icon-plus-squared"></i></a> <a
+href="https://visualbi.com/blogs/category/sap/sap-businessobjects/design-studio/" collapse" >SAP Design Studio</a> (99)<ul
+class='children'><li
+class="cat-item cat-item-65 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-businessobjects/design-studio/advanced/"">Advanced</a> (17)</li><li
+class="cat-item cat-item-66 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-businessobjects/design-studio/custom-add-ons/"">Custom Add-Ons</a> (7)</li><li
+class="cat-item cat-item-67 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-businessobjects/design-studio/general/"">General</a> (30)</li><li
+class="cat-item cat-item-68 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-businessobjects/design-studio/design-studio-tips-and-tricks/"">Tips and Tricks</a> (29)</li></ul></li><li
+class="cat-item cat-item-69 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-businessobjects/sap-lumira/"">SAP Lumira</a> (39)</li><li
+class="cat-item cat-item-70 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-businessobjects/sap-lumira-designer/"">SAP Lumira Designer</a> (33)</li><li
+class="cat-item cat-item-71 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-businessobjects/sap-lumira-discovery/"">SAP Lumira Discovery</a> (41)</li></ul></li><li
+class="cat-item cat-item-72 current-cat-parent current-cat-parent current-cat current-cat-parent current-cat-parent"><a
+href="#" class="expand"><i
+class="icon-plus-squared"></i></a> <a
+href="https://visualbi.com/blogs/category/sap/sap-bw-hana/" collapse" >SAP BW/HANA</a> (89)<ul
+class='children'><li
+class="cat-item cat-item-73 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-bw-hana/sap-bw/"">SAP BW</a> (14)</li><li
+class="cat-item cat-item-74 current-cat-parent current-cat"><a
+href="#" class="expand"><i
+class="icon-plus-squared"></i></a> <a
+href="https://visualbi.com/blogs/category/sap/sap-bw-hana/sap-bw4hana/" collapse" >SAP BW/4HANA</a> (47)<ul
+class='children'><li
+class="cat-item cat-item-75 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-bw-hana/sap-bw4hana/cockpit/"">Cockpit</a> (14)</li></ul></li><li
+class="cat-item cat-item-76 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-bw-hana/sap-hana/"">SAP HANA</a> (31)</li><li
+class="cat-item cat-item-77 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-bw-hana/sap-vora/"">SAP VORA</a> (4)</li></ul></li><li
+class="cat-item cat-item-78 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-cloud-for-analytics/"">SAP Cloud for Analytics</a> (6)</li><li
+class="cat-item cat-item-79 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-data-warehouse-cloud/"">SAP Data Warehouse Cloud</a> (13)</li><li
+class="cat-item cat-item-80 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-digital-boardroom/"">SAP Digital Boardroom</a> (1)</li><li
+class="cat-item cat-item-81 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/sap-netweaver/"">SAP NetWeaver</a> (1)</li><li
+class="cat-item cat-item-82 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/sap/successfactors/"">SuccessFactors</a> (3)</li></ul></li><li
+class="cat-item cat-item-83 current-cat-parent current-cat-parent current-cat-parent current-cat-parent current-cat"><a
+href="#" class="expand"><i
+class="icon-plus-squared"></i></a> <a
+href="https://visualbi.com/blogs/category/self-service-bi/" collapse" >Self-Service BI</a> (37)<ul
+class='children'><li
+class="cat-item cat-item-84 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/self-service-bi/alteryx/"">Alteryx</a> (20)</li><li
+class="cat-item cat-item-85 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/self-service-bi/eim/"">EIM</a> (1)</li><li
+class="cat-item cat-item-86 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/self-service-bi/fivetran/"">Fivetran</a> (4)</li><li
+class="cat-item cat-item-87 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/self-service-bi/looker/"">Looker</a> (8)</li></ul></li><li
+class="cat-item cat-item-88 current-cat-parent current-cat"><a
+href="#" class="expand"><i
+class="icon-plus-squared"></i></a> <a
+href="https://visualbi.com/blogs/category/snowflake/" collapse" >Snowflake</a> (35)<ul
+class='children'><li
+class="cat-item cat-item-266 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/snowflake/dbt/"">DBT</a> (5)</li></ul></li><li
+class="cat-item cat-item-89 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/tableau/"">Tableau</a> (64)</li><li
+class="cat-item cat-item-90 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/tibco-spotfire/"">TIBCO Spotfire</a> (5)</li><li
+class="cat-item cat-item-91 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/tips-and-tricks/"">Tips and Tricks</a> (20)</li><li
+class="cat-item cat-item-92 current-cat-parent current-cat-parent current-cat-parent current-cat-parent current-cat current-cat-parent current-cat-parent current-cat-parent"><a
+href="#" class="expand"><i
+class="icon-plus-squared"></i></a> <a
+href="https://visualbi.com/blogs/category/vbi-products/" collapse" >VBI Products</a> (9)<ul
+class='children'><li
+class="cat-item cat-item-94 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/vbi-products/custom-component/"">Custom Component</a> (6)</li><li
+class="cat-item cat-item-95 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/vbi-products/extensions/"">Extensions</a> (6)</li><li
+class="cat-item cat-item-97 current-cat-parent current-cat-parent current-cat-parent current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/vbi-products/vbx-product-extensions/"">VBX Product Extensions</a> (2)</li><li
+class="cat-item cat-item-101 current-cat-parent current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/vbi-products/xcelsius/"">Xcelsius</a> (1)</li></ul></li><li
+class="cat-item cat-item-104 current-cat"><i
+class="collapscatlist-nothing icon-nothing-squared"></i> <a
+href="https://visualbi.com/blogs/category/video-blogs/"">Video Blogs</a> (5)</li></ul></div></div></div></div></div><footer
+class="et-l et-l--footer"><div
+class="et_builder_inner_content et_pb_gutters2"><div
+class="et_pb_section et_pb_section_0_tb_footer et_pb_with_background et_section_regular" ><div
+class="et_pb_row et_pb_row_0_tb_footer"><div
+class="et_pb_column et_pb_column_4_4 et_pb_column_0_tb_footer  et_pb_css_mix_blend_mode_passthrough et-last-child"><div
+class="et_pb_module et_pb_text et_pb_text_0_tb_footer  et_pb_text_align_left et_pb_bg_layout_light"><div
+class="et_pb_text_inner"><h2>Related Blogs</h2></div></div><div
+class="et_pb_module et_pb_text et_pb_text_1_tb_footer  et_pb_text_align_left et_pb_bg_layout_light"><div
+class="et_pb_text_inner"><div
+class='rp4wp-related-posts'><ul><li><div
+class='rp4wp-related-post-image'>
+<a
+href='https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/upgrading-sap-lumira-designer/'><img
+width="1280" height="720" src="https://visualbi.com/wp-content/uploads/upgrading-sap-lumira-designer.png" class="attachment- size- wp-post-image" alt="Migrating your SAP Design Studio 1.x Application to SAP Lumira Designer" decoding="async" loading="lazy" srcset="https://visualbi.com/wp-content/uploads/upgrading-sap-lumira-designer.png 1280w, https://visualbi.com/wp-content/uploads/upgrading-sap-lumira-designer-980x551.png 980w, https://visualbi.com/wp-content/uploads/upgrading-sap-lumira-designer-480x270.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1280px, 100vw" /></a></div><div
+class='rp4wp-related-post-content'>
+<a
+href='https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/upgrading-sap-lumira-designer/'>Migrating your SAP Design Studio 1.x Application to SAP Lumira Designer</a></div></li><li><div
+class='rp4wp-related-post-image'>
+<a
+href='https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/upgrading-sap-lumira-designer/'><img
+width="1280" height="720" src="https://visualbi.com/wp-content/uploads/upgrading-sap-lumira-designer.png" class="attachment- size- wp-post-image" alt="Migrating your SAP Design Studio 1.x Application to SAP Lumira Designer" decoding="async" loading="lazy" srcset="https://visualbi.com/wp-content/uploads/upgrading-sap-lumira-designer.png 1280w, https://visualbi.com/wp-content/uploads/upgrading-sap-lumira-designer-980x551.png 980w, https://visualbi.com/wp-content/uploads/upgrading-sap-lumira-designer-480x270.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1280px, 100vw" /></a></div><div
+class='rp4wp-related-post-content'>
+<a
+href='https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira-designer/upgrading-sap-lumira-designer/'>Migrating your SAP Design Studio 1.x Application to SAP Lumira Designer</a></div></li><li><div
+class='rp4wp-related-post-image'>
+<a
+href='https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira/sap-lumira-designer-export-pdf/'><img
+width="1280" height="720" src="https://visualbi.com/wp-content/uploads/sap-lumira-designer-export-pdf.png" class="attachment- size- wp-post-image" alt="SAP Lumira Designer: Export to PDF" decoding="async" loading="lazy" srcset="https://visualbi.com/wp-content/uploads/sap-lumira-designer-export-pdf.png 1280w, https://visualbi.com/wp-content/uploads/sap-lumira-designer-export-pdf-980x551.png 980w, https://visualbi.com/wp-content/uploads/sap-lumira-designer-export-pdf-480x270.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1280px, 100vw" /></a></div><div
+class='rp4wp-related-post-content'>
+<a
+href='https://visualbi.com/blogs/sap/sap-businessobjects/sap-lumira/sap-lumira-designer-export-pdf/'>SAP Lumira Designer: Export to PDF</a></div></li></ul></div></div></div></div></div></div><div
+class="et_pb_section et_pb_section_1_tb_footer et_pb_with_background et_section_regular" ><div
+class="et_pb_row et_pb_row_1_tb_footer"><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_1_tb_footer  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_module et_pb_text et_pb_text_2_tb_footer  et_pb_text_align_left et_pb_bg_layout_dark"><div
+class="et_pb_text_inner"><h5>Services</h5><p><a
+href="/services/data-architecture-engineering/">Data Architecture &#038; Engineering</a><br
+/>
+<a
+href="/services/strategy-architecture/">Strategy &#038; Architecture</a><br
+/>
+<a
+href="/services/modern-bi-analytics/">Modern BI &#038; Analytics</a><br
+/>
+<a
+href="/services/data-science-ml/">Data Science &#038; ML</a></div></div></div><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_2_tb_footer  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_module et_pb_text et_pb_text_3_tb_footer  et_pb_text_align_left et_pb_bg_layout_dark"><div
+class="et_pb_text_inner"><h5>Platforms</h5><p><a
+href="/snowflake/">Snowflake</a><br
+/>
+<a
+href="/sap/">SAP</a><br
+/>
+<a
+href="/microsoft/">Microsoft</a><br
+/>
+<a
+href="/tableau/">Tableau</a><br
+/>
+<a
+href="/tibco-spotfire/">Spotfire</a><br
+/>
+<a
+href="/dbt/">dbt_</a><br
+/>
+<a
+href="/fivetran/">Fivetran</a></div></div></div><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_3_tb_footer  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_module et_pb_text et_pb_text_4_tb_footer  et_pb_text_align_left et_pb_bg_layout_dark"><div
+class="et_pb_text_inner"><h5>Insights</h5><p><a
+href="/blogs/">Blogs</a><br
+/>
+<a
+href="/webinars/">Webinars</a><br
+/>
+<a
+href="/videos/">Videos</a><br
+/>
+<a
+href="/case-studies/">Case Studies</a><br
+/>
+<a
+href="/events/">Events</a></div></div></div><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_4_tb_footer  et_pb_css_mix_blend_mode_passthrough et-last-child"><div
+class="et_pb_module et_pb_text et_pb_text_5_tb_footer  et_pb_text_align_left et_pb_bg_layout_dark"><div
+class="et_pb_text_inner"><h5>About Us</h5><p><a
+href="/about-us/">About Visual BI</a><br
+/>
+<a
+href="/about-us/our-team/">Our Team</a><br
+/>
+<a
+href="/careers/">Careers</a><br
+/>
+<a
+href="/innovation-lab/">Innovation Lab</a><br
+/>
+<a
+href="/news/">News</a></div></div></div></div><div
+class="et_pb_row et_pb_row_2_tb_footer"><div
+class="et_pb_column et_pb_column_3_4 et_pb_column_5_tb_footer  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_module et_pb_text et_pb_text_6_tb_footer  et_pb_text_align_left et_pb_bg_layout_dark"><div
+class="et_pb_text_inner"><h5>Technology Partners</h5></div></div><div
+class="et_pb_module et_pb_image et_pb_image_0_tb_footer">
+<span
+class="et_pb_image_wrap "><img
+decoding="async" loading="lazy" src="https://visualbi.com/wp-content/uploads/visualbi-footer-partners.svg" alt="Visual BI Technology Partners" title="visualbi-footer-partners" height="auto" width="auto" /></span></div></div><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_6_tb_footer  et_pb_css_mix_blend_mode_passthrough et-last-child"><div
+class="et_pb_module et_pb_text et_pb_text_7_tb_footer  et_pb_text_align_left et_pb_bg_layout_dark"><div
+class="et_pb_text_inner"><h5>Contact Us</h5><p><a
+href="tel:+18882272794">+1 888-227-2794</a><br
+/>
+<a
+href="tel:+19722322233">+1 972-232-2233</a><br
+/>
+<br
+/>
+5920 Windhaven Pkwy<br
+/>
+Plano TX 75093</div></div></div></div><div
+class="et_pb_row et_pb_row_3_tb_footer et_pb_equal_columns et_pb_gutters1"><div
+class="et_pb_column et_pb_column_1_2 et_pb_column_7_tb_footer vertical_align  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_module et_pb_text et_pb_text_8_tb_footer  et_pb_text_align_left et_pb_bg_layout_dark"><div
+class="et_pb_text_inner">Follow us<br
+/><div
+class="et_social_networks et_social_autowidth et_social_simple et_social_circle et_social_top et_social_shortcode_0 et_social_mobile_on et_social_outer_dark"><style type="text/css">.et_monarch .et_social_shortcode_0 li,.et_monarch .et_social_shortcode_0.et_social_circle ul li i.et_social_icon{background:#27a7df}.et_monarch .et_social_shortcode_0 .et_social_icon,.et_monarch .et_social_shortcode_0 .et_social_networks .et_social_network_label,.et_monarch .et_social_shortcode_0 .et_social_networkname,.et_monarch .et_social_shortcode_0 .et_social_count{color:#ffffff!important}</style><ul
+class="et_social_icons_container"><li
+class="et_social_facebook">
+<a
+href="https://facebook.com/VISUALBI" class="et_social_follow" data-social_name="facebook" data-social_type="follow" data-post_id="6539" target="_blank">
+<i
+class="et_social_icon et_social_icon_facebook"></i>
+<span
+class="et_social_overlay"></span>
+</a></li><li
+class="et_social_twitter">
+<a
+href="https://twitter.com/Visual_BI" class="et_social_follow" data-social_name="twitter" data-social_type="follow" data-post_id="6539" target="_blank">
+<i
+class="et_social_icon et_social_icon_twitter"></i>
+<span
+class="et_social_overlay"></span>
+</a></li><li
+class="et_social_linkedin">
+<a
+href="https://linkedin.com/company/visualbi/" class="et_social_follow" data-social_name="linkedin" data-social_type="follow" data-post_id="6539" target="_blank">
+<i
+class="et_social_icon et_social_icon_linkedin"></i>
+<span
+class="et_social_overlay"></span>
+</a></li><li
+class="et_social_youtube">
+<a
+href="https://www.youtube.com/channel/UCF64psYDsx0--q9XpNKEm8A" class="et_social_follow" data-social_name="youtube" data-social_type="follow" data-post_id="6539" target="_blank">
+<i
+class="et_social_icon et_social_icon_youtube"></i>
+<span
+class="et_social_overlay"></span>
+</a></li></ul></div></div></div></div><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_8_tb_footer vertical_align  et_pb_css_mix_blend_mode_passthrough et_pb_column_empty"></div><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_9_tb_footer vertical_align  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column_empty"></div></div></div><div
+class="et_pb_section et_pb_section_2_tb_footer et_pb_with_background et_section_regular" ><div
+class="et_pb_row et_pb_row_4_tb_footer et_pb_equal_columns et_pb_row--with-menu"><div
+class="et_pb_column et_pb_column_1_4 et_pb_column_10_tb_footer vertical_align  et_pb_css_mix_blend_mode_passthrough"><div
+class="et_pb_module et_pb_text et_pb_text_9_tb_footer  et_pb_text_align_left et_pb_text_align_center-tablet et_pb_bg_layout_dark"><div
+class="et_pb_text_inner">Copyright &copy; Visual BI Solutions Inc.</div></div></div><div
+class="et_pb_column et_pb_column_3_4 et_pb_column_11_tb_footer vertical_align  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column--with-menu"><div
+class="et_pb_module et_pb_menu et_pb_menu_0_tb_footer bottom_footer_menu et_pb_bg_layout_dark  et_pb_text_align_right et_dropdown_animation_fade et_pb_menu--without-logo et_pb_menu--style-left_aligned"><div
+class="et_pb_menu_inner_container clearfix"><div
+class="et_pb_menu__wrap"><div
+class="et_pb_menu__menu"><nav
+class="et-menu-nav"><ul
+id="menu-footer-menu" class="et-menu nav"><li
+id="menu-item-194" class="et_pb_menu_page_id-3 menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-194"><a
+rel="privacy-policy" href="https://visualbi.com/privacy-policy/">Privacy Policy</a></li><li
+id="menu-item-14701" class="et_pb_menu_page_id-14447 menu-item menu-item-type-post_type menu-item-object-page menu-item-14701"><a
+href="https://visualbi.com/sitemap/">Sitemap</a></li><li
+id="menu-item-14703" class="et_pb_menu_page_id-12882 menu-item menu-item-type-post_type menu-item-object-page menu-item-14703"><a
+href="https://visualbi.com/training/">Training</a></li><li
+id="menu-item-14702" class="et_pb_menu_page_id-14414 menu-item menu-item-type-post_type menu-item-object-page menu-item-14702"><a
+href="https://visualbi.com/contact-us/">Contact Us</a></li></ul></nav></div><div
+class="et_mobile_nav_menu">
+<a
+href="#" class="mobile_nav closed">
+<span
+class="mobile_menu_bar"></span>
+</a></div></div></div></div></div></div></div></div></footer></div></div></div><div
+id="shiftnav-toggle-main" class="shiftnav-toggle-main-align-center shiftnav-toggle-style-burger_only shiftnav-togglebar-gap-auto shiftnav-togglebar-transparent shiftnav-toggle-edge-right shiftnav-toggle-icon-x shiftnav-toggle-main-align-center shiftnav-toggle-style-burger_only shiftnav-togglebar-gap-auto shiftnav-togglebar-transparent shiftnav-toggle-edge-right shiftnav-toggle-icon-x" data-shiftnav-target="shiftnav-main"><div
+id="shiftnav-toggle-main-button" class="shiftnav-toggle shiftnav-toggle-shiftnav-main shiftnav-toggle-burger" data-shiftnav-target="shiftnav-main"><i
+class="fa fa-bars"></i></div></div><div
+class="shiftnav shiftnav-nojs shiftnav-shiftnav-main shiftnav-right-edge shiftnav-skin-none shiftnav-transition-standard" id="shiftnav-main" data-shiftnav-id="shiftnav-main"><div
+class="shiftnav-inner"><span
+class="shiftnav-panel-close"><i
+class="fa fa-times"></i></span><div
+class="shiftnav-menu-image shiftnav-menu-image-padded" id="shiftnav-menu-image-shiftnav-main">
+<a
+href="https://visualbi.com/">							<img
+width="175" height="60" src="https://visualbi.com/wp-content/uploads/visualbi-logo.png" class="attachment-full size-full" alt="Visual BI" decoding="async" loading="lazy" />					</a></div><div
+class="shiftnav-search"><form
+role="search" method="get" class="shiftnav-searchform" action="https://visualbi.com/">
+<input
+type="text" placeholder="Search..." value="" name="s" class="shiftnav-search-input" />
+<input
+type="submit" class="shiftnav-search-submit" value="&#xf002;" /></form></div><nav
+class="shiftnav-nav"><ul
+id="menu-primary-menu" class="shiftnav-menu shiftnav-targets-default shiftnav-targets-text-default shiftnav-targets-icon-default"><li
+class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-23 shiftnav-sub-shift shiftnav-depth-0 shiftnav-has-icon"><span
+class="shiftnav-target" ><i
+class="shiftnav-icon fa fa-cogs"></i><span
+class="shiftnav-target-text">Services</span></span><span
+class="shiftnav-submenu-activation"><i
+class="fa fa-chevron-right"></i></span><ul
+class="sub-menu sub-menu-1"><li
+class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14668 shiftnav-depth-1"><a
+class="shiftnav-target"  href="https://visualbi.com/services/data-architecture-engineering/">Data Architecture &#038; Engineering</a></li><li
+class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15583 shiftnav-depth-1"><a
+class="shiftnav-target"  href="https://visualbi.com/services/strategy-architecture/">Strategy &#038; Architecture</a></li><li
+class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15582 shiftnav-depth-1"><a
+class="shiftnav-target"  href="https://visualbi.com/services/modern-bi-analytics/">Modern BI &#038; Analytics</a></li><li
+class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15581 shiftnav-depth-1"><a
+class="shiftnav-target"  href="https://visualbi.com/services/data-science-ml/">Data Science &#038; ML</a></li><li
+class="shiftnav-retract"><a
+class="shiftnav-target"><i
+class="fa fa-chevron-left"></i> Back</a></li></ul></li><li
+class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-25 shiftnav-sub-shift shiftnav-depth-0 shiftnav-has-icon"><span
+class="shiftnav-target" ><i
+class="shiftnav-icon fa fa-lightbulb-o"></i><span
+class="shiftnav-target-text">Insights</span></span><span
+class="shiftnav-submenu-activation"><i
+class="fa fa-chevron-right"></i></span><ul
+class="sub-menu sub-menu-1"><li
+class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-548 shiftnav-depth-1"><a
+class="shiftnav-target"  href="https://visualbi.com/blogs/">Blogs</a></li><li
+class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14666 shiftnav-depth-1"><a
+class="shiftnav-target"  href="https://visualbi.com/case-studies/">Case Studies</a></li><li
+class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14665 shiftnav-depth-1"><a
+class="shiftnav-target"  href="https://visualbi.com/videos/">Videos</a></li><li
+class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14664 shiftnav-depth-1"><a
+class="shiftnav-target"  href="https://visualbi.com/webinars/">Webinars</a></li><li
+class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17084 shiftnav-depth-1"><a
+class="shiftnav-target"  href="https://visualbi.com/events/">Events</a></li><li
+class="shiftnav-retract"><a
+class="shiftnav-target"><i
+class="fa fa-chevron-left"></i> Back</a></li></ul></li><li
+class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-26 shiftnav-sub-shift shiftnav-depth-0 shiftnav-has-icon"><a
+class="shiftnav-target"  href="#"><i
+class="shiftnav-icon fa fa-building-o"></i><span
+class="shiftnav-target-text">About Us</span></a><span
+class="shiftnav-submenu-activation"><i
+class="fa fa-chevron-right"></i></span><ul
+class="sub-menu sub-menu-1"><li
+class="menu-item menu-item-type-post_type menu-item-object-page menu-item-339 shiftnav-depth-1"><a
+class="shiftnav-target"  href="https://visualbi.com/about-us/">About Visual BI</a></li><li
+class="menu-item menu-item-type-post_type menu-item-object-page menu-item-424 shiftnav-depth-1"><a
+class="shiftnav-target"  href="https://visualbi.com/careers/">Careers</a></li><li
+class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14660 shiftnav-depth-1"><a
+class="shiftnav-target"  href="https://visualbi.com/innovation-lab/">Innovation Lab</a></li><li
+class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17080 shiftnav-depth-1"><a
+class="shiftnav-target"  href="https://visualbi.com/news/">News</a></li><li
+class="shiftnav-retract"><a
+class="shiftnav-target"><i
+class="fa fa-chevron-left"></i> Back</a></li></ul></li></ul></nav><hr
+style="color:#eee"><p
+style="font-weight:500;">Corporate HQ:</br>
+<span
+style="font-weight:400;">5920 Windhaven Pkwy, Plano, TX 75093</span></p><p
+style="font-weight:500;padding-top:0px;"><a
+href="tel:18882272794"><i
+class="fa fa-mobile" style="font-size:36px;position: relative;top: 6px;"></i> +1 888-227-2794</a></p><p
+style="font-weight:500;padding-top:0px;"><a
+href="tel:19722322233"><i
+class="fa fa-mobile" style="font-size:36px;position: relative;top: 6px;"></i>  +1 972-232-2233</a></p><p
+style="font-weight:500;padding-top:0px;"><a
+href="tel:18882277192"><i
+class="fa fa-mobile" style="font-size:36px;position: relative;top: 6px;"></i>  +1 888-227-7192</a></p><p
+style="font-weight:500;padding-top:0px;"><a
+href="mailto:solutions@visualbi.com"><i
+class="fa fa-envelope" style="font-size:24px;position: relative;top: 3px;"></i>   solutions@visualbi.com</a></p><hr
+style="color:#eee"><p
+style="font-weight:400;font-size:14px; text-align:center;padding-bottom:25px;">Copyright &copy; Visual BI Solutions Inc.</p></div></div><div
+class="et_bloom_popup et_bloom_optin et_bloom_resize et_bloom_optin_2 et_bloom_trigger_click" data-trigger_click="#footer-subscribe"><div
+class="et_bloom_form_container et_bloom_popup_container et_bloom_form_bottom with_edge wedge_edge et_bloom_with_border et_bloom_border_solid et_bloom_border_position_full et_bloom_rounded et_bloom_form_text_dark et_bloom_animation_fadein"><div
+class="et_bloom_form_container_wrapper clearfix"><div
+class="et_bloom_header_outer"><div
+class="et_bloom_form_header et_bloom_header_text_dark">
+<img
+src="https://visualbi.com/wp-content/plugins/bloom/images/premade-image-14.png" alt="Subscribe To Our Newsletter" class=" et_bloom_image_slideup et_bloom_image"><div
+class="et_bloom_form_text"><h2>Subscribe To Our Newsletter</h2><p>Join our mailing list to receive the latest news and updates from our team.</p></div></div></div><div
+class="et_bloom_form_content et_bloom_1_field et_bloom_bottom_inline">
+<svg
+class="triangle et_bloom_default_edge" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="20" viewBox="0 0 100 100" preserveAspectRatio="none">
+<path
+d="M0 0 L50 100 L100 0 Z" fill=""></path>
+</svg><form
+method="post" class="clearfix"><div
+class="et_bloom_fields"><p
+class="et_bloom_popup_input et_bloom_subscribe_email">
+<input
+placeholder="Email"></p>
+<button
+data-optin_id="optin_2" data-service="mailchimp" data-list_id="e858a9a06e" data-page_id="6539" data-account="VBI Mailchimp" data-ip_address="true" class="et_bloom_submit_subscription">
+<span
+class="et_bloom_subscribe_loader"></span>
+<span
+class="et_bloom_button_text et_bloom_button_text_color_light">SUBSCRIBE!</span>
+</button></div></form><div
+class="et_bloom_success_container">
+<span
+class="et_bloom_success_checkmark"></span></div><h2 class="et_bloom_success_message">You have Successfully Subscribed!</h2></div></div>
+<span
+class="et_bloom_close_button"></span></div></div><div
+class="et_social_sidebar_networks et_social_visible_sidebar et_social_no_animation et_social_animated et_social_rectangle et_social_sidebar_slide et_social_mobile_off"><ul
+class="et_social_icons_container"><li
+class="et_social_facebook">
+<a
+href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fvisualbi.com%2Fblogs%2Fsap%2Fsap-businessobjects%2Fsap-lumira-designer%2Fcreating-first-application-using-sap-lumira-designer%2F&#038;t=Creating%20your%20First%20Application%20using%20SAP%20Lumira%20Designer" class="et_social_share" rel="nofollow" data-social_name="facebook" data-post_id="6539" data-social_type="share" data-location="sidebar">
+<i
+class="et_social_icon et_social_icon_facebook"></i>
+<span
+class="et_social_overlay"></span>
+</a></li><li
+class="et_social_twitter">
+<a
+href="http://twitter.com/share?text=Creating%20your%20First%20Application%20using%20SAP%20Lumira%20Designer&#038;url=https%3A%2F%2Fvisualbi.com%2Fblogs%2Fsap%2Fsap-businessobjects%2Fsap-lumira-designer%2Fcreating-first-application-using-sap-lumira-designer%2F&#038;via=Visual_BI" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="6539" data-social_type="share" data-location="sidebar">
+<i
+class="et_social_icon et_social_icon_twitter"></i>
+<span
+class="et_social_overlay"></span>
+</a></li><li
+class="et_social_linkedin">
+<a
+href="http://www.linkedin.com/shareArticle?mini=true&#038;url=https%3A%2F%2Fvisualbi.com%2Fblogs%2Fsap%2Fsap-businessobjects%2Fsap-lumira-designer%2Fcreating-first-application-using-sap-lumira-designer%2F&#038;title=Creating%20your%20First%20Application%20using%20SAP%20Lumira%20Designer" class="et_social_share" rel="nofollow" data-social_name="linkedin" data-post_id="6539" data-social_type="share" data-location="sidebar">
+<i
+class="et_social_icon et_social_icon_linkedin"></i>
+<span
+class="et_social_overlay"></span>
+</a></li></ul>
+<span
+class="et_social_hide_sidebar et_social_icon"></span></div><div
+class="et_social_popup et_social_mobile_on"><div
+class="et_social_popup_content et_social_resize et_social_zoomin">
+<a
+href="#" class="et_social_icon et_social_icon_cancel"></a><div
+class="et_social_header"><h3>Share This!</h3><p>Share this with your friends and colleagues!</p></div><div
+class="et_social_networks et_social_3col et_social_slide et_social_rounded et_social_left et_social_withnetworknames"><ul
+class="et_social_icons_container"><li
+class="et_social_facebook">
+<a
+href="http://www.facebook.com/sharer.php?u=https%3A%2F%2Fvisualbi.com%2Fblogs%2Fsap%2Fsap-businessobjects%2Fsap-lumira-designer%2Fcreating-first-application-using-sap-lumira-designer%2F&#038;t=Creating%20your%20First%20Application%20using%20SAP%20Lumira%20Designer" class="et_social_share" rel="nofollow" data-social_name="facebook" data-post_id="6539" data-social_type="share" data-location="popup">
+<i
+class="et_social_icon et_social_icon_facebook"></i><div
+class="et_social_network_label"><div
+class="et_social_networkname">Facebook</div></div><span
+class="et_social_overlay"></span>
+</a></li><li
+class="et_social_twitter">
+<a
+href="http://twitter.com/share?text=Creating%20your%20First%20Application%20using%20SAP%20Lumira%20Designer&#038;url=https%3A%2F%2Fvisualbi.com%2Fblogs%2Fsap%2Fsap-businessobjects%2Fsap-lumira-designer%2Fcreating-first-application-using-sap-lumira-designer%2F&#038;via=Visual_BI" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="6539" data-social_type="share" data-location="popup">
+<i
+class="et_social_icon et_social_icon_twitter"></i><div
+class="et_social_network_label"><div
+class="et_social_networkname">Twitter</div></div><span
+class="et_social_overlay"></span>
+</a></li><li
+class="et_social_linkedin">
+<a
+href="http://www.linkedin.com/shareArticle?mini=true&#038;url=https%3A%2F%2Fvisualbi.com%2Fblogs%2Fsap%2Fsap-businessobjects%2Fsap-lumira-designer%2Fcreating-first-application-using-sap-lumira-designer%2F&#038;title=Creating%20your%20First%20Application%20using%20SAP%20Lumira%20Designer" class="et_social_share" rel="nofollow" data-social_name="linkedin" data-post_id="6539" data-social_type="share" data-location="popup">
+<i
+class="et_social_icon et_social_icon_linkedin"></i><div
+class="et_social_network_label"><div
+class="et_social_networkname">LinkedIn</div></div><span
+class="et_social_overlay"></span>
+</a></li></ul></div></div></div> <script type="text/javascript">jQuery(document).ready(function(){jQuery('.et_pb_menu__logo').click(function(e){location.href="/"})})</script> <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/6344426.js"></script> <script>var clicky_site_ids=clicky_site_ids||[];clicky_site_ids.push(100781872)</script> <script async src="//static.getclicky.com/js"></script>  <script async src=https://www.googletagmanager.com/gtag/js?id=UA-62173961-1></script> <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date());gtag('config','UA-62173961-1')</script><link
+rel='stylesheet' id='wpo_min-footer-0-css' href='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-footer-et_bloom-css.min.css' type='text/css' media='all' /> <script type='text/javascript' id='leadin-script-loader-js-js-extra'>var leadin_wordpress={"userRole":"visitor","pageType":"post","leadinPluginVersion":"8.4.465"}</script> <script type='text/javascript' src='https://js.hs-scripts.com/6344426.js?integration=WordPress' async defer id='hs-script-loader'></script> <script type='text/javascript' id='wpo_min-footer-1-js-extra'>var monarchSettings={"ajaxurl":"https:\/\/visualbi.com\/wp-admin\/admin-ajax.php","pageurl":"https:\/\/visualbi.com\/blogs\/sap\/sap-businessobjects\/sap-lumira-designer\/creating-first-application-using-sap-lumira-designer\/","stats_nonce":"89ce4e9f2e","share_counts":"667d9e10d0","follow_counts":"c7608228ce","total_counts":"ec859f4e4d","media_single":"736a9f444f","media_total":"f1b9650440","generate_all_window_nonce":"d92f865763","no_img_message":"No images available for sharing on this page"};var DIVI={"item_count":"%d Item","items_count":"%d Items"};var et_shortcodes_strings={"previous":"Previous","next":"Next"};var et_pb_custom={"ajaxurl":"https:\/\/visualbi.com\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/visualbi.com\/wp-content\/themes\/Divi\/images","builder_images_uri":"https:\/\/visualbi.com\/wp-content\/themes\/Divi\/includes\/builder\/images","et_frontend_nonce":"1d0faa85d9","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"1507866c3e","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"6539","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":"","tinymce_uri":""};var et_builder_utils_params={"condition":{"diviTheme":!0,"extraTheme":!1},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};var et_frontend_scripts={"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};var et_pb_box_shadow_elements=[];var et_pb_motion_elements={"desktop":[],"tablet":[],"phone":[]};var et_pb_sticky_elements={"et_pb_section_0_tb_header":{"id":"et_pb_section_0_tb_header","selector":".et_pb_section_0_tb_header","position":"top","topOffset":"0px","bottomOffset":"0px","topLimit":"none","bottomLimit":"none","offsetSurrounding":"on","transition":"on","styles":{"module_alignment":{"desktop":"","tablet":"","phone":""},"positioning":"relative"},"stickyStyles":{"position_origin_r":"top_left","horizontal_offset":"","vertical_offset":""}}};var ubermenu_data={"remove_conflicts":"on","reposition_on_load":"off","intent_delay":"300","intent_interval":"100","intent_threshold":"7","scrollto_offset":"50","scrollto_duration":"1000","responsive_breakpoint":"959","accessible":"on","retractor_display_strategy":"responsive","touch_off_close":"on","submenu_indicator_close_mobile":"on","collapse_after_scroll":"on","v":"3.7.3","configurations":["main"],"ajax_url":"https:\/\/visualbi.com\/wp-admin\/admin-ajax.php","plugin_url":"https:\/\/visualbi.com\/wp-content\/plugins\/ubermenu\/","disable_mobile":"on","prefix_boost":"","use_core_svgs":"off","aria_role_navigation":"off","aria_nav_label":"off","aria_expanded":"off","aria_hidden":"off","aria_controls":"","aria_responsive_toggle":"off","icon_tag":"i","esc_close_mobile":"on","theme_locations":{"primary-menu":"Primary Menu","secondary-menu":"Secondary Menu","footer-menu":"Footer Menu","shiftnav":"ShiftNav [Main]"}};var shiftnav_data={"shift_body":"off","shift_body_wrapper":"","lock_body":"on","lock_body_x":"off","open_current":"off","collapse_accordions":"off","scroll_panel":"on","breakpoint":"981","v":"1.6.3","touch_off_close":"on","scroll_offset":"100","disable_transforms":"off"}</script> <script type='text/javascript' src='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-footer-8123437c.min.js' id='wpo_min-footer-1-js'></script> <script type='text/javascript' src='https://malsup.github.io/jquery.blockUI.js' id='blockUI-js'></script> <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js' id='validate-js'></script> <script type='text/javascript' id='wpo_min-footer-4-js-extra'>var bloomSettings={"ajaxurl":"https:\/\/visualbi.com\/wp-admin\/admin-ajax.php","pageurl":"https:\/\/visualbi.com\/blogs\/sap\/sap-businessobjects\/sap-lumira-designer\/creating-first-application-using-sap-lumira-designer\/","stats_nonce":"429b6e47cd","subscribe_nonce":"931157faa9","is_user_logged_in":"not_logged"}</script> <script type='text/javascript' src='https://visualbi.com/wp-content/cache/wpo-minify/1675364229/assets/wpo-minify-footer-7b911a25.min.js' id='wpo_min-footer-4-js'></script> </body></html>

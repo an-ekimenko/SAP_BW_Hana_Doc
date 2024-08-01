@@ -1,0 +1,11 @@
+html.toc-hidden div#toc-container {
+	width: 34px;
+}
+
+html.toc-hidden div#toc-container h1, html.toc-hidden button#toc-contract-all, html.toc-hidden button#toc-expand-all, html.toc-hidden div#toc {
+	display: none;
+}
+/*
+html.toc-hidden div#topic {
+	margin-left: 35px;
+}*/

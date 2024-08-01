@@ -1,0 +1,42 @@
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+/*                                                                            */
+/* Used by (new) global/misc/treectrl.htm                                     */
+/* Version 1 2012-03-16                                                       */
+/*                                                                            */
+/* :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: */
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.treectrl a {
+  margin: 0px 5px 0px 5px;
+  text-decoration: none;
+}
+
+body.treectrl {
+  background-image: none;
+  background-color: #FFFFFF;
+  height: 25px;
+  padding: 10px 16px;
+}
+body.KWLang-he { padding: 10px 5px 0px 16px; }
+
+div.treectrl {
+}
+
+div.treectrlLeft {
+  float: left;
+  text-align: left;
+}
+.KWLang-he div.treectrlLeft { float: right; text-align: right; }
+
+div.treectrlRight {
+  text-align: right;
+}
+.KWLang-he div.treectrlRight { text-align: left; }
+
+.treectrl img {
+  border: none;
+}

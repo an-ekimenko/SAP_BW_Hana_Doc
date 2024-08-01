@@ -1,0 +1,2261 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=EDGE,chrome=IE7">
+	<!--EWU 235-->
+	<script type="text/javascript" defer="defer" async="" src="Hierarchy%20Tables_files/privacy.js"></script><script src="Hierarchy%20Tables_files/satelliteLib-538f158b3a767332cb6728b642e26e947c356406.js"></script>
+	
+            <title>Hierarchy Tables - SAP NetWeaver Business Warehouse - SCN Wiki</title>
+        
+        
+
+                        
+    
+                        
+    
+
+    	 		
+	    
+            <script type="text/javascript" src="Hierarchy%20Tables_files/jquery-1.js"></script>
+    	    
+            <script type="text/javascript" src="Hierarchy%20Tables_files/jquery.js"></script>
+    	
+	<script type="text/javascript">                                 
+             var $jq = jQuery.noConflict();
+			/*Browser detection patch*/
+			$jq.browser = {};
+			$jq.browser.mozilla = /mozilla/.test(navigator.userAgent.toLowerCase()) && !/webkit/.test(navigator.userAgent.toLowerCase());
+			$jq.browser.webkit = /webkit/.test(navigator.userAgent.toLowerCase());
+			$jq.browser.opera = /opera/.test(navigator.userAgent.toLowerCase());
+			$jq.browser.msie = /msie/.test(navigator.userAgent.toLowerCase());
+                                        
+	</script>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE,chrome=IE7">
+<meta charset="UTF-8">
+<meta id="confluence-context-path" name="confluence-context-path" content="/wiki">
+<meta id="confluence-base-url" name="confluence-base-url" content="https://wiki.scn.sap.com/wiki">
+
+<meta id="atlassian-token" name="atlassian-token" content="ef84994bb4ba5ef2c1f98c8a117ff98538f1f2b6">
+
+
+<meta id="confluence-space-key" name="confluence-space-key" content="BI">
+<script type="text/javascript">
+        var contextPath = '/wiki';
+</script>
+
+	    	
+    
+       
+
+    
+
+    <meta name="confluence-request-time" content="1540901189852">
+        
+    
+        
+            <meta name="ajs-use-keyboard-shortcuts" content="true">
+            <meta name="ajs-discovered-plugin-features" content="$discoveredList">
+            <meta name="stp-license-product-name" content="Confluence"> <meta name="stp-license-days-to-expiry" content="320"> <meta name="stp-license-is-admin" content="false"> <meta name="stp-license-should-keep-banner-hidden" content="true">
+            <meta name="ajs-keyboardshortcut-hash" content="11dbdee00da9b01fb452ab35030e1203">
+            
+    
+    
+            <meta name="ajs-page-id" content="145031268">
+            <meta name="ajs-latest-page-id" content="145031268">
+            <meta name="ajs-content-type" content="page">
+            <meta name="ajs-page-title" content="Hierarchy Tables">
+            <meta name="ajs-latest-published-page-title" content="Hierarchy Tables">
+            <meta name="ajs-parent-page-title" content="Important Tables in SAP BW 7.x">
+            <meta name="ajs-parent-page-id" content="34386">
+            <meta name="ajs-space-key" content="BI">
+            <meta name="ajs-space-name" content="SAP NetWeaver Business Warehouse">
+            <meta name="ajs-jira-metadata-count" content="-1">
+            <meta name="ajs-from-page-title" content="">
+            <meta name="ajs-can-remove-page" content="false">
+            <meta name="ajs-browse-page-tree-mode" content="view">
+            <meta name="ajs-shared-drafts" content="false">
+            <meta name="ajs-context-path" content="/wiki">
+            <meta name="ajs-base-url" content="https://wiki.scn.sap.com/wiki">
+            <meta name="ajs-version-number" content="5.10.0">
+            <meta name="ajs-build-number" content="6441">
+            <meta name="ajs-remote-user" content="">
+            <meta name="ajs-remote-user-key" content="">
+            <meta name="ajs-remote-user-has-licensed-access" content="false">
+            <meta name="ajs-current-user-fullname" content="">
+            <meta name="ajs-current-user-avatar-url" content="">
+            <meta name="ajs-current-user-avatar-uri-reference" content="/wiki/images/icons/profilepics/anonymous.png">
+            <meta name="ajs-static-resource-url-prefix" content="/wiki/s/ru_RU/6441/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/_">
+            <meta name="ajs-global-settings-attachment-max-size" content="5242880">
+            <meta name="ajs-user-locale" content="ru_RU">
+            <meta name="ajs-enabled-dark-features" content="confluence.view.edit.transition,confluence-inline-comments-resolved,notification.plugin.api.enabled.com.atlassian.confluence.plugins.sharepage.api.ShareContentEvent,notification.plugin.api.enabled.com.atlassian.confluence.plugins.mentions.api.ConfluenceMentionEvent,notification.plugin.api.enabled.com.atlassian.confluence.event.events.security.ForgotPasswordEvent,notification.plugin.api.enabled.com.atlassian.confluence.plugins.tasklist.event.SendTaskEmailEvent,file-annotations,confluence.efi.onboarding.rich.space.content,notification.plugin.api.enabled.com.atlassian.confluence.event.events.content.comment.CommentCreateEvent,notification.plugin.api.enabled.com.atlassian.confluence.event.events.follow.FollowEvent,notification.plugin.api.enabled.com.atlassian.confluence.plugins.inlinecomments.events.InlineCommentReplyEvent,notification.plugin.api.enabled.com.atlassian.confluence.event.events.content.blogpost.BlogPostCreateEvent,confluence.table.resizable,notification.batch,confluence-inline-comments-rich-editor,notification.plugin.api.enabled.com.atlassian.confluence.event.events.content.blogpost.BlogPostUpdateEvent,notification.plugin.api.enabled.com.atlassian.confluence.event.events.content.page.async.PageCreatedEvent,notification.plugin.api.enabled.com.atlassian.confluence.plugins.files.notifications.event.FileContentMentionUpdateEvent,notification.plugin.api.enabled.com.atlassian.confluence.plugins.hipchat.api.events.HipChatUserMapped,quick-reload-inline-comments-flags,notification.plugin.api.enabled.com.atlassian.confluence.event.events.content.blogpost.BlogPostMovedEvent,clc.quick.create,cql.search.screen,nps.survey.inline.dialog,confluence.efi.onboarding.new.templates,pdf-preview,notification.plugin.api.enabled.com.atlassian.confluence.event.events.content.page.async.PageMovedEvent,previews.sharing,previews.versions,notification.plugin.api.enabled.com.atlassian.confluence.plugins.files.notifications.event.FileContentUpdateEvent,notification.plugin.api.enabled.com.atlassian.confluence.event.events.content.attachment.AttachmentBatchUploadCompletedEvent,notification.plugin.api.enabled.com.atlassian.confluence.efi.emails.events.OnboardingLessUsersEvent,notification.plugin.api.enabled.com.atlassian.confluence.plugins.files.notifications.event.FileContentRemoveEvent,confluence.wrap.macro,atlassian.aui.raphael.disabled,previews.conversion-service,notification.plugin.api.enabled.com.atlassian.confluence.event.events.content.comment.CommentUpdateEvent,editor.ajax.save,notification.plugin.api.enabled.com.atlassian.confluence.event.events.content.page.async.PageEditedEvent,previews.trigger-all-file-types,notification.plugin.api.enabled.com.atlassian.confluence.plugins.inlinecomments.events.InlineCommentResolveEvent,notification.plugin.api.enabled.com.atlassian.confluence.event.events.like.LikeCreatedEvent,notification.plugin.api.enabled.com.atlassian.confluence.plugins.inlinecomments.events.InlineCommentCreateEvent,previews.sharing.pushstate,file-annotations.likes,notification.plugin.api.enabled.com.atlassian.confluence.efi.emails.events.OnboardingNoSpaceCreatedEvent,notification.plugin.api.enabled.com.atlassian.confluence.plugins.sharepage.api.ShareAttachmentEvent,confluence-inline-comments,confluence-inline-comments-dangling-comment">
+            <meta name="ajs-atl-token" content="ef84994bb4ba5ef2c1f98c8a117ff98538f1f2b6">
+            <meta name="ajs-confluence-flavour" content="VANILLA">
+            <meta name="ajs-user-date-pattern" content="dd.MM.yyyy">
+            <meta name="ajs-date.format" content="MMM dd, yyyy">
+    
+    <link rel="shortcut icon" href="https://wiki.scn.sap.com/wiki/s/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/17/_/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://wiki.scn.sap.com/wiki/s/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/17/_/favicon.ico">
+
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.scn.sap.com/wiki/opensearch/osd.action" title="SCN Wiki">
+    
+                    
+            
+
+    <script>
+window.WRM=window.WRM||{};window.WRM._unparsedData=window.WRM._unparsedData||{};window.WRM._unparsedErrors=window.WRM._unparsedErrors||{};
+WRM._unparsedData["com.atlassian.plugins.atlassian-plugins-webresource-plugin:context-path.context-path"]="\u0022/wiki\u0022";
+WRM._unparsedData["com.atlassian.confluence.plugins.confluence-feature-discovery-plugin:confluence-feature-discovery-plugin-resources.test-mode"]="false";
+WRM._unparsedData["com.atlassian.confluence.plugins.confluence-license-banner:confluence-license-banner-resources.license-details"]="{\u0022daysBeforeLicenseExpiry\u0022:0,\u0022daysBeforeMaintenanceExpiry\u0022:0,\u0022showLicenseExpiryBanner\u0022:false,\u0022showMaintenanceExpiryBanner\u0022:false,\u0022renewUrl\u0022:null,\u0022salesEmail\u0022:null}";
+if(window.WRM._dataArrived)window.WRM._dataArrived();</script>
+<link type="text/css" rel="stylesheet" href="Hierarchy%20Tables_files/batch_002.css" data-wrm-key="_super" data-wrm-batch-type="context" media="all">
+<!--[if lt IE 9]>
+<link type="text/css" rel="stylesheet" href="/wiki/s/44d5fe9d80603dc9cfbdbce9bbf12d1e-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/369f2758c4f92ea1594de5e9d0839f16/_/download/contextbatch/css/_super/batch.css?atlassian.aui.raphael.disabled=true&amp;conditionalComment=lt+IE+9" data-wrm-key="_super" data-wrm-batch-type="context" media="all">
+<![endif]-->
+<!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="/wiki/s/44d5fe9d80603dc9cfbdbce9bbf12d1e-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/369f2758c4f92ea1594de5e9d0839f16/_/download/contextbatch/css/_super/batch.css?atlassian.aui.raphael.disabled=true&amp;conditionalComment=lte+IE+9" data-wrm-key="_super" data-wrm-batch-type="context" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="Hierarchy%20Tables_files/batch.css" data-wrm-key="atl.confluence.plugins.pagetree-desktop,main,viewcontent,page,atl.general,atl.comments,-_super" data-wrm-batch-type="context" media="all">
+<!--[if lt IE 9]>
+<link type="text/css" rel="stylesheet" href="/wiki/s/e53aeb48d5c784d6845b8a04eb4dc1e5-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/f85cd38ad0bedb25de206906ee995ff6/_/download/contextbatch/css/atl.confluence.plugins.pagetree-desktop,main,viewcontent,page,atl.general,atl.comments,-_super/batch.css?anonymous-access-enabled=true&amp;atlassian.aui.raphael.disabled=true&amp;conditionalComment=lt+IE+9&amp;confluence.table.resizable=true&amp;highlightactions=true&amp;hostenabled=true&amp;is-server-instance=true&amp;nps-acknowledged=true" data-wrm-key="atl.confluence.plugins.pagetree-desktop,main,viewcontent,page,atl.general,atl.comments,-_super" data-wrm-batch-type="context" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="Hierarchy%20Tables_files/colors.css" media="all">
+<link type="text/css" rel="stylesheet" href="Hierarchy%20Tables_files/default-theme.css" media="all">
+<link type="text/css" rel="stylesheet" href="Hierarchy%20Tables_files/com.css" media="all">
+<script type="text/javascript" src="Hierarchy%20Tables_files/batch.js" data-wrm-key="_super" data-wrm-batch-type="context"></script><style type="text/css"></style><style type="text/css"></style>
+<script type="text/javascript" src="Hierarchy%20Tables_files/batch_004.js" data-wrm-key="atl.confluence.plugins.pagetree-desktop,main,viewcontent,page,atl.general,atl.comments,-_super" data-wrm-batch-type="context"></script>
+
+    
+        
+            <meta name="stp-license-product-name" content="Confluence"> <meta name="stp-license-days-to-expiry" content="320"> <meta name="stp-license-is-admin" content="false"> <meta name="stp-license-should-keep-banner-hidden" content="true">
+    
+
+        
+        <meta name="ajs-site-title" content="SCN Wiki">
+            
+	
+	
+	<meta name="decorator" content="atl.footer">
+	
+    <script type="text/javascript">
+    AJS.toInit(function(){
+        if (AJS.params.remoteUser == ''){
+          AJS.$('#action-export-pdf-link').hide();
+          AJS.$('#action-export-word-link').hide();
+        }
+    });
+ 
+  setTimeout(function() { $('#rte-button-publish').off()  }, 3000) </script>  <style type="text/css">
+ .codeContent .syntaxhighlighter table td.code .container .line {
+ white-space:normal!important;
+}
+ </style>
+ <!-- Remove page dialog -->
+ <style type="text/css">
+ 
+  .sap-delete-dialog-title{
+ 
+       background-color: #f6c342;
+ 
+    padding-left: 50px !important;
+ 
+  }
+ 
+  .sap-delete-dialog-title:before {
+ 
+     content: "\f1b3";
+ 
+     font-family: "Atlassian Icons";
+ 
+     -webkit-font-smoothing: antialiased;
+ 
+     left: 12px;
+ 
+     line-height: 1;
+ 
+     margin-top: -8px;
+ 
+     position: absolute;
+ 
+     speak: none;
+ 
+     top: 50%;
+ 
+ } 
+ 
+ </style>
+ 
+ 
+ 
+ <script type="text/javascript">
+ 
+  if(window.location.href.indexOf("wiki/pages/removepage.action") > -1) {
+ 
+             AJS.toInit(function() {
+ 
+    
+ 
+ 
+ 
+   var dialog = new AJS.Dialog({
+ 
+       width: 500, 
+ 
+       height: 200, 
+ 
+       id: "sap-delete-page-notivication-dialog", 
+ 
+       closeOnOutsideClick: true
+ 
+   });
+ 
+   
+ 
+   dialog.addHeader("Make Sure to Delete All Versions!", "sap-delete-dialog-title");
+ 
+   // add panel 1
+ 
+   var template = 
+ 
+   "<p>Please note that deleting a page here only affects the current version of the page. Older versions can still be accessible via search and bookmarks." +
+ 
+   "To delete all versions of a page,"+
+ 
+   "<a href='https://jam4.sapjam.com/blogs/show/vOHj2Z3Q2J06YEhjkULXby' target='_blank' > please follow these instructions.</a></p>"
+ 
+   dialog.addPanel("Property", template , "panel-body");  
+ 
+   dialog.gotoPanel(0);  
+ 
+   dialog.addButton("Continue", function (dialog) {
+ 
+       dialog.remove();
+ 
+   });  
+ 
+      dialog.show();  
+ 
+  });
+ 
+ }
+ 
+ </script>
+ 
+ 
+
+    
+                <link rel="canonical" href="https://wiki.scn.sap.com/wiki/display/BI/Hierarchy+Tables">
+        <link rel="shortlink" href="https://wiki.scn.sap.com/wiki/x/ZAClC">
+    <meta name="wikilink" content="[BI:Hierarchy Tables]">
+    <meta name="page-version" content="8">
+    <meta name="ajs-page-version" content="8">    
+
+	
+	<!-- SCN: redirect SCN space to SCN domain -->
+	<script language="JavaScript">	
+	try
+	{
+		var SCN_hostname = 'wiki.scn.sap.com';		
+		var SCN_hostname_port = 'https://wiki.scn.sap.com';
+		var current_hostname = parent.location.hostname.split(":")[0];
+		/*WU-747*/ var current_hostname_port = parent.location.port;
+		if ((current_hostname != SCN_hostname) && (current_hostname_port != "9001"))
+		{	
+			var redirectUrl =  SCN_hostname_port + document.location.pathname + document.location.search + document.location.hash;
+			document.location.href = redirectUrl;
+		}		
+	}catch (e) {}
+	</script>
+<!-- SCN: redirect SCN space to SCN domain -->
+
+
+<!-- SCN: temporary fix for navitabs issue -->
+<script language="JavaScript">
+AJS.$(document).ready(function(){
+	if (typeof String.prototype.startsWith != 'function') {
+		String.prototype.startsWith = function (str){
+		return this.indexOf(str) == 0;
+	  };
+	}
+
+	AJS.$(".aui-tabs .tabs-menu .menu-item a").each(function(){
+		var SCN_hostname_port = 'https://wiki.scn.sap.com';
+		if (AJS.$(this).attr("href").startsWith(SCN_hostname_port)) {
+			AJS.$(this).attr("href", AJS.$(this).attr("href").substring(SCN_hostname_port.length))
+		}
+	});
+});
+</script>
+<!-- SCN: temporary fix for navitabs issue -->
+	
+<script type="text/javascript" charset="utf-8" src="Hierarchy%20Tables_files/batch_003.js"></script>
+            <meta name="ajs-use-watch" content="false">
+            <meta name="ajs-attachment-source-content-id" content="145031268">
+            <meta name="ajs-fallback-mode" content="false">
+            <meta name="ajs-use-inline-tasks" content="true">
+            <meta name="ajs-heartbeat" content="true">
+            <meta name="ajs-action-locale" content="ru_RU">
+            <meta name="ajs-editor-plugin-resource-prefix" content="/wiki/s/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/5.10.0/_">
+            <meta name="ajs-existing-draft-id" content="0">
+            <meta name="ajs-user-watching-own-content" content="false">
+            <meta name="ajs-new-page" content="false">
+            <meta name="ajs-content-id" content="145031268">
+            <meta name="ajs-editor-mode" content="richtext">
+            <meta name="ajs-form-name" content="inlinecommentform">
+            <meta name="ajs-auto-start" content="false">
+            <meta name="ajs-can-attach-files" content="false">
+            <meta name="ajs-show-draft-message" content="false">
+            <meta name="ajs-conf-revision" content="confluence$content$145031268.0">
+            <meta name="ajs-draft-id" content="0">
+            <meta name="ajs-shared-drafts" content="false">
+            <meta name="ajs-min-editor-height" content="150">
+            <meta name="ajs-draft-share-id" content="">
+            <meta name="ajs-content-type" content="page">
+            <meta name="ajs-version-comment" content="">
+            <meta name="ajs-draft-type" content="page">
+                
+                <meta name="ajs-synchrony-token" content="">
+    <meta name="ajs-synchrony-service-uri" content="">
+    <meta name="ajs-synchrony-resources-uri" content="">
+    <meta name="ajs-synchrony-app-id" content="">
+    <meta name="ajs-synchrony-dark-enabled" content="false">
+    <meta name="ajs-synchrony-expiry" content="">
+
+            		    <meta name="ajs-max-thumb-width" content="300">
+		    <meta name="ajs-max-thumb-height" content="300">
+		    <meta name="ajs-can-send-email" content="true">
+		    <meta name="ajs-is-dev-mode" content="false">
+		    <meta name="ajs-draft-save-interval" content="30000">
+		    <meta name="ajs-show-hidden-user-macros" content="false">
+		    <meta name="ajs-is-admin" content="false">
+		    <meta name="ajs-heartbeat-interval" content="30000">
+	
+    <link rel="stylesheet" type="text/css" href="Hierarchy%20Tables_files/batch_003.css"><script type="text/javascript" charset="utf-8" src="Hierarchy%20Tables_files/batch_002.js"></script><style type="text/css" media="print">.tableFloatingHeader{display:none !important;}.tableFloatingHeaderOriginal{position:static !important;}</style><style type="text/css" media="print">.tableFloatingHeader{display:none !important;}.tableFloatingHeaderOriginal{position:static !important;}</style><style type="text/css" media="print">.tableFloatingHeader{display:none !important;}.tableFloatingHeaderOriginal{position:static !important;}</style><style type="text/css" media="print">.tableFloatingHeader{display:none !important;}.tableFloatingHeaderOriginal{position:static !important;}</style><style type="text/css" media="print">.tableFloatingHeader{display:none !important;}.tableFloatingHeaderOriginal{position:static !important;}</style><style type="text/css" media="print">.tableFloatingHeader{display:none !important;}.tableFloatingHeaderOriginal{position:static !important;}</style><style type="text/css" media="print">.tableFloatingHeader{display:none !important;}.tableFloatingHeaderOriginal{position:static !important;}</style></head>
+
+<body id="com-atlassian-confluence" class="scn-theme  aui-layout aui-theme-default" data-aui-version="5.9.15">
+
+<div id="header-background-wrapper">
+
+<div id="fixed-width-wrapper">
+
+	 	 <!--[if lte IE 8]><div id="ieroot8"><![endif]--><!--[if lte IE 7]><div id="ieroot7"><![endif]--><!--[if IE 6]><div id="ieroot6"><![endif]-->
+<div id="sap-wrapper">
+	<div class="sap-header">
+		<div class="community-logo">
+			<span>Community WIKI</span>
+			<span class="sap-community-logo"><a a="" href="http://go.sap.com/community.html">SAP Community</a></span>  			
+  		</div>
+  		
+		<div style="float:right">
+			<div id="user-status">
+				<ul>
+											<li>
+							<span id="user-img"></span><span class="sapwelcome">Welcome</span>, <span id="user-name">Guest</span>
+						</li>
+						<li class="login"><a title="Login" id="navLogin" rel="IDS_login" href="https://wiki.scn.sap.com/wiki/login.jsp?os_destination=%2Fdisplay%2FBI%2FHierarchy%2BTables">Login</a></li>
+						<li class="login"><a title="Register" id="jive-nav-link-reg" href="#" onclick="showRegistrationPopup()">Register</a></li>				
+											
+									</ul>    
+			</div>
+			<div id="registrationPopup">
+				<div class="regpopup-overlay"></div>
+				<div class="regpopup">
+					<div class="regpopup-top-bar">
+						<a class="regpopup-x-mark" onclick="hideRegistrationPopup()"></a>
+					</div>
+					<h1 class="regpopup-heading">Registration</h1>
+					<div class="regpopup-message">
+						Dear SAP Community Member,<br>In order to fully benefit from what the SAP Community has to offer, please register at:<br>
+						<a target="_blank" href="http://scn.sap.com/" class="regpopup-reglink" style="color: #0165B0 !important;">http://scn.sap.com</a>
+						<br>Thank you,<br>The SAP Community team.
+					</div>
+					<div class="regpopup-button-group">
+						<button class="regpopup-button" onclick="hideRegistrationPopup()" style="background-color: rgb(34,108,169);">Close</button>
+					</div>
+				</div>
+			</div>
+		<div class="aside">   	
+			<div class="nav">
+				<ul id="topNavItems">
+					<li><a href="http://go.sap.com/community/about.html" title="Getting Started">Getting Started</a></li>
+					<li><a href="http://www.sapstore.com/" title="Store">Store</a></li>
+				</ul>				
+			</div>
+			<form method="post" id="ext-search-form">
+				<input name="t" class="search-field" value="Search the Community" onfocus="clearText(this);" type="text">
+				<div id="search-submit-wrapper"><a class="submit" id="search-submit"></a> </div>				
+			</form>
+		</div>
+	 </div>	
+	</div>	
+
+	<div id="overlay" style="display:none;"></div>
+</div>
+ <!--[if lte IE 8]></div><![endif]--><!--[if lte IE 7]></div><![endif]--><!--[if IE 6]></div><![endif]-->
+
+<script>		
+	var search_selectors = [{
+		 'name': 'Search the Community',
+		 'value':'Search the Community',
+		 'fieldname' : 't',
+		 'url': 'https://search.sap.com/search.html?'
+		},
+		{
+		 'name': 'Search SAP',
+		 'value':'Search all of SAP',
+		 'fieldname' : 't',
+		 'url': 'https://find.sap.com/s#'
+		}]	
+</script>
+    
+            <script type="text/javascript" src="Hierarchy%20Tables_files/sapstatic.js"></script>
+        
+            <script type="text/javascript" src="Hierarchy%20Tables_files/registration-popup.js"></script>
+    		
+	
+        
+            <div id="stp-licenseStatus-banner"></div>
+    	<ul id="assistive-skip-links" class="assistive">
+	    <li><a href="#title-heading">Перейти к содержимому</a></li>
+	    <li><a href="#breadcrumbs">Перейти к "Хлебным крошкам"</a></li>
+	    <li><a href="#header-menu-bar">Перейти к меню заголовка</a></li>
+	    <li><a href="#navigation">Перейти к меню действий</a></li>
+	    <li><a href="#quick-search-query">Перейти к быстрому поиск</a></li>
+	</ul>
+	<div id="page">
+	<div id="full-height-container">
+	    <div id="header-precursor">
+	        <div class="cell">
+	            
+	                    	        </div>
+	    </div>
+    
+	        
+
+
+
+
+
+<header id="header" role="banner">
+    <nav class="aui-header aui-dropdown2-trigger-group" role="navigation" data-aui-responsive="true"><div class="aui-header-inner"><div class="aui-header-primary"><h1 id="logo" class="aui-header-logo aui-header-logo-confluence" style=""><a href="https://wiki.scn.sap.com/wiki/"><span class="aui-header-logo-device">SCN Wiki</span></a></h1><ul class="aui-nav" resolved="" style="width: auto;">
+                            <li>
+            
+        
+        
+<a id="space-menu-link" class=" aui-dropdown2-trigger aui-nav-link" aria-controls="space-menu-link-content" aria-haspopup="true" role="button" title="Пространства" tabindex="0" data-aui-trigger="" resolved="" aria-expanded="false" href="#">Пространства<span class="icon aui-icon-dropdown"></span></a><div id="space-menu-link-content" class="aui-dropdown2 aui-style-default aui-dropdown2-in-header aui-layer" role="menu" aria-hidden="true" resolved=""><div role="application"></div></div>
+        </li>
+                            <li id="browseMenu" role="menu">
+            
+    
+        <a id="browse-menu-link" class="aui-nav-link aui-dropdown2-trigger" href="#" aria-haspopup="true" title="Просмотр" resolved="" aria-controls="browse-menu-link-content" aria-expanded="false">
+        <span class="browse">Просмотр</span>
+    </a>
+    <nav id="browse-menu-link-content" class="aui-dropdown2 aui-style-default aui-layer" aria-hidden="true" resolved="">
+                    <div class="aui-dropdown2-section">
+                                <ul id="browse-menu-link-leading" class="aui-list-truncate section-leading first">
+                                            <li>
+    
+            
+<a id="space-pages-link" href="https://wiki.scn.sap.com/wiki/pages/listpages.action?key=BI" class="    " title="Просмотр страниц в SAP NetWeaver Business Warehouse пространстве (g , s)">
+        Страницы
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="space-labels-link" href="https://wiki.scn.sap.com/wiki/labels/listlabels-heatmap.action?key=BI" class="    " title="Просмотр меток в SAP NetWeaver Business Warehouse пространстве">
+        Метки
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="space-advanced-link" href="https://wiki.scn.sap.com/wiki/spaces/viewspacesummary.action?key=BI" class="    " title="Обзор дополнительных функций пространства в SAP NetWeaver Business Warehouse пространстве">
+        Администрирование пространства
+</a>
+</li>
+                                    </ul>
+            </div>
+            </nav>
+    
+        </li>
+                        <li class="aui-buttons">
+            </li>
+    </ul>
+</div><div class="aui-header-secondary"><ul class="aui-nav" resolved="">
+                        <li>
+        <form id="quick-search" class="aui-quicksearch dont-default-focus header-quicksearch" action="/wiki/dosearchsite.action" method="get"><fieldset><label for="quick-search-query" class="assistive">Быстрый поиск</label><input id="quick-search-query" class="text app-search search quick-search-query" accesskey="Q" autocomplete="off" name="queryString" title="Быстрый поиск (/или g , g)" placeholder="Поиск" type="text"><input id="quick-search-submit" class="quick-search-submit" value="Искать" type="submit"><div class="aui-dd-parent quick-nav-drop-down"></div></fieldset></form>
+    </li>
+        <li>
+            
+        <a id="help-menu-link" class="aui-nav-link aui-dropdown2-trigger" href="#" aria-haspopup="true" title="Помощь" resolved="" aria-controls="help-menu-link-content" aria-expanded="false">
+        <span class="aui-icon aui-icon-small aui-iconfont-help">Помощь</span>
+    </a>
+    <nav id="help-menu-link-content" class="aui-dropdown2 aui-style-default aui-layer" aria-hidden="true" resolved="">
+                    <div class="aui-dropdown2-section">
+                                <ul id="help-menu-link-leading" class="aui-list-truncate section-leading first">
+                                            <li>
+        
+            
+<a id="confluence-help-link" href="https://docs.atlassian.com/confluence/docs-510/" class="    " title="Посетить сайт с документацией по Confluence" target="_blank">
+        Помощь онлайн
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="keyboard-shortcuts-link" href="https://wiki.scn.sap.com/wiki" class="    " title="Просмотр доступных сочетаний клавиш (?)">
+        Сочетания клавиш
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="feed-builder-link" href="https://wiki.scn.sap.com/wiki/dashboard/configurerssfeed.action" class="    " title="создайте ваш собственный RSS-канал.">
+        Мастер настройки RSS
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="whats-new-menu-link" href="https://confluence.atlassian.com/display/DOC/Confluence+5.10+Release+Notes" class="    " title="">
+        Что нового
+</a>
+</li>
+                                            <li>
+    
+            
+<a id="confluence-about-link" href="https://wiki.scn.sap.com/wiki/aboutconfluencepage.action" class="    " title="Получить более подробную информацию о Confluence">
+        Информация о Confluence
+</a>
+</li>
+                                    </ul>
+            </div>
+            </nav>
+    
+    </li>
+        <li>
+                
+    
+    </li>
+        <li>
+            
+    </li>
+        <li>
+                                            
+    </li>
+    </ul>
+</div></div><!-- .aui-header-inner--></nav><!-- .aui-header -->
+    <br class="clear">
+</header>
+    
+	    
+	    <!-- \#header -->
+	    
+	    	    	
+	    	    <div id="main" class=" aui-page-panel">
+	        	        <div id="main-header">
+	            
+    <div id="navigation" class="content-navigation view">
+                    <ul class="ajs-menu-bar">
+                                            
+        <li class="normal ajs-menu-item">
+        <a id="action-menu-link" class="action aui-dropdown2-trigger-arrowless aui-button aui-button-subtle ajs-menu-title aui-dropdown2-trigger" href="#" aria-haspopup="true" data-container="#navigation" resolved="" aria-controls="action-menu" aria-expanded="false">
+            <span>
+                                    <span class="aui-icon aui-icon-small aui-iconfont-more"></span>
+                                
+            </span>
+        </a>         <div id="action-menu" class="aui-dropdown2 aui-style-default aui-layer most-right-menu-item" aria-hidden="true" resolved="">
+                            <div class="aui-dropdown2-section">
+                    <ul id="action-menu-primary" class="section-primary first">
+                                                    <li>
+
+    
+        
+                                            
+    
+    
+    <a id="view-attachments-link" href="https://wiki.scn.sap.com/wiki/pages/viewpageattachments.action?pageId=145031268" rel="nofollow" class="action-view-attachments" accesskey="T" title="Просмотреть вложения (t)">
+                <span>
+                        <u>В</u>ложения (0)
+        </span>    </a>
+</li>
+                                                <li>
+
+    
+        
+                                            
+    
+    
+    <a id="action-view-history-link" href="https://wiki.scn.sap.com/wiki/pages/viewpreviousversions.action?pageId=145031268" rel="nofollow" class="action-view-history" title="">
+                <span>
+                        История Страницы
+        </span>    </a>
+</li>
+                                        </ul>
+                </div>
+                            <div class="aui-dropdown2-section">
+                    <ul id="action-menu-secondary" class="section-secondary">
+                                                    <li>
+
+    
+        
+                                            
+    
+    
+    <a id="view-page-info-link" href="https://wiki.scn.sap.com/wiki/pages/viewinfo.action?pageId=145031268" rel="nofollow" class="action-view-info" title="">
+                <span>
+                        Информация о странице
+        </span>    </a>
+</li>
+                                                <li>
+
+    
+        
+                                            
+    
+    
+    <a id="link-to-page-link" href="https://wiki.scn.sap.com/wiki/pages/viewinfo.action?pageId=145031268" rel="nofollow" class="" title="Ссылка на эту страницу (k)">
+                <span>
+                        Ссылка на эту страницу…
+        </span>    </a>
+</li>
+                                                <li>
+
+    
+        
+                                            
+    
+    
+    <a id="view-in-hierarchy-link" href="https://wiki.scn.sap.com/wiki/pages/listpages-dirview.action?key=BI&amp;openId=145031268#selectedPageInHierarchy" rel="nofollow" class="" title="">
+                <span>
+                        Открыть в иерархии
+        </span>    </a>
+</li>
+                                                <li>
+
+    
+        
+                                            
+    
+    
+    <a id="action-view-source-link" href="https://wiki.scn.sap.com/wiki/plugins/viewsource/viewpagesrc.action?pageId=145031268" rel="nofollow" class="action-view-source popup-link" title="">
+                <span>
+                        Просмотреть исходный 
+        </span>    </a>
+</li>
+                                                <li>
+
+    
+        
+                                            
+    
+    
+    <a id="action-export-pdf-link" href="https://wiki.scn.sap.com/wiki/spaces/flyingpdf/pdfpageexport.action?pageId=145031268" rel="nofollow" class="" title="" style="display: none;">
+                <span>
+                        Экспорт в PDF
+        </span>    </a>
+</li>
+                                                <li>
+
+    
+        
+                                            
+    
+    
+    <a id="action-export-word-link" href="https://wiki.scn.sap.com/wiki/exportword?pageId=145031268" rel="nofollow" class="action-export-word" title="" style="display: none;">
+                <span>
+                        Экспорт в  Word
+        </span>    </a>
+</li>
+                                        </ul>
+                </div>
+                    </div>
+    </li>
+            </ul>
+    </div>
+
+	            
+	            <h1 id="title-heading" class="pagetitle with-breadcrumbs">
+	                	
+	                	                    <div id="breadcrumb-section">
+	                        
+    
+    
+    <ol id="breadcrumbs">
+                                        
+                        
+        <li class="first">
+                        
+                            <span class=""><a href="https://wiki.scn.sap.com/wiki/display/BI?src=breadcrumbs-collector">SAP NetWeaver Business Warehouse</a></span>
+                                                                                                            </li><li id="ellipsis" title="Показать все навигационные цепочки"><span><strong>…</strong></span></li>
+                                                
+                        
+        <li class="hidden-crumb">
+                        
+                            <span class=""><a href="https://wiki.scn.sap.com/wiki/display/BI/SAP+Business+Warehouse+Home?src=breadcrumbs-expanded">SAP Business Warehouse Home</a></span>
+                                                                                                    
+                        
+        </li><li class="hidden-crumb">
+                        
+                            <span class=""><a href="https://wiki.scn.sap.com/wiki/display/BI/BW+-+Data+Warehouse+Management?src=breadcrumbs-expanded">BW - Data Warehouse Management</a></span>
+                                                                                                    
+                        
+        </li><li class="hidden-crumb">
+                        
+                            <span class=""><a href="https://wiki.scn.sap.com/wiki/display/BI/Data+Warehousing+Workbench?src=breadcrumbs-expanded">Data Warehousing Workbench</a></span>
+                                                                                    
+                        
+        </li><li>
+                        
+                            <span class=""><a href="https://wiki.scn.sap.com/wiki/display/BI/Important+Tables+in+SAP+BW+7.x?src=breadcrumbs-parent">Important Tables in SAP BW 7.x</a></span>
+                                                                    </li></ol>
+
+
+	                    </div>
+	                	
+	                <span id="title-text" class="with-breadcrumbs">
+	                	                                <a href="https://wiki.scn.sap.com/wiki/display/BI/Hierarchy+Tables">Hierarchy Tables</a>
+    	                	                </span>
+	            </h1>
+	        </div><!-- \#main-header -->
+	        	
+	        
+	
+	        <div id="sidebar-container">
+	        	            	            	        	        </div><!-- \#sidebar-container -->
+	
+	        
+    
+
+        
+
+
+
+
+            
+    
+
+                                
+    
+
+    
+    
+        
+    
+    
+                    
+    
+
+    
+
+    
+            
+        
+
+    
+    
+
+    
+            
+        
+
+
+
+    
+<div id="content" class="page view">
+    
+
+
+<div id="action-messages">
+                        </div>
+
+
+
+
+
+        <script type="text/x-template" title="searchResultsGrid">
+    <table class="aui">
+        <thead>
+            <tr class="header">
+                <th class="search-result-title">Заголовок Страницы</th>
+                <th class="search-result-space">Пространство</th>
+                <th class="search-result-date">Обновлено</th>
+            </tr>
+        </thead>
+    </table>
+</script>
+<script type="text/x-template" title="searchResultsGridCount">
+    <p class="search-result-count">{0}</p>
+</script>
+<script type="text/x-template" title="searchResultsGridRow">
+    <tr class="search-result">
+        <td class="search-result-title"><a href="{1}" class="content-type-{2}"><span>{0}</span></a></td>
+        <td class="search-result-space"><a class="space" href="/wiki/display/{4}/" title="{3}">{3}</a></td>
+        <td class="search-result-date"><span class="date" title="{6}">{5}</span></td>
+    </tr>
+</script>
+        
+    
+            
+
+        
+                            
+    
+
+                    
+
+        
+        <a href="#page-metadata-end" class="assistive">Перейти к концу метаданных</a>
+<div id="page-metadata-start" class="assistive"></div>
+
+    <div class="page-metadata">
+        <ul>
+            <li class="page-metadata-modification-info">
+                
+        
+    
+        
+    
+        
+            
+            Создал(а) <span class="author">     <span class="unknown-user">Former Member</span></span>, редактировал(а) <span class="editor">     <span class="unknown-user">Former Member</span></span> <a class="last-modified" title="Показать изменения" href="https://wiki.scn.sap.com/wiki/pages/diffpagesbyversion.action?pageId=145031268&amp;selectedPageVersions=7&amp;selectedPageVersions=8">фев 22, 2010</a>
+                </li>
+        </ul>
+    </div>
+
+
+<a href="#page-metadata-start" class="assistive">Переход к началу метаданных</a>
+<div id="page-metadata-end" class="assistive"></div>
+
+        
+                                            
+        <div id="main-content" class="wiki-content">
+                           
+        <div class="table-wrap"><table class="confluenceTable tablesorter tablesorter-default stickyTableHeaders" role="grid" style="padding: 0px;"><thead class="tableFloatingHeaderOriginal" style="position: static; margin-top: 0px; left: 20px; z-index: 3; width: 314px; top: 0px;"><tr role="row" class="tablesorter-headerRow">
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none; min-width: 8px; max-width: none;" aria-sort="none" aria-label=" Hierarchy Tables : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Hierarchy Tables </p></div></th>
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none; min-width: 8px; max-width: none;" aria-sort="none" aria-label=" Description : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Description </p></div></th>
+</tr></thead><thead class="tableFloatingHeader" style="display: none;"><tr role="row" class="tablesorter-headerRow">
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none;" aria-sort="none" aria-label=" Hierarchy Tables : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Hierarchy Tables </p></div></th>
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none;" aria-sort="none" aria-label=" Description : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Description </p></div></th>
+</tr></thead><tbody aria-live="polite" aria-relevant="all">
+
+<tr role="row">
+<td class="confluenceTd"><p> RSHIEDIR </p></td>
+<td class="confluenceTd"><p> Hierarchy Directory, Header Information </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> RSHIEDIRT </p></td>
+<td class="confluenceTd"><p> Hierarchy directory texts </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> /BI*/H&lt;IOBJNM&gt; </p></td>
+<td class="confluenceTd"><p> Hierarchy structure table </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> /BI*/J&lt;IOBJNM&gt; </p></td>
+<td class="confluenceTd"><p> Interval table </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> RSMHIERNODE </p></td>
+<td class="confluenceTd"><p> Master data table for text nodes </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> RSTHIERNODE </p></td>
+<td class="confluenceTd"><p> Text table for text nodes </p></td>
+</tr>
+</tbody></table></div>
+
+<p><br class="atl-forced-newline"></p>
+
+<h4 id="HierarchyTables-">&nbsp;</h4>
+
+<div class="table-wrap"><table class="confluenceTable tablesorter tablesorter-default stickyTableHeaders" role="grid" style="padding: 0px;"><thead class="tableFloatingHeaderOriginal" style="position: static; margin-top: 0px; left: 20px; z-index: 3; width: 301px; top: 0px;"><tr role="row" class="tablesorter-headerRow">
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none; min-width: 8px; max-width: none;" aria-sort="none" aria-label=" SID Tables : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> SID Tables </p></div></th>
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none; min-width: 8px; max-width: none;" aria-sort="none" aria-label=" Description : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Description </p></div></th>
+</tr></thead><thead class="tableFloatingHeader" style="display: none;"><tr role="row" class="tablesorter-headerRow">
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none;" aria-sort="none" aria-label=" SID Tables : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> SID Tables </p></div></th>
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none;" aria-sort="none" aria-label=" Description : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Description </p></div></th>
+</tr></thead><tbody aria-live="polite" aria-relevant="all">
+
+<tr role="row">
+<td class="confluenceTd"><p> RSRHIEDIR_OLAP </p></td>
+<td class="confluenceTd"><p> OLAP table hierarchy directory </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> /BI*/K&lt;IOBJNM&gt; </p></td>
+<td class="confluenceTd"><p> Conversion of hierarchy nodes - SID </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> /BI*/I&lt;IOBJNM&gt; </p></td>
+<td class="confluenceTd"><p> SID table hierarchy structure </p></td>
+</tr>
+</tbody></table></div>
+
+
+<h4 id="HierarchyTables-.1">&nbsp;</h4>
+
+<div class="table-wrap"><table class="confluenceTable tablesorter tablesorter-default stickyTableHeaders" role="grid" style="padding: 0px;"><thead class="tableFloatingHeaderOriginal" style="position: static; margin-top: 0px; left: 20px; z-index: 3; width: 512px; top: 0px;"><tr role="row" class="tablesorter-headerRow">
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none; min-width: 8px; max-width: none;" aria-sort="none" aria-label=" Important Fields for RSHIEDIR : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Important Fields for RSHIEDIR </p></div></th>
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none; min-width: 8px; max-width: none;" aria-sort="none" aria-label=" Description : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Description </p></div></th>
+</tr></thead><thead class="tableFloatingHeader" style="display: none;"><tr role="row" class="tablesorter-headerRow">
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none;" aria-sort="none" aria-label=" Important Fields for RSHIEDIR : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Important Fields for RSHIEDIR </p></div></th>
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none;" aria-sort="none" aria-label=" Description : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Description </p></div></th>
+</tr></thead><tbody aria-live="polite" aria-relevant="all">
+
+<tr role="row">
+<td class="confluenceTd"><p> HIEID </p></td>
+<td class="confluenceTd"><p> Internal hierarchy ID (unique ID) </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> OBJVERS </p></td>
+<td class="confluenceTd"><p> Object version (M or A) </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> HIETYPE </p></td>
+<td class="confluenceTd"><p> Type BW hierarchies 1= master data hierarchy with ref to infoobject </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> HIENM </p></td>
+<td class="confluenceTd"><p> Hierarchy name </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> VERSION </p></td>
+<td class="confluenceTd"><p> Hierarchy version </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> DATETO </p></td>
+<td class="confluenceTd"><p> Date valid to </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> IOBJNM </p></td>
+<td class="confluenceTd"><p> InfoObject </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> DATEFROM </p></td>
+<td class="confluenceTd"><p> Date valid from </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> LOGSYS </p></td>
+<td class="confluenceTd"><p> Source system </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> REQUEST </p></td>
+<td class="confluenceTd"><p> Request number for data transfer </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> TSTPNM </p></td>
+<td class="confluenceTd"><p> Last changed by </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> TIMESTMP </p></td>
+<td class="confluenceTd"><p> UTC time stamp in abbreviated form (YYYYMMDDhhmmss) </p></td>
+</tr>
+</tbody></table></div>
+
+<p><br class="atl-forced-newline"></p>
+
+<h4 id="HierarchyTables-.2">&nbsp;</h4>
+<div class="table-wrap"><table class="confluenceTable tablesorter tablesorter-default stickyTableHeaders" role="grid" style="padding: 0px;"><thead class="tableFloatingHeaderOriginal" style="position: static; margin-top: 0px; left: 20px; z-index: 3; width: 436px; top: 0px;"><tr role="row" class="tablesorter-headerRow">
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none; min-width: 8px; max-width: none;" aria-sort="none" aria-label=" Fields of Structure table /BI*/H&lt;IOBJNM&gt; : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Fields of Structure table /BI*/H&lt;IOBJNM&gt; </p></div></th>
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none; min-width: 8px; max-width: none;" aria-sort="none" aria-label=" Description : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Description </p></div></th>
+</tr></thead><thead class="tableFloatingHeader" style="display: none;"><tr role="row" class="tablesorter-headerRow">
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none;" aria-sort="none" aria-label=" Fields of Structure table /BI*/H&lt;IOBJNM&gt; : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Fields of Structure table /BI*/H&lt;IOBJNM&gt; </p></div></th>
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none;" aria-sort="none" aria-label=" Description : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Description </p></div></th>
+</tr></thead><tbody aria-live="polite" aria-relevant="all">
+
+<tr role="row">
+<td class="confluenceTd"><p> HIEID </p></td>
+<td class="confluenceTd"><p> Internal hierarchy ID (unique ID) </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> OBJVERS </p></td>
+<td class="confluenceTd"><p> Object version </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> NODEID </p></td>
+<td class="confluenceTd"><p> Internal ID number for a hierarchy node </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> IOBJNM </p></td>
+<td class="confluenceTd"><p> InfoObject </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> NODENAME </p></td>
+<td class="confluenceTd"><p> Hierarchy node name </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> TLEVEL </p></td>
+<td class="confluenceTd"><p> Hierarchy node level </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> LINK </p></td>
+<td class="confluenceTd"><p> Link indicator for a hierarchy node </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> PARENTID </p></td>
+<td class="confluenceTd"><p> Parent ID for a hierarchy node </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> CHILDID </p></td>
+<td class="confluenceTd"><p> Child ID for a hierarchy node </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> NEXTID </p></td>
+<td class="confluenceTd"><p> Next ID for a hierarchy node </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> DATEFROM </p></td>
+<td class="confluenceTd"><p> Date valid from </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> DATETO </p></td>
+<td class="confluenceTd"><p> Date valid to </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> INTERVL </p></td>
+<td class="confluenceTd"><p> Flag: node is interval </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> SIGNCH </p></td>
+<td class="confluenceTd"><p> +/- sign reversal </p></td>
+</tr>
+</tbody></table></div>
+
+<p><br class="atl-forced-newline">
+<br class="atl-forced-newline">
+<br class="atl-forced-newline"></p>
+
+<h4 id="HierarchyTables-.3">&nbsp;</h4>
+<div class="table-wrap"><table class="confluenceTable tablesorter tablesorter-default stickyTableHeaders" role="grid" style="padding: 0px;"><thead class="tableFloatingHeaderOriginal" style="position: static; margin-top: 0px; left: 20px; z-index: 3; width: 425px; top: 0px;"><tr role="row" class="tablesorter-headerRow">
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none; min-width: 8px; max-width: none;" aria-sort="none" aria-label=" Fields of Interval table /BI*/J&lt;IOBJNM&gt; : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Fields of Interval table /BI*/J&lt;IOBJNM&gt; </p></div></th>
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none; min-width: 8px; max-width: none;" aria-sort="none" aria-label=" Description : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Description </p></div></th>
+</tr></thead><thead class="tableFloatingHeader" style="display: none;"><tr role="row" class="tablesorter-headerRow">
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none;" aria-sort="none" aria-label=" Fields of Interval table /BI*/J&lt;IOBJNM&gt; : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Fields of Interval table /BI*/J&lt;IOBJNM&gt; </p></div></th>
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none;" aria-sort="none" aria-label=" Description : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Description </p></div></th>
+</tr></thead><tbody aria-live="polite" aria-relevant="all">
+
+<tr role="row">
+<td class="confluenceTd"><p> HIEID </p></td>
+<td class="confluenceTd"><p> Internal hierarchy ID (unique ID) </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> OBJVERS </p></td>
+<td class="confluenceTd"><p> Object version </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> NODEID </p></td>
+<td class="confluenceTd"><p> Internal ID number for a hierarchy node </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> LEAFFROM </p></td>
+<td class="confluenceTd"><p> Hierarchy leaf from </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> LEAFTO </p></td>
+<td class="confluenceTd"><p> Hierarchy leaf to </p></td>
+</tr>
+</tbody></table></div>
+
+<p><br class="atl-forced-newline"></p>
+<div class="table-wrap"><table class="confluenceTable tablesorter tablesorter-default stickyTableHeaders" role="grid" style="padding: 0px;"><thead class="tableFloatingHeaderOriginal" style="position: static; margin-top: 0px; left: 20px; z-index: 3; width: 430px; top: 0px;"><tr role="row" class="tablesorter-headerRow">
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none; min-width: 8px; max-width: none;" aria-sort="none" aria-label=" Fields of Text Node Table RSMHIERNODE : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Fields of Text Node Table RSMHIERNODE </p></div></th>
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none; min-width: 8px; max-width: none;" aria-sort="none" aria-label=" Description : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Description </p></div></th>
+</tr></thead><thead class="tableFloatingHeader" style="display: none;"><tr role="row" class="tablesorter-headerRow">
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none;" aria-sort="none" aria-label=" Fields of Text Node Table RSMHIERNODE : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Fields of Text Node Table RSMHIERNODE </p></div></th>
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none;" aria-sort="none" aria-label=" Description : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Description </p></div></th>
+</tr></thead><tbody aria-live="polite" aria-relevant="all">
+
+<tr role="row">
+<td class="confluenceTd"><p> HIEID </p></td>
+<td class="confluenceTd"><p> Internal hierarchy ID (unique ID) </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> OBJVERS </p></td>
+<td class="confluenceTd"><p> Object version </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> NODENAME </p></td>
+<td class="confluenceTd"><p> Hierarchy nodes unable to be posted </p></td>
+</tr>
+</tbody></table></div>
+
+
+<h4 id="HierarchyTables-.4">&nbsp;</h4>
+
+<div class="table-wrap"><table class="confluenceTable tablesorter tablesorter-default stickyTableHeaders" role="grid" style="padding: 0px;"><thead class="tableFloatingHeaderOriginal"><tr role="row" class="tablesorter-headerRow">
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none;" aria-sort="none" aria-label=" Texts for text nodes RSTHIERNODE : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Texts for text nodes RSTHIERNODE </p></div></th>
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none;" aria-sort="none" aria-label=" Description : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Description </p></div></th>
+</tr></thead><thead class="tableFloatingHeader" style="display: none;"><tr role="row" class="tablesorter-headerRow">
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="0" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none;" aria-sort="none" aria-label=" Texts for text nodes RSTHIERNODE : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Texts for text nodes RSTHIERNODE </p></div></th>
+<th class="confluenceTh tablesorter-header sortableHeader tablesorter-headerUnSorted" data-column="1" tabindex="0" scope="col" role="columnheader" aria-disabled="false" unselectable="on" style="-moz-user-select: none;" aria-sort="none" aria-label=" Description : No sort applied, activate to apply an ascending sort"><div class="tablesorter-header-inner"><p> Description </p></div></th>
+</tr></thead><tbody aria-live="polite" aria-relevant="all">
+
+<tr role="row">
+<td class="confluenceTd"><p> LANGU </p></td>
+<td class="confluenceTd"><p> Language key </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> HIEID </p></td>
+<td class="confluenceTd"><p> Internal hierarchy ID (unique ID) </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> OBJVERS </p></td>
+<td class="confluenceTd"><p> Object version </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> NODENAME </p></td>
+<td class="confluenceTd"><p> Hierarchy nodes unable to be posted </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> TXTSH </p></td>
+<td class="confluenceTd"><p> Short description </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> TXSTMD </p></td>
+<td class="confluenceTd"><p> Medium description </p></td>
+</tr>
+<tr role="row">
+<td class="confluenceTd"><p> TXTLG </p></td>
+<td class="confluenceTd"><p> Long description </p></td>
+</tr>
+</tbody></table></div>
+
+                
+        
+    
+        </div>
+
+        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.scn.sap.com/wiki/display/BI/Hierarchy+Tables"
+    dc:identifier="https://wiki.scn.sap.com/wiki/display/BI/Hierarchy+Tables"
+    dc:title="Hierarchy Tables"
+    trackback:ping="https://wiki.scn.sap.com/wiki/rpc/trackback/145031268"/>
+</rdf:RDF>
+-->
+
+                        
+    
+
+
+
+<div id="labels-section" class="pageSection group">
+    <div class="labels-section-content content-column" entityid="145031268" entitytype="page">
+	<div class="labels-content">
+		
+    <ul class="label-list label-list-right ">
+                    
+        <li class="aui-label " data-label-id="358350884"><a class="aui-label-split-main" href="https://wiki.scn.sap.com/wiki/label/BI/bw-whm-dba-hier" rel="tag">bw-whm-dba-hier</a></li>
+            </ul>
+
+    </div>
+</div>
+</div>
+        
+		            		
+            
+
+
+
+
+            
+        
+
+
+
+
+
+
+
+
+                        
+    
+<div id="comments-section" class="pageSection group">
+                <div class="section-header">
+            <h2 id="comments-section-title" class="section-title">
+                                    2 Комментариев
+                            </h2>
+        </div>
+    
+    
+
+            <ol class="comment-threads top-level" id="page-comments">
+                    <li id="comment-thread-356126568" class="comment-thread">
+        <div class="comment  " id="comment-356126568">
+        <p class="comment-user-logo">
+            <img class="userLogo logo anonymous" src="Hierarchy%20Tables_files/anonymous.png" alt="Иконка пользователя: arl0x1m" title="arl0x1m">        </p>
+        <div class="comment-header">
+            <h4 class="author">    <a href="https://wiki.scn.sap.com/wiki/display/~arl0x1m" class="url fn">Gill Leo</a></h4>
+        </div>
+        <div class="comment-body">
+            <div class="comment-content wiki-content">
+                <p>&nbsp;</p><p>Really useful reference page Vincent!</p><p>I
+ have hierarchies on our BW Production system and want to access their 
+Short Descriptions. When I access the RSTHIERNODE table above via SE16 
+it tells me the table isn't active in the directory.</p><p>Any suggestions as to how I can see the text descriptions of nodes in&nbsp;a&nbsp; hierarchy.</p><p>With thanks</p><p>Gill</p>
+            </div>
+            <div class="comment-actions">
+                                                <ul class="comment-actions-secondary">
+                                                              <li class="first comment-permalink"><a title="Постоянная ссылка к данному комментарию" href="https://wiki.scn.sap.com/wiki/display/BI/Hierarchy+Tables?focusedCommentId=356126568#comment-356126568" id="comment-permalink-356126568"><span>Постоянная ссылка</span></a></li>
+            </ul>
+                                    <ul class="comment-actions-primary">
+                                                              <li class="first comment-date"><a title="ноя 01, 2013 12:59" href="https://wiki.scn.sap.com/wiki/display/BI/Hierarchy+Tables?focusedCommentId=356126568#comment-356126568"><span>ноя 01, 2013</span></a></li>
+            </ul>
+                </div>
+        </div>
+    </div>
+
+    <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.scn.sap.com/wiki/display/BI/Hierarchy+Tables?focusedCommentId=356126568#comment-356126568"
+    dc:identifier="https://wiki.scn.sap.com/wiki/display/BI/Hierarchy+Tables?focusedCommentId=356126568#comment-356126568"
+    dc:title="Hierarchy Tables"
+    trackback:ping="https://wiki.scn.sap.com/wiki/rpc/trackback/356126568"/>
+</rdf:RDF>
+-->
+
+    
+            <ol class="comment-threads">
+                                <li id="comment-thread-358057919" class="comment-thread">
+        <div class="comment   odd" id="comment-358057919">
+        <p class="comment-user-logo">
+            <img class="userLogo logo anonymous" src="Hierarchy%20Tables_files/anonymous.png" alt="Иконка пользователя: dmt0elk" title="dmt0elk">        </p>
+        <div class="comment-header">
+            <h4 class="author">    <a href="https://wiki.scn.sap.com/wiki/display/~dmt0elk" class="url fn">Martin Grob</a></h4>
+        </div>
+        <div class="comment-body">
+            <div class="comment-content wiki-content">
+                <p>Hi Gill post your question here: <a href="http://scn.sap.com/community/data-warehousing/netweaver-bw" class="external-link" rel="nofollow">http://scn.sap.com/community/data-warehousing/netweaver-bw</a></p><p>&nbsp;</p>
+            </div>
+            <div class="comment-actions">
+                                                <ul class="comment-actions-secondary">
+                                                              <li class="first comment-permalink"><a title="Постоянная ссылка к данному комментарию" href="https://wiki.scn.sap.com/wiki/display/BI/Hierarchy+Tables?focusedCommentId=358057919#comment-358057919" id="comment-permalink-358057919"><span>Постоянная ссылка</span></a></li>
+            </ul>
+                                    <ul class="comment-actions-primary">
+                                                              <li class="first comment-date"><a title="ноя 01, 2013 13:01" href="https://wiki.scn.sap.com/wiki/display/BI/Hierarchy+Tables?focusedCommentId=358057919#comment-358057919"><span>ноя 01, 2013</span></a></li>
+            </ul>
+                </div>
+        </div>
+    </div>
+
+    <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="https://wiki.scn.sap.com/wiki/display/BI/Hierarchy+Tables?focusedCommentId=358057919#comment-358057919"
+    dc:identifier="https://wiki.scn.sap.com/wiki/display/BI/Hierarchy+Tables?focusedCommentId=358057919#comment-358057919"
+    dc:title="Hierarchy Tables"
+    trackback:ping="https://wiki.scn.sap.com/wiki/rpc/trackback/358057919"/>
+</rdf:RDF>
+-->
+
+    
+    </li>
+                        </ol>
+    </li>
+            </ol>
+
+
+</div>
+        
+
+
+                
+    
+            
+</div>
+
+    
+
+    
+
+
+
+
+    
+    
+
+    
+    
+    
+
+
+    
+<div id="space-tools-web-items" class="hidden">
+                <div data-label="Обзор" data-href="/wiki/spaces/viewspacesummary.action?key=BI">Обзор</div>
+            <div data-label="Инструменты контента" data-href="/wiki/pages/reorderpages.action?key=BI">Инструменты контента</div>
+            <div data-label="Дополнения" data-href="/wiki/spaces/viewspacesummary.action?key=BI">Дополнения</div>
+            <div data-label="Страницы" data-href="/wiki/pages/listpages.action?key=BI">Страницы</div>
+            <div data-label="Метки" data-href="/wiki/labels/listlabels-heatmap.action?key=BI">Метки</div>
+            <div data-label="Администрирование пространства" data-href="/wiki/spaces/viewspacesummary.action?key=BI">Администрирование пространства</div>
+    </div>
+        
+
+
+
+	    </div><!-- \#main -->
+	    	    	
+	    	
+		        
+            
+            
+
+
+            <div id="wrapper">
+	<div id="j-footer">
+		<div id="j-footer-poweredBy">
+			<ul>
+				<li><a title="Twitter" class="icon twitter" href="https://twitter.com/SAPCommunity"></a></li>
+				<li><a title="Facebook" class="icon facebook" href="https://www.facebook.com/sapcommunity/"></a></li>
+				<li><a title="YouTube" class="icon youtube" href="http://bit.ly/SCNyouT"></a></li>
+				<li><span class="follow">Follow SCN</span></li>
+			</ul>
+		</div>
+			
+		<div class="j-footer-nav">
+			<ul class="bold">
+				<li><a href="http://go.sap.com/community/about/support.html">Contact Us</a></li>
+				<li><a href="http://help.sap.com/">SAP Help Portal</a></li>
+			</ul>
+			<ul>
+				<li><a href="http://go.sap.com/about/legal/privacy.html">Privacy</a></li>
+				<li><a class="lfoot" href="http://go.sap.com/corporate/en/legal/terms-of-use.html">Terms of Use</a></li>
+				<li><a href="http://go.sap.com/about/legal/impressum.html">Legal Disclosure</a></li>
+				<li><a href="http://go.sap.com/about/legal/copyright.html">Copyright</a></li>
+								<li><div id="teconsent" consent="undefined" style="display: inline-block;"><script async="async" type="text/javascript" crossorigin="" src="Hierarchy%20Tables_files/v1.7-75"></script><a id="icon-id0058249236072013266" tabindex="0" role="button" style="cursor: pointer;" lang="ru">Настройки параметра cookie</a></div></li>
+			</ul>
+		</div>				
+	</div>
+</div>
+
+	<script type="text/javascript" src="Hierarchy%20Tables_files/SAP_IDS.js"></script>
+
+<script language="JavaScript" type="text/javascript">
+jQuery(document).ready(function(){
+		try{
+			s.prop2="en-US";
+							s.prop9="logN";
+						
+			if((typeof pageType)!='undefined' && pageType == "notFound"){
+				s.pageType="errorPage";
+				s.prop27=document.referrer;
+			}
+			s.t();
+		} catch(e) {console.log(e);}	
+});
+</script>
+
+    	
+		
+	</div><!-- \#full-height-container -->
+	</div><!-- \#page -->
+
+</div>
+
+</div>
+	<!--EWU 235-->
+	<script type="text/javascript">_satellite.pageBottom();</script><script src="Hierarchy%20Tables_files/notice" crossorigin="" id="truste_0.1267542363647044">
+</script>
+<script>
+localStorage.setItem("trusteIsEU", identifyEU(truste));
+var apiObject = { PrivacyManagerAPI : {action: "getConsent",timestamp:new Date().getTime(),self:"sap.com"}};
+var json = JSON.stringify(apiObject);
+window.top.postMessage(json,"*");
+function removeIframeHandler(json){ 
+  if(json.data!==undefined && json.data.indexOf!==undefined && json.data.indexOf("remove_iframe") >= 0) {
+    window.location.reload();
+  }
+}
+function submitPreferencesHandler(json){ 
+  if(json.data!==undefined && json.data.indexOf!==undefined && json.data.indexOf("submit_preferences") >= 0) {
+    window.addEventListener("message", removeIframeHandler, false);
+  }
+}
+window.addEventListener("message", submitPreferencesHandler, false);
+
+function identifyEU(truste){
+  if(typeof truste === "undefined" || truste === null ){
+    console.error("truste is undefined");
+    return true;
+  }
+  if(typeof truste.eu === "undefined" || truste.eu === null){
+    console.error("truste.eu is undefined");
+    return true;
+  }
+  if(typeof truste.eu.bindMap === "undefined" || truste.eu.bindMap === null){
+    console.error("truste.eu.bindMap is undefined");
+    return true;
+  }
+  if(typeof truste.eu.bindMap.behavior === "undefined" || truste.eu.bindMap.behavior === null){
+    console.error("truste.eu.bindMap is undefined");
+    return true;
+  }
+  return truste.eu.bindMap.behavior === "expressed";
+}
+</script><script>
+    var swa = {
+        pubToken: '0d1f0591-3b40-42d5-9342-bc04bc05140f',
+      baseUrl: 'https://webanalytics.cfapps.eu10.hana.ondemand.com/tracker/',
+        /*Please provide function name which will return owner info or string value of owner info*/
+        
+    };
+
+swa.custom1 = {ref:"getSpaceKey"};
+swa.custom2 = {ref:"getPageId"};
+
+function getSpaceKey() {return $("#confluence-space-key").attr("content");}
+function getPageId() {return $("meta[name=ajs-page-id]").attr("content");}
+
+    (function(){
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.defer=true; g.async=true; g.src=swa.baseUrl+'js/privacy.js';
+        s.parentNode.insertBefore(g,s);
+     })();
+</script>
+	
+
+
+<style>#swa_background{position:fixed;top:0px;left:0px;height:100%;width:100%;display:none;background-color: black;z-index:100;}#swa_license{font-family:Arial,Helvetica,sans-serif;background-color: white;color: black;border: 1px solid gray;position:absolute;display:none;z-index:11100;padding: 30px; display:none;background: #FFF;border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;box-shadow: 0px 0px 4px rgba(0,0,0,0.7); -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7); -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);}.close_license{ position: absolute; top: 12px; right: 12px; display: block; width: 14px; height: 14px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEUAAACIiIhaeOqmAAAAAXRSTlMAQObYZgAAAC9JREFUaN5jYGBgEOBgsJBhqLFjsKthkP/BwP+Bgf0BCAEZQC5QECgFVABUxsAAAOcxCbuaDAybAAAAAElFTkSuQmCC); z-index: 2;}.swabutton{display:inline;position: absolute;right: 25px;margin: 0px}.swalicensetxt{width:100%; height:100%; overflow-y: hidden;overflow-x: hidden;}</style><div id="swa_background"></div><div id="swa_license"><div id="swa_header"><table><tbody><tr><td><strong>Privacy Statement</strong></td></tr></tbody></table><a class="close_license" href="#"></a></div><iframe id="swa_licence_window" class="swalicensetxt" src="Hierarchy%20Tables_files/a.htm" scrolling="yes"></iframe><div id="swa_form"><p></p><p></p><input class="swa_checkid" id="swa_p_checkid" type="checkbox"><label for="swa_p_checkid" id="l_swa_p_checkid">&nbsp;Allow use of SAP Web Analytics</label>&nbsp;&nbsp;<button class="swabutton" type="button" id="swa_save_modal" onclick="frame_save(event);">Save</button></div></div><div id="editor-preload-container" style="display: none;">
+ 
+
+<div class="hidden">
+        
+
+
+<content tag="breadcrumbs">
+    
+    
+    <ol id="quickedit-breadcrumbs">
+                                        
+                        
+        <li class="first">
+                        
+                            <span class=""><a href="https://wiki.scn.sap.com/wiki/display/BI" target="_blank">SAP NetWeaver Business Warehouse</a></span>
+                                                                                                            </li><li id="ellipsis" title="Показать все навигационные цепочки"><span><strong>…</strong></span></li>
+                                                
+                        
+        <li class="hidden-crumb">
+                        
+                            <span class=""><a href="https://wiki.scn.sap.com/wiki/display/BI/SAP+Business+Warehouse+Home" target="_blank">SAP Business Warehouse Home</a></span>
+                                                                                                    
+                        
+        </li><li class="hidden-crumb">
+                        
+                            <span class=""><a href="https://wiki.scn.sap.com/wiki/display/BI/BW+-+Data+Warehouse+Management" target="_blank">BW - Data Warehouse Management</a></span>
+                                                                                                    
+                        
+        </li><li class="hidden-crumb">
+                        
+                            <span class=""><a href="https://wiki.scn.sap.com/wiki/display/BI/Data+Warehousing+Workbench" target="_blank">Data Warehousing Workbench</a></span>
+                                                                                    
+                        
+        </li><li>
+                        
+                            <span class=""><a href="https://wiki.scn.sap.com/wiki/display/BI/Important+Tables+in+SAP+BW+7.x" target="_blank">Important Tables in SAP BW 7.x</a></span>
+                                                                                    
+                        
+        </li><li>
+                        
+                            <span class="edited-page-title"><a href="https://wiki.scn.sap.com/wiki/display/BI/Hierarchy+Tables" target="_blank">Hierarchy Tables</a></span>
+                                                                    </li></ol>
+
+</content>
+</div>
+
+
+        
+    <div id="anonymous-warning" class="aui-message warning closeable">Вы не можете зарегистрироваться в системе. Любые изменения, которые Вы сделаете, будут помечены как сделанные  <span class="smalltext">анонимно</span>. Вы можете <a href="https://wiki.scn.sap.com/wiki/login.jsp?os_destination=%2Fdisplay%2FBI%2FHierarchy%2BTables">Войти</a>, если у Вас есть учётная запись.</div>
+
+                                                                                        
+
+<script type="text/x-template" title="editor-css" id="editor-css-resources">
+    <link type="text/css" rel="stylesheet" href="/wiki/s/d41d8cd98f00b204e9800998ecf8427e-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/1.1.11/_/download/batch/com.atlassian.confluence.plugins.confluence-collaborative-editor-plugin:confluence-collaborative-editor-plugin-editor-content-resources/com.atlassian.confluence.plugins.confluence-collaborative-editor-plugin:confluence-collaborative-editor-plugin-editor-content-resources.css" data-wrm-key="com.atlassian.confluence.plugins.confluence-collaborative-editor-plugin:confluence-collaborative-editor-plugin-editor-content-resources" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/c974c7c93f9cb1cd5fa3f835d7fb2480-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/5.9.15/_/download/batch/com.atlassian.auiplugin:aui-page-typography/com.atlassian.auiplugin:aui-page-typography.css" data-wrm-key="com.atlassian.auiplugin:aui-page-typography" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/c974c7c93f9cb1cd5fa3f835d7fb2480-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/5.9.15/_/download/batch/com.atlassian.auiplugin:aui-avatars/com.atlassian.auiplugin:aui-avatars.css" data-wrm-key="com.atlassian.auiplugin:aui-avatars" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/0bbfdb494bf548561b4c733ad63a5de3-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/5.9.15/_/download/batch/com.atlassian.auiplugin:aui-page-layout/com.atlassian.auiplugin:aui-page-layout.css" data-wrm-key="com.atlassian.auiplugin:aui-page-layout" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/0b93f6790628d797f90f2a9d42a51290-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/5.10.0/_/download/batch/com.atlassian.confluence.editor:editor-content-styles/com.atlassian.confluence.editor:editor-content-styles.css" data-wrm-key="com.atlassian.confluence.editor:editor-content-styles" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/0b93f6790628d797f90f2a9d42a51290-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/5.10.0/_/download/batch/com.atlassian.confluence.editor:table-resizable-editor-content-styles/com.atlassian.confluence.editor:table-resizable-editor-content-styles.css?confluence.table.resizable=true" data-wrm-key="com.atlassian.confluence.editor:table-resizable-editor-content-styles" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/0b93f6790628d797f90f2a9d42a51290-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/5.10.0/_/download/batch/com.atlassian.confluence.editor:table-resizable-styles/com.atlassian.confluence.editor:table-resizable-styles.css?confluence.table.resizable=true" data-wrm-key="com.atlassian.confluence.editor:table-resizable-styles" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/d41d8cd98f00b204e9800998ecf8427e-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/5.10.0/_/download/batch/com.atlassian.confluence.plugins.confluence-templates:variable-editor-content-styles/com.atlassian.confluence.plugins.confluence-templates:variable-editor-content-styles.css" data-wrm-key="com.atlassian.confluence.plugins.confluence-templates:variable-editor-content-styles" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/c974c7c93f9cb1cd5fa3f835d7fb2480-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/5.9.15/_/download/batch/com.atlassian.auiplugin:aui-lozenge/com.atlassian.auiplugin:aui-lozenge.css" data-wrm-key="com.atlassian.auiplugin:aui-lozenge" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/d41d8cd98f00b204e9800998ecf8427e-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/2.17/_/download/batch/com.atlassian.confluence.plugins.status-macro:view_content_status/com.atlassian.confluence.plugins.status-macro:view_content_status.css" data-wrm-key="com.atlassian.confluence.plugins.status-macro:view_content_status" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/489901e715cade6fe0efc7e21e194576-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/2.17/_/download/batch/com.atlassian.confluence.plugins.status-macro:editor_content_status/com.atlassian.confluence.plugins.status-macro:editor_content_status.css" data-wrm-key="com.atlassian.confluence.plugins.status-macro:editor_content_status" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/5baeb58a5608e28c5f241eee74f064b2-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/4.0.2/_/download/batch/confluence.extra.attachments:attachments-css/confluence.extra.attachments:attachments-css.css" data-wrm-key="confluence.extra.attachments:attachments-css" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/d41d8cd98f00b204e9800998ecf8427e-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/1.0/_/download/batch/confluence.web.resources:panel-styles/confluence.web.resources:panel-styles.css" data-wrm-key="confluence.web.resources:panel-styles" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/eac148283904cc3f755d33411208c673-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/1.0/_/download/batch/confluence.web.resources:content-styles/confluence.web.resources:content-styles.css" data-wrm-key="confluence.web.resources:content-styles" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/d41d8cd98f00b204e9800998ecf8427e-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/5.10.0/_/download/batch/com.atlassian.confluence.plugins.confluence-page-layout:editor-pagelayout-content-styles/com.atlassian.confluence.plugins.confluence-page-layout:editor-pagelayout-content-styles.css" data-wrm-key="com.atlassian.confluence.plugins.confluence-page-layout:editor-pagelayout-content-styles" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/d41d8cd98f00b204e9800998ecf8427e-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/4.1.4/_/download/batch/com.atlassian.confluence.plugins.confluence-business-blueprints:sharelinks-urlmacro-editor-resources/com.atlassian.confluence.plugins.confluence-business-blueprints:sharelinks-urlmacro-editor-resources.css" data-wrm-key="com.atlassian.confluence.plugins.confluence-business-blueprints:sharelinks-urlmacro-editor-resources" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/d41d8cd98f00b204e9800998ecf8427e-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/7.0.2/_/download/batch/com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-styles/com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-styles.css" data-wrm-key="com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-styles" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/d41d8cd98f00b204e9800998ecf8427e-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/7.0.2/_/download/batch/com.atlassian.confluence.plugins.confluence-inline-tasks:editor-autocomplete-date-css/com.atlassian.confluence.plugins.confluence-inline-tasks:editor-autocomplete-date-css.css" data-wrm-key="com.atlassian.confluence.plugins.confluence-inline-tasks:editor-autocomplete-date-css" data-wrm-batch-type="resource" media="all">
+<!--[if lte IE 9]>
+<link type="text/css" rel="stylesheet" href="/wiki/s/d41d8cd98f00b204e9800998ecf8427e-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/7.0.2/_/download/batch/com.atlassian.confluence.plugins.confluence-inline-tasks:editor-autocomplete-date-css/com.atlassian.confluence.plugins.confluence-inline-tasks:editor-autocomplete-date-css.css?conditionalComment=lte+IE+9" data-wrm-key="com.atlassian.confluence.plugins.confluence-inline-tasks:editor-autocomplete-date-css" data-wrm-batch-type="resource" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="/wiki/s/3ef04b1c4bad2e221ab8bdb7ce5bb803-CDN/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/1.5.1/_/download/batch/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-editor-content-resources/com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-editor-content-resources.css" data-wrm-key="com.atlassian.confluence.plugins.confluence-view-file-macro:view-file-macro-editor-content-resources" data-wrm-batch-type="resource" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/17/_/styles/colors.css" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/1.0.0-SNAPSHOT/_/download/resources/com.sap.scn.wiki.plugins.com.sap.scn.wiki.plugins.scn-theme:scn-theme/default-theme.css" media="all">
+<link type="text/css" rel="stylesheet" href="/wiki/s/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/1.0.0-SNAPSHOT/_/download/resources/com.sap.scn.wiki.plugins.com.sap.scn.wiki.plugins.scn-theme:scn-theme/com.sap.scn.wiki.plugins.scn-theme.css" media="all">
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+<div class="editor-container">
+
+        
+            
+
+<div id="link-browser-tab-items" class="hidden">
+                <div title="Поиск" data-weight="10">search</div>
+            <div title="Файлы" data-weight="30">attachments</div>
+            <div title="Web ссылка" data-weight="40">weblink</div>
+            <div title="Дополнительно" data-weight="50">advanced</div>
+    </div>
+            <div id="image-properties-tab-items" class="hidden">
+                <div title="Эффекты" data-weight="10">image-effects</div>
+            <div title="Заголовок" data-weight="20">image-attributes</div>
+    </div>
+            
+
+ 
+
+
+
+
+
+
+
+
+
+        <div id="toolbar">
+        <div id="rte-toolbar" class="aui-toolbar aui-toolbar2">
+
+            <div class="aui-toolbar2-primary toolbar-primary">
+                <ul class="aui-buttons rte-toolbar-group-formatting">
+                                        <li id="format-dropdown" class="toolbar-item toolbar-dropdown">
+                        <div class="aui-dd-parent">
+                            <a id="format-dropdown-display" href="#" class="toolbar-trigger aui-dd-trigger aui-button" data-control-id="formatselect">
+                                <span class="dropdown-text">Абзац</span>
+                                    
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-dropdown "></span>
+                            </a>
+                            <ul id="format-dropdown-display-menu" class="aui-dropdown hidden">
+                                    <li class="dropdown-item format-p" data-format="p" data-tooltip="Абзац (Ctrl +0)">
+        <a class="item-link" href="#">Абзац</a>
+    </li>
+                                    <li class="dropdown-item format-h1" data-format="h1" data-tooltip="Заголовок 1 (Ctrl+1)">
+        <a class="item-link" href="#">Заголовок 1</a>
+    </li>
+                                    <li class="dropdown-item format-h2" data-format="h2" data-tooltip="Заголовок 2 (Ctrl+2)">
+        <a class="item-link" href="#">Заголовок 2</a>
+    </li>
+                                    <li class="dropdown-item format-h3" data-format="h3" data-tooltip="Заголовок 3 (Ctrl+3)">
+        <a class="item-link" href="#">Заголовок 3</a>
+    </li>
+                                    <li class="dropdown-item format-h4" data-format="h4" data-tooltip="Заголовок 4 (Ctrl+4)">
+        <a class="item-link" href="#">Заголовок 4</a>
+    </li>
+                                    <li class="dropdown-item format-h5" data-format="h5" data-tooltip="Заголовок 5 (Ctrl+5)">
+        <a class="item-link" href="#">Заголовок 5</a>
+    </li>
+                                    <li class="dropdown-item format-h6" data-format="h6" data-tooltip="Заголовок 6 (Ctrl+6)">
+        <a class="item-link" href="#">Заголовок 6</a>
+    </li>
+                                    <li class="dropdown-item format-pre" data-format="pre" data-tooltip="Выровненный (Ctrl +7)">
+        <a class="item-link" href="#">Выровненный</a>
+    </li>
+                                    <li class="dropdown-item format-blockquote" data-format="blockquote" data-tooltip="Цитата (Ctrl+8)">
+        <a class="item-link" href="#">Цитата</a>
+    </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="aui-buttons rte-toolbar-group-style">
+                    
+                <li class="toolbar-item aui-button" id="rte-button-bold" data-tooltip="Жирный (Ctrl+B)">
+        <a class="toolbar-trigger" href="#" data-control-id="bold">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-editor-bold ">Жирный</span>
+        </a>
+    </li>
+                    
+                <li class="toolbar-item aui-button" id="rte-button-italic" data-tooltip="Курсив (Ctrl+I)">
+        <a class="toolbar-trigger" href="#" data-control-id="italic">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-editor-italic ">Курсив</span>
+        </a>
+    </li>
+                    
+                <li class="toolbar-item aui-button" id="rte-button-underline" data-tooltip="Подчеркнутый (Ctrl + U)">
+        <a class="toolbar-trigger" href="#" data-control-id="underline">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-editor-underline ">Подчеркнутый</span>
+        </a>
+    </li>
+                                        <li id="color-picker-control" class="toolbar-item toolbar-splitbutton">
+                        <a class="toolbar-trigger aui-button" href="#" id="rte-button-color" data-color="003366" data-tooltip="Цвет"><span class="icon aui-icon aui-icon-small aui-iconfont-editor-color ">Cредство выбора цвета</span><span class="selected-color"></span></a><div class="aui-dd-parent"><a class="toolbar-trigger aui-dd-trigger aui-button" href="#" id="rte-button-color-selector" data-control-id="colorSelector" data-tooltip="Дополнительные цвета"><span class="icon aui-icon aui-icon-small aui-iconfont-dropdown ">Дополнительные цвета</span></a><div class="color-picker-container"><div class="color-picker aui-dropdown hidden"><ul><li><a href="#" style="background-color: #000000" data-color="000000">&nbsp;</a></li><li><a href="#" style="background-color: #993300" data-color="993300">&nbsp;</a></li><li><a href="#" style="background-color: #333300" data-color="333300">&nbsp;</a></li><li><a href="#" style="background-color: #003300" data-color="003300">&nbsp;</a></li><li><a href="#" style="background-color: #003366" data-color="003366">&nbsp;</a></li><li><a href="#" style="background-color: #000080" data-color="000080">&nbsp;</a></li><li><a href="#" style="background-color: #333399" data-color="333399">&nbsp;</a></li><li><a href="#" style="background-color: #333333" data-color="333333">&nbsp;</a></li><li><a href="#" style="background-color: #800000" data-color="800000">&nbsp;</a></li><li><a href="#" style="background-color: #FF6600" data-color="FF6600">&nbsp;</a></li><li><a href="#" style="background-color: #808000" data-color="808000">&nbsp;</a></li><li><a href="#" style="background-color: #008000" data-color="008000">&nbsp;</a></li><li><a href="#" style="background-color: #008080" data-color="008080">&nbsp;</a></li><li><a href="#" style="background-color: #0000FF" data-color="0000FF">&nbsp;</a></li><li><a href="#" style="background-color: #666699" data-color="666699">&nbsp;</a></li><li><a href="#" style="background-color: #808080" data-color="808080">&nbsp;</a></li><li><a href="#" style="background-color: #FF0000" data-color="FF0000">&nbsp;</a></li><li><a href="#" style="background-color: #FF9900" data-color="FF9900">&nbsp;</a></li><li><a href="#" style="background-color: #99CC00" data-color="99CC00">&nbsp;</a></li><li><a href="#" style="background-color: #339966" data-color="339966">&nbsp;</a></li><li><a href="#" style="background-color: #33CCCC" data-color="33CCCC">&nbsp;</a></li><li><a href="#" style="background-color: #3366FF" data-color="3366FF">&nbsp;</a></li><li><a href="#" style="background-color: #800080" data-color="800080">&nbsp;</a></li><li><a href="#" style="background-color: #999999" data-color="999999">&nbsp;</a></li><li><a href="#" style="background-color: #FF00FF" data-color="FF00FF">&nbsp;</a></li><li><a href="#" style="background-color: #FFCC00" data-color="FFCC00">&nbsp;</a></li><li><a href="#" style="background-color: #FFFF00" data-color="FFFF00">&nbsp;</a></li><li><a href="#" style="background-color: #00FF00" data-color="00FF00">&nbsp;</a></li><li><a href="#" style="background-color: #00FFFF" data-color="00FFFF">&nbsp;</a></li><li><a href="#" style="background-color: #00CCFF" data-color="00CCFF">&nbsp;</a></li><li><a href="#" style="background-color: #993366" data-color="993366">&nbsp;</a></li><li><a href="#" style="background-color: #C0C0C0" data-color="C0C0C0">&nbsp;</a></li><li><a href="#" style="background-color: #FF99CC" data-color="FF99CC">&nbsp;</a></li><li><a href="#" style="background-color: #FFCC99" data-color="FFCC99">&nbsp;</a></li><li><a href="#" style="background-color: #FFFF99" data-color="FFFF99">&nbsp;</a></li><li><a href="#" style="background-color: #CCFFCC" data-color="CCFFCC">&nbsp;</a></li><li><a href="#" style="background-color: #CCFFFF" data-color="CCFFFF">&nbsp;</a></li><li><a href="#" style="background-color: #99CCFF" data-color="99CCFF">&nbsp;</a></li><li><a href="#" style="background-color: #CC99FF" data-color="CC99FF">&nbsp;</a></li><li><a href="#" style="background-color: #FFFFFF" data-color="FFFFFF">&nbsp;</a></li></ul></div></div></div>
+                    </li>
+                    <li id="more-menu" class="toolbar-item toolbar-dropdown">
+                        <div class="aui-dd-parent">
+                            <a id="rte-button-more" href="#" class="toolbar-trigger aui-dd-trigger aui-button" data-tooltip="Больше">
+                                    
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-editor-styles ">Форматирование</span>
+                                    
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-dropdown "></span>
+                            </a>
+                            <div id="rte-button-more-menu" class="aui-dropdown grouped hidden">
+                                <div class="grouped-dropdown-item">
+                                    <ul>
+                                                                <li class="dropdown-item more-menu-trigger" data-control-id="strikethrough" data-tooltip="Зачеркнутый (Ctrl + Shift + S)">
+        <a id="rte-strikethrough" class="item-link" href="#">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-check hidden"></span>
+Зачеркнутый
+        </a>
+    </li>
+                                                                 <li class="dropdown-item more-menu-trigger" data-control-id="sub" data-tooltip="">
+        <a id="rte-sub" class="item-link" href="#">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-check hidden"></span>
+Нижний индекс
+        </a>
+    </li>
+                                                                 <li class="dropdown-item more-menu-trigger" data-control-id="sup" data-tooltip="">
+        <a id="rte-sup" class="item-link" href="#">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-check hidden"></span>
+Верхний индекс
+        </a>
+    </li>
+                                                        <li class="dropdown-item more-menu-trigger" data-control-id="monospace" data-tooltip="Форматировать текст с моноширинным шрифтом">
+        <a id="rte-monospace" class="item-link" href="#">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-check hidden"></span>
+Моноширинный
+        </a>
+    </li>
+
+                                                                                                                    </ul>
+                                </div>
+                                <div class="grouped-dropdown-item">
+                                    <ul>
+                                            <li class="dropdown-item more-menu-trigger no-icon" data-format="removeformat" data-tooltip="Удаляет форматирование выделенного текста">
+        <a id="rte-removeformat" class="item-link" href="#">
+            Очистить форматирование
+        </a>
+    </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                </ul>
+
+                <ul class="aui-buttons rte-toolbar-group-lists">
+                    
+                <li class="toolbar-item aui-button" id="rte-button-bullist" data-tooltip="Маркированный список (Ctrl+Shift+B)">
+        <a class="toolbar-trigger" href="#" data-control-id="bullist">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-editor-list-bullet ">Маркированный список</span>
+        </a>
+    </li>
+                    
+                <li class="toolbar-item aui-button" id="rte-button-numlist" data-tooltip="Нумерованный список (Ctrl+Shift+N)">
+        <a class="toolbar-trigger" href="#" data-control-id="numlist">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-editor-list-number ">Нумерованный список</span>
+        </a>
+    </li>
+                </ul>
+                                <ul class="aui-buttons rte-toolbar-group-task-lists">
+                    
+                <li class="toolbar-item aui-button" id="rte-button-tasklist" data-tooltip="Список задач ([ затем ])">
+        <a class="toolbar-trigger" href="#" data-control-id="tasklist">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-editor-task ">Список задач</span>
+        </a>
+    </li>
+                </ul>
+                
+                <ul class="aui-buttons rte-toolbar-group-indentation">
+                    
+                <li class="toolbar-item aui-button" id="rte-button-outdent" data-tooltip="Убрать отступ">
+        <a class="toolbar-trigger" href="#" data-control-id="outdent">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-editor-outdent ">Убрать отступ</span>
+        </a>
+    </li>
+                    
+                <li class="toolbar-item aui-button" id="rte-button-indent" data-tooltip="Сделать отступ">
+        <a class="toolbar-trigger" href="#" data-control-id="indent">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-editor-indent ">Сделать отступ</span>
+        </a>
+    </li>
+                </ul>
+
+                <ul class="aui-buttons rte-toolbar-group-justification">
+                    
+                <li class="toolbar-item aui-button" id="rte-button-justifyleft" data-tooltip="Выровнить по левому краю">
+        <a class="toolbar-trigger" href="#" data-control-id="justifyleft">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-editor-align-left ">Выровнить по левому краю</span>
+        </a>
+    </li>
+                    
+                <li class="toolbar-item aui-button" id="rte-button-justifycenter" data-tooltip="Выровнить по центру">
+        <a class="toolbar-trigger" href="#" data-control-id="justifycenter">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-editor-align-center ">Выровнить по центру</span>
+        </a>
+    </li>
+                    
+                <li class="toolbar-item aui-button" id="rte-button-justifyright" data-tooltip="Выровнить по правому краю">
+        <a class="toolbar-trigger" href="#" data-control-id="justifyright">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-editor-align-right ">Выровнить по правому краю</span>
+        </a>
+    </li>
+                </ul>
+
+                                <ul class="aui-buttons hidden" id="page-layout-2-group">
+                    <li id="page-layout-2" class="toolbar-item" data-tooltip="Разметка страницы">
+                        <a href="#" class="aui-button toolbar-trigger" id="rte-button-pagelayout-2">
+                                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-editor-layout ">Разметка страницы</span>
+                        </a>
+                    </li>
+                </ul>
+                
+
+                <ul class="aui-buttons rte-toolbar-group-files hidden"></ul>
+
+                <ul class="aui-buttons rte-toolbar-group-link no-separator">
+                    <li class="toolbar-item" data-tooltip="Вставить ссылку (Ctrl+K)">
+                        <a id="rte-button-link" class="toolbar-trigger aui-button" href="#" data-control-id="linkbrowserButton">
+                                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-link "></span>
+                            <span class="trigger-text">Ссылка</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="aui-buttons rte-toolbar-group-table no-separator">
+                    <li class="toolbar-item toolbar-dropdown" id="insert-table-dropdown">
+                        <div class="aui-dd-parent">
+                            <a href="#" class="toolbar-trigger aui-dd-trigger aui-button" id="rte-button-insert-table" data-tooltip="Вставить таблицу">
+                                    
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-editor-table "></span>
+                                <span class="dropdown-text">Таблица</span>
+                                    
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-dropdown "></span>
+                            </a>
+
+                            <div id="table-picker-container" class="hidden aui-box-shadow">
+                                <div class="table-picker-box" data-tooltip="Удерживайте нажатой SHIFT для таблицы без заголовка.">
+                                    <div class="table-picker-background">
+                                        <div class="picker picker-cell"></div>
+                                        <div class="picker picker-heading heading"></div>
+                                        <div class="picker picker-selected-cell"></div>
+                                        <div class="picker picker-selected-heading heading"></div>
+                                    </div>
+                                    <p class="desc"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                                                                
+                
+                <ul class="aui-buttons rte-toolbar-group-insert no-separator">
+                    <li class="toolbar-item toolbar-dropdown" id="insert-menu">
+                        <div class="aui-dd-parent">
+                            <a href="#" class="toolbar-trigger aui-dd-trigger aui-button" id="rte-button-insert" data-tooltip="Вставить прочий контент">
+                                    
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-add "></span>
+                                <span class="dropdown-text">Вставить</span>
+                                    
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-dropdown "></span>
+                            </a>
+
+                            <div id="insert-menu-options" class="aui-dropdown grouped hidden">
+                                <div class="grouped-dropdown-item">
+                                    <span class="assistive">Добавить содержимое</span>
+                                    <ul id="content-insert-list">
+                                        
+        
+        <li class="dropdown-item content-image" data-command="mceConfimage" data-tooltip="Вставить файлы и изображения (Ctrl+M)">
+        <a id="rte-insert-image" class="item-link" href="#">
+                
+    
+    <span class="icon "></span>
+ Файлы и изображения
+        </a>
+    </li>
+                                        
+        
+        <li class="dropdown-item content-link" data-control-id="linkbrowserButton" data-tooltip="Вставить ссылку (Ctrl+K)">
+        <a id="rte-insert-link" class="item-link" href="#">
+                
+    
+    <span class="icon "></span>
+ Ссылка
+        </a>
+    </li>
+                                        
+    
+        <li class="dropdown-item content-symbol" data-command="confCharmap" data-tooltip="Вставить символ">
+        <a id="rte-insert-symbol" class="item-link" href="#">
+                
+    
+    <span class="icon "></span>
+ Символ
+        </a>
+    </li>
+                                        
+    
+        <li class="dropdown-item content-emoticon" data-command="mceEmotion" data-tooltip="Вставить смайлик">
+        <a id="rte-insert-emoticon" class="item-link" href="#">
+                
+    
+    <span class="icon "></span>
+ Смайл
+        </a>
+    </li>
+                                        
+        
+        <li class="dropdown-item content-wikimarkup" data-command="InsertWikiMarkup" data-tooltip="Вставить разметку (Ctrl+Shift+D)">
+        <a id="rte-insert-wikimarkup" class="item-link" href="#">
+                
+    
+    <span class="icon "></span>
+ Разметка
+        </a>
+    </li>
+                                        
+    
+        <li class="dropdown-item content-hr" data-command="InsertHorizontalRule" data-tooltip="Вставить горизонтальную линию (----)">
+        <a id="rte-insert-hr" class="item-link" href="#">
+                
+    
+    <span class="icon "></span>
+ Горизонтальная линия
+        </a>
+    </li>
+                                                                                    
+        
+        <li class="dropdown-item content-tasklist" data-command="InsertInlineTaskListNoToggle" data-tooltip="Вставить список задач ([ затем ])">
+        <a id="rte-insert-tasklist" class="item-link" href="#">
+                
+    
+    <span class="icon "></span>
+ Список задач
+        </a>
+    </li>
+                                                                            </ul>
+                                </div>
+                                <div class="grouped-dropdown-item">
+                                    <span class="assistive">Вставить макрос</span>
+                                    <ul id="macro-insert-list">
+                                                                        
+                                                                        
+                                <li class="dropdown-item macro-info" data-macro-name="info" data-tooltip="Вставить 'Информация' макрос">
+        <a id="info" class="item-link" href="#">
+                
+    
+    <span class="icon "></span>
+ Информация
+        </a>
+    </li>
+                                                                                                <li class="dropdown-item macro-status" data-macro-name="status" data-tooltip="Вставить 'Статус' макрос">
+        <a id="status" class="item-link" href="#">
+                
+    
+    <span class="icon "></span>
+ Статус
+        </a>
+    </li>
+                                                                                                <li class="dropdown-item macro-gallery" data-macro-name="gallery" data-tooltip="Вставить 'Галерея' макрос">
+        <a id="gallery" class="item-link" href="#">
+                
+    
+    <span class="icon "></span>
+ Галерея
+        </a>
+    </li>
+                                                                                                <li class="dropdown-item macro-toc" data-macro-name="toc" data-tooltip="Вставить 'Оглавление' макрос">
+        <a id="toc" class="item-link" href="#">
+                
+    
+    <span class="icon "></span>
+ Оглавление
+        </a>
+    </li>
+                                                                                                                            
+        
+        <li class="dropdown-item content-macro" data-command="mceConfMacroBrowser" data-tooltip="Открыть обзореватель макросов (Ctrl+Shift+A)">
+        <a id="rte-insert-macro" class="item-link" href="#">
+                
+    
+    <span class="icon "></span>
+ Другие макросы
+        </a>
+    </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                                <ul class="aui-buttons rte-toolbar-group-page-layouts-section-types">
+                    <li id="pagelayout-menu" class="toolbar-item toolbar-dropdown">
+                        <div class="aui-dd-parent">
+                            <a href="#" class="toolbar-trigger aui-dd-trigger aui-button" id="rte-button-pagelayout" data-tooltip="Разметка страницы">
+                                    
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-layout pagelayout-default">Разметка страницы</span>
+                                    
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-dropdown "></span>
+                            </a>
+
+                            <ul id="pagelayout-menu-options" class="aui-dropdown hidden">
+                                <li class="dropdown-item" data-tooltip="Нет форматирования">
+    <a href="#" class="item-link" data-atlassian-layout="{&quot;name&quot;: &quot;pagelayout-none&quot;, &quot;columns&quot;: 0   }">
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-check hidden"></span>
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-layout pagelayout-none">Нет форматирования</span>
+    </a>
+</li>
+                                <li class="dropdown-item" data-tooltip="Две колонки (простые)">
+    <a href="#" class="item-link" data-atlassian-layout="{&quot;name&quot;: &quot;pagelayout-two-simple&quot;, &quot;columns&quot;: [&quot;&quot;, &quot;&quot;]   }">
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-check hidden"></span>
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-layout pagelayout-two-simple">Две колонки (простые)</span>
+    </a>
+</li>
+                                <li class="dropdown-item" data-tooltip="Две колонки (простая, левая боковая панель)">
+    <a href="#" class="item-link" data-atlassian-layout="{&quot;name&quot;: &quot;pagelayout-two-simple-left&quot;, &quot;columns&quot;: [&quot;aside&quot;, &quot;large&quot;]   }">
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-check hidden"></span>
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-layout pagelayout-two-simple-left">Две колонки (простая, левая боковая панель)</span>
+    </a>
+</li>
+                                <li class="dropdown-item" data-tooltip="Две колонки (простые, правая боковая панель)">
+    <a href="#" class="item-link" data-atlassian-layout="{&quot;name&quot;: &quot;pagelayout-two-simple-right&quot;, &quot;columns&quot;: [&quot;large&quot;, &quot;aside&quot;]   }">
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-check hidden"></span>
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-layout pagelayout-two-simple-right">Две колонки (простые, правая боковая панель)</span>
+    </a>
+</li>
+                                <li class="dropdown-item" data-tooltip="Три колонки (простые)">
+    <a href="#" class="item-link" data-atlassian-layout="{&quot;name&quot;: &quot;pagelayout-three-simple&quot;, &quot;columns&quot;: [&quot;&quot;, &quot;&quot;, &quot;&quot;]   }">
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-check hidden"></span>
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-layout pagelayout-three-simple">Три колонки (простые)</span>
+    </a>
+</li>
+                                <li class="dropdown-item" data-tooltip="Две колонки">
+    <a href="#" class="item-link" data-atlassian-layout="{&quot;name&quot;: &quot;pagelayout-two&quot;, &quot;columns&quot;: [&quot;&quot;, &quot;&quot;] , &quot;header&quot;: true  , &quot;footer&quot;:true  }">
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-check hidden"></span>
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-layout pagelayout-two">Две колонки</span>
+    </a>
+</li>
+                                <li class="dropdown-item" data-tooltip="Две колонки (левая боковая панель)">
+    <a href="#" class="item-link" data-atlassian-layout="{&quot;name&quot;: &quot;pagelayout-two-left&quot;, &quot;columns&quot;: [&quot;aside&quot;, &quot;large&quot;] , &quot;header&quot;: true  , &quot;footer&quot;:true  }">
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-check hidden"></span>
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-layout pagelayout-two-left">Две колонки (левая боковая панель)</span>
+    </a>
+</li>
+                                <li class="dropdown-item" data-tooltip="Две колонки (правая боковая панель)">
+    <a href="#" class="item-link" data-atlassian-layout="{&quot;name&quot;: &quot;pagelayout-two-right&quot;, &quot;columns&quot;: [&quot;large&quot;, &quot;aside&quot;] , &quot;header&quot;: true  , &quot;footer&quot;:true  }">
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-check hidden"></span>
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-layout pagelayout-two-right">Две колонки (правая боковая панель)</span>
+    </a>
+</li>
+                                <li class="dropdown-item" data-tooltip="Три колонки">
+    <a href="#" class="item-link" data-atlassian-layout="{&quot;name&quot;: &quot;pagelayout-three&quot;, &quot;columns&quot;: [&quot;&quot;, &quot;&quot;, &quot;&quot;] , &quot;header&quot;: true  , &quot;footer&quot;:true  }">
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-check hidden"></span>
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-layout pagelayout-three">Три колонки</span>
+    </a>
+</li>
+                                <li class="dropdown-item" data-tooltip="Три колонки (левая и правая боковые панели)">
+    <a href="#" class="item-link" data-atlassian-layout="{&quot;name&quot;: &quot;pagelayout-three-sidebars&quot;, &quot;columns&quot;: [&quot;sidebars&quot;, &quot;large&quot;, &quot;sidebars&quot;] , &quot;header&quot;: true  , &quot;footer&quot;:true  }">
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-check hidden"></span>
+            
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-layout pagelayout-three-sidebars">Три колонки (левая и правая боковые панели)</span>
+    </a>
+</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                
+                                                
+                <ul class="aui-buttons rte-toolbar-group-undo">
+                    
+                <li class="toolbar-item aui-button" id="rte-button-undo" data-tooltip="Отменить (Ctrl + Z)">
+        <a class="toolbar-trigger" href="#" data-control-id="undo">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-undo ">Отменить</span>
+        </a>
+    </li>
+                    
+                <li class="toolbar-item aui-button" id="rte-button-redo" data-tooltip="Восстановить (Ctrl + Y)">
+        <a class="toolbar-trigger" href="#" data-control-id="redo">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-redo ">Восстановить</span>
+        </a>
+    </li>
+                </ul>
+                                <ul id="pluggable-status-container" class="aui-buttons rte-toolbar-pluggable-status no-separator">
+                    <div id="pluggable-status"></div>
+                </ul>
+                            </div>                                                                                                <div id="draft-status" style="display:none"></div>
+                            <div class="aui-toolbar2-secondary">
+                <ul class="aui-buttons rte-toolbar-group-searchreplace">
+                        <li class="toolbar-item aui-button" id="rte-button-searchreplace" data-tooltip="Найти/Заменить">
+        <a class="toolbar-trigger" href="#" data-control-id="searchreplace">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-search ">Найти/Заменить</span>
+        </a>
+    </li>
+                </ul>
+                <ul class="aui-buttons rte-toolbar-group-help">
+                        <li class="toolbar-item aui-button" id="rte-button-help" data-tooltip="Помощь">
+        <a class="toolbar-trigger" href="#" data-control-id="help">
+                
+    
+    <span class="icon aui-icon aui-icon-small aui-iconfont-editor-help ">Справка по быстрым ссылкам на клавиатуре</span>
+        </a>
+    </li>
+                </ul>
+            </div>        </div>    </div>
+        
+        
+                                        <div id="editor-notifications-container"><div id="editor-messages"><div id="anonymous-warning" class="aui-message warning closeable">Вы не можете зарегистрироваться в системе. Любые изменения, которые Вы сделаете, будут помечены как сделанные  <span class="smalltext">анонимно</span>. Вы можете <a href="https://wiki.scn.sap.com/wiki/login.jsp?os_destination=%2Fdisplay%2FBI%2FHierarchy%2BTables">Войти</a>, если у Вас есть учётная запись.</div><div id="heartbeat-div" class="hidden"><div class="aui-message info closeable"><span class="aui-icon icon-info"></span>Эту страницу также редактирует <span id="other-users-span"></span>. При сохранении изменения будут объединены.</div></div></div><div id="all-messages"><div id="action-messages"></div></div></div><div id="editor-precursor"><div class="cell"><div class="aui-buttons aui-toolbar2"><button class="aui-button aui-button-subtle" type="button" data-tooltip="1 Метка" id="rte-button-labels" data-explicit-restrictions="" data-inherited-restrictions=""><span class="icon aui-icon aui-icon-small aui-iconfont-devtools-tag"></span></button></div><div id="content-title-div"><input name="title" id="content-title" tabindex="1" class="text pagetitle" autocomplete="off" value="Hierarchy Tables" placeholder="Заголовок страницы" type="text"></div></div></div>
+            
+    <div id="wysiwyg">
+        <div id="rte" class="cell editor-default">
+            <textarea id="wysiwygTextarea" name="wysiwygContent" class="hidden tinymce-editor"></textarea>
+        </div>
+    </div>
+    <div id="editor-html-source-container" class="hidden">
+        <textarea id="editor-html-source" class="monospaceInput"></textarea>
+    </div>
+
+    <div id="preview">
+                        <div id="previewArea" class="cell">
+        </div>
+    </div>
+
+            <div id="savebar-container"><div id="rte-savebar" class="aui-toolbar aui-toolbar2"><div class="toolbar-split toolbar-split-row toolbar-split-captcha"><div class="toolbar-group"><div class="toolbar-item"><div class="captcha field-group"><label id="captcha-response-label" for="captcha-response"><span class="assistive">If
+ you are unable to use this CAPTCHA please &lt;a 
+href="administrators.action" tabindex="5"&gt;contact your 
+administrator&lt;/a&gt; for assistance.</span></label><img src="Hierarchy%20Tables_files/jcaptcha.png" class="captcha-image" alt="CAPTCHA изображение"><input name="captchaId" value="245807679" placeholder="Введите указанное слово" type="hidden"><input id="captcha-response" name="captchaResponse" class="text" placeholder="Введите указанное слово" type="text"></div></div></div></div><div class="toolbar-split toolbar-split-row"><div class="toolbar-split toolbar-split-left"><div class="aui-buttons"></div></div><div class="toolbar-split toolbar-split-right"><div class="aui-buttons" id="rte-savebar-tinymce-plugin-point"></div><div class="aui-buttons"><span id="rte-spinner" class="toolbar-item ">&nbsp;</span></div><div class="aui-buttons toolbar-group-edit assistive"><button id="rte-button-edit" class="aui-button" title="Вернуться в режим редактирования" type="button"><span class="trigger-text">Редактировать</span></button></div><div class="aui-buttons toolbar-group-preview"><button class="aui-button toolbar-item" id="rte-button-preview" title="Предпросмотр" type="button"><span class="trigger-text">Предварительный просмотр</span></button></div><div class="save-button-container"><button class="aui-button aui-button-primary" type="submit" id="rte-button-publish" name="confirm" value="Save" title="Сохранить"><span class="trigger-text">Сохранить</span></button></div><button class="toolbar-item-link aui-button aui-button-link" type="submit" id="rte-button-cancel" name="cancel" value="cancel"><span class="trigger-text">Отменить</span></button></div></div></div></div>
+    
+<section role="dialog" id="discard-changes-dialog" class="aui-layer aui-dialog2 aui-dialog2-medium" aria-hidden="true">
+    <!-- Dialog header -->
+    <header class="aui-dialog2-header">
+        <h2 class="aui-dialog2-header-main">Отменить неопубликованные изменения</h2>
+    </header>
+    <div class="aui-dialog2-content">
+        <div>
+            <p>Это вернет редактор к последней опубликованной версии 
+данной страницы. Если кто-либо еще имеет неопубликованные изменения на 
+странице, вы отмените эти изменения тоже.</p>
+        </div>
+        <div id="show-diff-body" style="display:none">
+            <div id="show-diff-dialog-content">
+                <div class="legend">
+                    <span class="legend-title">Ключ: </span>
+                    <span class="diff-html-added">Эта строка добавлена.</span>
+                    <span class="diff-html-removed">Эта строка удалена.</span>
+                    <span class="diff-html-changed">Изменено форматирование.</span>
+                </div>
+                <hr>
+                <div id="show-diff-dialog-content-body"></div>
+            </div>
+        </div>
+    </div>
+    <footer id="discard-warning-footer" class="aui-dialog2-footer">
+        <div class="aui-dialog2-footer-actions">
+            <button id="discard-changes-dialog-submit-button" class="aui-button aui-button-primary">Удалить</button>
+            <button id="discard-changes-dialog-show-diff-button" class="aui-button">Смотреть изменения</button>
+            <button id="discard-changes-dialog-close-button" class="aui-button aui-button-link">Закрыть</button>
+        </div>
+    </footer>
+
+    <footer id="show-diff-footer" class="aui-dialog2-footer" style="display:none">
+        <div class="aui-dialog2-footer-actions">
+            <button id="show-diff-dialog-submit-button" class="aui-button aui-button-primary">Удалить</button>
+            <button id="show-diff-dialog-close-button" class="aui-button aui-button-link">Закрыть</button>
+        </div>
+    </footer>
+</section>
+
+    
+</div>
+
+
+
+<script type="text/x-template" title="dynamic-editor-metadata" id="dynamic-editor-metadata-template">
+            <meta name="ajs-use-watch" content="false">
+            <meta name="ajs-attachment-source-content-id" content="145031268">
+            <meta name="ajs-fallback-mode" content="false">
+            <meta name="ajs-use-inline-tasks" content="true">
+            <meta name="ajs-heartbeat" content="true">
+            <meta name="ajs-action-locale" content="ru_RU">
+            <meta name="ajs-editor-plugin-resource-prefix" content="/wiki/s/ru_RU/312/c568f796f3f8ace564a3b6ddb68509c75e50e3a9/5.10.0/_">
+            <meta name="ajs-existing-draft-id" content="0">
+            <meta name="ajs-user-watching-own-content" content="false">
+            <meta name="ajs-new-page" content="false">
+            <meta name="ajs-content-id" content="145031268">
+            <meta name="ajs-editor-mode" content="richtext">
+            <meta name="ajs-form-name" content="inlinecommentform">
+            <meta name="ajs-auto-start" content="false">
+            <meta name="ajs-can-attach-files" content="false">
+            <meta name="ajs-show-draft-message" content="false">
+            <meta name="ajs-conf-revision" content="confluence$content$145031268.0">
+            <meta name="ajs-draft-id" content="0">
+            <meta name="ajs-shared-drafts" content="false">
+            <meta name="ajs-min-editor-height" content="150">
+            <meta name="ajs-draft-share-id" content="">
+            <meta name="ajs-content-type" content="page">
+            <meta name="ajs-version-comment" content="">
+            <meta name="ajs-draft-type" content="page">
+                
+                <meta name="ajs-synchrony-token" content="">
+    <meta name="ajs-synchrony-service-uri" content="">
+    <meta name="ajs-synchrony-resources-uri" content="">
+    <meta name="ajs-synchrony-app-id" content="">
+    <meta name="ajs-synchrony-dark-enabled" content="false">
+    <meta name="ajs-synchrony-expiry" content="">
+
+            		    <meta name="ajs-max-thumb-width" content="300">
+		    <meta name="ajs-max-thumb-height" content="300">
+		    <meta name="ajs-can-send-email" content="true">
+		    <meta name="ajs-is-dev-mode" content="false">
+		    <meta name="ajs-draft-save-interval" content="30000">
+		    <meta name="ajs-show-hidden-user-macros" content="false">
+		    <meta name="ajs-is-admin" content="false">
+		    <meta name="ajs-heartbeat-interval" content="30000">
+	
+    </script>
+
+<script type="text/x-template" title="tableForm" id="table-form-template">
+    <form id="tinymce-table-form" class="aui">
+        <div class="field-group">
+            <label for="rows">Строк</label>
+            <input id="rows" name="rows" type="text" size="3" autocomplete="off" value="{0}">
+        </div>
+        <div class="field-group">
+            <label for="cols">Столбцов</label>
+            <input id="cols" name="cols" type="text" size="3" autocomplete="off" value="{1}">
+        </div>
+        <div class="field-group hidden">
+            <input id="width" type="hidden" name="width" value="">
+            <label for="width">Ширина</label>
+        </div>
+        <div class="group">
+            <div class="checkbox">
+                <input id="table-heading-checkbox" class="checkbox" type="checkbox" name="heading" checked="checked" value="true">
+                <label for="table-heading-checkbox">Первая строка - заголовок</label>
+            </div>
+        </div>
+        <div class="group hidden">
+            <div class="checkbox">
+                <input id="table-equal-width-columns-checkbox" class="checkbox" type="checkbox" name="equal-width-columns" value="false">
+                <label for="table-equal-width-columns-checkbox">Столбцы одинаковой ширины</label>
+            </div>
+        </div>
+    </form>
+</script>
+<input name="draftId" value="0" id="draftId" type="hidden"><input name="originalVersion" value="8" id="originalVersion" type="hidden">
+<input name="syncRev" value="dummy-sync-rev" id="syncRev" type="hidden">    <input name="atl_token" value="ef84994bb4ba5ef2c1f98c8a117ff98538f1f2b6" type="hidden">
+</div><script type="text/javascript" defer="defer" async="" src="Hierarchy%20Tables_files/piwik.js"></script><script type="text/javascript" defer="defer" async="" src="Hierarchy%20Tables_files/piwik_plugin.js"></script></body></html>

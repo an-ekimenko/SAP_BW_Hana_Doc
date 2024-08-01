@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US" prefix="og: //ogp.me/ns#"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en-US" prefix="og: //ogp.me/ns#"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en-US" prefix="og: //ogp.me/ns#"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths js csstransforms csstransforms3d csstransitions js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" prefix="og: //ogp.me/ns#" style="" lang="en-US"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script async="" src="All%20you%20need%20to%20know%20about%20ADSO_files/shares.json"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link href="All%20you%20need%20to%20know%20about%20ADSO_files/css_002.css" rel="stylesheet" type="text/css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="//www.just-bi.nl">
+<link rel="alternate" type="application/rss+xml" title="Just-BI Feed" href="https://www.just-bi.nl/feed/">
+<title>All you need to know about Advanced DSOs... – Just-BI</title>
+
+<script async="" src="All%20you%20need%20to%20know%20about%20ADSO_files/analytics.js"></script><script async="" src="All%20you%20need%20to%20know%20about%20ADSO_files/a" data-sumo-site-id="f4ab0f007b5a9f00d74c0f000a81f7001940cf00252b64005849a00067419300" data-sumo-platform="wordpress"></script><script async="" src="All%20you%20need%20to%20know%20about%20ADSO_files/analytics.js"></script><script type="text/template" id="pvc-stats-view-template">
+    <i class="fa fa-bar-chart pvc-stats-icon medium" aria-hidden="true"></i> 
+	<% if ( total_view > 0 ) { %>
+		<%= total_view %> <%= total_view > 1 ? "total views" : "total view" %>,
+		<% if ( today_view > 0 ) { %>
+			<%= today_view %> <%= today_view > 1 ? "views today" : "view today" %>
+		<% } else { %>
+		no views today		<% } %>
+	<% } else { %>
+	No views yet	<% } %>
+	</script>
+
+<link rel="canonical" href="https://www.just-bi.nl/all-you-need-to-know-about-adso/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="All you need to know about Advanced DSOs... – Just-BI">
+<meta property="og:description" content="Simplify your modeling with ADSO Model Templates Read in Why waste time figuring out which modeling property boxes to tick, when you can model a whole ADSO in one click? This is what model templates could do for you. Even though they’re not new in BW/4HANA (SAP&nbsp;introduced them in BW-on-HANA 7.4), it’s still worth having...">
+<meta property="og:url" content="//www.just-bi.nl/all-you-need-to-know-about-adso/">
+<meta property="og:site_name" content="Just-BI">
+<meta property="article:publisher" content="//www.facebook.com/justbi2003">
+<meta property="article:tag" content="ADSO">
+<meta property="article:tag" content="Advanced DSO">
+<meta property="article:tag" content="BW">
+<meta property="article:tag" content="BW4HANA">
+<meta property="article:tag" content="Eclipse">
+<meta property="article:tag" content="HANA">
+<meta property="article:tag" content="Modeling">
+<meta property="article:tag" content="SAP">
+<meta property="article:tag" content="Templates">
+<meta property="article:section" content="News">
+<meta property="article:published_time" content="2017-02-18T12:18:16+00:00">
+<meta property="article:modified_time" content="2017-07-24T14:13:22+00:00">
+<meta property="og:updated_time" content="2017-07-24T14:13:22+00:00">
+<meta property="og:image" content="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4572/allyouneed.png">
+<meta property="og:image:secure_url" content="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4572/allyouneed.png">
+<meta property="og:image:width" content="1668">
+<meta property="og:image:height" content="1028">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="Simplify your modeling with ADSO Model Templates Read in Why waste time figuring out which modeling property boxes to tick, when you can model a whole ADSO in one click? This is what model templates could do for you. Even though they’re not new in BW/4HANA (SAP&nbsp;introduced them in BW-on-HANA 7.4), it’s still worth having...">
+<meta name="twitter:title" content="All you need to know about Advanced DSOs... – Just-BI">
+<meta name="twitter:site" content="@fairfocusfun">
+<meta name="twitter:image" content="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4572/allyouneed.png">
+<meta name="twitter:creator" content="@fairfocusfun">
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Organization","url":"https:\/\/www.just-bi.nl\/","sameAs":["http:\/\/www.facebook.com\/justbi2003","https:\/\/www.linkedin.com\/company\/just-bi","https:\/\/twitter.com\/fairfocusfun"],"@id":"https:\/\/www.just-bi.nl\/#organization","name":"Just-BI BV.","logo":"http:\/\/just-bi.nl\/wp-content\/uploads\/posts\/2016\/post_\/Just-BI.jpg"}</script>
+
+<link rel="dns-prefetch" href="https://www.gstatic.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Just-BI » Feed" href="https://www.just-bi.nl/feed/">
+<link rel="alternate" type="application/rss+xml" title="Just-BI » Comments Feed" href="https://www.just-bi.nl/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Just-BI » All you need to know about Advanced DSOs… Comments Feed" href="https://www.just-bi.nl/all-you-need-to-know-about-adso/feed/">
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.just-bi.nl\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.8"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="All%20you%20need%20to%20know%20about%20ADSO_files/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/contact-bank-stylesheet.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/system-message.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/front.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/font-awesome_005.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/style_002.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/crp-main-front.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/crp-tc-buttons.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/crp-tiled-layer.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/font-awesome_003.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/settings.css">
+<style id="rs-plugin-settings-inline-css" type="text/css">
+.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}
+</style>
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/genericons.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/bg-show-hide.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/css.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/font-awesome_002.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/jquery-ui.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/simple-job-board-public.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/font-awesome_004.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/bootstrap-front.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/team1.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/team2.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/main.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/prettyPhoto.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/media.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/font-awesome.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/skin.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/retina.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/style.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/widget.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/pvc.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/frontend.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/shortcode.css">
+<link rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/style_003.css">
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/jquery_009.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/jquery-migrate.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/jquery_003.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/jquery_002.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/plupload.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/modernizr.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/jquery_005.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/runtime.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/microformats-shiv.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/underscore.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/backbone.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var vars = {"rest_api_url":"https:\/\/www.just-bi.nl\/wp-json\/pvc\/v1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/pvc.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/crp-main-front.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/crp-helper.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/jquery_006.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/crp-tiled-layer.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/crp-fs-viewer.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/jquery_007.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/jquery_008.js"></script>
+<link rel="//api.w.org/" href="https://www.just-bi.nl/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.just-bi.nl/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.just-bi.nl/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 4.9.8">
+<link rel="shortlink" href="https://www.just-bi.nl/?p=4572">
+<link rel="alternate" type="application/json+oembed" href="https://www.just-bi.nl/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.just-bi.nl%2Fall-you-need-to-know-about-adso%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://www.just-bi.nl/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.just-bi.nl%2Fall-you-need-to-know-about-adso%2F&amp;format=xml">
+<style type="text/css" media="screen">
+</style><script type="text/javascript">/* <![CDATA[ */ jQuery.post("//www.just-bi.nl/wp-admin/admin-ajax.php", { action: "wmp_update", id: 4572, token: "fa53b15a67" }); /* ]]> */</script>
+
+<link rel="shortcut icon" href="https://just-bi.nl/wp-content/uploads/posts/2013/post_/just_logo1.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:url" content="//www.just-bi.nl/all-you-need-to-know-about-adso/">
+<meta name="twitter:title" content="All you need to know about Advanced DSOs…">
+<meta name="twitter:description" content="Simplify your modeling with ADSO Model Templates Read in Why waste time figuring out which modeling property boxes to tick, when you can model a whole ADSO in one click? This is what model templates could do for you. Even though they’re not new in BW/4HANA (SAP&nbsp;introduced them in BW-on-HANA 7.4), it’s still worth having a look at them because most BW modelers are still used to the pre-Eclipse objects. To spare you the agony">
+<meta name="twitter:image" content="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4572/allyouneed.png">
+<meta name="twitter:image:width" content="1668">
+<meta name="twitter:image:height" content="1028">
+<meta name="generator" content="Powered by Slider Revolution 5.3.1.5 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface.">
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-86482906-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<style type="text/css" id="wp-custom-css">
+			.cookie-notice-container{
+    border-top-color: #e8e8e8;
+    border-top-style: solid;
+    border-top-width: 1px;
+}		</style>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="156085c5-0017-4150-b225-a731ad248f38/service" src="All%20you%20need%20to%20know%20about%20ADSO_files/service.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="services/services" src="All%20you%20need%20to%20know%20about%20ADSO_files/services.js"></script><link type="text/css" rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/listbuilder-popup.css"><style>@-webkit-keyframes insQ_100 {  from {  outline: 1px solid transparent  } to {  outline: 0px solid transparent }  }
+#menufication-top { animation-duration: 0.001s; animation-name: insQ_100; -webkit-animation-duration: 0.001s; -webkit-animation-name: insQ_100;  } </style><link type="text/css" rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/sumome-image-sharer.css"><link type="text/css" rel="stylesheet" href="All%20you%20need%20to%20know%20about%20ADSO_files/sumome-share-client.css"></head>
+<body class="post-template-default single single-post postid-4572 single-format-standard layout_right_sidebar  churchope cookies-not-set">
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="//browsehappy.com/">Upgrade to a different browser</a> or <a href="//www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+<header class="clearfix header">
+<div class="header_bottom">
+<div class="header_top clearfix">
+<div class="row">
+<div class="logo grid grid_5">
+<a href="https://www.just-bi.nl/"><img src="All%20you%20need%20to%20know%20about%20ADSO_files/logo3.png" alt="Just-BI" data-retina=""><span class="hidden">Just-BI</span></a>
+</div>
+
+
+</div>
+</div>
+</div>
+</header>
+<section id="color_header" class="clearfix">
+<div class="mainmenu "><div class="mainmenu_inner"><div class="row clearfix"><div class="grid_12">
+<nav class="main_menu"><div id="menu-icon"><div><em></em><em></em><em></em></div>Navigation</div><ul id="menu-main" class="sf-menu clearfix mobile-menu superfish"><li id="menu-item-1704" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1704"><a href="https://www.just-bi.nl/">Home</a></li>
+<li id="menu-item-1698" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-1698"><em class="display-child-ul"></em><a href="https://www.just-bi.nl/products/services/">Services</a>
+<ul class="sub-menu" style="display: none; visibility: hidden;">
+<li id="menu-item-3615" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3615"><a href="https://www.just-bi.nl/products/services/consultancy/">Consultancy</a></li>
+<li id="menu-item-3622" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3622"><a href="https://www.just-bi.nl/projects/">Projects</a></li>
+<li id="menu-item-3623" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-3623"><em class="display-child-ul"></em><a href="https://www.just-bi.nl/products/services/solutions-innovations/">Innovations</a>
+<ul class="sub-menu" style="display: none; visibility: hidden;">
+<li id="menu-item-1697" class="menu-item menu-item-type-post_type menu-item-object-page current-post-parent menu-item-1697"><a href="https://www.just-bi.nl/products/">Products</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-4168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-4168"><em class="display-child-ul"></em><a href="https://www.just-bi.nl/portfolio/">Portfolio</a>
+<ul class="sub-menu" style="display: none; visibility: hidden;">
+<li id="menu-item-3647" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3647"><a href="https://www.just-bi.nl/just-portfolio/big-data-warehousing/">(BIG) Data Warehousing</a></li>
+<li id="menu-item-3648" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3648"><a href="https://www.just-bi.nl/just-portfolio/visualization/">Reporting &amp; Visualization</a></li>
+<li id="menu-item-3676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3676"><a href="https://www.just-bi.nl/just-portfolio/planning-forecast/">Business Planning &amp; Forecasting</a></li>
+<li id="menu-item-3726" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3726"><a href="https://www.just-bi.nl/just-portfolio/custom-development/">Custom Development</a></li>
+<li id="menu-item-3725" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3725"><a href="https://www.just-bi.nl/just-portfolio/information-management/">Information Management</a></li>
+<li id="menu-item-3646" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3646"><a href="https://www.just-bi.nl/just-portfolio/data-science/">Advanced Analytics</a></li>
+</ul>
+</li>
+<li id="menu-item-1695" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-1695"><em class="display-child-ul"></em><a href="https://www.just-bi.nl/people/">People</a>
+<ul class="sub-menu" style="display: none; visibility: hidden;">
+<li id="menu-item-3857" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3857"><a href="https://www.just-bi.nl/just-team/">Just-Team</a></li>
+<li id="menu-item-3865" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3865"><a href="https://www.just-bi.nl/careers/">Join our Just-Team</a></li>
+</ul>
+</li>
+<li id="menu-item-1934" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-1934"><em class="display-child-ul"></em><a href="https://www.just-bi.nl/newsroom/">Newsroom</a>
+<ul class="sub-menu" style="display: none; visibility: hidden;">
+<li id="menu-item-3729" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3729"><a href="https://www.just-bi.nl/category/news/">News</a></li>
+<li id="menu-item-3728" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3728"><a href="https://www.just-bi.nl/category/blog-posts/">Blog Posts</a></li>
+<li id="menu-item-3731" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3731"><a href="https://www.just-bi.nl/category/articles/">Articles</a></li>
+<li id="menu-item-3730" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3730"><a href="https://www.just-bi.nl/category/reviews/">Reviews</a></li>
+<li id="menu-item-3727" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3727"><a href="https://www.just-bi.nl/category/tutorials/">Tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-5413" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-5413"><em class="display-child-ul"></em><a href="https://www.just-bi.nl/contactus/">Contact Us</a>
+<ul class="sub-menu" style="display: none; visibility: hidden;">
+<li id="menu-item-1759" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1759"><a href="https://www.just-bi.nl/contactus/contactnl/">Contact-Netherlands</a></li>
+<li id="menu-item-5420" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5420"><a href="https://www.just-bi.nl/contactus/contact-malaysia/">Contact-Malaysia</a></li>
+</ul>
+</li>
+</ul></nav>
+</div></div></div></div>
+</section>
+<section class="gray_line clearfix" id="title_sidebar">
+<div class="row"><div class="grid_12">
+</div></div>
+</section>
+<div role="main" id="main">
+<div id="contentarea" class="row clearfix">
+<div class="main-content grid_8">
+<div class="grid_bg">
+<article class="clearfix post-4572 post type-post status-publish format-standard has-post-thumbnail hentry category-blog-posts category-news category-tutorials tag-adso tag-advanced-dso tag-bw tag-bw4hana tag-eclipse tag-hana tag-modeling tag-sap tag-templates">
+<div class="post_title_area">
+<div class="postdate"><span></span><strong class="day" style="height: 88px;">18</strong><strong class="month">Feb</strong></div>
+<div class="blogtitles "><h1 class="entry-title"><span>All you need to know about Advanced DSOs…</span></h1>
+<p class="post_tags">
+Tags: <a href="https://www.just-bi.nl/tag/adso/" rel="tag">ADSO</a>, <a href="https://www.just-bi.nl/tag/advanced-dso/" rel="tag">Advanced DSO</a>, <a href="https://www.just-bi.nl/tag/bw/" rel="tag">BW</a>, <a href="https://www.just-bi.nl/tag/bw4hana/" rel="tag">BW4HANA</a>, <a href="https://www.just-bi.nl/tag/eclipse/" rel="tag">Eclipse</a>, <a href="https://www.just-bi.nl/tag/hana/" rel="tag">HANA</a>, <a href="https://www.just-bi.nl/tag/modeling/" rel="tag">Modeling</a>, <a href="https://www.just-bi.nl/tag/sap/" rel="tag">SAP</a>, <a href="https://www.just-bi.nl/tag/templates/" rel="tag">Templates</a>
+</p>
+<p class="post_categories">Categories: <a href="https://www.just-bi.nl/category/blog-posts/" rel="category tag">Blog Posts</a>,<a href="https://www.just-bi.nl/category/news/" rel="category tag">News</a>,<a href="https://www.just-bi.nl/category/tutorials/" rel="category tag">Tutorials</a></p>
+</div>
+</div>
+<div class="entry-content">
+<h3>Simplify your modeling with ADSO Model Templates</h3>
+<p>Read in 13 minutes</p>
+<p>Why waste time figuring out which modeling property boxes to tick, 
+when you can model a whole ADSO in one click? This is what model 
+templates could do for you. Even though they’re not new in BW/4HANA 
+(SAP&nbsp;introduced them in BW-on-HANA 7.4), it’s still worth having a 
+look at them because most BW modelers are still used to the pre-Eclipse 
+objects.</p>
+<p>To spare you the agony of testing out every single model template, 
+I’ve gone ahead and made an overview of what each template does. I’ll 
+shortly discuss each template so you can avoid choosing the wrong 
+template; and model with complete peace of mind.</p>
+<p>Let’s start off by creating an ADSO. After filling in standard info 
+such as name and description we arrive at the interesting stuff, Model 
+Template, on the second screen:</p>
+<p><img class="alignnone wp-image-4518 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/1_michael.png" alt="ADSO Model Templates are found on the right of the Modeling Properties screen" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/1_michael.png 1248w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/1_michael-300x175.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/1_michael-768x447.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/1_michael-1024x596.png 1024w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="334"><br>
+<em>Figure 1. Modeling Properties screen</em></p>
+<p>&nbsp;</p>
+<div style="text-align: left !important">
+<p>ADSO Model Templates are found on the right of the Modeling 
+Properties screen. There are 3 Model Template categories, as we can see 
+in Figure 1:</p>
+</div>
+<ul>
+<li>Enterprise data warehouse architecture</li>
+<li>Planning</li>
+<li>Classic Objects</li>
+</ul>
+<p>Let’s have a close look at each model template by looking at its system tables in figure 2:</p>
+<p><img class="alignnone wp-image-4520 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/1.png" alt="The BW/4HANA system tables" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/1.1_michael.png 813w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/1.1_michael-300x63.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/1.1_michael-768x161.png 768w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="120"><br>
+<em>Figure 2. The BW/4HANA system tables</em></p>
+<p>&nbsp;</p>
+<p>All ADSOs have these system tables, but depending on the ADSO they might remain&nbsp;unused.</p>
+<p>&nbsp;</p>
+<h2>Enterprise data warehouse architecture</h2>
+<p>&nbsp;</p>
+<h3>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Data Acquisition layer (including corporate memory)</h3>
+<p>ADSOs modeled using the Data Acquisition Layer template do not use an
+ Active Table, just like a Write-Optimized DSO. All the records in the 
+Inbound Table contain a Request Transaction Number (TSN), Data packet, 
+and Data record number. We can see this technical information in Figure 
+3. For those wondering, the Inbound Table is just another SAP term for 
+the New Data / Activation Queue Table. You can use this&nbsp;model 
+template as<u>&nbsp;a persistent staging area (PSA) and in the 1st layer of the EDW architecture.</u></p>
+<p><img class="alignnone wp-image-4521 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/2_michael.png" alt="The Inbound Table of the Data Acquisition layer ADSO" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/2_michael.png 1585w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/2_michael-300x65.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/2_michael-768x167.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/2_michael-1024x222.png 1024w" sizes="(max-width: 577px) 100vw, 577px" width="577" height="125"><br>
+<em>Figure 3. The Inbound Table of the Data Acquisition layer ADSO</em></p>
+<p>&nbsp;</p>
+<h3>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Corporate Memory – compression capabilities</h3>
+<p><a href="https://help.sap.com/saphelp_nw74/helpdata/en/77/a54f77827f4e5d8d0a432589967278/content.htm">According to SAP</a>
+ the Corporate Memory (CM) contains the complete history of the loaded 
+data. To save memory space, the CM – compression ADSO doesn’t use a 
+Change Log table, only an Inbound Table and an Active Data Table. As 
+soon as a load request is activated, the system&nbsp;loads the data into
+ the Active Table and deletes it from the Inbound Table.</p>
+<p>Let me demonstrate how this template works with an example:</p>
+<p><img class="alignnone wp-image-4522 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/3_michael.png" alt="CM compression Inbound Table after loading" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/3_michael.png 873w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/3_michael-300x32.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/3_michael-768x81.png 768w" sizes="(max-width: 578px) 100vw, 578px" width="578" height="61"><br>
+<em>Figure 4. The Inbound Table of the CM compression ADSO after loading</em></p>
+<p>&nbsp;</p>
+<p>After I load my crime dataset with statistics about the mean 
+Sacramento streets into my corporate memory – compression ADSO, I can 
+still trace the data back to a specific load. I can do this 
+using&nbsp;the RSN in the Inbound Table in Figure 4.</p>
+<p><img class="alignnone size-full wp-image-4524 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/4.png" alt="Figure 5. The number of entries in the Active Table after activation"><br>
+<em>Figure 5.&nbsp;The number of entries in the Active Table after activation</em></p>
+<p>&nbsp;</p>
+<p><img class="alignnone wp-image-4523 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/4_michael.png" alt="The Active Table of the CM compression ADSO after activation" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/4_michael.png 615w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/4_michael-300x44.png 300w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="85"><br>
+<em>Figure 6. The Active Table of the CM compression ADSO&nbsp;after activation</em></p>
+<p>&nbsp;</p>
+<p>Figure 5&nbsp;shows that the CM – compression Inbound Table is empty 
+after activation. The data is now in the Active Table. In the Active 
+Table in Figure 6 we can see that someone was busted for 28.5 grams of 
+Marijuana on New Year’s.&nbsp;However, we can’t determine which load 
+that record belongs to anymore after activation. This is because the 
+activation process compresses the data by aggregating records based on 
+their semantic key. It&nbsp;thereby discards the technical load data of 
+the records. Furthermore, this type of ADSO has no change log to trace 
+back the load. Let me demonstrate how this aggregation works:</p>
+<p><img class="alignnone wp-image-4527 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/5_michael.png" alt="Figure 7. The Active Table of the CM compression ADSO after loading 1st dataset" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/5_michael.png 1781w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/5_michael-300x49.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/5_michael-768x126.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/5_michael-1024x168.png 1024w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="94"><br>
+<em>Figure 7. The Active Table of the CM compression ADSO after loading 1st dataset</em></p>
+<p>&nbsp;</p>
+<p>First, I load 6 records into the ADSO and activate it. After loading 
+the records the Active Table looks like Figure 7. Then I load a 2<sup>nd</sup> dataset with changed and new records:</p>
+<p><img class="alignnone wp-image-4529 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/6_michael.png" alt="Figure 8. Active Table after loading 2nd dataset with new and changed records" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/6_michael.png 1778w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/6_michael-300x58.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/6_michael-768x148.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/6_michael-1024x198.png 1024w" sizes="(max-width: 571px) 100vw, 571px" width="571" height="110"><br>
+<em>Figure 8. Active Table after loading 2nd dataset with new and changed records</em></p>
+<p>&nbsp;</p>
+<p>If there are 2 records with the same key, BW/4HANA overwrites all the
+ characteristics of the record with the characteristics of the lastly 
+loaded record. For instance, RecordID 1088450 was a burglary in the 
+first load in Figure 7, but is now a case of arson (even worse) after 
+the 2<sup>nd</sup> load in Figure 8.&nbsp;The field has been overwritten by the last loaded characteristic value.</p>
+<p>BW/4HANA either overwrites or sums the Key Figures, depending on what
+ you select in the transformation rules (Figure 9). &nbsp;We see this in
+ the cost to society fields.&nbsp;In the 1<sup>st</sup> field I selected
+ Overwrite in the transformation rule. I selected Summation in the 2nd 
+cost to society field transformation rule however, which is why the 2<sup>nd</sup> field is a lot larger. In the 2<sup>nd</sup>
+ field, the system sums all the costs to society for records with 
+duplicate keys, thereby making crime extremely expensive to society.</p>
+<p><img class="alignnone wp-image-4528 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/6.png" alt="Figure 9. CM – Compression rule aggregation options, you can pick both Overwrite &amp; Summation" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/6.1_michael.png 765w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/6.1_michael-300x94.png 300w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="180"><br>
+<em>Figure 9. CM – Compression rule aggregation options</em></p>
+<p>&nbsp;</p>
+<p>Reporting in the CM – Compression ADSO takes place on the Active 
+Table. Extraction takes place on both its Active Table and its Inbound 
+Table (see Figure 10), so take care if you only want to extract records 
+from the Active Table.</p>
+<p><img class="alignnone wp-image-4530 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/7_michael.png" alt="Figure 10. The Extraction view of the&nbsp;CM – Compression ADSO&nbsp;" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/7_michael.png 1855w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/7_michael-300x81.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/7_michael-768x207.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/7_michael-1024x277.png 1024w" sizes="(max-width: 573px) 100vw, 573px" width="573" height="155"><br>
+<em>Figure 10. The Extraction view of the&nbsp;CM – Compression ADSO</em></p>
+<p>&nbsp;</p>
+<p>To conclude, use this template if you want to <u>save space, but don’t need to track load requests</u>.
+ For instance, because the data is so old that you don’t need to trace 
+it back and can therefore afford to save space by activating it and not 
+using a Change Log.</p>
+<p>&nbsp;</p>
+<h3>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Corporate Memory – reporting capabilities</h3>
+<p>The only difference between this template and the CM compression 
+template is that the option “Keep Inbound Data, Extract from Inbound 
+Table” is turned on in this one. This means that when these kinds of 
+ADSOs are activated, the sytem does not erase data from the Inbound 
+Table. Instead, the data also remains&nbsp;in the Inbound Table so that 
+none of the technical information is lost. Thus, you can still trace 
+back records to their specific loads and reload data into the Active 
+Table after deleting data there. The CM reporting template has no Change
+ Log though.</p>
+<p>Let me show the difference with the CM compression template with an 
+example. After loading our Sacramento crime data, we activate it in 
+Figure 11 and the data is moved to the Active Table in Figure 12:</p>
+<p><img class="alignnone wp-image-4531 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/8.png" alt="Figure 11. Requests section of Manage Infoprovider screen" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/8.1_michael.png 1009w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/8.1_michael-300x18.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/8.1_michael-768x46.png 768w" sizes="(max-width: 579px) 100vw, 579px" width="579" height="35"><br>
+<em>Figure 11. Requests section of Manage Infoprovider screen</em></p>
+<p>&nbsp;</p>
+<p><img class="alignnone wp-image-4532 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/8_michael.png" alt="Figure 12. The CM – Reporting ADSO Active Table after activating the 1st load" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/8_michael.png 1614w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/8_michael-300x54.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/8_michael-768x139.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/8_michael-1024x185.png 1024w" sizes="(max-width: 571px) 100vw, 571px" width="571" height="103"><br>
+<em>Figure 12. The CM – Reporting ADSO Active Table after activating the 1st load</em></p>
+<p>&nbsp;</p>
+<p>An important difference with the CM compression template is that the 
+system does NOT erase the crime data from the Inbound Table when 
+activating. As a result crime data still lingers around in the Inbound 
+Table after activation. We see this in Figure 13:</p>
+<p><img class="alignnone wp-image-4533 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/9_michael.png" alt="Figure 13. The CM – Reporting ADSO Inbound Table after activation" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/9_michael.png 1873w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/9_michael-300x80.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/9_michael-768x204.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/9_michael-1024x272.png 1024w" sizes="(max-width: 577px) 100vw, 577px" width="577" height="153"><br>
+<em>Figure 13. The CM – Reporting ADSO Inbound Table after activation</em></p>
+<p>&nbsp;</p>
+<p>Another difference is that the data is not extracted from the Active 
+Table but from the Inbound Table, which can be seen from the Extraction 
+view in Figure 14 (reporting is still done on the Active Table however):</p>
+<p><img class="alignnone wp-image-4626 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/19.png" alt="Figure 14. The CM – Reporting ADSO Extraction view" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4572/19.-CM-Reporting-_6-after-2nd-load-and-activation.png 1874w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4572/19.-CM-Reporting-_6-after-2nd-load-and-activation-300x80.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4572/19.-CM-Reporting-_6-after-2nd-load-and-activation-768x204.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4572/19.-CM-Reporting-_6-after-2nd-load-and-activation-1024x273.png 1024w" sizes="(max-width: 575px) 100vw, 575px" width="575" height="153"><br>
+<em>Figure 14. The CM – Reporting ADSO&nbsp;Extraction view</em></p>
+<p>&nbsp;</p>
+<p>Because the data remains in the Inbound Table after activation, these ADSOs are a good solution for when <u>you
+ want to store data but save space by not using a Change Log, but need 
+to be able to track back records to their specific load</u>. Side note: 
+storing the data both in the Inbound and Active Table takes up twice as 
+much space as with the compression CM model template. If you’re pressed 
+for space, you might therefore be better off using the CM – Compression 
+model template!</p>
+<p>&nbsp;</p>
+<h3>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Data warehouse layer – delta calculation</h3>
+<p>This layer is modeled like a Standard DSO. That means that these 
+types of ADSOs&nbsp;have a Change Log table for delta extractions, an 
+Inbound Table and an Active Data Table that is used for reporting and 
+full loads.&nbsp;Here the Inbound Table is empty after activation as we 
+see in Figure 15.&nbsp;In the Change Log table we can find the new, 
+before- and after status of records in column R (see Figure 16).</p>
+<p><img class="alignnone wp-image-4535 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/10.png" alt="Figure 15. DWL - delta calculation ADSO Inbound Table" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/10.1_michael.png 841w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/10.1_michael-300x105.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/10.1_michael-768x269.png 768w" sizes="(max-width: 573px) 100vw, 573px" width="573" height="201"><br>
+<em>Figure 15. DWL – delta calculation ADSO Inbound Table</em></p>
+<p>&nbsp;</p>
+<p><img class="alignnone wp-image-4536 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/10_michael-1.png" alt="Figure 16. DWL - delta calculation Change Log table with new, before- and after records in column R" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/10_michael-1.png 1874w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/10_michael-1-300x105.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/10_michael-1-768x268.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/10_michael-1-1024x358.png 1024w" sizes="(max-width: 577px) 100vw, 577px" width="577" height="202"><br>
+<em>Figure 16. DWL – delta calculation Change Log table with new, before- and after records in column R</em></p>
+<p>&nbsp;</p>
+<p>Because of this ADSO’s&nbsp;delta capabilities, it&nbsp;can function as a&nbsp;<u>central data object from which only new and changed records are loaded to the next layer</u>.</p>
+<p>&nbsp;</p>
+<h3>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Data warehouse layer – data mart</h3>
+<p>The data mart version of the data warehouse layer template makes the 
+ADSO behave just like an InfoCube. Like a Cube, it does not have a 
+Change Log. The Inbound Table (see Figure 17) functions&nbsp;as a Cube’s
+ “F-table” and the Active Data Table (see Figure 18) functions as the 
+“E-table” for compressed data (similar to the InfoCube function 
+Collapse). After activation, the Inbound Table is empty (see Figure 19)</p>
+<p><img class="alignnone wp-image-4538 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/11_michael.png" alt="" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/11_michael.png 1873w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/11_michael-300x55.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/11_michael-768x141.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/11_michael-1024x188.png 1024w" sizes="(max-width: 573px) 100vw, 573px" width="573" height="105"><br>
+<em>Figure 17. DWL – Data Mart ADSO Inbound Table after load, with technical load information</em></p>
+<p>&nbsp;</p>
+<p><img class="alignnone wp-image-4540 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/12_michael.png" alt="Figure 18. DWL – Data Mart Active Table, all the blue fields are key characteristics just like in an InfoCube" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/12_michael.png 1776w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/12_michael-300x58.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/12_michael-768x148.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/12_michael-1024x198.png 1024w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="111"><br>
+<em>Figure 18. DWL – Data Mart Active Table, all the blue fields are key characteristics just like in an InfoCube</em></p>
+<p>&nbsp;</p>
+<p><img class="alignnone wp-image-4539 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/12.png" alt="Figure 19. DWL – Data Mart ADSO Inbound Table after activation" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/12.1_michael.png 856w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/12.1_michael-300x103.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/12.1_michael-768x264.png 768w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="197"><br>
+<em>Figure 19. DWL – Data Mart ADSO Inbound Table after activation</em></p>
+<p>&nbsp;</p>
+<p>The system “unions”&nbsp;both the Inbound Table and Active Table 
+together for reporting (see Figure 20) and extraction (see Figure 21).</p>
+<p><em>&nbsp;<img class="alignnone wp-image-4542 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/14_michael.png" alt=" Figure 20. DWL – Data Mart ADSO Reporting view" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/14_michael.png 1661w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/14_michael-300x90.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/14_michael-768x231.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/14_michael-1024x308.png 1024w" sizes="(max-width: 575px) 100vw, 575px" width="575" height="173"><br>
+Figure 20. DWL – Data Mart ADSO Reporting view</em></p>
+<p>&nbsp;</p>
+<p><img class="alignnone wp-image-4541 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/13_michael.png" alt="Figure 21. DWL – Data Mart ADSO Extraction view, contains both Inbound Table and Active Table data" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/13_michael.png 1659w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/13_michael-300x91.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/13_michael-768x232.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/13_michael-1024x309.png 1024w" sizes="(max-width: 573px) 100vw, 573px" width="573" height="173"><br>
+<em>Figure 21. DWL – Data Mart ADSO&nbsp;Extraction view, contains both Inbound Table and Active Table data</em></p>
+<p>&nbsp;</p>
+<p>Thanks to HANA’s in-memory capabilities however, we no longer need 
+dimension tables. BW now writes Master data identifiers (SIDs) directly 
+to the Fact table. This makes InfoCubes more or less obsolete. You still
+ need to model ADSOs like an InfoCube if you use non-cumulative Key 
+Figures however, but to achieve that you would also need to manually 
+tick the “Inventory” property box. If you do not tick this box, you’ll 
+get an error if you try to add a non-cumulative Key Figure to your ADSO 
+(see Figure 22).</p>
+<p><img class="alignnone wp-image-4543 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/15.png" alt="Figure 22. Error message. One does not simply add non-cumulative key figures without ticking the “Inventory” box" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/15.1_michael.png 655w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/15.1_michael-300x40.png 300w" sizes="(max-width: 573px) 100vw, 573px" width="573" height="77"><br>
+<em>Figure 22. Error message,&nbsp;one does not simply add non-cumulative key figures without ticking the “Inventory” box</em></p>
+<p>&nbsp;</p>
+<p>The option “All characteristics are Key, Reporting on Union of 
+Inbound and Active Table” is a prerequisite to use non-cumulative Key 
+Figures at the moment, so this kind of ADSO model template is <u>well suited for Inventory-data or any other non-cumulative scenario</u>. If you use this template don’t forget to also tick the “Inventory”-box however.</p>
+<p>&nbsp;</p>
+<h2>Planning</h2>
+<p>&nbsp;</p>
+<h3>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Planning on Cube-like</h3>
+<p>I know, the name sounds a bit silly. This model template sounds as if
+ your teenage daughter that uses the word “like” too much had a 
+conversation with SAP about modeling. Ignoring the adolescent vibe of 
+its name, let’s discuss its properties:</p>
+<p>This ADSO is modeled the same as the Data warehouse layer – Data Mart
+ ADSO. It behaves like a Cube, so all the characteristics are key fields
+ just like in the DWL – data mart ADSO. Planning on Cube-like ADSOs have
+ an Inbound Table (see Figure 23) and an Active Table. All 
+characteristic fields are marked as key fields in the Active Table (see 
+Figure 24), which is a necessary requirement to make it suitable for 
+planning.</p>
+<p><img class="alignnone wp-image-4544 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/15_michael.png" alt="Figure 23. The Planning on Cube-like ADSO has an Inbound Table with technical load info" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/15_michael.png 1867w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/15_michael-300x55.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/15_michael-768x142.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/15_michael-1024x189.png 1024w" sizes="(max-width: 576px) 100vw, 576px" width="576" height="106"><br>
+<em>Figure 23. The Planning on Cube-like ADSO has an Inbound Table with technical load info</em></p>
+<p>&nbsp;</p>
+<p><img class="alignnone wp-image-4545 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/16_michael.png" alt="Figure 24. The Planning on Cube-like ADSO Active Table. Here we see that all the characteristics are key fields (blue) just like in the DWL – data mart ADSO" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/16_michael.png 1449w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/16_michael-300x61.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/16_michael-768x155.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/16_michael-1024x207.png 1024w" sizes="(max-width: 579px) 100vw, 579px" width="579" height="117"><br>
+<em>Figure 24. The Planning on Cube-like ADSO Active Table</em></p>
+<p>&nbsp;</p>
+<p><img class="alignnone wp-image-4547 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/17_michael.png" alt="" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/17_michael.png 1443w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/17_michael-300x82.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/17_michael-768x210.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/17_michael-1024x280.png 1024w" sizes="(max-width: 575px) 100vw, 575px" width="575" height="157"><br>
+<em>Figure 25. The Planning on Cube-like ADSO Activation Table after loading new and changed records</em></p>
+<p>&nbsp;</p>
+<p>Because the Planning on Cube-like model template marks all 
+characteristic fields as key, it does not overwrite any records based on
+ a semantic key like the Corporate Memory ADSOs. Records with the value 
+1084424 are duplicate records (see Figure 25), because I changed the 
+offense category characteristic. The records that have identical 
+characteristics to the records in the previous load have their key 
+figures summed (all the records that do not have an “N” in the “R” 
+field). This is to be expected, because Summation is the only rule type 
+available for key figure transformation rules going to Planning on 
+Cube-like ADSOs (see Figure 26).</p>
+<p><img class="alignnone wp-image-4548 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/18.png" alt="Figure 26. Rule Details in transformation to Planning on Cube-like ADSO" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/18.1_michael.png 679w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/18.1_michael-300x95.png 300w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="181"><br>
+<em>Figure 26. Rule Details in transformation to Planning on Cube-like ADSO</em></p>
+<p>&nbsp;</p>
+<p>The system unions both the Inbound Table and Active Table together 
+for reporting (ee Figure 27) and extraction (see Figure 28), just like 
+it does with a Data Mart ADSO:</p>
+<p><img class="alignnone wp-image-4550 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/19_michael.png" alt="Figure 28. The Planning on Cube-like ADSO Reporting view also contains data from both the Inbound- and Active Table." srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/19_michael.png 1818w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/19_michael-300x100.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/19_michael-768x256.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/19_michael-1024x341.png 1024w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="191"><br>
+<em>Figure 27. The Planning on Cube-like ADSO Reporting view also contains data from both the Inbound- and Active Table</em></p>
+<p>&nbsp;</p>
+<p><img class="alignnone wp-image-4549 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/18_michael-1.png" alt="Figure 27. The Planning on Cube-like ADSO Extraction view, shows both Active Table- and Inbound Table data." srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/18_michael-1.png 1647w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/18_michael-1-300x110.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/18_michael-1-768x282.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/18_michael-1-1024x376.png 1024w" sizes="(max-width: 573px) 100vw, 573px" width="573" height="210"><br>
+<em>Figure 28. The Planning on Cube-like ADSO Extraction view, shows both Active Table- and Inbound Table data</em></p>
+<p>&nbsp;</p>
+<p>You will be able to write data&nbsp;to this ADSO <u>using planning applications</u> in the future, thereby making it <u>suitable for planning</u>. Planning applications aren’t available now, but are scheduled to be available by the end of 2017 according to SAP.</p>
+<p>&nbsp;</p>
+<h3>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Planning on Direct Update</h3>
+<p>You can load records directly into the Active table of these kinds of
+ ADSOs. It has no Change Log or Inbound Table. You can fill the Active 
+table with&nbsp;an API. You can also load data to this type of ADSO 
+using a DTP. This is a slight change from the classic Direct Update DSOs
+ in BW on HANA, which could you could only load via an API.</p>
+<p><img class="alignnone wp-image-4551 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/20.png" alt="Figure 29. Manage InfoProvider screen" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/20.1_michael.png 933w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/20.1_michael-300x99.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/20.1_michael-768x253.png 768w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="189"><br>
+<em>Figure 29.&nbsp;Manage InfoProvider screen</em></p>
+<p>&nbsp;</p>
+<p>There is no activation option as we can see in Figure 29, because 
+this type of ADSO only has an Active Table. Data is automatically loaded
+ to this Active Table in Figure 30 when executing a&nbsp;DTP:</p>
+<p><img class="alignnone wp-image-4554 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/21_michael.png" alt="Figure 30. Activation Table after loading data to the ADSO" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/21_michael.png 1421w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/21_michael-300x73.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/21_michael-768x186.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/21_michael-1024x248.png 1024w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="139"><br>
+<em>Figure 30. Planning on Direct Update ADSO&nbsp;Activation Table after loading data</em></p>
+<p>&nbsp;</p>
+<p><img class="alignnone wp-image-4553 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/21.png" alt="Figure 31. Rule Details in transformation to Planning on Direct Update ADSO" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/21.1_michael.png 704w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/21.1_michael-300x90.png 300w" sizes="(max-width: 577px) 100vw, 577px" width="577" height="173"><br>
+<em>Figure 31. Rule Details in transformation to&nbsp;Planning on Direct Update ADSO</em></p>
+<p>&nbsp;</p>
+<p>As we can see in Figure 31&nbsp;these kinds of ADSOs only have an 
+Overwrite option&nbsp;There is no summation&nbsp;of key figures like 
+there is in the Planning on Cube-like ADSO. To test how this ADSO 
+behaves&nbsp;I loaded a second dataset to this ADSO with new and changed
+ records:</p>
+<p><img class="alignnone wp-image-4554 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/21_michael.png" alt="Figure 32. Planning on Direct Update ADSO Active table after 2nd load" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/21_michael.png 1421w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/21_michael-300x73.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/21_michael-768x186.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/21_michael-1024x248.png 1024w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="139"><br>
+<em>Figure 32. Planning on Direct Update ADSO&nbsp;Active table after 2nd load</em></p>
+<p>&nbsp;</p>
+<p>In Figure 32&nbsp;we can see that&nbsp;the Planning on Direct Update 
+ADSO does not store any duplicate records. If it comes across a 
+duplicate value in the semantic key, such as Record 1088450 in the image
+ above, it simply stores the lastly loaded record. BW/4HANA stores the 
+lastly loaded record regardless of whether the characteristics or the 
+key figures are changed.</p>
+<p>These types of ADSOs can be <u>used to write data to 3<sup>rd</sup> party tools</u>.</p>
+<p>&nbsp;</p>
+<h2>Classic Objects</h2>
+<p>&nbsp;</p>
+<p>This sub-category does not require any detailed explanation, because 
+they are exactly the same as some of the EDW – Architecture Layer ADSOs.
+ However, it is possible to create an ADSO with the following templates:</p>
+<p>&nbsp;</p>
+<h3>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Standard DataStore Object</h3>
+<p>This model template is the same as the Data Warehouse Layer – Delta Calculation template.</p>
+<h3>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Write-optimized DataStore Object</h3>
+<p>This template is the same as the Data Acquisition Layer (including Corporate Memory) template.</p>
+<h3>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; InfoCube</h3>
+<p>Finally, this model template is the same as the Data Warehouse Layer – Data Mart template.</p>
+<p>&nbsp;</p>
+<h2>Summary</h2>
+<p>&nbsp;</p>
+<p>For those that want a quick overview, I’ve made a table showing which modeling properties each template has:</p>
+<p><img class="alignnone wp-image-4557 imgborder" src="All%20you%20need%20to%20know%20about%20ADSO_files/22_michael.png" alt="Figure 33. Overview of ADSO functionality" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/22_michael.png 1519w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/22_michael-300x169.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/22_michael-768x432.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4517/22_michael-1024x576.png 1024w" sizes="(max-width: 574px) 100vw, 574px" width="574" height="323"><br>
+<em>Figure 33. Overview of ADSO functionality</em></p>
+<p>&nbsp;</p>
+<p>To summarize, there’s no need to reinvent the wheel when it comes to 
+modeling in BW/4HANA. I’ve discussed all the different model templates 
+you can use to save time and to simplify the modeling process. We also 
+saw that a lot of the EDW Architecture and Classic Object model 
+templates are the same. Armed with this knowledge you at least won’t 
+have to spend half an hour looking at the screen wondering whether there
+ is any difference between a Standard DSO and a DWL (delta calculation) 
+model template: there is none. Now we know how to use model templates 
+for ADSO. In my next tutorial we’ll look at what other BW/4HANA object 
+types can offer us, namely <a href="https://www.just-bi.nl/virtual-bw-open-ods-view/">the Open ODS View</a>&nbsp;and <a href="https://www.just-bi.nl/virtual-bw-hana-compositeprovider/">the HANA CompositeProvider</a>.</p>
+<p>Thank you for checking out my tutorial! Hope you found some value in it. Please feel free to leave any comments below.</p>
+<div class="pvc_clear"></div>
+<p id="pvc_stats_4572" class="pvc_stats pvc_load_by_ajax_update" data-element-id="4572"><span>
+    <i class="fa fa-bar-chart pvc-stats-icon medium" aria-hidden="true"></i> 
+	
+		36803 total views,
+		
+			84 views today
+		
+	
+	</span></p>
+<div class="pvc_clear"></div>
+</div>
+<div id="authorbox">
+<img src="All%20you%20need%20to%20know%20about%20ADSO_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <div>
+<h5>Author: <span>Michael Hendrik Bussink</span></h5>
+<p></p>
+</div>
+</div>
+<div class="comments clearfix">
+<h3 id="comments">46 Responses to "All you need to know about Advanced DSOs…"</h3>
+<ol class="commentlist">
+<li class="comment even thread-even depth-1" id="li-comment-48068">
+<div id="comment-48068" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Mahesh" src="All%20you%20need%20to%20know%20about%20ADSO_files/ddc23c9567c7bd6d2564495c7331363b.jpg" srcset="//secure.gravatar.com/avatar/ddc23c9567c7bd6d2564495c7331363b?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48068" onclick='return addComment.moveForm( "comment-48068", "48068", "respond", "4572" )' aria-label="Reply to Mahesh">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Mahesh</cite>
+<span>Posted on July 24, 2017 at 8:55 am</span>
+</div>
+<div class="comment-entry">
+<p>Would like to know about the updates</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-mbussink bypostauthor odd alt depth-2" id="li-comment-48073">
+<div id="comment-48073" class="comment-body clearfix">
+<div class="avatars">
+<img src="All%20you%20need%20to%20know%20about%20ADSO_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48073" onclick='return addComment.moveForm( "comment-48073", "48073", "respond", "4572" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on August 22, 2017 at 8:51 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hi Mahesh, thanks for your feedback! If you’re talking about the follow-up articles you can find them here: <a href="https://www.just-bi.nl/virtual-bw-open-ods-view/" rel="nofollow">//www.just-bi.nl/virtual-bw-open-ods-view/</a> &amp; here <a href="https://www.just-bi.nl/virtual-bw-hana-compositeprovider/" rel="nofollow">//www.just-bi.nl/virtual-bw-hana-compositeprovider/</a></p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-48071">
+<div id="comment-48071" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Suraj" src="All%20you%20need%20to%20know%20about%20ADSO_files/9fb159f91f24e28088290c891c5dc66b.jpg" srcset="//secure.gravatar.com/avatar/9fb159f91f24e28088290c891c5dc66b?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48071" onclick='return addComment.moveForm( "comment-48071", "48071", "respond", "4572" )' aria-label="Reply to Suraj">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Suraj</cite>
+<span>Posted on August 19, 2017 at 11:12 am</span>
+</div>
+<div class="comment-entry">
+<p>Hi Michael ,<br>
+Very nice blog .Just adding 1 point IP on ADSO will be available in 7.5 release . In 7.4 we wont be having the option .</p>
+<p>Regards,<br>
+Suraj</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-mbussink bypostauthor odd alt depth-2" id="li-comment-48074">
+<div id="comment-48074" class="comment-body clearfix">
+<div class="avatars">
+<img src="All%20you%20need%20to%20know%20about%20ADSO_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48074" onclick='return addComment.moveForm( "comment-48074", "48074", "respond", "4572" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on August 22, 2017 at 8:57 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hi Suraj,<br>
+Much appreciated! Also, thanks for sharing your point on IP availability.</p>
+<p>Kind regards,<br>
+Michael</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-48077">
+<div id="comment-48077" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Anil" src="All%20you%20need%20to%20know%20about%20ADSO_files/097622aed63ad2ff4d1e76e519c1e79c.jpg" srcset="//secure.gravatar.com/avatar/097622aed63ad2ff4d1e76e519c1e79c?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48077" onclick='return addComment.moveForm( "comment-48077", "48077", "respond", "4572" )' aria-label="Reply to Anil">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Anil</cite>
+<span>Posted on August 29, 2017 at 10:10 pm</span>
+</div>
+<div class="comment-entry">
+<p>Very well done. Grateful to you for your efforts.</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-mbussink bypostauthor odd alt depth-2" id="li-comment-48083">
+<div id="comment-48083" class="comment-body clearfix">
+<div class="avatars">
+<img src="All%20you%20need%20to%20know%20about%20ADSO_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48083" onclick='return addComment.moveForm( "comment-48083", "48083", "respond", "4572" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on September 4, 2017 at 12:46 pm</span>
+</div>
+<div class="comment-entry">
+<p>Much appreciated Anil, I’m glad you liked my article.</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-48092">
+<div id="comment-48092" class="comment-body clearfix">
+<div class="avatars">
+<img alt="vinod kumar patel" src="All%20you%20need%20to%20know%20about%20ADSO_files/e6d20f7a6cc13dd217aba4807ff99964.jpg" srcset="//secure.gravatar.com/avatar/e6d20f7a6cc13dd217aba4807ff99964?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48092" onclick='return addComment.moveForm( "comment-48092", "48092", "respond", "4572" )' aria-label="Reply to vinod kumar patel">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">vinod kumar patel</cite>
+<span>Posted on September 21, 2017 at 3:48 pm</span>
+</div>
+<div class="comment-entry">
+<p>Very useful document</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-mbussink bypostauthor odd alt depth-2" id="li-comment-48097">
+<div id="comment-48097" class="comment-body clearfix">
+<div class="avatars">
+<img src="All%20you%20need%20to%20know%20about%20ADSO_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48097" onclick='return addComment.moveForm( "comment-48097", "48097", "respond", "4572" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on September 28, 2017 at 2:30 pm</span>
+</div>
+<div class="comment-entry">
+<p>I’m happy my article is of use to you Vinod</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-48093">
+<div id="comment-48093" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Gautam" src="All%20you%20need%20to%20know%20about%20ADSO_files/1b72158adcfedcf179a08dca5dd21537.jpg" srcset="//secure.gravatar.com/avatar/1b72158adcfedcf179a08dca5dd21537?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48093" onclick='return addComment.moveForm( "comment-48093", "48093", "respond", "4572" )' aria-label="Reply to Gautam">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Gautam</cite>
+<span>Posted on September 23, 2017 at 6:16 pm</span>
+</div>
+<div class="comment-entry">
+<p>Excellent !!!!! This has just simplified the life. Looking forward to reading more such articles from you.</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-mbussink bypostauthor odd alt depth-2" id="li-comment-48096">
+<div id="comment-48096" class="comment-body clearfix">
+<div class="avatars">
+<img src="All%20you%20need%20to%20know%20about%20ADSO_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48096" onclick='return addComment.moveForm( "comment-48096", "48096", "respond", "4572" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on September 28, 2017 at 2:29 pm</span>
+</div>
+<div class="comment-entry">
+<p>Thank you Gautam, I’m glad my article has helped you! I’m looking forward to writing more articles like these in the future.</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-48094">
+<div id="comment-48094" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Andy" src="All%20you%20need%20to%20know%20about%20ADSO_files/4f7b934f77cd58b5c3c5ec044315e841.jpg" srcset="//secure.gravatar.com/avatar/4f7b934f77cd58b5c3c5ec044315e841?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48094" onclick='return addComment.moveForm( "comment-48094", "48094", "respond", "4572" )' aria-label="Reply to Andy">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Andy</cite>
+<span>Posted on September 26, 2017 at 11:39 am</span>
+</div>
+<div class="comment-entry">
+<p>Hello Michael, very nice blog, thank you so much, now i understand most of the new ADSO…!!<br>
+Question: Do you know how i can delete zero requests from an ADSO via ABAP? Which method you prefer to do that!<br>
+We have a lot of zero requests in some of the ADSO! My “z” program work 
+fine for the old DSO and IO’s but i dont know how i can delete the new 
+ones…</p>
+<p>Hope u can help..<br>
+best regards<br>
+andy</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-mbussink bypostauthor odd alt depth-2" id="li-comment-48122">
+<div id="comment-48122" class="comment-body clearfix">
+<div class="avatars">
+<img src="All%20you%20need%20to%20know%20about%20ADSO_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48122" onclick='return addComment.moveForm( "comment-48122", "48122", "respond", "4572" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on October 23, 2017 at 2:37 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hi Andy, thank you: I’m glad you liked my article!<br>
+In my current role I do not have to delete zero requests, however I 
+believe you should still be able to delete those 0 requests via a “Z” 
+program. In Figure 2 of my article you can see an example of current 
+table names. Also, ABAP is still relevant in BW on HANA and BW/4HANA. So
+ how about you try adjusting the current ABAP program you have, but 
+refer to the your tables using the new (ADSO) table names. Hopefully 
+that will do the trick! Let me know if you manage. </p>
+<p>Kind regards,<br>
+Michael</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-48112">
+<div id="comment-48112" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Celine Dillon" src="All%20you%20need%20to%20know%20about%20ADSO_files/7a2f309d7feb0a7b9ad8968946ccfff6.jpg" srcset="//secure.gravatar.com/avatar/7a2f309d7feb0a7b9ad8968946ccfff6?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48112" onclick='return addComment.moveForm( "comment-48112", "48112", "respond", "4572" )' aria-label="Reply to Celine Dillon">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Celine Dillon</cite>
+<span>Posted on October 16, 2017 at 2:23 am</span>
+</div>
+<div class="comment-entry">
+<p>Is there a write-optimized advanced DSO? If yes, when you load data 
+to it, what would the entries in RSPMREQUEST table look like (what would
+ the value in the field Storage type be?) Currently, the possible values
+ are AQ – activation queue, AT – active table, CL – Change log, AR – 
+Archive, or blank) Write-optimized DSO’s do not need to be activated. So
+ I am assuming, the value cannot be AQ. What would it be? Thank you so 
+much for your input.</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-mbussink bypostauthor odd alt depth-2" id="li-comment-48121">
+<div id="comment-48121" class="comment-body clearfix">
+<div class="avatars">
+<img src="All%20you%20need%20to%20know%20about%20ADSO_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48121" onclick='return addComment.moveForm( "comment-48121", "48121", "respond", "4572" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on October 23, 2017 at 1:33 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hi Celine,</p>
+<p>Yes there is, you can use it by choosing the Data Acquisition layer 
+(including corporate memory) or Write-optimized DataStore Object model 
+templates when modeling an ADSO. Alternatively, you can simply uncheck 
+the Activate Data option which accomplishes the same. As you correctly 
+stated, Write-Optimized DSO’s are not activated. However, the value of 
+the Storage type column in the RSPMREQUEST would still be AQ. That’s 
+because the Activation Queue is another word for the Inbound Table, 
+which is <strong>not</strong> activated. It’s a bit confusing, because 
+of the name “Activation Queue” contains the word Activation. 
+Nevertheless, the table does not contain activated records, only records
+ that are usually waiting to be activated in case an ADSO has an Active 
+Table. Thanks for your question! Hopefully I was able to clarify this 
+somewhat confusing naming convention.</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-48118">
+<div id="comment-48118" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Kranti" src="All%20you%20need%20to%20know%20about%20ADSO_files/146444f36eee2486ad29e6058acb7c88.jpg" srcset="//secure.gravatar.com/avatar/146444f36eee2486ad29e6058acb7c88?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48118" onclick='return addComment.moveForm( "comment-48118", "48118", "respond", "4572" )' aria-label="Reply to Kranti">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Kranti</cite>
+<span>Posted on October 20, 2017 at 2:51 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hi Michael,</p>
+<p>Very good article. Thank you for simplifying the things. Have a small
+ doubt. Could you please differentiate the delta load between extraction
+ from inbound table and change log table? Why do we need change log 
+table when we can achieve the delta mechanism through inbound table? 
+Thanks in advance.</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-mbussink bypostauthor odd alt depth-2" id="li-comment-48120">
+<div id="comment-48120" class="comment-body clearfix">
+<div class="avatars">
+<img src="All%20you%20need%20to%20know%20about%20ADSO_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48120" onclick='return addComment.moveForm( "comment-48120", "48120", "respond", "4572" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on October 23, 2017 at 1:11 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hi Kranti, </p>
+<p>Thank you for commenting. I believe the main differences are that 1. a
+ Change Log is able to calculate delta records and enables you to only 
+send changed or corrected records to the layer above. 2. with a Change 
+Log you can trace back value <em>changes</em> to a specific load, not just the values themselves. Hope this helps!</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-48124">
+<div id="comment-48124" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Santhosh" src="All%20you%20need%20to%20know%20about%20ADSO_files/d171dd2b5e8faf7361049970d9aaadc0.jpg" srcset="//secure.gravatar.com/avatar/d171dd2b5e8faf7361049970d9aaadc0?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48124" onclick='return addComment.moveForm( "comment-48124", "48124", "respond", "4572" )' aria-label="Reply to Santhosh">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Santhosh</cite>
+<span>Posted on October 24, 2017 at 7:58 am</span>
+</div>
+<div class="comment-entry">
+<p>Hi Michael,</p>
+<p>Nice Blog.Very Useful information all about ADSO.</p>
+<p>Regards,</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-mbussink bypostauthor odd alt depth-2" id="li-comment-48125">
+<div id="comment-48125" class="comment-body clearfix">
+<div class="avatars">
+<img src="All%20you%20need%20to%20know%20about%20ADSO_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48125" onclick='return addComment.moveForm( "comment-48125", "48125", "respond", "4572" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on October 24, 2017 at 9:47 am</span>
+</div>
+<div class="comment-entry">
+<p>Hi Santhosh,</p>
+<p>I’m happy to hear you found my blog useful, thanks for commenting.</p>
+<p>Kind regards,<br>
+Michael</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-odd thread-alt depth-1" id="li-comment-48128">
+<div id="comment-48128" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Mateusz" src="All%20you%20need%20to%20know%20about%20ADSO_files/51be768309bc06604922d41af97bd674.jpg" srcset="//secure.gravatar.com/avatar/51be768309bc06604922d41af97bd674?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48128" onclick='return addComment.moveForm( "comment-48128", "48128", "respond", "4572" )' aria-label="Reply to Mateusz">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.paragraphonit.com/" rel="external nofollow" class="url">Mateusz</a></cite>
+<span>Posted on October 31, 2017 at 1:10 pm</span>
+</div>
+<div class="comment-entry">
+<p>Michael, great article! Examples, pictures, detailed description. Impressing!</p>
+</div>
+</div>
+</div>
+<ul class="children">
+
+<li class="comment byuser comment-author-mbussink bypostauthor odd alt depth-2" id="li-comment-48132">
+<div id="comment-48132" class="comment-body clearfix">
+<div class="avatars">
+<img src="All%20you%20need%20to%20know%20about%20ADSO_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48132" onclick='return addComment.moveForm( "comment-48132", "48132", "respond", "4572" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on November 3, 2017 at 9:39 am</span>
+</div>
+<div class="comment-entry">
+<p>Thank you Mateusz, I’m glad you enjoyed it!</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-48133">
+<div id="comment-48133" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Christoph Sommer" src="All%20you%20need%20to%20know%20about%20ADSO_files/c326fec77b06c7b0b8205fd3d0d468aa.jpg" srcset="//secure.gravatar.com/avatar/c326fec77b06c7b0b8205fd3d0d468aa?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48133" onclick='return addComment.moveForm( "comment-48133", "48133", "respond", "4572" )' aria-label="Reply to Christoph Sommer">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.epmdata.com/" rel="external nofollow" class="url">Christoph Sommer</a></cite>
+<span>Posted on November 3, 2017 at 6:19 pm</span>
+</div>
+<div class="comment-entry">
+<p>Michael, thanks for your great article. I am currently working with a
+ planning function running on a planning-ADSO of type direct update. In 
+my function, I change the ADSO data and save it back to the database 
+with the Standard BI-IP-API (via c_th_data-table). Strange thing is, 
+that the planning function does not physically delete records but it 
+only sets key figure values of those records to zero. I would have 
+expected this kind of behaviour for ‘planning on Cube-like’ but not for 
+planning on direct-update. Any advice on this would be appreciated. Best
+ regards, Christoph</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-48143">
+<div id="comment-48143" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Nag" src="All%20you%20need%20to%20know%20about%20ADSO_files/3b2d5c527600c6e32ec8e24c7f2e37ef.jpg" srcset="//secure.gravatar.com/avatar/3b2d5c527600c6e32ec8e24c7f2e37ef?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48143" onclick='return addComment.moveForm( "comment-48143", "48143", "respond", "4572" )' aria-label="Reply to Nag">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Nag</cite>
+<span>Posted on November 22, 2017 at 3:24 am</span>
+</div>
+<div class="comment-entry">
+<p>Extraordinary article. Very very Clear. ALong with ADSO, cleared some Delta/Change log Concepts aswell. <img draggable="false" class="emoji" alt="🙂" src="All%20you%20need%20to%20know%20about%20ADSO_files/1f642.svg"> You are a Genius!! <img draggable="false" class="emoji" alt="🙂" src="All%20you%20need%20to%20know%20about%20ADSO_files/1f642.svg"> thanks for Writing it.</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-mbussink bypostauthor even depth-2" id="li-comment-48162">
+<div id="comment-48162" class="comment-body clearfix">
+<div class="avatars">
+<img src="All%20you%20need%20to%20know%20about%20ADSO_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48162" onclick='return addComment.moveForm( "comment-48162", "48162", "respond", "4572" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on December 13, 2017 at 1:33 pm</span>
+</div>
+<div class="comment-entry">
+<p>I’m glad it helped you Nag! Thanks for your kind comment: now I feel like a genius <img draggable="false" class="emoji" alt="🙂" src="All%20you%20need%20to%20know%20about%20ADSO_files/1f642.svg"></p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-48150">
+<div id="comment-48150" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Mark" src="All%20you%20need%20to%20know%20about%20ADSO_files/516437d948a05677aa71191340eff8ff.jpg" srcset="//secure.gravatar.com/avatar/516437d948a05677aa71191340eff8ff?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48150" onclick='return addComment.moveForm( "comment-48150", "48150", "respond", "4572" )' aria-label="Reply to Mark">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Mark</cite>
+<span>Posted on November 29, 2017 at 6:01 pm</span>
+</div>
+<div class="comment-entry">
+<p>I wish SAP wrote its official documentation as clear and concise (and humorous) as you!</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-mbussink bypostauthor even depth-2" id="li-comment-48163">
+<div id="comment-48163" class="comment-body clearfix">
+<div class="avatars">
+<img src="All%20you%20need%20to%20know%20about%20ADSO_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48163" onclick='return addComment.moveForm( "comment-48163", "48163", "respond", "4572" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on December 13, 2017 at 1:41 pm</span>
+</div>
+<div class="comment-entry">
+<p>Thank you Mark! I’m happy you enjoyed my blog and who knows? I’ll contact SAP to see what I can do <img draggable="false" class="emoji" alt="😉" src="All%20you%20need%20to%20know%20about%20ADSO_files/1f609.svg"></p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-48151">
+<div id="comment-48151" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Prakasha" src="All%20you%20need%20to%20know%20about%20ADSO_files/ea20d510bcc0ebd73fb1994c34fd03de.jpg" srcset="//secure.gravatar.com/avatar/ea20d510bcc0ebd73fb1994c34fd03de?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48151" onclick='return addComment.moveForm( "comment-48151", "48151", "respond", "4572" )' aria-label="Reply to Prakasha">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Prakasha</cite>
+<span>Posted on November 30, 2017 at 5:42 pm</span>
+</div>
+<div class="comment-entry">
+<p>Thanks Michael, Good block to understand about ADSO features..</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-mbussink bypostauthor even depth-2" id="li-comment-48165">
+<div id="comment-48165" class="comment-body clearfix">
+<div class="avatars">
+<img src="All%20you%20need%20to%20know%20about%20ADSO_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48165" onclick='return addComment.moveForm( "comment-48165", "48165", "respond", "4572" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on December 13, 2017 at 2:00 pm</span>
+</div>
+<div class="comment-entry">
+<p>Thank you for your feedback Prakasha, I’m glad you like it</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-even depth-1" id="li-comment-48155">
+<div id="comment-48155" class="comment-body clearfix">
+<div class="avatars">
+<img alt="shital kulkarni" src="All%20you%20need%20to%20know%20about%20ADSO_files/6fd386cb4781fe79f6aaeb6b21afa4f5.jpg" srcset="//secure.gravatar.com/avatar/6fd386cb4781fe79f6aaeb6b21afa4f5?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48155" onclick='return addComment.moveForm( "comment-48155", "48155", "respond", "4572" )' aria-label="Reply to shital kulkarni">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">shital kulkarni</cite>
+<span>Posted on December 6, 2017 at 1:51 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hello,</p>
+<p>We could create open ODS view and ADSo .But we are not able to add them in composite provider.</p>
+<p>We can see only classical datastore objects in composite provider.</p>
+<p>Regards,<br>
+Shital</p>
+</div>
+</div>
+</div>
+<ul class="children">
+<li class="comment byuser comment-author-mbussink bypostauthor even depth-2" id="li-comment-48164">
+<div id="comment-48164" class="comment-body clearfix">
+<div class="avatars">
+<img src="All%20you%20need%20to%20know%20about%20ADSO_files/2042.jpg" alt="Michael Hendrik Bussink" class="photo" width="74" height="100"> <a rel="nofollow" class="comment-reply-link" href="#comment-48164" onclick='return addComment.moveForm( "comment-48164", "48164", "respond", "4572" )' aria-label="Reply to Michael Hendrik Bussink">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.just-bi.nl/" rel="external nofollow" class="url">Michael Hendrik Bussink</a></cite>
+<span>Posted on December 13, 2017 at 1:59 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hi Shital,</p>
+<p>That is unusual, are you modeling from Eclipse? If so, do you have 
+the latest version installed? Also, are you sure the objects you want to
+ add to the CompositeProvider are active?</p>
+<p>Regards,<br>
+Michael</p>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-48175">
+<div id="comment-48175" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Renish Dudhatra" src="All%20you%20need%20to%20know%20about%20ADSO_files/3e519b2bbe2c6ca50f9c5d613b64e9ca.jpg" srcset="//secure.gravatar.com/avatar/3e519b2bbe2c6ca50f9c5d613b64e9ca?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48175" onclick='return addComment.moveForm( "comment-48175", "48175", "respond", "4572" )' aria-label="Reply to Renish Dudhatra">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Renish Dudhatra</cite>
+<span>Posted on December 28, 2017 at 12:34 pm</span>
+</div>
+<div class="comment-entry">
+<p>Bookmarked! Thanks a lot Michael.</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-48186">
+<div id="comment-48186" class="comment-body clearfix">
+<div class="avatars">
+<img alt="DEVENDER" src="All%20you%20need%20to%20know%20about%20ADSO_files/30278f71b2aed497be8c3d1994db673f.jpg" srcset="//secure.gravatar.com/avatar/30278f71b2aed497be8c3d1994db673f?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48186" onclick='return addComment.moveForm( "comment-48186", "48186", "respond", "4572" )' aria-label="Reply to DEVENDER">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">DEVENDER</cite>
+<span>Posted on January 16, 2018 at 1:47 pm</span>
+</div>
+<div class="comment-entry">
+<p>HI<br>
+I HAVE SOME ISSUE IN ADSO .I AM USING BW 7.4 SP9 VERSION AND BW MODELLER 2.1 .<br>
+WHEN I STAGED MY 0FI_GL_10 DATA INTO CORPORATE MEMORY (WITH 
+ACTIVATE/COMPRESS AND ALSO CHECK WITH ACTIVATE/COMPRESS + KEEP 
+INBOUND).NOW I FURTHER EXTRACT THIS DATA ON TOP OF IT WITH STANDARD ADSO
+ (ACTIVATE/COMPRESS + CHANGE LOG) WITH DELTA INITILIASATION GETTING 
+ERROR RX_EXCEPTION105.<br>
+HOW TO INIT MY DELTA HERE<br>
+I HAVE CHECKED WITH DIFFREND MODEL TEMLATE OF ADSO</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-48188">
+<div id="comment-48188" class="comment-body clearfix">
+<div class="avatars">
+<img alt="harish" src="All%20you%20need%20to%20know%20about%20ADSO_files/ec9399505f0221212b126b3c11958071.jpg" srcset="//secure.gravatar.com/avatar/ec9399505f0221212b126b3c11958071?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48188" onclick='return addComment.moveForm( "comment-48188", "48188", "respond", "4572" )' aria-label="Reply to harish">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">harish</cite>
+<span>Posted on January 22, 2018 at 6:18 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hello Michael,</p>
+<p>Nice blog and good information. Provider by you.</p>
+<p>I have a doubt could you please clarify me?</p>
+<p>My doubt is we would create an Adso in Hana studio by choosing appropriate template</p>
+<p>Without going into Hana studio .can we able to identify in Bw which type of Adso template was used for design?</p>
+<p>Please clarify me.hope you understood my question.</p>
+<p>Kind regards<br>
+Harish.C</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-48189">
+<div id="comment-48189" class="comment-body clearfix">
+<div class="avatars">
+<img alt="chhareess" src="All%20you%20need%20to%20know%20about%20ADSO_files/ec9399505f0221212b126b3c11958071.jpg" srcset="//secure.gravatar.com/avatar/ec9399505f0221212b126b3c11958071?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48189" onclick='return addComment.moveForm( "comment-48189", "48189", "respond", "4572" )' aria-label="Reply to chhareess">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">chhareess</cite>
+<span>Posted on January 23, 2018 at 6:39 am</span>
+</div>
+<div class="comment-entry">
+<p>Nice blog and good Information provided by you.</p>
+<p>Could you please let me know if we are creating an ADSO in hana Studio choosing appropriate template.</p>
+<p>Can we able to identify in BW what type of template been used in creation of ADSO without going into Hana studio.</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-48195">
+<div id="comment-48195" class="comment-body clearfix">
+<div class="avatars">
+<img alt="syam srikanth" src="All%20you%20need%20to%20know%20about%20ADSO_files/62dd0127ec2aa50b0bf943d9186521d3.jpg" srcset="//secure.gravatar.com/avatar/62dd0127ec2aa50b0bf943d9186521d3?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48195" onclick='return addComment.moveForm( "comment-48195", "48195", "respond", "4572" )' aria-label="Reply to syam srikanth">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">syam srikanth</cite>
+<span>Posted on January 26, 2018 at 3:42 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hi Michael,</p>
+<p>Great Article !! With good and clear explanation.<br>
+One Doubt<br>
+Can we use model templates in BW 7.4&amp;7.5 on Oracle DB System ?</p>
+<p>Thank,<br>
+Syam.</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-48199">
+<div id="comment-48199" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Manoj" src="All%20you%20need%20to%20know%20about%20ADSO_files/2493374da05ff9036db9212b5d2ee192.jpg" srcset="//secure.gravatar.com/avatar/2493374da05ff9036db9212b5d2ee192?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48199" onclick='return addComment.moveForm( "comment-48199", "48199", "respond", "4572" )' aria-label="Reply to Manoj">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Manoj</cite>
+<span>Posted on January 31, 2018 at 7:31 am</span>
+</div>
+<div class="comment-entry">
+<p>Hi,</p>
+<p>What is the major difference between the DSO and CUBE in BW 7.5.<br>
+I am asking this question because from 7.5, the info cube administration
+ like ROLLUP, AGGRIGATES, CREATE INDEX, DELETE INDEX are obsolete. So 
+please advise me what exactly the difference and what kind of advantages
+ we get with CUBE over DSO in BW 7.5</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-48202">
+<div id="comment-48202" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Abhishek Turkar" src="All%20you%20need%20to%20know%20about%20ADSO_files/70ca6fa9bee1f078be894a6b97e03252.jpg" srcset="//secure.gravatar.com/avatar/70ca6fa9bee1f078be894a6b97e03252?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48202" onclick='return addComment.moveForm( "comment-48202", "48202", "respond", "4572" )' aria-label="Reply to Abhishek Turkar">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Abhishek Turkar</cite>
+<span>Posted on February 2, 2018 at 12:10 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hi Michael , Thanks very good article.</p>
+<p>Would like to understand , how various CM- ADSOs utilize the Memory, does it utilize the disk space or are stored inMemory.</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-48210">
+<div id="comment-48210" class="comment-body clearfix">
+<div class="avatars">
+<img alt="R.L Soerensen" src="All%20you%20need%20to%20know%20about%20ADSO_files/057a692ed21833c714eb85a3e90cea09.jpg" srcset="//secure.gravatar.com/avatar/057a692ed21833c714eb85a3e90cea09?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48210" onclick='return addComment.moveForm( "comment-48210", "48210", "respond", "4572" )' aria-label="Reply to R.L Soerensen">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">R.L Soerensen</cite>
+<span>Posted on February 15, 2018 at 12:20 pm</span>
+</div>
+<div class="comment-entry">
+<p>such a good article with good examples.</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-48213">
+<div id="comment-48213" class="comment-body clearfix">
+<div class="avatars">
+<img alt="MichaelDeect" src="All%20you%20need%20to%20know%20about%20ADSO_files/96949a8578c57fbff9d2ddc2e7c8f869.jpg" srcset="//secure.gravatar.com/avatar/96949a8578c57fbff9d2ddc2e7c8f869?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48213" onclick='return addComment.moveForm( "comment-48213", "48213", "respond", "4572" )' aria-label="Reply to MichaelDeect">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://megasto.com.ua/catalog/lenta_konveyernaya/" rel="external nofollow" class="url">MichaelDeect</a></cite>
+<span>Posted on February 24, 2018 at 7:29 pm</span>
+</div>
+<div class="comment-entry">
+<p>Normally I do not learn article on blogs, however I wish to say that 
+this write-up very pressured me to try and do so! Your writing style has
+ been amazed me. Thank you, quite nice article.<br>
+——————————————<br>
+<a href="https://megasto.com.ua/" rel="nofollow">//megasto.com.ua</a> </p>
+<p>f7rpf9Sg6L</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-48224">
+<div id="comment-48224" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Aniket" src="All%20you%20need%20to%20know%20about%20ADSO_files/162ef5da65bf2e292d30a02d6fc54b1b.jpg" srcset="//secure.gravatar.com/avatar/162ef5da65bf2e292d30a02d6fc54b1b?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48224" onclick='return addComment.moveForm( "comment-48224", "48224", "respond", "4572" )' aria-label="Reply to Aniket">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Aniket</cite>
+<span>Posted on March 16, 2018 at 3:31 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hi Michael,</p>
+<p>I’m new to BW/4HANA and thus want to know the latest techniques to 
+write the data back to the ADSO. The idea behind is to know the new 
+approach over the conventional ABAP Programs and BAdIs. Please let me 
+know where all we can use the new programming paradigms instead of 
+conventional ABAP.</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-48257">
+<div id="comment-48257" class="comment-body clearfix">
+<div class="avatars">
+<img alt="RK" src="All%20you%20need%20to%20know%20about%20ADSO_files/dab9d10659ee7fa3886ba6501755fb4a.jpg" srcset="//secure.gravatar.com/avatar/dab9d10659ee7fa3886ba6501755fb4a?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48257" onclick='return addComment.moveForm( "comment-48257", "48257", "respond", "4572" )' aria-label="Reply to RK">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">RK</cite>
+<span>Posted on April 16, 2018 at 10:38 am</span>
+</div>
+<div class="comment-entry">
+<p>Hi Micheal,</p>
+<p>Detailed and ample information for any newbie in aDSOs.<br>
+Thank you.<br>
+I’ve an issue when using Planning aDSO with direct update.<br>
+Issue is: when I’m loading data via DTP in the planning aDSO with direct
+ update the keyfigures are overwritten even though in the 
+transformation, “No Transformation” option is selected for those key 
+figures.<br>
+Please help in this.</p>
+<p>Thank you.<br>
+Regards,<br>
+RK</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-48258">
+<div id="comment-48258" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Thorsten" src="All%20you%20need%20to%20know%20about%20ADSO_files/2acb48d68cf505afb491be0d383a6e2b.jpg" srcset="//secure.gravatar.com/avatar/2acb48d68cf505afb491be0d383a6e2b?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48258" onclick='return addComment.moveForm( "comment-48258", "48258", "respond", "4572" )' aria-label="Reply to Thorsten">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Thorsten</cite>
+<span>Posted on April 16, 2018 at 11:04 am</span>
+</div>
+<div class="comment-entry">
+<p>Hi,<br>
+we have a problem with a aDSO. We see all fields in all tables, but when
+ we use the dso in Analysis for office or in Lumira, some fields are 
+missing.<br>
+Do you have an Idea?<br>
+Thanks in advance and best regards<br>
+Thorsten</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-48262">
+<div id="comment-48262" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Premchand" src="All%20you%20need%20to%20know%20about%20ADSO_files/c7b5f6e837cddac95f5653b9b9ba01f0.jpg" srcset="//secure.gravatar.com/avatar/c7b5f6e837cddac95f5653b9b9ba01f0?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48262" onclick='return addComment.moveForm( "comment-48262", "48262", "respond", "4572" )' aria-label="Reply to Premchand">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.auroraonlinetrainings.com/" rel="external nofollow" class="url">Premchand</a></cite>
+<span>Posted on April 21, 2018 at 3:29 am</span>
+</div>
+<div class="comment-entry">
+<p>Hi Michael,</p>
+<p>Thanks for excellent information.<br>
+I think ‘Planning-Direct update’ is not identical to ‘classic Direct DSO’ in terms of functionality.<br>
+The ADSO with ‘Planning -Direct update’ can not be used as data target 
+in APD. Only the normal traditional direct dso only be used as data 
+target in APD.</p>
+<p>I tried in my system, it is not allowing.<br>
+Please correct me if, i am wrong.</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-48270">
+<div id="comment-48270" class="comment-body clearfix">
+<div class="avatars">
+<img alt="RK" src="All%20you%20need%20to%20know%20about%20ADSO_files/dab9d10659ee7fa3886ba6501755fb4a.jpg" srcset="//secure.gravatar.com/avatar/dab9d10659ee7fa3886ba6501755fb4a?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48270" onclick='return addComment.moveForm( "comment-48270", "48270", "respond", "4572" )' aria-label="Reply to RK">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">RK</cite>
+<span>Posted on May 3, 2018 at 12:21 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hi All,</p>
+<p>I checked with SAP and they confirmed that the Planning aDSO – direct Update functionality is peculiar.<br>
+Even though if you don’t map objects (Initial update) in transformations
+ the subsequent load will over-write the KEYFIGURES with ZERO values 
+based on the KEY-FIELDS in aDSO.</p>
+<p>It also answers my earlier query Posted on April 16, 2018 at 10:38 am.</p>
+<p>Please let me know if anyone need more information.</p>
+<p>Thank you.<br>
+Regards,<br>
+RK</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-48289">
+<div id="comment-48289" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Vinoth" src="All%20you%20need%20to%20know%20about%20ADSO_files/9fa2b63e0c462d7ab3f90b955ff0d95a.jpg" srcset="//secure.gravatar.com/avatar/9fa2b63e0c462d7ab3f90b955ff0d95a?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48289" onclick='return addComment.moveForm( "comment-48289", "48289", "respond", "4572" )' aria-label="Reply to Vinoth">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Vinoth</cite>
+<span>Posted on June 6, 2018 at 10:18 am</span>
+</div>
+<div class="comment-entry">
+<p>An Awesome Write-up,Michael.</p>
+<p>Thank You for spending your time on this post and sharing.</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment even thread-even depth-1" id="li-comment-48292">
+<div id="comment-48292" class="comment-body clearfix">
+<div class="avatars">
+<img alt="Sudhanshu Dhar" src="All%20you%20need%20to%20know%20about%20ADSO_files/e0e9393474a309d1a3f11d9920819776.jpg" srcset="//secure.gravatar.com/avatar/e0e9393474a309d1a3f11d9920819776?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48292" onclick='return addComment.moveForm( "comment-48292", "48292", "respond", "4572" )' aria-label="Reply to Sudhanshu Dhar">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn">Sudhanshu Dhar</cite>
+<span>Posted on June 8, 2018 at 9:26 am</span>
+</div>
+<div class="comment-entry">
+<p>Hi Michael</p>
+<p>It is really a wonderful blog explaining the concepts in brief but 
+understandable manner. Will be looking forward to your future blogs.</p>
+</div>
+</div>
+</div>
+</li>
+<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-48295">
+<div id="comment-48295" class="comment-body clearfix">
+<div class="avatars">
+<img alt="kannan Natarajan" src="All%20you%20need%20to%20know%20about%20ADSO_files/4ac64b18d125867eb7a2989c0cebd2f5.jpg" srcset="//secure.gravatar.com/avatar/4ac64b18d125867eb7a2989c0cebd2f5?s=150&amp;d=mm&amp;r=g 2x" class="imgborder  avatar-75 photo"> <a rel="nofollow" class="comment-reply-link" href="#comment-48295" onclick='return addComment.moveForm( "comment-48295", "48295", "respond", "4572" )' aria-label="Reply to kannan Natarajan">Reply</a> </div>
+<div class="comment-text">
+<div class="comment-meta">
+<cite class="fn"><a href="https://www.linkedin.com/in/kannan-natarajan" rel="external nofollow" class="url">kannan Natarajan</a></cite>
+<span>Posted on June 10, 2018 at 6:05 pm</span>
+</div>
+<div class="comment-entry">
+<p>Hi Michael,</p>
+<p>Can you please help me to clarify the role of SID in ADSO?<br>
+When reporting on ADSO-&gt;HCPR-&gt; Bex and using characteristic as a filter, Is SID mandatory?<br>
+If so how SID is handled for field bases modelling?</p>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div id="respond" class="comment-respond">
+<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://www.just-bi.nl/all-you-need-to-know-about-adso/#respond" style="display:none;">Cancel reply</a></small></h3> <form action="//www.just-bi.nl/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="novalidate">
+<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" class="required"></textarea></p><p class="comment-form-author clearfix"><span class="comment-input-wrap"><input id="author" name="author" placeholder="Name" size="30" class="required" aria-required="true" type="text"></span>
+<span class="comment-input-wrap"><input id="email" name="email" placeholder="E-mail" size="30" class="required" aria-required="true" type="text"></span></p>
+<p class="comment-form-url"><input id="url" name="url" placeholder="Website" size="30" type="text"></p>
+<label>
+Enter Code <span style="color: #b94a48;">*</span>
+</label>
+<input name="captcha_challenge_field" id="captcha_challenge_field" class="captcha_challenge_field" type="text">
+<label style="display:block;">Captcha</label>
+<img src="All%20you%20need%20to%20know%20about%20ADSO_files/admin-ajax.png" class="captcha_code_img" id="captcha_code_img" title="Captcha to send message" style="margin-top:10px; cursor:pointer;">
+<img style="vertical-align: top !important; margin-top:9px; cursor:pointer;" onclick="refresh(); " alt="Reload Image" src="All%20you%20need%20to%20know%20about%20ADSO_files/refresh-icon.png" width="25" height="25">
+<script type="text/javascript">
+			function refresh()
+			{
+				var randNum = Math.floor((Math.random() * 99999) + 1);
+				jQuery("#captcha_code_img").attr("src","//www.just-bi.nl/wp-admin/admin-ajax.php?captcha_code="+randNum);
+				return true;
+			}
+		</script>
+<p class="form-submit"><input name="submit" id="submit" class="submit" value="Post Comment" type="submit"> <input name="comment_post_ID" value="4572" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p><p style="display: none;"></p> <input id="ak_js" name="ak_js" value="1536066728978" type="hidden"></form>
+</div>
+</article>
+</div>
+</div>
+<aside class="grid_4 right-sidebar">
+</aside>
+</div>
+</div>
+<footer>
+<section id="footer_widgets" class="clearfix row">
+<aside class="grid_4">
+<div id="text-2" class="widget widget_text"><h4 class="widget-title">How to reach us</h4> <div class="textwidget"><p>Just-BI BV<br>
+Laan van Zuidhoorn 37<br>
+2289 DC Rijswijk – the Netherlands<br>
+Tel: +31 (0)70 – 4154806<br>
+Fax: +31 (0)70 – 4159787<br>
+KvK Haaglanden: 27256964<br>
+BTW.&nbsp;NL8115.65.567.B01</p>
+<p>Just-BI Sdn Bhd<br>
+Unit 12-06, Tower A Vertical Business Suite, Bangsar South City,<br>
+Jalan Kerinchi 59200 Kuala Lumpur<br>
+Malaysia<br>
+Company No. 1236682-K</p>
+<a class="simple_button_link " style="background-color: #b70004" href="https://www.just-bi.nl/contactus/"><span>more info</span></a>
+</div>
+</div> </aside>
+<aside class="grid_4">
+<div id="churchope-social-links-2" class="widget widget_social_links"><h4 class="widget-title">Follow us</h4><ul><li><a href="https://twitter.com/fairfocusfun" class="twitter_account">Twitter</a></li><li><a href="https://facebook.com/justbi2003" class="facebook_account">Facebook</a></li><li><a href="https://linkedin.com/company/just-bi" class="linked_in_account">Linkedin</a></li></ul></div><div id="text-5" class="widget widget_text"><h4 class="widget-title">Privacy Statement</h4> <div class="textwidget"><ul>
+<li><a href="https://www.just-bi.nl/privacy-statement-just-bi-bv/">Privacy Statement</a></li>
+</ul>
+</div>
+</div> </aside>
+<aside class="grid_4">
+<div id="churchope-popular-posts-4" class="widget widget_popular_posts"><h4 class="widget-title">Most Popular</h4> <ul>
+<li>
+<a href="https://www.just-bi.nl/virtual-bw-open-ods-view/" title="How to go Virtual in BW Part I: The Open ODS View" class="imgborder"><span class="placeholder">
+<img src="All%20you%20need%20to%20know%20about%20ADSO_files/How-to-go-Virtual-in-BW-Part-I-The-Open-ODS-View-v3-75x50.png" class="attachment-recent_posts size-recent_posts wp-post-image" alt="How to go Virtual in BW Part I The Open ODS View v3" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/How-to-go-Virtual-in-BW-Part-I-The-Open-ODS-View-v3-75x50.png 75w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/How-to-go-Virtual-in-BW-Part-I-The-Open-ODS-View-v3-300x200.png 300w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/How-to-go-Virtual-in-BW-Part-I-The-Open-ODS-View-v3-768x512.png 768w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/How-to-go-Virtual-in-BW-Part-I-The-Open-ODS-View-v3-1024x683.png 1024w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/How-to-go-Virtual-in-BW-Part-I-The-Open-ODS-View-v3-150x100.png 150w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_5048/How-to-go-Virtual-in-BW-Part-I-The-Open-ODS-View-v3.png 1368w" sizes="(max-width: 75px) 100vw, 75px">
+</span></a>
+<div class="recent_txt">
+<a href="https://www.just-bi.nl/virtual-bw-open-ods-view/" title="How to go Virtual in BW Part I: The Open ODS View">How to go Virtual in BW Part I: The Open ODS View</a>
+<p><a href="https://www.just-bi.nl/virtual-bw-open-ods-view/#comments" class="comments">19 - Comments</a></p> </div>
+</li>
+<li>
+<a href="https://www.just-bi.nl/bw4hana-fantastic-journey/" title="SAP BW/4HANA: My fantastic journey!" class="imgborder"><span class="placeholder">
+<img src="All%20you%20need%20to%20know%20about%20ADSO_files/just-bi-bw4hana-75x50.png" class="attachment-recent_posts size-recent_posts wp-post-image" alt="" srcset="//www.just-bi.nl/wp-content/uploads/posts/2017/post_4575/just-bi-bw4hana-75x50.png 75w, //www.just-bi.nl/wp-content/uploads/posts/2017/post_4575/just-bi-bw4hana-150x100.png 150w" sizes="(max-width: 75px) 100vw, 75px">
+</span></a>
+<div class="recent_txt">
+<a href="https://www.just-bi.nl/bw4hana-fantastic-journey/" title="SAP BW/4HANA: My fantastic journey!">SAP BW/4HANA: My fantastic journey!</a>
+<p><a href="https://www.just-bi.nl/bw4hana-fantastic-journey/#comments" class="comments">15 - Comments</a></p> </div>
+</li>
+ </ul>
+</div> </aside>
+<div class="grid_12 dotted"></div>
+</section>
+<div class="clearfix row" id="copyright">
+<div class="grid_5"><p>Just-BI 2016 © </p></div>
+<nav class="grid_7 clearfix"><ul id="menu-main-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1704"><a href="https://www.just-bi.nl/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1698"><a href="https://www.just-bi.nl/products/services/">Services</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3615"><a href="https://www.just-bi.nl/products/services/consultancy/">Consultancy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3622"><a href="https://www.just-bi.nl/projects/">Projects</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3623"><a href="https://www.just-bi.nl/products/services/solutions-innovations/">Innovations</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-post-parent menu-item-1697"><a href="https://www.just-bi.nl/products/">Products</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4168"><a href="https://www.just-bi.nl/portfolio/">Portfolio</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3647"><a href="https://www.just-bi.nl/just-portfolio/big-data-warehousing/">(BIG) Data Warehousing</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3648"><a href="https://www.just-bi.nl/just-portfolio/visualization/">Reporting &amp; Visualization</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3676"><a href="https://www.just-bi.nl/just-portfolio/planning-forecast/">Business Planning &amp; Forecasting</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3726"><a href="https://www.just-bi.nl/just-portfolio/custom-development/">Custom Development</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3725"><a href="https://www.just-bi.nl/just-portfolio/information-management/">Information Management</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3646"><a href="https://www.just-bi.nl/just-portfolio/data-science/">Advanced Analytics</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1695"><a href="https://www.just-bi.nl/people/">People</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3857"><a href="https://www.just-bi.nl/just-team/">Just-Team</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3865"><a href="https://www.just-bi.nl/careers/">Join our Just-Team</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1934"><a href="https://www.just-bi.nl/newsroom/">Newsroom</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3729"><a href="https://www.just-bi.nl/category/news/">News</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3728"><a href="https://www.just-bi.nl/category/blog-posts/">Blog Posts</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3731"><a href="https://www.just-bi.nl/category/articles/">Articles</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3730"><a href="https://www.just-bi.nl/category/reviews/">Reviews</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-3727"><a href="https://www.just-bi.nl/category/tutorials/">Tutorials</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5413"><a href="https://www.just-bi.nl/contactus/">Contact Us</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1759"><a href="https://www.just-bi.nl/contactus/contactnl/">Contact-Netherlands</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5420"><a href="https://www.just-bi.nl/contactus/contact-malaysia/">Contact-Malaysia</a></li>
+</ul>
+</li>
+</ul></nav> </div>
+</footer>
+<script async="">(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='f4ab0f007b5a9f00d74c0f000a81f7001940cf00252b64005849a00067419300';j.dataset.sumoPlatform='wordpress';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script> <script type="application/javascript">
+      var ajaxurl = "//www.just-bi.nl/wp-admin/admin-ajax.php";
+
+      function sumo_add_woocommerce_coupon(code) {
+        jQuery.post(ajaxurl, {
+          action: 'sumo_add_woocommerce_coupon',
+          code: code,
+        });
+      }
+
+      function sumo_remove_woocommerce_coupon(code) {
+        jQuery.post(ajaxurl, {
+          action: 'sumo_remove_woocommerce_coupon',
+          code: code,
+        });
+      }
+
+      function sumo_get_woocommerce_cart_subtotal(callback) {
+        jQuery.ajax({
+          method: 'POST',
+          url: ajaxurl,
+          dataType: 'html',
+          data: {
+            action: 'sumo_get_woocommerce_cart_subtotal',
+          },
+          success: function(subtotal) {
+            return callback(null, subtotal);
+          },
+          error: function(err) {
+            return callback(err, 0);
+          }
+        });
+      }
+    </script>
+
+<script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', UA-86482906-1, 'auto');
+            ga('send', 'pageview');
+        </script>
+
+<script type="text/javascript">function showhide_toggle(a,b,d,f){var e=jQuery("#"+a+"-link-"+b),c=jQuery("a",e),g=jQuery("#"+a+"-content-"+b);a=jQuery("#"+a+"-toggle-"+b);e.toggleClass("sh-show sh-hide");g.toggleClass("sh-show sh-hide").toggle();"true"===c.attr("aria-expanded")?c.attr("aria-expanded","false"):c.attr("aria-expanded","true");a.text()===d?a.text(f):a.text(d)};</script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/superfish.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/jquery.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/velocity.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var ThemeData = {"admin_url":"https:\/\/www.just-bi.nl\/wp-admin\/admin-ajax.php","directory_uri":"https:\/\/www.just-bi.nl\/wp-content\/themes\/churchope"};
+var Theme_i18n = {"wrong_connection":"Something going wrong with connection...","error_author":"Please specify your name.","error_comment":"Please enter your message.","error_email_wrong":"Your email address must be in the format of name@domain.com","error_email_required":"We need your email address to contact you."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/script.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var cnArgs = {"ajaxurl":"https:\/\/www.just-bi.nl\/wp-admin\/admin-ajax.php","hideEffect":"fade","onScroll":"no","onScrollOffset":"100","cookieName":"cookie_notice_accepted","cookieValue":"true","cookieTime":"604800","cookiePath":"\/","cookieDomain":"","redirection":"","cache":"1","refuse":"no","revoke_cookies":"0","revoke_cookies_opt":"automatic","secure":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/front.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/imagesloaded.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/masonry.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var dportfolio_data = {"thumbnails_gutter":"20"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/frontend.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/effect.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/effect-slide.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/effect-highlight.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/effect-fold.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/effect-blind.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/bg-show-hide.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var DialogContactForm = {"ajaxurl":"https:\/\/www.just-bi.nl\/wp-admin\/admin-ajax.php","nonce":"b52e3450c0","selector":".dcf-form","fieldClass":".dcf-has-error","errorClass":".dcf-error-message","loadingClass":".is-loading","submitBtnClass":".dcf-submit","spam_message":"One or more fields have an error. Please check and try again.","mail_sent_ok":"Thank you for your message. It has been sent successfully.","mail_sent_ng":"There was an error trying to send your message. Please try again later.","validation_error":"One or more fields have an error. Please check and try again.","generic_error":"The value you entered for this field is invalid.","invalid_required":"Please fill out this field.","required_select":"Please choose a value.","required_select_multi":"Please choose at least one value.","required_checkbox":"Please check this field.","invalid_too_long":"Please shorten this text to no more than {maxLength} characters. You are currently using {length} characters.","invalid_too_short":"Please lengthen this text to {minLength} characters or more. You are currently using {length} characters.","number_too_small":"Please select a value that is no less than {min}.","number_too_large":"Please select a value that is no more than {max}.","invalid_email":"Please enter an email address.","invalid_url":"Please enter an URL.","invalid_number":"Please enter a number.","invalid_date":"Please enter a date.","invalid_ip":"Please enter an IP address.","invalid_recaptcha":"Please check the checkbox.","step_mismatch":"Please select a valid value.","pattern_mismatch":"Please match the requested format.","bad_input":"Please enter a number.","file_generic_error":"Unknown upload error.","required_file":"Please upload a file.","required_file_multi":"Please upload at least one file.","unsupported_file_multi":"Multiple files are not allowed.","file_too_large":"Please upload a file no more than {maxSize}.","invalid_file_format":"File format is invalid."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/form.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/wp-embed.js"></script>
+<script type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/jquery_004.js"></script>
+<script async="async" type="text/javascript" src="All%20you%20need%20to%20know%20about%20ADSO_files/form_002.js"></script>
+<div id="cookie-notice" role="banner" class="cn-bottom wp-default" style="color: rgb(39, 27, 29); background-color: rgb(255, 255, 255); visibility: visible;"><div class="cookie-notice-container"><span id="cn-notice-text">We
+ use cookies to ensure that we give you the best experience on our 
+website. If you continue to use this site we will assume that you are 
+happy with it. If you want to disable cookies please change this in your
+ browser settings. Please also refer to our Privacy Statement.</span><a href="#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie cn-button wp-default button">Ok</a><a href="https://www.just-bi.nl/privacy-statement-just-bi/%20" target="_blank" id="cn-more-info" class="cn-more-info cn-button wp-default button">Read more</a>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<iframe style="display: none;" id="sumome-jquery-iframe" title="Sumo Hidden Content"></iframe><a href="javascript:void(0);" title="Sumo" style="background-color: rgb(0, 115, 183); border-radius: 3px 0px 0px 3px; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 10px; position: fixed; display: none !important; z-index: 2147483647; padding: 0px; width: 44px; height: 40px; text-indent: -10000px; opacity: 1;"><span style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">Sumo</span><span style="display:block;width:40px;height:40px;background:white;margin-left:4px;-webkit-border-radius: 3px 0 0 3px;-moz-border-radius: 3px 0 0 3px;-ms-border-radius: 3px 0 0 3px;-o-border-radius: 3px 0 0 3px;border-radius: 3px 0 0 3px;background-repeat:no-repeat;background-position:8px 8px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAMAAADXqc3KAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3hpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxZDQ2MjI4YS03NWY2LTRkZTQtOGJjYy1hODc1NjRkMjYxYTUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDQ3MUVFMDFFMjVDMTFFNjlFQjhBRjdGODU5MDJBMDUiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDQ3MUVFMDBFMjVDMTFFNjlFQjhBRjdGODU5MDJBMDUiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxZDQ2MjI4YS03NWY2LTRkZTQtOGJjYy1hODc1NjRkMjYxYTUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MWQ0NjIyOGEtNzVmNi00ZGU0LThiY2MtYTg3NTY0ZDI2MWE1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+8JtvywAAAKhQTFRFzOPxSJvLA3W4Mo7FBna5w97u8vj7EHy8a67VhbzdsdTpVaLPh73d9/v9C3m6QZfJbq/WXKbR3u32JIfB3ez1KorDir/eBHW4+/3+rtPoZarUG4K/LIvDDnu7ocvkf7nbdrTY9fr8E328WKPQO5PITJ3MPpXJstXptdbq+Pv9cbHXaq3VU6HOkMLgnMnjDHq62uv1/P3+6/T53Oz1cLDX/f7+AHO3////ptOZ5QAAADh0Uk5T/////////////////////////////////////////////////////////////////////////wA7XBHKAAAAmUlEQVR42sSRRxLCMAxFRSq9907ovebr/jdDMWYGxmZL3sIqbyFbJv4B/VlkVlerKALTD3G46Mx3AOR1UZ/TsDxW6W0gfYRNVfTCFu2AWpAMgMItMW+zQJU2UjWI29D0+e5KWNPMk+A9Om+B/UgOJyCuwMJCrpuziYkIsglfRByZ/XM3eXnBFEu1kpMpjq9dxQYp/OAXTwEGAB7Rc1xVnPemAAAAAElFTkSuQmCC);"></span></a><iframe style="display: none;"></iframe><div style="position:fixed;top:0;left:0;overflow:hidden;"><label for="focus_retriever" style="position:absolute;left:-1000px;">Focus Retriever</label><input style="position:absolute;left:-1000px;" name="focus_retriever" id="focus_retriever" readonly="true" type="text"></div><div class="sumome-image-sharer" style="width: 40px; height: 120px; top: 9234.07px; left: 561px; position: absolute; display: none;"><a href="javascript:void(0);" class="sumome-image-sharer-facebook sumome-image-sharer-vertical" style="border-radius: 3px 3px 0px 0px; border-width: 2px 2px 0px;"><div></div></a><a href="javascript:void(0);" class="sumome-image-sharer-twitter sumome-image-sharer-vertical" style="border-radius: 0px; border-width: 0px 2px;"><div></div></a><a href="javascript:void(0);" class="sumome-image-sharer-pinterest sumome-image-sharer-vertical" style="border-radius: 0px 0px 3px 3px; border-width: 0px 2px 2px;"><div></div></a></div><div class="sumome-share-client-wrapper sumome-share-client-wrapper-left-page sumome-share-client-light sumome-share-client-small" style="top: 268px;"><div class="sumome-share-client-show"><span></span></div><div data-sumome-share-pos="lp" class="sumome-share-client sumome-share-client-left-page sumome-share-client-light sumome-share-client-small sumome-share-client-circle"><a title="LinkedIn" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="linkedin" href="javascript:void(0);" style="background: rgb(0, 123, 182) none repeat scroll 0% 0%; color: rgb(255, 255, 255);"><img src="All%20you%20need%20to%20know%20about%20ADSO_files/linkedin-white-60.png" alt="LinkedIn"></a><a title="Twitter" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="twitter" href="javascript:void(0);" style="background: rgb(0, 172, 237) none repeat scroll 0% 0%; color: rgb(255, 255, 255);"><img src="All%20you%20need%20to%20know%20about%20ADSO_files/twitter-white-60.png" alt="Twitter"></a><a title="Facebook" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="facebook" href="javascript:void(0);" style="background: rgb(59, 89, 152) none repeat scroll 0% 0%; color: rgb(255, 255, 255);"><img src="All%20you%20need%20to%20know%20about%20ADSO_files/facebook-white-60.png" alt="Facebook"></a><a title="Google+" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="googleplus" href="javascript:void(0);" style="background: rgb(221, 75, 57) none repeat scroll 0% 0%; color: rgb(255, 255, 255);"><img src="All%20you%20need%20to%20know%20about%20ADSO_files/googleplus-white-60.png" alt="Google+"></a><a title="SumoMe" class="sumome-share-client-animated sumome-share-client-share" data-sumome-share="sumome" href="javascript:void(0);" style="background: rgb(15, 82, 186) none repeat scroll 0% 0%; color: rgb(255, 255, 255);"><img src="All%20you%20need%20to%20know%20about%20ADSO_files/sumome-white-60.png" alt="SumoMe"></a></div><div class="sumome-share-client-hide"><span></span></div></div></body></html>

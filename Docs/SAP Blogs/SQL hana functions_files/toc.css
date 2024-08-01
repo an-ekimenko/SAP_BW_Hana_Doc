@@ -1,0 +1,152 @@
+div#toc-container {
+	left: 0;
+	width: 314px;
+}
+
+div#toc {
+ 	height: calc(100% - 80px); 
+	width: 100%;
+	overflow-y: auto; /* scroll? */
+	color: #008FD3;
+	font-family: 'Open Sans', Arial, sans-serif;
+	padding-bottom: 30px;
+}
+
+/*div.chapter, div.subchapter {
+	display: table;
+	width: 100%;
+}*/
+
+div.chapter {
+	font-size: 14px;
+}
+
+div.subchapterscell div.chapter {
+	font-size: 13px;
+	display: table;
+	width: 100%;
+}
+
+
+div.chaptertitle, div.topichead, div.subchaptersrow {
+	display: table-row;
+}
+
+
+div.collapseicon, div.emptycollapseicon, div.topictitle, div.subchapterscell {
+	display: table-cell;
+
+}
+
+div.topictitle {
+	width: 100%;
+}
+
+
+
+div.chapter div.topictitle span {
+	padding: 0.65em 0.3em 0.6em 0.3em;
+}
+
+div.subchapter div.topictitle span {
+	padding: 0.5em 0.2em;
+}
+
+div.collapseicon, div.emptycollapseicon {
+	font-family: sap-icofonts;
+	width: 1.643em;
+	min-width: 1.643em;
+	text-align: center;
+	vertical-align: middle;
+}
+
+div.topictitle {
+	color: #008FD3;
+}
+
+div.chaptertitle div.topictitle:hover,
+.o2olink div.topictitle:hover + .o2oicon {
+	color: #003283;
+	background-color: #DDD;
+	cursor: pointer;
+}
+
+div.collapseicon:hover {
+	color: #003283;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+div.chaptertitle div.topictitle.tree-selected, 
+div.chaptertitle div.topictitle.tree-selected:hover {
+	background-color: #008FD3;
+	color: #FFF;
+	font-weight: 600;
+}
+
+.toc-widget {
+	font-size: 14px;
+}
+
+div.topictitle > a, div.topictitle > a > span {
+	display: block;
+	color: inherit;
+	font-size: 1em;
+	font-family: 'Open Sans', Arial, sans-serif;
+}
+
+div.topictitle > a:hover {
+	text-decoration: none;
+}
+
+div.tree-leaf div.collapseicon {
+	display: none;
+}
+
+div.tree-expanded > div.chaptertitle > div.emptycollapseicon, 
+div.tree-collapsed > div.chaptertitle > div.emptycollapseicon,
+div.tree-expanded > div.topichead > div.emptycollapseicon, 
+div.tree-collapsed > div.topichead > div.emptycollapseicon {
+	display: none;
+}
+
+div.collapseicon {
+	color: #008FD3;
+}
+
+div.topichead:hover {
+	color: #003283;
+	cursor: pointer;
+	background-color: #DDD;
+}
+
+div.topichead:hover div.collapseicon,
+div.topichead:hover div.topictitle {
+	color: #003283;
+}
+
+div.topichead:hover div.collapseicon {
+	font-weight: 600;
+}
+
+div.topichead div.topictitle,
+div.topichead div.collapseicon {
+	color: #666;
+}
+
+/*span.topichead {
+	font-weight: bolder;
+}*/
+span.topic {
+	
+}
+
+.o2olink .o2oicon {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: sap-icons;
+    color: #999;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+}
+

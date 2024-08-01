@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if gte IE 9]>
+<html class="ie" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar" content="black">
+    <title>ABAP Core Data Services – Introduction  (ABAP CDS view) | SAP Blogs</title>
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+
+    
+    
+    <!--[if lt IE 9]>
+    <script src="https://blogs.sap.com/wp-content/themes/sap-v3-neo/js/html5.min.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <link rel="icon" type="image" href="https://static.community.services.sap/com-hdr/v4/349.166/shared-ui/1dx-assets/images/favicon.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.community.services.sap/com-hdr/v4/349.166/shared-ui/1dx-assets/images/favicon.ico"><link rel="apple-touch-icon" href="https://static.community.services.sap/com-hdr/v4/349.166/shared-ui/1dx-assets/images/apple-touch-icon.png"><link rel="dns-prefetch" href="https://static.community.services.sap/">
+<link rel="dns-prefetch" href="https://accounts.sap.com/">
+<link rel="dns-prefetch" href="https://assets.adobedtm.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="SAP Blogs » Feed" href="https://blogs.sap.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="SAP Blogs » Comments Feed" href="https://blogs.sap.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="SAP Blogs » ABAP Core Data Services – Introduction  (ABAP CDS view) Comments Feed" href="https://blogs.sap.com/2017/09/09/abap-core-data-services-introduction-abap-cds-view/feed/">
+		<script type="text/javascript" defer="defer" async="" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/privacy.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11.2.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/blogs.sap.com\/res1dx-3018\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="twentytwelve-fonts-css" href="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="twentytwelve-style-css" href="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/style_002.css" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentytwelve-ie-css'  href='https://blogs.sap.com/res1dx-3018/wp-content/themes/sap-v3-neo/css/ie.css' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="designmate_styles-css" href="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/designmate.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="prism-css" href="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/prism.css" type="text/css" media="all">
+<link rel="stylesheet" id="pt_style_css-css" href="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/pt_style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wordpress-popular-posts-css-css" href="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/wpp.css" type="text/css" media="all">
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/jquery.js"></script>
+<script type="text/javascript">
+if (jQuery !== undefined) {
+                jQuery(window).load(function(){
+                    var _wpWindowLoaded = document.createElement("div");
+                    _wpWindowLoaded.setAttribute("class", "hidden");
+                    _wpWindowLoaded.setAttribute("id", "wp_window_loaded");
+                    document.body.appendChild(_wpWindowLoaded);
+                });
+            }
+</script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/jquery-migrate.js"></script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/satelliteLib-5b395b37d9c840291336f737b7ec55ce96357d73.js"></script><script src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/mbox-contents-b3289bb66afbc0829b613f61d1b927004a259d8f.js"></script><script src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/ip.json" type="text/javascript"></script><script src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/notice" crossorigin="" id="truste_0.29040880476334985">
+</script><script async="async" type="text/javascript" crossorigin="" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/v1.7-11"></script>
+<script>
+localStorage.setItem("trusteIsEU", identifyEU(truste));
+var apiObject = { PrivacyManagerAPI : {action: "getConsent",timestamp:new Date().getTime(),self:"sap.com"}};
+var json = JSON.stringify(apiObject);
+window.top.postMessage(json,"*");
+function removeIframeHandler(json){ 
+  if(json.data!==undefined && json.data.indexOf!==undefined && json.data.indexOf("remove_iframe") >= 0) {
+    window.location.reload();
+  }
+}
+function submitPreferencesHandler(json){ 
+  if(json.data!==undefined && json.data.indexOf!==undefined && json.data.indexOf("submit_preferences") >= 0) {
+    window.addEventListener("message", removeIframeHandler, false);
+  }
+}
+window.addEventListener("message", submitPreferencesHandler, false);
+
+function identifyEU(truste){
+  if(typeof truste === "undefined" || truste === null ){
+    console.error("truste is undefined");
+    return true;
+  }
+  if(typeof truste.eu === "undefined" || truste.eu === null){
+    console.error("truste.eu is undefined");
+    return true;
+  }
+  if(typeof truste.eu.bindMap === "undefined" || truste.eu.bindMap === null){
+    console.error("truste.eu.bindMap is undefined");
+    return true;
+  }
+  if(typeof truste.eu.bindMap.behavior === "undefined" || truste.eu.bindMap.behavior === null){
+    console.error("truste.eu.bindMap is undefined");
+    return true;
+  }
+  return truste.eu.bindMap.behavior === "expressed";
+}
+</script><script src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/satellite-57f3511c64746d3cc1006e84.js"></script><script src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/satellite-57f3511c64746d3cc1006e85.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpp_params = {"sampling_active":"","sampling_rate":"100","ajax_url":"https:\/\/blogs.sap.com\/wp-admin\/admin-ajax.php","action":"update_views_ajax","ID":"537905","token":"dd240b609d"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/wpp.js"></script>
+<link rel="https://api.w.org/" href="https://blogs.sap.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blogs.sap.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blogs.sap.com/wp-includes/wlwmanifest.xml"> 
+
+<link rel="canonical" href="https://blogs.sap.com/2017/09/09/abap-core-data-services-introduction-abap-cds-view/">
+<link rel="shortlink" href="https://blogs.sap.com/?p=537905">
+<script type="text/javascript">var ajaxurl = "https://blogs.sap.com/wp-admin/admin-ajax.php";var likePostLabel = "Like";var unLikePostLabel = "Liked";var likeCommentLabel = "Like";var unLikeCommentLabel = "Liked";</script><meta name="type" content="Blog">    <!--[if IE ]>
+    <link rel="stylesheet" id="scn-ie-styles" href="https://blogs.sap.com/wp-content/themes/sap-v3-neo/css/ie.css"
+          type="text/css" media="all">
+    <link id="ids-popup-css" href="https://accounts.sap.com/universalui/shared/stylesheets/idsPopup.css"
+          rel="stylesheet"
+          type="text/css">
+    <![endif]-->
+
+
+<link rel="stylesheet" type="text/css" id="u0" href="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/skin.css"></head>
+
+<body class="post-template-default single single-post postid-537905 single-format-standard custom-font-enabled">
+
+
+<div class="page-wrapper">
+<b class="cn-accessibility"><a href="#main" tabindex="0" accesskey="S">Skip to Content</a></b>
+<div id="page" class="hfeed site">
+
+<header id="masthead" class="blogs-nav sap-header">
+    <header id="comm-hdr-Header" role="masthead"><div class="dm-header"><div class="dm-header__inner"><div class="dm-header__logo-wrapper"><a class="dm-logo--header" href="http://www.sap.com/" title="SAP"></a></div><nav id="comm-hdr-Navigation" class="dm-mainNav"><div class="dm-mobileSearch"><form class="dm-header__search-form" action="https://search.sap.com/search.html"><div class="dm-search-container dm-input dm-search__input"><label class="dm-input__box"><input class="dm-input__control" placeholder="Search SAP Community" name="filter-search" type="search" required=""><button class="dm-search__button dm-search__button-clear" type="reset" role="button" title="Reset Search"><span class="dm-search__buttonIcon dm-icon-encoded--close" role="img" aria-labelledby="title"><title>Reset</title></span></button><button class="dm-search__button dm-search__button-submit" type="submit" role="button" title="Search SAP Community"><span class="dm-search__buttonIcon dm-icon-encoded--search" role="img" aria-labelledby="title"><title>Search</title></span></button></label></div></form></div><ul class="dm-mainNav__menu"><li class="dm-header__homeItem"><a class="dm-header__homeItem-link" target="_self" href="https://community.sap.com/">Community</a></li><li class="dm-mainNav__menuItem"><a class="dm-mainNav__menuItem-link" href="https://community.sap.com/topics" aria-haspopup="true" aria-expanded="false" role="button">Topics<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a></li><li class="dm-mainNav__menuItem dm-mainNav--hasSubMenu"><a class="dm-mainNav__menuItem-link" href="https://answers.sap.com/index.html" aria-haspopup="true" aria-expanded="false" role="button">Answers<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a><div class="dm-mainNav__menuItem-dropdownContainer"><ul class="dm-mainNav__subMenu" role="menu"><li class="dm-mainNav__subMenu-mobileTitle"><a class="dm-mainNav__subMenu-title-link" target="_self" href="https://answers.sap.com/index.html" role="button">Answers<span class="dm-mainNav__subMenu-title-arrow dm-icon-encoded dm-icon-encoded--arrow-left"></span></a></li><li class="dm-mainNav__subMenu-item--overview"><a class="dm-mainNav__subMenu-link" target="_self" href="https://answers.sap.com/index.html">All Questions</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://answers.sap.com/questions/ask.html">Ask a question</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_blank" href="https://developers.sap.com/tutorials/community-qa.html">How to ask a question</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/using-tags">Using Tags</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://answers.sap.com/tags.html">All Tags</a></li></ul></div></li><li class="dm-mainNav__menuItem dm-mainNav--hasSubMenu"><a class="dm-mainNav__menuItem-link" href="https://blogs.sap.com/" aria-haspopup="true" aria-expanded="false" role="button">Blogs<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a><div class="dm-mainNav__menuItem-dropdownContainer"><ul class="dm-mainNav__subMenu" role="menu"><li class="dm-mainNav__subMenu-mobileTitle"><a class="dm-mainNav__subMenu-title-link" target="_self" href="https://blogs.sap.com/" role="button">Blogs<span class="dm-mainNav__subMenu-title-arrow dm-icon-encoded dm-icon-encoded--arrow-left"></span></a></li><li class="dm-mainNav__subMenu-item--overview"><a class="dm-mainNav__subMenu-link" target="_self" href="https://blogs.sap.com/">All Blog Posts</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://blogs.sap.com/wp-admin/post-new.php">Write a blog post</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/blogging">How to write a blog post</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/using-tags">Using Tags</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/blogging#Using_categories">Using Categories</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://blogs.sap.com/tags/">All tags</a></li></ul></div></li><li class="dm-mainNav__menuItem dm-mainNav--hasSubMenu"><a class="dm-mainNav__menuItem-link" href="https://community.sap.com/events" aria-haspopup="true" aria-expanded="false" role="button">Events<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a><div class="dm-mainNav__menuItem-dropdownContainer"><ul class="dm-mainNav__subMenu" role="menu"><li class="dm-mainNav__subMenu-mobileTitle"><a class="dm-mainNav__subMenu-title-link" target="_self" href="https://community.sap.com/events" role="button">Events<span class="dm-mainNav__subMenu-title-arrow dm-icon-encoded dm-icon-encoded--arrow-left"></span></a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/events/codejam">SAP Code Jam</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/community-calls">SAP Community Calls</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/events/inside-track">SAP Inside Track</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/events/stammtisch">SAP Stammtisch</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/events/teched">SAP TechEd</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/events">All Events</a></li></ul></div></li><li class="dm-mainNav__menuItem dm-mainNav--hasSubMenu"><a class="dm-mainNav__menuItem-link" href="https://community.sap.com/programs" aria-haspopup="true" aria-expanded="false" role="button">Programs<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a><div class="dm-mainNav__menuItem-dropdownContainer"><ul class="dm-mainNav__subMenu" role="menu"><li class="dm-mainNav__subMenu-mobileTitle"><a class="dm-mainNav__subMenu-title-link" target="_self" href="https://community.sap.com/programs" role="button">Community Programs<span class="dm-mainNav__subMenu-title-arrow dm-icon-encoded dm-icon-encoded--arrow-left"></span></a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/programs/influencer-programs">Influencers</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/programs/hall-of-fame">Member of the Month</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/programs/podcasts-series-stream">Podcasts and Live Streams</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://answers.sap.com/content/kbentry/list.html">Coffee Corner Discussions</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/programs">All Programs</a></li></ul></div></li><li class="dm-mainNav__menuItem dm-mainNav--hasSubMenu"><a class="dm-mainNav__menuItem-link" href="https://community.sap.com/resources" aria-haspopup="true" aria-expanded="false" role="button">Resources<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a><div class="dm-mainNav__menuItem-dropdownContainer"><ul class="dm-mainNav__subMenu" role="menu"><li class="dm-mainNav__subMenu-mobileTitle"><a class="dm-mainNav__subMenu-title-link" target="_self" href="https://community.sap.com/resources" role="button">Resources<span class="dm-mainNav__subMenu-title-arrow dm-icon-encoded dm-icon-encoded--arrow-left"></span></a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_blank" href="https://developers.sap.com/tutorials/community-start.html">Getting started</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/tutorials">Community Tutorials</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/tip-in-a-minute#Videos">Community Videos</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/voice-nl">Community Voice Newsletter</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/reputation">Reputation</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/missions-badges">Missions &amp; Badges</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/moderation">Moderation</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/rules-of-engagement">Rules of Engagement</a></li><li class="dm-mainNav__subMenu-item"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources">All Resources</a></li></ul></div></li><li class="dm-mainNav__menuItem"><a class="dm-mainNav__menuItem-link" href="https://community.sap.com/resources/what-is-new" aria-haspopup="true" aria-expanded="false" role="button">What's New<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a></li></ul></nav><ul class="dm-header__actions" role="menu"><li id="comm-hdr-Search" class="dm-header__actions-item dm-header__search"><a class="dm-search-action dm-icon-encoded--search dm-header__search-icon" aria-label="Search the SAP Community" title="Search the SAP Community" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a><ul class="dm-header__actionsSubMenu dm-header__searchMenu" role="menu" data-name="actionsMenu"><form class="dm-header__search-form" action="https://search.sap.com/search.html"><div class="dm-header__search-input dm-search__input"><label class="dm-input__box"><input class="dm-input__control" name="filter-search" title="Search community" type="search" autocomplete="off"><span class="dm-input__placeholder">Search community</span><button class="dm-search__button dm-search__button-clear" type="reset"><span class="dm-search__buttonIcon dm-icon-encoded--close" role="img" aria-labelledby="title"></span><title>Reset</title></button><button class="dm-search__button dm-search__button-submit" type="submit" title="Search community"><span class="dm-search__buttonIcon dm-icon-encoded--search" role="img" aria-labelledby="title"></span><title>Search</title></button></label></div></form></ul></li><li id="comm-hdr-Authentication" class="dm-header__actions-item dm-header__account"><a id="comm-hdr-SignIn" class="dm-user__login-button--wrapper" aria-haspopup="true" aria-expanded="false" role="button" href="https://blogs.sap.com/wp-login.php?redirect_to=%2F2017%2F09%2F09%2Fabap-core-data-services-introduction-abap-cds-view%2F" rel="IDS_login" title="Log On"><div id="comm-hdr-AnonymousIcon" class="dm-icon-encoded dm-icon-encoded--account" aria-label="login"></div><div id="comm-hdr-Avatar" class="dm-user dm-header__avatar"><img class="dm-header__avatar-image dm-hidden" data-src="" src="" width="24px" height="24px"><span class="dm-header__notifications dm-hidden js-notification-indicator"></span></div></a><ul id="comm-hdr-UserProfileMenu" class="dm-header__actionsSubMenu dm-profileMenu" role="menu" aria-label="People profile" data-name="actionsMenu"><div class="dm-mobileSearch"><form class="dm-header__search-form" action="https://search.sap.com/search.html"><div class="dm-search-container dm-input dm-search__input"><label class="dm-input__box"><input class="dm-input__control" placeholder="Search SAP Community" name="filter-search" type="search" required=""><button class="dm-search__button dm-search__button-clear" type="reset" role="button" title="Reset Search"><span class="dm-search__buttonIcon dm-icon-encoded--close" role="img" aria-labelledby="title"><title>Reset</title></span></button><button class="dm-search__button dm-search__button-submit" type="submit" role="button" title="Search SAP Community"><span class="dm-search__buttonIcon dm-icon-encoded--search" role="img" aria-labelledby="title"><title>Search</title></span></button></label></div></form></div><li class="dm-header__actionsSubMenu-title"><a class="dm-header__actionsSubMenu-title-link" href="#" role="button">My profile<span class="dm-header__actionsSubMenu-title-arrow dm-icon-encoded--arrow-left"></span></a></li><li class="dm-profileMenu__userData"><div class="dm-profileMenu__avatar dm-author"><a id="comm-hdr-MenuAvatar" class="dm-profileMenu__avatar__image" href="" title=""><img data-src="" src=""></a></div><div id="comm-hdr-Username" class="dm-profileMenu__userName"></div><div id="comm-hdr-Email" class="dm-profileMenu__userEmail"></div></li><li id="comm-hdr-ProfileMenuTopSection" class="dm-profileMenu__section"><ul class="dm-profileMenu__list"></ul></li><li id="comm-hdr-ProfileMenuMiddleSection" class="dm-profileMenu__section"><ul class="dm-profileMenu__list"></ul></li><li class="dm-profileMenu__section"><ul class="dm-profileMenu__list dm-profileMenu__logout"><li class="dm-profileMenu__item"><a id="comm-hdr-LogOut" class="dm-profileMenu__link" href="#">Logout</a></li></ul></li></ul></li><li class="dm-header__actions-item dm-header__mobileMenu"><a id="comm-hdr-MobileMenuBtn" class="dm-mobileMenuButton" aria-label="Search SAP community"><span class="dm-icon-encoded dm-icon-encoded--mobile-menu"></span><span style="display:none;">Search</span></a></li></ul></div></div></header><div class="dm-wrapper dm-subheader dm-subheader--wrapper  dm-user--unauthenticated "><div class="dm-grid"><div class="dm-breadcrumb dm-user--unauthenticated" role="menubar">
+    <ul class="dm-breadcrumb-nav" role="navigation" aria-label="breadcrumb navigation">
+        
+        <li><a id="comm-shdr-breadcrumb-home" href="https://www.sap.com/" title="Home">Home</a></li>
+        
+        <li><a id="comm-shdr-breadcrumb-community" href="https://community.sap.com/" title="Community">Community</a></li>
+        
+    <li><a href="https://blogs.sap.com/" title="Blogs">Blogs</a></li></ul>
+    <ul class="dm-breadcrumb-actions" role="menu">
+        
+        <li><a id="comm-shdr-AskQuestion" href="https://answers.sap.com/questions/ask.html" title="Ask a Question">Ask a Question</a></li>
+        
+        <li><a id="comm-shdr-WriteBlogPost" href="https://blogs.sap.com/wp-admin/post-new.php" title="Write a Blog Post">Write a Blog Post</a></li>
+        
+        <li class="dm-user__login-button--wrapper"><a class="dm-button-small dm-button--primary" rel="IDS_login" href="https://blogs.sap.com/wp-login.php?redirect_to=%2F2017%2F09%2F09%2Fabap-core-data-services-introduction-abap-cds-view%2F"><span class="dm-button-text">Login / Sign-up</span></a></li>
+        <li class="dm-breadcrumb-actions__dropdown">
+            <span id="comm-shdr-actions-opener" class="dm-breadcrumb-actions__dropdown-toggle" title="Community actions">
+                 <span class="dm-icon-encoded dm-icon-encoded--3dots"></span>
+            </span>
+            <ul id="comm-shdr-user-actions-ul" class="dm-breadcrumb-actions__dropdown-menu dm_actions--populated" role="menu"><li id="comm-shdr-SendMessage"><a href="https://messages.sap.com/" title="Send a Message">Send a Message</a></li><li id="comm-shdr-ManageBlogPosts"><a href="https://blogs.sap.com/wp-admin/edit.php?post_type=post&amp;author=currentUser" title="Manage My Blog Posts">Manage My Blog Posts</a></li><li id="comm-shdr-GetStarted"><a href="https://community.sap.com/resources/getting-started" title="Quick Start Guide">Quick Start Guide</a></li></ul>
+        </li>
+    </ul>
+</div>
+</div></div>    <!-- #site-navigation -->
+
+</header>
+
+<!-- #masthead -->
+<div id="main" tabindex="0" class="wrapper">
+
+
+
+<div class="dm-wrapper">
+  <div class="dm-grid">
+    <div class="dm-section dm-section--first">
+      <div class="dm-layout__flexRow">
+        <div class="dm-layout__flexColumn">
+          <!-- Hero unit start -->
+          
+<div class="dm-contentHero">
+    <div class="dm-contentHero__row">
+        <div class="dm-contentHero__category">
+                    </div>
+    </div>
+    <div class="dm-contentHero__row">
+        <div class="dm-contentHero__column">
+            <div class="dm-contentHero__author-avatar">
+                <a class="dm-author__image" href="https://people.sap.com/tushar_sharma" title="Tushar Sharma">
+                    <img alt="Tushar Sharma" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/tushar_sharma_small.png" class="avatar avatar-48 photo avatar-default dm-author__image" width="48" height="48">                </a>
+            </div>
+        </div>
+        <div class="dm-contentHero__column dm-contentHero__flexColumn--wrap">
+            <div class="dm-contentHero__author">
+                <div class="dm-author__data">
+                    <div class="dm-author__heading">
+                        <a class="dm-author__name" href="https://people.sap.com/tushar_sharma">Tushar Sharma</a>
+                                            </div>
+                    <div class="dm-contentHero__metadata">
+                        <span class="dm-contentHero__metadata--item">September 9, 2017</span>
+                        <span class="dm-contentHero__metadata--item">6 minute read</span>
+                    </div>
+                </div>
+            </div>
+            <div class="dm-contentHero__headline">
+                <h1 class="dm-contentHero__title">ABAP Core Data Services – Introduction  (ABAP CDS view)</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="dm-contentHero__actions">
+        <div class="dm-contentFollow dm-contentHero__contentFollow">
+            <a class="dm-button-small dm-button--callToAction sap-button-follow" id="sap-button-follow-hdr-id" href="https://blogs.sap.com/wp-login.php?redirect_to=https%3A%2F%2Fblogs.sap.com%2F2017%2F09%2F09%2Fabap-core-data-services-introduction-abap-cds-view%2F%3Fs_action%3Dss_change_follow_status%26nonce%3Df435160b0f&amp;nonce=1571382435278.394" rel="IDS_login" data-content-type="blogpost" data-content-id="537905" data-nonce="f435160b0f" title="Please log into the system to use follow/unfollow functionality."><span class="dm-button-text">Follow</span></a>            <a class="dm-button-small dm-button--secondary" type="button" href="https://blogs.sap.com/2017/09/09/abap-core-data-services-introduction-abap-cds-view/feed/"><span class="dm-button-text">RSS feed</span></a>
+            <a class="dm-button-small dm-button--secondary likes-post-link dolike " rel="IDS_login" href="https://blogs.sap.com/wp-login.php?redirect_to=https%3A%2F%2Fblogs.sap.com%2F2017%2F09%2F09%2Fabap-core-data-services-introduction-abap-cds-view%2F%3Fs_action%3Dss_change_like_status%26nonce%3Df7bc810d0b&amp;nonce=1571382435278.394" type="button" title="Like" data-nonce="f7bc810d0b" data-post-id="537905"><span class="dm-button-text">Like</span></a>        </div>
+        <div class="dm-contentHero__statistics">
+            <div class="dm-contentHero__metadata">
+                <span id="dm-contentHero__metadata--likes" class="dm-contentHero__metadata--item">
+                    47 Likes                </span>
+                <span class="dm-contentHero__metadata--item">
+                    157,985 Views                </span>
+                <span class="dm-contentHero__metadata--item">
+                    10 Comments                </span>
+                <span class="dm-contentHero__metadata--item">
+                                    </span>
+            </div>
+        </div>
+    </div>
+</div>          <!-- Hero unit end -->
+          <div class="dm-contentDetail">
+            <div class="dm-contentDetail__body-content">
+                <h3><strong>Table of Content:</strong></h3>
+<table style="height: 115px" width="281">
+<tbody>
+<tr>
+<td>S.no</td>
+<td>Topics</td>
+</tr>
+<tr>
+<td>1.</td>
+<td><a href="#INTRO">Introduction</a></td>
+</tr>
+<tr>
+<td>2.</td>
+<td><a href="#AR">Architecture Overview</a></td>
+</tr>
+<tr>
+<td>3.</td>
+<td><a href="#RCDS">CDS Releases</a></td>
+</tr>
+<tr>
+<td>4.</td>
+<td><a href="#ACDS">Availability of CDS in SAP Platforms</a></td>
+</tr>
+<tr>
+<td>5.</td>
+<td><a href="#MCDS">Motivation behind Core Data Services</a></td>
+</tr>
+<tr>
+<td>6.</td>
+<td><a href="#NXT">Next Blog’s (Follow)</a></td>
+</tr>
+<tr>
+<td>7.</td>
+<td><a href="#CRT">Credits</a></td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<hr>
+<p>After the evolution of SAP HANA, the technology within the SAP is 
+changing rapidly and there has been a paradigm shift in the way business
+ applications are developed at SAP.</p>
+<p>The rule of thumb is simple: <strong><em>“Do as much as you can in the database to get the best performance”</em></strong>.</p>
+<p>When I started learning about ABAP CDS views few months back, I had 
+to search many different blogs and pages written by the experts. Now, I 
+thought of presenting a blog series for the beginners like me who are 
+keen to learn ABAP CDS views.</p>
+<hr>
+<p><span style="color: #0000ff">Let’s Start !!</span></p>
+<p>&nbsp;</p>
+<h4 id="INTRO"><span style="text-decoration: underline"><strong>Introduction</strong></span></h4>
+<p>Data models are a cornerstone of application development. They 
+provide a standardized method for defining and formatting database 
+contents consistently across systems, enabling different applications to
+ share the same data — reducing development costs, speeding time to 
+market, and improving quality and performance.</p>
+<p>Those familiar with application development in the ABAP world are no 
+strangers to the traditional data modeling tools included with SAP 
+NetWeaver Application Server (SAP NetWeaver AS) ABAP — in particular, 
+the ABAP data dictionary (DDIC), which stores definitions of objects, 
+such as database tables and views, that can be used in ABAP programs. 
+And then along came SAP HANA and the new paradigm of pushing down 
+data-intensive logic to the database layer.</p>
+<p>The concept of Virtual Data Model (VDM) was introduced with&nbsp;HANA
+ Live&nbsp;few years ago, SAP HANA Live is a Virtual data model on top 
+of suite tables which uses native SAP HANA SQL views&nbsp;called 
+Calculation views&nbsp;for real-time operational Reporting.</p>
+<p>This came with certain challenges:</p>
+<ul>
+<li>It didn’t support hierarchies properly. Hierarchies help businesses 
+to analyze their data in a tree structure through different layers with 
+drilldown capability. For example, a time hierarchy consists comprises 
+of levels such as fiscal year, fiscal quarter, fiscal month and so on.</li>
+<li>High quality data models should&nbsp;provide a single definition and
+ format for the data. They should be&nbsp;clear and unambiguous, 
+reusable and flexible, even extensible.</li>
+<li>Since, the HANA Live virtual data models were defined in the HANA 
+database layer it led to duplication of security roles between Business 
+Suite for transactional processing and HANA database for operational 
+reporting.</li>
+</ul>
+<p><img class="aligncenter" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/1-13.jfif" width="342" height="313"></p>
+<p>Now, some questions comes in mind:</p>
+<ol>
+<li style="text-align: left">So how&nbsp;can you capture the semantics 
+of the data model in the database so&nbsp;that the model can be easily 
+reused by different consumers, e.g. by&nbsp;OData clients and by OLAP 
+tools?</li>
+<li style="text-align: left">How can you extend the meta model to&nbsp;service your applications?</li>
+<li style="text-align: left">Impossible, you say?</li>
+</ol>
+<p>Maybe, if we didn’t&nbsp;have&nbsp;<strong>Core Data Services (CDS)</strong>.</p>
+<h3><strong><em>“Core Data Services to build design-time data-persistence models”</em></strong></h3>
+<p><a href="https://help.sap.com/viewer/b3d0daf2a98e49ada00bf31b7ca7a42e/2.0.00/en-US/b523afd66f5a40469573d9c47d7af831.html" target="_blank" rel="noopener"><em><strong>It
+ is an infrastructure that can be used by database developers to create 
+the underlying (persistent) data model which the application services 
+expose to UI clients.</strong></em></a></p>
+<p>To take advantage of&nbsp;<strong>SAP HANA</strong>&nbsp;for application development, SAP introduced a new data modeling infrastructure known as <strong>Core data services</strong>.
+ With CDS, data models&nbsp;are defined and consumed on database server 
+rather than on application server. CDS also offers capabilities beyond 
+the traditional data modeling tools, including support for conceptual 
+modeling and relationship definitions, built-in functions, and 
+extensions.&nbsp;Originally, CDS was available only in the design-time 
+and runtime environment of SAP HANA. Now, the CDS concept is also fully 
+implemented in&nbsp;<a name="one"></a>SAP NetWeaver AS ABAP, enabling 
+developers to work in the ABAP layer with ABAP development tools while 
+the code execution is pushed down to the database.</p>
+<p>CDS simplifies and harmonizes the way you define and consume your 
+data&nbsp;models, regardless of the consumption technology. Technically,
+ it is&nbsp;an enhancement of SQL which provides you with a data 
+definition language (DDL) for defining semantically rich database 
+tables/views&nbsp;(CDS entities) and user-defined types in the database.
+ Some enhancements include:</p>
+<ul>
+<li><u>Expressions</u>&nbsp;used for calculations and queries in the data model</li>
+<li><u>Associations</u>&nbsp;on a conceptual level, replacing joins with simple path expressions in queries</li>
+<li><u>Annotations</u>&nbsp;to enrich the data models with additional (domain specific) metadata</li>
+</ul>
+<p>CDS is supported natively in both the ABAP and the HANA Platforms !</p>
+<p>In fact, CDS is (in my opinion) the most ambitious and exciting SAP 
+development in the area of data modeling in recent years. You can 
+finally define and consume your data models in the same way (syntax, 
+behaviour, etc.) regardless of the SAP technology platform (ABAP or 
+HANA). Unwantedly the phrase: “<strong><em>One Data Model to rule them all</em></strong>” always comes to mind when I think of CDS.</p>
+<p><img class="aligncenter" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/2-8.jfif" width="389" height="167"></p>
+<p>Besides a great blog by <a href="https://people.sap.com/horst.keller">Horst Keller</a>, describes the two different flavors of CDS.</p>
+<p><a href="https://blogs.sap.com/2015/07/20/cds-one-model-two-flavors/" target="_blank" rel="noopener">Core Data Services – One Concept, Two Flavors</a></p>
+<p>After going through the above blog, we came to know that CDS can be written in two different flavours and uses the <em><strong>“<a href="https://blogs.sap.com/2014/02/03/abap-for-hana-code-push-down/" target="_blank" rel="noopener">Code Pushdown</a>” </strong></em>techniques introduced with NW AS ABAP 7.4 SP5 where SAP added new possibility for ABAP developers to <a href="https://blogs.sap.com/2014/01/22/whats-new-on-abap-74-sp5/" target="_blank" rel="noopener">leverage HANA capabilities</a>.
+ In code pushdown technique all calculations are performed on database 
+layer instead of application layer, which results in fast&nbsp;retrieval
+ of data, resulting cutback of application execution.</p>
+<p><img class="aligncenter" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/3-7.jfif" width="463" height="178"></p>
+<p>&nbsp;</p>
+<h4 id="AR"><span style="text-decoration: underline"><strong>Architecture overview</strong></span></h4>
+<p>The CDS architecture looks something as shown below:</p>
+<ol>
+<li><strong>Database layer</strong>&nbsp;– This layer can be configured 
+with most of the popular DB like Oracle, SAP HANA, etc.. However, to get
+ the best result it’s recommended to have SAP HANA.</li>
+<li><strong>Application layer – </strong> This layer contains AS ABAP Backend and SAP Gateway, integrated using RFC calls.</li>
+<li><strong>Presentation layer – </strong> This layer contains&nbsp;SAP Fiori User Interface for exposing the applications for the end user.</li>
+</ol>
+<p><img class="aligncenter" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/4-2.jfif" width="390" height="592"></p>
+<h4 id="RCDS"><span style="text-decoration: underline"><strong>CDS Releases</strong></span></h4>
+<p>Below is an overview of changes in CDS functionalities with the ABAP specific releases.</p>
+<p>For more details see – <a href="https://blogs.sap.com/2015/02/02/core-data-services-cds-abap-feature-matrix/" target="_blank" rel="noopener">Feature Matrix</a>.</p>
+<table style="height: 457px" width="703">
+<tbody>
+<tr>
+<td><strong>S.no</strong></td>
+<td><strong>ABAP Release</strong></td>
+<td><strong>Changes with ABAP specific releases</strong></td>
+</tr>
+<tr>
+<td>1.</td>
+<td><a href="https://blogs.sap.com/2014/02/04/new-data-modeling-features-in-abap-for-hana/" target="_blank" rel="noopener">In ABAP 7.40, SP05</a></td>
+<td>CDS views has been introduced.</td>
+</tr>
+<tr>
+<td>2.</td>
+<td><a href="https://help.sap.com/http.svc/rc/abapdocu_751_index_htm/7.51/en-US/abennews-740_sp08-abap_cds.htm" target="_blank" rel="noopener">In ABAP 7.40, SP08</a></td>
+<td>
+<table style="height: 156px" width="299">
+<tbody>
+<tr>
+<td>CDS annotations</td>
+</tr>
+<tr>
+<td>CDS views with parameters</td>
+</tr>
+<tr>
+<td>CDS view enhancements</td>
+</tr>
+<tr>
+<td>Expressions and Functions</td>
+</tr>
+<tr>
+<td>Join type for associations</td>
+</tr>
+<tr>
+<td>Path expression with filter conditions</td>
+</tr>
+<tr>
+<td>Checking literals against fixed domain values</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>3.</td>
+<td><a href="https://help.sap.com/http.svc/rc/abapdocu_751_index_htm/7.51/en-US/abennews-740_sp10-abap_cds.htm" target="_blank" rel="noopener">In ABAP 7.40, SP10</a></td>
+<td>&nbsp;CDS Access Control</td>
+</tr>
+<tr>
+<td>4.</td>
+<td><a href="https://help.sap.com/http.svc/rc/abapdocu_751_index_htm/7.51/en-US/abennews-750-abap_cds.htm" target="_blank" rel="noopener">In ABAP 7.50, SP00</a></td>
+<td>
+<table style="height: 163px" width="300">
+<tbody>
+<tr>
+<td>CDS Table functions</td>
+</tr>
+<tr>
+<td>Session variables</td>
+</tr>
+<tr>
+<td>CDS view with input parameters</td>
+</tr>
+<tr>
+<td>Annotation for input parameters</td>
+</tr>
+<tr>
+<td>Key fields</td>
+</tr>
+<tr>
+<td>Evaluation of annotations</td>
+</tr>
+<tr>
+<td>Publishing associations</td>
+</tr>
+<tr>
+<td>Extensions</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td>5.</td>
+<td><a href="https://help.sap.com/http.svc/rc/abapdocu_751_index_htm/7.51/en-US/abennews-751-abap_cds.htm" target="_blank" rel="noopener">In ABAP 7.51, SP00</a></td>
+<td>
+<table style="height: 63px" width="298">
+<tbody>
+<tr>
+<td>Client handling</td>
+</tr>
+<tr>
+<td>Cross Joins</td>
+</tr>
+<tr>
+<td>Annotations</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h4 id="ACDS"><span style="text-decoration: underline"><strong>Availability of CDS in SAP Platforms</strong></span></h4>
+<p>The Core Data services are available in below mentioned SAP Platforms:</p>
+<ol>
+<li>SAP NetWeaver 7.50, SP01, or higher.</li>
+<li>SAP NetWeaver 7.4 SP05</li>
+<li>SAP HANA SPS6</li>
+<li>SAP Business Suite EHP7 (Suite on HANA)</li>
+<li>S/4HANA</li>
+<li>SAP Business Warehouse 7.3</li>
+</ol>
+<h4 id="MCDS"><span style="text-decoration: underline"><strong>Motivation behind Core Data Services</strong></span></h4>
+<ol>
+<li><span style="text-decoration: underline">Semantically Rich data-models</span>:
+ &nbsp;Entity relationship model and is declarative in nature, very 
+close to conceptual concept.Domain specific languages (DDL, QL, DCL). 
+Declarative, close to conceptual thinking.</li>
+<li><span style="text-decoration: underline">CDS is completely based on SQL</span>: &nbsp;Any ‘Standard SQL’ features are directly available like joins, build-in functions,..</li>
+<li><span style="text-decoration: underline">Fully Compatible across any DB</span>: CDS is generated into managed Open SQL views and is integrated into SAP HANA layer. These views are supported by all major DB.</li>
+<li><span style="text-decoration: underline">Support for Annotations</span>:
+ CDS syntax supports domain-specific annotations that can be easily 
+evaluated by other components, such as the UI, analytics, and OData 
+services.
+<ul>
+<li>@AnalyticsDetails.aggregrationBehaviour</li>
+<li>SUM()</li>
+<li>Substring()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [SQL functions]</li>
+</ul>
+</li>
+<li><span style="text-decoration: underline">Associations</span>: Simplified definition of views on top of views. Path expressions to navigate along relations.</li>
+<li><span style="text-decoration: underline">Extensibility</span>: We 
+can extend SAP-defined CDS views with fields that will be automatically 
+added to the CDS view along with its usage hierarchy.
+<ul>
+<li>On model level through extensions.</li>
+<li>On meta-model level through annotations.</li>
+</ul>
+</li>
+</ol>
+<p>&nbsp;</p>
+<p><em><strong>CDS entities and their metadata are extensible and 
+optimally&nbsp;integrated into the ABAP Data Dictionary and the ABAP 
+language.</strong></em></p>
+<p>&nbsp;</p>
+<p>To keep the focus on core objective (Core Data Services) of this blog, I tried to make it as small as possible.</p>
+<p>Suggestions and questions are welcomed !!</p>
+<h5 id="NXT"><span style="color: #808080">Follow:-</span></h5>
+<ul>
+<li><a href="https://blogs.sap.com/2017/09/09/abap-core-data-services-part-1abap-cds-views/" target="_blank" rel="noopener">ABAP Core Data Services – Part 1 (ABAP CDS Entities).</a></li>
+<li><a href="https://blogs.sap.com/2017/09/16/abap-core-data-services-part-2types-of-cds-views/" target="_blank" rel="noopener">ABAP Core Data Services – Part 2 (Types of CDS view)</a>.</li>
+<li><a href="https://blogs.sap.com/2017/10/09/abap-core-data-services-part-2virtual-data-model-types/" target="_blank" rel="noopener">ABAP Core Data Services – Part 3 (Virtual Data Model Types)</a></li>
+</ul>
+<p>&nbsp;</p>
+<p>Thank you.</p>
+<hr style="background-color: #808080;border-width: 4;color: #ff0000;height: 3px;line-height: 0;text-align: left;width: 110%">
+<h5 id="CRT"><span style="color: #808080">Credits:-</span></h5>
+<p><a href="https://help.sap.com/viewer/f2e545608079437ab165c105649b89db/7.51.3/en-US" rel="nofollow">ABAP CDS Development Guide&nbsp;</a></p>
+<p><a href="https://assets.cdn.sap.com/sapcom/docs/2016/02/bedb9729-5f7c-0010-82c7-eda71af511fa.pdf" target="_blank" rel="noopener">Core Data Services- Overview &amp; Concepts</a></p>
+<p><a href="https://wiki.scn.sap.com/wiki/display/ABAP/CDS+-+Core+Data+Services" target="_blank" rel="noopener">SAP Community Wiki – Core Data Services</a></p>
+<p><a href="https://blogs.sap.com/2014/02/04/new-data-modeling-features-in-abap-for-hana/" target="_blank" rel="noopener">New Data Modeling Features in SAP NW ABAP 7.4 SP5</a></p>
+<p><a href="https://blogs.sap.com/2016/09/26/core-data-services-cds-in-sap-s4-hana/" target="_blank" rel="noopener">Core Data Services [CDS] in SAP S/4 HANA</a></p>
+<p><a href="https://blogs.sap.com/2015/02/02/core-data-services-cds-abap-feature-matrix/" target="_blank" rel="noopener">ABAP CDS Feature Matrix</a></p>
+            </div>
+            <ul class="dm-sharing-icons">
+               <li class="dm-sharing-icons--item"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblogs.sap.com%2F2017%2F09%2F09%2Fabap-core-data-services-introduction-abap-cds-view%2F" title="Share on Facebook" target="_blank"><span class="dm-icon-encoded--facebook"></span></a></li><li class="dm-sharing-icons--item"><a href="https://twitter.com/share?url=https%3A%2F%2Fblogs.sap.com%2F2017%2F09%2F09%2Fabap-core-data-services-introduction-abap-cds-view%2F&amp;text=ABAP+Core+Data+Services+%E2%80%93+Introduction++%28ABAP+CDS+view%29" title="Share on Twitter" target="_blank"><span class="dm-icon-encoded--twitter"></span></a></li><li class="dm-sharing-icons--item"><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblogs.sap.com%2F2017%2F09%2F09%2Fabap-core-data-services-introduction-abap-cds-view%2F&amp;title=ABAP+Core+Data+Services+%E2%80%93+Introduction++%28ABAP+CDS+view%29" title="Share on LinkedIn" target="_blank"><span class="dm-icon-encoded--linkedin"></span></a></li>            </ul>
+            <div class="dm-actionbar__wrapper dm-collapse__wrapper">
+               <ul class="dm-actionbar dm-actionbar--links">
+                   <li class="dm-actionbar__item">
+    <a class="dm-actionbar__link dm-button--disabled" data-toggle="collapse" data-hide-class="dm-is-collapsed" data-triggers=".alertModerator" data-target="alertModerator">Alert Moderator</a>
+  </li>
+               </ul>
+               
+  <div class="dm-actionbar__forms wprc-content-v3">
+    <div class="dm-actionsForm dm-is-collapsed alertModerator wprc-form-v3" data-toggle="collapseComponent" data-name="alertModerator" toggle-state="open">
+          </div>
+  </div>
+            </div>
+          </div>
+        </div>
+        <div class="dm-layout__flexColumn dm-layout--pullRight dm-layout--contentSidebar">
+            <div id="sapassignedtagswidget-v3-2" class="dm-widget widget_sapassignedtagswidget-v3 dm-widget--assignedTags"><h3 class="dm-widget__heading--small">Assigned tags</h3><ul class="dm-assignedTagsList dm-widgetlist--default-items"><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tags/73554900100700000996/">SAP HANA</a></li><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tags/833755570260738661924709785639136/">ABAP Development</a></li><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tags/01200615320800000796/">SAP Access Control</a></li><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tag/abap-cds-view/">ABAP CDS view</a></li><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tag/abap-core-data-service-views/">ABAP Core Data Service Views</a></li></ul><ul class="dm-assignedTagsList dm-widgetlist--extra-items dm-hidden"><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tag/beginner/">beginner</a></li><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tag/core-data-services-cds/">Core Data Services (CDS)</a></li><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tag/sap-hana/">sap hana</a></li></ul><a class="dm-link dm-widget__more-link" data-toggle="viewAll">View more...</a></div><div id="sap-relatedcontent-widget-v3-2" class="dm-widget widget_sap-relatedcontent-widget-v3 dm-widget--relatedContent"><h3 class="dm-widget__heading--small">Related Blog Posts</h3><ul class="dm-widgetlist" data-types="blogpost" data-limit="3"><li class="dm-widgetlist__item"><div class="dm-widget__article">
+                                 <div class="dm-widget__article-content-box">
+                                    <div class="dm-widget__article-text">
+                                        <a class="dm-widget__article-title" href="https://blogs.sap.com/?p=514529" title="">Jump Start to ABAP Core Data Services</a>
+                                        <div class="dm-widget__article-metadata">By <a class="dm-widget__article-username" href="https://people.sap.com/esha.rajpal" title="">Esha Rajpal</a>, Jul 05, 2017</div>
+                                    </div>
+                                 </div>
+                            </div></li><li class="dm-widgetlist__item"><div class="dm-widget__article">
+                                 <div class="dm-widget__article-content-box">
+                                    <div class="dm-widget__article-text">
+                                        <a class="dm-widget__article-title" href="https://blogs.sap.com/?p=818729" title="">Understanding evolution of CDS and AMDP in most simple way</a>
+                                        <div class="dm-widget__article-metadata">By <a class="dm-widget__article-username" href="https://people.sap.com/ujjwal16" title="">Ujjwal Singh</a>, May 19, 2019</div>
+                                    </div>
+                                 </div>
+                            </div></li><li class="dm-widgetlist__item"><div class="dm-widget__article">
+                                 <div class="dm-widget__article-content-box">
+                                    <div class="dm-widget__article-text">
+                                        <a class="dm-widget__article-title" href="https://blogs.sap.com/?p=870203" title="">SAP HANA CDS view – How to get Year and Month from a date field</a>
+                                        <div class="dm-widget__article-metadata">By <a class="dm-widget__article-username" href="https://people.sap.com/shravan.tiwari" title="">Shravan Tiwari</a>, Sep 24, 2019</div>
+                                    </div>
+                                 </div>
+                            </div></li></ul></div><div id="sap-relatedcontent-widget-v3-3" class="dm-widget widget_sap-relatedcontent-widget-v3 dm-widget--relatedContent"><h3 class="dm-widget__heading--small">Related Questions</h3><ul class="dm-widgetlist" data-types="question" data-limit="3"><li class="dm-widgetlist__item"><div class="dm-widget__article">
+                                 <div class="dm-widget__article-content-box">
+                                    <div class="dm-widget__article-text">
+                                        <a class="dm-widget__article-title" href="https://answers.sap.com/questions/744451/convert-lraw-to-string-format-in-sap-hana-cds-view.html" title="">Convert LRAW to STRING format in SAP HANA CDS view</a>
+                                        <div class="dm-widget__article-metadata">By <a class="dm-widget__article-username" href="https://people.sap.com/sneha.s.krishnan" title="">Sneha Santhanakrishnan</a>, Jan 30, 2019</div>
+                                    </div>
+                                 </div>
+                            </div></li><li class="dm-widgetlist__item"><div class="dm-widget__article">
+                                 <div class="dm-widget__article-content-box">
+                                    <div class="dm-widget__article-text">
+                                        <a class="dm-widget__article-title" href="https://answers.sap.com/questions/650988/calculation-view-input-parameter-in-abap-program.html" title="">Calculation view input parameter in abap program</a>
+                                        <div class="dm-widget__article-metadata">By <a class="dm-widget__article-username" href="https://people.sap.com/edson.suzuki2" title="">Edson Suzuki</a>, Sep 28, 2018</div>
+                                    </div>
+                                 </div>
+                            </div></li><li class="dm-widgetlist__item"><div class="dm-widget__article">
+                                 <div class="dm-widget__article-content-box">
+                                    <div class="dm-widget__article-text">
+                                        <a class="dm-widget__article-title" href="https://answers.sap.com/questions/153776/input-parameters-in-hana-cds-view.html" title="">Input Parameters in HANA CDS View</a>
+                                        <div class="dm-widget__article-metadata">By <a class="dm-widget__article-username" href="https://people.sap.com/former.member" title="">Former Member</a>, Mar 14, 2017</div>
+                                    </div>
+                                 </div>
+                            </div></li></ul></div>        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="dm-wrapper">
+  <div class="dm-grid">
+    
+<div id="comments" class="dm-section dm-section--last">
+      <div class="dm-section-header">
+      <div class="dm-section-header__title" title="Number of Comments">
+      10 Comments      </div>
+              <div class="dm-section dm-align-center dm-section-header__title" title="Please log on to comment" aria-role="alert">
+                You must be <a href="https://blogs.sap.com/wp-login.php?redirect_to=2017/09/09/abap-core-data-services-introduction-abap-cds-view" class="opener js-idspopup" rel="IDS_login" title="Log On">Logged on</a> to comment or reply to a post.
+        </div>
+          </div>
+
+    <div class="dm-filter-results dm-border--top">
+          <div class="dm-layout__flexRow">
+        <div class="dm-commentsbox dm-commentsbox--blogs">
+          <ul class="dm-list-comments">
+                <li class="comment byuser comment-author-jocelyndart even thread-even depth-1 dm-list-comments__item" id="li-comment-390528">
+        <article id="comment-390528">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/jocelyn.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"><span class="dm-user__roles"><span class="dm-icon-encoded--employee" title="This user is an SAP Employee" data-role-name="SAP Employee"></span><span class="dm-icon-encoded--mentor-alumni" title="This user is an SAP Mentor Alumnus" data-role-name="Mentor Alumni"></span><span class="dm-icon-encoded--tech-ambassador" title="This user is a Tech Ambassador" data-role-name="SAP Technology Ambassador"></span></span> <a href="https://people.sap.com/jocelyn.dart" rel="external nofollow" class="url ">Jocelyn Dart</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a href="https://blogs.sap.com/2017/09/09/abap-core-data-services-introduction-abap-cds-view/#comment-390528"><time datetime="2017-09-10T12:17:38+00:00">September 10, 2017 at 12:17 pm</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>Hi Tushar, It’s great you are trying to do a 
+consolidated blog series for beginners on this VERY important topic for 
+anyone coding for Fiori or HANA</p>
+<p>Suggest you also add the link to the latest version of the official 
+guide for this topic to this and all the other blogs in your series, 
+i.e.</p>
+<p><a href="https://help.sap.com/viewer/f2e545608079437ab165c105649b89db/7.51.3/en-US" rel="nofollow">ABAP CDS Development Guide&nbsp;</a></p>
+<p>All the best</p>
+<p>Jocelyn</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-390528" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_390528">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+    <ul class="dm-list-comments">
+    <li class="comment byuser comment-author-tushar_sharma bypostauthor odd alt depth-2 dm-list-comments__item" id="li-comment-390554">
+        <article id="comment-390554">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/tushar_sharma_small.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a href="https://people.sap.com/tushar_sharma" rel="external nofollow" class="url ">Tushar Sharma</a> <span class="dm-user__category">Post author</span></div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a href="https://blogs.sap.com/2017/09/09/abap-core-data-services-introduction-abap-cds-view/#comment-390554"><time datetime="2017-09-11T05:23:29+00:00">September 11, 2017 at 5:23 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>Hi Jocelyn,</p>
+<p>Thanks for the guidance. &nbsp;Sure, I’ll add all blogs link of my series.</p>
+<p>&nbsp;</p>
+<p>Thank you !</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-390554" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_390554">(1)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment byuser comment-author-formermember even thread-odd thread-alt depth-1 dm-list-comments__item" id="li-comment-398711">
+        <article id="comment-398711">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/former.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a href="https://people.sap.com/former.member" rel="external nofollow" class="url disabled">Former Member</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a href="https://blogs.sap.com/2017/09/09/abap-core-data-services-introduction-abap-cds-view/#comment-398711"><time datetime="2017-11-14T13:15:13+00:00">November 14, 2017 at 1:15 pm</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>Hi Tushar,</p>
+<p>Thanks for the good information. Do you perhaps have a suggested way 
+to identify a list of all the CDS views available in a S4 HANA system?</p>
+<p>&nbsp;</p>
+<p>Thanks,<br>
+B</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-398711" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_398711">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+    <ul class="dm-list-comments">
+    <li class="comment byuser comment-author-tushar_sharma bypostauthor odd alt depth-2 dm-list-comments__item" id="li-comment-400290">
+        <article id="comment-400290">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/tushar_sharma_small.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a href="https://people.sap.com/tushar_sharma" rel="external nofollow" class="url ">Tushar Sharma</a> <span class="dm-user__category">Post author</span></div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a href="https://blogs.sap.com/2017/09/09/abap-core-data-services-introduction-abap-cds-view/#comment-400290"><time datetime="2017-11-27T08:51:14+00:00">November 27, 2017 at 8:51 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>Hi Barend,</p>
+<p>In&nbsp;DDDDLSRCT table you can find all the available CDS views in S/4HANA system.</p>
+<p>&nbsp;</p>
+<p>Thanks,</p>
+<p>Tushar</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-400290" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_400290">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment byuser comment-author-formermember even thread-even depth-1 dm-list-comments__item" id="li-comment-401315">
+        <article id="comment-401315">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/former.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a href="https://people.sap.com/former.member" rel="external nofollow" class="url disabled">Former Member</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a href="https://blogs.sap.com/2017/09/09/abap-core-data-services-introduction-abap-cds-view/#comment-401315"><time datetime="2017-12-05T07:25:28+00:00">December 5, 2017 at 7:25 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>&nbsp;</p>
+<p>Hello Tushar,<br>
+comparing scripted Calculation Views and CDS Views, what am I supposed to use when ?<br>
+Thanks<br>
+Werner</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-401315" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_401315">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+    <ul class="dm-list-comments">
+    <li class="comment byuser comment-author-tushar_sharma bypostauthor odd alt depth-2 dm-list-comments__item" id="li-comment-401505">
+        <article id="comment-401505">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/tushar_sharma_small.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a href="https://people.sap.com/tushar_sharma" rel="external nofollow" class="url ">Tushar Sharma</a> <span class="dm-user__category">Post author</span></div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a href="https://blogs.sap.com/2017/09/09/abap-core-data-services-introduction-abap-cds-view/#comment-401505"><time datetime="2017-12-06T11:03:19+00:00">December 6, 2017 at 11:03 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>Hi Werner,</p>
+<p><strong>Calculation view</strong> are composite views and can be used
+ to combine other views like analytical, attribute, other calculation 
+views &amp; tables. This type of view in present in HANA Modelling 
+environment.</p>
+<p>For more information check&nbsp;<a href="https://help.sap.com/viewer/fc5ace7a367c434190a8047881f92ed8/2.0.02/en-US/8d143a35d2964f6e973af50076f50544.html#d60ad1f0bb571014af49c9db1740d68c.html" target="_blank" rel="noopener nofollow">SAP HANA Modelling guide</a>.</p>
+<p>HANA CDS (Core data services) is a layer above “pure database” in 
+order to define semantically-enriched data models. In contrast to HANA 
+modelling views a HANA CDS document can define tables (called entities),
+ views, table types, asociations and annotations. So, as you can see CDS
+ is mush more powerful than calculation view or any other HANA modelling
+ view.</p>
+<p>For more information check <a href="https://help.sap.com/viewer/09b6623836854766b682356393c6c416/2.0.02/en-US/0b1eb07d74ec4f91947ff4cc4f557429.html" target="_blank" rel="noopener nofollow">SAP HANA Core Data services (CDS)</a>.</p>
+<p>Regarding the detailed information check this <a href="https://archive.sap.com/discussions/thread/3788600" target="_blank" rel="noopener nofollow">discussion thread</a>.</p>
+<p>&nbsp;</p>
+<p>Thanks,</p>
+<p>Tushar</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-401505" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_401505">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+    </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment byuser comment-author-s_smriti even thread-odd thread-alt depth-1 dm-list-comments__item" id="li-comment-424941">
+        <article id="comment-424941">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/s_smriti_small.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a href="https://people.sap.com/s_smriti" rel="external nofollow" class="url ">Smriti Gupta</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a href="https://blogs.sap.com/2017/09/09/abap-core-data-services-introduction-abap-cds-view/#comment-424941"><time datetime="2018-05-21T16:45:03+00:00">May 21, 2018 at 4:45 pm</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>Hello Tushar,</p>
+<p>&nbsp;</p>
+<p>A well written structured blog for beginners of Cds. Thanks for coming up with the series</p>
+<p>Regards</p>
+<p>Smriti</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-424941" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_424941">(2)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+    </li><!-- #comment-## -->
+    <li class="comment byuser comment-author-durgaprasanthvemula odd alt thread-even depth-1 dm-list-comments__item" id="li-comment-437612">
+        <article id="comment-437612">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/durgaprasanth.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a href="https://people.sap.com/durgaprasanth.vemula" rel="external nofollow" class="url ">DurgaPrasanth vemula</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a href="https://blogs.sap.com/2017/09/09/abap-core-data-services-introduction-abap-cds-view/#comment-437612"><time datetime="2018-09-24T06:45:29+00:00">September 24, 2018 at 6:45 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>i have a requirement where i need to disable the 
+field in the standard CDS View ‘C_PurchaseReqnItem’ and as per the below
+ it is displaying the Field PurReqCreationDate in the “Manage Purchase 
+Requisition Professional” Fiori App.</p>
+<p>@UI: { fieldGroup: { qualifier: ‘QuantityDate02’, position: 20, importance: #HIGH } }</p>
+<p>Document.PurReqCreationDate,</p>
+<p>Now My Requirement i need to disable the field as i had to use annotation</p>
+<p>@ObjectModel.readOnly: true</p>
+<p>i had done the below code</p>
+<p>@AbapCatalog.sqlViewAppendName: ‘ZCPURREQNITM’</p>
+<p>@EndUserText.label: ‘${ddl_source_description}’</p>
+<p>extend view C_PurchaseReqnItem with zC_PurchaseReqnItem {</p>
+<p>@ObjectModel.readOnly: true</p>
+<p>Document.PurReqCreationDate }</p>
+<p>But I am getting error “View field 
+PURREQCREATIONDATE-C_PURCHASEREQNITEM already exists in parent object 
+(DDL source )” could you please help how to handle this situation.</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-437612" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_437612">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+    </li><!-- #comment-## -->
+    <li class="comment byuser comment-author-ilachaudhary297 even thread-odd thread-alt depth-1 dm-list-comments__item" id="li-comment-438978">
+        <article id="comment-438978">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/ilachaudhary297_small.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"><span class="dm-user__roles"><span class="dm-icon-encoded--employee" title="This user is an SAP Employee" data-role-name="SAP Employee"></span></span> <a href="https://people.sap.com/ilachaudhary297" rel="external nofollow" class="url ">Ila Chaudhary</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a href="https://blogs.sap.com/2017/09/09/abap-core-data-services-introduction-abap-cds-view/#comment-438978"><time datetime="2018-10-08T11:06:24+00:00">October 8, 2018 at 11:06 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>Hi Tushar,</p>
+<p>Well explained. Very helpful</p>
+<p>Thanks</p>
+<p>Ila Chaudhary</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-438978" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_438978">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+    </li><!-- #comment-## -->
+    <li class="comment byuser comment-author-selvakumarmohan odd alt thread-even depth-1 dm-list-comments__item" id="li-comment-476676">
+        <article id="comment-476676">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/selvakumar.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a href="https://people.sap.com/selvakumar.mohan" rel="external nofollow" class="url ">Selvakumar Mohan</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a href="https://blogs.sap.com/2017/09/09/abap-core-data-services-introduction-abap-cds-view/#comment-476676"><time datetime="2019-10-15T04:25:21+00:00">October 15, 2019 at 4:25 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>2019 Oct – Still the best intro document for CDS <img draggable="false" class="emoji" alt="👍" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/1f44d.svg"><img draggable="false" class="emoji" alt="👍" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/1f44d.svg"></p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-476676" class="reply dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_476676">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+    </li><!-- #comment-## -->
+          </ul><!-- .commentlist -->
+
+          
+        </div> <!-- .dm-commentsbox -->
+
+      </div> <!-- .dm-layout__flexRow -->
+        </div> <!-- main comments content area -->
+  
+          
+</div><!-- #comments .dm-section.dm-section--last -->  </div>
+</div>
+                </div> <!-- #main -->
+                <div id="shared_footer" class="dm-container dm-wrapper">
+                    <footer class="dm-footer">
+    <div class="dm-footer__inner-wrapper">
+        <div class="dm-socialmedia">
+            <h5 class="dm-socialmedia__headline" id="hl-sharefollow">Share &amp; Follow</h5>
+            <ul class="dm-socialmedia__links" aria-labelledby="hl-sharefollow">
+                <li><a href="https://www.facebook.com/sapcommunity" title="Facebook"><span class="dm-icon-encoded--facebook"></span></a></li>
+                <li><a href="https://twitter.com/SAPCommunity" title="Twitter"><span class="dm-icon-encoded--twitter"></span></a></li>
+                <li><a href="https://www.youtube.com/c/SAPCommunities" title="YouTube"><span class="dm-icon-encoded--youtube"></span></a></li>
+                <li><a href="https://www.linkedin.com/company/sap" title="LinkedIn"><span class="dm-icon-encoded--linkedin"></span></a></li>
+                <li><a href="http://www.slideshare.net/SAP" title="Slideshare"><span class="dm-icon-encoded--slideshare"></span></a></li>
+                <li><a href="https://instagram.com/sap/" title="Instagram"><span class="dm-icon-encoded--instagram"></span></a></li>
+                <li><a href="" title="Email Share"><span class="dm-icon-encoded--email"></span></a></li>
+            </ul>
+        </div>
+        <nav role="navigation" class="dm-footer__navigation">
+             <ul class="dm-footer__navigation__list" aria-label="footer navigation">
+                <li><a href="http://sap.com/about/legal/privacy.html" target="_blank">Privacy</a></li>
+                <li><a href="http://sap.com/corporate/en/legal/terms-of-use.html" target="_blank">Terms of Use</a></li>
+                <li><a href="http://sap.com/about/legal/impressum.html" target="_blank">Legal Disclosure</a></li>
+                <li><a href="http://sap.com/about/legal/copyright.html" target="_blank">Copyright</a></li>
+                <li><a href="http://sap.com/about/legal/trademark.html" target="_blank">Trademark</a></li>
+                <li id="teconsent" consent="undefined" style="display: block;"><a id="icon-id08533530844565163" tabindex="0" role="button" style="cursor: pointer;" lang="en">Cookie Preferences</a></li>
+                <li><a href="http://www.sap.com/sitemap/index.html" target="_blank">Sitemap</a></li>
+                <li><a href="https://sap.com/registration/newsletter.html" target="_blank">Newsletter</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>                </div>
+            </div> <!-- #page -->
+            <script type="text/javascript">
+/* <![CDATA[ */
+var headerInitArgs = {"system":"blogs","wrapperID":"page","breadcrumbItems":[{"text":"Blogs","href":"https:\/\/blogs.sap.com"}]};
+/* ]]> */
+</script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/scn-header.js"></script>
+<script type="text/javascript">
+            scnHeader.init(headerInitArgs);
+            setCookie("userArgs", headerInitArgs.user ? JSON.stringify(headerInitArgs.user) : "", { path : "/" });
+    
+</script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/header.js"></script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/subheader.js"></script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/designmate.js"></script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/SAP_IDS.js"></script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/comment-reply.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var satmContentSelectors = ["div.dm-contentDetail__body-content","div.dm-list-comments__item-content"];
+var satmProfileBaseUrl = "people.sap.com\/";
+var satmChangeableElementsSelectors = ["div.dm-list-comments__item-content"];
+var satmPluginEnabled = "1";
+var satmApiUrl = "https:\/\/people-api.services.sap.com";
+/* ]]> */
+</script>
+<script type="text/javascript" defer="defer" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/sap-at-mention.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var commentValidation = {"validateMaxLinks":"1","max_links_number":"7","BLOGS_PAGE":"single"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/sap-comment-validation.js"></script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/sap-post-status.js"></script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/jquery-plugins.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sapLoginCookieConfig = {"cookieName":"SAP_BLOGS_ANONYMOUS_NONCE","sapActionName":"s_action"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/sap-login-csrf-cookie.js"></script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/choices.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wprcajaxhandler = {"ajaxurl":"https:\/\/blogs.sap.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/scripts.js"></script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/single.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var assignedTagsWidgetSettings = {"maxItemsBeforeHide":"5","data":{"SAP HANA":"https:\/\/blogs.sap.com\/tags\/73554900100700000996\/","ABAP Development":"https:\/\/blogs.sap.com\/tags\/833755570260738661924709785639136\/","SAP Access Control":"https:\/\/blogs.sap.com\/tags\/01200615320800000796\/","ABAP CDS view":"https:\/\/blogs.sap.com\/tag\/abap-cds-view\/","ABAP Core Data Service Views":"https:\/\/blogs.sap.com\/tag\/abap-core-data-service-views\/","beginner":"https:\/\/blogs.sap.com\/tag\/beginner\/","Core Data Services (CDS)":"https:\/\/blogs.sap.com\/tag\/core-data-services-cds\/","sap hana":"https:\/\/blogs.sap.com\/tag\/sap-hana\/"},"widgetClassname":".widget_sapassignedtagswidget-v3"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/sap-assigned-tags-widget.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var relatedContentWidgetSettings = {"widgetSelector":".widget_sap-relatedcontent-widget-v3","contentServiceUrl":"https:\/\/content.services.sap.com\/cs\/topicsearches\/topicPage","profileUrl":"https:\/\/people.sap.com","targetContentItem":{"id":537905,"type":"blogpost","title":"ABAP Core Data Services - Introduction  (ABAP CDS view)","primary_tag":"73554900100700000996"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/sap-related-content-widget.js"></script>
+<div id="wp-load_tinymce-wrap" class="wp-core-ui wp-editor-wrap tmce-active"><link rel="stylesheet" id="dashicons-css" href="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/dashicons.css" type="text/css" media="all">
+<link rel="stylesheet" id="editor-buttons-css" href="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/editor.css" type="text/css" media="all">
+<style>#wp-load_tinymce-wrap {display:none;}</style>
+<div id="wp-load_tinymce-editor-tools" class="wp-editor-tools hide-if-no-js"><div class="wp-editor-tabs"><button type="button" id="load_tinymce-tmce" class="wp-switch-editor switch-tmce" data-wp-editor-id="load_tinymce">Visual</button>
+<button type="button" id="load_tinymce-html" class="wp-switch-editor switch-html" data-wp-editor-id="load_tinymce">Text</button>
+</div>
+</div>
+<div id="wp-load_tinymce-editor-container" class="wp-editor-container"><div id="qt_load_tinymce_toolbar" class="quicktags-toolbar"></div><div id="mceu_25" class="mce-tinymce mce-container mce-panel" hidefocus="1" tabindex="-1" role="group"><div id="mceu_25-body" class="mce-container-body mce-stack-layout"><div id="mceu_26" class="mce-top-part mce-container mce-stack-layout-item mce-first"><div id="mceu_26-body" class="mce-container-body"><div id="mceu_27" class="mce-toolbar-grp mce-container mce-panel mce-first mce-last" hidefocus="1" tabindex="-1" role="group"><div id="mceu_27-body" class="mce-container-body mce-stack-layout"><div id="mceu_28" class="mce-container mce-toolbar mce-stack-layout-item mce-first" role="toolbar"><div id="mceu_28-body" class="mce-container-body mce-flow-layout"><div id="mceu_29" class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"><div id="mceu_29-body"><div id="mceu_0" class="mce-widget mce-btn mce-menubtn mce-fixed-width mce-listbox mce-first mce-btn-has-text" tabindex="-1" aria-labelledby="mceu_0" role="button" aria-haspopup="true"><button id="mceu_0-open" role="presentation" type="button" tabindex="-1"><span class="mce-txt">Paragraph</span> <i class="mce-caret"></i></button></div><div id="mceu_1" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Bold"><button id="mceu_1-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bold"></i></button></div><div id="mceu_2" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Italic"><button id="mceu_2-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-italic"></i></button></div><div id="mceu_3" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Bulleted list"><button id="mceu_3-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bullist"></i></button></div><div id="mceu_4" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Numbered list"><button id="mceu_4-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-numlist"></i></button></div><div id="mceu_5" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Blockquote"><button id="mceu_5-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-blockquote"></i></button></div><div id="mceu_6" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Align left"><button id="mceu_6-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignleft"></i></button></div><div id="mceu_7" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Align center"><button id="mceu_7-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-aligncenter"></i></button></div><div id="mceu_8" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Align right"><button id="mceu_8-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignright"></i></button></div><div id="mceu_9" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Insert/edit link"><button id="mceu_9-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-link"></i></button></div><div id="mceu_10" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Fullscreen"><button id="mceu_10-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-fullscreen"></i></button></div><div id="mceu_11" class="mce-widget mce-btn" tabindex="-1" role="button" aria-label="Toolbar Toggle"><button id="mceu_11-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-wp_adv"></i></button></div><div id="mceu_12" class="mce-widget mce-btn mce-last" tabindex="-1"><button id="mceu_12-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-codesample"></i></button></div></div></div></div></div><div id="mceu_30" class="mce-container mce-toolbar mce-stack-layout-item mce-last" role="toolbar"><div id="mceu_30-body" class="mce-container-body mce-flow-layout"><div id="mceu_31" class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"><div id="mceu_31-body"><div id="mceu_13" class="mce-widget mce-btn mce-first" tabindex="-1" aria-pressed="false"><button id="mceu_13-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-strikethrough"></i></button></div><div id="mceu_14" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_14-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-hr"></i></button></div><div id="mceu_15" class="mce-widget mce-btn mce-splitbtn mce-colorbutton" role="button" tabindex="-1" aria-haspopup="true"><button role="presentation" hidefocus="1" type="button" tabindex="-1"><i class="mce-ico mce-i-forecolor"></i><span id="mceu_15-preview" class="mce-preview"></span></button><button type="button" class="mce-open" hidefocus="1" tabindex="-1"> <i class="mce-caret"></i></button></div><div id="mceu_16" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false"><button id="mceu_16-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-pastetext"></i></button></div><div id="mceu_17" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_17-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-removeformat"></i></button></div><div id="mceu_18" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_18-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-charmap"></i></button></div><div id="mceu_19" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_19-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-outdent"></i></button></div><div id="mceu_20" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_20-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-indent"></i></button></div><div id="mceu_21" class="mce-widget mce-btn mce-menubtn" tabindex="-1" aria-labelledby="mceu_21"><button id="mceu_21-open" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-table"></i> <i class="mce-caret"></i></button></div><div id="mceu_22" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_22-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-undo"></i></button></div><div id="mceu_23" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_23-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-redo"></i></button></div><div id="mceu_24" class="mce-widget mce-btn mce-last" tabindex="-1"><button id="mceu_24-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-wp_help"></i></button></div></div></div></div></div></div></div></div></div><div id="mceu_32" class="mce-edit-area mce-container mce-panel mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group"></div><div id="mceu_33" class="mce-statusbar mce-container mce-panel mce-stack-layout-item mce-last" hidefocus="1" tabindex="-1" role="group"><div id="mceu_33-body" class="mce-container-body mce-flow-layout"><div id="mceu_34" class="mce-path mce-flow-layout-item mce-first"><div class="mce-path-item">&nbsp;</div></div><div id="mceu_35" class="mce-flow-layout-item mce-last mce-resizehandle"><i class="mce-ico mce-i-resize"></i></div></div></div></div></div><textarea class="wp-editor-area" rows="20" autocomplete="off" cols="40" name="load_tinymce" id="load_tinymce" style="visibility: hidden;"></textarea></div>
+</div>
+
+
+		<script type="text/javascript">
+		tinyMCEPreInit = {
+			baseURL: "https://blogs.sap.com/wp-includes/js/tinymce",
+			suffix: ".min",
+						mceInit: {'load_tinymce':{theme:"modern",skin:"lightgray",language:"en",formats:{alignleft: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"left"}},{selector: "img,table,dl.wp-caption", classes: "alignleft"}],aligncenter: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"center"}},{selector: "img,table,dl.wp-caption", classes: "aligncenter"}],alignright: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"right"}},{selector: "img,table,dl.wp-caption", classes: "alignright"}],strikethrough: {inline: "del"}},relative_urls:false,remove_script_host:false,convert_urls:false,browser_spellcheck:true,fix_list_elements:true,entities:"38,amp,60,lt,62,gt",entity_encoding:"raw",keep_styles:false,cache_suffix:"wp-mce-4920-20181217",resize:"vertical",menubar:false,branding:false,preview_styles:"font-family font-size font-weight font-style text-decoration text-transform",end_container_on_empty_block:true,wpeditimage_html5_captions:true,wp_lang_attr:"en-US",wp_keep_scroll_position:false,wp_shortcut_labels:{"Heading 1":"access1","Heading 2":"access2","Heading 3":"access3","Heading 4":"access4","Heading 5":"access5","Heading 6":"access6","Paragraph":"access7","Blockquote":"accessQ","Underline":"metaU","Strikethrough":"accessD","Bold":"metaB","Italic":"metaI","Code":"accessX","Align center":"accessC","Align right":"accessR","Align left":"accessL","Justify":"accessJ","Cut":"metaX","Copy":"metaC","Paste":"metaV","Select all":"metaA","Undo":"metaZ","Redo":"metaY","Bullet list":"accessU","Numbered list":"accessO","Insert\/edit image":"accessM","Remove link":"accessS","Toolbar Toggle":"accessZ","Insert Read More tag":"accessT","Insert Page Break tag":"accessP","Distraction-free writing mode":"accessW","Add Media":"accessM","Keyboard Shortcuts":"accessH"},content_css:"https://blogs.sap.com/wp-includes/css/dashicons.min.css?ver=3018,https://blogs.sap.com/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=3018,https://fonts.googleapis.com/css?family=Open+Sans:400italic%2C700italic%2C400%2C700&subset=latin%2Clatin-ext,https://blogs.sap.com/wp-content/themes/sap-v3-neo/editor-style.css",plugins:"charmap,colorpicker,hr,lists,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpautoresize,wpeditimage,wpemoji,wpgallery,wplink,wpdialogs,wptextpattern,wpview,image,codesample",external_plugins:{"table":"https:\/\/blogs.sap.com\/wp-content\/plugins\/mce-table-buttons\/tinymce41-table\/plugin.min.js"},selector:"#load_tinymce",wpautop:true,indent:false,toolbar1:"formatselect,bold,italic,bullist,numlist,blockquote,alignleft,aligncenter,alignright,link,spellchecker,fullscreen,wp_adv,codesample",toolbar2:"strikethrough,hr,forecolor,pastetext,removeformat,charmap,outdent,indent,table,undo,redo,wp_help",toolbar3:"",toolbar4:"",tabfocus_elements:":prev,:next",body_class:"load_tinymce post-type-post post-status-publish post-format-standard page-template-default locale-en-us",extended_valid_elements:"div"}},
+			qtInit: {'load_tinymce':{id:"load_tinymce",buttons:"strong,em,link,block,del,ins,img,ul,ol,li,code,more,close"}},
+			ref: {plugins:"charmap,colorpicker,hr,lists,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpautoresize,wpeditimage,wpemoji,wpgallery,wplink,wpdialogs,wptextpattern,wpview,image,codesample",theme:"modern",language:"en"},
+			load_ext: function(url,lang){var sl=tinymce.ScriptLoader;sl.markDone(url+'/langs/'+lang+'.js');sl.markDone(url+'/langs/'+lang+'_dlg.js');}
+		};
+		</script>
+		<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/tinymce.js"></script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/plugin.js"></script>
+<script type="text/javascript">
+tinymce.addI18n( 'en', {"Ok":"OK","Bullet list":"Bulleted list","Insert\/Edit code sample":"Insert\/edit code sample","Url":"URL","Spellcheck":"Check Spelling","Row properties":"Table row properties","Cell properties":"Table cell properties","Paste row before":"Paste table row before","Paste row after":"Paste table row after","Cut row":"Cut table row","Copy row":"Copy table row","Merge cells":"Merge table cells","Split cell":"Split table cell","Paste is now in plain text mode. Contents will now be pasted as plain text until you toggle this option off.":"Paste is now in plain text mode. Contents will now be pasted as plain text until you toggle this option off.\n\nIf you\u2019re looking to paste rich content from Microsoft Word, try turning this option off. The editor will clean up text pasted from Word automatically.","Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":"Rich Text Area. Press Alt-Shift-H for help.","You have unsaved changes are you sure you want to navigate away?":"The changes you made will be lost if you navigate away from this page.","Your browser doesn't support direct access to the clipboard. Please use the Ctrl+X\/C\/V keyboard shortcuts instead.":"Your browser does not support direct access to the clipboard. Please use keyboard shortcuts or your browser\u2019s edit menu instead.","Edit|button":"Edit"});
+tinymce.ScriptLoader.markDone( 'https://blogs.sap.com/wp-includes/js/tinymce/langs/en.js' );
+</script>
+<script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/wp-langs-en.js"></script>
+		<script type="text/javascript">
+		tinyMCEPreInit.load_ext("https://blogs.sap.com/wp-content/plugins/mce-table-buttons/tinymce41-table", "en");
+
+var ajaxurl = "/wp-admin/admin-ajax.php";
+		( function() {
+			var init, id, $wrap;
+
+			if ( typeof tinymce !== 'undefined' ) {
+				if ( tinymce.Env.ie && tinymce.Env.ie < 11 ) {
+					tinymce.$( '.wp-editor-wrap ' ).removeClass( 'tmce-active' ).addClass( 'html-active' );
+					return;
+				}
+
+				for ( id in tinyMCEPreInit.mceInit ) {
+					init = tinyMCEPreInit.mceInit[id];
+					$wrap = tinymce.$( '#wp-' + id + '-wrap' );
+
+					if ( ( $wrap.hasClass( 'tmce-active' ) || ! tinyMCEPreInit.qtInit.hasOwnProperty( id ) ) && ! init.wp_skip_init ) {
+						tinymce.init( init );
+
+						if ( ! window.wpActiveEditor ) {
+							window.wpActiveEditor = id;
+						}
+					}
+				}
+			}
+
+			if ( typeof quicktags !== 'undefined' ) {
+				for ( id in tinyMCEPreInit.qtInit ) {
+					quicktags( tinyMCEPreInit.qtInit[id] );
+
+					if ( ! window.wpActiveEditor ) {
+						window.wpActiveEditor = id;
+					}
+				}
+			}
+		}());
+		</script>
+				<div id="wp-link-backdrop" style="display: none"></div>
+		<div id="wp-link-wrap" class="wp-core-ui" style="display: none" role="dialog" aria-labelledby="link-modal-title">
+		<form id="wp-link" tabindex="-1">
+		<input type="hidden" id="_ajax_linking_nonce" name="_ajax_linking_nonce" value="59f5cb85fb">		<h1 id="link-modal-title">Insert/edit link</h1>
+		<button type="button" id="wp-link-close"><span class="screen-reader-text">Close</span></button>
+		<div id="link-selector">
+			<div id="link-options">
+				<p class="howto" id="wplink-enter-url">Enter the destination URL</p>
+				<div>
+					<label><span>URL</span>
+					<input id="wp-link-url" type="text" aria-describedby="wplink-enter-url"></label>
+				</div>
+				<div class="wp-link-text-field">
+					<label><span>Link Text</span>
+					<input id="wp-link-text" type="text"></label>
+				</div>
+				<div class="link-target">
+					<label><span></span>
+					<input type="checkbox" id="wp-link-target"> Open link in a new tab</label>
+				</div>
+			</div>
+			<p class="howto" id="wplink-link-existing-content">Or link to existing content</p>
+			<div id="search-panel">
+				<div class="link-search-wrapper">
+					<label>
+						<span class="search-label">Search</span>
+						<input type="search" id="wp-link-search" class="link-search-field" autocomplete="off" aria-describedby="wplink-link-existing-content">
+						<span class="spinner"></span>
+					</label>
+				</div>
+				<div id="search-results" class="query-results" tabindex="0">
+					<ul></ul>
+					<div class="river-waiting">
+						<span class="spinner"></span>
+					</div>
+				</div>
+				<div id="most-recent-results" class="query-results" tabindex="0">
+					<div class="query-notice" id="query-notice-message">
+						<em class="query-notice-default">No search term specified. Showing recent items.</em>
+						<em class="query-notice-hint screen-reader-text">Search or use up and down arrow keys to select an item.</em>
+					</div>
+					<ul></ul>
+					<div class="river-waiting">
+						<span class="spinner"></span>
+					</div>
+				 </div>
+			 </div>
+		</div>
+		<div class="submitbox">
+			<div id="wp-link-cancel">
+				<button type="button" class="button">Cancel</button>
+			</div>
+			<div id="wp-link-update">
+				<input type="submit" value="Add Link" class="button button-primary" id="wp-link-submit" name="wp-link-submit">
+			</div>
+		</div>
+		</form>
+		</div>
+		<script type="text/javascript">jQuery(window).load( function() {tinymce.codesampleplugin.Prism.highlightAll();});</script><script type="text/javascript">_satellite.pageBottom();</script><script src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/satellite-5c38959064746d0e680010da.js"></script><script src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/satellite-5c38959064746d0e680010db.js"></script><script>
+    var swa = {
+        pubToken: '33255556-c863-4a29-9bda-1309df0cff50',
+        baseUrl: 'https://webanalytics.cfapps.eu10.hana.ondemand.com/tracker/',
+        dntLevel: 1,
+        subSiteId:"blogs.sap.com"
+    };
+    (function(){
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.defer=true; g.async=true; g.src=swa.baseUrl+'js/privacy.js';
+        s.parentNode.insertBefore(g,s); g.onload = function() { swa.enable(); };
+     })();
+</script><!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type="text/javascript">
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g+ "&t=" + (new Date()).getTime();document.body&&document.body.appendChild(a)}};
+this.start=function(){var a=this;window.addEventListener?window.addEventListener("load",function(){a.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){a.go()})}};
+try{(new g(100,"r","QSI_S_ZN_0D4LngCJt30pWT3","https://zn0d4lngcjt30pwt3-sapinsights.siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_ZID=ZN_0D4LngCJt30pWT3")).start()}catch(i){}})();
+</script><div id="ZN_0D4LngCJt30pWT3"><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+<script src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/satellite-57f3516264746d3cc1006e91.js"></script>        </div> <!-- .page-wrapper -->
+    
+
+<style>#swa_background{position:fixed;top:0px;left:0px;height:100%;width:100%;display:none;background-color: black;z-index:100;}#swa_license{font-family:Arial,Helvetica,sans-serif;background-color: white;color: black;border: 1px solid gray;position:absolute;display:none;z-index:11100;padding: 30px; display:none;background: #FFF;border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;box-shadow: 0px 0px 4px rgba(0,0,0,0.7); -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7); -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);}.close_license{ position: absolute; top: 12px; right: 12px; display: block; width: 14px; height: 14px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEUAAACIiIhaeOqmAAAAAXRSTlMAQObYZgAAAC9JREFUaN5jYGBgEOBgsJBhqLFjsKthkP/BwP+Bgf0BCAEZQC5QECgFVABUxsAAAOcxCbuaDAybAAAAAElFTkSuQmCC); z-index: 2;}.swabutton{display:inline;position: absolute;right: 25px;margin: 0px}.swalicensetxt{width:100%; height:100%; overflow-y: hidden;overflow-x: hidden;}</style><div id="swa_background"></div><div id="swa_license"><div id="swa_header"><table><tbody><tr><td><strong>Privacy Statement</strong></td></tr></tbody></table><a class="close_license" href="#"></a></div><iframe id="swa_licence_window" class="swalicensetxt" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/a.htm" scrolling="yes"></iframe><div id="swa_form"><p></p><p></p><input type="checkbox" class="swa_checkid" id="swa_p_checkid"><label for="swa_p_checkid" id="l_swa_p_checkid">&nbsp;Allow use of SAP Web Analytics</label>&nbsp;&nbsp;<button class="swabutton" type="button" id="swa_save_modal" onclick="frame_save(event);">Save</button></div></div><script type="text/javascript" defer="defer" async="" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/piwik.js"></script><iframe sandbox="allow-scripts allow-same-origin" title="Adobe ID Syncing iFrame" id="destination_publishing_iframe_sap_0" name="destination_publishing_iframe_sap_0_name" style="display: none; width: 0px; height: 0px;" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/dest5.htm" class="aamIframeLoaded"></iframe><script type="text/javascript" defer="defer" async="" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/piwik_plugin.js"></script><div class="hidden" id="wp_window_loaded"></div><script type="text/javascript" src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/a"></script><script src="ABAP%20CDS%20view%20-%20Introduction%20SAP%20Blogs_files/CoreModule.js" defer="defer"></script></body></html>

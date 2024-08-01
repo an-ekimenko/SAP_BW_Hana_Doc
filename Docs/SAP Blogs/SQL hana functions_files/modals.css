@@ -1,0 +1,106 @@
+.modal-header {
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+    margin-bottom: 2.5em;
+    padding: 0 0 1.6em 0;
+}
+
+.modal-header h2.modal-title {
+	text-align: center;
+    font-size: 2em;
+    font-weight: 400;
+    margin: 0 auto;
+    width: calc(100% - 180px);
+}
+
+.modal-body > *:first-child {
+	margin-top: 0;
+}
+
+.modal-body {
+	padding: 0em;
+}
+
+.modal-content {
+	background-color: rgb(255,255,255);
+    max-width: 1240px;
+    margin: 0 auto;
+    border-radius: 4px;
+    position: relative;
+    padding: 2em 1em 1em 1em;
+}
+
+div.modal-small div.modal-content {
+	max-width: 900px;
+}
+
+.modal-body > div.container-fluid,
+.modal-body > div.container-fluid > div.container-fluid {
+	padding: 0;
+}
+
+.modal-footer {
+	border-top: 1px solid rgba(0,0,0,0.2);
+    margin-top: 3.14em;
+    padding-top: 1em;
+    padding-bottom: 0;
+    /*display: flex;*/
+}
+
+.modal-footer.with-checkbox {
+text-align: initial;
+}
+
+.modal-footer.with-checkbox .cp-input{
+width: 250px;
+display: inline-block;
+font-size: 13px;
+}
+
+.modal-footer.with-checkbox #redirectButtons{
+white-space: nowrap;
+float: right;
+}
+
+.modal-z {
+	z-index: 50;
+}
+
+.modal-dialog .btn,
+.modal-dialog .btn-primary {
+	background-color: #008FD3;
+    color: #FFF;
+    border: 0;
+    /*padding: 0.5em 0.8em 0.4em 0.7em;*/
+    margin: 0;
+    height: 34px;
+    padding: 8px;
+    min-width: 51px;
+}
+
+.modal-dialog .btn:hover,
+.modal-dialog .btn-primary:hover {
+	background-color: #003283;
+}
+
+.modal-footer .btn+.btn.left {
+	margin: 0
+}
+
+div.drag-and-drop input[type=file] {
+	display: inline;
+}
+
+div.modal-body ul.dropdown-menu input[type=text] {
+	width: 204px;
+}
+
+div.modal-body ul.dropdown-menu div.input-group-btn button {
+	background-color: #008FD3;
+    color: #FFF;
+    border: 1px solid #008FD3;
+}
+
+div.modal-body ul.dropdown-menu div.input-group-btn button:hover {
+	background-color: #003283;
+    border: 1px solid #003283;
+}

@@ -1,0 +1,246 @@
+/* Fonts */
+
+@font-face {
+    font-family: Benton Sans;
+    src: url('./fonts/sap-benton-regular.woff');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Benton Sans;
+    src: url('./fonts/sap-benton-light.woff');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: Benton Sans;
+    src: url('./fonts/sap-benton-medium.woff');
+    font-weight: 600;
+}
+
+@font-face {
+	font-family: Open Sans;
+	src: url('./fonts/OpenSans-Regular.eot'); /* IE */
+	src: url('./fonts/OpenSans-Regular.woff'); /* Non-IE */
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: Open Sans;
+	src: url('./fonts/OpenSans-Light.eot'); /* IE */
+	src: url('./fonts/OpenSans-Light.woff'); /* Non-IE */
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: Open Sans;
+	src: url('./fonts/OpenSans-Semibold.eot'); /* IE */
+	src: url('./fonts/OpenSans-Semibold.ttf'); /* Non-IE */
+	font-weight: 600;
+}
+/*
+@font-face {
+	font-family: sap-icofonts;
+	src: url('./fonts/sap-icofonts.ttf');
+}
+
+@font-face {
+	font-family: sap-icons;
+	src: url('./fonts/sap-icons.ttf');
+}
+*/
+@font-face {
+	font-family: 'sap-icofonts';
+	src: url('fonts/sap-icofonts.eot');
+	src: url('fonts/sap-icofonts.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/sap-icofonts.ttf') format('truetype'), 
+		 url('fonts/sap-icofonts.woff') format('woff'), 
+		 url('fonts/sap-icofonts.svg#sap-icofonts') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/*
+@font-face {
+	font-family: 'sap-icons';
+	src: url('fonts/sap-icons.eot');
+	src: url('fonts/sap-icons.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/sap-icons.ttf') format('truetype'), 
+		 url('fonts/sap-icons.woff') format('woff'), 
+		 url('fonts/sap-icons.svg#sap-icofonts') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}*/
+
+@font-face {
+	font-family: 'sap-icons';
+	src: url('fonts/sap-icons-new.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+*/
+
+@font-face {
+	font-family: 'sap-icons';
+	src: url('fonts/sap-icons-new.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/***********/
+
+@font-face {
+	font-family: 'Ariba_icon_library';
+	src: url('fonts/Ariba_icon_library-Regular.eot');
+	src: url('fonts/Ariba_icon_library-Regular.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/Ariba_icon_library-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'BusinessSuiteInAppSymbols';
+	src: url('fonts/BusinessSuiteInAppSymbols.eot');
+	src: url('fonts/BusinessSuiteInAppSymbols.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/BusinessSuiteInAppSymbols.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'bwicons';
+	src: url('fonts/bwicons.eot');
+	src: url('fonts/bwicons.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/bwicons.ttf') format('truetype');
+	     font-weight: normal;
+	     font-style: normal;
+}
+
+@font-face {
+	font-family: 'FPA-icons';
+	src: url('fonts/FPA-icons.eot');
+	src: url('fonts/FPA-icons.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/FPA-icons.ttf') format('truetype');
+		 font-weight: normal;
+		 font-style: normal;
+}
+
+@font-face{
+    font-family:'ITOA_FontIcon';
+    src: url('fonts/ITOA_FontIcon.eot');
+    src: url('fonts/ITOA_FontIcon.eot?#iefix') format('embedded-opentype'),
+         url('fonts/ITOA_FontIcon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'sap-fiori-inapp-icons';
+	src: url('fonts/sap-fiori-inapp-icons.eot');
+	src: url('fonts/sap-fiori-inapp-icons.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/sap-fiori-inapp-icons.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family:'SAPGUI-Belize-Icons';
+	src: url('fonts/SAPGUI-Belize-Icons.eot');
+	src: url('fonts/SAPGUI-Belize-Icons.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/SAPGUI-Belize-Icons.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family:'sapsportsone';
+	src: url('fonts/sapsportsone.eot');
+    src: url('fonts/sapsportsone.eot?#iefix') format('embedded-opentype'),
+    	 url('fonts/sapsportsone.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family:'SAP-icons-watt';
+    src: url('fonts/SAP-icons-watt.eot');
+    src: url('fonts/SAP-icons-watt.eot?#iefix') format('embedded-opentype'),
+    	 url('fonts/SAP-icons-watt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+.SAP-icons {
+    font-family: sap-icons;
+}
+.FPA-icons {
+    font-family: FPA-icons;
+}
+.sap-fiori-inapp-icons {
+    font-family: sap-fiori-inapp-icons;
+}
+.BusinessSuiteInAppSymbols {
+    font-family: BusinessSuiteInAppSymbols;
+}
+.BW-icons {
+    font-family: bwicons;
+}
+
+.Ariba-icons {
+    font-family: Ariba_icon_library;
+}
+
+.sapsportsone {
+    font-family: sapsportsone;
+}
+
+.Belize-icons {
+    font-family: SAPGUI-Belize-Icons;
+}
+
+.ITOA_FontIcon {
+    font-family: ITOA_FontIcon;
+}
+
+@font-face{
+            font-family: 'SAPiconsV3-2';
+            src: url('fonts/SAPiconsV3-2.eot');
+            src: url('fonts/SAPiconsV3-2.eot?#iefix') format('embedded-opentype'),
+            	 url('fonts/SAPiconsV3-2.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            }
+
+@font-face{
+            font-family: 'SAPiconsV3-6';
+            src: url('fonts/SAPiconsV3-6.eot');
+            src: url('fonts/SAPiconsV3-6.eot?#iefix') format('embedded-opentype'),
+            	 url('fonts/SAPiconsV3-6.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            }
+.SAPiconsV3-2 {
+    font-family: SAPiconsV3-2;
+}
+.SAPiconsV3-6 {
+    font-family: SAPiconsV3-6;
+}
+
+@font-face{
+            font-family: 'SAP-icons-extended';
+            src: url('fonts/SAP-icons-extended.eot');
+            src: url('fonts/SAP-icons-extended.eot?#iefix') format('embedded-opentype'),
+                 url('fonts/SAP-icons-extended.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            }
+.SAP-icons-extended {
+    font-family: SAP-icons-extended;
+}
+
+.SAP-icons-watt {
+    font-family: SAP-icons-watt;
+}

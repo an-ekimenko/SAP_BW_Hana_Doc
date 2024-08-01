@@ -1,0 +1,1 @@
+function showRegistrationPopup(){el=document.getElementById("registrationPopup");el.style.visibility="visible"}function hideRegistrationPopup(){el=document.getElementById("registrationPopup");el.style.visibility="hidden"};

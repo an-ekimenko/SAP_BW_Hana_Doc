@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+
+<!--[if gte IE 9]>
+<html class="ie" lang="en-US">
+<![endif]-->
+
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar" content="black"/>
+    <title>Smart Data Integration: Write Back to MS SQL Server | SAP Blogs</title>
+    <link rel="profile" href="http://gmpg.org/xfn/11"/>
+
+    
+    
+    <!--[if lt IE 9]>
+    <script src="https://blogs.sap.com/wp-content/themes/sap-v3-neo/js/html5.min.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <script type="module" src="https://static.community.services.sap/com-hdr/v10/276.93.52/shared-ui/1dx-assets/js/cxs-designsystem/cxs-designsystem.esm.js"></script><link rel="icon" type="image"  href="https://static.community.services.sap/com-hdr/v10/276.93.52/shared-ui/1dx-assets/images/favicon.png" /><link rel="shortcut icon" type="image/x-icon"  href="https://static.community.services.sap/com-hdr/v10/276.93.52/shared-ui/1dx-assets/images/favicon.ico" /><link rel="apple-touch-icon" href="https://static.community.services.sap/com-hdr/v10/276.93.52/shared-ui/1dx-assets/images/apple-touch-icon.png" /><meta name='robots' content='max-image-preview:large' />
+    <script type="text/javascript">
+        window.adobeDataLayer = window.adobeDataLayer || [];
+    </script>
+    <link rel='dns-prefetch' href='//static.community.services.sap' />
+<link rel='dns-prefetch' href='//assets.adobedtm.com' />
+<link rel="alternate" type="application/rss+xml" title="SAP Blogs &raquo; Feed" href="https://blogs.sap.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="SAP Blogs &raquo; Comments Feed" href="https://blogs.sap.com/comments/feed/" />
+<meta name="type" content="Blog" /><meta name="description" content="Hello Community, prio 1 Use case for SDI is the Table Replication from a non-SAP Data- source into SAP HANA tables. For some Data- sources it is also supported to not only read data from it, it is also" /><meta name="sm_tech_ids" content="73554900100800000033,73554900100700000996"/><meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" /><link rel="alternate" type="application/rss+xml" title="SAP Blogs &raquo; Smart Data Integration: Write Back to MS SQL Server Comments Feed" href="https://blogs.sap.com/2018/12/21/smart-data-integration-write-back-to-ms-sql-server/feed/" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/blogs.sap.com\/res1dx-569\/wp-includes\/js\/wp-emoji-release.min.js"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='twentytwelve-style-css' href='https://blogs.sap.com/res1dx-569/wp-content/themes/sap-v3-neo/style.min.css' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentytwelve-ie-css' href='https://blogs.sap.com/res1dx-569/wp-content/themes/sap-v3-neo/css/ie.css' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='designmate_styles-css' href='https://static.community.services.sap/designmate/v3/241/latest/designmate.css' type='text/css' media='all' />
+<link rel='stylesheet' id='designsystem_styles-css' href='https://static.community.services.sap/community-ds/v1/381/main.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css' href='https://blogs.sap.com/res1dx-569/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://blogs.sap.com/res1dx-569/wp-includes/css/classic-themes.min.css' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='prism-css' href='https://blogs.sap.com/res1dx-569/wp-includes/js/tinymce/plugins/codesample/css/prism.css' type='text/css' media='all' />
+<link rel='stylesheet' id='sap_custom_link_css-css' href='https://blogs.sap.com/res1dx-569/wp-content/plugins/sap-core-custom//include/css/sap-core-custom.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='sap_lightbox_gallery_css-css' href='https://blogs.sap.com/res1dx-569/wp-content/plugins/sap-lightbox-gallery/lib/lightbox-gallery.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='pt_style_css-css' href='https://blogs.sap.com/res1dx-569/wp-content/plugins/sap-primary-tag/css/pt_style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wordpress-popular-posts-css-css' href='https://blogs.sap.com/res1dx-569/wp-content/plugins/wordpress-popular-posts/assets/css/wpp.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+<script type='text/javascript' id='jquery-core-js-after'>
+if (jQuery !== undefined) {
+                jQuery(window).on("load", function(){
+                    var _wpWindowLoaded = document.createElement("div");
+                    _wpWindowLoaded.setAttribute("class", "hidden");
+                    _wpWindowLoaded.setAttribute("id", "wp_window_loaded");
+                    document.body.appendChild(_wpWindowLoaded);
+                });
+            }
+</script>
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='//assets.adobedtm.com/ccc66c06b30b/d266848b2882/launch-f095fbc32a96.min.js' id='scn_adobe_dtm-js'></script>
+<script type='application/json' id='wpp-json'>
+{"sampling_active":0,"sampling_rate":100,"ajax_url":"https:\/\/blogs.sap.com\/wp-json\/wordpress-popular-posts\/v1\/popular-posts","api_url":"https:\/\/blogs.sap.com\/wp-json\/wordpress-popular-posts","ID":738562,"token":"90755d873e","lang":0,"debug":0}
+</script>
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-content/plugins/wordpress-popular-posts/assets/js/wpp.min.js' id='wpp-js-js'></script>
+<link rel="https://api.w.org/" href="https://blogs.sap.com/wp-json/" /><link rel="alternate" type="application/json" href="https://blogs.sap.com/wp-json/wp/v2/posts/738562" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blogs.sap.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blogs.sap.com/wp-includes/wlwmanifest.xml" />
+
+<link rel="canonical" href="https://blogs.sap.com/2018/12/21/smart-data-integration-write-back-to-ms-sql-server/" />
+<link rel='shortlink' href='https://blogs.sap.com/?p=738562' />
+<script type="text/javascript">var ajaxurl = "https://blogs.sap.com/wp-admin/admin-ajax.php";var likePostLabel = "Like";var unLikePostLabel = "Liked";var likeCommentLabel = "Like";var unLikeCommentLabel = "Liked";</script>            <style id="wpp-loading-animation-styles">@-webkit-keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}@keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}.wpp-widget-placeholder,.wpp-widget-block-placeholder{margin:0 auto;width:60px;height:3px;background:#dd3737;background:linear-gradient(90deg,#dd3737 0%,#571313 10%,#dd3737 100%);background-size:200% auto;border-radius:3px;-webkit-animation:bgslide 1s infinite linear;animation:bgslide 1s infinite linear}</style>
+                <!--[if IE ]>
+    <link rel="stylesheet" id="scn-ie-styles" href="https://blogs.sap.com/wp-content/themes/sap-v3-neo/css/ie.css"
+          type="text/css" media="all">
+    <link id="ids-popup-css" href="https://accounts.sap.com/universalui/shared/stylesheets/idsPopup.css"
+          rel="stylesheet"
+          type="text/css">
+    <![endif]-->
+
+
+</head>
+
+<body class="post-template-default single single-post postid-738562 single-format-standard">
+
+
+<div class="page-wrapper">
+<b class="cn-accessibility"><a href="#main" tabindex="0" accesskey="S">Skip to Content</a></b>
+<div id="page" class="hfeed site">
+
+<header id="masthead" class="blogs-nav sap-header">
+    
+  <div class="ds-community-header">
+    <ds-contextual-navigation
+      main-links='[{"title":"Topics","url":"https://community.sap.com/topics","subMenuRows":[]},{"title":"Groups","url":"https://groups.community.sap.com","subMenuRows":[{"subMenuLinkItems":[{"category":"","url":"","items":[{"title":"All Groups","url":"https://groups.community.sap.com/","externalLink":true},{"title":"Locations","url":"https://groups.community.sap.com/t5/location/ct-p/location","externalLink":true},{"title":"Interests","url":"https://groups.community.sap.com/t5/interests/ct-p/interests","externalLink":true},{"title":"Activities","url":"https://groups.community.sap.com/t5/activities/ct-p/activities","externalLink":true},{"title":"Influence and Feedback Groups","url":" https://groups.community.sap.com/t5/influence-and-feedback-groups/ct-p/influence-feedback","externalLink":true}],"displayItemsAsCategoryLink":false}]}]},{"title":"Answers","url":"https://answers.sap.com","subMenuRows":[{"subMenuLinkItems":[{"category":"","url":"","items":[{"title":"All Questions","url":"https://answers.sap.com","externalLink":false},{"title":"Ask a Question","url":"https://answers.sap.com/questions/ask.html","externalLink":false},{"title":"How to Ask a Question","url":"https://developers.sap.com/tutorials/community-qa.html","externalLink":true},{"title":"Using Tags","url":"https://community.sap.com/resources/using-tags","externalLink":false},{"title":"All Tags","url":"https://answers.sap.com/tags.html","externalLink":false}],"displayItemsAsCategoryLink":false}]}]},{"title":"Blogs","url":"https://blogs.sap.com","subMenuRows":[{"subMenuLinkItems":[{"category":"","url":"","items":[{"title":"All Blog Posts","url":"https://blogs.sap.com","externalLink":false},{"title":"Write a Blog Post","url":"https://blogs.sap.com/wp-admin/post-new.php","externalLink":false},{"title":"How to Write a Blog Post","url":"https://community.sap.com/resources/blogging","externalLink":false},{"title":"Using Tags","url":"https://community.sap.com/resources/using-tags","externalLink":false},{"title":"Using Categories","url":"https://community.sap.com/resources/blogging#Using_categories","externalLink":false},{"title":"All Tags","url":"https://blogs.sap.com/tags/","externalLink":false}],"displayItemsAsCategoryLink":false}]}]},{"title":"Events","url":"","subMenuRows":[{"subMenuLinkItems":[{"category":"","url":"","items":[{"title":"All Events","url":"https://groups.community.sap.com/t5/events/ct-p/events","externalLink":true},{"title":"SAP Community","url":"https://groups.community.sap.com/t5/sap-community/eb-p/community-events","externalLink":true},{"title":"SAP CodeJam","url":"https://groups.community.sap.com/t5/sap-codejam/eb-p/codejam-events","externalLink":true},{"title":"SAP Community Calls","url":"https://groups.community.sap.com/t5/sap-community-calls/eb-p/community-calls","externalLink":true},{"title":"SAP Inside Track","url":"https://groups.community.sap.com/t5/sap-insidetrack/eb-p/insidetrack","externalLink":true},{"title":"SAP Stammtisch","url":"https://groups.community.sap.com/t5/sap-stammtisch/eb-p/stammtisch","externalLink":true},{"title":"SAP SuccessFactors","url":"https://groups.community.sap.com/t5/sap-successfactors/eb-p/successfactorsevents","externalLink":true},{"title":"User Groups","url":"https://groups.community.sap.com/t5/user-groups/eb-p/user-groups","externalLink":true}],"displayItemsAsCategoryLink":false}]}]},{"title":"Programs","url":"https://community.sap.com/programs","subMenuRows":[{"subMenuLinkItems":[{"category":"","url":"","items":[{"title":"Influencers","url":"https://community.sap.com/programs/influencer-programs","externalLink":false},{"title":"Spotlight Interviews","url":"https://community.sap.com/programs/spotlight-interviews","externalLink":false},{"title":"All Programs","url":"https://community.sap.com/programs","externalLink":false}],"displayItemsAsCategoryLink":false}]}]},{"title":"Resources","url":"https://community.sap.com/resources","subMenuRows":[{"subMenuLinkItems":[{"category":"","url":"","items":[{"title":"Getting Started","url":"https://developers.sap.com/tutorials/community-2022.html","externalLink":true},{"title":"Community Tutorials","url":"https://community.sap.com/resources/tutorials","externalLink":false},{"title":"Community Videos","url":"https://community.sap.com/resources/tip-in-a-minute#Videos","externalLink":false},{"title":"Community Voice Newsletter","url":"https://community.sap.com/voice-nl","externalLink":false},{"title":"Reputation","url":"https://community.sap.com/resources/reputation","externalLink":false},{"title":"Missions & Badges","url":"https://community.sap.com/resources/missions-badges","externalLink":false},{"title":"Moderation","url":"https://community.sap.com/resources/moderation","externalLink":false},{"title":"Rules of Engagement","url":"https://community.sap.com/resources/rules-of-engagement","externalLink":false},{"title":"All Resources","url":"https://community.sap.com/resources","externalLink":false}],"displayItemsAsCategoryLink":false}]}]},{"title":"What&apos;s New","url":"https://community.sap.com/resources/what-is-new","subMenuRows":[]}]'
+      explore-sap-link='{"title":"Explore SAP","subMenuRows":[{"subMenuLinkItems":[{"category":"Products","url":"https://www.sap.com/products.html","items":[{"title":"Business Network","url":"https://www.sap.com/products/business-network.html"},{"title":"Business Technology Platform","url":"https://www.sap.com/products/technology-platform.html"},{"title":"CRM and Customer Experience","url":"https://www.sap.com/products/crm.html"},{"title":"Enterprise Resource Planning","url":"https://www.sap.com/products/erp.html"},{"title":"Financial Management","url":"https://www.sap.com/products/financial-management.html"},{"title":"Human Capital Management","url":"https://www.sap.com/products/hcm.html"},{"title":"Small and Midsize Enterprises","url":"https://www.sap.com/products/sme-business-software.html"},{"title":"Spend Management","url":"https://www.sap.com/products/spend-management.html"},{"title":"Supply Chain Management","url":"https://www.sap.com/products/scm.html"},{"title":"Sustainability Management","url":"https://www.sap.com/sustainability.html"},{"title":"-","url":""},{"title":"View products A-Z","url":"https://www.sap.com/products/a-z.html"},{"title":"View Industries","url":"https://www.sap.com/industries.html"},{"title":"Trials and Demos","url":"https://www.sap.com/products/free-trials.html"},{"title":"-","url":""},{"title":"Partners","url":"https://www.sap.com/partners.html"},{"title":"-","url":""},{"title":"Services","url":"https://www.sap.com/services-support.html"}],"displayItemsAsCategoryLink":false},{"category":"Learning and Support","url":"","items":[{"title":"Learning and Certification","url":"https://learning.sap.com"},{"title":"Support","url":"https://support.sap.com"},{"title":"Documentation","url":"https://help.sap.com"},{"title":"Community","url":"https://community.sap.com/"}],"displayItemsAsCategoryLink":false},{"category":"About","url":"","items":[{"title":"Company Information","url":"https://www.sap.com/about/company.html"},{"title":"Careers","url":"https://jobs.sap.com/?utm_source=CareerSite&utm_campaign=CorpSite_HD"},{"title":"Customer Stories","url":"https://www.sap.com/about/customer-stories.html"},{"title":"Events","url":"https://www.sap.com/events.html"},{"title":"Investor Relations","url":"https://www.sap.com/investors/en.html"},{"title":"News Center","url":"https://news.sap.com/"},{"title":"Security and Trust","url":"https://www.sap.com/about/trust-center.html"}],"displayItemsAsCategoryLink":false}]}],"displayTitle":"Explore all areas of SAP"}'
+      landing-zone='{"title":"Community","url":"https://community.sap.com/"}'
+      profile='{"accountManagementUrl":"https://people.sap.com","links":[{"title":"Ask a Question","url":"https://answers.sap.com/questions/ask.html"},{"title":"Write a Blog Post","url":"https://blogs.sap.com/wp-admin/post-new.php"},{"title":"Activity Stream","url":"https://activities.sap.com"},{"title":"Send a Message","url":"https://messages.sap.com"},{"title":"Inbox","url":"https://people.sap.com/inbox"}]}'
+      search-config='{"disabled":false,"url":"https://community.sap.com/search/","placeholder":"Search the SAP Community","inputName":"q","queryParameters":{"ct":"all","searchReferrer":"contextual_navigation_development"}}'
+      on-country-selected='country => alert(country)'
+      country-selector-config='{"enabled":false,"searchDisabled":false,"regions":[]}'
+      hide-explore-sap-link='false'
+      avatar-source-url='https://avatars.services.sap.com/images'
+    ></ds-contextual-navigation>
+  </div><div class="announcements" role="menubar"></div><div class="dm-wrapper dm-subheader dm-subheader--wrapper  dm-user--unauthenticated "><div class="dm-grid"><div class="dm-breadcrumb dm-user--unauthenticated" role="menubar">
+    <ul class="dm-breadcrumb-nav" role="navigation" aria-label="breadcrumb navigation to trace the path back to original landing point">
+        
+        <li><a id="comm-shdr-breadcrumb-home" href="https://www-qa.sap.com" title="Home">Home</a></li>
+        
+        <li><a id="comm-shdr-breadcrumb-community" href="https://community-qa.sap.com" title="Community">Community</a></li>
+        
+    </ul>
+    <ul class="dm-breadcrumb-actions" role="menu">
+        
+        <li><a id="comm-shdr-AskQuestion" href="https://answers-qa.sap.com/questions/ask.html" title="Ask a Question">Ask a Question</a></li>
+        
+        <li><a id="comm-shdr-WriteBlogPost" href="https://blogs-qa.sap.com/wp-admin/post-new.php" title="Write a Blog Post">Write a Blog Post</a></li>
+        
+        <li class="dm-user__login-button--wrapper"><a class="dm-button-small dm-button--primary" role="button" rel="IDS_login" aria-label="Login or Sign up. Click here to log in or sign up"><span class="dm-button-text">Login / Sign-up</span></a></li>
+        <li class="dm-breadcrumb-actions__dropdown">
+            <span id="comm-shdr-actions-opener" class="dm-breadcrumb-actions__dropdown-toggle" title="Community actions">
+                 <span class="dm-icon-encoded dm-icon-encoded--3dots"></span>
+            </span>
+            <ul id="comm-shdr-user-actions-ul" class="dm-breadcrumb-actions__dropdown-menu" role="menu">
+            </ul>
+        </li>
+    </ul>
+</div>
+</div></div>    <!-- #site-navigation -->
+
+</header>
+
+<!-- #masthead -->
+<div id="main" tabindex="0" class="wrapper">
+
+
+
+
+<div class="ds-blog-post-detail">
+<div class="ds-flexGrid">
+  <div class="ds-flexRow">
+    <div class="ds-flexCol">
+            <div class="ds-content-wrapper ds-blog-post__content-wrapper">
+        <h6 class="ds-heading ds-heading--xs ds-blog-post__sub-title"><span>Technical Articles</span></h6>
+        <div class="ds-flexRow">
+          <div class="ds-flexCol-sm-12 ds-flexCol-md-9">
+            
+<div class="ds-blog-post__body-wrapper">
+  <div class="ds-blog-post__content">
+    <div class="ds-blog-post__header-wrapper">
+      <a target="_blank" rel="noopener noreferrer" href="https://people.sap.com/sebastian.wiefett" class="ds-blog-post__avatar "  >
+        <img alt='Author&#039;s profile photo Sebastian Wiefett' src='https://avatars.services.sap.com/images/sebastian.wiefett.png' class='avatar avatar-48 photo ds-avatar-component ds-avatar-component--small' height='48' width='48' />      </a>
+      <div class="ds-blog-post__author-info-wrapper">
+        <div class="ds-user ds-blog-post__author">
+          <a class="ds-link ds-user__name " href="https://people.sap.com/sebastian.wiefett" target="_blank" title="Sebastian Wiefett" aria-label="" rel="noopener noreferrer">Sebastian Wiefett</a>
+          <div class="ds-user__roles"><i class="ds-user__role ds-user__role--employee" title="This user is an SAP Employee" data-role-name="SAP Employee"></i></div>        </div>
+        <div class="ds-blog-post__meta-info">
+          <span class="ds-blog-post__date">December 21, 2018</span>
+          <span class="ds-blog-post__read-duration">9 minute read</span>
+        </div>
+      </div>
+    </div>
+    <h1 class="ds-heading ds-heading--m ds-blog-post__title">Smart Data Integration: Write Back to MS SQL Server</h1>
+    <div class="ds-blog-post__social-stats-wrapper">
+      <div class="ds-social-stats ">
+        <span class="ds-social-stats__stat">
+          <i class="ds-icon ds-icon--comments"></i>0        </span>
+        <span id="post-likes-counter" class="ds-social-stats__stat">
+          <i class="ds-icon ds-icon--likes-outline"></i>2        </span>
+        <span class="ds-social-stats__stat">
+          <i class="ds-icon ds-icon--views"></i>2,893        </span>
+      </div>
+          </div>
+    <div class="ds-blog-post__body ds-editor-content">
+      <p>Hello Community,</p>
+<p>prio 1 Use case for SDI is the Table Replication from a non-SAP Data- source into SAP HANA tables. For some Data- sources it is also supported to not only read data from it, it is also supported to write back to it.</p>
+<p>Meaning having SAP HANA content as source and writing the Data into the 3rd Party Data- source. Source could be a table or a, even BW generated, Calculation View.</p>
+<p>I will have a look into this feature called &#8220;<em>Write Back</em>&#8221; with the usage of a SAP HANA Database as source and a MS SQL Server as target.</p>
+<p>Which 3rd Party Databases are supported for Write Back is documented in the SDI PAM.</p>
+<h1>1. Summary and Conclusion</h1>
+<p>Main Use-case for SDI is Data replication from a non-SAP source into SAP HANA. For a couple of releases now it is possible, for certain 3rd party Databases, to not only read from them but to also write back into them.</p>
+<p>This Blog shows a little the setup of this Use-case as well as some obstacles you are facing.</p>
+<p>As a conclusion we can determine that the default parameter setup shipped with the installation of SAP HANA is sufficient enough to write into a 3rd party Database in general.</p>
+<p>When it comes to certain performance requirements this default setup is maybe not sufficient enough. It that case you can apply this Blog to your Environment to fulfill them. As Write Back queues the Data occasionally inside the DP Agent, main memory consumption of the DP Agent is foreseen.</p>
+<h1>2. Introduction</h1>
+<h2>2.1 History</h2>
+<div class="scn-scrollable-area">
+<table>
+<tbody>
+<tr>
+<td><strong>Version</strong></td>
+<td><strong>Date</strong></td>
+<td><strong>Adjustments</strong></td>
+</tr>
+<tr>
+<td>0.1</td>
+<td>2018.12.21</td>
+<td>Initial creation</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>2.2 Architecture</h2>
+<p>I am using the following architecture as test Environment:</p>
+<p><img class=" ds-lightbox__img" decoding="async" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20_11-29-26-1.png" data-index="1" data-id="plbox-738562" /></p>
+<p>As you can see this is pretty straight forward. A SAP HANA 2.0 Database will act as the source Database. Inside my Tenant i have the &#8220;<em>Sale</em>&#8221; Table with ~ 12 Mill. records.</p>
+<p>I will use a Flow Graph as Object for the Data transfer because <strong>Replication Tasks are currently not supported to replicate data out of SAP HANA into a 3rd Party Database</strong>.</p>
+<p>Target is a MS SQL Server 2017 hosting also the DP Agent.</p>
+<h2>2.3 Versioning</h2>
+<p>I am using the following versions of Software Applications.</p>
+<p><em>Source System</em></p>
+<ul>
+<li>SAP HANA Database 2.0 SPS 03</li>
+</ul>
+<p><em>Target System</em></p>
+<ul>
+<li>Microsoft SQL Server 2017 Developer Edition</li>
+<li>Using the WideWorldImportersDW sample Data</li>
+<li>SAP HANA SDI DP Agent in Version 2.0 SPS 03 Patch 4 (2.3.4)</li>
+</ul>
+<h2>2.4 Scope</h2>
+<p>This Blog will cover the following areas in this manner:</p>
+<ul>
+<li>Architecture challenges</li>
+<li>Flow Graph design</li>
+<li>Parameter Hints</li>
+<li>Performance</li>
+</ul>
+<p>Everything else is out of scope in this Blog.</p>
+<h1>3. Initial Position</h1>
+<p>The initial Position looks as follows:</p>
+<p><img class=" ds-lightbox__img" decoding="async" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-11_46_09-SAP-Web-IDE-for-SAP-HANA.png" data-index="2" data-id="plbox-738562" /></p>
+<p>1.</p>
+<p>My Data source transform has the &#8220;<em>TBL01_FactSale</em>&#8221; table as source. This is a SAP HANA column store table containing the ~ 12 Mill. records. It is also supported to use Calculation Views as data source. This is especially useful wen you face a BWonHANA / BW/4HANA scenario. Here you can use the generated Calculation Views as your Data source.</p>
+<p>In that case you maintain the the Calc. View centrally via the BW layer.</p>
+<p>2.</p>
+<p>A standard Projection. Just a 1:1 Field Mapping.</p>
+<p>3.</p>
+<p>My Data target transform has a Virtual Table as its target. This is the only way to be able to write back into a supported 3rd party database.</p>
+<p><img class=" ds-lightbox__img" decoding="async" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-11_51_43-SAP-Web-IDE-for-SAP-HANA.png" data-index="3" data-id="plbox-738562" /></p>
+<p>This means that you create your virtual Table on top of your physical table as you do when reading from a 3rd Party datasource into SAP HANA. In our special case we will use the virtual Table not in or Data Source transform, we will use it in our Data Target transform.</p>
+<p>To have greater performance i configured the automatic Flow Graph partitioning having eight parallel partitions in use.</p>
+<p><img class=" ds-lightbox__img" decoding="async" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-11_54_06-SAP-Web-IDE-for-SAP-HANA.png" data-index="4" data-id="plbox-738562" /></p>
+<h2>3.1 Target Table Setup</h2>
+<p>When writing into a supported 3rd Party database we are not able to use Template Tables for table generation. In the first place we have to know the structure of our target Table. Afterwards we have to create the table manually in the target database.</p>
+<p>In my case this was pretty easy. Source and target structure are the same. For easier handling we can use the &#8220;<em>Generate Create</em>&#8221; function in our Database explorer.</p>
+<p><img class=" ds-lightbox__img" decoding="async" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-13_33_36-Database-Explorer.png" data-index="5" data-id="plbox-738562" /></p>
+<p>We take this SQL command, adjust it in order to remove the SAP HANA specifics and paste it in a SQL Console of our target database. In this case the MS SQL Management Studio.</p>
+<p><img class=" ds-lightbox__img" decoding="async" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-13_38_25-SQLQuery2.sql-winsqls17a.bobj_.sap_SQ1.WideWorldImportersDW-sq1reader-89_-.png" data-index="6" data-id="plbox-738562" /></p>
+<p>Finally we are able to create a Virtual Table on top of this physical Table. This Virtual Table will be used as target in our Data Target Transform.</p>
+<h2>3.2 Permissions on the target Database</h2>
+<p>In the usual setup, when we read data out of the source, it is sufficient enough to have read permissions. Write permissions is always required in the target. In a standard SDI scenario, SAP HANA is the target. In that case we need the write permissions here.</p>
+<p>As, in our use case, the target is not a SAP HANA Database, it is the MS SQL Server, guess what?! Exactly! We need write permissions in our target.</p>
+<p>At least on table level or, for easier maintenance, on Database level.</p>
+<p><img class=" ds-lightbox__img" decoding="async" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-14_46_19-Table-Properties-Sale_Write2.png" data-index="7" data-id="plbox-738562" /></p>
+<p>&nbsp;</p>
+<h1>4. Write Back</h1>
+<h2>4.1 Initial Discoveries</h2>
+<p>Having everything set up as described in chapter three i made these initial discoveries.</p>
+<p>Beside the fact that i have configured eight partitions, the run- time was (from my point of view) quite long.</p>
+<p><img class=" ds-lightbox__img" decoding="async" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-12_22_49-SAP-Web-IDE-for-SAP-HANA.png" data-index="8" data-id="plbox-738562" /></p>
+<p>I went ahead and took a look into the Query Monitor were i saw the following picture:</p>
+<p><img class=" ds-lightbox__img" decoding="async" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-12_14_57-hdbstudio-Smart-Data-Access-_System_-BW2@HA4-_Host_-linbw4h10a.bobj_.sap-_Insta.png" data-index="9" data-id="plbox-738562" /></p>
+<p>1.</p>
+<p>Execution time for 1000 rows was between 192 &#8211; 255 ms.</p>
+<p>2.</p>
+<p>Per INSERT Statement, via the Virtual Table, the adapter wrote exactly 1000 rows. Never more, never less. This is somewhat a very different behavior with respect to SELECT Statements on a Virtual Table.</p>
+<p>3.</p>
+<p>The INSERT statements are generated based on my Partition settings. Same as when reading. In that case we have eight INSERT Statements each writing 1000 rows.</p>
+<h2>4.2 Findings</h2>
+<p>A SAP Note search revealed the following information:</p>
+<p><a href="https://launchpad.support.sap.com/#/notes/2421290"  target="_blank" >https://launchpad.support.sap.com/#/notes/2421290</a></p>
+<p>The Note states that the 1000 row fetch situation was by design in older versions of SAP HANA. It has been fixed with SAP HANA 2.0 SPS 02 rev. 024.01.</p>
+<p>On top of this the behavior of the Virtual Table, when used for Write Back, is the following (Statement out of the above Note)</p>
+<p><em>&#8220;[&#8230;]Fixed an issue, that writing to a remote virtual table was slower than reading from it, because on one hand the batch size was hard coded to 1000 and each batch was doing a prepare statement instead of caching it, and on the other hand no streaming was present, so each batch waited for reply before sending the next one. See SAP Note 2421290 for details.[&#8230;]&#8221;</em></p>
+<p>As a matter of fact my deployment is on a higher release but i still faced this issue.</p>
+<p>After getting in contact with some colleagues i got to know that even with newer versions of SAP HANA the behavior observed is still the default.</p>
+<p>Nevertheless three parameters have been introduced with SAP HANA 2.0 SPS 02 rev. 024.01 which need to be activated.</p>
+<h2>4.3 Parameter settings</h2>
+<p>The three Parameter mentioned in 4.2 are:</p>
+<p><em>&#8216;useWritebackStreaming&#8217;</em></p>
+<p>This parameter guarantees that the data will be send in a stream to the Virtual Table for Write Back instead as in batches.</p>
+<p><em>&#8216;cache_prepared_statements&#8217;</em></p>
+<p>When activating this Parameter SAP HANA will not prepare the SQL Statement each time again.</p>
+<p><em>&#8216;prepared_statement_fetch_size&#8217;</em></p>
+<p>Here we can adjust the 1000 row behavior in order to have more or even less.</p>
+<h3>4.3.1 Setting useWritebackStreaming</h3>
+<p>First i set the &#8216;<em>useWritebackStreaming</em>&#8216; parameter on my SAP HANA Database.</p>
+<pre class="language-sql"><code>ALTER SYSTEM ALTER CONFIGURATION ('dpserver.ini', 'SYSTEM') 
+SET ('framework', 'useWritebackStreaming') = 'true' 
+WITH RECONFIGURE;</code></pre>
+<p>After setting this parameter the behavior of my Flow Graph looks as follows:</p>
+<p><img class=" ds-lightbox__img" decoding="async" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-14_00_44-hdbstudio-Smart-Data-Access-_System_-BW2@HA4-_Host_-linbw4h10a.bobj_.sap-_Insta.png" data-index="10" data-id="plbox-738562" /></p>
+<p>In the first place it doesn&#8217;t look like a big difference but&#8230;</p>
+<p>1.</p>
+<p>Beside i configured eight partitions in the Flow Graph, i observed that sometimes i had less parallel INSERT Statements running.</p>
+<p>I believe that this is due to the fact that the adapter is now continuously streaming the data and this is not ideally reflected in the Query Monitoring of the SAP HANA Studio.</p>
+<p>At the end of the Day we have a slight improvement with regards to the run- time:</p>
+<p><img class=" ds-lightbox__img" decoding="async" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-14_06_42-SAP-Web-IDE-for-SAP-HANA.png" data-index="11" data-id="plbox-738562" /></p>
+<h3>4.3.2 Setting cache_prepared_statements</h3>
+<p>Now i set the second parameter &#8211; &#8216;<em>cache_prepared_statements</em>&#8216; on my SAP HANA Database.</p>
+<pre class="language-sql"><code>ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'SYSTEM') 
+SET ('smart_data_integration', 'cache_prepared_statements') = 'true' 
+WITH RECONFIGURE;</code></pre>
+<p>After setting this parameter the behavior of my Flow Graph looks as follows:</p>
+<p><img class=" ds-lightbox__img" decoding="async" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-14_11_02-hdbstudio-Smart-Data-Access-_System_-BW2@HA4-_Host_-linbw4h10a.bobj_.sap-_Insta.png" data-index="12" data-id="plbox-738562" /></p>
+<p>1.</p>
+<p>Check the Execution Time for each 1000 row chunk. Much faster right now. Beforehand we had Execution Times up to 290 ms. Now we have them narrowed down to something between 39 &#8211; 58 ms.</p>
+<p>This is due to the fact that HANA doesn&#8217;t prepare the statement each time. It does it ones and caches it afterwards.</p>
+<p>2.</p>
+<p>Same situation as in chapter 4.3.1.</p>
+<p>Now we end up much faster:</p>
+<p><img class=" ds-lightbox__img" decoding="async" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-14_30_35-SAP-Web-IDE-for-SAP-HANA.png" data-index="13" data-id="plbox-738562" /></p>
+<h3>4.3.3 Setting prepared_statement_fetch_size</h3>
+<p>Now i set the third parameter &#8211; &#8216;<em>prepared_statement_fetch_size</em>&#8216; on my SAP HANA Database.</p>
+<p>I will set it in four waves to check the results. First with 2000 rows, 5000 rows, 7000 rows and 10000 rows. Previous we used the default with 1000 rows.</p>
+<pre class="language-sql"><code>ALTER SYSTEM ALTER CONFIGURATION ('indexserver.ini', 'SYSTEM') 
+SET ('smart_data_integration', 'prepared_statement_fetch_size') = 'XXXXX' 
+WITH RECONFIGURE;</code></pre>
+<p>The results are</p>
+<div class="scn-scrollable-area">
+<table>
+<tbody>
+<tr>
+<td><strong>Fetch size in rows</strong></td>
+<td><strong>Execution Time per chunk of rows</strong></td>
+<td><strong>Total execution Time of the FG</strong></td>
+</tr>
+<tr>
+<td>1000</td>
+<td>28 &#8211; 45 ms</td>
+<td>376754 ms</td>
+</tr>
+<tr>
+<td>2000</td>
+<td>62 &#8211; 107 ms</td>
+<td>377363 ms</td>
+</tr>
+<tr>
+<td>5000</td>
+<td>105 &#8211; 212 ms</td>
+<td>374468 ms</td>
+</tr>
+<tr>
+<td>7000</td>
+<td>206 &#8211; 347 ms</td>
+<td>383563 ms</td>
+</tr>
+<tr>
+<td>10000</td>
+<td>290 &#8211; 425 ms</td>
+<td>412557 ms</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>We can see that with a higher Fetch Size we are getting higher Execution Times per chunk as well as a higher overall execution time.</p>
+<p>In our test we can see that with a fetch size of 5000 rows we have the best performance. Even better as with the default of 1000 rows.</p>
+<p>This shows us that there is no general rule of thumb when adjusting this parameter. You have to play a bit with it in your Environment.</p>
+<h2>4.4 Target database Write speed</h2>
+<h3>4.4.1 Write speed</h3>
+<p>The write speed should be below the roundtrip speed that we see in chapter 4.3.2. Outerwise we will end up in queueing events (4.4.2) and wait events (4.4.3).</p>
+<p>I checked the average write speed for my database file using the MS SQL Server Management Studio.</p>
+<p><img class=" ds-lightbox__img" decoding="async" src="https://blogs.sap.com/wp-content/uploads/2018/12/2018-12-03-15_19_22-General-03.12.2018-15_19-WINSQLS17A_SQ1-Microsoft-SQL-Server-Management-St.png" data-index="14" data-id="plbox-738562" /></p>
+<h3>4.4.2 DP Agent queueing events</h3>
+<p>After setting the Write back optimized Parameter we have the situation that SDI send`s the data pretty fast to the target Database. If the target Database is not capable to write the records accordingly fast, it will end up in queueing situations inside the DP Agent.</p>
+<p><em>2018-12-04 03:24:21,198 [INFO ] DPFramework | ResponseQueue.run &#8211; AHRQ(176): Stopped</em><br />
+<em>2018-12-04 03:24:21,198 [INFO ] DPFramework | ResponseQueue.run &#8211; AHRQ(177): Stopped</em><br />
+<em>2018-12-04 03:24:21,198 [INFO ] DPFramework | ResponseQueue.close &#8211; AHRQ(176,177): [Pool: max=1.71gb,cur=1.18kb,peak=3.56kb,tot=6.01mb; <span style="color: #00ff00">Queue: cur=0(0b),peak=2(1.76kb),tot=501(293.55kb)</span>]</em></p>
+<p>What you see above is a snipset from the framework trace File. In our case we dont have any queueing events because the target Database was able to write the records fast enough.</p>
+<p>If you face queueing events check the framework trace file as well as the DP Agent process. Ideally with the tool &#8220;<em>Process Explorer</em>&#8221; on Windows or the &#8220;<em>top</em>&#8221; command on Unix. While queueing the DP Agent spawns a lot of processes and the main memory consuption increases.</p>
+<p><img class=" ds-lightbox__img" decoding="async" src="https://blogs.sap.com/wp-content/uploads/2018/12/2018-12-03-15_32_34-winsqls17a.bobj_.sap-Remote-Desktop-Connection.png" data-index="15" data-id="plbox-738562" /></p>
+<h3>4.4.3 MS SQL Wait events</h3>
+<p>As discussed in 4.2.1 wait events happen when the target Database is not capable of writing the data fast enough. In case of the MS SQL Server you can check the Activity Monitor out of the Management Console.</p>
+<p><img class=" ds-lightbox__img" decoding="async" src="https://blogs.sap.com/wp-content/uploads/2018/12/2018-12-03-15_18_53-winsqls17a.bobj_.sap_SQ1-Activity-Monitor-Microsoft-SQL-Server-Management-Stu.png" data-index="16" data-id="plbox-738562" /></p>
+<p>1.</p>
+<p>Here you see an overall view of all Wait Events througout the whole SQL Server instance. The less &#8211; the better.</p>
+<p>2.</p>
+<p>Running processes of the SQL Server. Here you see our DP Agent connections</p>
+<p>3.</p>
+<p>Database I/O files overview. Here you can see the read/write speed of the database Files. Here you also find the Response time of the Database files. The less &#8211; the better.</p>
+<h1>5. Appendix</h1>
+<p>Additional Information related to this Topic.</p>
+<h2>5.1 Enhance performance</h2>
+<p>By applying these Write Back optimized parameters we were able to increase the performance. There are still feature and functions available to even further increase the performance. Please check this <a href="https://blogs.sap.com/2018/11/01/smart-data-integration-increase-initial-load-performance-for-replication-tasks/" >Blog</a> for further information.</p>
+<p>&nbsp;</p>
+    </div>
+  </div>
+  <div class="ds-blog-post__social-side-bar">
+    <div class="ds-sticky-on-scroll ">
+      <div class="ds-sticky-on-scroll__wrapper  ">
+        <div class="ds-sticky-on-scroll__content">
+          <div class="ds-blog-post__social-actions">
+            <button class="sap-button-follow ds-button ds-button--primary ds-blog-post__social-action ds-blog-post__social-action--follow" id="sap-button-follow-hdr-id" onclick="location.href='https://blogs.sap.com/wp-login.php?redirect_to=https%3A%2F%2Fblogs.sap.com%2F2018%2F12%2F21%2Fsmart-data-integration-write-back-to-ms-sql-server%2F%3Fs_action%3Dss_change_follow_status%26nonce%3D58b92647f4'" rel="IDS_login"  type="button" data-content-type="blogpost" data-content-id="738562" data-nonce="58b92647f4" title="Please log into the system to use follow/unfollow functionality."><span class="ds-button-text">Follow</span></button>            <button type='button' class='ds-button ds-button--secondary ds-button--icon-button ds-blog-post__social-action likes-post-link dolike ' rel='IDS_login' onclick="location.href='https://blogs.sap.com/wp-login.php?redirect_to=https%3A%2F%2Fblogs.sap.com%2F2018%2F12%2F21%2Fsmart-data-integration-write-back-to-ms-sql-server%2F%3Fs_action%3Dss_change_like_status%26nonce%3D3f187f9066'" title='Like' data-nonce='3f187f9066' data-post-id='738562'><i class='ds-icon ds-icon--likes-outline ds-icon--regular ds-m-r-xs' tabindex='-1'></i><span class='ds-button-text'>Like</span></button>            <button type="button" class="ds-button ds-button--secondary ds-button--icon-button ds-blog-post__social-action" title="RSS Feed" onclick="location.href='https://blogs.sap.com/2018/12/21/smart-data-integration-write-back-to-ms-sql-server/feed/'">
+              <i class="ds-icon ds-icon--rss-feed ds-icon--regular ds-m-r-xs" tabindex="-1"></i>RSS Feed
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+            <div class="ds-blog-post__social-row">
+              <div class="ds-blog-post__social-icons">
+                <a href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblogs.sap.com%2F2018%2F12%2F21%2Fsmart-data-integration-write-back-to-ms-sql-server%2F' title='Share on Facebook' target='_blank'><span class='ds-social-icon ds-social-icon--dark-facebook'></span></a><a href='https://twitter.com/share?url=https%3A%2F%2Fblogs.sap.com%2F2018%2F12%2F21%2Fsmart-data-integration-write-back-to-ms-sql-server%2F&text=Smart+Data+Integration%3A+Write+Back+to+MS+SQL+Server' title='Share on Twitter' target='_blank'><span class='ds-social-icon ds-social-icon--dark-twitter'></span></a><a href='https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fblogs.sap.com%2F2018%2F12%2F21%2Fsmart-data-integration-write-back-to-ms-sql-server%2F&title=Smart+Data+Integration%3A+Write+Back+to+MS+SQL+Server' title='Share on LinkedIn' target='_blank'><span class='ds-social-icon ds-social-icon--dark-linkedin'></span></a>              </div>
+              <div class='ds-tooltip__wrapper'>
+    <div class='ds-tooltip__anchor'>
+    <button
+      type="button"
+      class="ds-button ds-button--secondary ds-blog-post__alert-moderator-button ds-button--disabled"
+      aria-label="Alert Moderator"
+      data-toggle="collapse"
+      data-hide-class="ds-collapse"
+      data-triggers=".alertModerator"
+      aria-expanded="false">Alert Moderator
+    </button>
+    </div>
+    <div role='tooltip' class='ds-tooltip ds-tooltip--bottom'>Alerting is not available for unauthorized users</div>
+</div>
+            </div>
+            
+  <div class="wprc-content-v3">
+    <div class="ds-blog-post-form ds-blog-post__alert-moderator-form ds-collapse alertModerator wprc-form-v3" data-toggle="collapseComponent" data-name="alertModerator">
+          </div>
+  </div>
+          </div>
+          <div class="ds-blog-post__right-side-bar ds-flexCol-sm-12 ds-flexCol-md-3">
+            <div id="sapassignedtagswidget-v3-2" class="ds-side-bar-widget ds-assigned-tags ds-m-b-l"><h3 class="ds-side-bar-widget__heading">Assigned Tags</h3></div><div id="sap-relatedcontent-widget-v3-2" class="ds-side-bar-widget widget_sap-relatedcontent-widget-v3"><button type="button" class="ds-side-bar-widget__heading ds-side-bar-widget__heading--collapsible" aria-expanded="true">Similar Blog Posts<i class="ds-icon ds-icon--arrow-up ds-icon--big" tabindex="-1"></i></button><div class="ds-side-bar-widget__content"><ul class="ds-relatedContent ds-relatedContent__list" data-types="blogpost" data-limit="3"></ul></div></div><div id="sap-relatedcontent-widget-v3-3" class="ds-side-bar-widget widget_sap-relatedcontent-widget-v3"><button type="button" class="ds-side-bar-widget__heading ds-side-bar-widget__heading--collapsible" aria-expanded="true">Related Questions<i class="ds-icon ds-icon--arrow-up ds-icon--big" tabindex="-1"></i></button><div class="ds-side-bar-widget__content"><ul class="ds-relatedContent ds-relatedContent__list" data-types="question" data-limit="3"></ul></div></div>          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="content-lightbox-modal"aria-modal="true" aria-label="Lightbox gallery opened" role="dialog" tabindex="-1" class="ds-lightbox" data-id="plbox-738562"><div class="ds-lightbox__box"><div class="ds-lightbox__slideNumber"><span class="ds-lightbox__slideNumber--current"></span>/<span class="ds-lightbox__slideNumber--total"></span></div><div class="ds-lightbox__header"><a href="javascript:void(0);" data-id="plbox-738562" class="ds-lightbox__headerIcon ds-icon-encoded--close" aria-label="Close lightbox"></a></div><div class="ds-lightbox__content--scrollable ds-lightbox__content"><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20_11-29-26-1.png" alt=""/></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-11_46_09-SAP-Web-IDE-for-SAP-HANA.png" alt=""/></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-11_51_43-SAP-Web-IDE-for-SAP-HANA.png" alt=""/></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-11_54_06-SAP-Web-IDE-for-SAP-HANA.png" alt=""/></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-13_33_36-Database-Explorer.png" alt=""/></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-13_38_25-SQLQuery2.sql-winsqls17a.bobj_.sap_SQ1.WideWorldImportersDW-sq1reader-89_-.png" alt=""/></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-14_46_19-Table-Properties-Sale_Write2.png" alt=""/></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-12_22_49-SAP-Web-IDE-for-SAP-HANA.png" alt=""/></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-12_14_57-hdbstudio-Smart-Data-Access-_System_-BW2@HA4-_Host_-linbw4h10a.bobj_.sap-_Insta.png" alt=""/></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-14_00_44-hdbstudio-Smart-Data-Access-_System_-BW2@HA4-_Host_-linbw4h10a.bobj_.sap-_Insta.png" alt=""/></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-14_06_42-SAP-Web-IDE-for-SAP-HANA.png" alt=""/></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-14_11_02-hdbstudio-Smart-Data-Access-_System_-BW2@HA4-_Host_-linbw4h10a.bobj_.sap-_Insta.png" alt=""/></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="https://blogs.sap.com/wp-content/uploads/2018/11/2018-11-20-14_30_35-SAP-Web-IDE-for-SAP-HANA.png" alt=""/></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="https://blogs.sap.com/wp-content/uploads/2018/12/2018-12-03-15_19_22-General-03.12.2018-15_19-WINSQLS17A_SQ1-Microsoft-SQL-Server-Management-St.png" alt=""/></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="https://blogs.sap.com/wp-content/uploads/2018/12/2018-12-03-15_32_34-winsqls17a.bobj_.sap-Remote-Desktop-Connection.png" alt=""/></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="https://blogs.sap.com/wp-content/uploads/2018/12/2018-12-03-15_18_53-winsqls17a.bobj_.sap_SQ1-Activity-Monitor-Microsoft-SQL-Server-Management-Stu.png" alt=""/></div><a class="lightbox-gallery-button--prev ds-lightbox__gallery-button ds-icon ds-icon--arrow-left" href="javascript:void(0);" aria-label="Show previous image"></a><a class="ds-lightbox__gallery-button lightbox-gallery-button--next ds-icon ds-icon--arrow-right" href="javascript:void(0);" aria-label="Show next image"></a></div><div class="zoom-buttons"><a class="ds-lightbox__zoom-out" href="javascript:void(0);" aria-label="Enter to zoom out"><i class="ds-icon ds-icon--minus"></i></a><a class="ds-lightbox__zoom-in" href="javascript:void(0);" aria-label="Enter to zoom in"><i class="ds-icon ds-icon--plus"></i></a></div></div></div>
+  <div class="ds-blog-post__comment-section">
+    <div class="ds-flexGrid">
+      <div class="ds-flexRow">
+        <div class="ds-flexCol-12 ds-flexCol-md-10 ds-flexCol-lg-10">
+          
+<div id="comments" class="ds-blog-post-comments">
+  
+      <div class="ds-blog-post-comments__counter" title="Number of Comments">
+      Be the first to leave a comment      </div>
+              <div class="dm-section dm-align-center dm-section-header__title" title="Please log on to comment" aria-role="alert">
+                You must be <a href="https://blogs.sap.com/wp-login.php?redirect_to=2018/12/21/smart-data-integration-write-back-to-ms-sql-server" class="opener js-idspopup" rel="IDS_login" title="Log On">Logged on</a> to comment or reply to a post.
+        </div>
+      
+    <div class="ds-blog-post-comments__list">
+        </div> <!-- main comments content area -->
+
+    
+            
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+                </div> <!-- #main -->
+                <div id="shared_footer" class="dm-container dm-wrapper">
+                    <footer class="dm-footer">
+    <div class="dm-footer__inner-wrapper">
+        <div class="dm-socialmedia">
+            <h5 class="dm-socialmedia__headline" id="hl-sharefollow">Find us on</h5>
+            <ul class="dm-socialmedia__links" aria-labelledby="hl-sharefollow">
+                <li><a href="https://www.facebook.com/sapcommunity" title="Facebook"><span class="dm-icon-encoded--facebook"></span></a></li>
+                <li><a href="https://twitter.com/SAPCommunity" title="Twitter"><span class="dm-icon-encoded--twitter"></span></a></li>
+                <li><a href="https://www.youtube.com/c/SAPCommunities" title="YouTube"><span class="dm-icon-encoded--youtube"></span></a></li>
+                <li><a href="https://www.linkedin.com/company/sap" title="LinkedIn"><span class="dm-icon-encoded--linkedin"></span></a></li>
+                <li><a href="https://instagram.com/sap/" title="Instagram"><span class="dm-icon-encoded--instagram"></span></a></li>
+                <li><a href="http://www.slideshare.net/SAP" title="Slideshare"><span class="dm-icon-encoded--slideshare"></span></a></li>
+                <li><a href="mailto:?subject='SAP Community'" title="Email Share"><span class="dm-icon-encoded--email"></span></a></li>
+            </ul>
+        </div>
+        <nav role="navigation" class="dm-footer__navigation">
+            <ul class="dm-footer__navigation__list" aria-label="footer navigation">
+                <li><a href="https://community.sap.com/resources/sap-community-privacy-statement" target="_blank">Privacy</a></li>
+                <li><a href="http://sap.com/corporate/en/legal/terms-of-use.html" target="_blank">Terms of Use</a></li>
+                <li><a href="http://sap.com/about/legal/impressum.html" target="_blank">Legal Disclosure</a></li>
+                <li><a href="http://sap.com/about/legal/copyright.html" target="_blank">Copyright</a></li>
+                <li><a href="http://sap.com/about/legal/trademark.html" target="_blank">Trademark</a></li>
+                <li id="teconsent"></li>
+                <li><a href="https://www.sap.com/cmp/nl/sap-community-voice/index.html" target="_blank">Newsletter</a></li>
+                <li><a href="https://community.sap.com/support" target="_blank">Support</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>                </div>
+            </div> <!-- #page -->
+            <script type="application/ld+json" data-schema="738562-post-Default">{"@context":"https:\/\/schema.org\/","@type":"BlogPosting","@id":"https:\/\/blogs.sap.com\/2018\/12\/21\/smart-data-integration-write-back-to-ms-sql-server\/#BlogPosting","mainEntityOfPage":"https:\/\/blogs.sap.com\/2018\/12\/21\/smart-data-integration-write-back-to-ms-sql-server\/","headline":"Smart Data Integration: Write Back to MS SQL Server","name":"Smart Data Integration: Write Back to MS SQL Server","description":"Hello Community, prio 1 Use case for SDI is the Table Replication from a non-SAP Data- source into SAP HANA tables. For some Data- sources it is also supported to not only read data from [&hellip;]","datePublished":"2018-12-21","dateModified":"2018-12-21","author":{"@type":"Person","@id":"https:\/\/blogs.sap.com\/author\/sebastian.wiefett\/#Person","name":"Sebastian Wiefett","url":"https:\/\/blogs.sap.com\/author\/sebastian.wiefett\/","image":{"@type":"ImageObject","@id":"https:\/\/avatars.services.sap.com\/images\/sebastian.wiefett_small.png","url":"https:\/\/avatars.services.sap.com\/images\/sebastian.wiefett_small.png","height":96,"width":96}},"publisher":{"@type":"Organization","name":"SAP Community Blogs","logo":{"@type":"ImageObject","@id":"https:\/\/blogs.sap.com\/wp-content\/uploads\/2020\/03\/SAP_scrn_R-2.png","url":"https:\/\/blogs.sap.com\/wp-content\/uploads\/2020\/03\/SAP_scrn_R-2.png","width":600,"height":60}},"image":{"@type":"ImageObject","@id":"https:\/\/blogs.sap.com\/wp-content\/uploads\/2018\/11\/2018-11-20_11-29-26-1.png","url":"https:\/\/blogs.sap.com\/wp-content\/uploads\/2018\/11\/2018-11-20_11-29-26-1.png","height":"","width":""},"url":"https:\/\/blogs.sap.com\/2018\/12\/21\/smart-data-integration-write-back-to-ms-sql-server\/","about":["Technical Articles"],"wordCount":1975,"keywords":["1000 rows","flow graph","hana","MS SQL","mssql","Performance","sap hana","sdi","smart data integration","sql","sql server","write-back","writeback"]}</script>
+<script type="application/ld+json" data-schema="Breadcrumb">{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2018","item":"https:\/\/blogs.sap.com\/2018\/#breadcrumbitem"},{"@type":"ListItem","position":2,"name":"12","item":"https:\/\/blogs.sap.com\/2018\/\/12\/#breadcrumbitem"},{"@type":"ListItem","position":3,"name":"21","item":"https:\/\/blogs.sap.com\/2018\/\/12\/\/21\/#breadcrumbitem"},{"@type":"ListItem","position":4,"name":"Smart Data Integration: Write Back to MS SQL Server","item":"https:\/\/blogs.sap.com\/2018\/12\/21\/smart-data-integration-write-back-to-ms-sql-server\/#breadcrumbitem"}]}</script>
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-content/plugins/sap-comment-editor/js/action-tooltip-handler.min.js' id='tooltip-handler-js'></script>
+<script type='text/javascript' id='unified_header-js-extra'>
+/* <![CDATA[ */
+var headerInitArgs = {"system":"blogs","wrapperID":"page","breadcrumbItems":[{"text":"Blogs","href":"https:\/\/blogs.sap.com"}]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://static.community.services.sap/com-hdr/v10/276.93.52/shared-ui/1dx-assets/js/scn-header.min.js' id='unified_header-js'></script>
+<script type='text/javascript' id='unified_header-js-after'>
+            scnHeader.init(headerInitArgs);
+            setCookie("userArgs", headerInitArgs.user ? JSON.stringify(headerInitArgs.user) : "", { path : "/" });
+    
+</script>
+<script type='text/javascript' src='https://static.community.services.sap/designmate/v3/241/latest/header.js' id='designmate_header_script-js'></script>
+<script type='text/javascript' src='https://static.community.services.sap/designmate/v3/241/latest/subheader.js' id='designmate_subheader_script-js'></script>
+<script type='text/javascript' src='https://static.community.services.sap/designmate/v3/241/latest/designmate.js' id='designmate_script-js'></script>
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-includes/js/comment-reply.min.js' id='comment-reply-js'></script>
+<script type='text/javascript' id='satm_handler-js-extra'>
+/* <![CDATA[ */
+var satmContentSelectors = ["div.dm-contentDetail__body-content","div.dm-list-comments__item-content","div.ds-blog-post__body","div.ds-blog-post-comment__content"];
+var satmProfileBaseUrl = "people.sap.com\/";
+var satmUssUrl = "https:\/\/uss.api.community.sap.com";
+var satmChangeableElementsSelectors = ["div.dm-list-comments__item-content","div.ds-blog-post-comment__content"];
+var satmPluginEnabled = "1";
+var satmApiUrl = "https:\/\/uss.api.community.sap.com";
+var satmApiCallWithCredentials = "1";
+var satmRequestDelayMs = "100";
+/* ]]> */
+</script>
+<script type='text/javascript' defer src='https://blogs.sap.com/res1dx-569/wp-content/plugins/sap-at-mention/js/sap-at-mention.min.js' id='satm_handler-js'></script>
+<script type='text/javascript' id='sap-comment-validation-js-extra'>
+/* <![CDATA[ */
+var commentValidation = {"validateMaxLinks":"1","max_links_number":"7","BLOGS_PAGE":"single"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-content/plugins/sap-comment-editor/js/sap-comment-validation.min.js' id='sap-comment-validation-js'></script>
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-content/plugins/sap-core-custom/include/js/sap-post-status.min.js' id='scn_post_status_check-js'></script>
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-content/themes/sap-v3-neo/js/jquery-plugins.min.js' id='sap_jquery_plugins-js'></script>
+<script type='text/javascript' id='sap-login-csrf-cookie-js-extra'>
+/* <![CDATA[ */
+var sapLoginCookieConfig = {"cookieName":"SAP_BLOGS_ANONYMOUS_NONCE","sapActionName":"s_action"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-content/plugins/sap-core-custom/include/js/sap-login-csrf-cookie.min.js' id='sap-login-csrf-cookie-js'></script>
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-content/plugins/sap-core-custom/include/js/sap-eddl.min.js' id='sap_eddl-js'></script>
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-content/plugins/sap-lightbox-gallery/lib/lightbox-gallery.min.js' id='sap_lightbox_gallery_js-js'></script>
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-content/themes/sap-v3-neo/js/choices.min.js' id='choices.js-js'></script>
+<script type='text/javascript' id='wprc-script-js-extra'>
+/* <![CDATA[ */
+var wprcajaxhandler = {"ajaxurl":"https:\/\/blogs.sap.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-content/plugins/sap-report-content/static/js/v3/scripts.min.js' id='wprc-script-js'></script>
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-content/themes/sap-v3-neo/js/single.min.js' id='sap_single_v3-js'></script>
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-content/themes/sap-v3-neo/js/onscroll-sticky.min.js' id='onscroll_sticky-js'></script>
+<script type='text/javascript' id='blog-detail-page-js-extra'>
+/* <![CDATA[ */
+var alertReasonsSelectArgs = {"selectId":"sap-blog-alert-reasons","reasons":["Incorrect Tag\/Category\r","Cross-Posting\r","Private Information\r","Unprofessional Conduct\r","Spam"]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-content/themes/sap-v3-neo/dist/blog-detail.min.js' id='blog-detail-page-js'></script>
+<script type='text/javascript' id='sap_assignedtags_widget_js_v3-js-extra'>
+/* <![CDATA[ */
+var assignedTagsWidgetSettings = {"maxItemsBeforeHide":"7","data":{"SAP HANA smart data integration":"https:\/\/blogs.sap.com\/tags\/73554900100800000033\/","SAP HANA":"https:\/\/blogs.sap.com\/tags\/73554900100700000996\/","1000 rows":"https:\/\/blogs.sap.com\/tag\/1000-rows\/","flow graph":"https:\/\/blogs.sap.com\/tag\/flow-graph\/","hana":"https:\/\/blogs.sap.com\/tag\/hana\/","MS SQL":"https:\/\/blogs.sap.com\/tag\/ms-sql\/","mssql":"https:\/\/blogs.sap.com\/tag\/mssql\/","Performance":"https:\/\/blogs.sap.com\/tag\/performance\/","sap hana":"https:\/\/blogs.sap.com\/tag\/sap-hana\/","sdi":"https:\/\/blogs.sap.com\/tag\/sdi\/","smart data integration":"https:\/\/blogs.sap.com\/tag\/smart-data-integration\/","sql":"https:\/\/blogs.sap.com\/tag\/sql\/","sql server":"https:\/\/blogs.sap.com\/tag\/sql-server\/","write-back":"https:\/\/blogs.sap.com\/tag\/write-back\/","writeback":"https:\/\/blogs.sap.com\/tag\/writeback\/"},"widgetClassname":".ds-assigned-tags"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-content/plugins/sap-widgets/include/assigned-tags/js/sap-assigned-tags-widget.min.js' id='sap_assignedtags_widget_js_v3-js'></script>
+<script type='text/javascript' id='sap_relatedcontent_widget_js_v3-js-extra'>
+/* <![CDATA[ */
+var relatedContentWidgetSettings = {"widgetSelector":".widget_sap-relatedcontent-widget-v3","dataSourceServiceUrl":"https:\/\/searchproxy.api.community.sap.com\/api\/v1\/search\/similar-content","profileUrl":"https:\/\/people.sap.com","targetContentItem":{"id":738562,"type":"blogpost","title":"Smart Data Integration: Write Back to MS SQL Server","primary_tag":"73554900100800000033"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-content/plugins/sap-widgets/include/related-content/js/sap-related-content-widget.min.js' id='sap_relatedcontent_widget_js_v3-js'></script>
+<div id="wp-load_tinymce-wrap" class="wp-core-ui wp-editor-wrap tmce-active"><link rel='stylesheet' id='dashicons-css' href='https://blogs.sap.com/res1dx-569/wp-includes/css/dashicons.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='editor-buttons-css' href='https://blogs.sap.com/res1dx-569/wp-includes/css/editor.min.css' type='text/css' media='all' />
+<style>#wp-load_tinymce-wrap {display:none;}</style>
+<div id="wp-load_tinymce-editor-tools" class="wp-editor-tools hide-if-no-js"><div class="wp-editor-tabs"><button type="button" id="load_tinymce-tmce" class="wp-switch-editor switch-tmce" data-wp-editor-id="load_tinymce">Visual</button>
+<button type="button" id="load_tinymce-html" class="wp-switch-editor switch-html" data-wp-editor-id="load_tinymce">Text</button>
+</div>
+</div>
+<div id="wp-load_tinymce-editor-container" class="wp-editor-container"><div id="qt_load_tinymce_toolbar" class="quicktags-toolbar"></div><textarea class="wp-editor-area" rows="20" autocomplete="off" cols="40" name="load_tinymce" id="load_tinymce"></textarea></div>
+</div>
+
+<link rel='preload' href='https://blogs.sap.com/wp-includes/js/tinymce/skins/lightgray/skin.min.css?wp-mce-49110-20201110' as='style'><link rel='preload' href='https://blogs.sap.com/wp-includes/js/tinymce/plugins/codesample/css/prism.css' as='style'><link rel='preload' href='https://blogs.sap.com/wp-includes/js/tinymce/skins/lightgray/content.min.css?wp-mce-49110-20201110' as='style'>
+		<script type="text/javascript">
+		tinyMCEPreInit = {
+			baseURL: "https://blogs.sap.com/wp-includes/js/tinymce",
+			suffix: ".min",
+						mceInit: {'load_tinymce':{theme:"modern",skin:"lightgray",language:"en",formats:{alignleft: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"left"}},{selector: "img,table,dl.wp-caption", classes: "alignleft"}],aligncenter: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"center"}},{selector: "img,table,dl.wp-caption", classes: "aligncenter"}],alignright: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"right"}},{selector: "img,table,dl.wp-caption", classes: "alignright"}],strikethrough: {inline: "del"}},relative_urls:false,remove_script_host:false,convert_urls:false,browser_spellcheck:true,fix_list_elements:true,entities:"38,amp,60,lt,62,gt",entity_encoding:"raw",keep_styles:false,cache_suffix:"wp-mce-49110-20201110",resize:"vertical",menubar:false,branding:false,preview_styles:"font-family font-size font-weight font-style text-decoration text-transform",end_container_on_empty_block:true,wpeditimage_html5_captions:true,wp_lang_attr:"en-US",wp_keep_scroll_position:false,wp_shortcut_labels:{"Heading 1":"access1","Heading 2":"access2","Heading 3":"access3","Heading 4":"access4","Heading 5":"access5","Heading 6":"access6","Paragraph":"access7","Blockquote":"accessQ","Underline":"metaU","Strikethrough":"accessD","Bold":"metaB","Italic":"metaI","Code":"accessX","Align center":"accessC","Align right":"accessR","Align left":"accessL","Justify":"accessJ","Cut":"metaX","Copy":"metaC","Paste":"metaV","Select all":"metaA","Undo":"metaZ","Redo":"metaY","Bullet list":"accessU","Numbered list":"accessO","Insert\/edit image":"accessM","Insert\/edit link":"metaK","Remove link":"accessS","Toolbar Toggle":"accessZ","Insert Read More tag":"accessT","Insert Page Break tag":"accessP","Distraction-free writing mode":"accessW","Add Media":"accessM","Keyboard Shortcuts":"accessH"},content_css:"https://blogs.sap.com/wp-includes/css/dashicons.min.css?ver=569,https://blogs.sap.com/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=569,https://blogs.sap.com/wp-content/themes/sap-v3-neo/editor-style.css",plugins:"charmap,colorpicker,hr,lists,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpautoresize,wpeditimage,wpemoji,wpgallery,wplink,wpdialogs,wptextpattern,wpview,image,codesample",external_plugins:{"table":"https:\/\/blogs.sap.com\/wp-content\/plugins\/mce-table-buttons\/tinymce47-table\/plugin.min.js"},selector:"#load_tinymce",wpautop:true,indent:false,toolbar1:"formatselect,bold,italic,bullist,numlist,blockquote,alignleft,aligncenter,alignright,link,spellchecker,fullscreen,wp_adv,codesample",toolbar2:"strikethrough,hr,forecolor,pastetext,removeformat,charmap,outdent,indent,table,undo,redo,wp_help",toolbar3:"",toolbar4:"",tabfocus_elements:":prev,:next",body_class:"load_tinymce post-type-post post-status-publish post-format-standard page-template-default locale-en-us",table_toolbar:"",extended_valid_elements:"div"}},
+			qtInit: {'load_tinymce':{id:"load_tinymce",buttons:"strong,em,link,block,del,ins,img,ul,ol,li,code,more,close"}},
+			ref: {plugins:"charmap,colorpicker,hr,lists,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpautoresize,wpeditimage,wpemoji,wpgallery,wplink,wpdialogs,wptextpattern,wpview,image,codesample",theme:"modern",language:"en"},
+			load_ext: function(url,lang){var sl=tinymce.ScriptLoader;sl.markDone(url+'/langs/'+lang+'.js');sl.markDone(url+'/langs/'+lang+'_dlg.js');}
+		};
+		</script>
+		<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-includes/js/tinymce/tinymce.min.js' id='wp-tinymce-root-js'></script>
+<script type='text/javascript' src='https://blogs.sap.com/res1dx-569/wp-includes/js/tinymce/plugins/compat3x/plugin.min.js' id='wp-tinymce-js'></script>
+<script type='text/javascript'>
+tinymce.addI18n( 'en', {"Ok":"OK","Bullet list":"Bulleted list","Insert\/Edit code sample":"Insert\/edit code sample","Url":"URL","Spellcheck":"Check Spelling","Row properties":"Table row properties","Cell properties":"Table cell properties","Paste row before":"Paste table row before","Paste row after":"Paste table row after","Cut row":"Cut table row","Copy row":"Copy table row","Merge cells":"Merge table cells","Split cell":"Split table cell","Paste is now in plain text mode. Contents will now be pasted as plain text until you toggle this option off.":"Paste is now in plain text mode. Contents will now be pasted as plain text until you toggle this option off.\n\nIf you\u2019re looking to paste rich content from Microsoft Word, try turning this option off. The editor will clean up text pasted from Word automatically.","Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":"Rich Text Area. Press Alt-Shift-H for help.","You have unsaved changes are you sure you want to navigate away?":"The changes you made will be lost if you navigate away from this page.","Your browser doesn't support direct access to the clipboard. Please use the Ctrl+X\/C\/V keyboard shortcuts instead.":"Your browser does not support direct access to the clipboard. Please use keyboard shortcuts or your browser\u2019s edit menu instead.","Edit|button":"Edit"});
+tinymce.ScriptLoader.markDone( 'https://blogs.sap.com/wp-includes/js/tinymce/langs/en.js' );
+</script>
+<script type='text/javascript' src='https://blogs.sap.com/wp-includes/js/tinymce/langs/wp-langs-en.js?ver=49110-20201110'></script>
+		<script type="text/javascript">
+		tinyMCEPreInit.load_ext("https://blogs.sap.com/wp-content/plugins/mce-table-buttons/tinymce47-table", "en");
+
+var ajaxurl = "/wp-admin/admin-ajax.php";
+		( function() {
+			var init, id, $wrap;
+
+			if ( typeof tinymce !== 'undefined' ) {
+				if ( tinymce.Env.ie && tinymce.Env.ie < 11 ) {
+					tinymce.$( '.wp-editor-wrap ' ).removeClass( 'tmce-active' ).addClass( 'html-active' );
+					return;
+				}
+
+				for ( id in tinyMCEPreInit.mceInit ) {
+					init = tinyMCEPreInit.mceInit[id];
+					$wrap = tinymce.$( '#wp-' + id + '-wrap' );
+
+					if ( ( $wrap.hasClass( 'tmce-active' ) || ! tinyMCEPreInit.qtInit.hasOwnProperty( id ) ) && ! init.wp_skip_init ) {
+						tinymce.init( init );
+
+						if ( ! window.wpActiveEditor ) {
+							window.wpActiveEditor = id;
+						}
+					}
+				}
+			}
+
+			if ( typeof quicktags !== 'undefined' ) {
+				for ( id in tinyMCEPreInit.qtInit ) {
+					quicktags( tinyMCEPreInit.qtInit[id] );
+
+					if ( ! window.wpActiveEditor ) {
+						window.wpActiveEditor = id;
+					}
+				}
+			}
+		}());
+		</script>
+				<div id="wp-link-backdrop" style="display: none"></div>
+		<div id="wp-link-wrap" class="wp-core-ui" style="display: none" role="dialog" aria-labelledby="link-modal-title">
+		<form id="wp-link" tabindex="-1">
+		<input type="hidden" id="_ajax_linking_nonce" name="_ajax_linking_nonce" value="f575c0dc01" />		<h3 id="link-modal-title">Insert/edit link</h3>
+		<button type="button" id="wp-link-close"><span class="screen-reader-text">Close</span></button>
+		<div id="link-selector">
+			<div id="link-options">
+				<p class="howto" id="wplink-enter-url">Enter the destination URL</p>
+				<div>
+					<label><span>URL</span>
+					<input id="wp-link-url" type="text" aria-describedby="wplink-enter-url" /></label>
+				</div>
+				<div class="wp-link-text-field">
+					<label><span>Link Text</span>
+					<input id="wp-link-text" type="text" /></label>
+				</div>
+				<div class="link-target">
+					<label><span></span>
+					<input type="checkbox" id="wp-link-target" /> Open link in a new tab</label>
+				</div>
+			</div>
+			<p class="howto" id="wplink-link-existing-content">Or link to existing content</p>
+			<div id="search-panel">
+				<div class="link-search-wrapper">
+					<label>
+						<span class="search-label">Search</span>
+						<input type="search" id="wp-link-search" class="link-search-field" autocomplete="off" aria-describedby="wplink-link-existing-content" />
+						<span class="spinner"></span>
+					</label>
+				</div>
+				<div id="search-results" class="query-results" tabindex="0">
+					<ul></ul>
+					<div class="river-waiting">
+						<span class="spinner"></span>
+					</div>
+				</div>
+				<div id="most-recent-results" class="query-results" tabindex="0">
+					<div class="query-notice" id="query-notice-message">
+						<em class="query-notice-default">No search term specified. Showing recent items.</em>
+						<em class="query-notice-hint screen-reader-text">Search or use up and down arrow keys to select an item.</em>
+					</div>
+					<ul></ul>
+					<div class="river-waiting">
+						<span class="spinner"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="submitbox">
+			<div id="wp-link-cancel">
+				<button type="button" class="button">Cancel</button>
+			</div>
+			<div id="wp-link-update">
+				<input type="submit" value="Add Link" class="button button-primary" id="wp-link-submit" name="wp-link-submit">
+			</div>
+		</div>
+		</form>
+		</div>
+		<script type="text/javascript">jQuery(window).on("load", function() {tinymce.codesampleplugin.Prism.highlightAll();});</script><script type='text/javascript'>_satellite.pageBottom();</script>        </div> <!-- .page-wrapper -->
+    </body>
+</html>

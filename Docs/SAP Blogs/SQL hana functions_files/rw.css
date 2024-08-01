@@ -1,0 +1,892 @@
+div#rw-container {
+	right: 0;
+	/*width: 375px;*/
+	width: 42px;
+	padding: 0 7px;
+}
+
+div.rw-content {
+	font-size: 1rem;
+	overflow-y: auto;
+	min-height: 100%;
+	width: 100%;
+}
+
+div.rw-filters, div.rw-comments {
+	font-family: 'Open Sans', Arial, sans-serif;
+}
+
+div.rw-related-links > a:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+div.facet {
+	padding: 0.6em 0.6em 0.4em 0.5em;
+	font-weight: 600;
+	margin-top: 1em;
+	color: #333;
+}
+
+div.facet:first-of-type {
+	margin-top: 0em;
+}
+
+div.facet:hover {
+	background-color: #DDD;
+	cursor: pointer;
+}
+
+div.facet > span.arrow {
+	font-family: sap-icofonts;
+	float: right;
+	position: relative;
+	top: 2px;
+	right: 2px;
+}
+
+div.rw-filters label {
+	margin-left: 1em;
+	padding: 0.4em 0.4em 0.2.3em 0.4em;
+}
+
+div.comment {
+	width: calc(100% - 0px);
+	display: table;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	margin: 1em 0em 0em 0em;
+	min-height: 137px;
+	direction: ltr;
+}
+
+/* div.comment.hiddencomment { */
+/* 	opacity: 0.75; */
+/* } */
+
+div.reply {
+	width: calc(100% - 12px);
+	display: table;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+div.secondary-language-level[dir="ltr"] div.reply {
+	margin: 1px 0px 0px 12px;
+}
+
+div.secondary-language-level[dir="rtl"] div.reply {
+	margin: 1px 12px 0px 0px;
+}
+
+div.secondary-language-level[dir="ltr"] div.comment-info + div.resolve {
+	float: right;
+}
+
+div.secondary-language-level[dir="rtl"] div.comment-info + div.resolve {
+	float: left;
+}
+
+div.comment-row {
+	display: table-row;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+div.comment-type, div.comment-content {
+	display: table-cell;
+	padding: 0.2em 0em;
+	padding: 0em;
+}
+
+div.secondary-language-level[dir="ltr"] div.reply-color {
+	display: table-cell;
+	width: 12px;
+	min-width: 12px;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+div.secondary-language-level[dir="rtl"] div.reply-color {
+	display: table-cell;
+	width: 12px;
+	min-width: 12px;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+div.comment-type, div.reply-color {
+	background-color: #999;
+}
+
+div.hiddencomment div.comment-type, div.hiddencomment div.reploy-color {
+	background-color: #a6a6a6;
+}
+
+div.comment-row > div.comment-type {
+	width: 24px;
+	min-width: 24px;
+	/*text-align: center;*/
+	color: #FFF;
+	font-size: 0.74em;
+	font-weight: 300;
+	text-align: right;
+    position: relative;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+div.secondary-language-level[dir="ltr"] div.comment-row > div.comment-type {
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+div.secondary-language-level[dir="rtl"] div.comment-row > div.comment-type {
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+div.activecomment div.comment-type, div.activecomment div.reply-color {
+	background-color: #008FD3;
+}
+
+div.activecomment div.hiddencomment div.comment-type, div.activecomment div.hiddencomment div.reply-color {
+	background-color: #00a0ed;
+}
+
+div.comment-type > p, 
+div.modal-body div.comment-type > p {
+	-ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+	transform: rotate(-90deg);
+	/*margin: 0em -2em;
+	position: relative;
+	top: 1.5em;
+	left: 1px;*/
+	position: absolute;
+	height: 25px;
+	right: 0px;
+    top: -22px;
+    transform: rotate(-90deg);
+    transform-origin: right bottom;
+    line-height: 27px;
+    white-space: pre;
+    color: inherit;
+    margin: inherit;
+}
+
+div.comment-row > div.comment-content {
+	background-color: #F4F4F4;
+	color: #181818;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
+div.comment-content p.author, div.reply p.author {
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 0.786em;
+	font-weight: 600;
+	color: #4A4A4A;
+	margin: 0.1em 0em;
+
+}
+
+div.comment-content p.date, div.reply p.date {
+	font-size: 0.786em;
+	font-weight: 300;
+	color: #999;
+	margin: 0.1em 0em;
+	font-family: Arial, sans-serif;
+}
+
+span.comment-content-text {
+	color: rgba(0,0,0,0.9);
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+}
+
+div.rw-content button {
+	font-family: sap-icons;
+	font-weight: 600;
+	padding: 0;
+    font-size: 0.786em;
+    margin-bottom: 0.5em;
+    color: rgba(0,119,200,0.9);
+}
+
+div.rw-content button:hover,
+div.rw-content button:focus {
+    color: #003283;
+    text-decoration: none;
+}
+
+div.rw-content button.text-entry-button {
+    margin: 2px 0 2rem 0;
+    font-family: 'Benton Sans', Arial, sans-serif;
+    border-radius: 4px;
+    padding: 0.3em 0.2em 0.2em 0.2em;
+    color: rgba(0,119,200,0.9);
+}
+
+div.rw-content button.text-entry-button:focus,
+div.rw-content button.text-entry-button:hover {
+    text-decoration: none;
+    outline: none;
+    background: rgba(0,0,0,0.1);
+    color: #003283;
+}
+
+div.secondary-language-level[dir=ltr] .comment-mini-menu {
+	margin-left: 5px;
+	font-size: 12px;
+	float: right;
+}
+
+div.secondary-language-level[dir=rtl] .comment-mini-menu {
+	margin-right: 5px;
+	font-size: 12px;
+	float: left;
+}
+
+div.secondary-language-level[dir=ltr] .comment-mini-menu ul.dropdown-menu {
+	right: 0;
+	left: auto;
+}
+
+div.secondary-language-level[dir=rtl] .comment-mini-menu ul.dropdown-menu {
+	left: 0;
+	right: auto;
+}
+
+div.rw-content .form-group button:hover {
+	text-decoration: none;
+}
+
+div#rw-container div.relinfotitle {
+	display: none;
+}
+
+div.reply-actions {
+	height: 2em;
+}
+
+div.add-reply-container textarea {
+	resize: vertical !important;
+}
+
+a.comment-resolve-button {
+	/*width: 65px;
+    height: 14px;
+    margin: 7px;
+    margin: 3px;*/
+    border: 1px solid #999;
+    padding-top: 1px;
+    border-radius: 4px;
+    font-size: 11px;
+    line-height: 11px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(#FFF, #F2F2F2);
+    color: #777 !important;
+    margin: 8px 0px;
+    padding: 1px 6px;
+}
+
+a.comment-resolve-button:hover {
+	background: linear-gradient(#FFF, #CCC);
+	color: #333;
+	border-color: #999;
+}
+
+span.annotator-hl {
+	border-bottom: 2px solid #999;
+	background-color: rgba(250,229,178,0);
+	transition: background-color .4s linear;
+}
+
+span.annotator-hl:hover {
+	border-color: #008FD3;
+}
+
+span.annotator-hl.activecomment {
+	border-bottom: 3px solid #008FD3;
+}
+
+span.annotator-hl.detached {
+	border-bottom: 3px dotted #999;
+}
+
+span.annotator-hl.detached:hover {
+	border-color: #008FD3;
+}
+
+span.annotator-hl.detached-active {
+	border-color: #008FD3;
+}
+
+a.comment-resolved-checkmark {
+	border: none;
+    background: none;
+    margin-top: 2px;
+    font-family: Arial, sans-serif;
+    font-size: 1.25em;
+    padding: 0;
+    margin-right: 7px;
+    font-weight: 700;
+}
+
+a.comment-resolved-checkmark:hover {
+	background: none;
+}
+
+a.comment-resolved-checkmark:after {
+	content: '\2713';
+	color: #4FBB1C;
+}
+
+a.comment-resolved-checkmark:hover:after {
+	content: '\2717';
+	color: #E35500;
+}
+
+div.rw-content div.relinfo div {
+	margin: 0.75em 0.75em;
+}
+
+div.rw-content textarea {
+	height: 6.7em;
+}
+
+html[dir=ltr] div.rw-content textarea {
+	direction: ltr;
+}
+
+html[dir=rtl] div.rw-content textarea {
+	direction: rtl;
+}
+
+div.hiddencomment div.comment-type {
+                background-color: rgba(166, 166, 166, 0.75);
+}
+
+div.activecomment div.hiddencomment div.comment-type {
+                background-color : rgba(0, 160, 237, 0.75);
+}
+
+div.hiddencomment div.comment-row > div.comment-content {
+                background-color : rgba (244, 244, 244, 0.75);
+}
+
+div.secondary-language-level[dir=ltr] div.hidden-resolve {
+	display:inline-block;
+	float: right;
+}
+
+div.secondary-language-level[dir=rtl] div.hidden-resolve {
+	display:inline-block;
+	float: left;
+}
+
+span.hidden-resolve {
+	color: #999;
+	font-size: 11px;
+	letter-spacing: -1px;
+	margin-right: 5px;
+	position: relative;
+    top: 5px;
+}
+
+/* FEEDBACK FORM */
+div#feedback-form {
+	/*background-color: #EEE;
+	border-top: 1px solid #999;
+	margin-top: 1em;
+	padding: 1em 0.5em 1em 0.618em;
+	margin-left: 7px;
+	font-family: 'Benton Sans', Arial, sans-serif;*/
+}
+
+div#feedback-form h2 {
+	font-size: 1em;
+	margin-bottom: 1.618em;
+	margin-top: 0em;
+	font-weight: 600;
+	color: #333;
+	font-family: 'Open Sans', Arial, sans-serif;
+	text-align: left;
+}
+
+div#feedback-form h2.centered-title {
+	text-align: center;
+}
+
+div#feedback-form div.form {
+	text-align: center;
+	margin-bottom: 2em;
+}
+
+div#feedback-form button {
+	outline-offset: 1px;
+}
+
+/*
+div#feedback-form button:hover,
+div#feedback-form button:focus {
+	background-color: #003283;
+	cursor: pointer;
+	color: #FFF;
+}
+*/
+
+div#feedback-form button.active {
+	background-color: #F0AB00;
+}
+
+div#feedback-form div.feedback-row {
+}
+
+div#feedback-form div.feedback-selection {
+	display: inline-block;
+	color: #FFF;
+	width: calc(100% / 2 - 3px);
+	padding: 0.5em;
+	vertical-align: top;
+	margin-bottom: 3px;
+	box-sizing: border-box;
+	font-family: 'Benton Sans', Arial, sans-serif;
+	height: 120px;
+	cursor: pointer;
+	position: relative;
+	background-color: #999;
+}
+
+div#feedback-form div.feedback-selection:hover {
+	background-color: #7a7a7a;
+}
+
+div#feedback-form div.feedback-selection p {
+	color: #FFF;
+	margin: 0;
+}
+
+div#feedback-form div.feedback-selection span.checkbox {
+	display: block;
+	float: none;
+	text-align: center;
+	position: absolute;
+	right: 0px;
+    bottom: 0px;
+    font-size: 20px;
+}
+
+div#feedback-form div.feedback-text {
+	background-color: #999;
+    color: #FFF;
+    padding: 0.5em 0.5em 0 0.5em;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+    width: calc(100% - 3px);
+}
+
+div#feedback-form div.feedback-selection.checked,
+div#feedback-form div.feedback-text.checked {
+	/*background-color: #E35500;*/
+	background-color: #003283;
+}
+
+div#feedback-form div.feedback-text > p {
+	margin: 0;
+}
+
+div#feedback-form div.feedback-text > textarea {
+	resize: none;
+	height: 120px;
+	color: black;
+	width: 100%;
+	border: 0;
+}
+
+@media screen and (max-width: 1375px) {
+
+	div#feedback-form div.feedback-selection {
+		width: calc(100% - 3px);
+		height: 90px;
+	}
+
+}
+
+/* */
+
+span.number {
+	font-size: 75%;
+	color: #666;
+	display: inline-block;
+	margin-left: 0.5em;
+}
+div#rw {
+	font-size: 1rem;
+	overflow-y: scroll;
+ 	height: calc(100% - 50px);
+	overflow-x: hidden;
+}
+.cp-add-comment {
+	margin: 0.75em 0;
+}
+div#rw div.rw-title {
+	padding-left: 7px;
+	padding-right: 7px;
+	box-sizing: border-box;
+	height: 36px;
+	/* margin-bottom: 7px; */
+	line-height: 36px;
+	color: #333;
+
+}
+div#rw div.rw-title:hover {
+	background-color: rgba(0,0,0,0.125);
+    cursor: pointer;
+}
+div.rw-title > h1,
+div.rw-title div.side-widget-actions {
+	line-height: 36px !important;
+}
+
+div.rw-title div.side-widget-actions {
+	font-size: 16px !important;
+	font-family: SAP-icofonts;
+}
+
+div.rw-title:hover {
+	background-color: #DDD;
+	cursor: pointer;
+}
+
+div.rw-title div.side-widget-actions {
+	padding-right: 7px;
+	color: #666;
+}
+
+div.rw-title.no-hover:hover {
+	background-color: #FFF;
+	cursor: default;
+}
+
+div.rw-arrows {
+	font-family: SAP-icofonts;
+	font-size: 16px;
+	float: right;
+	cursor: default;
+}
+div.cp-comment-textbox {
+	word-wrap: break-word;
+	/*max-width: 20vw;*/
+	min-height: 81px;
+	font-size: 13px;
+    font-family: Arial, sans-serif;
+}
+div.cp-comment-textbox span.ngTruncateToggleText {
+	color: rgba(0,119,200,0.9);
+	font-size: 11px;
+}
+div.cp-comment-textbox span.ngTruncateToggleText:hover,
+div.cp-comment-textbox span.ngTruncateToggleText:focus {
+	cursor: pointer;
+    color: #003283;
+    text-decoration: none;
+}
+div.reply-body {
+	padding-bottom: 5px;
+}
+div#rw .panel-heading {
+	background-color: white;
+	border-color: white;
+}
+div#rw .panel-default {
+	border-color: white;	
+}
+div#rw div.collapsible-section {
+	padding-left: 10px;
+}
+
+div#rw div.related-links {
+	padding-bottom: 10px;
+}
+div#rw div.comments-cog {
+	position: relative;
+	float: right;
+}
+
+div#rw div.related-links ul {
+	margin: 0 0.75em 0.75em 0.75em;
+	padding: 0;
+}
+
+div#rw div.related-links ul>div {
+	margin-bottom: 0.618em;
+}
+
+div#rw div.related-links ul>div div.linkdesc {
+	color: #666;
+	font-size: 0.92857em;
+}
+
+div#rw div.related-links strong {
+	font-weight: 600;
+	font-family: 'Open Sans', Arial, sans-serif;
+}
+
+
+
+
+
+/* Icon based right widget */
+
+#rw-container > div.actions > div.side-widget-title {
+	display: none;
+}
+
+#rw-container > div.rw-section {
+	height: 100%;
+}
+
+@media screen and (min-width: 1025px) {
+
+	#cp-main.comments #rw-container,
+	#cp-main.info #rw-container {
+		width: 375px;
+	}
+	
+	#cp-main.search #rw-container {
+		width: 315px;
+	}
+	
+	#cp-main.feedback #rw-container,
+	#cp-main.fontsize #rw-container,
+	#cp-main.share #rw-container,
+	#cp-main.download #rw-container,
+	#cp-main.filtering #rw-container {
+		width: 260px;
+	}
+}
+
+#rw-container div.rw-section button.rw-close-tab {
+	display: none;
+}
+
+div.secondary-language-level[dir="ltr"] #cp-main.comments #rw-container div.actions,
+div.secondary-language-level[dir="ltr"] #cp-main.info #rw-container div.actions,
+div.secondary-language-level[dir="ltr"] #cp-main.search #rw-container div.actions,
+div.secondary-language-level[dir="ltr"] #cp-main.feedback #rw-container div.actions,
+div.secondary-language-level[dir="ltr"] #cp-main.fontsize #rw-container div.actions,
+div.secondary-language-level[dir="ltr"] #cp-main.share #rw-container div.actions,
+div.secondary-language-level[dir="ltr"] #cp-main.download #rw-container div.actions,
+div.secondary-language-level[dir="ltr"] #cp-main.filtering #rw-container div.actions {
+	position: absolute;
+    top: -1.8em;
+    right: 0;
+    left: auto;
+}
+
+div.secondary-language-level[dir="rtl"] #cp-main.comments #rw-container div.actions,
+div.secondary-language-level[dir="rtl"] #cp-main.info #rw-container div.actions,
+div.secondary-language-level[dir="rtl"] #cp-main.search #rw-container div.actions,
+div.secondary-language-level[dir="rtl"] #cp-main.feedback #rw-container div.actions,
+div.secondary-language-level[dir="rtl"] #cp-main.fontsize #rw-container div.actions,
+div.secondary-language-level[dir="rtl"] #cp-main.share #rw-container div.actions,
+div.secondary-language-level[dir="rtl"] #cp-main.download #rw-container div.actions,
+div.secondary-language-level[dir="rtl"] #cp-main.filtering #rw-container div.actions {
+	position: absolute;
+    top: -2em;
+    left: 0;
+    right: auto;
+}
+
+#rw-container div.actions div.action {
+	text-align: center;
+    margin-top: 0.4em;
+    margin-bottom: 1.2em;
+    position: relative;
+    height: 26px;
+    width: 28px;
+}
+
+#cp-main.comments #rw-container div.actions div.action,
+#cp-main.info #rw-container div.actions div.action,
+#cp-main.search #rw-container div.actions div.action,
+#cp-main.feedback #rw-container div.actions div.action,
+#cp-main.fontsize #rw-container div.actions div.action,
+#cp-main.share #rw-container div.actions div.action,
+#cp-main.download #rw-container div.actions div.action,
+#cp-main.filtering #rw-container div.actions div.action {
+	display: inline-block;
+    /*margin: 0 0.5em;*/
+    margin: 0 3px;
+}
+
+
+
+#rw-container div.actions div.action > button {
+	font-family: sap-icons;
+    font-size: 20px;
+    letter-spacing: -1px;
+    color: rgba(0,119,200,0.9);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    border: none;
+    
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#rw-container div.actions div.action > button#rw-feedback {
+    font-size: 22px;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+}
+
+#rw-container div.actions div.action > button#rw-fontsize {
+    font-size: 22px;
+}
+
+#rw-container div.actions div.action > button:hover, 
+#rw-container div.actions div.action > button:focus {
+    color: rgba(0,29,134,0.9);
+}
+
+#rw-container div.actions div.action > button > label {
+	display: none;
+	font-family: 'Benton Sans', Arial, sans-serif;
+	cursor: pointer;
+}
+
+/*for the action icons when the right wing container is open (is white with a shadow)*/
+#cp-main.comments #rw-container div.actions div.action > button,
+#cp-main.comments #rw-container div.actions div.action > button:hover,
+#cp-main.info #rw-container div.actions div.action > button,
+
+#cp-main.info #rw-container div.actions div.action > button:hover,
+#cp-main.search #rw-container div.actions div.action > button,
+
+#cp-main.search #rw-container div.actions div.action > button:hover,
+#cp-main.feedback #rw-container div.actions div.action > button,
+#cp-main.feedback #rw-container div.actions div.action > button:hover,
+#cp-main.fontsize #rw-container div.actions div.action > button,
+#cp-main.fontsize #rw-container div.actions div.action > button:hover,
+#cp-main.share #rw-container div.actions div.action > button,
+#cp-main.share #rw-container div.actions div.action > button:hover,
+#cp-main.download #rw-container div.actions div.action > button,
+#cp-main.download #rw-container div.actions div.action > button:hover,
+#cp-main.filtering #rw-container div.actions div.action > button,
+#cp-main.filtering #rw-container div.actions div.action > button:hover {
+	color: rgb(255,255,255);
+}
+
+#cp-main.comments #rw-container div.actions div.action > button:hover,
+#cp-main.info #rw-container div.actions div.action > button:hover,
+#cp-main.search #rw-container div.actions div.action > button:hover,
+#cp-main.feedback #rw-container div.actions div.action > button:hover,
+#cp-main.fontsize #rw-container div.actions div.action > button:hover,
+#cp-main.share #rw-container div.actions div.action > button:hover,
+#cp-main.download #rw-container div.actions div.action > button:hover,
+#cp-main.filtering #rw-container div.actions div.action > button:hover, 
+#cp-main.comments #rw-container div.actions div.action > button:focus,
+#cp-main.info #rw-container div.actions div.action > button:focus,
+#cp-main.search #rw-container div.actions div.action > button:focus,
+#cp-main.feedback #rw-container div.actions div.action > button:focus,
+#cp-main.fontsize #rw-container div.actions div.action > button:focus,
+#cp-main.share #rw-container div.actions div.action > button:focus,
+#cp-main.download #rw-container div.actions div.action > button:focus,
+#cp-main.filtering #rw-container div.actions div.action > button:focus{
+	text-shadow: 0 0 6px rgba(255,255,255,0.9);
+}
+
+	text-shadow: 0 0 6px rgba(255,255,255,0.9);
+}
+
+#rw-container div.actions ul.dropdown-menu {
+    top: -9px;
+    left: auto;
+    right: 41px;
+}
+
+#rw-container div.actions ul.dropdown-menu:before {
+    content: "";
+    background-color: rgb(255,255,255);
+    display: block;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 10px;
+    right: -11px;
+    z-index: -1;
+    border-top: 1px solid rgba(0,0,0,0.26);
+    border-right: 1px solid rgba(0,0,0,0.36);
+}
+
+
+/* New Feedback Form */
+
+#feedback-form label {
+	margin-bottom: 1em;
+	color: rgba(0,0,0,0.8);
+}
+
+#feedback-form label:hover {
+	/*color: rgba(0,29,134,0.9);*/
+	cursor: pointer;
+}
+
+#feedback-form label input[type=checkbox] {
+	display: none;
+}
+
+#feedback-form label input[type=checkbox] + span:before {
+	content: "\2610 \FE0E";
+    margin-right: 0.333em;
+    font-size: 1.2857rem;
+    line-height: 1rem;
+    position: relative;
+    top: 1px;
+}
+
+#feedback-form label input[type=checkbox]:checked + span:before {
+	content: "\2611 \FE0E";
+}
+
+#feedback-form textarea {
+	width: 100%;
+    border-radius: 4px;
+    resize: none;
+    font-size: 0.929em;
+}
+
+ul.info-list {
+	padding: 0;
+    margin: 0;
+}
+
+ul.info-list li {
+	list-style: none;
+	margin: 0.3em 0;
+}
+
+/*Html to pdf beta test css*/
+#customPdfBox {
+	margin-top: 10px; 
+	display:block; 
+	padding:10px; 
+	background-color: #fafdff; 
+	height:250px; 
+	overflow-y:scroll	
+}
+
+.remove-pdf {
+	color:#088ED0;
+	cursor: pointer;
+}

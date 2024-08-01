@@ -1,0 +1,2519 @@
+<!DOCTYPE html>
+<html class="v2" dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr"><head>
+<link href="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/3480144793-css_bundle_v2.css" rel="stylesheet" type="text/css">
+<script src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/ca-pub-6627862839780378.js"></script><script src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/cbgapi.loaded_6" async=""></script><script src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/osd.js"></script><script src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/cbgapi.loaded_5" async=""></script><script src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/cbgapi.loaded_4" async=""></script><script src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/ca-pub-6627862839780378.js"></script><script id="facebook-jssdk" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/sdk.js"></script><script src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/cbgapi.loaded_3" async=""></script><script src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/cbgapi.loaded_2" async=""></script><script src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/cbgapi.loaded_1" async=""></script><script src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/cbgapi.loaded_0" async=""></script><script async="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/analytics.js"></script><script async="async" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-6627862839780378",
+    enable_page_level_ads: true
+  });
+</script>
+<meta content="width=1100" name="viewport">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta content="blogger" name="generator">
+<link href="http://www.saphanacentral.com/favicon.ico" rel="icon" type="image/x-icon">
+<link href="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/inventory-management-in-sap-bw4hana_007.htm" rel="canonical">
+<link rel="alternate" type="application/atom+xml" title="SAP HANA Central  - Atom" href="http://www.saphanacentral.com/feeds/posts/default">
+<link rel="alternate" type="application/rss+xml" title="SAP HANA Central  - RSS" href="http://www.saphanacentral.com/feeds/posts/default?alt=rss">
+<link rel="service.post" type="application/atom+xml" title="SAP HANA Central  - Atom" href="https://www.blogger.com/feeds/295427178855500735/posts/default">
+
+<link rel="alternate" type="application/atom+xml" title="SAP HANA Central  - Atom" href="http://www.saphanacentral.com/feeds/5603572241470599057/comments/default">
+<!--[if IE]><script type="text/javascript" src="https://www.blogger.com/static/v1/jsbin/3762807459-ieretrofit.js"></script>
+<![endif]-->
+<link href="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/1_002.png" rel="image_src">
+<meta content="http://www.saphanacentral.com/2018/06/inventory-management-in-sap-bw4hana.html" property="og:url">
+<meta content="Inventory Management in SAP BW/4HANA" property="og:title">
+<meta content="  INTRODUCTION   The loading process of Inventory Management data in BW/4HANA is different than that in the predecessor versions (BW 7.4 and..." property="og:description">
+<meta content="https://2.bp.blogspot.com/-S2LTOg-hYos/WzNEAn5hyaI/AAAAAAAATnI/tDzzyjnh7ckDU0XSA8qzzhv-H5D2cAzowCLcBGAs/w1200-h630-p-k-no-nu/1.png" property="og:image">
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>SAP HANA Tutorial, Material and Certification Guide</title>
+<meta content="Complete guide on SAP HANA certification along with HANA material, tutorial and self learning guide. Free interview questions and updates on SAP HANA." name="description">
+<meta content="SAP, SAP HANA, SAP HANA tutorial, HANA learning material, SAP HANA certification, HANA certification material, SAP HANA live, HANA interview questions, SAP HANA quiz, HANA for beginner, SAP HANA SPS11, HANA SPS10, SAP HANA jobs, HANA projects" name="keywords">
+<style id="page-skin-1" type="text/css"><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Simple
+Designer: Blogger
+URL:      www.blogger.com
+----------------------------------------------- */
+
+/* Content
+----------------------------------------------- */
+body {
+font: normal normal 14px Verdana, Geneva, sans-serif;
+color: #222222;
+background: #cfe7d1 url(//themes.googleusercontent.com/image?id=1x_TqXo6-7t6y2ZiuOyQ2Bk6Zod9CTtyKYtRui0IeQJe6hVlJcQiXYG2xQGkxKvl6iZMJ) repeat fixed top center /* Credit: gaffera (http://www.istockphoto.com/googleimages.php?id=4072573&platform=blogger) */;
+padding: 0 0 0 0;
+background-attachment: scroll;
+}
+html body .content-outer {
+min-width: 0;
+max-width: 100%;
+width: 100%;
+}
+h2 {
+font-size: 22px;
+}
+a:link {
+text-decoration:none;
+color: #004ca3;
+}
+a:visited {
+text-decoration:none;
+color: #004ca3;
+}
+a:hover {
+text-decoration:underline;
+color: #348ef4;
+}
+.body-fauxcolumn-outer .fauxcolumn-inner {
+background: transparent none repeat scroll top left;
+_background-image: none;
+}
+.body-fauxcolumn-outer .cap-top {
+position: absolute;
+z-index: 1;
+height: 400px;
+width: 100%;
+}
+.body-fauxcolumn-outer .cap-top .cap-left {
+width: 100%;
+background: transparent none repeat-x scroll top left;
+_background-image: none;
+}
+.content-outer {
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .15);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .15);
+-goog-ms-box-shadow: 0 0 0 #333333;
+box-shadow: 0 0 0 rgba(0, 0, 0, .15);
+margin-bottom: 1px;
+}
+.content-inner {
+padding: 0 0;
+}
+.main-outer, .footer-outer {
+background-color: #ffffff;
+}
+/* Header
+----------------------------------------------- */
+.header-outer {
+background: transparent none repeat-x scroll 0 -400px;
+_background-image: none;
+}
+.Header h1 {
+font: normal bold 62px Verdana, Geneva, sans-serif;
+color: #235fa3;
+text-shadow: 0 0 0 rgba(0, 0, 0, .2);
+}
+.Header h1 a {
+color: #235fa3;
+}
+.Header .description {
+font-size: 200%;
+color: #444444;
+}
+.header-inner .Header .titlewrapper {
+padding: 22px 30px;
+}
+.header-inner .Header .descriptionwrapper {
+padding: 0 30px;
+}
+/* Tabs
+----------------------------------------------- */
+.tabs-inner .section:first-child {
+border-top: 0 solid #dddddd;
+}
+.tabs-inner .section:first-child ul {
+margin-top: -0;
+border-top: 0 solid #dddddd;
+border-left: 0 solid #dddddd;
+border-right: 0 solid #dddddd;
+}
+.tabs-inner .widget ul {
+background: #003b8b none repeat-x scroll 0 -800px;
+_background-image: none;
+border-bottom: 0 solid #dddddd;
+margin-top: 0;
+margin-left: -0;
+margin-right: -0;
+}
+.tabs-inner .widget li a {
+display: inline-block;
+padding: .6em 1em;
+font: normal bold 17px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #ffffff;
+border-left: 0 solid #ffffff;
+border-right: 0 solid #dddddd;
+}
+.tabs-inner .widget li:first-child a {
+border-left: none;
+}
+.tabs-inner .widget li.selected a, .tabs-inner .widget li a:hover {
+color: #ffffff;
+background-color: #002651;
+text-decoration: none;
+}
+/* Columns
+----------------------------------------------- */
+.main-outer {
+border-top: 1px solid #dddddd;
+}
+.fauxcolumn-left-outer .fauxcolumn-inner {
+border-right: 1px solid #dddddd;
+}
+.fauxcolumn-right-outer .fauxcolumn-inner {
+border-left: 1px solid #dddddd;
+}
+/* Headings
+----------------------------------------------- */
+div.widget > h2,
+div.widget h2.title {
+margin: 0 0 1em 0;
+font: normal bold 16px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #000000;
+}
+/* Widgets
+----------------------------------------------- */
+.widget .zippy {
+color: #999999;
+text-shadow: 2px 2px 1px rgba(0, 0, 0, .1);
+}
+.widget .popular-posts ul {
+list-style: none;
+}
+/* Posts
+----------------------------------------------- */
+h2.date-header {
+font: normal bold 12px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+}
+.date-header span {
+background-color: transparent;
+color: #222222;
+padding: inherit;
+letter-spacing: inherit;
+margin: inherit;
+}
+.main-inner {
+padding-top: 30px;
+padding-bottom: 30px;
+}
+.main-inner .column-center-inner {
+padding: 0 15px;
+}
+.main-inner .column-center-inner .section {
+margin: 0 15px;
+}
+.post {
+margin: 0 0 25px 0;
+}
+h3.post-title, .comments h4 {
+font: normal bold 22px Verdana, Geneva, sans-serif;
+margin: .75em 0 0;
+}
+.post-body {
+font-size: 110%;
+line-height: 1.4;
+position: relative;
+}
+.post-body img, .post-body .tr-caption-container, .Profile img, .Image img,
+.BlogList .item-thumbnail img {
+padding: 2px;
+background: #ffffff;
+border: 1px solid #eeeeee;
+-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+}
+.post-body img, .post-body .tr-caption-container {
+padding: 5px;
+}
+.post-body .tr-caption-container {
+color: #222222;
+}
+.post-body .tr-caption-container img {
+padding: 0;
+background: transparent;
+border: none;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+}
+.post-header {
+margin: 0 0 1.5em;
+line-height: 1.6;
+font-size: 90%;
+}
+.post-footer {
+margin: 20px -2px 0;
+padding: 5px 10px;
+color: #7c80a1;
+background-color: #cfe7dd;
+border-bottom: 1px solid #eeeeee;
+line-height: 1.6;
+font-size: 90%;
+}
+#comments .comment-author {
+padding-top: 1.5em;
+border-top: 1px solid #dddddd;
+background-position: 0 1.5em;
+}
+#comments .comment-author:first-child {
+padding-top: 0;
+border-top: none;
+}
+.avatar-image-container {
+margin: .2em 0 0;
+}
+#comments .avatar-image-container img {
+border: 1px solid #eeeeee;
+}
+/* Comments
+----------------------------------------------- */
+.comments .comments-content .icon.blog-author {
+background-repeat: no-repeat;
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB9sLFwMeCjjhcOMAAAD+SURBVDjLtZSvTgNBEIe/WRRnm3U8RC1neQdsm1zSBIU9VVF1FkUguQQsD9ITmD7ECZIJSE4OZo9stoVjC/zc7ky+zH9hXwVwDpTAWWLrgS3QAe8AZgaAJI5zYAmc8r0G4AHYHQKVwII8PZrZFsBFkeRCABYiMh9BRUhnSkPTNCtVXYXURi1FpBDgArj8QU1eVXUzfnjv7yP7kwu1mYrkWlU33vs1QNu2qU8pwN0UpKoqokjWwCztrMuBhEhmh8bD5UDqur75asbcX0BGUB9/HAMB+r32hznJgXy2v0sGLBcyAJ1EK3LFcbo1s91JeLwAbwGYu7TP/3ZGfnXYPgAVNngtqatUNgAAAABJRU5ErkJggg==);
+}
+.comments .comments-content .loadmore a {
+border-top: 1px solid #999999;
+border-bottom: 1px solid #999999;
+}
+.comments .comment-thread.inline-thread {
+background-color: #cfe7dd;
+}
+.comments .continue {
+border-top: 2px solid #999999;
+}
+/* Accents
+---------------------------------------------- */
+.section-columns td.columns-cell {
+border-left: 1px solid #dddddd;
+}
+.blog-pager {
+background: transparent none no-repeat scroll top center;
+}
+.blog-pager-older-link, .home-link,
+.blog-pager-newer-link {
+background-color: #ffffff;
+padding: 5px;
+}
+.footer-outer {
+border-top: 0 dashed #bbbbbb;
+}
+/* Mobile
+----------------------------------------------- */
+body.mobile  {
+background-size: auto;
+}
+.mobile .body-fauxcolumn-outer {
+background: transparent none repeat scroll top left;
+}
+.mobile .body-fauxcolumn-outer .cap-top {
+background-size: 100% auto;
+}
+.mobile .content-outer {
+-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .15);
+box-shadow: 0 0 3px rgba(0, 0, 0, .15);
+}
+.mobile .tabs-inner .widget ul {
+margin-left: 0;
+margin-right: 0;
+}
+.mobile .post {
+margin: 0;
+}
+.mobile .main-inner .column-center-inner .section {
+margin: 0;
+}
+.mobile .date-header span {
+padding: 0.1em 10px;
+margin: 0 -10px;
+}
+.mobile h3.post-title {
+margin: 0;
+}
+.mobile .blog-pager {
+background: transparent none no-repeat scroll top center;
+}
+.mobile .footer-outer {
+border-top: none;
+}
+.mobile .main-inner, .mobile .footer-inner {
+background-color: #ffffff;
+}
+.mobile-index-contents {
+color: #222222;
+}
+.mobile-link-button {
+background-color: #004ca3;
+}
+.mobile-link-button a:link, .mobile-link-button a:visited {
+color: #ffffff;
+}
+.mobile .tabs-inner .section:first-child {
+border-top: none;
+}
+.mobile .tabs-inner .PageList .widget-content {
+background-color: #002651;
+color: #ffffff;
+border-top: 0 solid #dddddd;
+border-bottom: 0 solid #dddddd;
+}
+.mobile .tabs-inner .PageList .widget-content .pagelist-arrow {
+border-left: 1px solid #dddddd;
+}
+
+--></style>
+<style id="template-skin-1" type="text/css"><!--
+body {
+min-width: 960px;
+}
+.content-outer, .content-fauxcolumn-outer, .region-inner {
+min-width: 960px;
+max-width: 960px;
+_width: 960px;
+}
+.main-inner .columns {
+padding-left: 0;
+padding-right: 310px;
+}
+.main-inner .fauxcolumn-center-outer {
+left: 0;
+right: 310px;
+/* IE6 does not respect left and right together */
+_width: expression(this.parentNode.offsetWidth -
+parseInt("0") -
+parseInt("310px") + 'px');
+}
+.main-inner .fauxcolumn-left-outer {
+width: 0;
+}
+.main-inner .fauxcolumn-right-outer {
+width: 310px;
+}
+.main-inner .column-left-outer {
+width: 0;
+right: 100%;
+margin-left: -0;
+}
+.main-inner .column-right-outer {
+width: 310px;
+margin-right: -310px;
+}
+#layout {
+min-width: 0;
+}
+#layout .content-outer {
+min-width: 0;
+width: 800px;
+}
+#layout .region-inner {
+min-width: 0;
+width: auto;
+}
+--></style>
+<script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-71554060-1', 'auto', 'blogger');
+        ga('blogger.send', 'pageview');
+      </script>
+<meta content="5f44e4153890c9cf" name="yandex-verification">
+<meta content="1D9CBD7F89AF0D5F14F14018E0206F94" name="msvalidate.01">
+<link href="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/authorization.css" media="all" onload="if(media!='all')media='all'" rel="stylesheet"><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=295427178855500735&amp;zx=26c64731-703a-4e85-b85f-1bcd51a8a093' rel='stylesheet'/></noscript>
+
+<script type="text/javascript" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/google_top_exp.js"></script><link rel="preload" href="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/integrator.js" as="script"><script type="text/javascript" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/integrator.js"></script><style>.gc-bubbleDefault{background-color:transparent !important;text-align:left;padding:0 !important;margin:0 !important;border:0 !important;table-layout:auto !important}.gc-reset{background-color:transparent !important;border:0 !important;padding:0 !important;margin:0 !important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc !important}.pls-topTail,.pls-vertShimLeft,.pls-contentLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif) !important}.pls-topTail{background-repeat:repeat-x !important;background-position:bottom !important}.pls-vertShim{background-color:#fff !important;text-align:right}.tbl-grey .pls-vertShim{background-color:#f5f5f5 !important}.pls-vertShimLeft{background-repeat:repeat-y !important;background-position:right !important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2 !important}.pls-contentWrap{background-color:#fff !important;position:relative !important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:right;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png) !important;background-repeat:repeat-y !important;vertical-align:top}.pls-vert,.pls-tailleft,.pls-dropTR .pls-dropBR,.pls-dropBL,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png) !important;background-repeat:repeat-x !important;width:100%;vertical-align:top}.pls-topLeft{background:inherit !important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit !important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit !important;text-align:right}.pls-bottomRight{background:inherit !important;text-align:left;vertical-align:top}.pls-tailtop,.pls-tailright,.pls-tailbottom,.pls-tailleft{display:none;position:relative}.pls-tailbottom,.pls-tailtop,.pls-tailright,.pls-tailleft,.pls-dropTR,.pls-dropBR,.pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png) !important;background-repeat:no-repeat}.tbl-grey .pls-tailbottom,.tbl-grey .pls-tailtop,.tbl-grey .pls-tailright,.tbl-grey .pls-tailleft,.tbl-grey .pls-dropTR,.tbl-grey .pls-dropBR,.tbl-grey .pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite-grey.png) !important}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-topLeft img,.pls-topRight img,.pls-tailbottom{vertical-align:bottom}.pls-bottomLeft img,.bubbleDropTR,.pls-dropBottomL img,.pls-dropBottom img,.pls-dropBottomR img,.pls-bottomLeft{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacertop,.pls-spacerright,.pls-spacerbottom,.pls-spacerleft{position:static !important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0} </style><script async="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/lazy.js"></script><style type="text/css">.mf-bar-iframe{width:100%;position:static;z-index:20000;left:0;right:0}.mf-bar-iframe.mf-animate{-webkit-transition-property:margin;transition-property:margin;-webkit-transition-duration: .5s;transition-duration: .5s;transition-timing-function:cubic-bezier(0,1,0.5,1);-webkit-transition-timing-function:cubic-bezier(0,1,0.5,1)}.mf-bar-iframe.mf-bar-iframe-top{top:0;margin-top:-100px}.mf-bar-iframe.mf-bar-iframe-bottom{bottom:0;margin-bottom:-100px}.mf-bar-iframe.mf-bar-iframe-regular body,
+.mf-bar-iframe.mf-bar-iframe-regular
+html{min-height:30px}.mf-bar-iframe.mf-bar-iframe-regular.mf-bar-iframe-top{margin-top:-30px}.mf-bar-iframe.mf-bar-iframe-regular.mf-bar-iframe-bottom{margin-bottom:-30px}.mf-bar-iframe.mf-bar-iframe-large body,
+.mf-bar-iframe.mf-bar-iframe-large
+html{min-height:50px}.mf-bar-iframe.mf-bar-iframe-large.mf-bar-iframe-top{margin-top:-50px}.mf-bar-iframe.mf-bar-iframe-large.mf-bar-iframe-bottom{margin-bottom:-50px}.mf-bar-iframe.mf-bar-iframe-sticky{position:fixed}.mf-bar-spacer{display:block;overflow:hidden;position:relative}.mf-bar-spacer.mf-bar-spacer-regular{height:30px}.mf-bar-spacer.mf-bar-spacer-large{height:50px}.mf-bar-collapser-icon{opacity:0.3;text-decoration:none;transition-property:all;transition-duration: .5s;transition-timing-function:cubic-bezier(0,1,0.5,1)}.mf-bar-collapser-icon:hover{opacity:0.7;text-decoration:none}.mf-bar-collapser{position:absolute;right:3px;width:24px;height:24px;text-align:center;z-index:21000}.mf-bar-collapser.mf-bar-collapser-top{top:0;border-bottom-right-radius:4px;border-bottom-left-radius:4px}.mf-bar-collapser.mf-bar-collapser-top .mf-bar-collapser-icon
+svg{margin:2px
+0 0 0}.mf-bar-collapser.mf-bar-collapser-bottom{bottom:0;border-top-right-radius:4px;border-top-left-radius:4px}.mf-bar-collapser.mf-bar-collapser-bottom .mf-bar-collapser-icon
+svg{margin:-2px 0 0 0}.mf-bar-collapser.mf-bar-collapser-large{width:40px;height:40px}.mf-bar-collapser.mf-bar-collapser-large.mf-bar-collapser-top .mf-bar-collapser-icon
+svg{margin:4px
+0 0 0}.mf-bar-collapser.mf-bar-collapser-large.mf-bar-collapser-bottom .mf-bar-collapser-icon
+svg{margin:-4px 0 0 0}.mf-bar-collapser.mf-bar-collapser-sticky{position:fixed}.mf-bar-collapser.mf-bar-collapser-top.mf-bar-collapsed .mf-bar-collapser-icon svg,
+.mf-bar-collapser.mf-bar-collapser-bottom.mf-bar-collapsed .mf-bar-collapser-icon
+svg{margin:0}.mf-bar-collapser a.mf-bar-collapser-icon{position:relative;display:inline-block}.mf-bar-collapser a.mf-bar-collapser-icon:after{content:"";position:absolute;top:0;right:0;bottom:0;left:0}@media only screen and (max-width: 667px){.mf-bar-collapser{display:none !important}}@-webkit-keyframes mf-modal-slide-down-top{0%{margin-top:-100%;-webkit-transform:translate(-50%,-150%);-ms-transform:translate(-50%,-150%);transform:translate(-50%,-150%)}100%{margin-top:0;-webkit-transform:translate(-50%,0);-ms-transform:translate(-50%,0);transform:translate(-50%,0)}}@keyframes mf-modal-slide-down-top{0%{margin-top:-100%;-webkit-transform:translate(-50%,-150%);-ms-transform:translate(-50%,-150%);transform:translate(-50%,-150%)}100%{margin-top:0;-webkit-transform:translate(-50%,0);-ms-transform:translate(-50%,0);transform:translate(-50%,0)}}@-webkit-keyframes mf-modal-slide-down-middle{0%{margin-top:-100%;-webkit-transform:translate(-50%,-150%);-ms-transform:translate(-50%,-150%);transform:translate(-50%,-150%)}100%{margin-top:0;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}}@keyframes mf-modal-slide-down-middle{0%{margin-top:-100%;-webkit-transform:translate(-50%,-150%);-ms-transform:translate(-50%,-150%);transform:translate(-50%,-150%)}100%{margin-top:0;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}}@-webkit-keyframes mf-modal-slide-up-bottom{0%{margin-bottom:-100%;-webkit-transform:translate(-50%,150%);-ms-transform:translate(-50%,150%);transform:translate(-50%,150%)}100%{margin-bottom:0;-webkit-transform:translate(-50%,0);-ms-transform:translate(-50%,0);transform:translate(-50%,0)}}@keyframes mf-modal-slide-up-bottom{0%{margin-bottom:-100%;-webkit-transform:translate(-50%,150%);-ms-transform:translate(-50%,150%);transform:translate(-50%,150%)}100%{margin-bottom:0;-webkit-transform:translate(-50%,0);-ms-transform:translate(-50%,0);transform:translate(-50%,0)}}.mf-modal-overlay{position:fixed;top:0;left:0;right:0;background:#000;z-index:21002;width:100%;height:100%;opacity: .7}.mf-modal-iframe{position:fixed;z-index:21003;left:50%}.mf-modal-iframe.mf-animate{-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;-webkit-animation-duration:0.3s;animation-duration:0.3s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out}.mf-modal-iframe.mf-modal-iframe-top{top:10px;margin-top:-100%;-webkit-transform:translate(-50%,0);-ms-transform:translate(-50%,0);transform:translate(-50%,0)}.mf-modal-iframe.mf-modal-iframe-top.mf-animate{-webkit-animation-name:mf-modal-slide-down-top;animation-name:mf-modal-slide-down-top}.mf-modal-iframe.mf-modal-iframe-middle{top:50%;margin-top:-100%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.mf-modal-iframe.mf-modal-iframe-middle.mf-animate{-webkit-animation-name:mf-modal-slide-down-middle;animation-name:mf-modal-slide-down-middle}.mf-modal-iframe.mf-modal-iframe-bottom{bottom:10px;margin-bottom:-100%;-webkit-transform:translate(-50%,0);-ms-transform:translate(-50%,0);transform:translate(-50%,0)}.mf-modal-iframe.mf-modal-iframe-bottom.mf-animate{-webkit-animation-name:mf-modal-slide-up-bottom;animation-name:mf-modal-slide-up-bottom}.mf-modal-iframe.mf-loaded{margin-top:0;margin-bottom:0}@-webkit-keyframes mf-notification-slide-left{0%{-webkit-transform:translateX(150%);-ms-transform:translateX(150%);transform:translateX(150%)}50%{-webkit-transform:translateX(-8%);-ms-transform:translateX(-8%);transform:translateX(-8%)}65%{-webkit-transform:translateX(4%);-ms-transform:translateX(4%);transform:translateX(4%)}80%{-webkit-transform:translateX(-4%);-ms-transform:translateX(-4%);transform:translateX(-4%)}95%{-webkit-transform:translateX(2%);-ms-transform:translateX(2%);transform:translateX(2%)}100%{-webkit-transform:translateX(0%);-ms-transform:translateX(0%);transform:translateX(0%)}}@keyframes mf-notification-slide-left{0%{-webkit-transform:translateX(150%);-ms-transform:translateX(150%);transform:translateX(150%)}50%{-webkit-transform:translateX(-8%);-ms-transform:translateX(-8%);transform:translateX(-8%)}65%{-webkit-transform:translateX(4%);-ms-transform:translateX(4%);transform:translateX(4%)}80%{-webkit-transform:translateX(-4%);-ms-transform:translateX(-4%);transform:translateX(-4%)}95%{-webkit-transform:translateX(2%);-ms-transform:translateX(2%);transform:translateX(2%)}100%{-webkit-transform:translateX(0%);-ms-transform:translateX(0%);transform:translateX(0%)}}@-webkit-keyframes mf-notification-slide-right{0%{-webkit-transform:translateX(-150%);-ms-transform:translateX(-150%);transform:translateX(-150%)}50%{-webkit-transform:translateX(8%);-ms-transform:translateX(8%);transform:translateX(8%)}65%{-webkit-transform:translateX(-4%);-ms-transform:translateX(-4%);transform:translateX(-4%)}80%{-webkit-transform:translateX(4%);-ms-transform:translateX(4%);transform:translateX(4%)}95%{-webkit-transform:translateX(-2%);-ms-transform:translateX(-2%);transform:translateX(-2%)}100%{-webkit-transform:translateX(0%);-ms-transform:translateX(0%);transform:translateX(0%)}}@keyframes mf-notification-slide-right{0%{-webkit-transform:translateX(-150%);-ms-transform:translateX(-150%);transform:translateX(-150%)}50%{-webkit-transform:translateX(8%);-ms-transform:translateX(8%);transform:translateX(8%)}65%{-webkit-transform:translateX(-4%);-ms-transform:translateX(-4%);transform:translateX(-4%)}80%{-webkit-transform:translateX(4%);-ms-transform:translateX(4%);transform:translateX(4%)}95%{-webkit-transform:translateX(-2%);-ms-transform:translateX(-2%);transform:translateX(-2%)}100%{-webkit-transform:translateX(0%);-ms-transform:translateX(0%);transform:translateX(0%)}}.mf-notification-iframe{position:fixed;z-index:21001;margin-top:-100%}.mf-notification-iframe.mf-loaded{margin-top:0;margin-bottom:0}.mf-notification-iframe.mf-loaded.mf-animate{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out}.mf-notification-iframe.mf-loaded.mf-notification-iframe-top-left{top:5px;left:5px}.mf-notification-iframe.mf-loaded.mf-notification-iframe-top-left.mf-animate{-webkit-animation-name:mf-notification-slide-right;animation-name:mf-notification-slide-right}.mf-notification-iframe.mf-loaded.mf-notification-iframe-top-right{top:5px;right:5px}.mf-notification-iframe.mf-loaded.mf-notification-iframe-top-right.mf-animate{-webkit-animation-name:mf-notification-slide-left;animation-name:mf-notification-slide-left}.mf-notification-iframe.mf-loaded.mf-notification-iframe-bottom-left{bottom:5px;left:5px}.mf-notification-iframe.mf-loaded.mf-notification-iframe-bottom-left.mf-animate{-webkit-animation-name:mf-notification-slide-right;animation-name:mf-notification-slide-right}.mf-notification-iframe.mf-loaded.mf-notification-iframe-bottom-right{bottom:5px;right:5px}.mf-notification-iframe.mf-loaded.mf-notification-iframe-bottom-right.mf-animate{-webkit-animation-name:mf-notification-slide-left;animation-name:mf-notification-slide-left}.mf-notification-iframe.mf-loaded.mf-responsive{left:0 !important;right:0 !important}.mf-page-iframe{position:fixed;z-index:21005;top:1px;right:1px;left:1px;bottom:1px;width:100%;height:100%}@media only screen and (max-width: 667px){.mf-page-iframe{top:0;right:0;left:0;bottom:0}}</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f5f6f7;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:-webkit-sticky;top:0}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_customer_chat_bounce_in_v2{animation-duration:300ms;animation-name:fb_bounce_in_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2{animation-duration:300ms;animation-name:fb_bounce_out_v2;transition-timing-function:ease-in}.fb_customer_chat_bounce_in_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_in_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bounce_out_v2_mobile_chat_started{animation-duration:300ms;animation-name:fb_bounce_out_v2_mobile_chat_started;transition-timing-function:ease-in}.fb_customer_chat_bubble_pop_in{animation-duration:250ms;animation-name:fb_customer_chat_bubble_bounce_in_animation}.fb_customer_chat_bubble_animated_no_badge{box-shadow:0 3px 12px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_no_badge:hover{box-shadow:0 5px 24px rgba(0, 0, 0, .3)}.fb_customer_chat_bubble_animated_with_badge{box-shadow:-5px 4px 14px rgba(0, 0, 0, .15);transition:box-shadow 150ms linear}.fb_customer_chat_bubble_animated_with_badge:hover{box-shadow:-5px 8px 24px rgba(0, 0, 0, .2)}.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_mobile_overlay_active{background-color:#fff;height:100%;overflow:hidden;position:fixed;visibility:hidden;width:100%}@keyframes fb_bounce_in_v2{0%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}50%{transform:scale(1.03, 1.03);transform-origin:bottom right}100%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}}@keyframes fb_bounce_in_v2_mobile_chat_started{0%{opacity:0;top:20px}100%{opacity:1;top:0}}@keyframes fb_bounce_out_v2{0%{opacity:1;transform:scale(1, 1);transform-origin:bottom right}100%{opacity:0;transform:scale(0, 0);transform-origin:bottom right}}@keyframes fb_bounce_out_v2_mobile_chat_started{0%{opacity:1;top:0}100%{opacity:0;top:20px}}@keyframes fb_customer_chat_bubble_bounce_in_animation{0%{bottom:6pt;opacity:0;transform:scale(0, 0);transform-origin:center}70%{bottom:18pt;opacity:1;transform:scale(1.2, 1.2)}100%{transform:scale(1, 1)}}</style></head>
+<body class=" variant-wide MauticFocusNotification"><iframe style="border: 0px none; width: 392px; height: 148px;" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/a.htm" scrolling="no" class="mf-notification-iframe mf-notification-iframe-top-right mf-animate mf-loaded" width="392px"></iframe>
+<div class="navbar section" id="navbar" name="Navbar"><div class="widget Navbar" data-version="1" id="Navbar1"><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="" tabindex="0" vspace="0" id="navbar-iframe" name="navbar-iframe" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/navbar.htm" width="100%" frameborder="0"></iframe></div>
+<script type="text/javascript" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar.g?targetBlogID\x3d295427178855500735\x26blogName\x3dSAP+HANA+Central+\x26publishMode\x3dPUBLISH_MODE_HOSTED\x26navbarType\x3dLIGHT\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttp://www.saphanacentral.com/search\x26blogLocale\x3den_GB\x26v\x3d2\x26homepageUrl\x3dhttp://www.saphanacentral.com/\x26targetPostID\x3d5603572241470599057\x26blogPostOrPageUrl\x3dhttp://www.saphanacentral.com/2018/06/inventory-management-in-sap-bw4hana.html\x26vt\x3d1406957941932435332',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div class="body-fauxcolumns">
+<div class="fauxcolumn-outer body-fauxcolumn-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<div class="content">
+<div class="content-fauxcolumns">
+<div class="fauxcolumn-outer content-fauxcolumn-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<div class="content-outer">
+<div class="content-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left content-fauxborder-left">
+<div class="fauxborder-right content-fauxborder-right"></div>
+<div class="content-inner">
+<header>
+<div class="header-outer">
+<div class="header-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left header-fauxborder-left">
+<div class="fauxborder-right header-fauxborder-right"></div>
+<div class="region-inner header-inner">
+<div class="header section" id="header" name="Header"><div class="widget Header" data-version="1" id="Header1">
+<div id="header-inner">
+<div class="titlewrapper">
+<h1 class="title">
+<a href="http://www.saphanacentral.com/">
+SAP HANA Central 
+</a>
+</h1>
+</div>
+<div class="descriptionwrapper">
+<p class="description"><span>
+</span></p>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class="header-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</header>
+<div class="tabs-outer">
+<div class="tabs-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left tabs-fauxborder-left">
+<div class="fauxborder-right tabs-fauxborder-right"></div>
+<div class="region-inner tabs-inner">
+<div class="tabs section" id="crosscol" name="Cross-column"><div class="widget PageList" data-version="1" id="PageList1">
+<h2>Pages</h2>
+<div class="widget-content">
+<ul>
+<li>
+<a href="http://www.saphanacentral.com/">Home</a>
+</li>
+<li>
+<a href="http://www.saphanacentral.com/p/sap-hana-tutorials.html">SAP HANA Tutorials</a>
+</li>
+<li>
+<a href="http://www.saphanacentral.com/p/learning-materials.html">Learning Materials</a>
+</li>
+<li>
+<a href="http://www.saphanacentral.com/p/interview.html">Interview - Q&amp;A</a>
+</li>
+<li>
+<a href="http://www.saphanacentral.com/p/job.html">Job</a>
+</li>
+<li>
+<a href="http://www.saphanacentral.com/p/certifications.html">Certifications</a>
+</li>
+<li>
+<a href="http://www.saphanacentral.com/p/sap-hana-books.html">Books</a>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=295427178855500735&amp;widgetType=PageList&amp;widgetId=PageList1&amp;action=editWidget&amp;sectionId=crosscol" onclick='return _WidgetManager._PopupConfig(document.getElementById("PageList1"));' target="configPageList1" title="Edit">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div></div>
+<div class="tabs no-items section" id="crosscol-overflow" name="Cross-Column 2"></div>
+</div>
+</div>
+<div class="tabs-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="main-outer">
+<div class="main-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left main-fauxborder-left">
+<div class="fauxborder-right main-fauxborder-right"></div>
+<div class="region-inner main-inner">
+<div class="columns fauxcolumns">
+<div class="fauxcolumn-outer fauxcolumn-center-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="fauxcolumn-outer fauxcolumn-left-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<div class="fauxcolumn-outer fauxcolumn-right-outer">
+<div class="cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left">
+<div class="fauxborder-right"></div>
+<div class="fauxcolumn-inner">
+</div>
+</div>
+<div class="cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<!-- corrects IE6 width calculation -->
+<div class="columns-inner">
+<div class="column-center-outer">
+<div class="column-center-inner">
+<div class="main section" id="main" name="Main"><div class="widget Blog" data-version="1" id="Blog1">
+<div class="blog-posts hfeed">
+
+          <div class="date-outer">
+        
+<h2 class="date-header"><span>Wednesday, 27 June 2018</span></h2>
+
+          <div class="date-posts">
+        
+<div class="post-outer">
+<div class="post hentry uncustomized-post-template" itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+<meta content="https://2.bp.blogspot.com/-S2LTOg-hYos/WzNEAn5hyaI/AAAAAAAATnI/tDzzyjnh7ckDU0XSA8qzzhv-H5D2cAzowCLcBGAs/s400/1.png" itemprop="image_url">
+<meta content="295427178855500735" itemprop="blogId">
+<meta content="5603572241470599057" itemprop="postId">
+<a name="5603572241470599057"></a>
+<h3 class="post-title entry-title" itemprop="name">
+Inventory Management in SAP BW/4HANA
+</h3>
+<div class="post-header">
+<div class="post-header-line-1"></div>
+</div>
+<div class="post-body entry-content" id="post-body-5603572241470599057" itemprop="description articleBody">
+<div id="adsense-content" style="display: inline-block;float: left;margin:15px 15px 15px 0px"><script async="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/adsbygoogle.js"></script>
+<!-- HANAcentral Inline -->
+<ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-6627862839780378" data-ad-slot="8646077643" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins id="aswift_2_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;width:300px;height:250px;" width="300" height="250" frameborder="0"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<div id="adsense-target"><div dir="ltr" style="text-align: left;" trbidi="on">
+<h3 style="text-align: left;">
+<b>INTRODUCTION</b></h3>
+<br>
+The loading process of Inventory Management data in BW/4HANA is 
+different than that in the predecessor versions (BW 7.4 and below). This
+ blog will attempt to explain how to load Inventory Management data in 
+BW/4HANA, and also how the data is saved in the BW database tables.<br>
+<a name="more"></a><br>
+SAP has simplified the loading process substantially by making advanced 
+DSOs Inventory ready, as compared to loading Inventory data in InfoCubes
+ (BW 7.4 and below). Process of Marker Updates has been eradicated.<br>
+<br>
+<h3 style="text-align: left;">
+<b>BRIEF BACKGROUND</b></h3>
+<br>
+<b>Inventory DataSources :-</b><br>
+<script async="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" data-ad-client="ca-pub-6627862839780378" data-ad-format="autorelaxed" data-ad-slot="3367072443" style="display: block; height: 354px;" data-adsbygoogle-status="done"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:354px;margin:0;padding:0;position:relative;visibility:visible;width:590px;background-color:transparent;"><ins id="aswift_3_anchor" style="display:block;border:none;height:354px;margin:0;padding:0;position:relative;visibility:visible;width:590px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;width:590px;height:354px;" width="590" height="354" frameborder="0"></iframe></ins></ins></ins><script>
+(adsbygoogle = window.adsbygoogle ||
+[]).push({});
+</script>
+<b>◉ 2LIS_03_BX –</b> Stock Initialization for Inventory Management<br>
+<br>
+This structure is used to extract the stock data from MM Inventory Management for initialization to a BW system.<br>
+<br>
+<b>◉ 2LIS_03_BF –</b> Goods Movements from Inventory Management<br>
+<br>
+This structure is used to extract the material movement data from MM Inventory Management (MM-IM) consistently to a BW system.<br>
+<br>
+Base Tables – MKPF and MSEG<br>
+<br>
+2LIS_03_UM – Revaluations<br>
+<br>
+This structure is used to extract the revaluation data from MM Inventory Management (MM-IM) consistently to a BW system.<br>
+<br>
+Base Tables – BKPF and BSEG<br>
+<br>
+Usage of 2LIS_03_BX of course depends upon how many years of historical 
+data exists in the S4/HANA MM Inventory Management. Ideally, if up to 
+only 3 years of Historical Data exists, then entire data can be pulled 
+from 2LIS_03_BF and 2LIS_03_UM.<br>
+<br>
+All the pre-requisites before initial load remain the same. For e.g. :-<br>
+<br>
+◉ All users should be locked in S4/HANA from posting any data.<br>
+<br>
+◉ Loading sequence<br>
+<br>
+2LIS_03_BX –&gt; 2LIS_03_BF –&gt; 2LIS_03_UM<br>
+<br>
+<h3 style="text-align: left;">
+<b>STANDARD BI CONTENT FLOW – BW/4HANA</b></h3>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://2.bp.blogspot.com/-S2LTOg-hYos/WzNEAn5hyaI/AAAAAAAATnI/tDzzyjnh7ckDU0XSA8qzzhv-H5D2cAzowCLcBGAs/s1600/1.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="SAP BW/4HANA, SAP HANA Study Material, SAP HANA Learning, SAP HANA Certification, SAP HANA Tutorials and Materials" data-original-height="690" data-original-width="1300" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/1_002.png" title="Inventory Management in SAP BW/4HANA" width="400" height="211" border="0"></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+<br></div>
+<h3 style="clear: both; text-align: left;">
+<b>MODELLING PROPERTIES OF ADVANCED DSO</b></h3>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+General modeling properties of an advanced DSO with non-cumulative key figures :-</div>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://2.bp.blogspot.com/-u_6ginGVPRM/WzNEBsoPfQI/AAAAAAAATnQ/FRBrrrBfUSQFQJubjHU4-Tnb0x7XUOqYgCLcBGAs/s1600/2.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="SAP BW/4HANA, SAP HANA Study Material, SAP HANA Learning, SAP HANA Certification, SAP HANA Tutorials and Materials" data-original-height="406" data-original-width="579" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/2.png" title="Inventory Management in SAP BW/4HANA" width="400" height="280" border="0"></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+<br></div>
+<div class="separator" style="clear: both;">
+Make sure to check the Inventory check-box. Alternatively, Template 
+“Inventory” can be chosen to auto select the required properties.</div>
+<div class="separator" style="clear: both;">
+<b><br></b></div>
+<h3 style="clear: both; text-align: left;">
+<b>RECORDTP</b></h3>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+For advanced DSOs, reference points contain the initialization records 
+i.e. the initial stock balances in our scenario. Unlike for InfoCubes, 
+they are not stored for the fixed date 9999-12-31 (infinity) but for the
+ date as provided in the data record. Furthermore, reference points are 
+updated whenever a request with delta movements is activated. In other 
+words, reference points are the stock values of the initialization 
+plus/minus those of all activated requests with delta movements. Please 
+note that we use the term ‘activate’ instead of ‘collapse’ in the 
+context of advanced DSOs.</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+It is important to understand the concept of ‘Record Type’ (RECORDTP) in
+ order to identify whether data records have been (semantically) 
+contained in the reference point.</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+Non-cumulative advanced DSOs use the technical field ‘Record Type’ (RECORDTP) to differentiate between</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+◈ The so-called reference points with RECORDTP=‘1’ – This is for the 
+reference point table records. While writing the initial stock balances 
+into the inbound table, BW fills the technical field ‘Record Type’ 
+(RECORDTP) with value ‘1’.</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+◈ Records that are not yet (semantically) contained in the reference 
+points with RECORDTP=‘0’ – The delta records that are loaded in the 
+inbound table have RECORDTP=‘0’.</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+◈ Records that are already (semantically) contained in the reference 
+points with RECORDTP=‘2’ – Once the Delta Requests (TSNs) are activated,
+ the RECORDTP for those records change to ‘2’ in the active data table. 
+The Historical records that are loaded have RECORDTP=‘2’ in the inbound 
+table, as well as in the Active data table.</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<h3 style="clear: both; text-align: left;">
+<b>INVENTORY ADVANCED DSO – DATABASE TABLES</b></h3>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+ADSO Name for example: NCUMADSO</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+</div>
+<table style="width: 100%;" border="1">
+<tbody>
+<tr>
+<td>Table Name</td>
+<td>Description&nbsp;</td>
+</tr>
+<tr>
+<td>/BIC/ANCUMADSO1</td>
+<td>Inbound Table</td>
+</tr>
+<tr>
+<td>/BIC/ANCUMADSO2&nbsp;</td>
+<td>Active Data Table&nbsp;</td>
+</tr>
+<tr>
+<td>/BIC/ANCUMADSO3&nbsp;</td>
+<td>Change Log&nbsp;</td>
+</tr>
+<tr>
+<td>/BIC/ANCUMADSO4&nbsp;</td>
+<td>Validity Table</td>
+</tr>
+<tr>
+<td>/BIC/ANCUMADSO5</td>
+<td>Reference Point Table&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+<b>◈ Inbound Table –</b> New requests are loaded into the inbound table.
+ For an advanced DSO with property ‘All Characteristics are Key, 
+Reporting on Union of Inbound and Active Table’, the inbound table has 
+very similar semantics to the F fact table of a classic InfoCube.</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+<b>◈ Active Data Table –</b> Activating a request transfers the data 
+from the inbound table to the active data table. The activation of 
+requests for an advanced DSO (Non-Cumulative/Inventory type) is 
+semantically very similar to the collapse of requests in InfoCubes. From
+ this point of view, the active data table behaves like an E fact table 
+of a classic InfoCube.</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+<b>◈ Change Log –</b> The change log is always created but not written 
+for advanced DSO with property ‘All Characteristics are Key, Reporting 
+on Union of Inbound and Active Table’.</div>
+<div class="separator" style="clear: both;">
+Validity Table – The validity table stores the time interval(s) for 
+which non-cumulative values have been loaded into the InfoProvider.</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+<b>◈ Reference Point Table –</b> The reference point table contains 
+reference points for non-cumulative key figures. Unlike for InfoCubes, 
+reference points are stored in a separate table for advanced DSOs.</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<h3 style="clear: both; text-align: left;">
+<b>INITIAL LOAD</b></h3>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+◈ Let’s assume the following initial stock balances in S4/HANA system:-</div>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://3.bp.blogspot.com/-AATijN1mGgg/WzNECNPTotI/AAAAAAAATnU/MKAj7FRMhN8iqBtqLXoLcU8PEJPxdm9SACLcBGAs/s1600/3.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="SAP BW/4HANA, SAP HANA Study Material, SAP HANA Learning, SAP HANA Certification, SAP HANA Tutorials and Materials" data-original-height="78" data-original-width="475" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/3.png" title="Inventory Management in SAP BW/4HANA" width="400" height="65" border="0"></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+<br></div>
+<div class="separator" style="clear: both;">
+◈ With the removal of PSAs and InfoPackages in BW/4HANA, DTPs are used for the initial load into advanced DSOs.</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+◈ To load data from 2LIS_03_BX, which is a one time load, it is 
+imperative to select the Extraction Mode as “Initial Non-Cumulative for 
+Non-Cumulative Values” in the DTP.</div>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://1.bp.blogspot.com/-rdjuI_N5i5k/WzNECG78HxI/AAAAAAAATnY/RrTRDrAzeEkkqoE2RsTXaqdaS3A9tgKFQCLcBGAs/s1600/4.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="SAP BW/4HANA, SAP HANA Study Material, SAP HANA Learning, SAP HANA Certification, SAP HANA Tutorials and Materials" data-original-height="381" data-original-width="750" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/4.png" title="Inventory Management in SAP BW/4HANA" width="400" height="202" border="0"></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+<br></div>
+<div class="separator" style="clear: both; text-align: left;">
+◈ While writing the initial stock balances into the inbound table by 
+executing the DTP above, BW filled the technical field ‘Record Type’ 
+(RECORDTP) with value ‘1’.</div>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://1.bp.blogspot.com/-MveH3vl0j3I/WzNECRyegKI/AAAAAAAATnc/UwyZvnvGe30du58Er3cpryGy-IEwj6oFACLcBGAs/s1600/5.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="SAP BW/4HANA, SAP HANA Study Material, SAP HANA Learning, SAP HANA Certification, SAP HANA Tutorials and Materials" data-original-height="87" data-original-width="956" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/5_002.png" title="Inventory Management in SAP BW/4HANA" width="400" height="36" border="0"></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+<br></div>
+<div class="separator" style="clear: both; text-align: left;">
+◈ After loading the initial stock balances, we activate that request. 
+The activation of a request with initial stock balances transfers the 
+data from the inbound table to the reference points table. The reference
+ point table (ending at ‘5’) contains reference points for 
+non-cumulative key figures.</div>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://2.bp.blogspot.com/-qTPo9Qz2AtI/WzNECs3nhzI/AAAAAAAATng/HbjVfSc_mCwrKfv9jwLbWqaG0b5GpzKDACLcBGAs/s1600/6.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="SAP BW/4HANA, SAP HANA Study Material, SAP HANA Learning, SAP HANA Certification, SAP HANA Tutorials and Materials" data-original-height="88" data-original-width="884" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/6.png" title="Inventory Management in SAP BW/4HANA" width="400" height="38" border="0"></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+<br></div>
+<div class="separator" style="clear: both;">
+◈ The record type is still ‘1’ and the values of the most granular time characteristic CALDAY remain as originally loaded.</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+◈ Time characteristics other than the most granular one are generated 
+into the reference point table but always filled with initial 
+values.&nbsp;</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<h3 style="clear: both; text-align: left;">
+<b>DELTA LOADS</b></h3>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+◈ To do so we create a simple DTP from DataSource 2LIS_03_BF (or 
+2LIS_03_UM) into the advanced DSO with a filter on CALDAY &gt; ‘Date for
+ which initial stock is loaded’ (2015-02-22 in this case) and run it.</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+◈ Delta movements are loaded for record type ‘0’. Consequently, we see 
+new records in the inbound table with RECORDTP=’0′ after loading the 
+delta movements. Please note that transaction SE16 shows an empty string
+ for RECORDTP instead of the type-related initial value (here: 0) that 
+is stored on the database.</div>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://2.bp.blogspot.com/-d3DlBM1H5E8/WzNEDL7BMxI/AAAAAAAATnk/Jah7MnUN_SM6QnJ8K9I-SuUmkYmunUySwCLcBGAs/s1600/7.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="SAP BW/4HANA, SAP HANA Study Material, SAP HANA Learning, SAP HANA Certification, SAP HANA Tutorials and Materials" data-original-height="110" data-original-width="952" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/7.png" title="Inventory Management in SAP BW/4HANA" width="400" height="45" border="0"></a></div>
+<br>
+◈ Content of the reference point table after activating delta movements :-<br>
+<div>
+<br></div>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://3.bp.blogspot.com/-mxRykoZDM-o/WzNEDUXM2nI/AAAAAAAATno/TDCcgLyifVM1H0C0-BnzG1V88XPwJcdjACLcBGAs/s1600/8.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="SAP BW/4HANA, SAP HANA Study Material, SAP HANA Learning, SAP HANA Certification, SAP HANA Tutorials and Materials" data-original-height="89" data-original-width="884" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/8.png" title="Inventory Management in SAP BW/4HANA" width="400" height="40" border="0"></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+<br></div>
+<div class="separator" style="clear: both;">
+The system updated the records in the reference point table while activating the delta movements.</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+Let’s verify that for material A100 in plant S400:</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+100&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;reference point before activating the delta movements</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+-70&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; goods issue on 2015-02-25</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
++150&nbsp; &nbsp; &nbsp; &nbsp;goods receipt on 2015-02-26</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+——</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+180&nbsp; &nbsp; &nbsp; &nbsp; new reference point value after activating the delta movements</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<h3 style="clear: both; text-align: left;">
+<b>HISTORICAL DATA LOAD</b></h3>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+◈ To load historical movements i.e. those stock changes that occurred before the initialization (on 2015-02-22 in our scenario).</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+◈ To do so we create a DTP from DataSource 2LIS_03_BF (or 2LIS_03_UM) 
+into advanced DSO with a filter on CALDAY &lt; ‘2015-02-22’ and check 
+the checkbox for ‘Historical Transactions’ in ‘Data Update Type in the 
+Data Targets’ section.</div>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://3.bp.blogspot.com/-PZkzDqp5BDw/WzNEDrwnn5I/AAAAAAAATns/7oyKcsqWRH4c2SVmVuvFx0E4Jz_49citACLcBGAs/s1600/9.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="SAP BW/4HANA, SAP HANA Study Material, SAP HANA Learning, SAP HANA Certification, SAP HANA Tutorials and Materials" data-original-height="553" data-original-width="705" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/9.png" title="Inventory Management in SAP BW/4HANA" width="400" height="313" border="0"></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+<br></div>
+<div class="separator" style="clear: both;">
+◈ Historical movements are loaded for record type ‘2’.</div>
+<div class="separator" style="clear: both;">
+<br></div>
+<div class="separator" style="clear: both;">
+◈ Consequently, we see new records in the inbound table with RECORDTP=’2′ after loading the historical movements</div>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://4.bp.blogspot.com/-Vl58vOdc-QM/WzNEAue9IPI/AAAAAAAATnE/dN1klx1NiPMVVP19ty146YbiaQ1oMVUfwCLcBGAs/s1600/10.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="SAP BW/4HANA, SAP HANA Study Material, SAP HANA Learning, SAP HANA Certification, SAP HANA Tutorials and Materials" data-original-height="106" data-original-width="952" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/10.png" title="Inventory Management in SAP BW/4HANA" width="400" height="43" border="0"></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+<br></div>
+<div class="separator" style="clear: both; text-align: left;">
+◈ The activation of a request with historical movements transfers the 
+data from the inbound table to the active data table. The record type is
+ still ‘2’ and the request information is gone, which is the expected 
+behavior when activating a request in an advanced DSO with the modeling 
+properties shown previously.</div>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://3.bp.blogspot.com/-iBI_Ig2rL5c/WzNEAmIoVLI/AAAAAAAATnA/RyXS0Qo9VTYm5g0QZFGX4eMwDmRz72GDwCLcBGAs/s1600/11.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="SAP BW/4HANA, SAP HANA Study Material, SAP HANA Learning, SAP HANA Certification, SAP HANA Tutorials and Materials" data-original-height="166" data-original-width="596" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/11.png" title="Inventory Management in SAP BW/4HANA" width="400" height="111" border="0"></a></div>
+<div class="separator" style="clear: both; text-align: center;">
+<br></div>
+<div class="separator" style="clear: both; text-align: left;">
+◈ Please note that the reference points were not updated. Historical 
+movements are already (semantically) contained in the reference points. 
+That is why the reference point table is not updated when activating a 
+request with historical movements.</div>
+<br>
+<div class="separator" style="clear: both; text-align: center;">
+<a href="https://1.bp.blogspot.com/-tkY2A_gbc_w/WzNEBf3KT9I/AAAAAAAATnM/4KZjJG9iCIMQHUZ0j_yRFn2cO1qWB04lgCLcBGAs/s1600/12.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img alt="SAP BW/4HANA, SAP HANA Study Material, SAP HANA Learning, SAP HANA Certification, SAP HANA Tutorials and Materials" data-original-height="89" data-original-width="884" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/12.png" title="Inventory Management in SAP BW/4HANA" width="400" height="40" border="0"></a></div>
+</div>
+</div>
+<div style="clear: both;"></div>
+</div>
+<div class="post-footer">
+<div class="post-footer-line post-footer-line-1">
+<span class="post-author vcard">
+Posted by
+<span class="fn" itemprop="author" itemscope="itemscope" itemtype="http://schema.org/Person">
+<meta content="https://plus.google.com/103475615392691278345" itemprop="url">
+<a class="g-profile" href="https://plus.google.com/103475615392691278345" rel="author" title="author profile" data-gapiscan="true" data-onload="true" data-gapiattached="true">
+<span itemprop="name">Sabrina Pinto</span>
+</a>
+</span>
+</span>
+<span class="post-timestamp">
+at
+<meta content="http://www.saphanacentral.com/2018/06/inventory-management-in-sap-bw4hana.html" itemprop="url">
+<a class="timestamp-link" href="http://www.saphanacentral.com/2018/06/inventory-management-in-sap-bw4hana.html" rel="bookmark" title="permanent link"><abbr class="published" itemprop="datePublished" title="2018-06-27T01:14:00-07:00">01:14:00</abbr></a>
+</span>
+<span class="reaction-buttons">
+</span>
+<span class="post-comment-link">
+</span>
+<span class="post-backlinks post-comment-link">
+</span>
+<span class="post-icons">
+<span class="item-control blog-admin pid-184558050">
+<a href="https://www.blogger.com/post-edit.g?blogID=295427178855500735&amp;postID=5603572241470599057&amp;from=pencil" title="Edit Post">
+<img alt="" class="icon-action" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon18_edit_allbkg.gif" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="post-share-buttons goog-inline-block">
+<a class="goog-inline-block share-button sb-email" href="https://www.blogger.com/share-post.g?blogID=295427178855500735&amp;postID=5603572241470599057&amp;target=email" target="_blank" title="Email This"><span class="share-button-link-text">Email This</span></a><a class="goog-inline-block share-button sb-blog" href="https://www.blogger.com/share-post.g?blogID=295427178855500735&amp;postID=5603572241470599057&amp;target=blog" onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target="_blank" title="BlogThis!"><span class="share-button-link-text">BlogThis!</span></a><a class="goog-inline-block share-button sb-twitter" href="https://www.blogger.com/share-post.g?blogID=295427178855500735&amp;postID=5603572241470599057&amp;target=twitter" target="_blank" title="Share to Twitter"><span class="share-button-link-text">Share to Twitter</span></a><a class="goog-inline-block share-button sb-facebook" href="https://www.blogger.com/share-post.g?blogID=295427178855500735&amp;postID=5603572241470599057&amp;target=facebook" onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target="_blank" title="Share to Facebook"><span class="share-button-link-text">Share to Facebook</span></a><a class="goog-inline-block share-button sb-pinterest" href="https://www.blogger.com/share-post.g?blogID=295427178855500735&amp;postID=5603572241470599057&amp;target=pinterest" target="_blank" title="Share to Pinterest"><span class="share-button-link-text">Share to Pinterest</span></a><div class="goog-inline-block google-plus-share-container"><div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 32px; height: 20px;" id="___plusone_0"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 32px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" id="I0_1535968815394" name="I0_1535968815394" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/fastbutton.htm" data-gapiattached="true" title="G+" width="100%" frameborder="0"></iframe></div></div>
+</div>
+</div>
+<div class="post-footer-line post-footer-line-2">
+<span class="post-labels">
+Labels:
+<a href="http://www.saphanacentral.com/search/label/sap%20bw%2F4hana" rel="tag">sap bw/4hana</a>,
+<a href="http://www.saphanacentral.com/search/label/SAP%20HANA" rel="tag">SAP HANA</a>
+</span>
+</div>
+<div class="post-footer-line post-footer-line-3">
+<span class="post-location">
+</span>
+</div>
+</div>
+</div>
+<script src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/plusone.js" type="text/javascript" gapi_processed="true"></script>
+<div class="cmt_iframe_holder" data-href="http://www.saphanacentral.com/2018/06/inventory-management-in-sap-bw4hana.html" data-viewtype="" id="gpluscomments" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 591px; height: 1258px;"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 591px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 1258px;" tabindex="0" vspace="0" id="I0_1535968816518" name="I0_1535968816518" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/comments.htm" data-gapiattached="true" title="Comment on this" width="100%" frameborder="0"></iframe></div>
+</div>
+<div class="inline-ad">
+<script async="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/adsbygoogle.js"></script>
+<!-- saphanacentral_main_Blog1_1x1_as -->
+<ins class="adsbygoogle" style="display: block; height: 60px;" data-ad-client="ca-pub-6627862839780378" data-ad-host="ca-host-pub-1556223355139109" data-ad-host-channel="L0007" data-ad-slot="9236127242" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_4_expand" style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:590px;background-color:transparent;"><ins id="aswift_4_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:590px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;width:590px;height:60px;" width="590" height="60" frameborder="0"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+        </div></div>
+      
+</div>
+<div class="blog-pager" id="blog-pager">
+<span id="blog-pager-newer-link">
+<a class="blog-pager-newer-link" href="http://www.saphanacentral.com/2018/06/provisioning-data-from-web-services.html" id="Blog1_blog-pager-newer-link" title="Newer Post">Newer Post</a>
+</span>
+<span id="blog-pager-older-link">
+<a class="blog-pager-older-link" href="http://www.saphanacentral.com/2018/06/introducing-ndso-part-three-integrating.html" id="Blog1_blog-pager-older-link" title="Older Post">Older Post</a>
+</span>
+<a class="home-link" href="http://www.saphanacentral.com/">Home</a>
+</div>
+<div class="clear"></div>
+<div class="post-feeds">
+<div class="feed-links">
+Subscribe to:
+<a class="feed-link" href="http://www.saphanacentral.com/feeds/5603572241470599057/comments/default" target="_blank" type="application/atom+xml">Post Comments (Atom)</a>
+</div>
+</div>
+<script type="text/javascript">
+    window.___gcfg = { 'lang': 'en-GB' };
+  </script>
+</div></div>
+</div>
+</div>
+<div class="column-left-outer">
+<div class="column-left-inner">
+<aside>
+</aside>
+</div>
+</div>
+<div class="column-right-outer">
+<div class="column-right-inner">
+<aside>
+<div class="sidebar section" id="sidebar-right-1"><div class="widget HTML" data-version="1" id="HTML5">
+<div class="widget-content">
+<a href="http://bit.ly/erpprep" target="_blank"><img src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/pub.png"></a>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=295427178855500735&amp;widgetType=HTML&amp;widgetId=HTML5&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML5"));' target="configHTML5" title="Edit">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget LinkList" data-version="1" id="LinkList1">
+<h2>SAP HANA Certification Material</h2>
+<div class="widget-content">
+<ul>
+<li><a href="http://www.saphanaclass.com/p/sap-hana-certification-study-material.html">SAP HANA Certification Material</a></li>
+<li><a href="http://www.saphanaclass.com/p/sap-hana-online-training-videos.html">SAP HANA Training Videos</a></li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=295427178855500735&amp;widgetType=LinkList&amp;widgetId=LinkList1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("LinkList1"));' target="configLinkList1" title="Edit">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget AdSense" data-version="1" id="AdSense1">
+<div class="widget-content">
+<script async="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/adsbygoogle.js"></script>
+<!-- saphanacentral_sidebar-right-1_AdSense1_1x1_as -->
+<ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-6627862839780378" data-ad-host="ca-host-pub-1556223355139109" data-ad-host-channel="L0001" data-ad-slot="1712860449" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_5_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:250px;background-color:transparent;"><ins id="aswift_5_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:250px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;width:250px;height:600px;" width="250" height="600" frameborder="0"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=295427178855500735&amp;widgetType=AdSense&amp;widgetId=AdSense1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("AdSense1"));' target="configAdSense1" title="Edit">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget Label" data-version="1" id="Label1">
+<h2>Labels</h2>
+<div class="widget-content cloud-label-widget-content">
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/database">database</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/developer">developer</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/Dynamic-Tiering">Dynamic-Tiering</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/hana-academy">hana-academy</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/hana-api">hana-api</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/hana-backup">hana-backup</a>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/in-memory">in-memory</a>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/modeling">modeling</a>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/mysql">mysql</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/odata">odata</a>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/odbc">odbc</a>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/predictive">predictive</a>
+</span>
+<span class="label-size label-size-4">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/sap">sap</a>
+</span>
+<span class="label-size label-size-5">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/SAP%20HANA">SAP HANA</a>
+</span>
+<span class="label-size label-size-4">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/sap-hana">sap-hana</a>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/sap-hana-cloud-platform">sap-hana-cloud-platform</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/sap-hana-database">sap-hana-database</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/sap-hana-usecases">sap-hana-usecases</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/sap-hana-xs">sap-hana-xs</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/sap-hana2">sap-hana2</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/sap-xs">sap-xs</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/SAPHANA">SAPHANA</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/sapmentor">sapmentor</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/sapmentors">sapmentors</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/sapui5">sapui5</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/sda">sda</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/spark">spark</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/sps11">sps11</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/sps12">sps12</a>
+</span>
+<span class="label-size label-size-3">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/sql">sql</a>
+</span>
+<span class="label-size label-size-1">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/statistics">statistics</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/xs">xs</a>
+</span>
+<span class="label-size label-size-2">
+<a dir="ltr" href="http://www.saphanacentral.com/search/label/xsjs">xsjs</a>
+</span>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=295427178855500735&amp;widgetType=Label&amp;widgetId=Label1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("Label1"));' target="configLabel1" title="Edit">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget BlogSearch" data-version="1" id="BlogSearch1">
+<h2 class="title">Search This Blog</h2>
+<div class="widget-content">
+<div id="BlogSearch1_form">
+<form action="http://www.saphanacentral.com/search" class="gsc-search-box" target="_top">
+<table class="gsc-search-box" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gsc-input">
+<input autocomplete="off" class="gsc-input" name="q" size="10" title="search" type="text">
+</td>
+<td class="gsc-search-button">
+<input class="gsc-search-button" title="search" value="Search" type="submit">
+</td>
+</tr>
+</tbody>
+</table>
+</form>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=295427178855500735&amp;widgetType=BlogSearch&amp;widgetId=BlogSearch1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogSearch1"));' target="configBlogSearch1" title="Edit">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget PlusFollowers" data-version="1" id="PlusFollowers1">
+<h2 class="title">Google+ Followers</h2>
+<div class="widget-content">
+<div style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 302px; height: 287px;" id="___plus_0"><iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 302px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 287px;" tabindex="0" vspace="0" id="I0_1535968816199" name="I0_1535968816199" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/followers.htm" data-gapiattached="true" title="+1" width="100%" frameborder="0"></iframe></div>
+<script type="text/javascript">
+        window.___gcfg = {'lang': 'en_GB'};
+      </script>
+</div>
+</div><div class="widget HTML" data-version="1" id="HTML2">
+<h2 class="title">Like Our Official Page</h2>
+<div class="widget-content">
+<div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/SAPHANACentral" data-width="255" data-height="200" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="adapt_container_width=false&amp;app_id=&amp;container_width=250&amp;height=200&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2FSAPHANACentral&amp;locale=en_GB&amp;sdk=joey&amp;show_facepile=true&amp;small_header=true&amp;width=255"><span style="vertical-align: bottom; width: 255px; height: 120px;"><iframe name="f207977fca5d6" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:page Facebook Social Plugin" style="border: medium none; visibility: visible; width: 255px; height: 120px;" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/page.htm" class="" width="255px" height="200px" frameborder="0"></iframe></span></div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=295427178855500735&amp;widgetType=HTML&amp;widgetId=HTML2&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML2"));' target="configHTML2" title="Edit">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget PopularPosts" data-version="1" id="PopularPosts1">
+<h2>Popular Posts</h2>
+<div class="widget-content popular-posts">
+<ul>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://www.saphanacentral.com/2016/02/core-data-services-in-abap.html" target="_blank">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/pastedImage_0.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://www.saphanacentral.com/2016/02/core-data-services-in-abap.html">Core Data Services in ABAP</a></div>
+<div class="item-snippet"> Core Data services (CDS)  are domain specific
+ languages (DSL) and services for defining and consuming semantically 
+rich data models in SAP ...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://www.saphanacentral.com/2017/04/sap-pdms-10-fp02-on-premise-edition-10_12.html" target="_blank">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/2.jpg" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://www.saphanacentral.com/2017/04/sap-pdms-10-fp02-on-premise-edition-10_12.html">SAP PDMS 1.0 FP02 On-premise edition 1.0 (Configuration – Pt.2)</a></div>
+<div class="item-snippet"> In the first part of my documentation (pt.1) ,
+ I have explained and showed in detail how to proceed &nbsp;with the 
+mandatory landscape and compo...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://www.saphanacentral.com/2016/04/in-continuation-to-previous-blog-core.html" target="_blank">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/5.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://www.saphanacentral.com/2016/04/in-continuation-to-previous-blog-core.html">Expose CDS Views as OData Service</a></div>
+<div class="item-snippet"> In continuation to previous blog Core Data 
+Services in ABAP  in this blog I will show how to create CDS Views and 
+step by step procedure to...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://www.saphanacentral.com/2018/03/business-partner-in-s4-hana-customer.html" target="_blank">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/1.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://www.saphanacentral.com/2018/03/business-partner-in-s4-hana-customer.html">Business Partner in S4 HANA – Customer Vendor Integration</a></div>
+<div class="item-snippet"> It’s been almost 2 years I have started my 
+journey in SAP world. I started with Technical domain for some time and I
+ landed in Functional d...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://www.saphanacentral.com/2016/08/abap-on-hana-use-cases.html" target="_blank">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/indexserver2.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://www.saphanacentral.com/2016/08/abap-on-hana-use-cases.html">ABAP on HANA - Use Cases</a></div>
+<div class="item-snippet">  Introduction to ABAP on HANA   Through HANA,
+ SAP has brought forth a high performing multi faceted appliance with 
+rich analytic computatio...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://www.saphanacentral.com/2017/01/how-to-prepare-for-chanaimp12.html" target="_blank">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/SAPC_HANAIMP_12.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://www.saphanacentral.com/2017/01/how-to-prepare-for-chanaimp12.html">How to Prepare for C_HANAIMP_12 Certification on SAP HANAIMP 12</a></div>
+<div class="item-snippet">  All that you need to know about SAP  
+C_HANAIMP_12   SAP launched HANAIMP 12 primarily based on in-memory 
+expertise with which customers ca...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://www.saphanacentral.com/2016/05/complete-end-to-end-abap-for-hana-74-sp.html" target="_blank">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/cds.JPG" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://www.saphanacentral.com/2016/05/complete-end-to-end-abap-for-hana-74-sp.html">Complete End-To-End ABAP For HANA 7.4 SP 09 Development </a></div>
+<div class="item-snippet"> Steps Involved For Displaying Flight Details:
+   Creation of ABAP CDS view.  Creation of Gateway O Data service.  
+Testing of GW service in G...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+<li>
+<div class="item-content">
+<div class="item-thumbnail">
+<a href="http://www.saphanacentral.com/2016/06/whats-new-in-sap-hana-sps12-smart-data.html" target="_blank">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/Picture5.png" border="0">
+</a>
+</div>
+<div class="item-title"><a href="http://www.saphanacentral.com/2016/06/whats-new-in-sap-hana-sps12-smart-data.html">What’s new in SAP HANA SPS12 – Smart Data Access</a></div>
+<div class="item-snippet"> Overview   The SPS12 release is upon us, and 
+with it a few great new features for SDA: Kerberos constrained 
+delegation, UPSERT support, ROW...</div>
+</div>
+<div style="clear: both;"></div>
+</li>
+</ul>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=295427178855500735&amp;widgetType=PopularPosts&amp;widgetId=PopularPosts1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("PopularPosts1"));' target="configPopularPosts1" title="Edit">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget FeaturedPost" data-version="1" id="FeaturedPost1">
+<h2 class="title">Featured post</h2>
+<div class="post-summary">
+<h3><a href="http://www.saphanacentral.com/2016/04/sap-s4hana-from-developers-point-of.html">SAP S/4HANA from a Developers Point of View - Part One</a></h3>
+<p>
+ Introduction  In my first part I try to explain what is the main 
+difference between R/3, SAP ERP and S/4.        As you can see from the 
+pi...
+</p>
+<img class="image" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/SAP2BERP2BProduct2BHistory.PNG">
+</div>
+<style type="text/css">
+    .image {
+      width: 100%;
+    }
+  </style>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=295427178855500735&amp;widgetType=FeaturedPost&amp;widgetId=FeaturedPost1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("FeaturedPost1"));' target="configFeaturedPost1" title="Edit">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget BlogSearch" data-version="1" id="BlogSearch2">
+<h2 class="title">Search This Blog</h2>
+<div class="widget-content">
+<div id="BlogSearch2_form">
+<form action="http://www.saphanacentral.com/search" class="gsc-search-box" target="_top">
+<table class="gsc-search-box" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="gsc-input">
+<input autocomplete="off" class="gsc-input" name="q" size="10" title="search" type="text">
+</td>
+<td class="gsc-search-button">
+<input class="gsc-search-button" title="search" value="Search" type="submit">
+</td>
+</tr>
+</tbody>
+</table>
+</form>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=295427178855500735&amp;widgetType=BlogSearch&amp;widgetId=BlogSearch2&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogSearch2"));' target="configBlogSearch2" title="Edit">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget BlogArchive" data-version="1" id="BlogArchive1">
+<h2>Blog Archive</h2>
+<div class="widget-content">
+<div id="ArchiveList">
+<div id="BlogArchive1_ArchiveList">
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">
+
+        ▼&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2018/">
+2018
+</a>
+<span class="post-count" dir="ltr">(104)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2018/09/">
+September
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2018/08/">
+August
+</a>
+<span class="post-count" dir="ltr">(13)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2018/07/">
+July
+</a>
+<span class="post-count" dir="ltr">(12)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate expanded">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy toggle-open">
+
+        ▼&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2018/06/">
+June
+</a>
+<span class="post-count" dir="ltr">(12)</span>
+<ul class="posts">
+<li><a href="http://www.saphanacentral.com/2018/06/provisioning-data-from-web-services.html">Provisioning data from web services with custom ad...</a></li>
+<li><a href="http://www.saphanacentral.com/2018/06/inventory-management-in-sap-bw4hana.html">Inventory Management in SAP BW/4HANA</a></li>
+<li><a href="http://www.saphanacentral.com/2018/06/introducing-ndso-part-three-integrating.html">Introducing the NDSO: Part Three – Integrating a N...</a></li>
+<li><a href="http://www.saphanacentral.com/2018/06/hana-express-and-xs-advanced-when-you.html">HANA Express and XS Advanced: When you cannot modi...</a></li>
+<li><a href="http://www.saphanacentral.com/2018/06/setting-up-app-router-for-hana-xsa-with.html">Setting Up App Router for HANA XSA with Python</a></li>
+<li><a href="http://www.saphanacentral.com/2018/06/getting-started-with-python-on-sap-hana.html">Getting Started with Python on SAP HANA XSA</a></li>
+<li><a href="http://www.saphanacentral.com/2018/06/s4-hana-cloud-adding-custom-field-to.html">S/4 HANA Cloud – Adding a Custom field to Web GUI ...</a></li>
+<li><a href="http://www.saphanacentral.com/2018/06/how-to-implement-function-import-in.html">How to implement Function Import in HANA XS</a></li>
+<li><a href="http://www.saphanacentral.com/2018/06/how-to-get-sap-erp-data-into-hana.html">How To Get SAP ERP Data Into HANA</a></li>
+<li><a href="http://www.saphanacentral.com/2018/06/how-to-create-flowgraphs-in-hana-web.html">How to create FlowGraphs in HANA Web IDE with SDI ...</a></li>
+<li><a href="http://www.saphanacentral.com/2018/06/migration-guide-moving-to-version-200.html">Migration Guide: Moving to Version 2.0.0 of the SA...</a></li>
+<li><a href="http://www.saphanacentral.com/2018/06/deploy-hana-express-database-on-google.html">Deploy HANA Express database on Google Kubernetes ...</a></li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2018/05/">
+May
+</a>
+<span class="post-count" dir="ltr">(13)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2018/04/">
+April
+</a>
+<span class="post-count" dir="ltr">(13)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2018/03/">
+March
+</a>
+<span class="post-count" dir="ltr">(12)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2018/02/">
+February
+</a>
+<span class="post-count" dir="ltr">(12)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2018/01/">
+January
+</a>
+<span class="post-count" dir="ltr">(16)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2017/">
+2017
+</a>
+<span class="post-count" dir="ltr">(206)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2017/12/">
+December
+</a>
+<span class="post-count" dir="ltr">(12)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2017/11/">
+November
+</a>
+<span class="post-count" dir="ltr">(12)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2017/10/">
+October
+</a>
+<span class="post-count" dir="ltr">(21)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2017/09/">
+September
+</a>
+<span class="post-count" dir="ltr">(18)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2017/08/">
+August
+</a>
+<span class="post-count" dir="ltr">(20)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2017/07/">
+July
+</a>
+<span class="post-count" dir="ltr">(25)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2017/06/">
+June
+</a>
+<span class="post-count" dir="ltr">(24)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2017/05/">
+May
+</a>
+<span class="post-count" dir="ltr">(21)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2017/04/">
+April
+</a>
+<span class="post-count" dir="ltr">(24)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2017/03/">
+March
+</a>
+<span class="post-count" dir="ltr">(11)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2017/02/">
+February
+</a>
+<span class="post-count" dir="ltr">(5)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2017/01/">
+January
+</a>
+<span class="post-count" dir="ltr">(13)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2016/">
+2016
+</a>
+<span class="post-count" dir="ltr">(252)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2016/12/">
+December
+</a>
+<span class="post-count" dir="ltr">(16)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2016/11/">
+November
+</a>
+<span class="post-count" dir="ltr">(17)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2016/10/">
+October
+</a>
+<span class="post-count" dir="ltr">(17)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2016/09/">
+September
+</a>
+<span class="post-count" dir="ltr">(22)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2016/08/">
+August
+</a>
+<span class="post-count" dir="ltr">(23)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2016/07/">
+July
+</a>
+<span class="post-count" dir="ltr">(25)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2016/06/">
+June
+</a>
+<span class="post-count" dir="ltr">(22)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2016/05/">
+May
+</a>
+<span class="post-count" dir="ltr">(24)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2016/04/">
+April
+</a>
+<span class="post-count" dir="ltr">(17)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2016/03/">
+March
+</a>
+<span class="post-count" dir="ltr">(24)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2016/02/">
+February
+</a>
+<span class="post-count" dir="ltr">(23)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2016/01/">
+January
+</a>
+<span class="post-count" dir="ltr">(22)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2015/">
+2015
+</a>
+<span class="post-count" dir="ltr">(31)</span>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2015/12/">
+December
+</a>
+<span class="post-count" dir="ltr">(8)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2015/11/">
+November
+</a>
+<span class="post-count" dir="ltr">(7)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2015/10/">
+October
+</a>
+<span class="post-count" dir="ltr">(4)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2015/09/">
+September
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2015/08/">
+August
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2015/07/">
+July
+</a>
+<span class="post-count" dir="ltr">(3)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2015/06/">
+June
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2015/05/">
+May
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2015/03/">
+March
+</a>
+<span class="post-count" dir="ltr">(2)</span>
+</li>
+</ul>
+<ul class="hierarchy">
+<li class="archivedate collapsed">
+<a class="toggle" href="javascript:void(0)">
+<span class="zippy">
+
+        ►&nbsp;
+      
+</span>
+</a>
+<a class="post-count-link" href="http://www.saphanacentral.com/2015/01/">
+January
+</a>
+<span class="post-count" dir="ltr">(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=295427178855500735&amp;widgetType=BlogArchive&amp;widgetId=BlogArchive1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' target="configBlogArchive1" title="Edit">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget HTML" data-version="1" id="HTML1">
+<div class="widget-content">
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" style="border: medium none;" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/0P3pVtbsZok.htm" frameborder="0"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=295427178855500735&amp;widgetType=HTML&amp;widgetId=HTML1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target="configHTML1" title="Edit">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget Subscribe" data-version="1" id="Subscribe1">
+<div style="white-space:nowrap">
+<h2 class="title">Subscribe To SAP HANA Central</h2>
+<div class="widget-content">
+<div class="subscribe-wrapper subscribe-type-POST">
+<div class="subscribe expanded subscribe-type-POST" id="SW_READER_LIST_Subscribe1POST" style="display:none;">
+<div class="top">
+<span class="inner" onclick='return(_SW_toggleReaderList(event, "Subscribe1POST"));'>
+<img class="subscribe-dropdown-arrow" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/arrow_dropdown.gif">
+<img alt="" class="feed-icon" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon_feed12.png" border="0" align="absmiddle">
+Posts
+</span>
+<div class="feed-reader-links">
+<a class="feed-reader-link" href="https://www.netvibes.com/subscribe.php?url=http%3A%2F%2Fwww.saphanacentral.com%2Ffeeds%2Fposts%2Fdefault" target="_blank">
+<img src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/subscribe-netvibes.png">
+</a>
+<a class="feed-reader-link" href="https://add.my.yahoo.com/content?url=http%3A%2F%2Fwww.saphanacentral.com%2Ffeeds%2Fposts%2Fdefault" target="_blank">
+<img src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/subscribe-yahoo.png">
+</a>
+<a class="feed-reader-link" href="http://www.saphanacentral.com/feeds/posts/default" target="_blank">
+<img class="feed-icon" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon_feed12.png" align="absmiddle">
+                  Atom
+                </a>
+</div>
+</div>
+<div class="bottom"></div>
+</div>
+<div class="subscribe" id="SW_READER_LIST_CLOSED_Subscribe1POST" onclick='return(_SW_toggleReaderList(event, "Subscribe1POST"));'>
+<div class="top">
+<span class="inner">
+<img class="subscribe-dropdown-arrow" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/arrow_dropdown.gif">
+<span onclick='return(_SW_toggleReaderList(event, "Subscribe1POST"));'>
+<img alt="" class="feed-icon" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon_feed12.png" border="0" align="absmiddle">
+Posts
+</span>
+</span>
+</div>
+<div class="bottom"></div>
+</div>
+</div>
+<div class="subscribe-wrapper subscribe-type-PER_POST">
+<div class="subscribe expanded subscribe-type-PER_POST" id="SW_READER_LIST_Subscribe1PER_POST" style="display:none;">
+<div class="top">
+<span class="inner" onclick='return(_SW_toggleReaderList(event, "Subscribe1PER_POST"));'>
+<img class="subscribe-dropdown-arrow" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/arrow_dropdown.gif">
+<img alt="" class="feed-icon" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon_feed12.png" border="0" align="absmiddle">
+Comments
+</span>
+<div class="feed-reader-links">
+<a class="feed-reader-link" href="https://www.netvibes.com/subscribe.php?url=http%3A%2F%2Fwww.saphanacentral.com%2Ffeeds%2F5603572241470599057%2Fcomments%2Fdefault" target="_blank">
+<img src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/subscribe-netvibes.png">
+</a>
+<a class="feed-reader-link" href="https://add.my.yahoo.com/content?url=http%3A%2F%2Fwww.saphanacentral.com%2Ffeeds%2F5603572241470599057%2Fcomments%2Fdefault" target="_blank">
+<img src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/subscribe-yahoo.png">
+</a>
+<a class="feed-reader-link" href="http://www.saphanacentral.com/feeds/5603572241470599057/comments/default" target="_blank">
+<img class="feed-icon" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon_feed12.png" align="absmiddle">
+                  Atom
+                </a>
+</div>
+</div>
+<div class="bottom"></div>
+</div>
+<div class="subscribe" id="SW_READER_LIST_CLOSED_Subscribe1PER_POST" onclick='return(_SW_toggleReaderList(event, "Subscribe1PER_POST"));'>
+<div class="top">
+<span class="inner">
+<img class="subscribe-dropdown-arrow" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/arrow_dropdown.gif">
+<span onclick='return(_SW_toggleReaderList(event, "Subscribe1PER_POST"));'>
+<img alt="" class="feed-icon" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon_feed12.png" border="0" align="absmiddle">
+Comments
+</span>
+</span>
+</div>
+<div class="bottom"></div>
+</div>
+</div>
+<div style="clear:both"></div>
+</div>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=295427178855500735&amp;widgetType=Subscribe&amp;widgetId=Subscribe1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("Subscribe1"));' target="configSubscribe1" title="Edit">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div><div class="widget Stats" data-version="1" id="Stats1">
+<h2>Total Pageviews</h2>
+<div class="widget-content">
+<div id="Stats1_content" style="">
+<img alt="Sparkline" id="Stats1_sparkline" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/chart.png" width="75" height="30">
+<span class="counter-wrapper text-counter-wrapper" id="Stats1_totalCount">596,667</span>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=295427178855500735&amp;widgetType=Stats&amp;widgetId=Stats1&amp;action=editWidget&amp;sectionId=sidebar-right-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("Stats1"));' target="configStats1" title="Edit">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div>
+</div></div>
+</aside>
+</div>
+</div>
+</div>
+<div style="clear: both"></div>
+<!-- columns -->
+</div>
+<!-- main -->
+</div>
+</div>
+<div class="main-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+<footer>
+<div class="footer-outer">
+<div class="footer-cap-top cap-top">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+<div class="fauxborder-left footer-fauxborder-left">
+<div class="fauxborder-right footer-fauxborder-right"></div>
+<div class="region-inner footer-inner">
+<div class="foot section" id="footer-1"><div class="widget AdSense" data-version="1" id="AdSense2">
+<div class="widget-content">
+<script type="text/javascript">
+    google_ad_client = "ca-pub-6627862839780378";
+    google_ad_host = "ca-host-pub-1556223355139109";
+    google_ad_host_channel = "L0003";
+    google_ad_slot = "4902365648";
+    google_ad_width = 970;
+    google_ad_height = 90;
+</script>
+<!-- saphanacentral_footer-1_AdSense2_970x90_as -->
+<script type="text/javascript" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/show_ads.js">
+</script><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:970px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:970px;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;width:970px;height:90px;" width="970" height="90" frameborder="0"></iframe></ins></ins>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=295427178855500735&amp;widgetType=AdSense&amp;widgetId=AdSense2&amp;action=editWidget&amp;sectionId=footer-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("AdSense2"));' target="configAdSense2" title="Edit">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div>
+</div><div class="widget HTML" data-version="1" id="HTML4">
+<div class="widget-content">
+<center><b><a href="http://www.saphanacentral.com/p/priv.html">Privacy Policy </a></b></center>
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=295427178855500735&amp;widgetType=HTML&amp;widgetId=HTML4&amp;action=editWidget&amp;sectionId=footer-1" onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML4"));' target="configHTML4" title="Edit">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+<!-- outside of the include in order to lock Attribution widget -->
+<div class="foot section" id="footer-3" name="Footer"><div class="widget Attribution" data-version="1" id="Attribution1">
+<div class="widget-content" style="text-align: center;">
+© 2016 saphanacentral.com, All rights reserved. Simple theme. Theme images by <a href="http://www.istockphoto.com/googleimages.php?id=4072573&amp;platform=blogger&amp;langregion=en_GB" target="_blank">gaffera</a>. Powered by <a href="https://www.blogger.com/" target="_blank">Blogger</a>.
+</div>
+<div class="clear"></div>
+<span class="widget-item-control">
+<span class="item-control blog-admin">
+<a class="quickedit" href="http://www.blogger.com/rearrange?blogID=295427178855500735&amp;widgetType=Attribution&amp;widgetId=Attribution1&amp;action=editWidget&amp;sectionId=footer-3" onclick='return _WidgetManager._PopupConfig(document.getElementById("Attribution1"));' target="configAttribution1" title="Edit">
+<img alt="" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/icon18_wrench_allbkg.png" width="18" height="18">
+</a>
+</span>
+</span>
+<div class="clear"></div>
+</div></div>
+</div>
+</div>
+<div class="footer-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</footer>
+<!-- content -->
+</div>
+</div>
+<div class="content-cap-bottom cap-bottom">
+<div class="cap-left"></div>
+<div class="cap-right"></div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    window.setTimeout(function() {
+        document.body.className = document.body.className.replace('loading', '');
+      }, 10);
+  </script>
+<script async="async" charset="utf-8" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/1.js" type="text/javascript"></script>
+<script src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/plusone.js" type="text/javascript" gapi_processed="true"></script><iframe name="oauth2relay594451798" id="oauth2relay594451798" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/postmessageRelay.htm" style="width: 1px; height: 1px; position: absolute; top: -100px;" tabindex="-1" aria-hidden="true"></iframe>
+
+<script type="text/javascript" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/2647409398-widgets.js"></script>
+<script type="text/javascript">
+window['__wavt'] = 'AOuZoY7_XQX2z4QCAqf6KKUm58xhwfGP3g:1535968813332';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d295427178855500735','//www.saphanacentral.com/2018/06/inventory-management-in-sap-bw4hana.html','295427178855500735');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '295427178855500735', 'title': 'SAP HANA Central ', 'url': 'http://www.saphanacentral.com/2018/06/inventory-management-in-sap-bw4hana.html', 'canonicalUrl': 'http://www.saphanacentral.com/2018/06/inventory-management-in-sap-bw4hana.html', 'homepageUrl': 'http://www.saphanacentral.com/', 'searchUrl': 'http://www.saphanacentral.com/search', 'canonicalHomepageUrl': 'http://www.saphanacentral.com/', 'blogspotFaviconUrl': 'http://www.saphanacentral.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': true, 'httpsEnabled': false, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': 'UA-71554060-1', 'encoding': 'UTF-8', 'locale': 'en-GB', 'localeUnderscoreDelimited': 'en_gb', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22SAP HANA Central  - Atom\x22 href\x3d\x22http://www.saphanacentral.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22SAP HANA Central  - RSS\x22 href\x3d\x22http://www.saphanacentral.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22SAP HANA Central  - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/295427178855500735/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22SAP HANA Central  - Atom\x22 href\x3d\x22http://www.saphanacentral.com/feeds/5603572241470599057/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseClientId': 'ca-pub-6627862839780378', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': true, 'ieCssRetrofitLinks': '\x3c!--[if IE]\x3e\x3cscript type\x3d\x22text/javascript\x22 src\x3d\x22https://www.blogger.com/static/v1/jsbin/3762807459-ieretrofit.js\x22\x3e\x3c/script\x3e\n\x3c![endif]--\x3e', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/4498a93d57aa37b6', 'plusOneApiSrc': 'https://apis.google.com/js/plusone.js', 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'Twitter', 'key': 'twitter', 'shareMessage': 'Share to Twitter', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Google+', 'key': 'googlePlus', 'shareMessage': 'Share to Google+', 'target': 'googleplus'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'googlePlusShareButtonWidth': 300, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en_GB\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '5603572241470599057', 'postImageThumbnailUrl': 'https://2.bp.blogspot.com/-S2LTOg-hYos/WzNEAn5hyaI/AAAAAAAATnI/tDzzyjnh7ckDU0XSA8qzzhv-H5D2cAzowCLcBGAs/s72-c/1.png', 'postImageUrl': 'https://2.bp.blogspot.com/-S2LTOg-hYos/WzNEAn5hyaI/AAAAAAAATnI/tDzzyjnh7ckDU0XSA8qzzhv-H5D2cAzowCLcBGAs/s400/1.png', 'pageName': 'Inventory Management in SAP BW/4HANA', 'pageTitle': 'SAP HANA Central : Inventory Management in SAP BW/4HANA'}}, {'name': 'features', 'data': {'cmt_anon_warn': 'false', 'sharing_get_link_dialog': 'true', 'sharing_native': 'false'}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard', 'ok': 'Ok', 'postLink': 'Post link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true, 'variant': 'wide', 'variantId': 'wide'}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'Inventory Management in SAP BW/4HANA', 'description': '  INTRODUCTION   The loading process of Inventory Management data in BW/4HANA is different than that in the predecessor versions (BW 7.4 and...', 'featuredImage': 'https://2.bp.blogspot.com/-S2LTOg-hYos/WzNEAn5hyaI/AAAAAAAATnI/tDzzyjnh7ckDU0XSA8qzzhv-H5D2cAzowCLcBGAs/s400/1.png', 'url': 'http://www.saphanacentral.com/2018/06/inventory-management-in-sap-bw4hana.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 5603572241470599057}}]);
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', null, document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', null, document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList1', 'crosscol', null, document.getElementById('PageList1'), {'title': 'Pages', 'links': [{'isCurrentPage': false, 'href': 'http://www.saphanacentral.com/', 'title': 'Home'}, {'isCurrentPage': false, 'href': 'http://www.saphanacentral.com/p/sap-hana-tutorials.html', 'id': '984635924874298360', 'title': 'SAP HANA Tutorials'}, {'isCurrentPage': false, 'href': 'http://www.saphanacentral.com/p/learning-materials.html', 'id': '4674721173992453953', 'title': 'Learning Materials'}, {'isCurrentPage': false, 'href': 'http://www.saphanacentral.com/p/interview.html', 'id': '7827687930862087365', 'title': 'Interview - Q\x26amp;A'}, {'isCurrentPage': false, 'href': 'http://www.saphanacentral.com/p/job.html', 'id': '582804641615056860', 'title': 'Job'}, {'isCurrentPage': false, 'href': 'http://www.saphanacentral.com/p/certifications.html', 'id': '1570621275415179998', 'title': 'Certifications'}, {'isCurrentPage': false, 'href': 'http://www.saphanacentral.com/p/sap-hana-books.html', 'id': '3980828190320996451', 'title': 'Books'}], 'mobile': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'legacyCommentModerationUrl': 'https://www.blogger.com/moderate-legacy-comment.g?blogID\x3d295427178855500735', 'iframeCommentsId': 'gpluscomments', 'viewType': 'FILTERED_POSTMOD', 'useNgc': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/2397695905-lbx__en_gb.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/368954415-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML5', 'sidebar-right-1', null, document.getElementById('HTML5'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LinkListView', new _WidgetInfo('LinkList1', 'sidebar-right-1', null, document.getElementById('LinkList1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AdSenseView', new _WidgetInfo('AdSense1', 'sidebar-right-1', null, document.getElementById('AdSense1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'sidebar-right-1', null, document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogSearchView', new _WidgetInfo('BlogSearch1', 'sidebar-right-1', null, document.getElementById('BlogSearch1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PlusFollowersView', new _WidgetInfo('PlusFollowers1', 'sidebar-right-1', null, document.getElementById('PlusFollowers1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'sidebar-right-1', null, document.getElementById('HTML2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PopularPostsView', new _WidgetInfo('PopularPosts1', 'sidebar-right-1', null, document.getElementById('PopularPosts1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_FeaturedPostView', new _WidgetInfo('FeaturedPost1', 'sidebar-right-1', null, document.getElementById('FeaturedPost1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogSearchView', new _WidgetInfo('BlogSearch2', 'sidebar-right-1', null, document.getElementById('BlogSearch2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar-right-1', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': 'Loading\x26hellip;'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar-right-1', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_SubscribeView', new _WidgetInfo('Subscribe1', 'sidebar-right-1', null, document.getElementById('Subscribe1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_StatsView', new _WidgetInfo('Stats1', 'sidebar-right-1', null, document.getElementById('Stats1'), {'title': 'Total Pageviews', 'showGraphicalCounter': false, 'showAnimatedCounter': false, 'showSparkline': true, 'statsUrl': '//www.saphanacentral.com/b/stats?style\x3dBLACK_TRANSPARENT\x26timeRange\x3dALL_TIME\x26token\x3dFpWXoGUBAAA.BImYaKVP6ZUOaLPd7AkRs-MMR1ER9IB3ltm3DtUI5XU.CDqVjo5Rvqqg74xvZRx8BQ'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AdSenseView', new _WidgetInfo('AdSense2', 'footer-1', null, document.getElementById('AdSense2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML4', 'footer-1', null, document.getElementById('HTML4'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'footer-3', null, document.getElementById('Attribution1'), {}, 'displayModeFull'));
+</script>
+
+<iframe id="google_osd_static_frame_3322190899155" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe><ins class="adsbygoogle adsbygoogle-noablate" style="display: none;" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:NaNpx;margin:0;padding:0;position:relative;visibility:visible;width:NaNpx;background-color:transparent;"><ins id="aswift_1_anchor" style="display:block;border:none;height:NaNpx;margin:0;padding:0;position:relative;visibility:visible;width:NaNpx;background-color:transparent;"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;width:NaNpx;height:NaNpx;" frameborder="0"></iframe></ins></ins></ins><link type="text/css" rel="stylesheet" href="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/368954415-lightbox_bundle.css"><script type="text/javascript" src="SAP%20HANA%20Tutorial,%20Material%20and%20Certification%20Guide_files/2397695905-lbx__en_gb.js"></script></body></html>

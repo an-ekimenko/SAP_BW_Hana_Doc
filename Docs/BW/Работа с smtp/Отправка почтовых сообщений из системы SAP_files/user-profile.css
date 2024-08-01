@@ -1,0 +1,70 @@
+.drop-autor {
+	/*position: absolute;
+	left: 10px;
+	bottom: 12px;
+	width: 437px;
+	display: none;*/
+}
+
+.autor:hover .drop-autor {
+	display: block;
+}
+
+.dra-t {
+	background: url(user-profile/drop-autor_03.png);
+	height: 7px;
+	overflow: hidden;
+}
+
+.dra-b {
+	background: url(user-profile/drop-autor_08.png) no-repeat;
+	height: 26px;
+}
+
+.dra-c {
+	background: url(user-profile/drop-autor_06.png);
+	padding: 7px 15px 13px 75px;
+	position: relative;
+	min-height: 50px;
+}
+
+.dra-c img {
+	position: absolute;
+	left: 15px;
+	top: 8px;
+}
+
+.dra-1 {
+	font-size: 11px;
+	color: #898989;
+	padding-bottom: 15px;
+}
+
+.dra-1 a {
+	font-size: 14px;
+}
+
+.dra-c p {
+	line-height: 15px;
+	padding-bottom: 2px;
+	color: #898989;
+	font-size: 12px;
+}
+
+.dra-c p span {
+	color: #123f68;
+}
+
+.no-frame {
+	max-width: none !important;
+	box-shadow: none;
+}
+
+.no-frame .ui-tooltip-tip {
+	display: none;
+}
+
+.no-frame .ui-tooltip-content {
+	border: none;
+	padding: 0;
+}

@@ -1,0 +1,169 @@
+/*
+Name: Abapblog
+Description: ABAP Blog
+Version: 1.0
+Author: abap blog
+URL: https://abap-blog.ru
+*/
+.crayon-theme-abapblog {
+	border-width: 1px !important;
+	border-color: #000000 !important;
+	text-shadow: none !important;
+	background: #424242 !important;
+}
+.crayon-theme-abapblog-inline {
+	border-width: 1px !important;
+	border-color: #000000 !important;
+	background: #27292c !important;
+}
+.crayon-theme-abapblog .crayon-table .crayon-nums {
+	background: #424242 !important;
+	color: #898989 !important;
+	border-right-width: 2px !important;
+	border-right-color: #555555 !important;
+	border-right-style: double !important;
+}
+.crayon-theme-abapblog .crayon-striped-line {
+	background: #474545 !important;
+}
+.crayon-theme-abapblog .crayon-striped-num {
+	background: #424242 !important;
+	color: #c7c7c7 !important;
+}
+.crayon-theme-abapblog .crayon-marked-line {
+	background: #605f5f !important;
+	border-width: 1px !important;
+	border-color: #cfcfcf !important;
+}
+.crayon-theme-abapblog .crayon-marked-num {
+	color: #898989 !important;
+	background: #424242 !important;
+	border-width: 1px !important;
+	border-color: #595959 !important;
+}
+.crayon-theme-abapblog .crayon-marked-line.crayon-striped-line {
+	background: #605f5f !important;
+}
+.crayon-theme-abapblog .crayon-marked-num.crayon-striped-num {
+	background: #424242 !important;
+	color: #c7c7c7 !important;
+}
+.crayon-theme-abapblog .crayon-marked-line.crayon-top {
+}
+.crayon-theme-abapblog .crayon-marked-num.crayon-top {
+}
+.crayon-theme-abapblog .crayon-marked-line.crayon-bottom {
+}
+.crayon-theme-abapblog .crayon-marked-num.crayon-bottom {
+}
+.crayon-theme-abapblog .crayon-info {
+	background: #333333 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #b1af5e !important;
+	color: #eeeeee !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-abapblog .crayon-toolbar {
+	background: #999999 !important;
+	border-bottom-width: 1px !important;
+	border-bottom-color: #2e2e2e !important;
+	border-bottom-style: solid !important;
+}
+.crayon-theme-abapblog .crayon-toolbar > div {
+	float: left !important;
+}
+.crayon-theme-abapblog .crayon-toolbar .crayon-tools {
+	float: right !important;
+}
+.crayon-theme-abapblog .crayon-title {
+	color: #626262 !important;
+}
+.crayon-theme-abapblog .crayon-language {
+	color: #626262 !important;
+}
+.crayon-theme-abapblog .crayon-button {
+}
+.crayon-theme-abapblog .crayon-button:hover {
+	background-color: #bcbcbc !important;
+	color: #666;
+}
+.crayon-theme-abapblog .crayon-button.crayon-pressed:hover {
+	background-color: #bcbcbc !important;
+	color: #666;
+}
+.crayon-theme-abapblog .crayon-button.crayon-pressed {
+	background-color: #626262 !important;
+	color: #FFF;
+}
+.crayon-theme-abapblog .crayon-button.crayon-pressed:active {
+	background-color: #626262 !important;
+	color: #FFF;
+}
+.crayon-theme-abapblog .crayon-button:active {
+	background-color: #bcbcbc !important;
+	color: #FFF;
+}
+.crayon-theme-abapblog .crayon-pre .crayon-c {
+	color: #c3c0c0 !important;
+	font-style: italic !important;
+}
+.crayon-theme-abapblog .crayon-pre .crayon-s {
+	color: #7ec97e !important;
+}
+.crayon-theme-abapblog .crayon-pre .crayon-p {
+	color: #b85c00 !important;
+}
+.crayon-theme-abapblog .crayon-pre .crayon-ta {
+	color: #d35a5a !important;
+}
+.crayon-theme-abapblog .crayon-pre .crayon-k {
+	color: #EFEDB0 !important;
+}
+.crayon-theme-abapblog .crayon-pre .crayon-st {
+	color: #EFEDB0 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-abapblog .crayon-pre .crayon-r {
+	color: #CAE385 !important;
+	font-weight: bold !important;
+}
+.crayon-theme-abapblog .crayon-pre .crayon-t {
+	color: #ea787a !important;
+	font-weight: bold !important;
+}
+.crayon-theme-abapblog .crayon-pre .crayon-m {
+	color: #fbb27b !important;
+	font-weight: bold !important;
+}
+.crayon-theme-abapblog .crayon-pre .crayon-i {
+	color: #ffffbc !important;
+}
+.crayon-theme-abapblog .crayon-pre .crayon-e {
+	color: #D3C2A8 !important;
+}
+.crayon-theme-abapblog .crayon-pre .crayon-v {
+	color: #ffffbc !important;
+}
+.crayon-theme-abapblog .crayon-pre .crayon-cn {
+	color: #67B7CD !important;
+	font-weight: bold !important;
+}
+.crayon-theme-abapblog .crayon-pre .crayon-o {
+	color: #ffffff !important;
+}
+.crayon-theme-abapblog .crayon-pre .crayon-sy {
+	color: #c9d2d1 !important;
+}
+.crayon-theme-abapblog .crayon-pre .crayon-n {
+	color: #666 !important;
+	font-style: italic !important;
+}
+.crayon-theme-abapblog .crayon-pre .crayon-f {
+	color: #999999 !important;
+}
+.crayon-theme-abapblog .crayon-pre .crayon-h {
+	color: #006fe0 !important;
+}
+.crayon-theme-abapblog .crayon-pre {
+	color: #D3C2A8 !important;
+}

@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if gte IE 9]>
+<html class="ie" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html style="--mobile-menu-height: 807px; --search-header-margin-right: 163px;" class="hydrated" lang="en-US"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">.truste_caIcon_display {display: block !important;}</style><style type="text/css">.truste_cursor_pointer {cursor: pointer;}.truste_border_none {border: none;}</style><script type="text/javascript" async="async" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/s58649577239714.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="UTF-8"><style data-styles="">ds-badge,ds-notification-dot,ds-link,ds-button,ds-header-mobile-return-button,ds-search-input,ds-contextual-navigation-mobile-masthead,ds-contextual-navigation-profile,ds-contextual-navigation-country-selector,ds-contextual-navigation-submenu,ds-contextual-navigation-mobile-profile,ds-header-mobile-country-selector,ds-header-mobile-navigation,ds-contextual-navigation-submenu-list,ds-contextual-navigation,source-s3-contextual-navigation-demo,ds-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar" content="black">
+    <title>SAP BW Bridge: New Features in Q2 2022 | SAP Blogs</title>
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+
+    
+    
+    <!--[if lt IE 9]>
+    <script src="https://blogs.sap.com/wp-content/themes/sap-v3-neo/js/html5.min.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <script type="text/javascript" defer="defer" async="" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/privacy.js"></script><script type="text/javascript">!function(a,b){function c(a){var b,c="";for(b=0;b<=3;b++)c+=wa.charAt(a>>8*b+4&15)+wa.charAt(a>>8*b&15);return c}function d(a){var b,c=1+(a.length+8>>6),d=new Array(16*c);for(b=0;b<16*c;b++)d[b]=0;for(b=0;b<a.length;b++)d[b>>2]|=a.charCodeAt(b)<<b%4*8;return d[b>>2]|=128<<b%4*8,d[16*c-2]=8*a.length,d}function e(a,b){var c=(65535&a)+(65535&b);return(a>>16)+(b>>16)+(c>>16)<<16|65535&c}function f(a,b){return a<<b|a>>>32-b}function g(a,b,c,d,g,h){return e(f(e(e(b,a),e(d,h)),g),c)}function h(a,b,c,d,e,f,h){return g(b&c|~b&d,a,b,e,f,h)}function i(a,b,c,d,e,f,h){return g(b&d|c&~d,a,b,e,f,h)}function j(a,b,c,d,e,f,h){return g(b^c^d,a,b,e,f,h)}function k(a,b,c,d,e,f,h){return g(c^(b|~d),a,b,e,f,h)}function l(a){var b,f=d(a),g=1732584193,l=-271733879,m=-1732584194,n=271733878;for(b=0;b<f.length;b+=16){var o=g,p=l,q=m,r=n;g=h(g,l,m,n,f[b+0],7,-680876936),n=h(n,g,l,m,f[b+1],12,-389564586),m=h(m,n,g,l,f[b+2],17,606105819),l=h(l,m,n,g,f[b+3],22,-1044525330),g=h(g,l,m,n,f[b+4],7,-176418897),n=h(n,g,l,m,f[b+5],12,1200080426),m=h(m,n,g,l,f[b+6],17,-1473231341),l=h(l,m,n,g,f[b+7],22,-45705983),g=h(g,l,m,n,f[b+8],7,1770035416),n=h(n,g,l,m,f[b+9],12,-1958414417),m=h(m,n,g,l,f[b+10],17,-42063),l=h(l,m,n,g,f[b+11],22,-1990404162),g=h(g,l,m,n,f[b+12],7,1804603682),n=h(n,g,l,m,f[b+13],12,-40341101),m=h(m,n,g,l,f[b+14],17,-1502002290),l=h(l,m,n,g,f[b+15],22,1236535329),g=i(g,l,m,n,f[b+1],5,-165796510),n=i(n,g,l,m,f[b+6],9,-1069501632),m=i(m,n,g,l,f[b+11],14,643717713),l=i(l,m,n,g,f[b+0],20,-373897302),g=i(g,l,m,n,f[b+5],5,-701558691),n=i(n,g,l,m,f[b+10],9,38016083),m=i(m,n,g,l,f[b+15],14,-660478335),l=i(l,m,n,g,f[b+4],20,-405537848),g=i(g,l,m,n,f[b+9],5,568446438),n=i(n,g,l,m,f[b+14],9,-1019803690),m=i(m,n,g,l,f[b+3],14,-187363961),l=i(l,m,n,g,f[b+8],20,1163531501),g=i(g,l,m,n,f[b+13],5,-1444681467),n=i(n,g,l,m,f[b+2],9,-51403784),m=i(m,n,g,l,f[b+7],14,1735328473),l=i(l,m,n,g,f[b+12],20,-1926607734),g=j(g,l,m,n,f[b+5],4,-378558),n=j(n,g,l,m,f[b+8],11,-2022574463),m=j(m,n,g,l,f[b+11],16,1839030562),l=j(l,m,n,g,f[b+14],23,-35309556),g=j(g,l,m,n,f[b+1],4,-1530992060),n=j(n,g,l,m,f[b+4],11,1272893353),m=j(m,n,g,l,f[b+7],16,-155497632),l=j(l,m,n,g,f[b+10],23,-1094730640),g=j(g,l,m,n,f[b+13],4,681279174),n=j(n,g,l,m,f[b+0],11,-358537222),m=j(m,n,g,l,f[b+3],16,-722521979),l=j(l,m,n,g,f[b+6],23,76029189),g=j(g,l,m,n,f[b+9],4,-640364487),n=j(n,g,l,m,f[b+12],11,-421815835),m=j(m,n,g,l,f[b+15],16,530742520),l=j(l,m,n,g,f[b+2],23,-995338651),g=k(g,l,m,n,f[b+0],6,-198630844),n=k(n,g,l,m,f[b+7],10,1126891415),m=k(m,n,g,l,f[b+14],15,-1416354905),l=k(l,m,n,g,f[b+5],21,-57434055),g=k(g,l,m,n,f[b+12],6,1700485571),n=k(n,g,l,m,f[b+3],10,-1894986606),m=k(m,n,g,l,f[b+10],15,-1051523),l=k(l,m,n,g,f[b+1],21,-2054922799),g=k(g,l,m,n,f[b+8],6,1873313359),n=k(n,g,l,m,f[b+15],10,-30611744),m=k(m,n,g,l,f[b+6],15,-1560198380),l=k(l,m,n,g,f[b+13],21,1309151649),g=k(g,l,m,n,f[b+4],6,-145523070),n=k(n,g,l,m,f[b+11],10,-1120210379),m=k(m,n,g,l,f[b+2],15,718787259),l=k(l,m,n,g,f[b+9],21,-343485551),g=e(g,o),l=e(l,p),m=e(m,q),n=e(n,r)}return c(g)+c(l)+c(m)+c(n)}var m={};m.hash=function(a){a=a.utf8Encode();var b=[1518500249,1859775393,2400959708,3395469782];a+=String.fromCharCode(128);for(var c=a.length/4+2,d=Math.ceil(c/16),e=new Array(d),f=0;f<d;f++){e[f]=new Array(16);for(var g=0;g<16;g++)e[f][g]=a.charCodeAt(64*f+4*g)<<24|a.charCodeAt(64*f+4*g+1)<<16|a.charCodeAt(64*f+4*g+2)<<8|a.charCodeAt(64*f+4*g+3)}e[d-1][14]=8*(a.length-1)/Math.pow(2,32),e[d-1][14]=Math.floor(e[d-1][14]),e[d-1][15]=8*(a.length-1)&4294967295;var h,i,j,k,l,n=1732584193,o=4023233417,p=2562383102,q=271733878,r=3285377520,s=new Array(80);for(f=0;f<d;f++){for(var t=0;t<16;t++)s[t]=e[f][t];for(t=16;t<80;t++)s[t]=m.ROTL(s[t-3]^s[t-8]^s[t-14]^s[t-16],1);for(h=n,i=o,j=p,k=q,l=r,t=0;t<80;t++){var u=Math.floor(t/20),v=m.ROTL(h,5)+m.f(u,i,j,k)+l+b[u]+s[t]&4294967295;l=k,k=j,j=m.ROTL(i,30),i=h,h=v}n=n+h&4294967295,o=o+i&4294967295,p=p+j&4294967295,q=q+k&4294967295,r=r+l&4294967295}return m.toHexStr(n)+m.toHexStr(o)+m.toHexStr(p)+m.toHexStr(q)+m.toHexStr(r)},m.f=function(a,b,c,d){switch(a){case 0:return b&c^~b&d;case 1:return b^c^d;case 2:return b&c^b&d^c&d;case 3:return b^c^d}},m.ROTL=function(a,b){return a<<b|a>>>32-b},m.toHexStr=function(a){for(var b,c="",d=7;d>=0;d--)b=a>>>4*d&15,c+=b.toString(16);return c},void 0===String.prototype.utf8Encode&&(String.prototype.utf8Encode=function(){return unescape(encodeURIComponent(this))}),void 0===String.prototype.utf8Decode&&(String.prototype.utf8Decode=function(){try{return decodeURIComponent(escape(this))}catch(a){return this}});var n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,$,_,aa,ba,ca,da,ea,fa,ga,ha,ia,ja,ka,la,ma,na,oa,pa,qa,ra,sa,ta,ua,va,wa="0123456789abcdef",xa={},ya={};$=window._6si=window._6si||[],ha="",z=!1,A=!0,na=!1,va=!1,qa=1,pa="",window._storagePopulated=!1,n={},sa=!1,ta=!1,ua=!1,B={_VIDEO:"VIDEO",_FORM:"FORM",_DIV:"DIV",_A:"A",_BUTTON:"BUTTON",_INPUT:"INPUT",_OBJECT:"OBJECT",_SELECT:"SELECT",_TEXTAREA:"TEXTAREA"},da=[],ca="",ba={},y=[],q=[],la=[],ra="https:"===document.location.protocol,U=ra?"https://":"http://","undefined"!=typeof JSON&&null!==JSON||(S=p().createElement("script"),S.type="text/javascript",S.async=!0,S.src=U+"d1lm7kd3bd3yo9.cloudfront.net/json2.min.js",S.onload=function(){return window._6si.push(["clearQueue"])},T=p().getElementsByTagName("script")[0],T.parentNode.insertBefore(S,T)),ia=U+"b.6sc.co/img.gif",ja=63072e6,ea=null,fa=null,ga=144e5,ka=6048e5,xa={setToken:function(a){ha=a,xa.clearQueue.apply()},setEndpoint:function(a){ia=U+a+"/v1/beacon/img.gif"},disableCookies:function(a){ua=a},setEpsilonKey:function(a){pa="Token "+a},clearQueue:function(){var a,b,c;if(Q()){for(a=0,b=da.length;a<b;a++)c=da[a],xa.send.apply(this,c);return da=[]}},setPageAttributes:function(a){ba=a},setSessionTimeout:function(a){ga=a},enableCompanyDetails:function(a,b,c){na=a,c&&(qa=c),b&&(oa=b)},enableEventTracking:function(a,b){var c,d,e=[];if(z=a,a){for(c in B)B.hasOwnProperty(c)&&e.push(B[c]);if(b){for(d=0;d<b.length;d++){if(e.indexOf(b[d])<0)throw new Error("One or more of the event trackingattributes is incorrect");n[b[d]]=!0}B._FORM in n&&(n[B._INPUT]=!0,n[B._SELECT]=!0,n[B._TEXTAREA]=!0)}else for(d=0;d<e.length;d++)n[e[d]]=!0}},enableRetargeting:function(a){A=a},setCustomMetatags:function(a){y=a},setWhiteListFields:function(a){q=q.concat(a)},setBlacklistFields:function(){},setThirdPartyValues:function(a){var b,c,d="Third party value is in the wrongformat";for(c=0;c<a.length;c++){if(b=a[c],"[object Array]"!==Object.prototype.toString.call(b))throw new Error(d);if(!b[0]||!b[1])throw new Error(d);la.push(b)}},send:function(a,b){var c,d,e,f,g,h,i,j,k,l,m,n,q,r,t,u=N(),v=o();if(!sa){if(!Q())return void da.push([a,b]);l=E("_gd_svisitor"),k=L(),h=K(),g=J(),f=s(),t=P(),q=ma(b,ba),e=encodeURIComponent(JSON.stringify(q)),m=encodeURIComponent(JSON.stringify(v)),i=encodeURIComponent(JSON.stringify(u)),c=(+new Date).toString().substring(5),j=[ia,"?token=",ha,"&svisitor=",l,"&visitor=",k,"&session=",h,"&event=",a,"&q=",e,"&isIframe=",f,"&m=",m,"&cb=",c,"&r=",g,"&thirdParty=",i,"&pageURL=",t].join(""),ua&&(j+="&d=1"),!0===A&&null!==(r=Y())&&(j+="&an_uid="+r),d=new Image,d.src=j,n=p().getElementById(b.id),null===n||null===n.href&&null===n.length&&null===n.method&&null===n.elements||(d.onload=function(){V(n)},d.onerror=function(){V(n)})}},loadVisitorData:function(a,b){var c,d,e,f=window.localStorage;XMLHttpRequest&&a&&"withCredentials"in(c=new XMLHttpRequest)&&(c.onreadystatechange=function(){4===c.readyState&&200===c.status&&(f.setItem("_6senseCompanyDetails",c.response),window._storagePopulated=!0,void 0!==b&&b(c.response))},e=3===qa?"https://epsilon.6sense.com/v3/company/details":"https://epsilon.6sense.com/v1/company/details",c.open("GET",e,false),c.setRequestHeader("Authorization",pa),c.withCredentials=!0,d=E("_gd_svisitor"),d&&c.setRequestHeader("EpsilonCookie",d),c.send())},optOut:function(a){sa=a},loadAppNexusUID:function(){var a,b,c;XMLHttpRequest&&"withCredentials"in(a=new XMLHttpRequest)&&(a.onreadystatechange=function(){4===a.readyState&&(b=200===a.status?JSON.parse(a.response).uid:-1,X(b),this.push(["send","a_pageload",ba]))}.bind(this),c=ra?"https://secure.adnxs.com/getuidj":"http://ib.adnxs.com/getuidj",a.open("GET",c,!0),a.withCredentials=!0,a.send())}},ya={push:function(){var a,b,c,d,e;for(d=0,e=arguments.length;d<e;d++){c=arguments[d],a=c.shift();try{xa[a].apply(this,c)}catch(f){throw"non_object_property_call"===f.type?(b="Command could not be resolved.",new Error(b)):f}}},init:function(a){var b,c,d,e,f,g,h,i,j,k,l={};if(!a)for(_=0,aa=$.length;_<aa;_++)R=$[_],this.push(R);if(b=this,k=(new Date).getTime(),Z(function(){(new Date).getTime()-k<150&&!va&&(!0!==na||a||(va=!0,b.push(["loadVisitorData",pa,oa])))}),setTimeout(function(){va||!0!==na||a||(va=!0,b.push(["loadVisitorData",pa,oa]))},150),!0===z&&!ta){if(ta=!0,a||(!0===A&&null===Y()?this.push(["loadAppNexusUID"]):this.push(["send","a_pageload",ba])),b=this,null!==(c=p().querySelector("body"))&&(c.addEventListener("click",function(a){for(d=a||window.event,e=d.srcElement||d.target;e.parentNode&&"BODY"!==e.tagName;){if(n[e.tagName])return l={srcElement:e,type:d.type},void b.send(l);e=e.parentNode}},!1),n.hasOwnProperty(B._FORM)&&null!==(f=p().querySelectorAll("form"))))for(g=0;g<f.length;g++)f[g].addEventListener("submit",function(a){a?b.send(a):b.send(this)});if(n.hasOwnProperty(B._OBJECT)&&null!==(h=p().querySelectorAll("object")))for(i=0;i<h.length;i++)h[i].addEventListener("mousedown",function(a){b.send(a)},!1);n.hasOwnProperty(B._VIDEO)&&null!==(j=p().querySelector("body"))&&(j.addEventListener("play",function(a){b.send(a)},!0),j.addEventListener("pause",function(a){b.send(a)},!0),j.addEventListener("loadeddata",function(a){b.send(a)},!0))}},send:function(){var a,b,c,d,e,f,g,h,i,j=arguments[0];if(j&&void 0!==j.type){if(a=j.srcElement||j.target,"loadeddata"===j.type)return;c=a,b=c.getAttribute("id"),g=j.type}else b=j?j.getAttribute("id"):null,c=j||null,g="unknown";if(d="",e="send",c&&void 0!==c.length&&void 0!==c.method&&void 0!==c.elements)d=F(c);else if(c&&null!==C(c)&&"submit"===c.type)f=C(c),b=f.getAttribute("id"),d=M(f),g="submit";else if(c&&void 0!==c.href)d=c.href;else if(c&&void 0!==c.data)d=c.data;else if(c&&(void 0!==c.src||void 0!==c.controls))if(void 0===c.src||""===c.src)for(h=0;h<c.getElementsByTagName("source").length;h++)i=c.getElementsByTagName("source"),d+=i[h].src,h<c.getElementsByTagName("source").length-1&&(d+=",");else d=c.src;null===b&&(b=""),this.push([e,g,{event_id:b,event_value:d}])},enable:function(){var a;a=this,z||(window._6si.push(["optOut",!1]),window._6si.push(["enableEventTracking",!0]),a.init(!0))},disable:function(){var a;a=this,window._6si.push(["optOut",!0]),window._6si.push(["enableEventTracking",!1]),a.init(!0)}},W=function(a,b,c){var d,e;d=new Date,d.setTime(d.getTime()+c),e=encodeURIComponent(b),p().cookie=[a,"=",e,";expires=",d.toGMTString(),";path=/;secure;samesite=none"].join("")},E=function(a){var b,c;return c=new RegExp("(?:^|;)\s?"+a+"(.*?)(?:;|$)","i"),b=c.exec(p().cookie),null===b?null:decodeURIComponent(b[1].substring(1))},ma=function(a,b){var c;for(c in b)b.hasOwnProperty(c)&&(a[c]=b[c]);return a},J=function(){return ca=encodeURIComponent(p().referrer)},s=function(){return window.top!==window.self},O=function(){return(""+1e7+-1e3+-4e3+-8e3+-1e11).replace(/1|0/g,function(){return(0|16*Math.random()).toString(16)})},N=function(){var a,b,c,d={};for(a=0;a<la.length;a++)b=la[a],c=E(b[1]),d[b[0]]=c;return d},v=function(){return ea=O(),W("_gd_session",ea,ga),ea},w=function(){return fa=O(),W("_gd_visitor",fa,ja),fa},K=function(){return null===ea&&(ea=E("_gd_session")),null===ea&&(ea=v()),ea},L=function(){return null===fa&&(fa=E("_gd_visitor")),null===fa&&(fa=w()),fa},Q=function(){var a;return a="undefined"!=typeof JSON&&null!==JSON,a=a&&ha.length>0},G=function(){var a="",b=p().getElementsByTagName("title");return b.length>0&&(a=b[0].innerHTML),a},p=function(){try{if(!(x=parent.document))throw new Error("Unaccessible");return x}catch(a){return document}},H=function(a){var b,c;for(c=p().getElementsByTagName("meta"),b=0;b<c.length;){if(c[b].getAttribute("name")===a)return c[b].getAttribute("content");b++}return""},r=function(a){var b=/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+.([a-zA-Z])+([a-zA-Z])+/;return!!b.test(a)},t=function(a){if(/company|country|title|state|city|prov|job|role/.test(a.toLowerCase()))return!0},o=function(){var a,b,c={description:H("description"),keywords:H("keywords"),title:G()};for(a=0;a<y.length;a++)b=y[a].name,c[b]=H(b);return c},u=function(a){if("string"==typeof a){var b;if(t(a))return!0;for(b=0;b<q.length;b++)if(a.toLowerCase()===q[b].toLowerCase())return!0}return!1},C=function(a){for(var b=a.parentNode;"TABLE"!==b.tagName;){if(void 0===b.tagName)return null;if(null===(b=b.parentNode))return null}return b},F=function(a){var b,c,d,e,f,g,h,i,j,k,l;for(e=0,g=[];e<a.elements.length;){if(l=a.elements[e],b=encodeURIComponent(l.name),c=encodeURIComponent(l.id),d=encodeURIComponent(l.placeholder).split(" ").join(""),!b&&!c&&!d){if(h=l.parentNode,!((i=h.getAttribute("name"))||(h=h.parentNode,i=h.getAttribute("name")))){e++;continue}b=encodeURIComponent(l.id)||encodeURIComponent(l.tagName),b=i+"_"+b}j="radio"===l.type&&!l.checked,k="fieldset"===l.type||"fieldset"===(l.tagName||"").toLowerCase(),j||k?e++:(f=I(b||c||d,l),f.length>0&&g.push(f),e++)}return g.join("&")},I=function(a,b){var c,d,e,f="",g=b.type,h=b.tagName||"",i=r(b.value),j="hidden"===g,k="password"===g,n="fieldset"===h.toLowerCase(),o=!n&&!k&&!j&&(i||u(a));return!b||n||!n&&b.value.length>100?f:(o&&(i?(c=m.hash(b.value),d=a+"_emaildomain="+b.value.split("@")[1],e=a+"_MD5="+l(b.value)):c=b.value,c=D(c),c=encodeURIComponent(c),"button"!==b.type&&"submit"!==b.type&&(d?(f+=a+"_Hash="+c,f+="&"+e,f+="&"+d):f+=a+"="+c)),f)},M=function(a){var b,c,d,e,f;for(c=0,d="",f=a.querySelectorAll("input, select, button, textarea");c<f.length;)e=f[c],b=encodeURIComponent(e.name),"radio"!==e.type||e.checked?(d+=I(b,e),c++):c++;return d.indexOf("&",d.length-3)>=0&&(d=d.substring(0,d.lastIndexOf("&"))+""),d},D=function(a){var b,c,d;return d=new RegExp("\t","g"),b=new RegExp("\n","g"),c=new RegExp("\r","g"),a.replace(d,"").replace(b,"").replace(c,"")},V=function(a){return a},Z=function(a){var b;E("_gd_svisitor")||XMLHttpRequest&&"withCredentials"in(b=new XMLHttpRequest)&&(b.onreadystatechange=function(){var c,d=b.responseText;4===b.readyState&&200===b.status&&d.match("6suuid=")&&(c=d.split("=")[1],W("_gd_svisitor",c,ja),void 0!==a&&a())},ua?b.open("GET","//c.6sc.co/?d=1",!0):b.open("GET","//c.6sc.co/",!0),b.withCredentials=!0,b.send())},X=function(a){return W("_an_uid",a,ka),a},Y=function(){var a;return a=E("_an_uid"),-1!==[-1,"-1","",0,"0",void 0].indexOf(a)&&(a=null),a},P=function(){var a="";try{return a=encodeURIComponent(window.location.href)}catch(b){return a}},ya.init(),window._6si=ya,b.true=a}({},function(){return this}());</script><script type="module" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/cxs-designsystem.esm.js"></script><link rel="icon" type="image" href="https://static.community.services.sap/com-hdr/v9/235.56.32/shared-ui/1dx-assets/images/favicon.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.community.services.sap/com-hdr/v9/235.56.32/shared-ui/1dx-assets/images/favicon.ico"><link rel="apple-touch-icon" href="https://static.community.services.sap/com-hdr/v9/235.56.32/shared-ui/1dx-assets/images/apple-touch-icon.png"><meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="https://static.community.services.sap/">
+<link rel="dns-prefetch" href="https://assets.adobedtm.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="SAP Blogs » Feed" href="https://blogs.sap.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="SAP Blogs » Comments Feed" href="https://blogs.sap.com/comments/feed/">
+<meta name="type" content="Blog"><meta name="description" content="Next quarter, next shipment. The new release of the SAP Data Warehouse Cloud, SAP BW bridge has been shipped with SAP BTP ABAP Environment Release 2205 end of May 2022. The new release contains the following"><meta name="sm_tech_ids" content="73555000100800002141"><meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"><link rel="alternate" type="application/rss+xml" title="SAP Blogs » SAP BW Bridge: New Features in Q2 2022 Comments Feed" href="https://blogs.sap.com/2022/06/15/sap-bw-bridge-new-features-in-q2-2022/feed/">
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/blogs.sap.com\/res1dx-425\/wp-includes\/js\/wp-emoji-release.min.js"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script><script src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/wp-emoji-release.min.js" type="text/javascript" defer="defer"></script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="twentytwelve-fonts-css" href="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="twentytwelve-style-css" href="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/style.min.css" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentytwelve-ie-css'  href='https://blogs.sap.com/res1dx-425/wp-content/themes/sap-v3-neo/css/ie.css' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="designmate_styles-css" href="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/designmate.css" type="text/css" media="all">
+<link rel="stylesheet" id="designsystem_styles-css" href="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/main.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/style.min_002.css" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel="stylesheet" id="prism-css" href="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/prism.css" type="text/css" media="all">
+<link rel="stylesheet" id="sap_custom_link_css-css" href="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/sap-core-custom.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="sap_lightbox_gallery_css-css" href="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/lightbox-gallery.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="pt_style_css-css" href="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/pt_style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wordpress-popular-posts-css-css" href="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/wpp.css" type="text/css" media="all">
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/jquery.min_002.js" id="jquery-core-js"></script>
+<script type="text/javascript" id="jquery-core-js-after">
+if (jQuery !== undefined) {
+                jQuery(window).on("load", function(){
+                    var _wpWindowLoaded = document.createElement("div");
+                    _wpWindowLoaded.setAttribute("class", "hidden");
+                    _wpWindowLoaded.setAttribute("id", "wp_window_loaded");
+                    document.body.appendChild(_wpWindowLoaded);
+                });
+            }
+</script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/launch-f095fbc32a96.min.js" id="scn_adobe_dtm-js"></script><script src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/EX6821e36775114eea9177c6acf51552e9-libraryCode_source.min.js" async=""></script><script src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/AppMeasurement_Module_AudienceManagement.min.js" async=""></script>
+<script type="application/json" id="wpp-json">
+{"sampling_active":0,"sampling_rate":100,"ajax_url":"https:\/\/blogs.sap.com\/wp-json\/wordpress-popular-posts\/v1\/popular-posts","api_url":"https:\/\/blogs.sap.com\/wp-json\/wordpress-popular-posts","ID":1559894,"token":"9ccfd04b1a","lang":0,"debug":0}
+</script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/wpp.min.js" id="wpp-js-js"></script>
+<link rel="https://api.w.org/" href="https://blogs.sap.com/wp-json/"><link rel="alternate" type="application/json" href="https://blogs.sap.com/wp-json/wp/v2/posts/1559894"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blogs.sap.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blogs.sap.com/wp-includes/wlwmanifest.xml"> 
+
+<link rel="canonical" href="https://blogs.sap.com/2022/06/15/sap-bw-bridge-new-features-in-q2-2022/">
+<link rel="shortlink" href="https://blogs.sap.com/?p=1559894">
+<script type="text/javascript">var ajaxurl = "https://blogs.sap.com/wp-admin/admin-ajax.php";var likePostLabel = "Like";var unLikePostLabel = "Liked";var likeCommentLabel = "Like";var unLikeCommentLabel = "Liked";</script>            <style id="wpp-loading-animation-styles">@-webkit-keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}@keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}.wpp-widget-placeholder,.wpp-widget-block-placeholder{margin:0 auto;width:60px;height:3px;background:#dd3737;background:linear-gradient(90deg,#dd3737 0%,#571313 10%,#dd3737 100%);background-size:200% auto;border-radius:3px;-webkit-animation:bgslide 1s infinite linear;animation:bgslide 1s infinite linear}</style>
+                <!--[if IE ]>
+    <link rel="stylesheet" id="scn-ie-styles" href="https://blogs.sap.com/wp-content/themes/sap-v3-neo/css/ie.css"
+          type="text/css" media="all">
+    <link id="ids-popup-css" href="https://accounts.sap.com/universalui/shared/stylesheets/idsPopup.css"
+          rel="stylesheet"
+          type="text/css">
+    <![endif]-->
+
+
+<script src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/notice" async="" id="truste_0.9839103913980933"></script><script src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/RC0ebc20a4a74647aa83482613c9f385e7-source.min.js" async=""></script><link rel="stylesheet" type="text/css" id="u0" href="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/skin.min.css"><script charset="utf-8" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/11.49f0b3e462d2d1363ad2.chunk.js"></script><script src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/RCe2fb5c75a39242489fb7dc141ee245dc-source.min.js" async=""></script><script src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/RC62bcf6626c624e01ab6e3a1c5635901b-source.min.js" async=""></script></head>
+
+<body class="post-template-default single single-post postid-1559894 single-format-standard custom-font-enabled">
+
+
+<div class="page-wrapper">
+<b class="cn-accessibility"><a href="#main" tabindex="0" accesskey="S">Skip to Content</a></b>
+<div id="page" class="hfeed site">
+
+<header id="masthead" class="blogs-nav sap-header">
+    
+  <div class="ds-community-header">
+    <ds-contextual-navigation main-links="[{&quot;title&quot;:&quot;Topics&quot;,&quot;url&quot;:&quot;https://community.sap.com/topics&quot;,&quot;subMenuRows&quot;:[]},{&quot;title&quot;:&quot;Groups&quot;,&quot;url&quot;:&quot;https://groups.community.sap.com&quot;,&quot;subMenuRows&quot;:[{&quot;subMenuLinkItems&quot;:[{&quot;category&quot;:&quot;&quot;,&quot;url&quot;:&quot;&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;All Groups&quot;,&quot;url&quot;:&quot;https://groups.community.sap.com/&quot;,&quot;externalLink&quot;:true},{&quot;title&quot;:&quot;Application Development&quot;,&quot;url&quot;:&quot;https://groups.community.sap.com/t5/application-development/gh-p/application-development&quot;,&quot;externalLink&quot;:true},{&quot;title&quot;:&quot;Coffee Corner&quot;,&quot;url&quot;:&quot;https://groups.community.sap.com/t5/coffee-corner/gh-p/Coffee-Corner&quot;,&quot;externalLink&quot;:true},{&quot;title&quot;:&quot;Enterprise Architecture&quot;,&quot;url&quot;:&quot;https://groups.community.sap.com/t5/enterprise-architecture/gh-p/Enterprise-Architecture&quot;,&quot;externalLink&quot;:true},{&quot;title&quot;:&quot;SAP BTP Learning&quot;,&quot;url&quot;:&quot;https://groups.community.sap.com/t5/sap-btp-learning/gh-p/SAP-BTP-Learning&quot;,&quot;externalLink&quot;:true},{&quot;title&quot;:&quot;SAP TechEd&quot;,&quot;url&quot;:&quot;https://groups.community.sap.com/t5/sap-teched/gh-p/SAP-TechEd-Group&quot;,&quot;externalLink&quot;:true},{&quot;title&quot;:&quot;SAP Women in Tech&quot;,&quot;url&quot;:&quot;https://groups.community.sap.com/t5/sap-women-in-tech/gh-p/Women-in-Tech&quot;,&quot;externalLink&quot;:true},{&quot;title&quot;:&quot;Yerevan&quot;,&quot;url&quot;:&quot;https://groups.community.sap.com/t5/yerevan/gh-p/yerevan&quot;,&quot;externalLink&quot;:true},{&quot;title&quot;:&quot;Welcome Corner&quot;,&quot;url&quot;:&quot;https://groups.community.sap.com/t5/welcome-corner/gh-p/welcome-corner&quot;,&quot;externalLink&quot;:true}],&quot;displayItemsAsCategoryLink&quot;:false}]}]},{&quot;title&quot;:&quot;Answers&quot;,&quot;url&quot;:&quot;https://answers.sap.com&quot;,&quot;subMenuRows&quot;:[{&quot;subMenuLinkItems&quot;:[{&quot;category&quot;:&quot;&quot;,&quot;url&quot;:&quot;&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;All Questions&quot;,&quot;url&quot;:&quot;https://answers.sap.com&quot;,&quot;externalLink&quot;:false},{&quot;title&quot;:&quot;Ask a Question&quot;,&quot;url&quot;:&quot;https://answers.sap.com/questions/ask.html&quot;,&quot;externalLink&quot;:false},{&quot;title&quot;:&quot;How to Ask a Question&quot;,&quot;url&quot;:&quot;https://developers.sap.com/tutorials/community-qa.html&quot;,&quot;externalLink&quot;:true},{&quot;title&quot;:&quot;Using Tags&quot;,&quot;url&quot;:&quot;https://community.sap.com/resources/using-tags&quot;,&quot;externalLink&quot;:false},{&quot;title&quot;:&quot;All Tags&quot;,&quot;url&quot;:&quot;https://answers.sap.com/tags.html&quot;,&quot;externalLink&quot;:false}],&quot;displayItemsAsCategoryLink&quot;:false}]}]},{&quot;title&quot;:&quot;Blogs&quot;,&quot;url&quot;:&quot;https://blogs.sap.com&quot;,&quot;subMenuRows&quot;:[{&quot;subMenuLinkItems&quot;:[{&quot;category&quot;:&quot;&quot;,&quot;url&quot;:&quot;&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;All Blog Posts&quot;,&quot;url&quot;:&quot;https://blogs.sap.com&quot;,&quot;externalLink&quot;:false},{&quot;title&quot;:&quot;Write a Blog Post&quot;,&quot;url&quot;:&quot;https://blogs.sap.com/wp-admin/post-new.php&quot;,&quot;externalLink&quot;:false},{&quot;title&quot;:&quot;How to Write a Blog Post&quot;,&quot;url&quot;:&quot;https://community.sap.com/resources/blogging&quot;,&quot;externalLink&quot;:false},{&quot;title&quot;:&quot;Using Tags&quot;,&quot;url&quot;:&quot;https://community.sap.com/resources/using-tags&quot;,&quot;externalLink&quot;:false},{&quot;title&quot;:&quot;Using Categories&quot;,&quot;url&quot;:&quot;https://community.sap.com/resources/blogging#Using_categories&quot;,&quot;externalLink&quot;:false},{&quot;title&quot;:&quot;All Tags&quot;,&quot;url&quot;:&quot;https://blogs.sap.com/tags/&quot;,&quot;externalLink&quot;:false}],&quot;displayItemsAsCategoryLink&quot;:false}]}]},{&quot;title&quot;:&quot;Events&quot;,&quot;url&quot;:&quot;&quot;,&quot;subMenuRows&quot;:[{&quot;subMenuLinkItems&quot;:[{&quot;category&quot;:&quot;&quot;,&quot;url&quot;:&quot;&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;SAP Community&quot;,&quot;url&quot;:&quot;https://groups.community.sap.com/t5/sap-community/eb-p/community-events&quot;,&quot;externalLink&quot;:true},{&quot;title&quot;:&quot;SAP CodeJam&quot;,&quot;url&quot;:&quot;https://groups.community.sap.com/t5/sap-codejam/eb-p/codejam-events&quot;,&quot;externalLink&quot;:true},{&quot;title&quot;:&quot;SAP Community Calls&quot;,&quot;url&quot;:&quot;https://groups.community.sap.com/t5/sap-community-calls/eb-p/community-calls&quot;,&quot;externalLink&quot;:true},{&quot;title&quot;:&quot;SAP Inside Track&quot;,&quot;url&quot;:&quot;https://groups.community.sap.com/t5/sap-insidetrack/eb-p/insidetrack&quot;,&quot;externalLink&quot;:true},{&quot;title&quot;:&quot;SAP Stammtisch&quot;,&quot;url&quot;:&quot;https://groups.community.sap.com/t5/sap-stammtisch/eb-p/stammtisch&quot;,&quot;externalLink&quot;:true},{&quot;title&quot;:&quot;User Groups&quot;,&quot;url&quot;:&quot;https://groups.community.sap.com/t5/user-groups/eb-p/user-groups&quot;,&quot;externalLink&quot;:true},{&quot;title&quot;:&quot;All Events&quot;,&quot;url&quot;:&quot;https://groups.community.sap.com/t5/events/ct-p/events&quot;,&quot;externalLink&quot;:true}],&quot;displayItemsAsCategoryLink&quot;:false}]}]},{&quot;title&quot;:&quot;Programs&quot;,&quot;url&quot;:&quot;https://community.sap.com/programs&quot;,&quot;subMenuRows&quot;:[{&quot;subMenuLinkItems&quot;:[{&quot;category&quot;:&quot;&quot;,&quot;url&quot;:&quot;&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;Influencers&quot;,&quot;url&quot;:&quot;https://community.sap.com/programs/influencer-programs&quot;,&quot;externalLink&quot;:false},{&quot;title&quot;:&quot;Spotlight Interviews&quot;,&quot;url&quot;:&quot;https://community.sap.com/programs/spotlight-interviews&quot;,&quot;externalLink&quot;:false},{&quot;title&quot;:&quot;Community Live&quot;,&quot;url&quot;:&quot;https://community.sap.com/media&quot;,&quot;externalLink&quot;:false},{&quot;title&quot;:&quot;All Programs&quot;,&quot;url&quot;:&quot;https://community.sap.com/programs&quot;,&quot;externalLink&quot;:false}],&quot;displayItemsAsCategoryLink&quot;:false}]}]},{&quot;title&quot;:&quot;Resources&quot;,&quot;url&quot;:&quot;https://community.sap.com/resources&quot;,&quot;subMenuRows&quot;:[{&quot;subMenuLinkItems&quot;:[{&quot;category&quot;:&quot;&quot;,&quot;url&quot;:&quot;&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;Getting Started&quot;,&quot;url&quot;:&quot;https://developers.sap.com/tutorials/community-2022.html&quot;,&quot;externalLink&quot;:true},{&quot;title&quot;:&quot;Community Tutorials&quot;,&quot;url&quot;:&quot;https://community.sap.com/resources/tutorials&quot;,&quot;externalLink&quot;:false},{&quot;title&quot;:&quot;Community Videos&quot;,&quot;url&quot;:&quot;https://community.sap.com/resources/tip-in-a-minute#Videos&quot;,&quot;externalLink&quot;:false},{&quot;title&quot;:&quot;Community Voice Newsletter&quot;,&quot;url&quot;:&quot;https://community.sap.com/voice-nl&quot;,&quot;externalLink&quot;:false},{&quot;title&quot;:&quot;Reputation&quot;,&quot;url&quot;:&quot;https://community.sap.com/resources/reputation&quot;,&quot;externalLink&quot;:false},{&quot;title&quot;:&quot;Missions &amp; Badges&quot;,&quot;url&quot;:&quot;https://community.sap.com/resources/missions-badges&quot;,&quot;externalLink&quot;:false},{&quot;title&quot;:&quot;Moderation&quot;,&quot;url&quot;:&quot;https://community.sap.com/resources/moderation&quot;,&quot;externalLink&quot;:false},{&quot;title&quot;:&quot;Rules of Engagement&quot;,&quot;url&quot;:&quot;https://community.sap.com/resources/rules-of-engagement&quot;,&quot;externalLink&quot;:false},{&quot;title&quot;:&quot;All Resources&quot;,&quot;url&quot;:&quot;https://community.sap.com/resources&quot;,&quot;externalLink&quot;:false}],&quot;displayItemsAsCategoryLink&quot;:false}]}]},{&quot;title&quot;:&quot;What's New&quot;,&quot;url&quot;:&quot;https://community.sap.com/resources/what-is-new&quot;,&quot;subMenuRows&quot;:[]}]" explore-sap-link="{&quot;title&quot;:&quot;Explore SAP&quot;,&quot;subMenuRows&quot;:[{&quot;subMenuLinkItems&quot;:[{&quot;category&quot;:&quot;Products&quot;,&quot;url&quot;:&quot;https://www.sap.com/products.html&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;Enterprise Resource Planning&quot;,&quot;url&quot;:&quot;https://www.sap.com/products/erp.html&quot;},{&quot;title&quot;:&quot;Financial Management&quot;,&quot;url&quot;:&quot;https://www.sap.com/products/financial-management.html&quot;},{&quot;title&quot;:&quot;CRM and Customer Experience&quot;,&quot;url&quot;:&quot;https://www.sap.com/products/crm.html&quot;},{&quot;title&quot;:&quot;Human Capital Management&quot;,&quot;url&quot;:&quot;https://www.sap.com/products/hcm.html&quot;},{&quot;title&quot;:&quot;Supply Chain Management&quot;,&quot;url&quot;:&quot;https://www.sap.com/products/scm.html&quot;},{&quot;title&quot;:&quot;Spend Management&quot;,&quot;url&quot;:&quot;https://www.sap.com/products/spend-management.html&quot;},{&quot;title&quot;:&quot;Business Technology Platform&quot;,&quot;url&quot;:&quot;https://www.sap.com/products/technology-platform.html&quot;},{&quot;title&quot;:&quot;Small and Midsize Enterprises&quot;,&quot;url&quot;:&quot;https://www.sap.com/products/sme-business-software.html&quot;},{&quot;title&quot;:&quot;View products A-Z&quot;,&quot;url&quot;:&quot;https://www.sap.com/products/a-z.html&quot;},{&quot;title&quot;:&quot;View products by Industry&quot;,&quot;url&quot;:&quot;https://www.sap.com/industries.html&quot;},{&quot;title&quot;:&quot;-&quot;,&quot;url&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Trials and Demos&quot;,&quot;url&quot;:&quot;https://www.sap.com/products/free-trials.html&quot;},{&quot;title&quot;:&quot;-&quot;,&quot;url&quot;:&quot;&quot;},{&quot;title&quot;:&quot;Services&quot;,&quot;url&quot;:&quot;https://www.sap.com/services-support.html&quot;}],&quot;displayItemsAsCategoryLink&quot;:false},{&quot;category&quot;:&quot;Learning and Support&quot;,&quot;url&quot;:&quot;&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;Learning and Certification&quot;,&quot;url&quot;:&quot;https://learning.sap.com&quot;},{&quot;title&quot;:&quot;Support&quot;,&quot;url&quot;:&quot;https://support.sap.com&quot;},{&quot;title&quot;:&quot;Documentation&quot;,&quot;url&quot;:&quot;https://help.sap.com&quot;},{&quot;title&quot;:&quot;Community&quot;,&quot;url&quot;:&quot;https://community.sap.com/&quot;}],&quot;displayItemsAsCategoryLink&quot;:false},{&quot;category&quot;:&quot;About&quot;,&quot;url&quot;:&quot;&quot;,&quot;items&quot;:[{&quot;title&quot;:&quot;Company Information&quot;,&quot;url&quot;:&quot;https://www.sap.com/about/company.html&quot;},{&quot;title&quot;:&quot;News Center&quot;,&quot;url&quot;:&quot;https://news.sap.com/&quot;},{&quot;title&quot;:&quot;Careers&quot;,&quot;url&quot;:&quot;https://www.sap.com/about/careers.html&quot;},{&quot;title&quot;:&quot;Customer Stories&quot;,&quot;url&quot;:&quot;https://www.sap.com/about/customer-stories.html&quot;},{&quot;title&quot;:&quot;Events&quot;,&quot;url&quot;:&quot;https://www.sap.com/about/events.html&quot;},{&quot;title&quot;:&quot;Investor Relations&quot;,&quot;url&quot;:&quot;https://www.sap.com/investors/en.html&quot;}],&quot;displayItemsAsCategoryLink&quot;:false}]}],&quot;displayTitle&quot;:&quot;Explore all areas of SAP&quot;}" landing-zone="{&quot;title&quot;:&quot;Community&quot;,&quot;url&quot;:&quot;https://community.sap.com/&quot;}" profile="{&quot;accountManagementUrl&quot;:&quot;https://people.sap.com&quot;,&quot;links&quot;:[{&quot;title&quot;:&quot;Ask a Question&quot;,&quot;url&quot;:&quot;https://answers.sap.com/questions/ask.html&quot;},{&quot;title&quot;:&quot;Write a Blog Post&quot;,&quot;url&quot;:&quot;https://blogs.sap.com/wp-admin/post-new.php&quot;},{&quot;title&quot;:&quot;Activity Stream&quot;,&quot;url&quot;:&quot;https://activities.sap.com&quot;},{&quot;title&quot;:&quot;Send a Message&quot;,&quot;url&quot;:&quot;https://messages.sap.com&quot;},{&quot;title&quot;:&quot;Inbox&quot;,&quot;url&quot;:&quot;https://people.sap.com/inbox&quot;}]}" search-config="{&quot;disabled&quot;:false,&quot;url&quot;:&quot;https://community.sap.com/search/&quot;,&quot;placeholder&quot;:&quot;Search the SAP Community&quot;,&quot;inputName&quot;:&quot;q&quot;,&quot;queryParameters&quot;:{&quot;ct&quot;:&quot;all&quot;,&quot;searchReferrer&quot;:&quot;contextual_navigation_development&quot;}}" on-country-selected="country =&gt; alert(country)" country-selector-config="{&quot;enabled&quot;:false,&quot;searchDisabled&quot;:false,&quot;regions&quot;:[]}" hide-explore-sap-link="false" avatar-source-url="https://avatars.services.sap.com/images" class="hydrated"></ds-contextual-navigation>
+  </div><div class="announcements" role="menubar"></div><div class="dm-wrapper dm-subheader dm-subheader--wrapper  dm-user--unauthenticated "><div class="dm-grid"><div class="dm-breadcrumb dm-user--unauthenticated" role="menubar">
+    <ul class="dm-breadcrumb-nav" role="navigation" aria-label="breadcrumb navigation to trace the path back to original landing point">
+        
+        <li><a id="comm-shdr-breadcrumb-home" href="https://www.sap.com/" title="Home">Home</a></li>
+        
+        <li><a id="comm-shdr-breadcrumb-community" href="https://community.sap.com/" title="Community">Community</a></li>
+        
+    <li><a href="https://blogs.sap.com/" title="Blogs">Blogs</a></li></ul>
+    <ul class="dm-breadcrumb-actions" role="menu">
+        
+        <li><a id="comm-shdr-AskQuestion" href="https://answers.sap.com/questions/ask.html" title="Ask a Question">Ask a Question</a></li>
+        
+        <li><a id="comm-shdr-WriteBlogPost" href="https://blogs.sap.com/wp-admin/post-new.php" title="Write a Blog Post">Write a Blog Post</a></li>
+        
+        <li class="dm-user__login-button--wrapper"><a class="dm-button-small dm-button--primary" role="button" rel="IDS_login" aria-label="Login or Sign up. Click here to log in or sign up" href="https://blogs.sap.com/wp-login.php?redirect_to=%2F2022%2F06%2F15%2Fsap-bw-bridge-new-features-in-q2-2022%2F"><span class="dm-button-text">Login / Sign-up</span></a></li>
+        <li class="dm-breadcrumb-actions__dropdown">
+            <span id="comm-shdr-actions-opener" class="dm-breadcrumb-actions__dropdown-toggle" title="Community actions">
+                 <span class="dm-icon-encoded dm-icon-encoded--3dots"></span>
+            </span>
+            <ul id="comm-shdr-user-actions-ul" class="dm-breadcrumb-actions__dropdown-menu dm_actions--populated" role="menu"><li id="comm-shdr-SendMessage"><a href="https://messages.sap.com/" title="Send a Message">Send a Message</a></li><li id="comm-shdr-ManageBlogPosts"><a href="https://blogs.sap.com/wp-admin/edit.php?post_type=post&amp;author=currentUser" title="Manage My Blog Posts">Manage My Blog Posts</a></li><li id="comm-shdr-GetStarted"><a href="https://community.sap.com/resources/getting-started" title="Quick Start Guide">Quick Start Guide</a></li></ul>
+        </li>
+    </ul>
+</div>
+</div></div>    <!-- #site-navigation -->
+
+</header>
+
+<!-- #masthead -->
+<div id="main" tabindex="0" class="wrapper">
+
+
+
+
+<div class="ds-blog-post-detail">
+<div class="ds-flexGrid">
+  <div class="ds-flexRow">
+    <div class="ds-flexCol">
+            <div class="ds-content-wrapper ds-blog-post__content-wrapper">
+        <h6 class="ds-heading ds-heading--xs ds-blog-post__sub-title"><span>Product Information</span></h6>
+        <div class="ds-flexRow">
+          <div class="ds-flexCol-sm-12 ds-flexCol-md-9">
+            
+<div class="ds-blog-post__body-wrapper">
+  <div class="ds-blog-post__content">
+    <div class="ds-blog-post__header-wrapper">
+      <a target="_blank" rel="noopener noreferrer" href="https://people.sap.com/klaus-peter.sauer4" class="ds-blog-post__avatar ">
+        <img alt="Author's profile photo Klaus-Peter Sauer" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/klaus-peter.sauer4.png" class="avatar avatar-48 photo avatar-default ds-avatar-component ds-avatar-component--small" width="48" height="48">      </a>
+      <div class="ds-blog-post__author-info-wrapper">
+        <div class="ds-user ds-blog-post__author">
+          <a class="ds-link ds-user__name " href="https://people.sap.com/klaus-peter.sauer4" target="_blank" title="Klaus-Peter Sauer" aria-label="" rel="noopener noreferrer">Klaus-Peter Sauer</a>
+          <div class="ds-user__roles"><i class="ds-user__role ds-user__role--employee" title="This user is an SAP Employee" data-role-name="SAP Employee"></i></div>        </div>
+        <div class="ds-blog-post__meta-info">
+          <span class="ds-blog-post__date">June 15, 2022</span>
+          <span class="ds-blog-post__read-duration">4 minute read</span>
+        </div>
+      </div>
+    </div>
+    <h1 class="ds-heading ds-heading--m ds-blog-post__title">SAP BW Bridge: New Features in Q2 2022</h1>
+    <div class="ds-blog-post__social-stats-wrapper">
+      <div class="ds-social-stats ">
+        <span class="ds-social-stats__stat">
+          <i class="ds-icon ds-icon--comments"></i>10        </span>
+        <span id="post-likes-counter" class="ds-social-stats__stat">
+          <i class="ds-icon ds-icon--likes-outline"></i>13        </span>
+        <span class="ds-social-stats__stat">
+          <i class="ds-icon ds-icon--views"></i>1,590        </span>
+      </div>
+          </div>
+    <div class="ds-blog-post__body ds-editor-content">
+      <p style="overflow: hidden;margin-bottom: 0px"><img class="aligncenter ds-lightbox__img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_01_BWB_2.png" alt="" data-index="1" data-id="plbox-1559894"></p>
+<p>Next quarter, next shipment. The new release of the <em>SAP Data Warehouse Cloud, SAP BW bridge</em> has been shipped with SAP BTP ABAP Environment Release 2205 end of May 2022.</p>
+<p>The new release contains the following main features:</p>
+<ul>
+<li><a href="#remote">Remote Conversion</a></li>
+<li><a href="#customprocess">New Custom Process Type </a></li>
+<li><a href="#massactivation">Mass Activation of Inactive Objects </a></li>
+<li><a href="#dtpenhance">DTP Monitor Enhancement </a></li>
+<li><a href="#schedule">Scheduling Process Chains </a></li>
+</ul>
+<p>In addition, to the new features there is a <a href="https://help.sap.com/docs/SAP_DATA_WAREHOUSE_CLOUD/ecce5bb08ae24ed089497fc00c2320d8/21ab1e7bfece4d22a3e58c296abd4340.html" target="_blank">troubleshooting guide</a>
+ available now in the online documentation. It explains how to identify 
+and solve configuration issues in the connectivity of on-premise source 
+systems to SAP BW bridge.</p>
+<p>&nbsp;</p>
+<h3><a name="remote"></a>Transfer Tool for Remote conversion</h3>
+<p>Transferring data models from SAP BW or SAP BW/4HANA to SAP BW bridge via the <em>Shell Conversion</em>
+ was already possible since the February release of SAP BW bridge. It 
+can be used to transfer metadata such as DataStore objects, InfoObjects,
+ transformations, DTPs, and process chains.&nbsp;The remote conversion 
+now adds the option to also <strong>include data</strong> in the conversion process.</p>
+<p>The <em>Remote Conversion</em> is available for SAP BW 7.3x, 7.40, and 7.50.</p>
+<p style="overflow: hidden;margin-bottom: 0px"><img class="aligncenter ds-lightbox__img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_02_Remote-Conversion.png" alt="Task%20List%20Remote%20Conversion" data-index="2" data-id="plbox-1559894"></p>
+<p class="image_caption" style="text-align: center;font-style: italic">Task List Remote Conversion</p>
+<p>More information:</p>
+<ul>
+<li><a href="https://launchpad.support.sap.com/#/notes/3141688" target="_blank">SAP Note 3141688</a></li>
+<li>Blog: <a href="https://blogs.sap.com/2022/04/25/conversion-to-sap-data-warehouse-cloud-conversion-paths-and-cloud-transformation-steps/">Conversion to SAP Data Warehouse Cloud: Conversion Paths and Cloud Transformation Steps</a></li>
+<li>More information about the <a href="https://help.sap.com/docs/SAP_BW_BRIDGE/b3701cd3826440618ef938d74dc93c51/05bd5c405894403588a1f1ee8afd8e99.html" target="_blank">Remote Conversion</a> on the SAP Help Portal</li>
+</ul>
+<p>&nbsp;</p>
+<h3><a name="customprocess"></a>Custom Process Type in Process Chains</h3>
+<p>Custom process types empower users of SAP BW bridge to gain more 
+flexibility when designing process chains. You can implement a 
+simplified custom process type with execution method, status, messages, 
+and user interface.</p>
+<p>The <a href="https://help.sap.com/docs/SAP_BW_BRIDGE/107a6e8a38b74ede94c833ca3b7b6f51/28d42e503f9b4472a8052da75412f6d4.html" target="_blank">procedure in SAP Help describes the implementation of a custom process type</a> in the SAP BW Modeling Tools and the declaration in the SAP BW Bridge Cockpit.</p>
+<p style="overflow: hidden;margin-bottom: 0px"><img class="aligncenter ds-lightbox__img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_03_Custom-Process-Type.png" alt="Definition%20of%20Custom%20Process%20Type%20in%20SAP%20BW%20Bridge%20Cockpit" data-index="3" data-id="plbox-1559894"></p>
+<p class="image_caption" style="text-align: center;font-style: italic">Definition of Custom Process Type in SAP BW Bridge Cockpit</p>
+<p style="overflow: hidden;margin-bottom: 0px"><img class="aligncenter ds-lightbox__img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_04_Custom-Process-Type-in-PC.png" alt="Custom%20Process%20Type%20in%20Process%20Chain" data-index="4" data-id="plbox-1559894"></p>
+<p class="image_caption" style="text-align: center;font-style: italic">Custom Process Type in Process Chain</p>
+<p style="overflow: hidden;margin-bottom: 0px"><img class="aligncenter ds-lightbox__img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_05_Custom-Process-Type-UI.png" alt="UI%20of%20Custom%20Process%20Type" data-index="5" data-id="plbox-1559894"></p>
+<p class="image_caption" style="text-align: center;font-style: italic">UI of Custom Process Type</p>
+<p>For tenants that had been provisioned before release 2205, a manual 
+step is required to see the app ‘Custom Process Types’: Assign the 
+business catalog SAP_DW4_BC_CONFIG_PC to a business role of the user, 
+logoff from your tenant, and logon again.</p>
+<p>More information about the <a href="https://help.sap.com/docs/SAP_BW_BRIDGE/b3701cd3826440618ef938d74dc93c51/7e989df38f6b441e8d44cf6ff0871ff0.html" target="_blank">Custom Process Types</a> on the SAP Help Portal.</p>
+<p>&nbsp;</p>
+<h3><a name="massactivation"></a>Mass Activation of Inactive Objects</h3>
+<p>In the SAP BW Modeling Tools, you can activate many inactive objects 
+all at the same time without having to perform individual activation 
+steps. The activation is done in the new <em>Mass Activation </em>view. It is recommended to perform the activation in background.</p>
+<p>The following objects are supported:</p>
+<ul>
+<li>InfoObjects</li>
+<li>DataStore objects</li>
+<li>CompositeProviders</li>
+<li>Transformations</li>
+<li>Data Transfer Processes</li>
+</ul>
+<p style="overflow: hidden;margin-bottom: 0px"><img class="aligncenter ds-lightbox__img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_06-1_Monitoring-Backend-Activation.png" alt="Mass%20Activation%20of%20Inactive%20Objects%20in%20Background" data-index="6" data-id="plbox-1559894"></p>
+<p class="image_caption" style="text-align: center;font-style: italic">Mass Activation of Inactive Objects in Background</p>
+<p style="overflow: hidden;margin-bottom: 0px"><img class="aligncenter ds-lightbox__img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_06-2_Monitoring-Backend-Activation.png" alt="Monitoring%20of%20BW%20Job%20for%20Activation%20in%20Background" data-index="7" data-id="plbox-1559894"></p>
+<p class="image_caption" style="text-align: center;font-style: italic">Monitoring of BW Job for Activation in Background</p>
+<p>&nbsp;</p>
+<h3>Simulating DTPs in the SAP BW Modeling Tools</h3>
+<p>Simulating the data update and debugging a DTP request help you to 
+analyze an incorrect DTP request. You can also simulate a transformation
+ prior to the actual data transfer if you want to check whether it 
+provides the desired results. This is now possible by the new <em>Simulate in Job</em> feature in the SAP BW Modeling Tools.</p>
+<p style="overflow: hidden;margin-bottom: 0px"><img class="aligncenter ds-lightbox__img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_07_DTP-Simulation.png" alt="DTP%20Simulation%20in%20Job" data-index="8" data-id="plbox-1559894"></p>
+<p class="image_caption" style="text-align: center;font-style: italic">DTP Simulation in Job</p>
+<p>For DTPs with ABAP execution, you can fill temporary storage after selected steps in the <em>Runtime Properties</em> of the DTP, e.g., after extraction or transformation, and show the data in the simulated request.</p>
+<p>By setting a breakpoint in the “active” class (with class name ending with _A), you can also debug ABAP and AMDP routines.</p>
+<p style="overflow: hidden;margin-bottom: 0px"><img class="aligncenter ds-lightbox__img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_08_Debugging-Start-Routines-in-BWMT.png" alt="Debugging%20a%20Start%20Routine%20in%20the%20SAP%20BW%20Modeling%20Tools" data-index="9" data-id="plbox-1559894"></p>
+<p class="image_caption" style="text-align: center;font-style: italic">Debugging a Start Routine in the SAP BW Modeling Tools</p>
+<p>&nbsp;</p>
+<h3><a name="dtpenhance"></a>DTP Monitor – Display Red Data Packages Only</h3>
+<p>The Request Monitor for a request in the data transfer process 
+displays detailed information about the processing of the request. From 
+the <em>Details</em> column, you have new navigation options:</p>
+<p>If the request contains any red packages, a new feature <em>Display Red Data Packages Only </em>allows you to restrict the display to these packages. If you choose <em>More</em>, the system allows you to display all data packages from the request again.</p>
+<p style="overflow: hidden;margin-bottom: 0px"><img class="aligncenter ds-lightbox__img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_09_Toggle-Red-Packages.png" alt="Toggle%20from%20All%20Data%20Packages%20to%20Red%20Data%20Packages" data-index="10" data-id="plbox-1559894"></p>
+<p class="image_caption" style="text-align: center;font-style: italic">Toggle from All Data Packages to Red Data Packages</p>
+<p style="overflow: hidden;margin-bottom: 0px"><img class="aligncenter ds-lightbox__img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_10_Toggle-Red-Packages-to-all.png" alt="Toggle%20Back%20from%20Red%20Data%20Packages%20to%20All%20Data%20Packages" data-index="11" data-id="plbox-1559894"></p>
+<p class="image_caption" style="text-align: center;font-style: italic">Toggle Back from Red Data Packages to All Data Packages</p>
+<p>More information about <a href="https://help.sap.com/docs/SAP_BW_BRIDGE/b3701cd3826440618ef938d74dc93c51/11965da3103249338f519d139ac3a993.html?" target="_blank">Monitoring of Data Transfer Processes</a> on the SAP Help Portal.</p>
+<h3></h3>
+<h3><a name="schedule"></a>Scheduling Process Chains</h3>
+<p>In the <em>Process Chain Editor – Edit Chains</em> app, further actions are available to you:</p>
+<ul>
+<li>You can use the <em>Schedule</em> button to schedule the process 
+chain for execution in the background. Date/time- and workday-based 
+scheduling options are available. If necessary, you can use the <em>Unschedule</em> button to cancel this setting.</li>
+<li>You can use the <em>Execute</em> button to specify whether to execute the process chain synchronously or asynchronously.</li>
+</ul>
+<p style="overflow: hidden;margin-bottom: 0px"><img class="aligncenter ds-lightbox__img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_11_Worday-based-scheduling-of-PC.png" alt="Workday-based%20Scheduling%20of%20Process%20Chains" data-index="12" data-id="plbox-1559894"></p>
+<p class="image_caption" style="text-align: center;font-style: italic">Workday-based Scheduling of Process Chains</p>
+<p>More information about <a href="https://help.sap.com/docs/SAP_BW_BRIDGE/b3701cd3826440618ef938d74dc93c51/c372b0ab181d4ba88d0f8eac11d81a7a.html?" target="_blank">Creating Process Chains</a> and <a href="https://help.sap.com/docs/SAP_BW_BRIDGE/b3701cd3826440618ef938d74dc93c51/d430a3fa15324145821f0a7554a0ce75.html?" target="_blank">Scheduling or Unscheduling</a> of Process Chains on the SAP Help Portal.</p>
+<p>&nbsp;</p>
+<p>You will find more information about what is new or changed with SAP 
+BW bridge or SAP Data Warehouse Cloud&nbsp;in the sections on the SAP 
+Help Portal:</p>
+<ul>
+<li><a href="https://help.sap.com/docs/SAP_BW_BRIDGE/b3701cd3826440618ef938d74dc93c51/5955c30226eb4674b77ca2d04690b764.html?locale=en-US" target="_blank">What’s new in SAP Data Warehouse Cloud, SAP BW bridge</a></li>
+<li><a href="https://help.sap.com/viewer/5a2cf6cf78ee4f03bbd49714d79d8559/cloud/en-US" target="_blank">What’s New in SAP Data Warehouse Cloud</a></li>
+</ul>
+<p>If you are interested in additional information, see our <a href="https://community.sap.com/topics/data-warehouse-cloud/">SAP Data Warehouse Cloud Community</a>. On our Community you will find further product information, various subpages with more detailed information about <a href="https://community.sap.com/topics/data-warehouse-cloud/getting-started">Getting Started with SAP Data Warehouse Cloud</a>, <a href="https://community.sap.com/topics/data-warehouse-cloud/business-content">Business Content</a>, as well as content for <a href="https://community.sap.com/topics/data-warehouse-cloud/best-practices-troubleshooting">Best Practices &amp; Troubleshooting</a> and more.</p>
+    </div>
+  </div>
+  <div class="ds-blog-post__social-side-bar">
+    <div class="ds-sticky-on-scroll ">
+      <div class="ds-sticky-on-scroll__wrapper  ">
+        <div class="ds-sticky-on-scroll__content" style="width: 150px; min-width: 0px; position: fixed; top: 10px; left: 108.333px;">
+          <div class="ds-blog-post__social-actions">
+            <button class="sap-button-follow ds-button ds-button--primary ds-blog-post__social-action ds-blog-post__social-action--follow" id="sap-button-follow-hdr-id" onclick="location.href='https://blogs.sap.com/wp-login.php?redirect_to=https%3A%2F%2Fblogs.sap.com%2F2022%2F06%2F15%2Fsap-bw-bridge-new-features-in-q2-2022%2F%3Fs_action%3Dss_change_follow_status%26nonce%3Df51d817e69'" rel="IDS_login" type="button" data-content-type="blogpost" data-content-id="1559894" data-nonce="f51d817e69" title="Please log into the system to use follow/unfollow functionality."><span class="ds-button-text">Follow</span></button>            <button type="button" class="ds-button ds-button--secondary ds-button--icon-button ds-blog-post__social-action likes-post-link dolike " rel="IDS_login" onclick="location.href='https://blogs.sap.com/wp-login.php?redirect_to=https%3A%2F%2Fblogs.sap.com%2F2022%2F06%2F15%2Fsap-bw-bridge-new-features-in-q2-2022%2F%3Fs_action%3Dss_change_like_status%26nonce%3D7e94cc8304'" title="Like" data-nonce="7e94cc8304" data-post-id="1559894"><i class="ds-icon ds-icon--likes-outline ds-icon--regular ds-m-r-xs" tabindex="-1"></i><span class="ds-button-text">Like</span></button>            <button type="button" class="ds-button ds-button--secondary ds-button--icon-button ds-blog-post__social-action" title="RSS Feed" onclick="location.href='https://blogs.sap.com/2022/06/15/sap-bw-bridge-new-features-in-q2-2022/feed/'">
+              <i class="ds-icon ds-icon--rss-feed ds-icon--regular ds-m-r-xs" tabindex="-1"></i>RSS Feed
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+            <div class="ds-blog-post__social-row">
+              <div class="ds-blog-post__social-icons">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblogs.sap.com%2F2022%2F06%2F15%2Fsap-bw-bridge-new-features-in-q2-2022%2F" title="Share on Facebook" target="_blank"><span class="ds-social-icon ds-social-icon--dark-facebook"></span></a><a href="https://twitter.com/share?url=https%3A%2F%2Fblogs.sap.com%2F2022%2F06%2F15%2Fsap-bw-bridge-new-features-in-q2-2022%2F&amp;text=SAP+BW+Bridge%3A+New+Features+in+Q2+2022" title="Share on Twitter" target="_blank"><span class="ds-social-icon ds-social-icon--dark-twitter"></span></a><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblogs.sap.com%2F2022%2F06%2F15%2Fsap-bw-bridge-new-features-in-q2-2022%2F&amp;title=SAP+BW+Bridge%3A+New+Features+in+Q2+2022" title="Share on LinkedIn" target="_blank"><span class="ds-social-icon ds-social-icon--dark-linkedin"></span></a>              </div>
+              <div class="ds-tooltip__wrapper">
+    <div class="ds-tooltip__anchor">
+    <button type="button" class="ds-button ds-button--secondary ds-blog-post__alert-moderator-button ds-button--disabled" aria-label="Alert Moderator" data-toggle="collapse" data-hide-class="ds-collapse" data-triggers=".alertModerator" aria-expanded="false">Alert Moderator
+    </button>
+    </div>
+    <div role="tooltip" class="ds-tooltip ds-tooltip--bottom">Alerting is not available for unauthorized users</div>
+</div>
+            </div>
+            
+  <div class="wprc-content-v3">
+    <div class="ds-blog-post-form ds-blog-post__alert-moderator-form ds-collapse alertModerator wprc-form-v3" data-toggle="collapseComponent" data-name="alertModerator">
+          </div>
+  </div>
+          </div>
+          <div class="ds-blog-post__right-side-bar ds-flexCol-sm-12 ds-flexCol-md-3">
+            <div id="sapassignedtagswidget-v3-2" class="ds-side-bar-widget ds-assigned-tags ds-m-b-l"><h3 class="ds-side-bar-widget__heading">Assigned Tags</h3><div class="ds-side-bar-widget__content"><ul class="ds-assigned-tags__tag-list"><li class="ds-assigned-tags__tag"><a class="ds-link ds-assigned-tags__tag-link" href="https://blogs.sap.com/tags/73555000100800002141/">SAP Data Warehouse Cloud</a></li><li class="ds-assigned-tags__tag"><a class="ds-link ds-assigned-tags__tag-link" href="https://blogs.sap.com/tag/remote-conversion/">Remote Conversion</a></li><li class="ds-assigned-tags__tag"><a class="ds-link ds-assigned-tags__tag-link" href="https://blogs.sap.com/tag/sap-bw-bridge/">SAP BW bridge</a></li><li class="ds-assigned-tags__tag"><a class="ds-link ds-assigned-tags__tag-link" href="https://blogs.sap.com/tag/sap-data-warehouse-cloud-sap-bw-bridge/">SAP Data Warehouse Cloud SAP BW Bridge</a></li></ul></div></div><div id="sap-relatedcontent-widget-v3-2" class="ds-side-bar-widget widget_sap-relatedcontent-widget-v3"><button type="button" class="ds-side-bar-widget__heading ds-side-bar-widget__heading--collapsible" aria-expanded="true">Similar Blog Posts<i class="ds-icon ds-icon--arrow-up ds-icon--big" tabindex="-1"></i></button><div class="ds-side-bar-widget__content"><ul class="ds-relatedContent ds-relatedContent__list" data-types="blogpost" data-limit="3"><li class="ds-relatedContent__item">
+                <a class="ds-link ds-link--blue ds-relatedContent__item-text" href="https://blogs.sap.com/?p=1577940" title="SAP Data Warehouse Cloud – Q2 News">SAP Data Warehouse Cloud – Q2 News</a>
+                <div class="ds-relatedContent__item-metadata">By
+                    <a target="_blank" class="ds-link ds-relatedContent__item-username" href="https://people.sap.com/klaus-peter.sauer4" title="">Klaus-Peter Sauer</a>Jul 18, 2022
+                </div>
+                </li><li class="ds-relatedContent__item">
+                <a class="ds-link ds-link--blue ds-relatedContent__item-text" href="https://blogs.sap.com/?p=1579948" title="What’s New Webinar: SAP Data Warehouse Cloud – Q2 Updates">What’s New Webinar: SAP Data Warehouse Cloud – Q2 Updates</a>
+                <div class="ds-relatedContent__item-metadata">By
+                    <a target="_blank" class="ds-link ds-relatedContent__item-username" href="https://people.sap.com/klaus-peter.sauer4" title="">Klaus-Peter Sauer</a>Jul 21, 2022
+                </div>
+                </li><li class="ds-relatedContent__item">
+                <a class="ds-link ds-link--blue ds-relatedContent__item-text" href="https://blogs.sap.com/?p=1571471" title="SAP Data Warehouse Cloud: New Features in Q2 2022">SAP Data Warehouse Cloud: New Features in Q2 2022</a>
+                <div class="ds-relatedContent__item-metadata">By
+                    <a target="_blank" class="ds-link ds-relatedContent__item-username" href="https://people.sap.com/tanja.wingerter" title="">Tanja Wingerter</a>Jul 11, 2022
+                </div>
+                </li></ul></div></div><div id="sap-relatedcontent-widget-v3-3" class="ds-side-bar-widget widget_sap-relatedcontent-widget-v3"><button type="button" class="ds-side-bar-widget__heading ds-side-bar-widget__heading--collapsible" aria-expanded="true">Related Questions<i class="ds-icon ds-icon--arrow-up ds-icon--big" tabindex="-1"></i></button><div class="ds-side-bar-widget__content"><ul class="ds-relatedContent ds-relatedContent__list" data-types="question" data-limit="3"><li class="ds-relatedContent__item">
+                <a class="ds-link ds-link--blue ds-relatedContent__item-text" href="https://answers.sap.com/questions/13438773/how-to-translate-dimension-description.html" title="How to translate dimension description">How to translate dimension description</a>
+                <div class="ds-relatedContent__item-metadata">By
+                    <a target="_blank" class="ds-link ds-relatedContent__item-username" href="https://people.sap.com/me74" title="">Anthony Sciascia</a>Jul 19, 2021
+                </div>
+                </li><li class="ds-relatedContent__item">
+                <a class="ds-link ds-link--blue ds-relatedContent__item-text" href="https://answers.sap.com/questions/12992114/sap-datawarehouse-cloud-and-bw4hana.html" title="SAP Datawarehouse cloud and BW4HANA">SAP Datawarehouse cloud and BW4HANA</a>
+                <div class="ds-relatedContent__item-metadata">By
+                    <a target="_blank" class="ds-link ds-relatedContent__item-username" href="https://people.sap.com/harjinder.saini" title="">S S</a>Feb 26, 2020
+                </div>
+                </li><li class="ds-relatedContent__item">
+                <a class="ds-link ds-link--blue ds-relatedContent__item-text" href="https://answers.sap.com/questions/13639549/sap-data-intelligence-roadmapvision-product-future.html" title="SAP Data Intelligence Roadmap/Vision/ Product Future">SAP Data Intelligence Roadmap/Vision/ Product Future</a>
+                <div class="ds-relatedContent__item-metadata">By
+                    <a target="_blank" class="ds-link ds-relatedContent__item-username" href="https://people.sap.com/juergen.wiebe" title="">Wiebe Jürgen</a>May 17, 2022
+                </div>
+                </li></ul></div></div>          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="content-lightbox-modal" aria-modal="true" aria-label="Lightbox gallery opened" role="dialog" tabindex="-1" class="ds-lightbox" data-id="plbox-1559894"><div class="ds-lightbox__box"><div class="ds-lightbox__slideNumber"><span class="ds-lightbox__slideNumber--current"></span>/<span class="ds-lightbox__slideNumber--total"></span></div><div class="ds-lightbox__header"><a href="javascript:void(0);" data-id="plbox-1559894" class="ds-lightbox__headerIcon ds-icon-encoded--close" aria-label="Close lightbox"></a></div><div class="ds-lightbox__content--scrollable ds-lightbox__content"><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_01_BWB_2.png" alt=""></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_02_Remote-Conversion.png" alt="Task%20List%20Remote%20Conversion"></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_03_Custom-Process-Type.png" alt="Definition%20of%20Custom%20Process%20Type%20in%20SAP%20BW%20Bridge%20Cockpit"></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_04_Custom-Process-Type-in-PC.png" alt="Custom%20Process%20Type%20in%20Process%20Chain"></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_05_Custom-Process-Type-UI.png" alt="UI%20of%20Custom%20Process%20Type"></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_06-1_Monitoring-Backend-Activation.png" alt="Mass%20Activation%20of%20Inactive%20Objects%20in%20Background"></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_06-2_Monitoring-Backend-Activation.png" alt="Monitoring%20of%20BW%20Job%20for%20Activation%20in%20Background"></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_07_DTP-Simulation.png" alt="DTP%20Simulation%20in%20Job"></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_08_Debugging-Start-Routines-in-BWMT.png" alt="Debugging%20a%20Start%20Routine%20in%20the%20SAP%20BW%20Modeling%20Tools"></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_09_Toggle-Red-Packages.png" alt="Toggle%20from%20All%20Data%20Packages%20to%20Red%20Data%20Packages"></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_10_Toggle-Red-Packages-to-all.png" alt="Toggle%20Back%20from%20Red%20Data%20Packages%20to%20All%20Data%20Packages"></div><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/2022-Q2_11_Worday-based-scheduling-of-PC.png" alt="Workday-based%20Scheduling%20of%20Process%20Chains"></div><a class="lightbox-gallery-button--prev ds-lightbox__gallery-button ds-icon ds-icon--arrow-left" href="javascript:void(0);" aria-label="Show previous image"></a><a class="ds-lightbox__gallery-button lightbox-gallery-button--next ds-icon ds-icon--arrow-right" href="javascript:void(0);" aria-label="Show next image"></a></div><div class="zoom-buttons"><a class="ds-lightbox__zoom-out" href="javascript:void(0);" aria-label="Enter to zoom out"><i class="ds-icon ds-icon--minus"></i></a><a class="ds-lightbox__zoom-in" href="javascript:void(0);" aria-label="Enter to zoom in"><i class="ds-icon ds-icon--plus"></i></a></div></div></div>
+  <div class="ds-blog-post__comment-section">
+    <div class="ds-flexGrid">
+      <div class="ds-flexRow">
+        <div class="ds-flexCol-12 ds-flexCol-md-10 ds-flexCol-lg-10">
+          
+<div id="comments" class="ds-blog-post-comments">
+  
+      <div class="ds-blog-post-comments__counter" title="Number of Comments">
+      10 Comments      </div>
+              <div class="dm-section dm-align-center dm-section-header__title" title="Please log on to comment" aria-role="alert">
+                You must be <a href="https://blogs.sap.com/wp-login.php?redirect_to=2022/06/15/sap-bw-bridge-new-features-in-q2-2022" class="opener js-idspopup" rel="IDS_login" title="Log On">Logged on</a> to comment or reply to a post.
+        </div>
+      
+    <div class="ds-blog-post-comments__list">
+              <div class="comment byuser comment-author-mathias_klare even thread-even depth-1 ds-blog-post-comment" id="li-comment-628011">
+        <div id="comment-628011" class="ds-blog-post-comment__wrapper">
+                    <div class="ds-blog-post-comment__header">
+              <a class="ds-blog-post-comment__avatar" target="_blank" rel="noopener noreferrer" href="https://people.sap.com/mathias_klare">
+                <img alt="Author's profile photo Mathias Klare-Dobberkow" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/mathias_klare_small.png" class="avatar avatar-48 photo avatar-default ds-avatar-component ds-avatar-component--small" width="48" height="48">              </a>
+              <div class="ds-blog-post-comment__meta-info">
+                <div class="ds-user ds-blog-post-comment__author">
+                  <a target="_blank" aria-label="Author name Mathias Klare-Dobberkow" href="https://people.sap.com/mathias_klare" rel="external nofollow" class="ds-link ds-user__name ">Mathias Klare-Dobberkow</a>                  </div>
+                <span class="ds-blog-post-comment__date"><time datetime="2022-06-21T08:57:10+00:00">June 21, 2022 at 8:57 am</time></span>
+              </div>
+            </div>
+
+            <div class="ds-blog-post-comment__body">
+              <div class="ds-blog-post-comment__content ds-editor-content">
+                <p>Hi Klaus,</p>
+<p>many thanks for the great update on the new feautures. However, I am 
+running into an issue creating a custom process type. I followed the 
+steps mentioned in the documentation, but I always get the following 
+error message when creating the new process type in the DWC cockpit:</p>
+<p style="overflow: hidden;margin-bottom: 0px"><img class="aligncenter ds-lightbox__img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/Error-process-type.png" alt="" data-index="1" data-id="clbox-628011"></p>
+<p>I doubled checked the ABAP class definition and implementation, the required interface is implemented.</p>
+<p>Best regards,<br>
+Mathias</p>
+              </div>
+
+            <div id="comment-actions-628011" class="comment-actions ds-blog-post-comment__actions">
+                <ul class="ds-content-actionbar ds-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="ds-content-actionbar__item"><span class="ds-link ds-button--link ds-content-actionbar__link ds-button--disabled"><div class="ds-button__inner-container " id="nbLikeComment_628011" tabindex="-1">Like 0</div></span></li><li class="ds-content-actionbar__item"><div class="ds-tooltip__wrapper"><div class="ds-tooltip__anchor"><a class="ds-link ds-button--link ds-content-actionbar__link" href="https://blogs.sap.com/2022/06/15/sap-bw-bridge-new-features-in-q2-2022/#comment-628011">Share</a></div><div role="tooltip" class="ds-tooltip ds-tooltip--bottom">Right click and copy the link to share this comment</div></div></li>                </ul>
+                <div class="ds-actionbar--forms"></div>
+            </div>
+          </div>
+        </div>
+        <div id="content-lightbox-modal--628011" aria-modal="true" aria-label="Lightbox gallery opened" role="dialog" tabindex="-1" class="ds-lightbox" data-id="clbox-628011"><div class="ds-lightbox__box"><div class="ds-lightbox__slideNumber"><span class="ds-lightbox__slideNumber--current"></span>/<span class="ds-lightbox__slideNumber--total"></span></div><div class="ds-lightbox__header"><a href="javascript:void(0);" data-id="clbox-628011" class="ds-lightbox__headerIcon ds-icon-encoded--close" aria-label="Close lightbox"></a></div><div class="ds-lightbox__content--scrollable ds-lightbox__content"><div class="ds-lightbox__slide"><img class="ds-lightbox__slide--img" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/Error-process-type.png" alt=""></div></div><div class="zoom-buttons"><a class="ds-lightbox__zoom-out" href="javascript:void(0);" aria-label="Enter to zoom out"><i class="ds-icon ds-icon--minus"></i></a><a class="ds-lightbox__zoom-in" href="javascript:void(0);" aria-label="Enter to zoom in"><i class="ds-icon ds-icon--plus"></i></a></div></div></div>    <div class="ds-blog-post-comment__comments">
+    <div class="comment byuser comment-author-dominikgraus odd alt depth-2 ds-blog-post-comment" id="li-comment-628088">
+        <div id="comment-628088" class="ds-blog-post-comment__wrapper">
+                    <div class="ds-blog-post-comment__header">
+              <a class="ds-blog-post-comment__avatar" target="_blank" rel="noopener noreferrer" href="https://people.sap.com/dominik.graus">
+                <img alt="Author's profile photo Dominik Graus" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/dominik.graus_small.png" class="avatar avatar-48 photo avatar-default ds-avatar-component ds-avatar-component--small" width="48" height="48">              </a>
+              <div class="ds-blog-post-comment__meta-info">
+                <div class="ds-user ds-blog-post-comment__author">
+                  <a target="_blank" aria-label="Author name Dominik Graus" href="https://people.sap.com/dominik.graus" rel="external nofollow" class="ds-link ds-user__name ">Dominik Graus</a>  <div class="ds-user__roles"><i class="ds-user__role ds-user__role--employee" title="This user is an SAP Employee" data-role-name="SAP Employee"></i></div>                </div>
+                <span class="ds-blog-post-comment__date"><time datetime="2022-06-21T15:47:19+00:00">June 21, 2022 at 3:47 pm</time></span>
+              </div>
+            </div>
+
+            <div class="ds-blog-post-comment__body">
+              <div class="ds-blog-post-comment__content ds-editor-content">
+                <p>Hi Mathias,</p>
+<p>Thanks for bringing this issue to our attention. Meanwhile, we have 
+identified the root cause. A fix is planned to be shipped to all SAP BW 
+bridge tenants in about 1-2 weeks.</p>
+<p>Regards,<br>
+Dominik</p>
+              </div>
+
+            <div id="comment-actions-628088" class="comment-actions ds-blog-post-comment__actions">
+                <ul class="ds-content-actionbar ds-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="ds-content-actionbar__item"><span class="ds-link ds-button--link ds-content-actionbar__link ds-button--disabled"><div class="ds-button__inner-container " id="nbLikeComment_628088" tabindex="-1">Like 1</div></span></li><li class="ds-content-actionbar__item"><div class="ds-tooltip__wrapper"><div class="ds-tooltip__anchor"><a class="ds-link ds-button--link ds-content-actionbar__link" href="https://blogs.sap.com/2022/06/15/sap-bw-bridge-new-features-in-q2-2022/#comment-628088">Share</a></div><div role="tooltip" class="ds-tooltip ds-tooltip--bottom">Right click and copy the link to share this comment</div></div></li>                </ul>
+                <div class="ds-actionbar--forms"></div>
+            </div>
+          </div>
+        </div>
+            </div><!-- #comment-## -->
+    <div class="comment byuser comment-author-dominikgraus even depth-2 ds-blog-post-comment" id="li-comment-629234">
+        <div id="comment-629234" class="ds-blog-post-comment__wrapper">
+                    <div class="ds-blog-post-comment__header">
+              <a class="ds-blog-post-comment__avatar" target="_blank" rel="noopener noreferrer" href="https://people.sap.com/dominik.graus">
+                <img alt="Author's profile photo Dominik Graus" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/dominik.graus_small.png" class="avatar avatar-48 photo avatar-default ds-avatar-component ds-avatar-component--small" width="48" height="48">              </a>
+              <div class="ds-blog-post-comment__meta-info">
+                <div class="ds-user ds-blog-post-comment__author">
+                  <a target="_blank" aria-label="Author name Dominik Graus" href="https://people.sap.com/dominik.graus" rel="external nofollow" class="ds-link ds-user__name ">Dominik Graus</a>  <div class="ds-user__roles"><i class="ds-user__role ds-user__role--employee" title="This user is an SAP Employee" data-role-name="SAP Employee"></i></div>                </div>
+                <span class="ds-blog-post-comment__date"><time datetime="2022-06-28T14:37:26+00:00">June 28, 2022 at 2:37 pm</time></span>
+              </div>
+            </div>
+
+            <div class="ds-blog-post-comment__body">
+              <div class="ds-blog-post-comment__content ds-editor-content">
+                <p>Hi Matthias,</p>
+<p>It is planned to push the fix to all SAP BW bridge tenants over the upcoming weekend, July 2nd/3rd.</p>
+<p>Regards,<br>
+Dominik</p>
+              </div>
+
+            <div id="comment-actions-629234" class="comment-actions ds-blog-post-comment__actions">
+                <ul class="ds-content-actionbar ds-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="ds-content-actionbar__item"><span class="ds-link ds-button--link ds-content-actionbar__link ds-button--disabled"><div class="ds-button__inner-container " id="nbLikeComment_629234" tabindex="-1">Like 0</div></span></li><li class="ds-content-actionbar__item"><div class="ds-tooltip__wrapper"><div class="ds-tooltip__anchor"><a class="ds-link ds-button--link ds-content-actionbar__link" href="https://blogs.sap.com/2022/06/15/sap-bw-bridge-new-features-in-q2-2022/#comment-629234">Share</a></div><div role="tooltip" class="ds-tooltip ds-tooltip--bottom">Right click and copy the link to share this comment</div></div></li>                </ul>
+                <div class="ds-actionbar--forms"></div>
+            </div>
+          </div>
+        </div>
+            <div class="ds-blog-post-comment__comments">
+    <div class="comment byuser comment-author-mathias_klare odd alt depth-3 ds-blog-post-comment" id="li-comment-629875">
+        <div id="comment-629875" class="ds-blog-post-comment__wrapper">
+                    <div class="ds-blog-post-comment__header">
+              <a class="ds-blog-post-comment__avatar" target="_blank" rel="noopener noreferrer" href="https://people.sap.com/mathias_klare">
+                <img alt="Author's profile photo Mathias Klare-Dobberkow" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/mathias_klare_small.png" class="avatar avatar-48 photo avatar-default ds-avatar-component ds-avatar-component--small" width="48" height="48">              </a>
+              <div class="ds-blog-post-comment__meta-info">
+                <div class="ds-user ds-blog-post-comment__author">
+                  <a target="_blank" aria-label="Author name Mathias Klare-Dobberkow" href="https://people.sap.com/mathias_klare" rel="external nofollow" class="ds-link ds-user__name ">Mathias Klare-Dobberkow</a>                  </div>
+                <span class="ds-blog-post-comment__date"><time datetime="2022-07-04T07:28:13+00:00">July 4, 2022 at 7:28 am</time></span>
+              </div>
+            </div>
+
+            <div class="ds-blog-post-comment__body">
+              <div class="ds-blog-post-comment__content ds-editor-content">
+                <p>Hi Dominik,</p>
+<p>thanks for your updates. The fix worked :).</p>
+<p>Best regards,<br>
+Mathias</p>
+              </div>
+
+            <div id="comment-actions-629875" class="comment-actions ds-blog-post-comment__actions">
+                <ul class="ds-content-actionbar ds-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="ds-content-actionbar__item"><span class="ds-link ds-button--link ds-content-actionbar__link ds-button--disabled"><div class="ds-button__inner-container " id="nbLikeComment_629875" tabindex="-1">Like 0</div></span></li><li class="ds-content-actionbar__item"><div class="ds-tooltip__wrapper"><div class="ds-tooltip__anchor"><a class="ds-link ds-button--link ds-content-actionbar__link" href="https://blogs.sap.com/2022/06/15/sap-bw-bridge-new-features-in-q2-2022/#comment-629875">Share</a></div><div role="tooltip" class="ds-tooltip ds-tooltip--bottom">Right click and copy the link to share this comment</div></div></li>                </ul>
+                <div class="ds-actionbar--forms"></div>
+            </div>
+          </div>
+        </div>
+            </div><!-- #comment-## -->
+</div><!-- .children -->
+</div><!-- #comment-## -->
+</div><!-- .children -->
+</div><!-- #comment-## -->
+    <div class="comment byuser comment-author-reyemsaibot even thread-odd thread-alt depth-1 ds-blog-post-comment" id="li-comment-628560">
+        <div id="comment-628560" class="ds-blog-post-comment__wrapper">
+                    <div class="ds-blog-post-comment__header">
+              <a class="ds-blog-post-comment__avatar" target="_blank" rel="noopener noreferrer" href="https://people.sap.com/reyemsaibot">
+                <img alt="Author's profile photo Tobias Meyer" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/reyemsaibot_small.png" class="avatar avatar-48 photo avatar-default ds-avatar-component ds-avatar-component--small" width="48" height="48">              </a>
+              <div class="ds-blog-post-comment__meta-info">
+                <div class="ds-user ds-blog-post-comment__author">
+                  <a target="_blank" aria-label="Author name Tobias Meyer" href="https://people.sap.com/reyemsaibot" rel="external nofollow" class="ds-link ds-user__name ">Tobias Meyer</a>                  </div>
+                <span class="ds-blog-post-comment__date"><time datetime="2022-06-24T06:31:56+00:00">June 24, 2022 at 6:31 am</time></span>
+              </div>
+            </div>
+
+            <div class="ds-blog-post-comment__body">
+              <div class="ds-blog-post-comment__content ds-editor-content">
+                <p>Thanks for the information. Will there be a step by 
+step guide for the remote conversion? The SAP Help has also no really 
+information what has to be done.</p>
+              </div>
+
+            <div id="comment-actions-628560" class="comment-actions ds-blog-post-comment__actions">
+                <ul class="ds-content-actionbar ds-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="ds-content-actionbar__item"><span class="ds-link ds-button--link ds-content-actionbar__link ds-button--disabled"><div class="ds-button__inner-container " id="nbLikeComment_628560" tabindex="-1">Like 0</div></span></li><li class="ds-content-actionbar__item"><div class="ds-tooltip__wrapper"><div class="ds-tooltip__anchor"><a class="ds-link ds-button--link ds-content-actionbar__link" href="https://blogs.sap.com/2022/06/15/sap-bw-bridge-new-features-in-q2-2022/#comment-628560">Share</a></div><div role="tooltip" class="ds-tooltip ds-tooltip--bottom">Right click and copy the link to share this comment</div></div></li>                </ul>
+                <div class="ds-actionbar--forms"></div>
+            </div>
+          </div>
+        </div>
+            </div><!-- #comment-## -->
+    <div class="comment byuser comment-author-klaus-petersauer4 bypostauthor odd alt thread-even depth-1 ds-blog-post-comment" id="li-comment-628571">
+        <div id="comment-628571" class="ds-blog-post-comment__wrapper">
+                    <div class="ds-blog-post-comment__header">
+              <a class="ds-blog-post-comment__avatar" target="_blank" rel="noopener noreferrer" href="https://people.sap.com/klaus-peter.sauer4">
+                <img alt="Author's profile photo Klaus-Peter Sauer" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/klaus-peter.sauer4_small.png" class="avatar avatar-48 photo avatar-default ds-avatar-component ds-avatar-component--small" width="48" height="48">              </a>
+              <div class="ds-blog-post-comment__meta-info">
+                <div class="ds-user ds-blog-post-comment__author">
+                  <a target="_blank" aria-label="Author name Klaus-Peter Sauer" href="https://people.sap.com/klaus-peter.sauer4" rel="external nofollow" class="ds-link ds-user__name ">Klaus-Peter Sauer</a> <div class="ds-user__note">Blog Post Author</div> <div class="ds-user__roles"><i class="ds-user__role ds-user__role--employee" title="This user is an SAP Employee" data-role-name="SAP Employee"></i></div>                </div>
+                <span class="ds-blog-post-comment__date"><time datetime="2022-06-24T07:28:38+00:00">June 24, 2022 at 7:28 am</time></span>
+              </div>
+            </div>
+
+            <div class="ds-blog-post-comment__body">
+              <div class="ds-blog-post-comment__content ds-editor-content">
+                <p>Yes, this document is in finalization and should be available in July.</p>
+<p>This Blog gives a very good overview and checklists: <a href="https://blogs.sap.com/2022/04/25/conversion-to-sap-data-warehouse-cloud-conversion-paths-and-cloud-transformation-steps/">Conversion to SAP Data Warehouse Cloud: Conversion Paths and Cloud Transformation Steps</a></p>
+              </div>
+
+            <div id="comment-actions-628571" class="comment-actions ds-blog-post-comment__actions">
+                <ul class="ds-content-actionbar ds-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="ds-content-actionbar__item"><span class="ds-link ds-button--link ds-content-actionbar__link ds-button--disabled"><div class="ds-button__inner-container " id="nbLikeComment_628571" tabindex="-1">Like 0</div></span></li><li class="ds-content-actionbar__item"><div class="ds-tooltip__wrapper"><div class="ds-tooltip__anchor"><a class="ds-link ds-button--link ds-content-actionbar__link" href="https://blogs.sap.com/2022/06/15/sap-bw-bridge-new-features-in-q2-2022/#comment-628571">Share</a></div><div role="tooltip" class="ds-tooltip ds-tooltip--bottom">Right click and copy the link to share this comment</div></div></li>                </ul>
+                <div class="ds-actionbar--forms"></div>
+            </div>
+          </div>
+        </div>
+            <div class="ds-blog-post-comment__comments">
+    <div class="comment byuser comment-author-reyemsaibot even depth-2 ds-blog-post-comment" id="li-comment-628584">
+        <div id="comment-628584" class="ds-blog-post-comment__wrapper">
+                    <div class="ds-blog-post-comment__header">
+              <a class="ds-blog-post-comment__avatar" target="_blank" rel="noopener noreferrer" href="https://people.sap.com/reyemsaibot">
+                <img alt="Author's profile photo Tobias Meyer" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/reyemsaibot_small.png" class="avatar avatar-48 photo avatar-default ds-avatar-component ds-avatar-component--small" width="48" height="48">              </a>
+              <div class="ds-blog-post-comment__meta-info">
+                <div class="ds-user ds-blog-post-comment__author">
+                  <a target="_blank" aria-label="Author name Tobias Meyer" href="https://people.sap.com/reyemsaibot" rel="external nofollow" class="ds-link ds-user__name ">Tobias Meyer</a>                  </div>
+                <span class="ds-blog-post-comment__date"><time datetime="2022-06-24T08:10:35+00:00">June 24, 2022 at 8:10 am</time></span>
+              </div>
+            </div>
+
+            <div class="ds-blog-post-comment__body">
+              <div class="ds-blog-post-comment__content ds-editor-content">
+                <p>Thanks. I know the checklist and I run into some 
+errors at the moment, which shows no information like "There is no 
+active DLM run with maintained target system" but the target is the 
+Bridge, so there is something missing I guess.</p>
+              </div>
+
+            <div id="comment-actions-628584" class="comment-actions ds-blog-post-comment__actions">
+                <ul class="ds-content-actionbar ds-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="ds-content-actionbar__item"><span class="ds-link ds-button--link ds-content-actionbar__link ds-button--disabled"><div class="ds-button__inner-container " id="nbLikeComment_628584" tabindex="-1">Like 0</div></span></li><li class="ds-content-actionbar__item"><div class="ds-tooltip__wrapper"><div class="ds-tooltip__anchor"><a class="ds-link ds-button--link ds-content-actionbar__link" href="https://blogs.sap.com/2022/06/15/sap-bw-bridge-new-features-in-q2-2022/#comment-628584">Share</a></div><div role="tooltip" class="ds-tooltip ds-tooltip--bottom">Right click and copy the link to share this comment</div></div></li>                </ul>
+                <div class="ds-actionbar--forms"></div>
+            </div>
+          </div>
+        </div>
+            <div class="ds-blog-post-comment__comments">
+    <div class="comment byuser comment-author-felipecapano odd alt depth-3 ds-blog-post-comment" id="li-comment-628644">
+        <div id="comment-628644" class="ds-blog-post-comment__wrapper">
+                    <div class="ds-blog-post-comment__header">
+              <a class="ds-blog-post-comment__avatar" target="_blank" rel="noopener noreferrer" href="https://people.sap.com/felipecapano">
+                <img alt="Author's profile photo Felipe Capano" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/felipecapano_small.png" class="avatar avatar-48 photo avatar-default ds-avatar-component ds-avatar-component--small" width="48" height="48">              </a>
+              <div class="ds-blog-post-comment__meta-info">
+                <div class="ds-user ds-blog-post-comment__author">
+                  <a target="_blank" aria-label="Author name Felipe Capano" href="https://people.sap.com/felipecapano" rel="external nofollow" class="ds-link ds-user__name ">Felipe Capano</a>  <div class="ds-user__roles"><i class="ds-user__role ds-user__role--employee" title="This user is an SAP Employee" data-role-name="SAP Employee"></i></div>                </div>
+                <span class="ds-blog-post-comment__date"><time datetime="2022-06-24T12:49:59+00:00">June 24, 2022 at 12:49 pm</time></span>
+              </div>
+            </div>
+
+            <div class="ds-blog-post-comment__body">
+              <div class="ds-blog-post-comment__content ds-editor-content">
+                <p>Hi Tobias,</p>
+<p>Can you please let us know in which step/activity (task list or transfer cockpit) you are getting this message?</p>
+<p>Kind regards,</p>
+<p>Felipe</p>
+              </div>
+
+            <div id="comment-actions-628644" class="comment-actions ds-blog-post-comment__actions">
+                <ul class="ds-content-actionbar ds-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="ds-content-actionbar__item"><span class="ds-link ds-button--link ds-content-actionbar__link ds-button--disabled"><div class="ds-button__inner-container " id="nbLikeComment_628644" tabindex="-1">Like 0</div></span></li><li class="ds-content-actionbar__item"><div class="ds-tooltip__wrapper"><div class="ds-tooltip__anchor"><a class="ds-link ds-button--link ds-content-actionbar__link" href="https://blogs.sap.com/2022/06/15/sap-bw-bridge-new-features-in-q2-2022/#comment-628644">Share</a></div><div role="tooltip" class="ds-tooltip ds-tooltip--bottom">Right click and copy the link to share this comment</div></div></li>                </ul>
+                <div class="ds-actionbar--forms"></div>
+            </div>
+          </div>
+        </div>
+            <div class="ds-blog-post-comment__comments">
+    <div class="comment byuser comment-author-reyemsaibot even depth-4 ds-blog-post-comment" id="li-comment-629173">
+        <div id="comment-629173" class="ds-blog-post-comment__wrapper">
+                    <div class="ds-blog-post-comment__header">
+              <a class="ds-blog-post-comment__avatar" target="_blank" rel="noopener noreferrer" href="https://people.sap.com/reyemsaibot">
+                <img alt="Author's profile photo Tobias Meyer" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/reyemsaibot_small.png" class="avatar avatar-48 photo avatar-default ds-avatar-component ds-avatar-component--small" width="48" height="48">              </a>
+              <div class="ds-blog-post-comment__meta-info">
+                <div class="ds-user ds-blog-post-comment__author">
+                  <a target="_blank" aria-label="Author name Tobias Meyer" href="https://people.sap.com/reyemsaibot" rel="external nofollow" class="ds-link ds-user__name ">Tobias Meyer</a>                  </div>
+                <span class="ds-blog-post-comment__date"><time datetime="2022-06-28T10:20:23+00:00">June 28, 2022 at 10:20 am</time></span>
+              </div>
+            </div>
+
+            <div class="ds-blog-post-comment__body">
+              <div class="ds-blog-post-comment__content ds-editor-content">
+                <p>Hi Felipe,</p>
+<p>it is the first step after selecting an DSO I want to convert. So 
+when I select the scope and click execute I receive the message.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+              </div>
+
+            <div id="comment-actions-629173" class="comment-actions ds-blog-post-comment__actions">
+                <ul class="ds-content-actionbar ds-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="ds-content-actionbar__item"><span class="ds-link ds-button--link ds-content-actionbar__link ds-button--disabled"><div class="ds-button__inner-container " id="nbLikeComment_629173" tabindex="-1">Like 0</div></span></li><li class="ds-content-actionbar__item"><div class="ds-tooltip__wrapper"><div class="ds-tooltip__anchor"><a class="ds-link ds-button--link ds-content-actionbar__link" href="https://blogs.sap.com/2022/06/15/sap-bw-bridge-new-features-in-q2-2022/#comment-629173">Share</a></div><div role="tooltip" class="ds-tooltip ds-tooltip--bottom">Right click and copy the link to share this comment</div></div></li>                </ul>
+                <div class="ds-actionbar--forms"></div>
+            </div>
+          </div>
+        </div>
+            <div class="ds-blog-post-comment__comments">
+    <div class="comment byuser comment-author-felipecapano odd alt depth-5 ds-blog-post-comment" id="li-comment-629196">
+        <div id="comment-629196" class="ds-blog-post-comment__wrapper">
+                    <div class="ds-blog-post-comment__header">
+              <a class="ds-blog-post-comment__avatar" target="_blank" rel="noopener noreferrer" href="https://people.sap.com/felipecapano">
+                <img alt="Author's profile photo Felipe Capano" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/felipecapano_small.png" class="avatar avatar-48 photo avatar-default ds-avatar-component ds-avatar-component--small" width="48" height="48">              </a>
+              <div class="ds-blog-post-comment__meta-info">
+                <div class="ds-user ds-blog-post-comment__author">
+                  <a target="_blank" aria-label="Author name Felipe Capano" href="https://people.sap.com/felipecapano" rel="external nofollow" class="ds-link ds-user__name ">Felipe Capano</a>  <div class="ds-user__roles"><i class="ds-user__role ds-user__role--employee" title="This user is an SAP Employee" data-role-name="SAP Employee"></i></div>                </div>
+                <span class="ds-blog-post-comment__date"><time datetime="2022-06-28T11:53:09+00:00">June 28, 2022 at 11:53 am</time></span>
+              </div>
+            </div>
+
+            <div class="ds-blog-post-comment__body">
+              <div class="ds-blog-post-comment__content ds-editor-content">
+                <p>Hi Tobias,</p>
+<p>Please check Note Analyzer in the sender system to ensure all notes 
+are properly installed/updated. If the issue persists, please raise an 
+incident under the component CA-LT-BW4.</p>
+<p>Kind regards,</p>
+<p>Felipe</p>
+              </div>
+
+            <div id="comment-actions-629196" class="comment-actions ds-blog-post-comment__actions">
+                <ul class="ds-content-actionbar ds-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="ds-content-actionbar__item"><span class="ds-link ds-button--link ds-content-actionbar__link ds-button--disabled"><div class="ds-button__inner-container " id="nbLikeComment_629196" tabindex="-1">Like 1</div></span></li><li class="ds-content-actionbar__item"><div class="ds-tooltip__wrapper"><div class="ds-tooltip__anchor"><a class="ds-link ds-button--link ds-content-actionbar__link" href="https://blogs.sap.com/2022/06/15/sap-bw-bridge-new-features-in-q2-2022/#comment-629196">Share</a></div><div role="tooltip" class="ds-tooltip ds-tooltip--bottom">Right click and copy the link to share this comment</div></div></li>                </ul>
+                <div class="ds-actionbar--forms"></div>
+            </div>
+          </div>
+        </div>
+            </div><!-- #comment-## -->
+</div><!-- .children -->
+</div><!-- #comment-## -->
+</div><!-- .children -->
+</div><!-- #comment-## -->
+</div><!-- .children -->
+</div><!-- #comment-## -->
+</div><!-- .children -->
+</div><!-- #comment-## -->
+
+      
+        </div> <!-- main comments content area -->
+
+    
+            
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+                </div> <!-- #main -->
+                <div id="shared_footer" class="dm-container dm-wrapper">
+                    <footer class="dm-footer">
+    <div class="dm-footer__inner-wrapper">
+        <div class="dm-socialmedia">
+            <h5 class="dm-socialmedia__headline" id="hl-sharefollow">Find us on</h5>
+            <ul class="dm-socialmedia__links" aria-labelledby="hl-sharefollow">
+                <li><a href="https://www.facebook.com/sapcommunity" title="Facebook"><span class="dm-icon-encoded--facebook"></span></a></li>
+                <li><a href="https://twitter.com/SAPCommunity" title="Twitter"><span class="dm-icon-encoded--twitter"></span></a></li>
+                <li><a href="https://www.youtube.com/c/SAPCommunities" title="YouTube"><span class="dm-icon-encoded--youtube"></span></a></li>
+                <li><a href="https://www.linkedin.com/company/sap" title="LinkedIn"><span class="dm-icon-encoded--linkedin"></span></a></li>
+                <li><a href="https://instagram.com/sap/" title="Instagram"><span class="dm-icon-encoded--instagram"></span></a></li>
+                <li><a href="http://www.slideshare.net/SAP" title="Slideshare"><span class="dm-icon-encoded--slideshare"></span></a></li>
+                <li><a href="mailto:?subject='SAP Community'" title="Email Share"><span class="dm-icon-encoded--email"></span></a></li>
+            </ul>
+        </div>
+        <nav role="navigation" class="dm-footer__navigation">
+            <ul class="dm-footer__navigation__list" aria-label="footer navigation">
+                <li><a href="http://sap.com/about/legal/privacy.html" target="_blank">Privacy</a></li>
+                <li><a href="http://sap.com/corporate/en/legal/terms-of-use.html" target="_blank">Terms of Use</a></li>
+                <li><a href="http://sap.com/about/legal/impressum.html" target="_blank">Legal Disclosure</a></li>
+                <li><a href="http://sap.com/about/legal/copyright.html" target="_blank">Copyright</a></li>
+                <li><a href="http://sap.com/about/legal/trademark.html" target="_blank">Trademark</a></li>
+                <li id="teconsent" consent="undefined" aria-label="Open Cookie Preferences Modal" class="truste_caIcon_display" role="complementary"><script async="async" type="text/javascript" crossorigin="" importance="high" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/v1.7-9751"></script><a role="link" id="icon-id05944258943362161" tabindex="0" aria-haspopup="true" aria-label="Настройки параметра cookie" class="truste_cursor_pointer" lang="ru">Настройки параметра cookie</a></li>
+                <li><a href="https://www.sap.com/cmp/nl/sap-community-voice/index.html" target="_blank">Newsletter</a></li>
+                <li><a href="https://community.sap.com/support" target="_blank">Support</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>                </div>
+            </div> <!-- #page -->
+            <script type="application/ld+json" data-schema="1559894-post-Default">{"@context":"https:\/\/schema.org\/","@type":"BlogPosting","@id":"https:\/\/blogs.sap.com\/2022\/06\/15\/sap-bw-bridge-new-features-in-q2-2022\/#BlogPosting","mainEntityOfPage":"https:\/\/blogs.sap.com\/2022\/06\/15\/sap-bw-bridge-new-features-in-q2-2022\/","headline":"SAP BW Bridge: New Features in Q2 2022","name":"SAP BW Bridge: New Features in Q2 2022","description":"Next quarter, next shipment. The new release of the SAP Data Warehouse Cloud, SAP BW bridge has been shipped with SAP BTP ABAP Environment Release 2205 end of May 2022. The new release contains the","datePublished":"2022-06-15","dateModified":"2022-06-15","author":{"@type":"Person","@id":"https:\/\/blogs.sap.com\/author\/klaus-peter.sauer4\/#Person","name":"Klaus-Peter Sauer","url":"https:\/\/blogs.sap.com\/author\/klaus-peter.sauer4\/","image":{"@type":"ImageObject","@id":"https:\/\/avatars.services.sap.com\/images\/klaus-peter.sauer4_small.png","url":"https:\/\/avatars.services.sap.com\/images\/klaus-peter.sauer4_small.png","height":96,"width":96}},"publisher":{"@type":"Organization","name":"SAP Community Blogs","logo":{"@type":"ImageObject","@id":"https:\/\/blogs.sap.com\/wp-content\/uploads\/2020\/03\/SAP_scrn_R-2.png","url":"https:\/\/blogs.sap.com\/wp-content\/uploads\/2020\/03\/SAP_scrn_R-2.png","width":600,"height":60}},"image":{"@type":"ImageObject","@id":"https:\/\/blogs.sap.com\/wp-content\/uploads\/2022\/06\/2022-Q2_01_BWB_2.png","url":"https:\/\/blogs.sap.com\/wp-content\/uploads\/2022\/06\/2022-Q2_01_BWB_2.png","height":"","width":""},"url":"https:\/\/blogs.sap.com\/2022\/06\/15\/sap-bw-bridge-new-features-in-q2-2022\/","about":["Product Information"],"wordCount":857,"keywords":["Remote Conversion","SAP BW bridge","SAP Data Warehouse Cloud SAP BW Bridge"]}</script>
+<script type="application/ld+json" data-schema="Breadcrumb">{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2022","item":"https:\/\/blogs.sap.com\/2022\/#breadcrumbitem"},{"@type":"ListItem","position":2,"name":"06","item":"https:\/\/blogs.sap.com\/2022\/\/06\/#breadcrumbitem"},{"@type":"ListItem","position":3,"name":"15","item":"https:\/\/blogs.sap.com\/2022\/\/06\/\/15\/#breadcrumbitem"},{"@type":"ListItem","position":4,"name":"SAP BW Bridge: New Features in Q2 2022","item":"https:\/\/blogs.sap.com\/2022\/06\/15\/sap-bw-bridge-new-features-in-q2-2022\/#breadcrumbitem"}]}</script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/action-tooltip-handler.js" id="tooltip-handler-js"></script>
+<script type="text/javascript" id="unified_header-js-extra">
+/* <![CDATA[ */
+var headerInitArgs = {"system":"blogs","wrapperID":"page","breadcrumbItems":[{"text":"Blogs","href":"https:\/\/blogs.sap.com"}]};
+/* ]]> */
+</script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/scn-header.min.js" id="unified_header-js"></script>
+<script type="text/javascript" id="unified_header-js-after">
+            scnHeader.init(headerInitArgs);
+            setCookie("userArgs", headerInitArgs.user ? JSON.stringify(headerInitArgs.user) : "", { path : "/" });
+    
+</script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/header.js" id="designmate_header_script-js"></script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/subheader.js" id="designmate_subheader_script-js"></script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/designmate.js" id="designmate_script-js"></script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/comment-reply.min.js" id="comment-reply-js"></script>
+<script type="text/javascript" id="satm_handler-js-extra">
+/* <![CDATA[ */
+var satmContentSelectors = ["div.dm-contentDetail__body-content","div.dm-list-comments__item-content","div.ds-blog-post__body","div.ds-blog-post-comment__content"];
+var satmProfileBaseUrl = "people.sap.com\/";
+var satmChangeableElementsSelectors = ["div.dm-list-comments__item-content","div.ds-blog-post-comment__content"];
+var satmPluginEnabled = "1";
+var satmApiUrl = "https:\/\/uss.api.community.sap.com";
+var satmApiCallWithCredentials = "1";
+var satmRequestDelayMs = "100";
+/* ]]> */
+</script>
+<script type="text/javascript" defer="defer" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/sap-at-mention.min.js" id="satm_handler-js"></script>
+<script type="text/javascript" id="sap-comment-validation-js-extra">
+/* <![CDATA[ */
+var commentValidation = {"validateMaxLinks":"1","max_links_number":"7","BLOGS_PAGE":"single"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/sap-comment-validation.min.js" id="sap-comment-validation-js"></script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/sap-post-status.min.js" id="scn_post_status_check-js"></script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/jquery-plugins.min.js" id="sap_jquery_plugins-js"></script>
+<script type="text/javascript" id="sap-login-csrf-cookie-js-extra">
+/* <![CDATA[ */
+var sapLoginCookieConfig = {"cookieName":"SAP_BLOGS_ANONYMOUS_NONCE","sapActionName":"s_action"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/sap-login-csrf-cookie.min.js" id="sap-login-csrf-cookie-js"></script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/lightbox-gallery.min.js" id="sap_lightbox_gallery_js-js"></script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/choices.min.js" id="choices.js-js"></script>
+<script type="text/javascript" id="wprc-script-js-extra">
+/* <![CDATA[ */
+var wprcajaxhandler = {"ajaxurl":"https:\/\/blogs.sap.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/scripts.min.js" id="wprc-script-js"></script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/single.min.js" id="sap_single_v3-js"></script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/onscroll-sticky.min.js" id="onscroll_sticky-js"></script>
+<script type="text/javascript" id="blog-detail-page-js-extra">
+/* <![CDATA[ */
+var alertReasonsSelectArgs = {"selectId":"sap-blog-alert-reasons","reasons":["Incorrect Tag\/Category\r","Cross-Posting\r","Private Information\r","Unprofessional Conduct\r","Spam"]};
+/* ]]> */
+</script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/blog-detail.min.js" id="blog-detail-page-js"></script>
+<script type="text/javascript" id="sap_assignedtags_widget_js_v3-js-extra">
+/* <![CDATA[ */
+var assignedTagsWidgetSettings = {"maxItemsBeforeHide":"7","data":{"SAP Data Warehouse Cloud":"https:\/\/blogs.sap.com\/tags\/73555000100800002141\/","Remote Conversion":"https:\/\/blogs.sap.com\/tag\/remote-conversion\/","SAP BW bridge":"https:\/\/blogs.sap.com\/tag\/sap-bw-bridge\/","SAP Data Warehouse Cloud SAP BW Bridge":"https:\/\/blogs.sap.com\/tag\/sap-data-warehouse-cloud-sap-bw-bridge\/"},"widgetClassname":".ds-assigned-tags"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/sap-assigned-tags-widget.min.js" id="sap_assignedtags_widget_js_v3-js"></script>
+<script type="text/javascript" id="sap_relatedcontent_widget_js_v3-js-extra">
+/* <![CDATA[ */
+var relatedContentWidgetSettings = {"widgetSelector":".widget_sap-relatedcontent-widget-v3","dataSourceServiceUrl":"https:\/\/searchproxy.api.community.sap.com\/api\/v1\/search\/similar-content","profileUrl":"https:\/\/people.sap.com","targetContentItem":{"id":1559894,"type":"blogpost","title":"SAP BW Bridge: New Features in Q2 2022","primary_tag":"73555000100800002141"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/sap-related-content-widget.min.js" id="sap_relatedcontent_widget_js_v3-js"></script>
+<div id="wp-load_tinymce-wrap" class="wp-core-ui wp-editor-wrap tmce-active"><link rel="stylesheet" id="dashicons-css" href="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/dashicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="editor-buttons-css" href="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/editor.min.css" type="text/css" media="all">
+<style>#wp-load_tinymce-wrap {display:none;}</style>
+<div id="wp-load_tinymce-editor-tools" class="wp-editor-tools hide-if-no-js"><div class="wp-editor-tabs"><button type="button" id="load_tinymce-tmce" class="wp-switch-editor switch-tmce" data-wp-editor-id="load_tinymce">Visual</button>
+<button type="button" id="load_tinymce-html" class="wp-switch-editor switch-html" data-wp-editor-id="load_tinymce">Text</button>
+</div>
+</div>
+<div id="wp-load_tinymce-editor-container" class="wp-editor-container"><div id="qt_load_tinymce_toolbar" class="quicktags-toolbar"></div><div id="mceu_25" class="mce-tinymce mce-container mce-panel" hidefocus="1" tabindex="-1" role="group"><div id="mceu_25-body" class="mce-container-body mce-stack-layout"><div id="mceu_26" class="mce-top-part mce-container mce-stack-layout-item mce-first"><div id="mceu_26-body" class="mce-container-body"><div id="mceu_27" class="mce-toolbar-grp mce-container mce-panel mce-first mce-last" hidefocus="1" tabindex="-1" role="group"><div id="mceu_27-body" class="mce-container-body mce-stack-layout"><div id="mceu_28" class="mce-container mce-toolbar mce-stack-layout-item mce-first" role="toolbar"><div id="mceu_28-body" class="mce-container-body mce-flow-layout"><div id="mceu_29" class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"><div id="mceu_29-body"><div id="mceu_0" class="mce-widget mce-btn mce-menubtn mce-fixed-width mce-listbox mce-first mce-btn-has-text" tabindex="-1" aria-labelledby="mceu_0" role="button" aria-haspopup="true"><button id="mceu_0-open" role="presentation" type="button" tabindex="-1"><span class="mce-txt">Paragraph</span> <i class="mce-caret"></i></button></div><div id="mceu_1" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Bold (Ctrl+B)"><button id="mceu_1-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bold"></i></button></div><div id="mceu_2" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Italic (Ctrl+I)"><button id="mceu_2-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-italic"></i></button></div><div id="mceu_3" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Bulleted list (Shift+Alt+U)"><button id="mceu_3-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bullist"></i></button></div><div id="mceu_4" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Numbered list (Shift+Alt+O)"><button id="mceu_4-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-numlist"></i></button></div><div id="mceu_5" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Blockquote (Shift+Alt+Q)"><button id="mceu_5-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-blockquote"></i></button></div><div id="mceu_6" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Align left (Shift+Alt+L)"><button id="mceu_6-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignleft"></i></button></div><div id="mceu_7" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Align center (Shift+Alt+C)"><button id="mceu_7-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-aligncenter"></i></button></div><div id="mceu_8" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Align right (Shift+Alt+R)"><button id="mceu_8-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignright"></i></button></div><div id="mceu_9" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Insert/edit link (Ctrl+K)"><button id="mceu_9-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-link"></i></button></div><div id="mceu_10" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false" role="button" aria-label="Fullscreen"><button id="mceu_10-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-fullscreen"></i></button></div><div id="mceu_11" class="mce-widget mce-btn" tabindex="-1" role="button" aria-label="Toolbar Toggle (Shift+Alt+Z)"><button id="mceu_11-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-wp_adv"></i></button></div><div id="mceu_12" class="mce-widget mce-btn mce-last" tabindex="-1"><button id="mceu_12-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-codesample"></i></button></div></div></div></div></div><div id="mceu_30" class="mce-container mce-toolbar mce-stack-layout-item mce-last" role="toolbar"><div id="mceu_30-body" class="mce-container-body mce-flow-layout"><div id="mceu_31" class="mce-container mce-flow-layout-item mce-first mce-last mce-btn-group"><div id="mceu_31-body"><div id="mceu_13" class="mce-widget mce-btn mce-first" tabindex="-1" aria-pressed="false"><button id="mceu_13-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-strikethrough"></i></button></div><div id="mceu_14" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_14-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-hr"></i></button></div><div id="mceu_15" class="mce-widget mce-btn mce-splitbtn mce-colorbutton" role="button" tabindex="-1" aria-haspopup="true"><button role="presentation" hidefocus="1" type="button" tabindex="-1"><i class="mce-ico mce-i-forecolor"></i><span id="mceu_15-preview" class="mce-preview"></span></button><button type="button" class="mce-open" hidefocus="1" tabindex="-1"> <i class="mce-caret"></i></button></div><div id="mceu_16" class="mce-widget mce-btn" tabindex="-1" aria-pressed="false"><button id="mceu_16-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-pastetext"></i></button></div><div id="mceu_17" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_17-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-removeformat"></i></button></div><div id="mceu_18" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_18-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-charmap"></i></button></div><div id="mceu_19" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_19-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-outdent"></i></button></div><div id="mceu_20" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_20-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-indent"></i></button></div><div id="mceu_21" class="mce-widget mce-btn mce-menubtn" tabindex="-1" aria-labelledby="mceu_21"><button id="mceu_21-open" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-table"></i> <i class="mce-caret"></i></button></div><div id="mceu_22" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_22-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-undo"></i></button></div><div id="mceu_23" class="mce-widget mce-btn" tabindex="-1"><button id="mceu_23-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-redo"></i></button></div><div id="mceu_24" class="mce-widget mce-btn mce-last" tabindex="-1"><button id="mceu_24-button" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-wp_help"></i></button></div></div></div></div></div></div></div></div></div><div id="mceu_32" class="mce-edit-area mce-container mce-panel mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group"></div><div id="mceu_33" class="mce-statusbar mce-container mce-panel mce-stack-layout-item mce-last" hidefocus="1" tabindex="-1" role="group"><div id="mceu_33-body" class="mce-container-body mce-flow-layout"><div id="mceu_34" class="mce-path mce-flow-layout-item mce-first"><div class="mce-path-item">&nbsp;</div></div><div id="mceu_35" class="mce-flow-layout-item mce-last mce-resizehandle"><i class="mce-ico mce-i-resize"></i></div></div></div></div></div><textarea class="wp-editor-area" rows="20" autocomplete="off" cols="40" name="load_tinymce" id="load_tinymce" style="visibility: hidden;"></textarea></div>
+</div>
+
+<link rel="preload" href="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/skin.min.css" as="style"><link rel="preload" href="https://blogs.sap.com/wp-includes/js/tinymce/plugins/codesample/css/prism.css" as="style"><link rel="preload" href="https://blogs.sap.com/wp-includes/js/tinymce/skins/lightgray/content.min.css?wp-mce-49110-20201110" as="style">
+		<script type="text/javascript">
+		tinyMCEPreInit = {
+			baseURL: "https://blogs.sap.com/wp-includes/js/tinymce",
+			suffix: ".min",
+						mceInit: {'load_tinymce':{theme:"modern",skin:"lightgray",language:"en",formats:{alignleft: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"left"}},{selector: "img,table,dl.wp-caption", classes: "alignleft"}],aligncenter: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"center"}},{selector: "img,table,dl.wp-caption", classes: "aligncenter"}],alignright: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"right"}},{selector: "img,table,dl.wp-caption", classes: "alignright"}],strikethrough: {inline: "del"}},relative_urls:false,remove_script_host:false,convert_urls:false,browser_spellcheck:true,fix_list_elements:true,entities:"38,amp,60,lt,62,gt",entity_encoding:"raw",keep_styles:false,cache_suffix:"wp-mce-49110-20201110",resize:"vertical",menubar:false,branding:false,preview_styles:"font-family font-size font-weight font-style text-decoration text-transform",end_container_on_empty_block:true,wpeditimage_html5_captions:true,wp_lang_attr:"en-US",wp_keep_scroll_position:false,wp_shortcut_labels:{"Heading 1":"access1","Heading 2":"access2","Heading 3":"access3","Heading 4":"access4","Heading 5":"access5","Heading 6":"access6","Paragraph":"access7","Blockquote":"accessQ","Underline":"metaU","Strikethrough":"accessD","Bold":"metaB","Italic":"metaI","Code":"accessX","Align center":"accessC","Align right":"accessR","Align left":"accessL","Justify":"accessJ","Cut":"metaX","Copy":"metaC","Paste":"metaV","Select all":"metaA","Undo":"metaZ","Redo":"metaY","Bullet list":"accessU","Numbered list":"accessO","Insert\/edit image":"accessM","Insert\/edit link":"metaK","Remove link":"accessS","Toolbar Toggle":"accessZ","Insert Read More tag":"accessT","Insert Page Break tag":"accessP","Distraction-free writing mode":"accessW","Add Media":"accessM","Keyboard Shortcuts":"accessH"},content_css:"https://blogs.sap.com/wp-includes/css/dashicons.min.css?ver=425,https://blogs.sap.com/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=425,https://fonts.googleapis.com/css?family=Open+Sans:400italic%2C700italic%2C400%2C700&subset=latin%2Clatin-ext,https://blogs.sap.com/wp-content/themes/sap-v3-neo/editor-style.css",plugins:"charmap,colorpicker,hr,lists,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpautoresize,wpeditimage,wpemoji,wpgallery,wplink,wpdialogs,wptextpattern,wpview,image,codesample",external_plugins:{"table":"https:\/\/blogs.sap.com\/wp-content\/plugins\/mce-table-buttons\/tinymce47-table\/plugin.min.js"},selector:"#load_tinymce",wpautop:true,indent:false,toolbar1:"formatselect,bold,italic,bullist,numlist,blockquote,alignleft,aligncenter,alignright,link,spellchecker,fullscreen,wp_adv,codesample",toolbar2:"strikethrough,hr,forecolor,pastetext,removeformat,charmap,outdent,indent,table,undo,redo,wp_help",toolbar3:"",toolbar4:"",tabfocus_elements:":prev,:next",body_class:"load_tinymce post-type-post post-status-publish post-format-standard page-template-default locale-en-us",table_toolbar:"",extended_valid_elements:"div"}},
+			qtInit: {'load_tinymce':{id:"load_tinymce",buttons:"strong,em,link,block,del,ins,img,ul,ol,li,code,more,close"}},
+			ref: {plugins:"charmap,colorpicker,hr,lists,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpautoresize,wpeditimage,wpemoji,wpgallery,wplink,wpdialogs,wptextpattern,wpview,image,codesample",theme:"modern",language:"en"},
+			load_ext: function(url,lang){var sl=tinymce.ScriptLoader;sl.markDone(url+'/langs/'+lang+'.js');sl.markDone(url+'/langs/'+lang+'_dlg.js');}
+		};
+		</script>
+		<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/tinymce.min.js" id="wp-tinymce-root-js"></script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/plugin.min.js" id="wp-tinymce-js"></script>
+<script type="text/javascript">
+tinymce.addI18n( 'en', {"Ok":"OK","Bullet list":"Bulleted list","Insert\/Edit code sample":"Insert\/edit code sample","Url":"URL","Spellcheck":"Check Spelling","Row properties":"Table row properties","Cell properties":"Table cell properties","Paste row before":"Paste table row before","Paste row after":"Paste table row after","Cut row":"Cut table row","Copy row":"Copy table row","Merge cells":"Merge table cells","Split cell":"Split table cell","Paste is now in plain text mode. Contents will now be pasted as plain text until you toggle this option off.":"Paste is now in plain text mode. Contents will now be pasted as plain text until you toggle this option off.\n\nIf you\u2019re looking to paste rich content from Microsoft Word, try turning this option off. The editor will clean up text pasted from Word automatically.","Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":"Rich Text Area. Press Alt-Shift-H for help.","You have unsaved changes are you sure you want to navigate away?":"The changes you made will be lost if you navigate away from this page.","Your browser doesn't support direct access to the clipboard. Please use the Ctrl+X\/C\/V keyboard shortcuts instead.":"Your browser does not support direct access to the clipboard. Please use keyboard shortcuts or your browser\u2019s edit menu instead.","Edit|button":"Edit"});
+tinymce.ScriptLoader.markDone( 'https://blogs.sap.com/wp-includes/js/tinymce/langs/en.js' );
+</script>
+<script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/wp-langs-en.js"></script>
+		<script type="text/javascript">
+		tinyMCEPreInit.load_ext("https://blogs.sap.com/wp-content/plugins/mce-table-buttons/tinymce47-table", "en");
+
+var ajaxurl = "/wp-admin/admin-ajax.php";
+		( function() {
+			var init, id, $wrap;
+
+			if ( typeof tinymce !== 'undefined' ) {
+				if ( tinymce.Env.ie && tinymce.Env.ie < 11 ) {
+					tinymce.$( '.wp-editor-wrap ' ).removeClass( 'tmce-active' ).addClass( 'html-active' );
+					return;
+				}
+
+				for ( id in tinyMCEPreInit.mceInit ) {
+					init = tinyMCEPreInit.mceInit[id];
+					$wrap = tinymce.$( '#wp-' + id + '-wrap' );
+
+					if ( ( $wrap.hasClass( 'tmce-active' ) || ! tinyMCEPreInit.qtInit.hasOwnProperty( id ) ) && ! init.wp_skip_init ) {
+						tinymce.init( init );
+
+						if ( ! window.wpActiveEditor ) {
+							window.wpActiveEditor = id;
+						}
+					}
+				}
+			}
+
+			if ( typeof quicktags !== 'undefined' ) {
+				for ( id in tinyMCEPreInit.qtInit ) {
+					quicktags( tinyMCEPreInit.qtInit[id] );
+
+					if ( ! window.wpActiveEditor ) {
+						window.wpActiveEditor = id;
+					}
+				}
+			}
+		}());
+		</script>
+				<div id="wp-link-backdrop" style="display: none"></div>
+		<div id="wp-link-wrap" class="wp-core-ui" style="display: none" role="dialog" aria-labelledby="link-modal-title">
+		<form id="wp-link" tabindex="-1">
+		<input type="hidden" id="_ajax_linking_nonce" name="_ajax_linking_nonce" value="ff7e0c41eb">		<h3 id="link-modal-title">Insert/edit link</h3>
+		<button type="button" id="wp-link-close"><span class="screen-reader-text">Close</span></button>
+		<div id="link-selector">
+			<div id="link-options">
+				<p class="howto" id="wplink-enter-url">Enter the destination URL</p>
+				<div>
+					<label><span>URL</span>
+					<input id="wp-link-url" type="text" aria-describedby="wplink-enter-url"></label>
+				</div>
+				<div class="wp-link-text-field">
+					<label><span>Link Text</span>
+					<input id="wp-link-text" type="text"></label>
+				</div>
+				<div class="link-target">
+					<label><span></span>
+					<input type="checkbox" id="wp-link-target"> Open link in a new tab</label>
+				</div>
+			</div>
+			<p class="howto" id="wplink-link-existing-content">Or link to existing content</p>
+			<div id="search-panel">
+				<div class="link-search-wrapper">
+					<label>
+						<span class="search-label">Search</span>
+						<input type="search" id="wp-link-search" class="link-search-field" autocomplete="off" aria-describedby="wplink-link-existing-content">
+						<span class="spinner"></span>
+					</label>
+				</div>
+				<div id="search-results" class="query-results" tabindex="0">
+					<ul></ul>
+					<div class="river-waiting">
+						<span class="spinner"></span>
+					</div>
+				</div>
+				<div id="most-recent-results" class="query-results" tabindex="0">
+					<div class="query-notice" id="query-notice-message">
+						<em class="query-notice-default">No search term specified. Showing recent items.</em>
+						<em class="query-notice-hint screen-reader-text">Search or use up and down arrow keys to select an item.</em>
+					</div>
+					<ul></ul>
+					<div class="river-waiting">
+						<span class="spinner"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="submitbox">
+			<div id="wp-link-cancel">
+				<button type="button" class="button">Cancel</button>
+			</div>
+			<div id="wp-link-update">
+				<input type="submit" value="Add Link" class="button button-primary" id="wp-link-submit" name="wp-link-submit">
+			</div>
+		</div>
+		</form>
+		</div>
+		<script type="text/javascript">jQuery(window).on("load", function() {tinymce.codesampleplugin.Prism.highlightAll();});</script><script type="text/javascript">_satellite.pageBottom();</script>        </div><script>
+window._trackData = function(data, linkObject, eventObject) {
+    try {
+        var _tD_lastUpdated = '2022.07.25'; // yyyy.mm.dd - update whenever you make a change, please!
+        try {
+            if (_satellite.getVar('isLaunchStagingDebug')) {
+                console.log('LAUNCH: _trackData: arguments: ', arguments);
+                var d = JSON.parse(JSON.stringify(data));
+                console.log('LAUNCH: _trackData: data: ', d);
+                console.log('LAUNCH: _trackData: data (stringify): ', JSON.stringify(d, null, 4));
+            }
+        } catch (e) {
+            window.console && console.error(e);
+        }
+
+        // effectively make _trackData a dummy if turstarc disables tracking
+        if (!_satellite.getVar('isConsentEnabled')('omtrdc.net', 1)) {
+            if (_satellite.getVar('isLaunchStagingDebug')) {
+                console.log('LAUNCH: _trackData: no AA tracking because of trustarc/privacy settings');
+            }
+            return;
+        }
+
+        var ADL = (data || {}),
+            p = {
+                events: [],
+                products: [],
+                contextData: {}
+            };
+        var ev = ADL.events || {};
+        var _aa_cache_t = _satellite._aa_cache_t || {};
+        var tdl_link_name='', tdl_evt = {};
+
+        if (_satellite.getVar('isLaunchStagingDebug')) {
+            console.log('LAUNCH: _trackData: _aa_cache_t: ', JSON.stringify(_satellite._aa_cache_t, null, 4));
+        }
+
+        var s = window.sap_s || {
+            trackData: function() {
+                if (_satellite.getVar('isLaunchStagingDebug')) {
+                    console.log('LAUNCH: _trackData: no trackData function found. Probably timing issue...');
+                }
+            },
+            getPercentPageViewedVars: function() {
+                if (_satellite.getVar('isLaunchStagingDebug')) {
+                    console.log('LAUNCH: _trackData: no getPercentPageViewedVars function found. Probably timing issue...');
+                }
+            }
+        };
+
+
+        /*
+         determine s.t or s.tl call.
+         in sections below, Override to:
+         'o' makes an s.tl call as other type tracking. This is the default for all _trackData calls
+         'e' - s.tl call as exit link tracking.
+         'd' - s.tl call as download link tracking.
+         (bool) false - set to (bool) false to trigger s.t page view tracking
+        */
+        var tl = 'o';
+        var linkName = 'no value';
+
+        // redirectEvents for registerPostTrackCallback
+        p.contextData.redirectEvents = ['accessExternalContent', 'downloadAttempt', 'exit', 'formView', 'login', 'SMCInteraction'].filter(function(key) {
+            return ev[key] === true;
+        }).join(',');
+
+        /* page view tracking */
+        if (ev.pageView) {
+            tl = false;
+            var ppv = s.getPercentPageViewedVars() || {};
+
+            p.prop68 = ppv.page || '';
+            if (ppv.percent) {
+                p.prop70 = ppv.percent;
+                p.events.push('event70=' + ppv.percent);
+            }
+            p.eVar18 = '+1';
+        }
+
+
+        /** global / every page code **/
+        // page
+        ADL.page = ADL.page || {};
+        if (ADL.page) {
+            // page name
+            var pageName = ADL.page.name || _aa_cache_t.pageName || '';
+            if (ADL.page.detail) pageName += '^' + ADL.page.detail;
+            p.eVar20 = p.pageName = pageName;
+
+            // language
+            p.eVar2 = ADL.page.language || _aa_cache_t.eVar2 || 'en';
+
+            // site section
+            p.channel = p.eVar3 = ADL.page.section || _aa_cache_t.eVar3 || 'no site section';
+
+            // site:country
+            var country = ADL.page.country || _aa_cache_t.eVar1 || 'glo';
+            if (country.indexOf('sap:') !== 0) country = 'sap:' + country;
+            p.eVar1 = country;
+
+            // url
+            p.pageURL = p.eVar75 = ADL.page.url || _aa_cache_t.pageURL || location.href;
+
+
+            // referrer
+            var isZero, redirectReferrer = '',
+                redirectReferrerInfo = document.cookie.match(/(?:^|;\s*)s_referrer=([^;]*)/);
+            if (redirectReferrerInfo && redirectReferrerInfo[1]) {
+                redirectReferrerInfo = unescape(redirectReferrerInfo[1]).split('|');
+                isZero = +redirectReferrerInfo[0];
+                if (isZero === 0) {
+                    // redirectReferrer = redirectReferrer[1]||'';
+                    redirectReferrer = (typeof s._getReferrer == 'function') && s._getReferrer();
+                }
+            }
+            p.referrer = p.eVar76 = redirectReferrer || ADL.page.referrer || ((typeof s._getReferrer == 'function') && s._getReferrer()) || _aa_cache_t.referrer || document.referrer || '';
+
+        } // end page
+        // 404 page tracking overrides
+        if (ev.errorPage) {
+            p.eVar20 = p.pageName = 'sap:errorpage';
+            p.pageType = p.channel = p.eVar3 = 'errorPage';
+            p.eVar137 = ADL.page && ADL.page.url || location.href;
+        } // end error page
+
+        // bandaid: set referrer to current page URL if s.tl call
+        if (!ev.pageView) {
+            p.referrer = p.eVar76 = p.pageURL || location.href;
+        }
+
+        /*** end global / every page / user ***/
+
+
+        /**  users and logins **/
+        // Login Event
+        if (ev.login) {
+            p.events.push('event8');
+        }
+        // email activation        
+        if (ev.emailActivation) {
+            p.events.push('event92');
+        }
+        // user info
+        if (ADL.user) {
+            p.eVar9 = ADL.user.loginStatus || 'logN';
+            /*            
+                        p.eVar6 = [
+                            '0:'+(ADL.user.role || 'X'),
+                            '1:'+(ADL.user.relationship || 'X'),
+                            '2:'+(ADL.user.industry || 'X'),
+                            '3:'+(ADL.user.department || 'X'),
+                            '4:'+(ADL.user.jobFunction || 'X')
+                        ].join('|');
+            */
+            p.eVar6 = [];
+            // each attribute should have its own forever unique id prefix to properly map in CRB regardless of push order or existence in future
+            if (ADL.user.role) p.eVar6.push('0:' + ADL.user.role);
+            if (ADL.user.relationship) p.eVar6.push('1:' + ADL.user.relationship);
+            if (ADL.user.industry) p.eVar6.push('2:' + ADL.user.industry);
+            if (ADL.user.department) p.eVar6.push('3:' + ADL.user.department);
+            if (ADL.user.jobFunction) p.eVar6.push('4:' + ADL.user.jobFunction);
+            p.eVar6 = p.eVar6.join('|');
+
+
+
+        } // end user
+        /** end users and logins **/
+
+
+        /** QA Global Data Layer Global Variables **/
+        var page = ADL.page || {};
+        var user = ADL.user || {};
+        p.eVar159 = [
+            ['page.name', (page.name && 'Y' || 'N')].join(':'),
+            ['page.language', (page.language && 'Y' || 'N')].join(':'),
+            ['page.section', (page.section && 'Y' || 'N')].join(':'),
+            ['page.country', (page.country && 'Y' || 'N')].join(':'),
+            ['page.url', (page.url && 'Y' || 'N')].join(':'),
+            ['page.referrer', (page.referrer && 'Y' || 'N')].join(':'),
+            ['user.loginStatus', (user.loginStatus && 'Y' || 'N')].join(':'),
+            ['user.role', (user.role && 'Y' || 'N')].join(':')
+        ].join('|');
+
+        /** form tracking **/
+        // putting this by itself because it also pops on other events e.g. e8
+        if (ADL.form) {
+            // name
+            p.eVar22 = ADL.form.name || '';
+        }
+        if ((ev.formView || ev.formSubmit || ev.nonLeadFormSubmit || ev.registration) && ADL.form) {
+            // form viewview
+            if (ev.formView) p.events.push(['event1', ADL.form.uniqueID || ''].filter(Boolean).join(':'));
+            // all form submits
+            if (ev.formSubmit||ev.nonLeadFormSubmit) p.events.push(['event4', ADL.form.uniqueID || ''].filter(Boolean).join(':'));
+            // non-lead form submit submit
+            if (ev.nonLeadFormSubmit) p.events.push(['event2', ADL.form.uniqueID || ''].filter(Boolean).join(':'));
+            // registration
+            if (ev.registration) p.events.push(['event96', ADL.form.uniqueID || ''].filter(Boolean).join(':'));
+
+
+            // referrer
+            if (ev.formView) {
+                p.eVar23 = ADL.form.referrer || 'no referrer available';
+            }
+
+            // form crm code
+            p.eVar109 = p.eVar109 || '';
+            p.eVar109 = p.eVar109.split('|');
+            p.eVar109.push([
+                'form',
+                (ADL.form.crmCode || 'No CRM Code')
+            ].join(':'));
+            p.eVar109 = p.eVar109.filter(Boolean).join('|');
+
+            if (ev.formSubmit || ev.nonLeadFormSubmit || ev.registration) {
+                // transaction id
+                p.eVar50 = p.transactionID = ADL.form.transactionID;
+
+                // contact requested
+                p.eVar24 = ADL.form.contactRequested || 'Not Asked';
+
+                // relationship
+                p.eVar25 = ADL.form.relationship || 'Not Asked';
+
+                // job function
+                p.eVar27 = ADL.form.jobFunction || 'Not Asked';
+
+                // country
+                p.eVar28 = ADL.form.country || 'Not Asked';
+
+                // industry
+                p.eVar29 = ADL.form.industry || 'Not Asked';
+
+                // department
+                p.eVar33 = ADL.form.department || 'Not Asked';
+
+                // opt-in status
+                p.eVar26 = ADL.form.optinStatus || 'Not Asked';
+
+                // topic area
+                p.eVar30 = ADL.form.topicArea || 'Not Asked';
+
+                // products
+                if (ADL.form.products instanceof Array) {
+                    var fp = ADL.form.products;
+                    p.eVar89 = ADL.form.products.join('|');
+                }
+
+                // newsletters
+                if (ADL.form.newsletters instanceof Array) {
+                    p.eVar81 = ADL.form.newsletters.join('|');
+                }
+            } // form complete events
+
+
+        } // end form events and variables
+        /** end form tracking **/
+
+
+        /** Asset Tracking **/
+        // download attempt
+        if (ev.downloadAttempt) {
+            p.events.push('event99');
+        }
+        // download success
+        if (ev.downloadSuccess) {
+            p.events.push('event9');
+        }
+        // pdf preview
+        if (ev.pdfPreview) {
+            p.events.push('event26');
+        }
+        // restricted asset popup
+        if (ev.restrictedAssetPopup) {
+            p.events.push('event94');
+        }
+        // restricted asset block
+        if (ev.restrictedAssetBlock) {
+            p.events.push('event95');
+        }
+        // restricted asset token consumption
+        if (ev.restrictedAssetTokenConsumption) {
+            p.events.push('event98');
+        }
+        // roadmap
+        if (ev.roadmap) {
+            p.events.push('event61');
+        }
+
+        // asset
+        if (ADL.asset) {
+            // asset id / name
+            p.eVar21 = ADL.asset.softwareDownloadID || ADL.asset.ID || ADL.asset.name || '';
+            if (p.eVar21) {
+                if (p.eVar21.indexOf('sap:') !== 0) p.eVar21 = 'sap:' + p.eVar21;
+            }
+
+            // digital library id
+            p.eVar99 = ADL.asset.digitalLibraryID || '';
+
+            // page
+            p.eVar5 = ADL.asset.page || '';
+
+            // asset crm code
+            p.eVar109 = p.eVar109 || '';
+            p.eVar109 = p.eVar109.split('|');
+            p.eVar109.push([
+                'asset',
+                (ADL.asset.crmCode || 'No CRM Code')
+            ].join(':'));
+            p.eVar109 = p.eVar109.filter(Boolean).join('|');
+
+
+            // restriction type
+            p.eVar103 = ADL.asset.restriction && ADL.asset.restriction.type || '';
+
+            // restriction popup count
+            if (ev.restrictedAssetPopup || ev.restrictedAssetBlock) {
+                p.eVar104 = ADL.asset.restriction && ADL.asset.restriction.popupCount || '';
+            }
+
+            // restricted token consumption
+            if (ev.restrictedAssetTokenConsumption) {
+                p.eVar106 = ADL.asset.restriction && ADL.asset.restriction.tokenCount || '';
+            }
+
+        } // end asset
+
+        // video tracking 
+        if ((ev.videoStart || ev.video25 || ev.video50 || ev.video75 || ev.videoComplete) && ADL.video) {
+            var video = ADL.video || {};
+            if (ev.videoStart) {
+                p.events.push('event56');
+                // e9 already pushed from ev.downloadSuccess
+                // p.events.push('event9');
+            }
+            if (ev.video25) p.events.push('event53');
+            if (ev.video50) p.events.push('event54');
+            if (ev.video75) p.events.push('event55');
+            if (ev.videoComplete) p.events.push('event59');
+
+            // time played 
+            if (video.timePlayed) p.events.push(['event57', video.timePlayed].join('='));
+
+            // name 
+            p.eVar56 = video.name || '';
+
+            // player 
+            p.eVar58 = video.player || '';
+
+        } // end video tracking
+        /** end Asset Tracking **/
+
+
+        /** SMC Interaction **/
+        if (ev.SMCInteraction && ADL.SMC) {
+            p.events.push(['event93', ADL.SMC.uniqueID || ''].filter(Boolean).join(':'));
+
+            // interaction id
+            p.eVar93 = ADL.SMC.interactionID || '';
+
+            // interaction type
+            p.eVar94 = ADL.SMC.interactionType || '';
+
+            // items of interest
+            if (ADL.SMC.itemsOfInterest instanceof Array) {
+                p.eVar98 = ADL.SMC.itemsOfInterest.join('|');
+            }
+
+            // interaction reason
+            p.eVar100 = ADL.SMC.interactionReason || '';
+
+            // smc crm code
+            p.eVar108 = ADL.SMC.crmCode || 'No CRM Code';
+
+        } // end smc interaction 
+        /** end SMC Interaction **/
+
+
+        /** Social Tracking **/
+        // social interaction tracking
+        if (ev.socialInteraction && ADL.social) {
+            var social = ADL.social || {};
+            social.platform = social.platform || '[no value]';
+            social.type = (social.type || '').toLowerCase();
+            social.target = (social.target || '').replace(/^https?:\/\//, '');
+
+            switch (social.type) {
+                case 'share':
+                    p.events.push('event7');
+                    break;
+                case 'follow':
+                    p.events.push('event31');
+                    break;
+            }
+
+            p.eVar31 = [social.type, social.platform, social.target].join('|');
+        } // end socialInteraction
+
+        /** Finder Tracking **/
+        if ((ev.finderFilterAdd || ev.finderFilterRemove || ev.finderFilterNoResults) && ADL.finder) {
+            if (ev.finderFilterAdd || ev.finderFilterRemove) p.events.push('event69');
+            if (ev.finderFilterNoResults) p.events.push('event103');
+
+            var tab = ADL.finder.tab ? '#' + ADL.finder.tab : '';
+            var hasFilters = ADL.finder.filters && Array.isArray(ADL.finder.filters);
+            var filters = '';
+            if (hasFilters) {
+                filters = ADL.finder.filters.map(function(el) {
+                    var category = el.category || '';
+                    return category.toLowerCase() + ':' + el.name;
+                });
+                filters = '|' + filters.join();
+            }
+            p.eVar69 = ADL.finder.type + tab + filters;
+        } // end finder
+        /** end Finder Tracking **/
+
+
+        /** Site Search Tracking **/
+        // NOTE: Currently only search init pops on on www.sap.com. Search is redirected to search.sap.com
+        // Search Initiated
+        if (ev.searchInit && ADL.search && ADL.search.term) {
+            p.events.push('event85');
+            p.eVar11 = ADL.search.term.toLowerCase();
+        } // end search init
+        /** end Site Search Tracking **/
+
+        /*** component tracking ***/
+        // component impression
+        var a = '',
+            l = '',
+            ad = '',
+            cid = '',
+            oid = '';
+        if (ev.componentImpression) {
+            tl = false;
+            // component vars
+            p.events.push('event76');
+            var ad = (ADL.personalization instanceof Array) ? ADL.personalization : [];
+            for (var a = 0, l = ad.length; a < l; a++) {
+                var cid = ad[a].component_id || false;
+                var oid = ad[a].output_id || false;
+                if (cid || oid) {
+                    cid = cid || 'no value';
+                    oid = oid || 'no value';
+                    p.products.push(';component_impression;;;;eVar77=' + [cid, oid].join(':'));
+                }
+            }
+        }
+        // component click
+        var a = '',
+            l = '',
+            ad = '',
+            cid = '',
+            oid = '';
+        if (ev.componentClick) {
+            // component vars
+            p.events.push('event77');
+            var ad = (ADL.personalization instanceof Array) ? ADL.personalization : [];
+            for (var a = 0, l = ad.length; a < l; a++) {
+                var cid = ad[a].component_id || false;
+                var oid = ad[a].output_id || false;
+                if (cid || oid) {
+                    cid = cid || 'no value';
+                    oid = oid || 'no value';
+                    p.products.push(';component_click;;;;eVar77=' + [cid, oid].join(':'));
+                }
+            }
+        }
+        /*** end component tracking ***/
+
+
+        // Free Trial external (deprecated) 
+        if (ev.accessExternalContent) {
+            p.events.push('event32');
+            // p.eVar21 = ADL.trialId; //?? this is not in spec.. 
+        }
+
+
+        // internal campaign tracking 
+        if (ev.campaign && ADL.campaign) {
+            // 2021.07.07 - Making an internal event for this is causing conflict with whitelist vs. other 
+            // variables mapped that shouldn't be in a payload. Removing internal event. If an internal campaign
+            // exists to be tracking, the payload should include events.campaign=true 
+            // ev._trackDataAutomated = true;
+            p.eVar13 = ADL.campaign.internal || '';
+        }
+
+
+        // error tracking
+        if (ev.error && ADL.error) {
+            p.events.push('event3');
+            p.eVar54 = ADL.error.description || '';
+        }
+
+
+        /** banner click tracking **/
+        var a, l, ad, bid;
+        if (ev.bannerClick) {
+            // banner vars
+            p.events.push('event77');
+            var ad = (ADL.advertising instanceof Array) ? ADL.advertising : [];
+            for (var a = 0, l = ad.length; a < l; a++) {
+                var bid = ad[a].banner_id || false;
+                if (bid) {
+                    p.products.push(';banner click;;;;eVar77=' + bid);
+                }
+            }
+        }
+        /** end banner click tracking **/
+
+
+        /** scc chat tracking **/
+        if (
+            ev.sccChatInviteDisplayed ||
+            ev.sccChatStarted ||
+            ev.sccChatTransferred
+        ) {
+            var chatInfo = ADL.chatInfo || {};
+            var overlay = ADL.overlay || {};
+
+            // hardcode chatType for invite event since it is not currently passed
+            if (ev.sccChatInviteDisplayed) chatInfo.chatType = 'Invited';
+
+            // suppress tracking call from ev.sccChatTransferred
+            if (ev.sccChatTransferred) {
+                if (_satellite.getVar('isLaunchStagingDebug')) {
+                    window.console && console.log('LAUNCH: _trackData: Chat Tracking Suppressed');
+                }
+                return;
+            }
+
+            if (ev.sccChatInviteDisplayed) {
+                p.events.push('event41');
+                p.eVar95 = overlay.name || '';
+            }
+            if (ev.sccChatStarted && !chatInfo.isTransfer) {
+                p.events.push(['event38', chatInfo.sccInteractionID].join(':'));
+                p.eVar38 = [
+                    (chatInfo.isBot && 'Sapbot' || 'Agent'),
+                    (chatInfo.queueaddress || '')
+                ].join('|');
+            }
+            // There is a sccChatTransferred event, but it does not have chatInfo.isBot and chatInfo.queueaddress, so per discussions, we will trigger e87 on sccChatStarted+chatInfo.isTransfer
+            if (ev.sccChatStarted && chatInfo.isTransfer) p.events.push(['event87', chatInfo.sccInteractionID].join(':'));
+
+            p.eVar40 = chatInfo.sccInteractionID || '';
+            p.eVar47 = chatInfo.chatType || '';
+        } // end if scc chat event        
+        /** end scc chat tracking **/
+
+
+        /** _trackData Versioning/QA **/
+        p.eVar151 = [
+            ['LU', _tD_lastUpdated].join(':'),
+            ['EV', Object.keys(ev).join(',')].join(':')
+        ].join('|');
+
+
+        // Contact Module: Call Me Now Popup: Call Now button 
+        if (ev.callMeNowSubmit) {
+            var callInfo = ADL.callInfo || {};
+            p.events.push('event90');
+            p.eVar90 = callInfo.topic || '';
+        }
+
+
+
+        // manual exit link tracking
+        if (ev.exit && ADL.exit) {
+            p.events.push('event24');
+            p.eVar53 = ADL.exit.link || '';
+            tl = 'e';
+        }
+
+      
+        /* manual activity map tracking */
+        if (ev.activityMap&&ADL.activityMap) {
+            tl = 'o';
+            var aM = ADL.activityMap || {};
+            p._td_activityMap=true;
+            p.contextData = p.contextData || {};
+            p.contextData['a.activitymap.page'] = aM.page || p.pageName || '';
+            p.contextData['a.activitymap.region'] = aM.region || '[no region]';
+            p.contextData['a.activitymap.link'] = aM.link || '[no link]';
+            p.contextData['a.activitymap.destination'] = aM.destination || '[no destination]';
+
+            var d = document.createElement('span');
+            d.id = 'Header';
+			d.style='display:none;visibility:hidden;';
+            d.id = p.contextData['a.activitymap.region'];
+            var a = document.createElement('a');
+            a.href = p.contextData['a.activitymap.destination'];
+            a.innerText = p.contextData['a.activitymap.link'];
+            tdl_evt.srcElement = a;
+            linkName = p.contextData['a.activitymap.link'];
+            d.appendChild(a); document.body.appendChild(d);          
+        } // end manual activity map tracking
+
+        /*******************************************************************************************/
+        /***END MAPPINGS ***************************************************************************/
+        /*******************************************************************************************/
+
+
+        /*** trigger AA code ***********************************************************************/
+        p.products = p.products.join(',');
+        p.events = p.events.join(',');
+        if (!p.products) delete p.products;
+        if (!p.events) delete p.events;
+
+
+        p._tl = tl;
+        p._linkName = linkName || 'no value';
+        p._linkEvent = tdl_evt || false;
+
+        if (_satellite.getVar('isLaunchStagingDebug')) {
+            console.log('LAUNCH: _trackData: Final AA Mapping Payload: ', JSON.parse(JSON.stringify(p)));
+            console.log('LAUNCH: _trackData: Final AA Mapping Payload (stringify): ', JSON.stringify(p, null, 4));
+        }
+
+        /* bandaid: cache the s.t call to carry over certain variables to subsequent s.tl calls */
+        if (!p._tl) {
+            _satellite._aa_cache_t = JSON.parse(JSON.stringify(p));
+        }
+        /*
+                if (tl)
+                    s.trackData(p, tl, linkName || 'no value');
+                else
+                    s.trackData(p);
+        */
+        /**
+            Broadcast events so other tags can make use of it in 
+            Event Based Rule > Custom Event
+            e.g. events.formView=true will broadcast event "formView" to document.body, so:
+            -event type: formView
+            -selector: body
+            -check "attach directly[..]" (DTM quirk)
+            And then in custom code boxes, you can reference event.detail for the payload. 
+         */
+        var ev = 'AdobeAnalyticsEventTracker';
+        if (_satellite.getVar('isLaunchStagingDebug')) {
+            window.console && console.log('LAUNCH: _trackData: Dispatching Custom Event: ', ev);
+        }
+        var event = new CustomEvent(ev, {
+            detail: p
+        });
+        document.body.dispatchEvent(event);
+
+    } catch (e) {
+        window.console && console.error(e);
+    }
+
+}; // end _trackData
+</script><script>
+(function() {
+    try {
+        var data = JSON.parse(localStorage.getItem('_6senseCompanyDetails')) || false;
+        // force api call periodically to enforce changes on 6s end
+        var cacheExpire = 60 * 60 * 24 * 1000 * 3; // 3 day
+        var currentTime = (new Date()).getTime();
+        if (data) {
+            if (data._sap && data._sap._lastAPIRefresh) {
+                if ((currentTime - +data._sap._lastAPIRefresh) >= cacheExpire) {
+                    data = false;
+                }
+            } else {
+                data = false;
+            }
+        }
+        // no data or expired data - execute 6s script to make api call, set local storage
+        if (!data) {
+            window._6si = window._6si || [];
+            window._6si.push(['enableEventTracking', true]);
+            window._6si.push(['setToken', 'b4f19dbc1b83183be9c498ba672b753c']);
+            // 6s api response callback function
+            var epsilonName = 'enableCompanyDetails';
+            var enabled = true;
+            var version = 3;
+            var callback = function(response) {
+                // throw timestamp into local storage object to check for cache expire refresh above
+                var data = JSON.parse(localStorage.getItem('_6senseCompanyDetails')) || {};
+                var currentTime = (new Date()).getTime();
+                data._sap = {
+                    "_lastAPIRefresh": currentTime
+                };
+                localStorage.setItem('_6senseCompanyDetails', JSON.stringify(data));
+
+                // broadcast custom event for other things to listen for and consume
+                var event = document.createEvent("CustomEvent");
+                event.initCustomEvent("6sense-request-success", true, true, response);
+                document.dispatchEvent(event);
+            }
+            window._6si.push([epsilonName, enabled, callback, version]);
+            window._6si.push(['setEpsilonKey', '9dba8466d7cb8d6d6155236c8f7c2f70425f2705']);
+            (function() {
+                var gd = document.createElement('script');
+                gd.type = 'text/javascript';
+                gd.innerHTML = '!function(a,b){function c(a){var b,c="";for(b=0;b<=3;b++)c+=wa.charAt(a>>8*b+4&15)+wa.charAt(a>>8*b&15);return c}function d(a){var b,c=1+(a.length+8>>6),d=new Array(16*c);for(b=0;b<16*c;b++)d[b]=0;for(b=0;b<a.length;b++)d[b>>2]|=a.charCodeAt(b)<<b%4*8;return d[b>>2]|=128<<b%4*8,d[16*c-2]=8*a.length,d}function e(a,b){var c=(65535&a)+(65535&b);return(a>>16)+(b>>16)+(c>>16)<<16|65535&c}function f(a,b){return a<<b|a>>>32-b}function g(a,b,c,d,g,h){return e(f(e(e(b,a),e(d,h)),g),c)}function h(a,b,c,d,e,f,h){return g(b&c|~b&d,a,b,e,f,h)}function i(a,b,c,d,e,f,h){return g(b&d|c&~d,a,b,e,f,h)}function j(a,b,c,d,e,f,h){return g(b^c^d,a,b,e,f,h)}function k(a,b,c,d,e,f,h){return g(c^(b|~d),a,b,e,f,h)}function l(a){var b,f=d(a),g=1732584193,l=-271733879,m=-1732584194,n=271733878;for(b=0;b<f.length;b+=16){var o=g,p=l,q=m,r=n;g=h(g,l,m,n,f[b+0],7,-680876936),n=h(n,g,l,m,f[b+1],12,-389564586),m=h(m,n,g,l,f[b+2],17,606105819),l=h(l,m,n,g,f[b+3],22,-1044525330),g=h(g,l,m,n,f[b+4],7,-176418897),n=h(n,g,l,m,f[b+5],12,1200080426),m=h(m,n,g,l,f[b+6],17,-1473231341),l=h(l,m,n,g,f[b+7],22,-45705983),g=h(g,l,m,n,f[b+8],7,1770035416),n=h(n,g,l,m,f[b+9],12,-1958414417),m=h(m,n,g,l,f[b+10],17,-42063),l=h(l,m,n,g,f[b+11],22,-1990404162),g=h(g,l,m,n,f[b+12],7,1804603682),n=h(n,g,l,m,f[b+13],12,-40341101),m=h(m,n,g,l,f[b+14],17,-1502002290),l=h(l,m,n,g,f[b+15],22,1236535329),g=i(g,l,m,n,f[b+1],5,-165796510),n=i(n,g,l,m,f[b+6],9,-1069501632),m=i(m,n,g,l,f[b+11],14,643717713),l=i(l,m,n,g,f[b+0],20,-373897302),g=i(g,l,m,n,f[b+5],5,-701558691),n=i(n,g,l,m,f[b+10],9,38016083),m=i(m,n,g,l,f[b+15],14,-660478335),l=i(l,m,n,g,f[b+4],20,-405537848),g=i(g,l,m,n,f[b+9],5,568446438),n=i(n,g,l,m,f[b+14],9,-1019803690),m=i(m,n,g,l,f[b+3],14,-187363961),l=i(l,m,n,g,f[b+8],20,1163531501),g=i(g,l,m,n,f[b+13],5,-1444681467),n=i(n,g,l,m,f[b+2],9,-51403784),m=i(m,n,g,l,f[b+7],14,1735328473),l=i(l,m,n,g,f[b+12],20,-1926607734),g=j(g,l,m,n,f[b+5],4,-378558),n=j(n,g,l,m,f[b+8],11,-2022574463),m=j(m,n,g,l,f[b+11],16,1839030562),l=j(l,m,n,g,f[b+14],23,-35309556),g=j(g,l,m,n,f[b+1],4,-1530992060),n=j(n,g,l,m,f[b+4],11,1272893353),m=j(m,n,g,l,f[b+7],16,-155497632),l=j(l,m,n,g,f[b+10],23,-1094730640),g=j(g,l,m,n,f[b+13],4,681279174),n=j(n,g,l,m,f[b+0],11,-358537222),m=j(m,n,g,l,f[b+3],16,-722521979),l=j(l,m,n,g,f[b+6],23,76029189),g=j(g,l,m,n,f[b+9],4,-640364487),n=j(n,g,l,m,f[b+12],11,-421815835),m=j(m,n,g,l,f[b+15],16,530742520),l=j(l,m,n,g,f[b+2],23,-995338651),g=k(g,l,m,n,f[b+0],6,-198630844),n=k(n,g,l,m,f[b+7],10,1126891415),m=k(m,n,g,l,f[b+14],15,-1416354905),l=k(l,m,n,g,f[b+5],21,-57434055),g=k(g,l,m,n,f[b+12],6,1700485571),n=k(n,g,l,m,f[b+3],10,-1894986606),m=k(m,n,g,l,f[b+10],15,-1051523),l=k(l,m,n,g,f[b+1],21,-2054922799),g=k(g,l,m,n,f[b+8],6,1873313359),n=k(n,g,l,m,f[b+15],10,-30611744),m=k(m,n,g,l,f[b+6],15,-1560198380),l=k(l,m,n,g,f[b+13],21,1309151649),g=k(g,l,m,n,f[b+4],6,-145523070),n=k(n,g,l,m,f[b+11],10,-1120210379),m=k(m,n,g,l,f[b+2],15,718787259),l=k(l,m,n,g,f[b+9],21,-343485551),g=e(g,o),l=e(l,p),m=e(m,q),n=e(n,r)}return c(g)+c(l)+c(m)+c(n)}var m={};m.hash=function(a){a=a.utf8Encode();var b=[1518500249,1859775393,2400959708,3395469782];a+=String.fromCharCode(128);for(var c=a.length/4+2,d=Math.ceil(c/16),e=new Array(d),f=0;f<d;f++){e[f]=new Array(16);for(var g=0;g<16;g++)e[f][g]=a.charCodeAt(64*f+4*g)<<24|a.charCodeAt(64*f+4*g+1)<<16|a.charCodeAt(64*f+4*g+2)<<8|a.charCodeAt(64*f+4*g+3)}e[d-1][14]=8*(a.length-1)/Math.pow(2,32),e[d-1][14]=Math.floor(e[d-1][14]),e[d-1][15]=8*(a.length-1)&4294967295;var h,i,j,k,l,n=1732584193,o=4023233417,p=2562383102,q=271733878,r=3285377520,s=new Array(80);for(f=0;f<d;f++){for(var t=0;t<16;t++)s[t]=e[f][t];for(t=16;t<80;t++)s[t]=m.ROTL(s[t-3]^s[t-8]^s[t-14]^s[t-16],1);for(h=n,i=o,j=p,k=q,l=r,t=0;t<80;t++){var u=Math.floor(t/20),v=m.ROTL(h,5)+m.f(u,i,j,k)+l+b[u]+s[t]&4294967295;l=k,k=j,j=m.ROTL(i,30),i=h,h=v}n=n+h&4294967295,o=o+i&4294967295,p=p+j&4294967295,q=q+k&4294967295,r=r+l&4294967295}return m.toHexStr(n)+m.toHexStr(o)+m.toHexStr(p)+m.toHexStr(q)+m.toHexStr(r)},m.f=function(a,b,c,d){switch(a){case 0:return b&c^~b&d;case 1:return b^c^d;case 2:return b&c^b&d^c&d;case 3:return b^c^d}},m.ROTL=function(a,b){return a<<b|a>>>32-b},m.toHexStr=function(a){for(var b,c="",d=7;d>=0;d--)b=a>>>4*d&15,c+=b.toString(16);return c},void 0===String.prototype.utf8Encode&&(String.prototype.utf8Encode=function(){return unescape(encodeURIComponent(this))}),void 0===String.prototype.utf8Decode&&(String.prototype.utf8Decode=function(){try{return decodeURIComponent(escape(this))}catch(a){return this}});var n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,$,_,aa,ba,ca,da,ea,fa,ga,ha,ia,ja,ka,la,ma,na,oa,pa,qa,ra,sa,ta,ua,va,wa="0123456789abcdef",xa={},ya={};$=window._6si=window._6si||[],ha="",z=!1,A=!0,na=!1,va=!1,qa=1,pa="",window._storagePopulated=!1,n={},sa=!1,ta=!1,ua=!1,B={_VIDEO:"VIDEO",_FORM:"FORM",_DIV:"DIV",_A:"A",_BUTTON:"BUTTON",_INPUT:"INPUT",_OBJECT:"OBJECT",_SELECT:"SELECT",_TEXTAREA:"TEXTAREA"},da=[],ca="",ba={},y=[],q=[],la=[],ra="https:"===document.location.protocol,U=ra?"https://":"http://","undefined"!=typeof JSON&&null!==JSON||(S=p().createElement("script"),S.type="text/javascript",S.async=!0,S.src=U+"d1lm7kd3bd3yo9.cloudfront.net/json2.min.js",S.onload=function(){return window._6si.push(["clearQueue"])},T=p().getElementsByTagName("script")[0],T.parentNode.insertBefore(S,T)),ia=U+"b.6sc.co/img.gif",ja=63072e6,ea=null,fa=null,ga=144e5,ka=6048e5,xa={setToken:function(a){ha=a,xa.clearQueue.apply()},setEndpoint:function(a){ia=U+a+"/v1/beacon/img.gif"},disableCookies:function(a){ua=a},setEpsilonKey:function(a){pa="Token "+a},clearQueue:function(){var a,b,c;if(Q()){for(a=0,b=da.length;a<b;a++)c=da[a],xa.send.apply(this,c);return da=[]}},setPageAttributes:function(a){ba=a},setSessionTimeout:function(a){ga=a},enableCompanyDetails:function(a,b,c){na=a,c&&(qa=c),b&&(oa=b)},enableEventTracking:function(a,b){var c,d,e=[];if(z=a,a){for(c in B)B.hasOwnProperty(c)&&e.push(B[c]);if(b){for(d=0;d<b.length;d++){if(e.indexOf(b[d])<0)throw new Error("One or more of the event trackingattributes is incorrect");n[b[d]]=!0}B._FORM in n&&(n[B._INPUT]=!0,n[B._SELECT]=!0,n[B._TEXTAREA]=!0)}else for(d=0;d<e.length;d++)n[e[d]]=!0}},enableRetargeting:function(a){A=a},setCustomMetatags:function(a){y=a},setWhiteListFields:function(a){q=q.concat(a)},setBlacklistFields:function(){},setThirdPartyValues:function(a){var b,c,d="Third party value is in the wrongformat";for(c=0;c<a.length;c++){if(b=a[c],"[object Array]"!==Object.prototype.toString.call(b))throw new Error(d);if(!b[0]||!b[1])throw new Error(d);la.push(b)}},send:function(a,b){var c,d,e,f,g,h,i,j,k,l,m,n,q,r,t,u=N(),v=o();if(!sa){if(!Q())return void da.push([a,b]);l=E("_gd_svisitor"),k=L(),h=K(),g=J(),f=s(),t=P(),q=ma(b,ba),e=encodeURIComponent(JSON.stringify(q)),m=encodeURIComponent(JSON.stringify(v)),i=encodeURIComponent(JSON.stringify(u)),c=(+new Date).toString().substring(5),j=[ia,"?token=",ha,"&svisitor=",l,"&visitor=",k,"&session=",h,"&event=",a,"&q=",e,"&isIframe=",f,"&m=",m,"&cb=",c,"&r=",g,"&thirdParty=",i,"&pageURL=",t].join(""),ua&&(j+="&d=1"),!0===A&&null!==(r=Y())&&(j+="&an_uid="+r),d=new Image,d.src=j,n=p().getElementById(b.id),null===n||null===n.href&&null===n.length&&null===n.method&&null===n.elements||(d.onload=function(){V(n)},d.onerror=function(){V(n)})}},loadVisitorData:function(a,b){var c,d,e,f=window.localStorage;XMLHttpRequest&&a&&"withCredentials"in(c=new XMLHttpRequest)&&(c.onreadystatechange=function(){4===c.readyState&&200===c.status&&(f.setItem("_6senseCompanyDetails",c.response),window._storagePopulated=!0,void 0!==b&&b(c.response))},e=3===qa?"https://epsilon.6sense.com/v3/company/details":"https://epsilon.6sense.com/v1/company/details",c.open("GET",e,false),c.setRequestHeader("Authorization",pa),c.withCredentials=!0,d=E("_gd_svisitor"),d&&c.setRequestHeader("EpsilonCookie",d),c.send())},optOut:function(a){sa=a},loadAppNexusUID:function(){var a,b,c;XMLHttpRequest&&"withCredentials"in(a=new XMLHttpRequest)&&(a.onreadystatechange=function(){4===a.readyState&&(b=200===a.status?JSON.parse(a.response).uid:-1,X(b),this.push(["send","a_pageload",ba]))}.bind(this),c=ra?"https://secure.adnxs.com/getuidj":"http://ib.adnxs.com/getuidj",a.open("GET",c,!0),a.withCredentials=!0,a.send())}},ya={push:function(){var a,b,c,d,e;for(d=0,e=arguments.length;d<e;d++){c=arguments[d],a=c.shift();try{xa[a].apply(this,c)}catch(f){throw"non_object_property_call"===f.type?(b="Command could not be resolved.",new Error(b)):f}}},init:function(a){var b,c,d,e,f,g,h,i,j,k,l={};if(!a)for(_=0,aa=$.length;_<aa;_++)R=$[_],this.push(R);if(b=this,k=(new Date).getTime(),Z(function(){(new Date).getTime()-k<150&&!va&&(!0!==na||a||(va=!0,b.push(["loadVisitorData",pa,oa])))}),setTimeout(function(){va||!0!==na||a||(va=!0,b.push(["loadVisitorData",pa,oa]))},150),!0===z&&!ta){if(ta=!0,a||(!0===A&&null===Y()?this.push(["loadAppNexusUID"]):this.push(["send","a_pageload",ba])),b=this,null!==(c=p().querySelector("body"))&&(c.addEventListener("click",function(a){for(d=a||window.event,e=d.srcElement||d.target;e.parentNode&&"BODY"!==e.tagName;){if(n[e.tagName])return l={srcElement:e,type:d.type},void b.send(l);e=e.parentNode}},!1),n.hasOwnProperty(B._FORM)&&null!==(f=p().querySelectorAll("form"))))for(g=0;g<f.length;g++)f[g].addEventListener("submit",function(a){a?b.send(a):b.send(this)});if(n.hasOwnProperty(B._OBJECT)&&null!==(h=p().querySelectorAll("object")))for(i=0;i<h.length;i++)h[i].addEventListener("mousedown",function(a){b.send(a)},!1);n.hasOwnProperty(B._VIDEO)&&null!==(j=p().querySelector("body"))&&(j.addEventListener("play",function(a){b.send(a)},!0),j.addEventListener("pause",function(a){b.send(a)},!0),j.addEventListener("loadeddata",function(a){b.send(a)},!0))}},send:function(){var a,b,c,d,e,f,g,h,i,j=arguments[0];if(j&&void 0!==j.type){if(a=j.srcElement||j.target,"loadeddata"===j.type)return;c=a,b=c.getAttribute("id"),g=j.type}else b=j?j.getAttribute("id"):null,c=j||null,g="unknown";if(d="",e="send",c&&void 0!==c.length&&void 0!==c.method&&void 0!==c.elements)d=F(c);else if(c&&null!==C(c)&&"submit"===c.type)f=C(c),b=f.getAttribute("id"),d=M(f),g="submit";else if(c&&void 0!==c.href)d=c.href;else if(c&&void 0!==c.data)d=c.data;else if(c&&(void 0!==c.src||void 0!==c.controls))if(void 0===c.src||""===c.src)for(h=0;h<c.getElementsByTagName("source").length;h++)i=c.getElementsByTagName("source"),d+=i[h].src,h<c.getElementsByTagName("source").length-1&&(d+=",");else d=c.src;null===b&&(b=""),this.push([e,g,{event_id:b,event_value:d}])},enable:function(){var a;a=this,z||(window._6si.push(["optOut",!1]),window._6si.push(["enableEventTracking",!0]),a.init(!0))},disable:function(){var a;a=this,window._6si.push(["optOut",!0]),window._6si.push(["enableEventTracking",!1]),a.init(!0)}},W=function(a,b,c){var d,e;d=new Date,d.setTime(d.getTime()+c),e=encodeURIComponent(b),p().cookie=[a,"=",e,";expires=",d.toGMTString(),";path=/;secure;samesite=none"].join("")},E=function(a){var b,c;return c=new RegExp("(?:^|;)\\s?"+a+"(.*?)(?:;|$)","i"),b=c.exec(p().cookie),null===b?null:decodeURIComponent(b[1].substring(1))},ma=function(a,b){var c;for(c in b)b.hasOwnProperty(c)&&(a[c]=b[c]);return a},J=function(){return ca=encodeURIComponent(p().referrer)},s=function(){return window.top!==window.self},O=function(){return(""+1e7+-1e3+-4e3+-8e3+-1e11).replace(/1|0/g,function(){return(0|16*Math.random()).toString(16)})},N=function(){var a,b,c,d={};for(a=0;a<la.length;a++)b=la[a],c=E(b[1]),d[b[0]]=c;return d},v=function(){return ea=O(),W("_gd_session",ea,ga),ea},w=function(){return fa=O(),W("_gd_visitor",fa,ja),fa},K=function(){return null===ea&&(ea=E("_gd_session")),null===ea&&(ea=v()),ea},L=function(){return null===fa&&(fa=E("_gd_visitor")),null===fa&&(fa=w()),fa},Q=function(){var a;return a="undefined"!=typeof JSON&&null!==JSON,a=a&&ha.length>0},G=function(){var a="",b=p().getElementsByTagName("title");return b.length>0&&(a=b[0].innerHTML),a},p=function(){try{if(!(x=parent.document))throw new Error("Unaccessible");return x}catch(a){return document}},H=function(a){var b,c;for(c=p().getElementsByTagName("meta"),b=0;b<c.length;){if(c[b].getAttribute("name")===a)return c[b].getAttribute("content");b++}return""},r=function(a){var b=/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;return!!b.test(a)},t=function(a){if(/company|country|title|state|city|prov|job|role/.test(a.toLowerCase()))return!0},o=function(){var a,b,c={description:H("description"),keywords:H("keywords"),title:G()};for(a=0;a<y.length;a++)b=y[a].name,c[b]=H(b);return c},u=function(a){if("string"==typeof a){var b;if(t(a))return!0;for(b=0;b<q.length;b++)if(a.toLowerCase()===q[b].toLowerCase())return!0}return!1},C=function(a){for(var b=a.parentNode;"TABLE"!==b.tagName;){if(void 0===b.tagName)return null;if(null===(b=b.parentNode))return null}return b},F=function(a){var b,c,d,e,f,g,h,i,j,k,l;for(e=0,g=[];e<a.elements.length;){if(l=a.elements[e],b=encodeURIComponent(l.name),c=encodeURIComponent(l.id),d=encodeURIComponent(l.placeholder).split(" ").join(""),!b&&!c&&!d){if(h=l.parentNode,!((i=h.getAttribute("name"))||(h=h.parentNode,i=h.getAttribute("name")))){e++;continue}b=encodeURIComponent(l.id)||encodeURIComponent(l.tagName),b=i+"_"+b}j="radio"===l.type&&!l.checked,k="fieldset"===l.type||"fieldset"===(l.tagName||"").toLowerCase(),j||k?e++:(f=I(b||c||d,l),f.length>0&&g.push(f),e++)}return g.join("&")},I=function(a,b){var c,d,e,f="",g=b.type,h=b.tagName||"",i=r(b.value),j="hidden"===g,k="password"===g,n="fieldset"===h.toLowerCase(),o=!n&&!k&&!j&&(i||u(a));return!b||n||!n&&b.value.length>100?f:(o&&(i?(c=m.hash(b.value),d=a+"_emaildomain="+b.value.split("@")[1],e=a+"_MD5="+l(b.value)):c=b.value,c=D(c),c=encodeURIComponent(c),"button"!==b.type&&"submit"!==b.type&&(d?(f+=a+"_Hash="+c,f+="&"+e,f+="&"+d):f+=a+"="+c)),f)},M=function(a){var b,c,d,e,f;for(c=0,d="",f=a.querySelectorAll("input, select, button, textarea");c<f.length;)e=f[c],b=encodeURIComponent(e.name),"radio"!==e.type||e.checked?(d+=I(b,e),c++):c++;return d.indexOf("&",d.length-3)>=0&&(d=d.substring(0,d.lastIndexOf("&"))+""),d},D=function(a){var b,c,d;return d=new RegExp("\\t","g"),b=new RegExp("\\n","g"),c=new RegExp("\\r","g"),a.replace(d,"").replace(b,"").replace(c,"")},V=function(a){return a},Z=function(a){var b;E("_gd_svisitor")||XMLHttpRequest&&"withCredentials"in(b=new XMLHttpRequest)&&(b.onreadystatechange=function(){var c,d=b.responseText;4===b.readyState&&200===b.status&&d.match("6suuid=")&&(c=d.split("=")[1],W("_gd_svisitor",c,ja),void 0!==a&&a())},ua?b.open("GET","//c.6sc.co/?d=1",!0):b.open("GET","//c.6sc.co/",!0),b.withCredentials=!0,b.send())},X=function(a){return W("_an_uid",a,ka),a},Y=function(){var a;return a=E("_an_uid"),-1!==[-1,"-1","",0,"0",void 0].indexOf(a)&&(a=null),a},P=function(){var a="";try{return a=encodeURIComponent(window.location.href)}catch(b){return a}},ya.init(),window._6si=ya,b.true=a}({},function(){return this}());';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gd, s);
+            })();
+        } else {
+            // broadcast custom event for other things to listen for and consume
+            var event = document.createEvent("CustomEvent");
+            event.initCustomEvent("6sense-request-success", true, true, {});
+            document.dispatchEvent(event);
+        }
+    } catch (e) {
+        data = false
+    }
+})();
+</script><script>
+  var script = document.createElement("script")
+  var pathVariable = "";
+  var s = document.cookie.match("country=([^;]+)")
+
+  countryCode = s && s[1] !== "(null)" ? s[1].toLowerCase() : null
+  if (countryCode) {
+      pathVariable = "country=" + countryCode + "&";
+  }
+  
+  script.src = "//consent.trustarc.com/notice?domain=sap-community.com&c=teconsent&" + pathVariable + "gtm=1&js=nj&noticeType=bb&text=true&pn=1-0"
+  script.async = "async"
+  document.head.appendChild(script)
+</script>
+<script>
+window.addEventListener('message', function (event) {
+              if (event.origin.indexOf("consent-pref.trustarc.com") < 0)
+              return;
+
+              var data = JSON.parse(event.data);
+              if (data && data.message === 'remove_iframe') {
+                sessionStorage.setItem("referrerBeforeTrustArcReload", document.referrer);
+                sessionStorage.setItem("referrerBeforeTrustArcReloadUpdateTime", new Date().getTime());
+                window.location.reload();
+    }
+});
+</script>
+<div id="consent_blackbar" style="position:fixed; bottom:0px; z-index:1000000; width:100%"></div><script>
+    var swa = {
+        pubToken: '33255556-c863-4a29-9bda-1309df0cff50',
+        baseUrl: 'https://webanalytics.cfapps.eu10.hana.ondemand.com/tracker/',
+        dntLevel: 1,
+        subSiteId:"blogs.sap.com"
+    };
+    (function(){
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.defer=true; g.async=true; g.src=swa.baseUrl+'js/privacy.js';
+        s.parentNode.insertBefore(g,s); g.onload = function() { swa.enable(); };
+     })();
+</script><!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type="text/javascript">
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g(100,"r","QSI_S_ZN_0D4LngCJt30pWT3","https://zn0d4lngcjt30pwt3-sapinsights.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_0D4LngCJt30pWT3")).start()}catch(i){}})();
+</script><div id="ZN_0D4LngCJt30pWT3"><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET--> <!-- .page-wrapper -->
+    
+
+<script>
+  if((_satellite.cookie.get('country')||"").toLowerCase() != 'us')
+  {
+  document .body.addEventListener( "click" , function (event) {
+  if (event && event.target && event.target.id === 'truste-consent-button' ) {
+     sessionStorage.setItem('referrerBeforeTrustArcReload', document.referrer);
+     sessionStorage.setItem('referrerBeforeTrustArcReloadUpdateTime', new Date().getTime());
+  setTimeout(function() { window .location.reload(); }, 1000 );
+  }
+});}
+</script><iframe sandbox="allow-scripts allow-same-origin" title="Adobe ID Syncing iFrame" id="destination_publishing_iframe_sap_s_1" name="destination_publishing_iframe_sap_s_1_name" style="display: none; width: 0px; height: 0px;" src="https://sap_s.demdex.net/dest5.html?d_nsid=1#https%3A%2F%2Fblogs.sap.com"></iframe><iframe style="display: none;" name="trustarc_notice" id="trustarcNoticeFrame" title="Trustarc Cross-Domain Consent Frame" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/get.htm"></iframe><script type="text/javascript" defer="defer" async="" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/jquery.min.js"></script><script type="text/javascript" defer="defer" async="" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/piwik.js"></script><script type="text/javascript" defer="defer" async="" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/piwik_plugin.js"></script><style>#swa_background{position:fixed;top:0px;left:0px;height:100%;width:100%;display:none;background-color: black;z-index:100;}#swa_license{font-family:Arial,Helvetica,sans-serif;background-color: white;color: black;border: 1px solid gray;position:absolute;display:none;z-index:11100;padding: 30px; display:none;background: #FFF;border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;box-shadow: 0px 0px 4px rgba(0,0,0,0.7); -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7); -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);}.close_license{ position: absolute; top: 12px; right: 12px; display: block; width: 14px; height: 14px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEUAAACIiIhaeOqmAAAAAXRSTlMAQObYZgAAAC9JREFUaN5jYGBgEOBgsJBhqLFjsKthkP/BwP+Bgf0BCAEZQC5QECgFVABUxsAAAOcxCbuaDAybAAAAAElFTkSuQmCC); z-index: 2;}.swabutton{display:inline;position: absolute;right: 25px;margin: 0px}.swalicensetxt{width:100%; height:100%; overflow-y: hidden;overflow-x: hidden;}</style><div id="swa_background"></div><div id="swa_license"><div id="swa_header"><table><tbody><tr><td><strong>Privacy Statement</strong></td></tr></tbody></table><a class="close_license" href="#"></a></div><iframe id="swa_licence_window" class="swalicensetxt" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/a.htm" scrolling="yes"></iframe><div id="swa_form"><p></p><p></p><input type="checkbox" class="swa_checkid" id="swa_p_checkid"><label for="swa_p_checkid" id="l_swa_p_checkid">&nbsp;Allow use of SAP Web Analytics</label>&nbsp;&nbsp;<button class="swabutton" type="button" id="swa_save_modal" onclick="frame_save(event);">Save</button></div></div><div class="hidden" id="wp_window_loaded"></div><script type="text/javascript" src="SAP%20BW%20Bridge%20New%20Features%20in%20Q2%202022%20SAP%20Blogs_files/index"></script><script>_satellite["_runScript1"](function(event, target, Promise) {
+function handleQueryAjaxActions(t){var n=function(t){return t.split("&").reduce((function(t,n){var e=n.split("=");return t[e[0]]=e[1],t}),{})};jQuery(document).ajaxSuccess((function(e,o,a){if(a.data)for(var i=n(a.data),s=0;s<t.length;s++){var c=t[s][0],r=t[s][1];if(c(i))return void r()}}))}function handleFetchActions(t){var n=fetch;fetch=function(){var e=arguments;return n.apply(this,arguments).then((function(n){if(e&&e[1]&&e[1].body){var o=n.clone();o.json().then((function(n){for(var a=Array.from(e[1].body.entries()).reduce((function(t,n){return t[n[0]]=n[1],t}),n),i=0;i<t.length;i++){var s=t[i][0],c=t[i][1];if(s(a))return c(),o}}))}return n}))}}function hasAction(t){return function(n){return void 0!==n.action&&n.action===t}}function hasParams(t){return function(n){for(var e in t)if(!n[e]||n[e]!==t[e])return!1;return!0}}function sentActivity(t,n){return function(){var e={objectType:n,actionType:t},o=window.location;e.contentURL=o.host+getRootPagePath(o.pathname),sap_s.trackActivity(e)}}function getRootPagePath(t){var n=t,e=/.*comment-page-\d+$/,o=!1;n.endsWith("/")&&(n=n.slice(0,-1),o=!0);var a=n.split("/");return e.test(n)&&6===a.length?(a.pop(),a.join("/")+(o?"/":"")):t}handleQueryAjaxActions([[hasParams({action:"like_a_post",actionLike:"doLike"}),sentActivity("like","blogpost")],[hasParams({action:"like_a_comment",actionLike:"doLike"}),sentActivity("like","comment")],[hasParams({action:"like_a_post",actionLike:"doUnLike"}),sentActivity("cancel-like","blogpost")],[hasParams({action:"like_a_comment",actionLike:"doUnLike"}),sentActivity("cancel-like","comment")],[hasAction("sap-update-comment"),sentActivity("update","comment")],[hasAction("sap-delete-comment"),sentActivity("delete","comment")],[hasParams({action:"delete-comment",trash:"1"}),sentActivity("delete","comment")],[hasParams({action:"delete-comment",untrash:"1"}),sentActivity("publish","comment")],[hasAction("wprc_add_report"),sentActivity("publish","alert")],[hasAction("report_agree_post"),sentActivity("confirm","alert")],[hasAction("report_disagree_post"),sentActivity("reject","alert")]]),handleFetchActions([[hasParams({last_status:"follow",action:"ss_change_follow_status",content_type:"blogpost"}),sentActivity("follow","blogpost")],[hasParams({last_status:"follow",action:"ss_change_follow_status",content_type:"sap_tag"}),sentActivity("follow","tag")],[hasParams({last_status:"not-follow",action:"ss_change_follow_status",content_type:"blogpost"}),sentActivity("stop-following","blogpost")],[hasParams({last_status:"not-follow",action:"ss_change_follow_status",content_type:"sap_tag"}),sentActivity("stop-following","tag")]]);
+});</script><script>_satellite["_runScript2"](function(event, target, Promise) {
+function fillStorageForTrackingActivity(){setUpDeleteBlogpost(),setUpPublishBlogpost(),setUpPublishComment()}function setUpPublishComment(){var t=jQuery("form#commentform");t.submit((function(){t.find("#new_comment_nonce").length&&saveToSessionStorage("comment","publish")}))}function setUpDeleteBlogpost(){jQuery(".submitdelete").click((function(){saveToSessionStorage("blogpost","delete")}))}function setUpPublishBlogpost(){var t=jQuery("form#post"),e="";t.find('input[value="Publish"][type="Submit"]').click((function(){e="publish"})),t.find('input[value="Needs More Work"][type="Submit"]').click((function(){e="needs_more_work"})),t.find('input[value="Submit for Review"][type="Submit"]').click((function(){e="submit_for_review"})),t.find('input[value="Update"][type="Submit"]').click((function(){e="update"})),t.find('input[value="Save"][type="Submit"]').click((function(){e="update"}));var o=!1;t.find("#primary-tag").change((function(){o=!0}));var i="Not Saved"===t.find("#custom-post-status-display").text();t.submit((function(){var n=t.find("#original_post_status").attr("value"),s=o&&("needs-more-work"===n||"pending"===n||"update"===e&&!i);e&&saveToSessionStorage("blogpost",e),s&&saveToSessionStorage("blogpost","update-tag-assignment")}))}function saveToSessionStorage(t,e){var o=[],i=sessionStorage.getItem(STORAGE_KEY);i&&(o=JSON.parse(i)),o.push(createActivity(t,e)),sessionStorage.setItem(STORAGE_KEY,JSON.stringify(o))}function createActivity(t,e){var o={objectType:t,actionType:e},i=window.location;return o.contentURL=i.host+getRootPagePath(i.pathname),o}function sendActionsFromSessionStorage(){var t=sessionStorage.getItem(STORAGE_KEY);if(t){var e=JSON.parse(t);sessionStorage.removeItem(STORAGE_KEY);var o=window.location.host+getRootPagePath(window.location.pathname);e.forEach((function(t){t.contentURL=o,sap_s.trackActivity(t)}))}}function getRootPagePath(t){var e=t,o=/.*comment-page-\d+$/,i=!1;e.endsWith("/")&&(e=e.slice(0,-1),i=!0);var n=e.split("/");return o.test(e)&&6===n.length?(n.pop(),n.join("/")+(i?"/":"")):t}var STORAGE_KEY="DTM_RELOAD_ACTION";fillStorageForTrackingActivity(),sendActionsFromSessionStorage();
+});</script></body></html>

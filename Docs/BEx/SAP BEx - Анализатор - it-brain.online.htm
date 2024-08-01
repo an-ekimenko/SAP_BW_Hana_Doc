@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>SAP BEx - Анализатор - it-brain.online</title>
+<meta name="description" content="  Анализатор BEx - это инструмент для составления отчетов и проектирования на основе анализа, встроенный в Microsoft Excel, который можно использовать...">
+<meta name="keywords" content="">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ru.it-brain.online/static/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ru.it-brain.online/static/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ru.it-brain.online/static/favicon-16x16.png">
+<link rel="manifest" href="https://ru.it-brain.online/static/site.webmanifest">
+<link rel="mask-icon" href="https://ru.it-brain.online/static/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="https://ru.it-brain.online/static/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="/static/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://stackpath.bootstrapcdn.com/">
+<link rel="stylesheet" href="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/bootstrap.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/all.css">
+<link rel="stylesheet" href="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/styles.css">
+<link href="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/docs.css" rel="stylesheet">
+<link rel="preconnect" href="https://code.jquery.com/">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com/">
+<script src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/reactive_library_fy2019.js"></script><script src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/osd.js"></script><script src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/cookie.js"></script><script src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/show_ads_impl_fy2019.js" id="google_shimpl"></script><script async="" src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/tag.js"></script><script src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/jquery-3.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous" type="text/javascript"></script>
+<script src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/popper.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous" type="text/javascript"></script>
+<script src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/bootstrap.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous" type="text/javascript"></script>
+<script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(57205237, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+<noscript>
+        <div><img src="https://mc.yandex.ru/watch/57205237" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+<script async="" data-ad-client="ca-pub-6845247413510566" src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/adsbygoogle.js" type="text/javascript" data-checked-head="true"></script>
+<link rel="stylesheet" href="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/default.css">
+<script src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/highlight.js" type="text/javascript"></script>
+<script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('.content pre').forEach((block) => {
+                hljs.highlightBlock(block);
+            });
+        });
+    </script>
+<meta http-equiv="origin-trial" content="A+b/H0b8RPXNaJgaNFpO0YOFuGK6myDQXlwnJB3SwzvNMfcndat4DZYMrP4ClJIzYWo3/yP2S+8FTZ/lpqbPAAEAAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A9ZgbRtm4pU3oZiuNzOsKcC8ppFSZdcjP2qYcdQrFKVzkmiWH1kdYY1Mi9x7G8+PS8HV9Ha9Cz0gaMdKsiVZIgMAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxL6oBxcpn5rQDPKSAs+d0oxNyJYq2/4esBUh3Yx5z8QfcLu+AU8iFCXYRcr/CEEfDnkxxLTsvXPJFQBxHfvkgMAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9KPtG5kl3oLTk21xqynDPGQ5t18bSOpwt0w6kGa6dEWbuwjpffmdUpR3W+faZDubGT+KIk2do0BX2ca16x8qAcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AookgM0K6zABiuRTZwpn+R95G2CKmUH/2+zf2kS/QpMlVZ6HTI6QekeLkrJyxeIi62p2ejcQTF464pkdlx0Nwg0AAABmeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJUcnVzdFRva2VucyIsImV4cGlyeSI6MTYzNDA4MzE5OSwiaXNTdWJkb21haW4iOnRydWV9"><meta http-equiv="origin-trial" content="A3HucHUo1oW9s+9kIKz8mLkbcmdaj5lxt3eiIMp1Nh49dkkBlg1Fhg4Fd/r0vL69mRRA36YutI9P/lJUfL8csQoAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A0OysezhLoCRYomumeYlubLurZTCmsjTb087OvtCy95jNM65cfEsbajrJnhaGwiTxhz38ZZbm+UhUwQuXfVPTg0AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxoOxdZQmIoA1WeAPDixRAeWDdgs7ZtVFfH2y19ziTgD1iaHE5ZGz2UdSjubkWvob9C5PrjUfkWi4ZSLgWk3Xg8AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7+rMYR5onPnACrz+niKSeFdH3xw1IyHo2AZSHmxrofRk9w4HcQPMYcpBUKu6OQ6zsdxf4m/vqa6tG6Na4OLpAQAAAB4eyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwfG8hAcHnPa/kJ1Co0EvG/K0F9l1s2JZGiDLt2mhC3QI5Fh4qmsmSwrWObZFbRC9ieDaSLU6lHRxhGUF/i9sgoAAACBeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwQ7dCmHkvR6FuOFxAuNnktYSQrGbL4dF+eBkrwNLALc69Wr//PnO1yzns3pjUoCaYbKHtVcnng2hU+8OUm0PAYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AysVDPGQTLD/Scn78x4mLwB1tMfje5jwUpAAzGRpWsr1NzoN7MTFhT3ClmImi2svDZA7V6nWGIV8YTPsSRTe0wYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+b/H0b8RPXNaJgaNFpO0YOFuGK6myDQXlwnJB3SwzvNMfcndat4DZYMrP4ClJIzYWo3/yP2S+8FTZ/lpqbPAAEAAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A9ZgbRtm4pU3oZiuNzOsKcC8ppFSZdcjP2qYcdQrFKVzkmiWH1kdYY1Mi9x7G8+PS8HV9Ha9Cz0gaMdKsiVZIgMAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxL6oBxcpn5rQDPKSAs+d0oxNyJYq2/4esBUh3Yx5z8QfcLu+AU8iFCXYRcr/CEEfDnkxxLTsvXPJFQBxHfvkgMAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9KPtG5kl3oLTk21xqynDPGQ5t18bSOpwt0w6kGa6dEWbuwjpffmdUpR3W+faZDubGT+KIk2do0BX2ca16x8qAcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AookgM0K6zABiuRTZwpn+R95G2CKmUH/2+zf2kS/QpMlVZ6HTI6QekeLkrJyxeIi62p2ejcQTF464pkdlx0Nwg0AAABmeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJUcnVzdFRva2VucyIsImV4cGlyeSI6MTYzNDA4MzE5OSwiaXNTdWJkb21haW4iOnRydWV9"><meta http-equiv="origin-trial" content="A3HucHUo1oW9s+9kIKz8mLkbcmdaj5lxt3eiIMp1Nh49dkkBlg1Fhg4Fd/r0vL69mRRA36YutI9P/lJUfL8csQoAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A0OysezhLoCRYomumeYlubLurZTCmsjTb087OvtCy95jNM65cfEsbajrJnhaGwiTxhz38ZZbm+UhUwQuXfVPTg0AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxoOxdZQmIoA1WeAPDixRAeWDdgs7ZtVFfH2y19ziTgD1iaHE5ZGz2UdSjubkWvob9C5PrjUfkWi4ZSLgWk3Xg8AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7+rMYR5onPnACrz+niKSeFdH3xw1IyHo2AZSHmxrofRk9w4HcQPMYcpBUKu6OQ6zsdxf4m/vqa6tG6Na4OLpAQAAAB4eyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwfG8hAcHnPa/kJ1Co0EvG/K0F9l1s2JZGiDLt2mhC3QI5Fh4qmsmSwrWObZFbRC9ieDaSLU6lHRxhGUF/i9sgoAAACBeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwQ7dCmHkvR6FuOFxAuNnktYSQrGbL4dF+eBkrwNLALc69Wr//PnO1yzns3pjUoCaYbKHtVcnng2hU+8OUm0PAYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AysVDPGQTLD/Scn78x4mLwB1tMfje5jwUpAAzGRpWsr1NzoN7MTFhT3ClmImi2svDZA7V6nWGIV8YTPsSRTe0wYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+b/H0b8RPXNaJgaNFpO0YOFuGK6myDQXlwnJB3SwzvNMfcndat4DZYMrP4ClJIzYWo3/yP2S+8FTZ/lpqbPAAEAAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A9ZgbRtm4pU3oZiuNzOsKcC8ppFSZdcjP2qYcdQrFKVzkmiWH1kdYY1Mi9x7G8+PS8HV9Ha9Cz0gaMdKsiVZIgMAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxL6oBxcpn5rQDPKSAs+d0oxNyJYq2/4esBUh3Yx5z8QfcLu+AU8iFCXYRcr/CEEfDnkxxLTsvXPJFQBxHfvkgMAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9KPtG5kl3oLTk21xqynDPGQ5t18bSOpwt0w6kGa6dEWbuwjpffmdUpR3W+faZDubGT+KIk2do0BX2ca16x8qAcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AookgM0K6zABiuRTZwpn+R95G2CKmUH/2+zf2kS/QpMlVZ6HTI6QekeLkrJyxeIi62p2ejcQTF464pkdlx0Nwg0AAABmeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJUcnVzdFRva2VucyIsImV4cGlyeSI6MTYzNDA4MzE5OSwiaXNTdWJkb21haW4iOnRydWV9"><meta http-equiv="origin-trial" content="A3HucHUo1oW9s+9kIKz8mLkbcmdaj5lxt3eiIMp1Nh49dkkBlg1Fhg4Fd/r0vL69mRRA36YutI9P/lJUfL8csQoAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A0OysezhLoCRYomumeYlubLurZTCmsjTb087OvtCy95jNM65cfEsbajrJnhaGwiTxhz38ZZbm+UhUwQuXfVPTg0AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxoOxdZQmIoA1WeAPDixRAeWDdgs7ZtVFfH2y19ziTgD1iaHE5ZGz2UdSjubkWvob9C5PrjUfkWi4ZSLgWk3Xg8AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7+rMYR5onPnACrz+niKSeFdH3xw1IyHo2AZSHmxrofRk9w4HcQPMYcpBUKu6OQ6zsdxf4m/vqa6tG6Na4OLpAQAAAB4eyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwfG8hAcHnPa/kJ1Co0EvG/K0F9l1s2JZGiDLt2mhC3QI5Fh4qmsmSwrWObZFbRC9ieDaSLU6lHRxhGUF/i9sgoAAACBeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwQ7dCmHkvR6FuOFxAuNnktYSQrGbL4dF+eBkrwNLALc69Wr//PnO1yzns3pjUoCaYbKHtVcnng2hU+8OUm0PAYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AysVDPGQTLD/Scn78x4mLwB1tMfje5jwUpAAzGRpWsr1NzoN7MTFhT3ClmImi2svDZA7V6nWGIV8YTPsSRTe0wYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A+b/H0b8RPXNaJgaNFpO0YOFuGK6myDQXlwnJB3SwzvNMfcndat4DZYMrP4ClJIzYWo3/yP2S+8FTZ/lpqbPAAEAAABueyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><meta http-equiv="origin-trial" content="A9ZgbRtm4pU3oZiuNzOsKcC8ppFSZdcjP2qYcdQrFKVzkmiWH1kdYY1Mi9x7G8+PS8HV9Ha9Cz0gaMdKsiVZIgMAAAB7eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AxL6oBxcpn5rQDPKSAs+d0oxNyJYq2/4esBUh3Yx5z8QfcLu+AU8iFCXYRcr/CEEfDnkxxLTsvXPJFQBxHfvkgMAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9KPtG5kl3oLTk21xqynDPGQ5t18bSOpwt0w6kGa6dEWbuwjpffmdUpR3W+faZDubGT+KIk2do0BX2ca16x8qAcAAACBeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiVHJ1c3RUb2tlbnMiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AookgM0K6zABiuRTZwpn+R95G2CKmUH/2+zf2kS/QpMlVZ6HTI6QekeLkrJyxeIi62p2ejcQTF464pkdlx0Nwg0AAABmeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJUcnVzdFRva2VucyIsImV4cGlyeSI6MTYzNDA4MzE5OSwiaXNTdWJkb21haW4iOnRydWV9"><meta http-equiv="origin-trial" content="A3HucHUo1oW9s+9kIKz8mLkbcmdaj5lxt3eiIMp1Nh49dkkBlg1Fhg4Fd/r0vL69mRRA36YutI9P/lJUfL8csQoAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A0OysezhLoCRYomumeYlubLurZTCmsjTb087OvtCy95jNM65cfEsbajrJnhaGwiTxhz38ZZbm+UhUwQuXfVPTg0AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxoOxdZQmIoA1WeAPDixRAeWDdgs7ZtVFfH2y19ziTgD1iaHE5ZGz2UdSjubkWvob9C5PrjUfkWi4ZSLgWk3Xg8AAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A7+rMYR5onPnACrz+niKSeFdH3xw1IyHo2AZSHmxrofRk9w4HcQPMYcpBUKu6OQ6zsdxf4m/vqa6tG6Na4OLpAQAAAB4eyJvcmlnaW4iOiJodHRwczovL2ltYXNkay5nb29nbGVhcGlzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjI2MjIwNzk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwfG8hAcHnPa/kJ1Co0EvG/K0F9l1s2JZGiDLt2mhC3QI5Fh4qmsmSwrWObZFbRC9ieDaSLU6lHRxhGUF/i9sgoAAACBeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AwQ7dCmHkvR6FuOFxAuNnktYSQrGbL4dF+eBkrwNLALc69Wr//PnO1yzns3pjUoCaYbKHtVcnng2hU+8OUm0PAYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AysVDPGQTLD/Scn78x4mLwB1tMfje5jwUpAAzGRpWsr1NzoN7MTFhT3ClmImi2svDZA7V6nWGIV8YTPsSRTe0wYAAACHeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiSW50ZXJlc3RDb2hvcnRBUEkiLCJleHBpcnkiOjE2MjYyMjA3OTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><link rel="preload" href="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/integrator.js" as="script"><script type="text/javascript" src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/integrator.js"></script><link rel="preload" href="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/integrator.js" as="script"><script type="text/javascript" src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/integrator.js"></script><link rel="preload" href="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/integrator.js" as="script"><script type="text/javascript" src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/integrator.js"></script><link rel="preload" href="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/integrator.js" as="script"><script type="text/javascript" src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/integrator.js"></script></head>
+<body data-google-affiliate-annotated="1" aria-hidden="false">
+<header>
+<nav class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+<a class="navbar-brand mr-0 mr-md-2" href="https://ru.it-brain.online/" aria-label="Bootstrap">
+<img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/brain-3.png" class="align-top" alt="" width="36" height="36">
+<span class="navbar-brand" style="font-family: Helvetica Neue,serif;">it-brain</span>
+</a>
+<div class="navbar-nav-scroll">
+<ul class="navbar-nav bd-navbar-nav flex-row ml-md-auto">
+<li class="nav-item">
+<a class="nav-link" href="https://ru.it-brain.online/tutorials_index/">Библиотека гайдов</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="https://ru.it-brain.online/questions/">Вопросы и ответы</a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="container-fluid" style="height: auto !important;">
+<div class="row flex-xl-nowrap" style="height: auto !important;">
+<div class="col-md-3 col-xl-2 bd-sidebar">
+<div class="bd-search d-flex align-items-center d-md-none">
+<button class="btn btn-link bd-search-docs-toggle d-md-none p-0 ml-3" type="button" data-toggle="collapse" data-target="#bd-docs-nav" aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title>
+<path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path>
+</svg>
+</button>
+</div>
+<nav class="collapse bd-links" id="bd-docs-nav" aria-label="Main navigation">
+<div class="bd-toc-item active">
+<div class="bd-toc-link">
+Руководство по SAP BEx
+</div>
+<ul class="nav bd-sidenav">
+<li>
+<a href="https://ru.it-brain.online/tutorial/sap_bex/index/">Руководство по SAP BEx</a>
+</li>
+<li>
+<a href="https://ru.it-brain.online/tutorial/sap_bex/sap_bex_overview/">SAP BEx - Обзор</a>
+</li>
+<li>
+<a href="https://ru.it-brain.online/tutorial/sap_bex/sap_bex_architecture/">SAP BEx - Архитектура</a>
+</li>
+
+<li>
+<a href="https://ru.it-brain.online/tutorial/sap_bex/sap_bex_query_designer/">SAP BEx - конструктор запросов</a>
+</li>
+<li>
+<a href="https://ru.it-brain.online/tutorial/sap_bex/sap_bex_query_designer_features/">SAP BEx - возможности конструктора запросов</a>
+</li>
+<li>
+<a href="https://ru.it-brain.online/tutorial/sap_bex/sap_bex_web/">SAP BEx - Интернет</a>
+</li>
+<li>
+<a href="https://ru.it-brain.online/tutorial/sap_bex/sap_bex_web_integration/">SAP BEx - веб-интеграция</a>
+</li>
+<li class="active bd-sidenav-active">
+<a href="https://ru.it-brain.online/tutorial/sap_bex/sap_bex_analyzer/">SAP BEx - Анализатор</a>
+</li>
+<li>
+<a href="https://ru.it-brain.online/tutorial/sap_bex/sap_bex_analysis_functions/">SAP BEx - Функции анализа</a>
+</li>
+<li>
+<a href="https://ru.it-brain.online/tutorial/sap_bex/sap_bex_objects/">SAP BEx - Объекты</a>
+</li>
+<li>
+<a href="https://ru.it-brain.online/tutorial/sap_bex/sap_bex_accessibility_mode/">SAP BEx - Режим доступности</a>
+</li>
+<li>
+<a href="https://ru.it-brain.online/tutorial/sap_bex/sap_bex_information_broadcasting/">SAP BEx - Информационное вещание</a>
+</li>
+<li>
+<a href="https://ru.it-brain.online/tutorial/sap_bex/sap_bex_integration_with_bo/">SAP BEx - интеграция с BO</a>
+</li>
+</ul>
+</div>
+<div class="bd-toc-item active">
+<div class="bd-toc-link">
+SAP BEx Полезные ресурсы
+</div>
+<ul class="nav bd-sidenav">
+<li>
+<a href="https://ru.it-brain.online/tutorial/sap_bex/sap_bex_quick_guide/">SAP BEx - Краткое руководство</a>
+</li>
+<li>
+<a href="https://ru.it-brain.online/tutorial/sap_bex/sap_bex_useful_resources/">SAP BEx - Полезные ресурсы</a>
+</li>
+<li>
+<a href="https://ru.it-brain.online/tutorial/sap_bex/sap_bex_discussion/">Обсудить SAP BEx</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<main class="col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main" style="height: auto !important;">
+<div class="content" style="height: auto !important;">
+<div style="height: auto !important;">
+<h1>SAP BEx - Анализатор</h1>
+<div style="text-align:center">
+<script async="" src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/adsbygoogle.js" type="text/javascript"></script>
+<ins class="adsbygoogle ad-adaptive-horizontal" style="display: inline-block; width: 0px; height: 0px;" data-ad-client="ca-pub-6845247413510566" data-full-width-responsive="true" data-ad-slot="1230889643" data-adsbygoogle-status="done" data-ad-status="unfilled"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_1_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:0px;height:nullpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/ads.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!2" data-google-query-id="CI-Iq4PoufECFZtjGAodHjAO9g" data-load-complete="true" width="0" frameborder="0"></iframe></ins></ins></ins>
+<script type="text/javascript">
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+</div>
+ <p> Анализатор BEx - это инструмент для составления отчетов и 
+проектирования на основе анализа, встроенный в Microsoft Excel, который 
+можно использовать для анализа данных в InfoProvider. Вы также можете 
+добавить различные типы <b>элементов</b> управления, такие как, <b>сетки анализа, раскрывающиеся списки</b> и <b>кнопки</b> в книгу Excel. </p><p> BEx Analyzer предоставляет вам два различных функциональных режима, которые можно использовать для выполнения <b>анализа OLAP</b> или для разработки интерфейсов для приложений запросов. </p><h3> Режим анализа </h3><p>
+ Этот режим можно использовать для выполнения запросов, созданных в 
+конструкторе запросов для выполнения анализа OLAP. Вы также можете 
+определить новые запросы, запустив конструктор запросов BEx. Вы также 
+можете использовать функции планирования и расширенные функции 
+планирования, написанные на VBA. </p><p> Рабочие книги, созданные с помощью анализатора BEx, можно сохранить на сервере или локально. </p><h3> Режим дизайна </h3><p>
+ Вы можете использовать режим конструирования для разработки интерфейса 
+вашей рабочей книги, в который вы можете вставлять таблицу <b>анализа, радиокнопки, раскрывающиеся списки</b>
+ в рабочую книгу Microsoft Excel. Вы можете выполнять форматирование 
+рабочей книги и настраивать типы диаграмм в рабочей книге Excel. </p><p> Чтобы получить доступ к BEx Analyzer, перейдите к Программные файлы → Business Explorer → Analyzer. </p><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/b4a1d941f6896c8f4f3871852eb60499781185f1c3c554270f5f61073d04.jpg" alt="Режим дизайна"><p></p><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/6c6d2557d18321217f2a62cf866144931f3bc7fa78e5bb936916ba454755.jpg" alt="слово"><h2> Business Explorer - Режим анализа в Анализаторе </h2><p>
+ При запуске анализатора BEx отображается строка меню и панель 
+инструментов анализатора BEx. Вы также можете получить доступ к BEx 
+Report Designer и веб-анализатору из BEx analyzer → Инструменты. </p><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/a253f905bffa7a2200394701a7c51bbdb2448aa797e29bf4afe308e6ddf0.jpg" alt="Режим анализа"><h3> Как открыть книгу и запрос в BEx Analyzer? </h3><p>
+ Вы можете открыть книгу или запрос на панели инструментов BEx Analyzer.
+ Чтобы открыть запрос, перейдите к BEx Analyzer → Открыть запрос. </p><p> Чтобы открыть книгу, перейдите к BEx Analyzer → Открыть книгу. </p><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/f56ff4e2d62cd9860771bf235867efc237cc288d12ca79d63ec24262cdc6.jpg" alt="рабочая тетрадь"><h3> Как сохранить рабочую книгу? </h3><p>
+ Чтобы сохранить рабочую книгу в BEx Analyzer, вам нужно перейти в меню 
+«Сохранить» → «Сохранить рабочую книгу» на панели инструментов анализа 
+или также нажать «BEx Analyzer» → «Сохранить рабочую книгу» в меню. </p><p>
+ Вы также можете сохранить книгу под новым именем. Для этого выберите 
+«Сохранить» → «Сохранить рабочую книгу как» на панели инструментов 
+анализа или также нажмите «BEx Analyzer» → «Сохранить рабочую книгу как»
+ в меню. </p><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/8249d9907330651710e145807d6d373608828234ecc06abdbc390a1ef8d8.jpg" alt="Сохранить книгу"><h3> обновление </h3><p>
+ Вы также можете управлять автоматическим обновлением рабочей книги в 
+BEx Analyzer. Для активации этого перейдите к BEx Analyzer → Обновить. </p><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/43b6c0359bb61c380cdab0ab859e5130800bbf09d59483f45d114bc2e8e2.jpg" alt="обновление"><h3> Изменение значений переменных </h3><p>
+ Вы можете использовать эту опцию, чтобы изменить значения переменных в 
+вашем запросе. На панели инструментов анализа выберите BEx Analyzer → 
+Изменить значения переменных, как показано на следующем снимке экрана. </p><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/497da9ee2ad0d28a59452812a3e9a32e08369288881d36ff78a10db33a6c.jpg" alt="Изменение значений переменных"><h3> Глобальные настройки </h3><p>
+ Этот параметр можно использовать для настройки глобальных параметров, и
+ он позволяет вам ввести параметр, применимый ко всему приложению. </p><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/795215a295efa379ce869f3c24f9ac8b4c0d4109d9186e835122256c6e11.jpg" alt="Глобальные настройки"><p>
+ Есть другие опции, которые вы можете выбрать из раскрывающегося списка 
+BEx Analyzer. Вы можете получить доступ к SAP-документации в BEx 
+Analyzer, перейдя к опции «Справка по приложению». </p><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/6ee71df2d12dc0bd4fe81ff6b7e91d31bdc501751b14a651fde0b98efe6b.jpg" alt="Справка по приложению"><h2> Business Explorer - режим проектирования в анализаторе </h2><p>
+ Когда вы находитесь в режиме анализа, чтобы переключиться в режим 
+разработки, вам необходимо перейти к BEx Analyzer → Панель инструментов 
+дизайна → Режим дизайна в меню, как показано на следующем снимке экрана.
+ </p><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/88f3bf4c878319081a4433d9746e6bef63d378b366b6384d3bda8b739284.jpg" alt="Панель инструментов"><p>
+ Есть 11 элементов дизайна, из которых вы можете выбрать на панели 
+инструментов дизайна. Когда вы нажимаете на панели инструментов дизайна,
+ вы можете найти следующие параметры - </p><ul><li> Вставить сетку анализа </li><li> Вставить панель навигации </li><li> Вставить список фильтров </li><li> Вставить кнопку </li><li> Вставить раскрывающийся список </li><li> Вставить флажок группы </li><li> Вставить группу радиокнопок </li><li> Вставить список условий </li><li> Вставить список исключений </li><li> Вставить текст </li><li> Вставить сообщения </li></ul><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/e55c747e5f411f2bade9a94279730ad387da0a1dbbc39914323ffd0f2942.jpg" alt="Панель инструментов дизайна"><p>
+ Последний параметр - это параметр «Рабочая книга», который можно 
+использовать для настройки общих функций для рабочих книг в Analyzer. 
+Все элементы дизайна, которые вы вставляете в рабочую книгу, 
+отображаются в конце списка в разделе Инструменты дизайна. </p><p> Чтобы открыть свойства элемента дизайна, щелкните элемент дизайна в списке. </p><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/519da6b942add3837408505f2566d947c0bc0bdd49a0e2fd2bcacdde4b87.jpg" alt="Элемент дизайна"><p> В свойствах элемента дизайна вы можете определить различные поля, такие как - </p><ul><li> Общая </li><li> Связанные графики </li><li> Отсечение. </li></ul><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/edd75304bddae92756b14759b94891985332ad71297df71f51ad50cacb29.jpg" alt="поля"><h2> Business Explorer - Создание приложений планирования </h2><p> Приложение планирования может содержать функцию планирования, такую как - <b>Копировать, Сохранить</b> или <b>Удалить</b> , или <b>Список выбора</b> и т. Д. Давайте посмотрим, как создать приложение планирования. </p><div style="width: 100%; height: auto; clear: both; text-align: center;" class="google-auto-placed ap_container"><ins style="display: block; margin: auto; background-color: transparent; height: 280px;" data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-6845247413510566" data-adsbygoogle-status="done" data-ad-status="filled"><ins id="aswift_4_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:1014px;background-color:transparent;" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_4_anchor" style="display: block; border: medium none; height: 280px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 1014px; background-color: transparent; overflow: visible;"><iframe id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;border:0;width:1014px;height:280px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/ads.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!5" data-google-query-id="CN_U3o_oufECFVJZGAodNHAMyg" data-load-complete="true" width="1014" height="280" frameborder="0"></iframe></ins></ins></ins></div><p>
+ Для начала необходимо проверить настройки безопасности. Выберите 
+«Инструменты» → «Макрос» → «Безопасность» и установите индикатор 
+Доверительный доступ к проекту Visual Basic. </p><p> Создайте новую 
+рабочую книгу и поместите заголовок рабочей книги в нужную ячейку 
+рабочей книги → введите заголовок и присвойте ему шрифт. </p><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/7848782091769c6049cbe2a2da4f9d874a20c99b2a0ca769917d827f542a.jpg" alt="Продажи"><p>
+ Для разработки рабочей книги перейдите в режим «Дизайн». Перейдите к 
+панели инструментов «Дизайн» → «Режим дизайна», как показано на 
+следующем снимке экрана. </p><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/d522b998bf5af049507df953072e9276b364db737e99c78bb3c0206843ba.jpg" alt="BEx Analyzer"><p>
+ Чтобы отобразить результаты запроса с фактическими и плановыми данными,
+ перейдите в соответствующую ячейку и выберите «Вставить аналитическую 
+сетку» на панели инструментов «Дизайн» и откройте свойства элемента 
+дизайна, как упоминалось в предыдущем разделе. </p><p> Перейдите на 
+вкладку «Общие» в «Свойствах» и выберите «Создать новый поставщик 
+данных». Откроется диалоговое окно, в котором отображается имя текущего 
+поставщика данных. </p><div style="width: 100%; height: auto; clear: both; text-align: center;" class="google-auto-placed ap_container"><ins style="display: block; margin: auto; background-color: transparent; height: 280px;" data-ad-format="auto" class="adsbygoogle adsbygoogle-noablate" data-ad-client="ca-pub-6845247413510566" data-adsbygoogle-status="done" data-ad-status="filled"><ins id="aswift_5_expand" style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:1014px;background-color:transparent;" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_5_anchor" style="display: block; border: medium none; height: 280px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 1014px; background-color: transparent; overflow: visible;"><iframe id="aswift_5" name="aswift_5" style="left:0;position:absolute;top:0;border:0;width:1014px;height:280px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/ads.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!6" data-google-query-id="CJDYx5ToufECFVeVGAodPbIFuw" data-load-complete="true" width="1014" height="280" frameborder="0"></iframe></ins></ins></ins></div><p> Чтобы определить начальный вид поставщика данных, нажмите на представление запроса, и появится диалоговое окно. </p><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/fa6797356e8d40f37a55742e93845d11e7852a6ecfac05ad413f640ec827.jpg" alt="Начать просмотр"><p> Следующим шагом является выбор необходимого запроса или вида запроса и выбор <b>Открыть</b>
+ . Это позволит системе вставить имя инфо-провайдера, для которого 
+создается запрос, и эта информация отображается в поле инфо-куба, как 
+показано ниже: </p><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/1b2e17d3ae34c3ed93bb32daa1f4cb6843d3871340d8e81e03e36ad6b032.jpg" alt="Выберите Открыть"><p>
+ Как только ваш провайдер данных настроен, нажмите кнопку ОК, и вы 
+перейдете к элементу Свойства свойств сетки анализа. Вам следует 
+установить флажок « <b>Применить форматирование</b> и <b>разрешить навигацию»</b> . </p>
+<img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/a79d41149304b2328c80698c99158fa4dfdeb001c35d48893c70aa2d43f5.jpg" alt="Применить форматирование"><p>
+ Аналогичным образом добавьте раскрывающийся список в нужную ячейку и 
+выберите Свойства. Выберите настроенного поставщика данных и отметьте 
+параметр « <b>Метка индикатора»</b> . Теперь, следующий шаг - перейти на
+ закладку Размеры, вам нужно выбрать размеры, для которых вы хотите 
+иметь возможность выбирать значения в раскрывающемся списке, как 
+показано на следующем снимке экрана. </p><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/1c4cf0564245eaa59c1c0cf2456460b43ffa318568f48d80599ebef3faf1.jpg" alt="Индикатор метки"><p>
+ Следующим шагом является добавление кнопки для этой специальной 
+функции. Перейдите на панель инструментов дизайна и добавьте кнопку типа
+ элемента дизайна. </p><p> Перейдите в контекстное меню кнопки и 
+выберите команду «Планирование» → выберите необходимую функцию 
+планирования и поставщика данных. </p><ul><li><p> <b>Функция планирования</b> - PF_Copy </p></li><li><p> <b>Функция планирования</b> - PF_Revaluate01 </p></li><li><p> <b>Функция планирования</b> - PF_Delete </p></li></ul><p> Нажмите на кнопку Готово и выберите кнопку Сохранить. </p><img src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/b77bb0837306a095b184017afe454c172c77fe88b10371d642b672597644.jpg" alt="Конец">
+</div>
+<div style="text-align:center">
+<script async="" src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/adsbygoogle.js" type="text/javascript"></script>
+<ins class="adsbygoogle ad-adaptive-horizontal" style="display: inline-block; width: 0px; height: 0px;" data-ad-client="ca-pub-6845247413510566" data-full-width-responsive="true" data-ad-slot="1230889643" data-adsbygoogle-status="done" data-ad-status="unfilled"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_2_anchor" style="display: block; border: medium none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 0px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe id="aswift_2" name="aswift_2" style="left: 0px; position: absolute; top: 0px; border: 0px none; width: 0px; height: 0px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/ads_004.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!3" data-google-query-id="CPyyq4PoufECFQcJewodZ5II5A" data-load-complete="true" width="0" frameborder="0"></iframe></ins></ins></ins>
+<script type="text/javascript">
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+</div>
+</div>
+<div class="footer-btn">
+<a href="https://ru.it-brain.online/tutorial/sap_bex/sap_bex_web_integration/" class="btn float-left"><i class="fas fa-arrow-circle-left"></i>Назад
+</a>
+<a href="https://ru.it-brain.online/tutorial/sap_bex/sap_bex_analysis_functions/" class="btn float-right">Вперёд<i class="fas fa-arrow-circle-right"></i></a>
+</div>
+</main>
+<nav class="d-none d-xl-block col-xl-2 bd-toc" aria-label="Secondary navigation">
+<script async="" src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/adsbygoogle.js" type="text/javascript"></script>
+<ins class="adsbygoogle d-none d-xl-block mb-2" style="display: inline-block; width: 254px; height: 600px;" data-ad-client="ca-pub-6845247413510566" data-ad-slot="5804451673" data-adsbygoogle-status="done" data-ad-status="filled"><ins id="aswift_3_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:254px;background-color:transparent;" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_3_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:254px;background-color:transparent;"><iframe id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;border:0;width:254px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/ads.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!4" data-google-query-id="CMPLq4PoufECFZcnGAodPHEF5A" data-load-complete="true" width="254" height="600" frameborder="0"></iframe></ins></ins></ins>
+<script type="text/javascript">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</nav>
+</div>
+</div>
+<footer class="bd-footer text-muted mt-auto ">
+<div class="container-fluid p-3 p-md-5 text-center">
+<p>it-brain.online - 2020</p>
+</div>
+</footer>
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important;" data-adsbygoogle-status="done" data-ad-status="unfilled"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/ads_006.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" data-google-container-id="a!1" data-load-complete="true" frameborder="0"></iframe></ins></ins></ins><iframe src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/aframe.htm" style="display: none;" width="0" height="0"></iframe><iframe id="google_osd_static_frame_8083131131530" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body><iframe id="google_esf" name="google_esf" src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/zrt_lookup.htm" style="display: none;"></iframe><ins class="adsbygoogle adsbygoogle-noablate" style="display: none !important; width: 100vw !important; height: 100vh !important; inset: 0px auto auto 0px !important; clear: none !important; float: none !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; position: fixed !important; vertical-align: baseline !important; visibility: visible !important; z-index: 2147483647 !important; background-color: transparent;" data-adsbygoogle-status="done" aria-hidden="true" data-ad-status="filled" data-vignette-loaded="true"><ins id="aswift_6_expand" style="display: inline-table !important; border: medium none !important; height: 100vh !important; margin: 0px !important; padding: 0px !important; position: relative !important; visibility: visible !important; width: 100vw !important; background-color: transparent !important; inset: auto !important; clear: none !important; float: none !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; vertical-align: baseline !important; z-index: auto !important;" tabindex="0" title="Advertisement" aria-label="Advertisement"><ins id="aswift_6_anchor" style="display: block !important; border: medium none !important; height: 100vh !important; margin: 0px !important; padding: 0px !important; position: relative !important; visibility: visible !important; width: 100vw !important; background-color: transparent !important; inset: auto !important; clear: none !important; float: none !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; vertical-align: baseline !important; z-index: auto !important;"><iframe id="aswift_6" name="" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" src="SAP%20BEx%20-%20%D0%90%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80%20-%20it-brain.online_files/zrt_lookup_002.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" style="width: 100vw !important; height: 100vh !important; inset: 0px auto auto 0px !important; position: absolute !important; clear: none !important; display: inline !important; float: none !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; vertical-align: baseline !important; visibility: visible !important; z-index: auto !important;" data-google-container-id="a!7" data-google-query-id="COXdqoPoufECFUUWGAodNDACBg" data-load-complete="true" width="" height="" frameborder="0"></iframe></ins></ins></ins></html>

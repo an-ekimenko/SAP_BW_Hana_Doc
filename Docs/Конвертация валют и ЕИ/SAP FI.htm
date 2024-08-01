@@ -1,0 +1,1694 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"></head><body style="background: url('./images/bg.jpg') width: 100%" oncopy="return false;" oncontextmenu="notmenu();" onkeypress="return catchControlKeys(event)">Mozilla/5.0 (Windows NT 6.1; rv:61.0) Gecko/20100101 Firefox/61.0
+
+
+<!--[ <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">-->
+
+
+
+<title>SAP FI</title>
+<!-- base href="http://www.cleversystems.ru/" -->
+<link rel="stylesheet" href="SAP%20FI_files/styles.css" title="stylesheet" type="text/css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="SAP, SAP AG, SAP FI, SAP VAT, SAP FI-AP, SAP FI-AR, SAP FI-GL, ERP система">
+<meta http-equiv="pragma" content="no-cache">
+
+<style type="text/css"></style>
+
+
+
+
+
+ 
+<link rel="stylesheet" href="SAP%20FI_files/SAP1.css" title="stylesheet" type="text/css">
+ 
+
+<script type="text/javascript">
+<!--
+
+
+function catchControlKeys(event){  
+var code=event.keyCode ? event.keyCode : event.which ? event.which : null;  
+
+
+
+	if (event.ctrlKey){  
+	
+	//alert ("Event.ctrlKey="+code);
+	// Ctrl+U  
+	if (code == 117) clientFunction();  
+	if (code == 85) clientFunction();  
+	// Ctrl+C  
+	if (code == 83) clientFunction();  
+	if (code == 99) clientFunction();  
+	if (code == 19) clientFunction();  
+	if (code == 67) clientFunction();  
+	// Ctrl+A  
+	if (code == 97) return false;  
+	if (code == 65) return false;  
+	}  
+}  
+
+function notmenu() { window.event.returnValue=false; }
+
+
+var message=""; 
+/////////////////////////////////// 
+function clickIE() {if (document.all) {(message);return false;}} 
+function clickNS(e) {if  
+(document.layers||(document.getElementById&&!document.all)) { 
+if (e.which==2||e.which==3) {(message);return false;}}} 
+if (document.layers)  
+{document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;} 
+else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;} 
+
+document.oncontextmenu=new Function("return false") 
+
+
+//-->
+</script>
+
+
+
+ 
+ 
+<table width="1100px" cellspacing="0" cellpadding="0" border="0" align="center">
+<tbody><tr>
+<td align="left">
+
+
+<table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+
+<tbody><tr>
+	<td id="excep_book"></td>
+	<td class="menu1" style="color:#336699" align="left"><img src="SAP%20FI_files/SAP.png"></td>
+		<td class="menu1" vertical-align="middle" align="right">
+	<b>+7(926)911-32-44<br> <br> e-mail: <a href="mailto:r_baranov@mail.ru">r_baranov@mail.ru</a><br>
+	</b>
+	</td>
+
+</tr>
+
+</tbody></table>
+<table style="width: 100%;" cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+<td class="top_menu" nowrap="nowrap">
+
+
+ 	<div class="top_menu_link_container">
+	<div class="top_menu_link">
+	<a href="http://www.cleversystems.ru/sap_home.php" class="top_menu_item">Книги SAP FI</a>
+	</div>
+	</div>
+
+	<div class="top_menu_link_container">
+	<div class="top_menu_link">
+	<a href="http://www.cleversystems.ru/SAP1.php" class="top_menu_item">Обзор SAP</a>
+	</div>
+	</div>
+	<div class="top_menu_link_container">
+	<div class="top_menu_link">
+	<a href="http://www.cleversystems.ru/SAP2.php" class="top_menu_item">ГК</a>
+	</div>
+	</div>
+	<div class="top_menu_link_container">
+	<div class="top_menu_link">
+	<a href="http://www.cleversystems.ru/SAP3.php" class="top_menu_item">Контрагенты</a>
+	</div>
+	</div>
+	<div class="top_menu_link_container">
+	<div class="top_menu_link">
+	<a href="http://www.cleversystems.ru/SAP8.php" class="top_menu_item">НДС</a>
+	</div>
+	</div>
+	<div class="top_menu_link_container">
+	<div class="top_menu_link">
+	<a href="http://www.cleversystems.ru/SAP4.php" class="top_menu_item">Банк и касса</a>
+	</div>
+	</div>
+ 
+	<div class="top_menu_link_container">
+	<div class="top_menu_link">
+	<a href="http://www.cleversystems.ru/SAP5.php" class="top_menu_item">Закрытие периода</a>
+	</div>
+	</div>
+	
+	<div class="top_menu_link_container">
+	<div class="top_menu_link">
+	 <a href="http://www.cleversystems.ru/SAP6.php" class="top_menu_item">Контроллинг</a>
+	</div>
+	</div>
+	
+	<div class="top_menu_link_container">
+	<div class="top_menu_link">
+	 <a href="http://www.cleversystems.ru/SAP7.php" class="top_menu_item">Корр. счетов ГК</a>
+	</div>
+	</div>	
+	
+	<div class="top_menu_link_container">
+	<div class="top_menu_link">
+	 <a href="http://www.cleversystems.ru/SAP9.php" class="top_menu_item">Разработка SAP</a>
+	</div>
+	</div>	
+	
+	<div class="top_menu_link_container">
+	<div class="top_menu_link">
+	 <a href="http://www.cleversystems.ru/SAP10.php" class="top_menu_item">LSMW</a>
+	</div>
+	</div>	
+	<div class="top_menu_link_container">
+	<div class="top_menu_link">
+	 <a href="http://www.cleversystems.ru/user_logout.php" class="top_menu_item">Выход</a>
+	</div>
+	</div>	
+</td> 
+</tr>
+</tbody></table>
+<script type="text/javascript" src="SAP%20FI_files/sap.js"></script>
+<table width="100%" cellspacing="3" cellpadding="3" border="0" align="center"> 
+<tbody><tr>
+<td>
+<div style="display:none;">Материал "скомунизден" с сайта cleversystems.ru</div>
+<div class="WordSection1">
+<h1 style="text-align:left" align="left"><a name="Toc527"><span>SAP</span><span> </span></a><span>FI</span>. Книга 2. Структура предприятия и главная книга.</h1>
+<h4 style="text-align:left" align="left">204 страницы</h4>
+<p class="MsoNoSpacing"><span lang="EN-US">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+
+
+<h1><a name="_Toc413872994">Содержание</a></h1>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoToc1"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180729"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Структура
+данных финансов</span><span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">6</span></a></span></p>
+
+<p class="MsoToc1"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180730">Валюта<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">7</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180731"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Создание валюты</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">7</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180732"><i><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;" lang="EN-US">TCURR</span></i><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;" lang="EN-US"> </span><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Курсы</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">
+</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">валют</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;" lang="EN-US">, </span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">типы</span><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;"> </span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">курсов</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">8</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180733"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Максимальное курсовое отклонение</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">8</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180734"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Загрузка курсов валют</span><span style="color:windowtext;
+display:nne; text-decoration:none"> </span><span style="color:windowtext;display:nne; text-decoration:none">9</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180735"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Пути настройки валюты</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">9</span></a></span></p>
+
+<p class="MsoToc1"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180736"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Финансовый год и периоды проводки</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">10</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180737"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Описание</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">10</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180738"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Настройка</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">10</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180739">Ведение варианта
+финансового года<span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">10</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180740">Присвоение БЕ и
+варианта периодов<span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">10</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180741"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Пути настройки</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">12</span></a></span></p>
+
+<p class="MsoToc1"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180742"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Главная книга и основные данные</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">12</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180743"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Связи объектов</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">12</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180744"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Описание</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">12</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180745"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Организационные единицы бухгалтерии</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">13</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180746"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Страна</span><span style="color:windowtext;display:
+none;text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">13</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180747"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Компания</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">14</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180748"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Балансовая единица</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">15</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180749"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Глобальные параметры БЕ</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">16</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180750"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Присвоение варианта периода проводки</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">17</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180751">Подготовка операций для
+проводок кросс-БЕ<span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">18</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180752">Варианты статусов полей<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">18</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180753"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Определение закупочной организации.</span><span style="color:windowtext;display:nne; text-decoration:none"> </span><span style="color:windowtext;display:nne; text-decoration:none">20</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180754">Присв<span lang="RU">оение
+</span>закупочной организации БЕ<span style="color:windowtext;display:nne; 
+text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">21</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180755">Ссылка Закуп
+организация – закуп организация<span style="color:windowtext;display:nne; 
+text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">21</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180756"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Определение завода</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">22</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180757">Привязка завода и
+закупочной организации <span lang="RU">к БЕ</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">22</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180758">Определение сбытовых
+организаций<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">23</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180759"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Компания и БЕ</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">24</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180760"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Присвоение БЕ-компания</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">24</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180761"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Бизнес-сфера</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">24</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180762"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Контроллинговая единица</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">25</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180763"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">План счетов</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">26</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180764"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Описание</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">27</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180765"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Функции плана счетов</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">27</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180766"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Создание плана счетов</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">28</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180767"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Длина номера основного счета</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">28</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180768"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Язык ведения</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">28</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180769"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">План счетов концерна</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">29</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180770"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Группы счетов</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">29</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180771"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Определение групп счетов</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">29</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180772"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Статусы полей</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">30</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180773"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Счет</span><span style="color:windowtext;display:nne; 
+text-decoration:none"> </span><span style="color:windowtext;display:nne; text-decoration:none">31</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180774">Перенос настройки&nbsp;
+счетов используйте транзакцию <span lang="EN-US">FS</span>15<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">33</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180775"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Добавление счета</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">33</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180776"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Тип счета</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">33</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180777">Определение <span lang="RU">типа </span>счетов результата<span style="color:windowtext;display:
+none;text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">33</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180778"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Виды счетов</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">34</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180779"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Настройка счета для БЕ</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">34</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180780"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Валюта счета</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">34</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180781"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Группа статусов полей</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">34</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180782"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Счет концерна</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">34</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180783"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Альтернативный номер счета</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">35</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180784"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Финпозиция по умолчанию</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">35</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180785"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Определение управления открытыми позициями</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">35</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180786"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Сальдо только в ВВ</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">35</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180787"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Просмотр отдельных позиций</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">36</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180788"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Определение налоговой категории</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">36</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180789"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Определение возможности проводки без налога</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">36</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180790"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Контрольный счет для вида счета</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">37</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180791"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Классификация основных счетов при разделении документов</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">37</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180792"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Таблицы по счёту</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">38</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180793">Область оценки <span lang="EN-US">FI</span><span style="color:windowtext;display:nne; text-decoration:
+none"> </span><span style="color:windowtext;display:nne; text-decoration:none">38</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180794">Исправление расхождений
+по итогам и по позициям ГК<span style="color:windowtext;display:nne; 
+text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">38</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180795">Изменить сумму в
+документе<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">39</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180796">Правим<span lang="EN-US">
+BSEG, J_3RKKRS</span><span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">39</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180797">Проверяем целостность<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">41</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180798">Если некорректные
+суммы, исправлять руками.<span style="color:windowtext;display:nne; text-decoration:
+none"> </span><span style="color:windowtext;display:nne; text-decoration:none">43</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180799">Удаляем документы из <span lang="EN-US">FAGL</span><span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">46</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180800">Перенос сальдо по
+документам<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">48</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180801"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Проверка непротиворечивости данных ГК</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">49</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180802"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Новая главная книга</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">49</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180803">Расширенная структура,
+и отчетность по ним:<span style="color:windowtext;display:nne; text-decoration:
+none"> </span><span style="color:windowtext;display:nne; text-decoration:none">49</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180804">Сегмент<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">50</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180805">Примеры исполнения<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">50</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180806">Пример учёта по МСФО:<span style="color:windowtext;display:nne; text-decoration:none"> </span><span style="color:windowtext;display:nne; text-decoration:none">52</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180807">Настройка НГК<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">53</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180808">Регистры ГК<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">53</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180809">Валюты ведущего
+регистра<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">54</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180810">Группы Регистров<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">54</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180811">Правила учёта<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">55</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180812">Активация неведущих
+регистров<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">55</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180813">Сценарии Регистров<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">55</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180814">Сценарии ГК<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">56</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180815">Пользовательские поля<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">57</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180816">Расширение клиента<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">58</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180817">Деактивировать
+обновление классической Главной книги<span style="color:windowtext;display:
+none;text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">59</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180818">Оценка<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">59</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180819">Определение методов
+оценки<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">59</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180820">Определение областей
+оценки<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">60</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180821">Присвоение правила
+учета для группы регистров<span style="color:windowtext;display:nne; 
+text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">60</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180822">Присвоить область
+оценки правилу учета<span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">60</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180823">Активировать логику
+дельты<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">61</span></a></span></p>
+
+<p class="MsoToc1"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180824"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Управление проводками и документами</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">61</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180825">Описание<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">61</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180826"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;" lang="EN-US">FB</span><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">00 – Опции обработки</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">62</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180827">Открытые позиции
+–учесть СФ<span style="color:windowtext;display:nne; text-decoration:none">.. </span><span style="color:windowtext;display:nne; text-decoration:none">62</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180828"><span lang="EN-US">grid</span><span lang="EN-US"> </span><span lang="EN-US">alv</span> моделирования<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">63</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180829"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Документ</span><span style="color:windowtext;
+display:nne; text-decoration:none"> </span><span style="color:windowtext;display:nne; text-decoration:none">65</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180830"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Копирование документов</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">65</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180831"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Правка позиции документа</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">65</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180832"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Сторнирование документов</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">65</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180833"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Настройка сторно</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">66</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180834">Признак красного сторно
+в документах выравнивания<span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">68</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180835"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Массовое сторно - </span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;" lang="EN-US">F</span><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">.80</span><span style="color:windowtext;display:nne; 
+text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">69</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180836"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Предварительно зарегистрированные и временно
+сохраненные документы</span><span style="color:windowtext;display:nne; 
+text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">70</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180837"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Предварительная регистрация</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">70</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180838"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Временное сохранение документов</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">71</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180839">Дополнительно<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">71</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180840"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Документ ручных проводок</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">71</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180841"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Рабочие образцы</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">72</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180842"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Данные заголовка</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">72</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180843"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Инфо-раздел</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">72</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180844"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Виды и структура документов</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">72</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180845"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Пути настройки управления документами</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">72</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180846"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Определение видов документов</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">73</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180847"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Основные виды документов</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">74</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180848"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Диапазоны номеров</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">77</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180849">Диапазоны номеров
+прочих объектов системы<span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">78</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180850"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Коды проводки</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">79</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180851">Настройка статусов на
+коде проводок<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">83</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180852"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Настойка статусов полей документов</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">84</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180853"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Описание</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">84</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180854">Определение варианта
+статуса для БЕ:<span style="color:windowtext;display:nne; text-decoration:none"> </span><span style="color:windowtext;display:nne; text-decoration:none">85</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180855"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Группы статусов полей</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">85</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180856">Настройка статусов
+полей<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">88</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180857">Предлагаемые значения
+для обработки документов<span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">88</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180858">Предложение финансового
+года<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">88</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180859">Предложение даты
+валютирования<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">89</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180860">Значения по умолчанию<span style="color:windowtext;display:nne; text-decoration:none">.. </span><span style="color:windowtext;display:nne; text-decoration:none">89</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180861">Код проводки по
+умолчанию<span style="color:windowtext;display:nne; text-decoration:none">.. </span><span style="color:windowtext;display:nne; text-decoration:none">91</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180862"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Группы пользователей</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">91</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180863">Настройка заголовка <span lang="EN-US">SD</span> фактуры<span style="color:windowtext;display:nne; 
+text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">92</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180864">Настройка доп. текстов
+финдокумента<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">94</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180865"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Настройка правил изменения документов</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">95</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180866"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Пути настройки правил изменения</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">95</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180867"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Описание</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">96</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180868">настройка изменения
+документов<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">98</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180869">Просмотр отдельных
+позиций. Специальные поля<span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">104</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180870"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Бизнес операции</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">104</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180871">Пути настройки
+бизнес-операций<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">104</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180872">Исходящие платежи<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">106</span></a></span></p>
+
+<p class="MsoToc6"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180873">Исходящие платежи
+вручную<span style="color:windowtext;display:nne; text-decoration:none">.. </span><span style="color:windowtext;display:nne; text-decoration:none">106</span></a></span></p>
+
+<p class="MsoToc6"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180874">Описание<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">106</span></a></span></p>
+
+<p class="MsoToc6"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180875">Настройка
+автоматических проводок для исходящих платежей<span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">106</span></a></span></p>
+
+<p class="MsoToc6"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180876">Курсовые разницы<span style="color:windowtext;display:nne; text-decoration:none">.. </span><span style="color:windowtext;display:nne; text-decoration:none">107</span></a></span></p>
+
+<p class="MsoToc6"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180877">Максимальное
+курсовое отклонение<span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">108</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180878">Исходящие
+счета/кредитовые авизо<span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">109</span></a></span></p>
+
+<p class="MsoToc6"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180879">Навигация по
+настройкам<span style="color:windowtext;display:nne; text-decoration:none">.. </span><span style="color:windowtext;display:nne; text-decoration:none">109</span></a></span></p>
+
+<p class="MsoToc7"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180880">Переплата/недоплата<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">109</span></a></span></p>
+
+<p class="MsoToc7"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180881">Экран настроек<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">109</span></a></span></p>
+
+<p class="MsoToc6"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180882">Описание<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">109</span></a></span></p>
+
+<p class="MsoToc6"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180883">Способы платежа для
+страны<span style="color:windowtext;display:nne; text-decoration:none">.. </span><span style="color:windowtext;display:nne; text-decoration:none">109</span></a></span></p>
+
+<p class="MsoToc6"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180884"><span lang="RU">Ведение</span><span lang="RU"> </span><span lang="RU">условий</span><span lang="RU"> </span><span lang="RU">платежа</span><span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">111</span></a></span></p>
+
+<p class="MsoToc6"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180885">Настройка платежей в
+рассрочку<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">113</span></a></span></p>
+
+<p class="MsoToc7"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180886">Пример создания
+нового условия платежа в рассрочку, транзакция OBB8<span lang="RU">:</span><span style="color:windowtext;display:nne; text-decoration:none"> </span><span style="color:windowtext;display:nne; text-decoration:none">114</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180887"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Примеры документов</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">114</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180888"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Операция </span><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;" lang="EN-US">ENJOY</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">
+простые проводки </span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;" lang="EN-US">FB</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">50</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">114</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180889"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Одиночное красное сторно</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">115</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180890"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Выполните проводку документа основного счета – </span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;" lang="EN-US">FB</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">50</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">115</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180891"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Выполните красное сторно – </span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;" lang="EN-US">fb</span><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">08</span><span style="color:windowtext;display:nne; 
+text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">115</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180892"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Проверяем сальдо и обороты по счету </span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;" lang="EN-US">FAGLB</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">03</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">116</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180893">Группа регистров –
+новые транзакции<span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">117</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180894"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Одиночное обычное сторно</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">117</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180895"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Выполните проводку документа основного счета – </span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;" lang="EN-US">FB</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">50</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">117</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180896"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Выполните обычное сторно – </span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;" lang="EN-US">FB</span><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">08, причина сторно «01»</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">118</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180897"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Проверяем сальдо и обороты по счету </span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;" lang="EN-US">FAGLB</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">03</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">118</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180898"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Предварительно зарегистрированный документ</span><span style="color:windowtext;display:nne; text-decoration:none"> </span><span style="color:windowtext;display:nne; text-decoration:none">118</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180899"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Временный документ</span><span style="color:windowtext;
+display:nne; text-decoration:none"> </span><span style="color:windowtext;display:nne; text-decoration:none">119</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180900"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Проверки и замещения</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">121</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180901"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Описание</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">121</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180902"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Детали</span><span style="color:windowtext;display:
+none;text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">122</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180903"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Структура</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">122</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180904"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Использование</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">123</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180905"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Редактор формул</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">124</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180906"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Выражения и правила булевой логики</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">124</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180907"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Правила</span><span style="color:windowtext;display:
+none;text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">125</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180908"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Диспетчер правил</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">126</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180909"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Трассировка</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">126</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180910">RGGBR000&nbsp;
+Перекомпиляция программы проверок и замещений.<span style="color:windowtext;
+display:nne; text-decoration:none"> </span><span style="color:windowtext;display:nne; text-decoration:none">126</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180911"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Примеры замещений и проверки</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">126</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180912"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Установка в ссылочный ключ 1 дату фактического
+получения фактуры от поставщика в формате ГГММДД</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">126</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180913">Настройка:<span style="color:windowtext;display:nne; text-decoration:none"> </span><span style="color:windowtext;display:nne; text-decoration:none">126</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180914">Тест<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">127</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180915"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Программная проверка на соответствие кода НДС и счёта
+ГК</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">127</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180916"><span style="font-family:
+&quot;Courier New&quot;;background:white">*Проверка счёта ГК на соотвествие коду НДС</span><span style="font-family:&quot;Courier New&quot;">&nbsp;&nbsp; exits<span style="background:white">-</span>name&nbsp;
+<span style="background:white">= 'Y905'.</span>&nbsp;&nbsp; </span><span style="font-family:&quot;Courier New&quot;" lang="EN-US">exits</span><span style="font-family:&quot;Courier New&quot;;
+background:white">-</span><span style="font-family:&quot;Courier New&quot;" lang="EN-US">param</span><span style="font-family:&quot;Courier New&quot;" lang="EN-US"> </span><span style="font-family:
+&quot;Courier New&quot;;background:white">= </span><span style="font-family:
+&quot;Courier New&quot;" lang="EN-US">C</span><span style="font-family:&quot;Courier New&quot;">_</span><span style="font-family:&quot;Courier New&quot;" lang="EN-US">EXIT</span><span style="font-family:
+&quot;Courier New&quot;">_</span><span style="font-family:&quot;Courier New&quot;" lang="EN-US">PARAM</span><span style="font-family:&quot;Courier New&quot;">_</span><span style="font-family:
+&quot;Courier New&quot;" lang="EN-US">CLASS</span><span style="font-family:&quot;Courier New&quot;;background:
+white">. “ специальный класс при котором в проверку передаются все данные </span><span style="font-family:&quot;Courier New&quot;;background:white" lang="EN-US">bseg</span><span style="font-family:&quot;Courier New&quot;;background:white"> и </span><span style="font-family:&quot;Courier New&quot;;background:white" lang="EN-US">bkpf</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">129</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180917"><span style="font-family:&quot;Courier New&quot;" lang="EN-US">exits<span style="background:white">-title =
+text-905.</span>&nbsp;&nbsp; <span style="background:white">append </span>exits<span style="background:white">.</span></span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">129</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180918"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Программное замещение СК1-СК3, документ полностью</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">130</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180919"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Проверка даты документа</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">131</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180920">Регистрируем
+проверку<span lang="RU"> и шаг</span><span style="color:windowtext;display:nne; 
+text-decoration:none"> </span><span style="color:windowtext;display:nne; text-decoration:none">132</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180921">Определяем набор
+счетов:<span style="color:windowtext;display:nne; text-decoration:none"> </span><span style="color:windowtext;display:nne; text-decoration:none">132</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180922">Определяем условия
+для предпосылки<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">133</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180923">Определяем условие
+проверки<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">133</span></a></span></p>
+
+<p class="MsoToc6"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180924">Создаём <span lang="RU">под</span>программу<span lang="RU"> ZCHDT</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">134</span></a></span></p>
+
+<p class="MsoToc6"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180925">Регистрируем
+программу в пакете<span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">134</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180926"><span lang="RU">Выбираем</span><span lang="RU"> </span><span lang="RU">подпрограмму в условиях проверки</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">135</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180927"><span lang="RU">Регистрируем
+новое сообщение</span><span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">135</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180928"><span lang="RU">Контроль
+выполнения</span><span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">136</span></a></span></p>
+
+<p class="MsoToc1"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180929"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Объекты разграничений</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">136</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180930">Механизм разграничения<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">136</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180931">Антиципированные
+разграничения<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">136</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180932">Транзитивные
+разграничения<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">136</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180933">Транзакции<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">137</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180934">Использование механизма
+разграничения (Accrual Engine) для ведения параллельного учета<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">138</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180935">1. Причина и суть
+проблемы<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">138</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180936">2. Техника работы с
+механизмом разграничения<span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">139</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180937">1. Создание объекта
+разграничения<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">139</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180938">2. Работа с объектами
+разграничения<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">141</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180939">3. Досрочное завершение
+объекта разграничения<span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">147</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180940">4. Списание объектов
+разграничения<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">147</span></a></span></p>
+
+<p class="MsoToc6"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180941">Списание объекта
+вручную<span style="color:windowtext;display:nne; text-decoration:none">.. </span><span style="color:windowtext;display:nne; text-decoration:none">148</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180942">3 Необходимые настройки<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">149</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180943">1. Присвоить балансовую
+единицу в системе механизму разграничения<span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">149</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180944">2. Правило учета<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">150</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180945">3. Определение типов
+объектов разграничения<span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">152</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180946">4. Виды разграничения<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">152</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180947">5. Методы разграничения<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">153</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180948">6. Разграничительная
+проводка<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">153</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180949">7. Настройка счетов
+списания разграничений<span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">155</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180950">Корректировки объектов
+разграничений<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">157</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180951">Дважды провели
+документы<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">157</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180952">Провели документ
+проводку разграничений через <span lang="EN-US">fb</span>01<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">158</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180953">В НУ ошибочно создали
+на 9 рублей объект больше<span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">160</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180954">в БУ заведён объект
+меньше чем по документу:<span style="color:windowtext;display:nne; text-decoration:
+none"> </span><span style="color:windowtext;display:nne; text-decoration:none">161</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180955"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Объект с валютой</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">162</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180956">Страховка по НУ
+заведена на сумму выше, чем в БУ<span style="color:windowtext;display:nne; 
+text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">164</span></a></span></p>
+
+<p class="MsoToc1"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180957"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Бюджетирование</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">165</span></a></span></p>
+
+<p class="MsoToc1"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180958"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Отчетность ГК</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">165</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180959"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Получаемые данные стандартных отчётов</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">165</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180960"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Инструментальные средства для формирования отчетов</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">166</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180961">Report Painter<span style="color:windowtext;display:nne; text-decoration:none"> </span><span style="color:windowtext;display:nne; text-decoration:none">166</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180962">SAP Query<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">168</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180963">Создание отчёта<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">168</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180964">Создание групп
+пользователей<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">168</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180965">Создание инфонабора<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">169</span></a></span></p>
+
+<p class="MsoToc6"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180966">Дополнительные поля:<span style="color:windowtext;display:nne; text-decoration:none"> </span><span style="color:windowtext;display:nne; text-decoration:none">172</span></a></span></p>
+
+<p class="MsoToc6"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180967"><span lang="RU">Значение
+по умолчанию + скрыть параметры</span><span style="color:windowtext;display:
+none;text-decoration:none">.. </span><span style="color:windowtext;display:nne; text-decoration:none">172</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180968"><span lang="RU">Добавление
+параметра перед запросом</span><span style="color:windowtext;display:nne; 
+text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">176</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180969">Присвоение набора
+группам пользователей<span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">178</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180970">Создаём отчёт SQ<span style="color:windowtext;display:nne; text-decoration:none">.. </span><span style="color:windowtext;display:nne; text-decoration:none">178</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180971"><span lang="RU">Перегенерация
+программы</span><span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">183</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180972"><span lang="RU">Просмотр
+и отладка отчёта</span><span style="color:windowtext;display:nne; text-decoration:
+none">. </span><span style="color:windowtext;display:nne; text-decoration:none">184</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180973">Создание транзакции<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">185</span></a></span></p>
+
+<p class="MsoToc5"><span lang="EN-US"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180974">Перен<span lang="RU">ос</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">188</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180975">Создание отчёта через <span lang="EN-US">Quick</span><span lang="EN-US"> </span><span lang="EN-US">Viewer</span><span style="color:windowtext;display:nne; text-decoration:none"> </span><span style="color:windowtext;display:nne; text-decoration:none">190</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180976">АВАР4<span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">194</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180977"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Параллельная финансовая отчетность</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">194</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180978"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Версии баланса</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">194</span></a></span></p>
+
+<p class="MsoToc2"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180979"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Примеры отчётов главной книги</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">194</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180980"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Группа общих отчетов о балансе и прибылях/убытках</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">196</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180981"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Группа отчетов о балансе и прибылях/убытках России</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">196</span></a></span></p>
+
+<p class="MsoToc4"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180982">j3rfbalance:<span style="color:windowtext;display:nne; text-decoration:none"> </span><span style="color:windowtext;display:nne; text-decoration:none">197</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180983"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Оборотные ведомости</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">197</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180984"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Отдельные позиции</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">198</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180985"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Группа отчетов по документам</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">198</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180986"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Отчёты по справочникам ГК</span><span style="color:
+windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">199</span></a></span></p>
+
+<p class="MsoToc3"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180987"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Дополнительно</span><span style="color:windowtext;
+display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">199</span></a></span></p>
+
+<p class="MsoToc1"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180988">Активация
+бизнес-функций по локализации РФ<span style="color:windowtext;display:nne; 
+text-decoration:none">.. </span><span style="color:windowtext;display:nne; text-decoration:none">200</span></a></span></p>
+
+<p class="MsoToc1"><span lang="DE"><a href="http://www.cleversystems.ru/SAP2.php#_Toc414180989"><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;">Типовые ошибки по настройке</span><span style="color:windowtext;display:nne; text-decoration:none">. </span><span style="color:windowtext;display:nne; text-decoration:none">201</span></a></span></p>
+
+<p class="MsoNormal"><span lang="EN-US">&nbsp;</span></p>
+
+<span style="font-size:11.0pt;line-height:115%;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;" lang="EN-US"><br style="page-break-before:always" clear="all">
+</span>
+
+<p class="MsoNormal"><b><span style="font-size:13.0pt;line-height:
+115%;color:#4F81BD" lang="EN-US">&nbsp;</span></b></p>
+
+<h1><a name="_Toc414180729"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Структура
+данных финансов</span></a><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"> </span></h1>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">На схеме представлены основные объекты данных финансового
+модуля, их структура на уровне базы данных <span lang="EN-US">SAP</span>:</p>
+
+<p class="MsoNormal" style="background:white">
+
+<table cellspacing="0" cellpadding="0" align="left">
+ <tbody><tr>
+  <td width="48" height="0"></td>
+  <td width="6"></td>
+  <td width="114"></td>
+  <td width="1"></td>
+  <td width="19"></td>
+  <td width="5"></td>
+  <td width="114"></td>
+  <td width="2"></td>
+  <td width="44"></td>
+  <td width="1"></td>
+  <td width="115"></td>
+  <td width="4"></td>
+  <td width="49"></td>
+  <td width="5"></td>
+  <td width="115"></td>
+ </tr>
+ <tr>
+  <td height="1"></td>
+  <td></td>
+  <td rowspan="3" style="border:.5pt solid black;
+  vertical-align:top;background:white" width="115" height="38" bgcolor="white"><span style="position:absolute;
+  z-index:251646976">
+  <table width="100%" cellspacing="0" cellpadding="0">
+   <tbody><tr>
+    <td>
+    <div style="padding:4.1pt 7.7pt 4.1pt 7.7pt">
+    <p class="MsoNormal">Поставщики</p>
+    </div>
+    </td>
+   </tr>
+  </tbody></table>
+  </span>&nbsp;</td>
+ </tr>
+ <tr>
+  <td height="1"></td>
+  <td></td>
+  <td colspan="11"></td>
+  <td rowspan="2" style="border:.5pt solid black;
+  vertical-align:top;background:white" width="116" height="37" bgcolor="white"><span style="position:absolute;
+  z-index:251650048">
+  <table width="100%" cellspacing="0" cellpadding="0">
+   <tbody><tr>
+    <td>
+    <div style="padding:4.1pt 7.7pt 4.1pt 7.7pt">
+    <p class="MsoNormal"><span lang="EN-US">Rus </span>ГК </p>
+    </div>
+    </td>
+   </tr>
+  </tbody></table>
+  </span>&nbsp;</td>
+ </tr>
+ <tr>
+  <td height="36"></td>
+  <td></td>
+  <td colspan="3"></td>
+  <td rowspan="2" style="border:.5pt solid black;
+  vertical-align:top;background:white" width="115" height="37" bgcolor="white"><span style="position:absolute;
+  z-index:251648000">
+  <table width="100%" cellspacing="0" cellpadding="0">
+   <tbody><tr>
+    <td>
+    <div style="padding:4.1pt 7.7pt 4.1pt 7.7pt">
+    <p class="MsoNormal">ГК</p>
+    </div>
+    </td>
+   </tr>
+  </tbody></table>
+  </span>&nbsp;</td>
+  <td colspan="3"></td>
+  <td rowspan="2" style="border:.5pt solid black;
+  vertical-align:top;background:white" width="116" height="37" bgcolor="white"><span style="position:absolute;
+  z-index:251649024">
+  <table width="100%" cellspacing="0" cellpadding="0">
+   <tbody><tr>
+    <td>
+    <div style="padding:4.1pt 7.7pt 4.1pt 7.7pt">
+    <p class="MsoNormal">Клиенты</p>
+    </div>
+    </td>
+   </tr>
+  </tbody></table>
+  </span>&nbsp;</td>
+ </tr>
+ <tr>
+  <td height="1"></td>
+ </tr>
+ <tr>
+  <td height="13"></td>
+ </tr>
+ <tr>
+  <td height="84"></td>
+  <td colspan="3" valign="top" align="left"><img src="SAP%20FI_files/image001.gif" alt="Скругленный прямоугольник: LFC1
+FK10N
+" width="121" height="84"></td>
+  <td></td>
+  <td colspan="3" valign="top" align="left"><img src="SAP%20FI_files/image002.gif" alt="Скругленный прямоугольник: FAGLFLEXT
+FAGLB03
+" width="121" height="84"></td>
+  <td></td>
+  <td colspan="3" valign="top" align="left"><img src="SAP%20FI_files/image003.gif" alt="Скругленный прямоугольник: KNC1
+FD10N	
+" width="120" height="84"></td>
+  <td></td>
+  <td colspan="2" valign="top" align="left"><img src="SAP%20FI_files/image004.gif" alt="Скругленный прямоугольник: J3RKKR0
+J3RK08S
+" width="120" height="84"></td>
+ </tr>
+</tbody></table>
+
+ &nbsp;</p>
+
+<p class="MsoNormal" style="background:white">&nbsp;</p>
+
+<br clear="ALL">
+
+<p class="MsoNormal" style="background:white">Сальдо </p>
+
+<p class="MsoNormal" style="background:white">
+
+<table cellspacing="0" cellpadding="0" align="left">
+ <tbody><tr>
+  <td width="54" height="28"></td>
+  <td width="121"></td>
+  <td width="16"></td>
+  <td width="121"></td>
+  <td width="36"></td>
+  <td width="121"></td>
+  <td width="48"></td>
+  <td width="120"></td>
+ </tr>
+ <tr>
+  <td height="2"></td>
+  <td rowspan="2" valign="top" align="left"><img src="SAP%20FI_files/image005.gif" width="121" height="106"></td>
+  <td></td>
+  <td rowspan="3" valign="top" align="left"><img src="SAP%20FI_files/image006.gif" width="121" height="107"></td>
+  <td></td>
+  <td rowspan="3" valign="top" align="left"><img src="SAP%20FI_files/image007.gif" width="121" height="107"></td>
+ </tr>
+ <tr>
+  <td height="104"></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td rowspan="3" valign="top" align="left"><img src="SAP%20FI_files/image008.gif" width="120" height="111"></td>
+ </tr>
+ <tr>
+  <td height="1"></td>
+ </tr>
+ <tr>
+  <td height="6"></td>
+ </tr>
+</tbody></table>
+
+ &nbsp;</p>
+
+<p class="MsoNormal" style="background:white"><b><span style="color:#EEECE1">&nbsp;</span></b></p>
+
+<br clear="ALL">
+
+<p class="MsoNormal" style="background:white">Позиции</p>
+
+<p class="MsoNormal">
+
+<table cellspacing="0" cellpadding="0" align="left">
+ <tbody><tr>
+  <td width="108" height="26"></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td><img src="SAP%20FI_files/image009.gif" width="428" height="92"></td>
+ </tr>
+</tbody></table>
+
+ &nbsp;</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<br clear="ALL">
+
+<p class="MsoNormal"><span style="position:absolute;z-index:251658240;margin-left:
+338px;margin-top:23px;width:121px;height:84px"><img src="SAP%20FI_files/image010.gif" alt="Скругленный прямоугольник: BKPF" width="121" height="84"></span>Документ</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<b><span style="font-size:18.0pt;line-height:115%;font-family:&quot;Cambria&quot;,&quot;serif&quot;;
+color:#365F91"><br style="page-break-before:always" clear="all">
+</span></b>
+
+<h1><a name="_Toc414180730">Валюта</a></h1>
+
+<p class="MsoNoSpacing" style="text-indent:35.4pt">Код валюты должен быть
+присвоен каждой используемой валюте. Большинство валют уже определено в системе
+SAP со стандартными международными кодами валюты. Для каждого кода валюты можно
+определить срок действия. Для каждой комбинации валют можно определить разные
+валютные</p>
+
+<p class="MsoNoSpacing">курсы, которые будут отличаться типом курса. Разные
+валютные курсы можно использовать в различных целях: например, для оценки, пересчета,
+конвертации и планирования.</p>
+
+<p class="MsoNoSpacing" style="text-indent:21.3pt">Соотношение между валютами
+необходимо определить для каждого типа курса и для каждой пары валют с помощью
+курсовых коэффициентов. Поскольку на соотношение между валютами большое влияние
+может оказывать инфляция, коэффициенты пересчета можно определять в зависимости
+от времени. </p>
+
+<p class="MsoNoSpacing" style="text-indent:21.3pt">Для сокращения затрат на
+ведение валютных курсов, <span lang="EN-US">SAP</span> предлагает различные
+инструментальные средства. Для каждого типа курса можно использовать один из
+следующих инструментов: </p>
+
+<p class="MsoNoSpacing" style="margin-left:57.3pt;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Инверсия (из трех предлагаемых инструментов является самым старым
+и на сегодняшний день практически не используется)</p>
+
+<p class="MsoNoSpacing" style="margin-left:57.3pt;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Базовая валюта</p>
+
+<p class="MsoNoSpacing" style="margin-left:57.3pt;text-indent:-18.0pt"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Курсовые спреды</p>
+
+
+	
+<h2><a name="_Toc414180731"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Создание
+валюты</span></a></h2>
+
+<p class="MsoNormal"><span lang="EN-US">TCURC&nbsp; - </span>таблица валют</p>
+
+<p class="MsoNormal">Экран настроек:</p>
+
+<p class="MsoListParagraphCxSpFirst" style="margin:0cm;margin-bottom:
+.0001pt;text-align:center;line-height:normal" align="center"><img id="Рисунок 2" src="SAP%20FI_files/image011.jpg" width="433" height="269"></p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin:0cm;margin-bottom:.0001pt;
+line-height:normal">Создание валюты:</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin:0cm;margin-bottom:
+.0001pt;text-align:center;line-height:normal" align="center"><img id="Рисунок 3" src="SAP%20FI_files/image012.jpg" width="430" height="246"></p>
+
+<p class="MsoListParagraphCxSpLast" style="margin:0cm;margin-bottom:
+.0001pt;text-align:center;line-height:normal" align="center"><span lang="EN-US">&nbsp;</span></p>
+
+<h2><a name="_Toc414180732"><i><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;" lang="EN-US">TCURR</span></i></a><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;" lang="EN-US"> </span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Курсы</span><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;"> </span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">валют</span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;" lang="EN-US">, </span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">типы</span><span style="font-family:
+&quot;Calibri&quot;,&quot;sans-serif&quot;"> </span><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">курсов</span></h2>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><i>Транзакция</i><i> <b><span lang="EN-US">TCURMNT</span></b><span lang="EN-US">.</span></i></p>
+
+<p class="MsoNormal"><i>SAP NetWeaver - Общие параметры настройки - Валюты -
+Проверка типов курсов</i></p>
+
+<p class="MsoNormal"><i>Транзакции <b>TCURR</b></i> - таблица валютных курсов.</p>
+
+<p class="MsoNormal">TCURV&nbsp; - Типы курсов для пересчета валют </p>
+
+<p class="MsoNormal"><b><i>OB08 </i></b><i>Ввод валютных курсов </i></p>
+
+<p class="MsoListParagraph" style="margin:0cm;margin-bottom:.0001pt;line-height:
+normal">Типу курса можно присвоить исходную валюту. В этом случае для каждой
+валюты следует только ввести валютные курсы в эту исходную валюту. Пересчет
+между двумя иностранными валютами выполняется через исходную валюту, т.е. путем
+соединения двух валютных курсов. Валютный курс можно вводить с прямой или
+косвенной котировкой. Можно вводить два префикса для различения между валютными
+курсами прямой или косвенной котировки во время ввода и просмотра. Если префикс
+не установлен, действует стандартная настройка:</p>
+
+<p class="MsoListParagraphCxSpMiddle" style="margin-bottom:0cm;margin-bottom:
+.0001pt;text-indent:-18.0pt;line-height:normal;text-autospace:none"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>«»(пусто, без префикса) для валютных курсов с прямой котировкой</p>
+
+<p class="MsoListParagraph" style="margin-bottom:0cm;margin-bottom:.0001pt;
+text-indent:-18.0pt;line-height:normal"><span style="font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>«/»для валютных курсов с косвенной котировкой </p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><b>Инструменты ведения валютных курсов</b>:</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+35.4pt;line-height:normal">Инверсия</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+35.4pt;line-height:normal">Исходная валюта</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+35.4pt;line-height:normal">Курсовые спрэды</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><b>Основные типы курсов:</b></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+35.4pt;line-height:normal">M: средний курс для проводки и выравнивания.
+Обязателен к настройке.</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+35.4pt;line-height:normal">G: курс покупки</p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+35.4pt;line-height:normal">B: Курс продажи</p>
+
+<p class="MsoListParagraph" style="margin-top:0cm;margin-right:0cm;margin-bottom:
+0cm;margin-left:68.2pt;margin-bottom:.0001pt;line-height:normal">&nbsp;</p>
+
+<p class="MsoListParagraph" style="margin:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal" align="center"><img id="Рисунок 4" src="SAP%20FI_files/image013.jpg" width="471" height="139"></p>
+
+<h2><a name="_Toc414180733"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Максимальное
+курсовое отклонение</span></a></h2>
+
+<p class="MsoNormal"><i>Транзакция <b>OB64</b></i> - определяет максимальное
+курсовое отклонение для каждой балансовой единицы. При сохранении документа, в
+случае превышения % отклонения, система выдаст ошибку.</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 1" src="SAP%20FI_files/image014.jpg" width="447" height="308"></p>
+
+<h2><a name="_Toc414180734"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Загрузка
+курсов валют</span></a></h2>
+
+<p class="MsoNoSpacing" style="text-indent:21.3pt">Отчет <b>RFTBFF00</b>,
+позволяет переносить внешние рыночные данные в форме файлов. Вы можете
+автоматически обновлять таблицу валютных курсов через загрузку файла ввода в
+форме Multicash.</p>
+
+<p class="MsoNoSpacing">Кроме того, для переноса валютных курсов можно
+использовать отчеты <b>RFTBDF07</b> и <b>RFTBDF14</b>. Данные переносятся в
+режиме реального времени при помощи интерфейса информационного потока, если
+информационный поток поддерживает передачу валютных курсов в реальном времени.
+С помощью Remote Function Call (RFC) устанавливается прямое соединение между
+внешней системой и SAP-системой. Информацию о формате файла, провайдерах
+данных, файловых структурах и т.п. вы найдете в документации</p>
+
+<p class="MsoNoSpacing">к этой программе. </p>
+
+<h2><a name="_Toc414180735"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Пути
+настройки валюты</span></a></h2>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>&nbsp;(</i><i><span lang="EN-US">IMG</span></i><i>)</i><i>
+- </i><i><span lang="EN-US">SAP</span></i><i><span lang="EN-US"> </span></i><i><span lang="EN-US">NetWeaver</span></i><i> - Общие параметры настройки - Валюты</i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>√ Проверка кодов валют </i><i>OY03 </i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>√ Настройка десятичных разрядов для валют </i><i>OY04</i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>√ Определение стандартной котировки для валютных
+курсов </i><i>ONOT</i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>√ Ввод префиксов валютных курсов для прямых</i><i>/</i><i>косвенных
+котировок </i><i>OPRF</i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>√ Проверка типов курсов </i><i>OB07 </i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>√ Определение коэффициентов пересчета для
+пересчета валют </i><i>OBBS</i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>√ Ввод валютных курсов </i><i>OB08 </i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>√ </i><span style="color:black">Настройка
+методов оценки валют&nbsp; OB59</span></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>√ Ведение разниц между валютными курсами </i><i>OBD6</i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>√ Определение правил округления для валют </i><i>OB90</i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>√ Определение рабочего списка для ввода
+валютного курса</i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><i>√ Присвоение валютного курса рабочему списку</i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>&nbsp;</i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>Финансы - Основные параметры Финансов - Документ
+- Заголовок документа - Максимальное курсовое отклонение</i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>√ Определить максимальное курсовое отклонение
+для каждой БЕ OB64</i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>√ Определить максимальное курс. отклонение для
+каждой валюты (V_TCURD)</i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal">&nbsp;</p>
+
+<h1><a name="_Toc414180736"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Финансовый
+год и периоды проводки</span></a></h1>
+
+<h2><a name="_Toc414180737"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Описание</span></a></h2>
+
+<p class="MsoNoSpacing" style="text-indent:35.4pt">Финансовый год в SAP может не
+соответствовать календарному году. Его параметры задаются при настройке системы
+для каждой балансовой единицы. Финансовый год делится на периоды. Настройка по
+умолчанию предполагает для России использовать финансовый год, соответствующий
+календарному, с двенадцатью периодами, соответствующими календарным месяцам и
+четырьмя дополнительными. Дополнительные периоды могут использоваться для
+проводок закрытия года и подготовки баланса.</p>
+
+<p class="MsoNormal">Для защиты данных периоды могут закрываться для
+определенного вида проводок</p>
+
+<p class="MsoNormal">Вариант финансового года - определяет состав периодов учёта,
+помимо календарных периодов (месяц, квартал) возможно добавление дополнительных
+периодов для выверки. Кроме этого, начало финансового года можно сдвинуть
+относительно начала календарного года.</p>
+
+<h2><a name="_Toc414180738"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Настройка</span></a><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"> </span></h2>
+
+<h3><a name="_Toc414180739">Ведение варианта финансового года</a> </h3>
+
+<p class="MsoNormal"><b>OB29 </b></p>
+
+<p class="MsoNormal">Финансы (нов.) - Параметры настройки: Финансы (нов.) - Книги
+- Финансовый год и периоды проводки - Ведение варианта финансового года
+(укороченный год) </p>
+
+<p class="MsoNormal">Экран настроек:</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 514" src="SAP%20FI_files/image015.jpg" width="386" height="164"></p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 515" src="SAP%20FI_files/image016.jpg" width="350" height="133"><br>
+<br>
+</p>
+
+<h3><a name="_Toc414180740">Присвоение БЕ и варианта периодов</a></h3>
+
+<p class="MsoNormal"><b><span style="font-size:12.0pt;line-height:115%;
+color:black">OB37 </span></b></p>
+
+<p class="MsoNormal"><span style="color:black">IMG → Финансы → Основные параметры
+Финансов → Финансовый год → Присвоение балансовой единицы варианту финансового
+года</span> </p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 516" src="SAP%20FI_files/image017.jpg" width="418" height="142"></p>
+
+<p class="MsoNormal">Период проводки для <span lang="EN-US">IDES</span> для БЕ 9000
+- Росссия</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 512" src="SAP%20FI_files/image018.jpg" width="480" height="168"></p>
+
+<p class="MsoNormal">Создание нового варианта для БЕ 9111</p>
+
+<p class="MsoNormal" style="text-align:center" align="center"><img id="Рисунок 513" src="SAP%20FI_files/image019.jpg" width="472" height="153"></p>
+
+<p class="MsoNormal">Экран настроек финансового года:</p>
+
+<p class="MsoNormal"><img src="SAP%20FI_files/image020.jpg" width="385" hspace="12" height="224" align="left"><br clear="all">
+Определение финансового года:</p>
+
+<p class="MsoListParagraphCxSpFirst" style="margin:0cm;margin-bottom:
+.0001pt;text-align:center;line-height:normal" align="center"><img id="Рисунок 389" src="SAP%20FI_files/image021.jpg" width="472" height="96"></p>
+
+<p class="MsoListParagraphCxSpLast" style="margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:86.2pt;margin-bottom:.0001pt;line-height:normal">&nbsp;</p>
+
+<h2><a name="_Toc414180741"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Пути
+настройки</span></a><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;"> </span></h2>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>Финансы - Основные параметры Финансов - Документ
+- Периоды проводки</i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>√ Определение вариантов открытых периодов
+проводки OBBO</i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>√ Открытие и закрытие периодов проводки OB52</i></p>
+
+<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;text-autospace:none"><i>√ Присвоение балансовой единицы вариантам OBBP</i></p>
+
+<p class="MsoNormal">&nbsp;</p>
+
+<h1><a name="_Toc414180742"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Главная
+книга и основные данные</span></a></h1>
+
+<h2><a name="_Toc414180743"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Связи
+объектов</span></a></h2>
+
+<p class="MsoNormal"><img src="SAP%20FI_files/image022.gif" width="646" height="350"></p>
+
+<h2><a name="_Toc414180744"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Описание</span></a></h2>
+
+<p class="MsoNormal" style="text-indent:35.4pt">Главная книга служит для полной
+записи всех бухгалтерских бизнес-операций предприятия, каждая операция
+сохраняется в виде финансового документа, в котором регистрируются фактические
+бухгалтерские, налоговые, управленческие проводки, плановые проводки.
+Финансовые документы поступают практически из всех подсистем <span lang="EN-US">SAP</span>
+– из логистики по данным движения запасов, из зарплаты и кадров по данным
+заработной платы и её налогам и других модулей системы. Эти данные собираются в
+ГК и служат для учёта и анализа состояния предприятия и принятия различных
+решений. Данные ГК служат для формирования внешней отчетности: бухгалтерского
+баланса, отчета прибыли и убытков предприятия или группы предприятий. ГК даёт
+возможности по трансформации данных в другую валюту, в другой стандарт учёта
+(МСФО, <span lang="EN-US">GAAP</span> ). ГК имеет ряд стандартных внутренних
+отчетов, которые позволяют анализировать данные в удобном вам виде.</p>
+
+<p class="MsoNormal">Главная книга <span lang="EN-US">SAP</span><span lang="EN-US"> </span><span lang="EN-US">FI</span> предоставляет следующие возможности:</p>
+
+<p class="MsoListBullet" style="margin-left:47.5pt;text-indent:-18.0pt"><span style="font-size:11.0pt;font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span></span><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Свободный
+выбор уровня отчетности и учёта: концерн или компания.</span></p>
+
+<p class="MsoListBullet" style="margin-left:47.5pt;text-indent:-18.0pt"><span style="font-size:11.0pt;font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span></span><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Автоматическая
+и одновременная проводка позиций вспомогательной книги по соответствующим
+счетам Главной книги (контрольные счета).</span></p>
+
+<p class="MsoListBullet" style="margin-left:47.5pt;text-indent:-18.0pt"><span style="font-size:11.0pt;font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span></span><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Одновременное
+обновление Главной книги и областей учета затрат.</span></p>
+
+<p class="MsoListBullet" style="margin-left:47.5pt;text-indent:-18.0pt"><span style="font-size:11.0pt;font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span></span><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Оценка
+в реальном времени и система отчетов для текущих бухгалтерских данных в виде
+просмотра данных счетов, балансовых отчетов с разными вариантами баланса и
+дополнительных аналитических отчетов.</span></p>
+
+<p class="MsoListBullet" style="margin-left:47.5pt;text-indent:-18.0pt"><span style="font-size:11.0pt;font-family:Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">
+</span></span><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Создание
+требуемых законодательством балансов и отчетов о прибылях и убытках.</span></p>
+
+<h2><a name="_Toc414180745"><span style="font-family:&quot;Calibri&quot;,&quot;sans-serif&quot;">Организационные
+единицы бухгалтерии</span></a></h2>
+
+   </div>
+  </td>
+ </tr>
+</tbody></table>
+
+	<h2><a> Для получения доступа к разделу книги необходимо обратиться с запросом по эл. почте или по телефону</a></h2>
+
+<div style="display:none;">Материал "скомунизден" с сайта cleversystems.ru</div>
+</td>
+  
+  </tr><tr><form></form>             
+      
+              
+   </tr>
+   
+ 
+</tbody></table>
+
+
+
+ 
+
+
+<script type="text/javascript">
+//var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+//document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//</script>
+<script type="text/javascript">
+//var pageTracker = _gat._getTracker("UA-8085550-1");
+//pageTracker._initData();
+//pageTracker._trackPageview();
+
+</script>
+
+
+<!-- Yandex.Metrika counter -->
+<div style="display:none;">
+
+
+<script language="JavaScript">
+<!--
+
+(function(w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter12662740 = new Ya.Metrika({id:12662740, enableAll: true});
+        }
+        catch(e) { }
+    });
+})(window, "yandex_metrika_callbacks");
+
+//-->
+</script>
+
+</div>
+<script src="SAP%20FI_files/watch.js" type="text/javascript" defer="defer"></script>
+<noscript><div><img src="//mc.yandex.ru/watch/12662740" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+
+
+</body></html>

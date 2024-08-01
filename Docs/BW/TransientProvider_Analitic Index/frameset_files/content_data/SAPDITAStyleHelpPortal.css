@@ -1,0 +1,226 @@
+@import url('SAPDITAStyleDefault.css');
+@import url('datatables.css');
+@import url('dataTables.colVis.min.css');
+
+
+.remembertitle {background-image:url('../DITAgraphics/recommendation.gif');} 
+.remembertitle:lang(ar) {background-image:url('../DITAgraphics/recommendation-rtl.gif');} 
+
+.restrictiontitle {background-image:url('../DITAgraphics/caution.gif');} 
+.restrictiontitle:lang(ar) {background-image:url('../DITAgraphics/caution-rtl.gif');} 
+
+.notetitle {background-image:url('../DITAgraphics/note.gif');}
+.notetitle:lang(ar) {background-image:url('../DITAgraphics/note-rtl.gif');} 
+
+.cautiontitle {background-image:url('../DITAgraphics/caution.gif');}
+.cautiontitle:lang(ar) {background-image:url('../DITAgraphics/caution-rtl.gif');} 
+
+.recommendationtitle {background-image:url('../DITAgraphics/recommendation.gif');}
+.recommendationtitle:lang(ar) {background-image:url('../DITAgraphics/recommendation-rtl.gif');} 
+
+.syntaxtitle {background-image:url('../DITAgraphics/syntax.gif');}
+.syntaxtitle:lang(ar) {background-image:url('../DITAgraphics/syntax-rtl.gif');}
+
+.tiptitle {background-image:url('../DITAgraphics/recommendation.gif');}
+.tiptitle:lang(ar) {background-image:url('../DITAgraphics/recommendation-rtl.gif');}
+
+.dangertitle {background-image:url('../DITAgraphics/caution.gif');}
+.dangertitle:lang(ar) {background-image:url('../DITAgraphics/caution-rtl.gif');}
+
+.example h2.sectiontitle {background-image:url('../DITAgraphics/example.gif');}
+.example h2.sectiontitle:lang(ar) {background-image:url('../DITAgraphics/example-rtl.gif');}
+
+.exampletitle {background-image:url('../DITAgraphics/example.gif');}
+.exampletitle:lang(ar) {background-image:url('../DITAgraphics/example-rtl.gif');}
+
+.sourcecodebloctitle {background-image:url('../DITAgraphics/syntax.gif');}
+.sourcecodeblocktitle:lang(ar) {background-image:url('../DITAgraphics/syntax-rtl.gif');}
+
+.outputcodeblocktitle {background-image:url('../DITAgraphics/syntax.gif');}
+.outputcodeblocktitle:lang(ar) {background-image:url('../DITAgraphics/syntax-rtl.gif');}
+
+.samplecodetitle {background-image:url('../DITAgraphics/syntax.gif');}
+.samplecodetitle:lang(ar) {background-image:url('../DITAgraphics/syntax-rtl.gif');}
+
+.codesyntaxtitle {background-image:url('../DITAgraphics/syntax.gif');}
+.codesyntaxtitle:lang(ar) {background-image:url('../DITAgraphics/syntax-rtl.gif');}
+
+.othertitle {background-image:url('../DITAgraphics/note.gif');}
+.othertitle:lang(ar) {background-image:url('../DITAgraphics/note-rtl.gif');}
+
+.sectionexpand{
+	background-image: url('../DITAgraphics/arrowdn.gif');
+	background-repeat: no-repeat;
+	background-position: left;
+	padding-left: 18px;
+	display: block;
+}
+
+.sectioncontract{
+	background-image: url('../DITAgraphics/arrowrt.gif');
+	background-repeat: no-repeat;
+	background-position: left;
+	padding-left: 18px;
+	display: block;
+}
+
+.codeblockexpand{
+	background-image: url('../DITAgraphics/arrowdn.gif');
+	background-repeat: no-repeat;
+	background-position: left;
+	padding-left: 18px;
+	display: block;
+}
+
+.codeblockcontract{
+	background-image: url('../DITAgraphics/arrowrt.gif');
+	background-repeat: no-repeat;
+	background-position: left;
+	padding-left: 18px;
+	display: block;
+}
+
+
+.menucascade_start {
+	background-image: url('../DITAgraphics/navstart.gif');
+	background-repeat: no-repeat;
+	background-position:  left top;
+	padding-left:15px;
+	margin-right:-7px;
+	}
+
+.menucascade_end {
+	background-image: url('../DITAgraphics/navend.gif');
+	background-repeat: no-repeat;
+	background-position: right top;
+	padding-left:5px;
+	}	
+
+.menucascade_separator {
+	background-image: url('../DITAgraphics/navstep.gif');
+	background-repeat: no-repeat;
+	margin-left: 0.5em;
+	padding-right: 0.5em;
+	}
+
+.extlink {
+
+}
+
+.link-sap {
+	padding-left: 0.5em;
+	vertical-align: middle;
+}
+
+.link-external {
+	padding-left: 0.5em;
+	vertical-align: middle;
+}
+
+.xref {
+
+}
+
+.link {
+
+}
+
+/* Modifications for delivery together with Suite */
+
+.treedata {
+  font-size: 100%;
+  background-image: none;
+  border-right: 3px solid #DDDDDD;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0px 20px;
+}
+
+
+.treedata img {
+	border: none;
+  	margin-right: 3px;
+}
+
+
+.treedata table {
+  border-collapse: collapse;
+  border-spacing: 0px; /* Netscape 6.0 only */
+  width: 100%;
+}
+
+.treedata td {
+  	padding-top: 8px;
+  	padding-bottom: 8px;
+	border-left-style: none;
+	border-right-style: none;
+}
+
+td.treelevel0 {
+  	-x-text-indent: -36px;
+  	-x-padding-left: 36px;
+  	text-indent: -21px;
+  	padding-left: 21px;
+}
+
+td.treelevel1 {
+  -x-text-indent: -47px;
+  -x-padding-left: 47px;
+  text-indent: -33px;
+  padding-left: 33px;
+}
+
+td.treelevel2 {
+  -x-text-indent: -60px;
+  -x-padding-left: 60px;
+  text-indent: -45px;
+  padding-left: 45px;
+}
+
+td.treelevel3 {
+  -x-text-indent: -72px;
+  -x-padding-left: 72px;
+  text-indent: -57px;
+  padding-left: 57px;
+}
+
+td.treelevel4 {
+  -x-text-indent: -84px;
+  -x-padding-left: 84px;
+  text-indent: -69px;
+  padding-left: 69px;
+}
+td.treelevel5 {
+  -x-text-indent: -96px;
+  -x-padding-left: 96px;
+  text-indent: -81px;
+  padding-left: 81px;
+}
+td.treelevel6 {
+  -x-text-indent: -108px;
+  -x-padding-left: 108px;
+  text-indent: -93px;
+  padding-left: 93px;
+}
+td.treelevel7 {
+  -x-text-indent: -120px;
+  -x-padding-left: 120px;
+  text-indent: -105px;
+  padding-left: 105px;
+}
+td.treelevel8 {
+  -x-text-indent: -132px;
+  -x-padding-left: 132px;
+  text-indent: -117px;
+  padding-left: 117px;
+}
+td.treelevel9 {
+  -x-text-indent: -144px;
+  -x-padding-left: 144px;
+  text-indent: -129px;
+  padding-left: 129px;
+}
+td.treelevel10 {
+	border-left-style: none;
+	border-right-style: none;
+}

@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US">
+<![endif]-->
+<!--[if gte IE 9]>
+<html class="ie" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script type="text/javascript" async="async" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/s78724020918000.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar" content="black">
+    <title>All about Data Transfer Process (DTP) – SAP BW 7 | SAP Blogs</title>
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+
+    
+    
+    <!--[if lt IE 9]>
+    <script src="https://blogs.sap.com/wp-content/themes/sap-v3-neo/js/html5.min.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <link rel="icon" type="image" href="https://static.community.services.sap/com-hdr/v7/18.190.1/shared-ui/1dx-assets/images/favicon.png"><link rel="shortcut icon" type="image/x-icon" href="https://static.community.services.sap/com-hdr/v7/18.190.1/shared-ui/1dx-assets/images/favicon.ico"><link rel="apple-touch-icon" href="https://static.community.services.sap/com-hdr/v7/18.190.1/shared-ui/1dx-assets/images/apple-touch-icon.png"><meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="https://static.community.services.sap/">
+<link rel="dns-prefetch" href="https://assets.adobedtm.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="SAP Blogs » Feed" href="https://blogs.sap.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="SAP Blogs » Comments Feed" href="https://blogs.sap.com/comments/feed/">
+<meta name="type" content="Blog"><meta name="description" content="Data Transfer Process (DTP) DTP determines the process for transfer of data between two persistent/non persistent objects within BI. As of SAP NetWeaver 7.0, InfoPackage loads data from a Source System"><meta name="sm_tech_ids" content="242586194391178517100436979900901"><meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"><link rel="alternate" type="application/rss+xml" title="SAP Blogs » All about Data Transfer Process (DTP) – SAP BW 7 Comments Feed" href="https://blogs.sap.com/2012/09/16/all-about-data-transfer-process-dtp-sap-bw-7/feed/">
+		<script type="text/javascript" defer="defer" async="" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/privacy.js"></script><script type="text/javascript">!function(a,b){function c(a){var b,c="";for(b=0;b<=3;b++)c+=wa.charAt(a>>8*b+4&15)+wa.charAt(a>>8*b&15);return c}function d(a){var b,c=1+(a.length+8>>6),d=new Array(16*c);for(b=0;b<16*c;b++)d[b]=0;for(b=0;b<a.length;b++)d[b>>2]|=a.charCodeAt(b)<<b%4*8;return d[b>>2]|=128<<b%4*8,d[16*c-2]=8*a.length,d}function e(a,b){var c=(65535&a)+(65535&b);return(a>>16)+(b>>16)+(c>>16)<<16|65535&c}function f(a,b){return a<<b|a>>>32-b}function g(a,b,c,d,g,h){return e(f(e(e(b,a),e(d,h)),g),c)}function h(a,b,c,d,e,f,h){return g(b&c|~b&d,a,b,e,f,h)}function i(a,b,c,d,e,f,h){return g(b&d|c&~d,a,b,e,f,h)}function j(a,b,c,d,e,f,h){return g(b^c^d,a,b,e,f,h)}function k(a,b,c,d,e,f,h){return g(c^(b|~d),a,b,e,f,h)}function l(a){var b,f=d(a),g=1732584193,l=-271733879,m=-1732584194,n=271733878;for(b=0;b<f.length;b+=16){var o=g,p=l,q=m,r=n;g=h(g,l,m,n,f[b+0],7,-680876936),n=h(n,g,l,m,f[b+1],12,-389564586),m=h(m,n,g,l,f[b+2],17,606105819),l=h(l,m,n,g,f[b+3],22,-1044525330),g=h(g,l,m,n,f[b+4],7,-176418897),n=h(n,g,l,m,f[b+5],12,1200080426),m=h(m,n,g,l,f[b+6],17,-1473231341),l=h(l,m,n,g,f[b+7],22,-45705983),g=h(g,l,m,n,f[b+8],7,1770035416),n=h(n,g,l,m,f[b+9],12,-1958414417),m=h(m,n,g,l,f[b+10],17,-42063),l=h(l,m,n,g,f[b+11],22,-1990404162),g=h(g,l,m,n,f[b+12],7,1804603682),n=h(n,g,l,m,f[b+13],12,-40341101),m=h(m,n,g,l,f[b+14],17,-1502002290),l=h(l,m,n,g,f[b+15],22,1236535329),g=i(g,l,m,n,f[b+1],5,-165796510),n=i(n,g,l,m,f[b+6],9,-1069501632),m=i(m,n,g,l,f[b+11],14,643717713),l=i(l,m,n,g,f[b+0],20,-373897302),g=i(g,l,m,n,f[b+5],5,-701558691),n=i(n,g,l,m,f[b+10],9,38016083),m=i(m,n,g,l,f[b+15],14,-660478335),l=i(l,m,n,g,f[b+4],20,-405537848),g=i(g,l,m,n,f[b+9],5,568446438),n=i(n,g,l,m,f[b+14],9,-1019803690),m=i(m,n,g,l,f[b+3],14,-187363961),l=i(l,m,n,g,f[b+8],20,1163531501),g=i(g,l,m,n,f[b+13],5,-1444681467),n=i(n,g,l,m,f[b+2],9,-51403784),m=i(m,n,g,l,f[b+7],14,1735328473),l=i(l,m,n,g,f[b+12],20,-1926607734),g=j(g,l,m,n,f[b+5],4,-378558),n=j(n,g,l,m,f[b+8],11,-2022574463),m=j(m,n,g,l,f[b+11],16,1839030562),l=j(l,m,n,g,f[b+14],23,-35309556),g=j(g,l,m,n,f[b+1],4,-1530992060),n=j(n,g,l,m,f[b+4],11,1272893353),m=j(m,n,g,l,f[b+7],16,-155497632),l=j(l,m,n,g,f[b+10],23,-1094730640),g=j(g,l,m,n,f[b+13],4,681279174),n=j(n,g,l,m,f[b+0],11,-358537222),m=j(m,n,g,l,f[b+3],16,-722521979),l=j(l,m,n,g,f[b+6],23,76029189),g=j(g,l,m,n,f[b+9],4,-640364487),n=j(n,g,l,m,f[b+12],11,-421815835),m=j(m,n,g,l,f[b+15],16,530742520),l=j(l,m,n,g,f[b+2],23,-995338651),g=k(g,l,m,n,f[b+0],6,-198630844),n=k(n,g,l,m,f[b+7],10,1126891415),m=k(m,n,g,l,f[b+14],15,-1416354905),l=k(l,m,n,g,f[b+5],21,-57434055),g=k(g,l,m,n,f[b+12],6,1700485571),n=k(n,g,l,m,f[b+3],10,-1894986606),m=k(m,n,g,l,f[b+10],15,-1051523),l=k(l,m,n,g,f[b+1],21,-2054922799),g=k(g,l,m,n,f[b+8],6,1873313359),n=k(n,g,l,m,f[b+15],10,-30611744),m=k(m,n,g,l,f[b+6],15,-1560198380),l=k(l,m,n,g,f[b+13],21,1309151649),g=k(g,l,m,n,f[b+4],6,-145523070),n=k(n,g,l,m,f[b+11],10,-1120210379),m=k(m,n,g,l,f[b+2],15,718787259),l=k(l,m,n,g,f[b+9],21,-343485551),g=e(g,o),l=e(l,p),m=e(m,q),n=e(n,r)}return c(g)+c(l)+c(m)+c(n)}var m={};m.hash=function(a){a=a.utf8Encode();var b=[1518500249,1859775393,2400959708,3395469782];a+=String.fromCharCode(128);for(var c=a.length/4+2,d=Math.ceil(c/16),e=new Array(d),f=0;f<d;f++){e[f]=new Array(16);for(var g=0;g<16;g++)e[f][g]=a.charCodeAt(64*f+4*g)<<24|a.charCodeAt(64*f+4*g+1)<<16|a.charCodeAt(64*f+4*g+2)<<8|a.charCodeAt(64*f+4*g+3)}e[d-1][14]=8*(a.length-1)/Math.pow(2,32),e[d-1][14]=Math.floor(e[d-1][14]),e[d-1][15]=8*(a.length-1)&4294967295;var h,i,j,k,l,n=1732584193,o=4023233417,p=2562383102,q=271733878,r=3285377520,s=new Array(80);for(f=0;f<d;f++){for(var t=0;t<16;t++)s[t]=e[f][t];for(t=16;t<80;t++)s[t]=m.ROTL(s[t-3]^s[t-8]^s[t-14]^s[t-16],1);for(h=n,i=o,j=p,k=q,l=r,t=0;t<80;t++){var u=Math.floor(t/20),v=m.ROTL(h,5)+m.f(u,i,j,k)+l+b[u]+s[t]&4294967295;l=k,k=j,j=m.ROTL(i,30),i=h,h=v}n=n+h&4294967295,o=o+i&4294967295,p=p+j&4294967295,q=q+k&4294967295,r=r+l&4294967295}return m.toHexStr(n)+m.toHexStr(o)+m.toHexStr(p)+m.toHexStr(q)+m.toHexStr(r)},m.f=function(a,b,c,d){switch(a){case 0:return b&c^~b&d;case 1:return b^c^d;case 2:return b&c^b&d^c&d;case 3:return b^c^d}},m.ROTL=function(a,b){return a<<b|a>>>32-b},m.toHexStr=function(a){for(var b,c="",d=7;d>=0;d--)b=a>>>4*d&15,c+=b.toString(16);return c},void 0===String.prototype.utf8Encode&&(String.prototype.utf8Encode=function(){return unescape(encodeURIComponent(this))}),void 0===String.prototype.utf8Decode&&(String.prototype.utf8Decode=function(){try{return decodeURIComponent(escape(this))}catch(a){return this}});var n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,$,_,aa,ba,ca,da,ea,fa,ga,ha,ia,ja,ka,la,ma,na,oa,pa,qa,ra,sa,ta,ua,va,wa="0123456789abcdef",xa={},ya={};$=window._6si=window._6si||[],ha="",z=!1,A=!0,na=!1,va=!1,qa=1,pa="",window._storagePopulated=!1,n={},sa=!1,ta=!1,ua=!1,B={_VIDEO:"VIDEO",_FORM:"FORM",_DIV:"DIV",_A:"A",_BUTTON:"BUTTON",_INPUT:"INPUT",_OBJECT:"OBJECT",_SELECT:"SELECT",_TEXTAREA:"TEXTAREA"},da=[],ca="",ba={},y=[],q=[],la=[],ra="https:"===document.location.protocol,U=ra?"https://":"http://","undefined"!=typeof JSON&&null!==JSON||(S=p().createElement("script"),S.type="text/javascript",S.async=!0,S.src=U+"d1lm7kd3bd3yo9.cloudfront.net/json2.min.js",S.onload=function(){return window._6si.push(["clearQueue"])},T=p().getElementsByTagName("script")[0],T.parentNode.insertBefore(S,T)),ia=U+"b.6sc.co/img.gif",ja=63072e6,ea=null,fa=null,ga=144e5,ka=6048e5,xa={setToken:function(a){ha=a,xa.clearQueue.apply()},setEndpoint:function(a){ia=U+a+"/v1/beacon/img.gif"},disableCookies:function(a){ua=a},setEpsilonKey:function(a){pa="Token "+a},clearQueue:function(){var a,b,c;if(Q()){for(a=0,b=da.length;a<b;a++)c=da[a],xa.send.apply(this,c);return da=[]}},setPageAttributes:function(a){ba=a},setSessionTimeout:function(a){ga=a},enableCompanyDetails:function(a,b,c){na=a,c&&(qa=c),b&&(oa=b)},enableEventTracking:function(a,b){var c,d,e=[];if(z=a,a){for(c in B)B.hasOwnProperty(c)&&e.push(B[c]);if(b){for(d=0;d<b.length;d++){if(e.indexOf(b[d])<0)throw new Error("One or more of the event trackingattributes is incorrect");n[b[d]]=!0}B._FORM in n&&(n[B._INPUT]=!0,n[B._SELECT]=!0,n[B._TEXTAREA]=!0)}else for(d=0;d<e.length;d++)n[e[d]]=!0}},enableRetargeting:function(a){A=a},setCustomMetatags:function(a){y=a},setWhiteListFields:function(a){q=q.concat(a)},setBlacklistFields:function(){},setThirdPartyValues:function(a){var b,c,d="Third party value is in the wrongformat";for(c=0;c<a.length;c++){if(b=a[c],"[object Array]"!==Object.prototype.toString.call(b))throw new Error(d);if(!b[0]||!b[1])throw new Error(d);la.push(b)}},send:function(a,b){var c,d,e,f,g,h,i,j,k,l,m,n,q,r,t,u=N(),v=o();if(!sa){if(!Q())return void da.push([a,b]);l=E("_gd_svisitor"),k=L(),h=K(),g=J(),f=s(),t=P(),q=ma(b,ba),e=encodeURIComponent(JSON.stringify(q)),m=encodeURIComponent(JSON.stringify(v)),i=encodeURIComponent(JSON.stringify(u)),c=(+new Date).toString().substring(5),j=[ia,"?token=",ha,"&svisitor=",l,"&visitor=",k,"&session=",h,"&event=",a,"&q=",e,"&isIframe=",f,"&m=",m,"&cb=",c,"&r=",g,"&thirdParty=",i,"&pageURL=",t].join(""),ua&&(j+="&d=1"),!0===A&&null!==(r=Y())&&(j+="&an_uid="+r),d=new Image,d.src=j,n=p().getElementById(b.id),null===n||null===n.href&&null===n.length&&null===n.method&&null===n.elements||(d.onload=function(){V(n)},d.onerror=function(){V(n)})}},loadVisitorData:function(a,b){var c,d,e,f=window.localStorage;XMLHttpRequest&&a&&"withCredentials"in(c=new XMLHttpRequest)&&(c.onreadystatechange=function(){4===c.readyState&&200===c.status&&(f.setItem("_6senseCompanyDetails",c.response),window._storagePopulated=!0,void 0!==b&&b(c.response))},e=3===qa?"https://epsilon.6sense.com/v3/company/details":"https://epsilon.6sense.com/v1/company/details",c.open("GET",e,false),c.setRequestHeader("Authorization",pa),c.withCredentials=!0,d=E("_gd_svisitor"),d&&c.setRequestHeader("EpsilonCookie",d),c.send())},optOut:function(a){sa=a},loadAppNexusUID:function(){var a,b,c;XMLHttpRequest&&"withCredentials"in(a=new XMLHttpRequest)&&(a.onreadystatechange=function(){4===a.readyState&&(b=200===a.status?JSON.parse(a.response).uid:-1,X(b),this.push(["send","a_pageload",ba]))}.bind(this),c=ra?"https://secure.adnxs.com/getuidj":"http://ib.adnxs.com/getuidj",a.open("GET",c,!0),a.withCredentials=!0,a.send())}},ya={push:function(){var a,b,c,d,e;for(d=0,e=arguments.length;d<e;d++){c=arguments[d],a=c.shift();try{xa[a].apply(this,c)}catch(f){throw"non_object_property_call"===f.type?(b="Command could not be resolved.",new Error(b)):f}}},init:function(a){var b,c,d,e,f,g,h,i,j,k,l={};if(!a)for(_=0,aa=$.length;_<aa;_++)R=$[_],this.push(R);if(b=this,k=(new Date).getTime(),Z(function(){(new Date).getTime()-k<150&&!va&&(!0!==na||a||(va=!0,b.push(["loadVisitorData",pa,oa])))}),setTimeout(function(){va||!0!==na||a||(va=!0,b.push(["loadVisitorData",pa,oa]))},150),!0===z&&!ta){if(ta=!0,a||(!0===A&&null===Y()?this.push(["loadAppNexusUID"]):this.push(["send","a_pageload",ba])),b=this,null!==(c=p().querySelector("body"))&&(c.addEventListener("click",function(a){for(d=a||window.event,e=d.srcElement||d.target;e.parentNode&&"BODY"!==e.tagName;){if(n[e.tagName])return l={srcElement:e,type:d.type},void b.send(l);e=e.parentNode}},!1),n.hasOwnProperty(B._FORM)&&null!==(f=p().querySelectorAll("form"))))for(g=0;g<f.length;g++)f[g].addEventListener("submit",function(a){a?b.send(a):b.send(this)});if(n.hasOwnProperty(B._OBJECT)&&null!==(h=p().querySelectorAll("object")))for(i=0;i<h.length;i++)h[i].addEventListener("mousedown",function(a){b.send(a)},!1);n.hasOwnProperty(B._VIDEO)&&null!==(j=p().querySelector("body"))&&(j.addEventListener("play",function(a){b.send(a)},!0),j.addEventListener("pause",function(a){b.send(a)},!0),j.addEventListener("loadeddata",function(a){b.send(a)},!0))}},send:function(){var a,b,c,d,e,f,g,h,i,j=arguments[0];if(j&&void 0!==j.type){if(a=j.srcElement||j.target,"loadeddata"===j.type)return;c=a,b=c.getAttribute("id"),g=j.type}else b=j?j.getAttribute("id"):null,c=j||null,g="unknown";if(d="",e="send",c&&void 0!==c.length&&void 0!==c.method&&void 0!==c.elements)d=F(c);else if(c&&null!==C(c)&&"submit"===c.type)f=C(c),b=f.getAttribute("id"),d=M(f),g="submit";else if(c&&void 0!==c.href)d=c.href;else if(c&&void 0!==c.data)d=c.data;else if(c&&(void 0!==c.src||void 0!==c.controls))if(void 0===c.src||""===c.src)for(h=0;h<c.getElementsByTagName("source").length;h++)i=c.getElementsByTagName("source"),d+=i[h].src,h<c.getElementsByTagName("source").length-1&&(d+=",");else d=c.src;null===b&&(b=""),this.push([e,g,{event_id:b,event_value:d}])},enable:function(){var a;a=this,z||(window._6si.push(["optOut",!1]),window._6si.push(["enableEventTracking",!0]),a.init(!0))},disable:function(){var a;a=this,window._6si.push(["optOut",!0]),window._6si.push(["enableEventTracking",!1]),a.init(!0)}},W=function(a,b,c){var d,e;d=new Date,d.setTime(d.getTime()+c),e=encodeURIComponent(b),p().cookie=[a,"=",e,";expires=",d.toGMTString(),";path=/;secure;samesite=none"].join("")},E=function(a){var b,c;return c=new RegExp("(?:^|;)\s?"+a+"(.*?)(?:;|$)","i"),b=c.exec(p().cookie),null===b?null:decodeURIComponent(b[1].substring(1))},ma=function(a,b){var c;for(c in b)b.hasOwnProperty(c)&&(a[c]=b[c]);return a},J=function(){return ca=encodeURIComponent(p().referrer)},s=function(){return window.top!==window.self},O=function(){return(""+1e7+-1e3+-4e3+-8e3+-1e11).replace(/1|0/g,function(){return(0|16*Math.random()).toString(16)})},N=function(){var a,b,c,d={};for(a=0;a<la.length;a++)b=la[a],c=E(b[1]),d[b[0]]=c;return d},v=function(){return ea=O(),W("_gd_session",ea,ga),ea},w=function(){return fa=O(),W("_gd_visitor",fa,ja),fa},K=function(){return null===ea&&(ea=E("_gd_session")),null===ea&&(ea=v()),ea},L=function(){return null===fa&&(fa=E("_gd_visitor")),null===fa&&(fa=w()),fa},Q=function(){var a;return a="undefined"!=typeof JSON&&null!==JSON,a=a&&ha.length>0},G=function(){var a="",b=p().getElementsByTagName("title");return b.length>0&&(a=b[0].innerHTML),a},p=function(){try{if(!(x=parent.document))throw new Error("Unaccessible");return x}catch(a){return document}},H=function(a){var b,c;for(c=p().getElementsByTagName("meta"),b=0;b<c.length;){if(c[b].getAttribute("name")===a)return c[b].getAttribute("content");b++}return""},r=function(a){var b=/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+.([a-zA-Z])+([a-zA-Z])+/;return!!b.test(a)},t=function(a){if(/company|country|title|state|city|prov|job|role/.test(a.toLowerCase()))return!0},o=function(){var a,b,c={description:H("description"),keywords:H("keywords"),title:G()};for(a=0;a<y.length;a++)b=y[a].name,c[b]=H(b);return c},u=function(a){if("string"==typeof a){var b;if(t(a))return!0;for(b=0;b<q.length;b++)if(a.toLowerCase()===q[b].toLowerCase())return!0}return!1},C=function(a){for(var b=a.parentNode;"TABLE"!==b.tagName;){if(void 0===b.tagName)return null;if(null===(b=b.parentNode))return null}return b},F=function(a){var b,c,d,e,f,g,h,i,j,k,l;for(e=0,g=[];e<a.elements.length;){if(l=a.elements[e],b=encodeURIComponent(l.name),c=encodeURIComponent(l.id),d=encodeURIComponent(l.placeholder).split(" ").join(""),!b&&!c&&!d){if(h=l.parentNode,!((i=h.getAttribute("name"))||(h=h.parentNode,i=h.getAttribute("name")))){e++;continue}b=encodeURIComponent(l.id)||encodeURIComponent(l.tagName),b=i+"_"+b}j="radio"===l.type&&!l.checked,k="fieldset"===l.type||"fieldset"===(l.tagName||"").toLowerCase(),j||k?e++:(f=I(b||c||d,l),f.length>0&&g.push(f),e++)}return g.join("&")},I=function(a,b){var c,d,e,f="",g=b.type,h=b.tagName||"",i=r(b.value),j="hidden"===g,k="password"===g,n="fieldset"===h.toLowerCase(),o=!n&&!k&&!j&&(i||u(a));return!b||n||!n&&b.value.length>100?f:(o&&(i?(c=m.hash(b.value),d=a+"_emaildomain="+b.value.split("@")[1],e=a+"_MD5="+l(b.value)):c=b.value,c=D(c),c=encodeURIComponent(c),"button"!==b.type&&"submit"!==b.type&&(d?(f+=a+"_Hash="+c,f+="&"+e,f+="&"+d):f+=a+"="+c)),f)},M=function(a){var b,c,d,e,f;for(c=0,d="",f=a.querySelectorAll("input, select, button, textarea");c<f.length;)e=f[c],b=encodeURIComponent(e.name),"radio"!==e.type||e.checked?(d+=I(b,e),c++):c++;return d.indexOf("&",d.length-3)>=0&&(d=d.substring(0,d.lastIndexOf("&"))+""),d},D=function(a){var b,c,d;return d=new RegExp("\t","g"),b=new RegExp("\n","g"),c=new RegExp("\r","g"),a.replace(d,"").replace(b,"").replace(c,"")},V=function(a){return a},Z=function(a){var b;E("_gd_svisitor")||XMLHttpRequest&&"withCredentials"in(b=new XMLHttpRequest)&&(b.onreadystatechange=function(){var c,d=b.responseText;4===b.readyState&&200===b.status&&d.match("6suuid=")&&(c=d.split("=")[1],W("_gd_svisitor",c,ja),void 0!==a&&a())},ua?b.open("GET","//c.6sc.co/?d=1",!0):b.open("GET","//c.6sc.co/",!0),b.withCredentials=!0,b.send())},X=function(a){return W("_an_uid",a,ka),a},Y=function(){var a;return a=E("_an_uid"),-1!==[-1,"-1","",0,"0",void 0].indexOf(a)&&(a=null),a},P=function(){var a="";try{return a=encodeURIComponent(window.location.href)}catch(b){return a}},ya.init(),window._6si=ya,b.true=a}({},function(){return this}());</script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/blogs.sap.com\/res1dx-717\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="twentytwelve-fonts-css" href="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="twentytwelve-style-css" href="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/style.css" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentytwelve-ie-css'  href='https://blogs.sap.com/res1dx-717/wp-content/themes/sap-v3-neo/css/ie.css' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="designmate_styles-css" href="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/designmate.css" type="text/css" media="all">
+<link rel="stylesheet" id="designsystem_styles-css" href="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/main.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/style_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="prism-css" href="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/prism.css" type="text/css" media="all">
+<link rel="stylesheet" id="sap_custom_link_css-css" href="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/sap-core-custom.css" type="text/css" media="all">
+<link rel="stylesheet" id="sap_lightbox_gallery_css-css" href="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/lightbox-gallery.css" type="text/css" media="all">
+<link rel="stylesheet" id="pt_style_css-css" href="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/pt_style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wordpress-popular-posts-css-css" href="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/wpp.css" type="text/css" media="all">
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/jquery.js" id="jquery-core-js"></script>
+<script type="text/javascript" id="jquery-core-js-after">
+if (jQuery !== undefined) {
+                jQuery(window).on("load", function(){
+                    var _wpWindowLoaded = document.createElement("div");
+                    _wpWindowLoaded.setAttribute("class", "hidden");
+                    _wpWindowLoaded.setAttribute("id", "wp_window_loaded");
+                    document.body.appendChild(_wpWindowLoaded);
+                });
+            }
+</script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/jquery-migrate.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/launch-f095fbc32a96.js" id="scn_adobe_dtm-js"></script><script src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/EX5ff44eddc4c8429ea60c76309094b9ee-libraryCode_source.js" async=""></script><script>
+window._trackData = function(data, linkObject, eventObject) {
+    try {
+        /* debugging */
+        try {
+            if ( _satellite.getVar('isDebug') ) {
+                console.log('LAUNCH: _trackData: arguments: ', arguments);
+                var d = JSON.parse(JSON.stringify(data));
+                console.log('LAUNCH: _trackData: data: ', d);
+                console.log('LAUNCH: _trackData: data (stringified): ', JSON.stringify(data));
+            }
+        } catch (e) {window.console&&console.error(e);}
+    } catch (e) {window.console&&console.error(e);}
+};
+</script><script>
+(function() {
+    try {
+        var data = JSON.parse(localStorage.getItem('_6senseCompanyDetails')) || false;
+        // force api call periodically to enforce changes on 6s end
+        var cacheExpire = 60 * 60 * 24 * 1000 * 1; // 1 day
+        var currentTime = (new Date()).getTime();
+        if (data) {
+            if (data._sap && data._sap._lastAPIRefresh) {
+                if ((currentTime - +data._sap._lastAPIRefresh) >= cacheExpire) {
+                    data = false;
+                }
+            } else {
+                data = false;
+            }
+        }
+        // no data or expired data - execute 6s script to make api call, set local storage
+        if (!data) {
+            window._6si = window._6si || [];
+            window._6si.push(['enableEventTracking', true]);
+            window._6si.push(['setToken', 'b4f19dbc1b83183be9c498ba672b753c']);
+            // 6s api response callback function
+            var epsilonName = 'enableCompanyDetails';
+            var enabled = true;
+            var version = 3;
+            var callback = function(response) {
+                // throw timestamp into local storage object to check for cache expire refresh above
+                var data = JSON.parse(localStorage.getItem('_6senseCompanyDetails')) || {};
+                var currentTime = (new Date()).getTime();
+                data._sap = {
+                    "_lastAPIRefresh": currentTime
+                };
+                localStorage.setItem('_6senseCompanyDetails', JSON.stringify(data));
+
+                // broadcast custom event for other things to listen for and consume
+                var event = document.createEvent("CustomEvent");
+                event.initCustomEvent("6sense-request-success", true, true, response);
+                document.dispatchEvent(event);
+            }
+            window._6si.push([epsilonName, enabled, callback, version]);
+            window._6si.push(['setEpsilonKey', '9dba8466d7cb8d6d6155236c8f7c2f70425f2705']);
+            (function() {
+                var gd = document.createElement('script');
+                gd.type = 'text/javascript';
+                gd.innerHTML = '!function(a,b){function c(a){var b,c="";for(b=0;b<=3;b++)c+=wa.charAt(a>>8*b+4&15)+wa.charAt(a>>8*b&15);return c}function d(a){var b,c=1+(a.length+8>>6),d=new Array(16*c);for(b=0;b<16*c;b++)d[b]=0;for(b=0;b<a.length;b++)d[b>>2]|=a.charCodeAt(b)<<b%4*8;return d[b>>2]|=128<<b%4*8,d[16*c-2]=8*a.length,d}function e(a,b){var c=(65535&a)+(65535&b);return(a>>16)+(b>>16)+(c>>16)<<16|65535&c}function f(a,b){return a<<b|a>>>32-b}function g(a,b,c,d,g,h){return e(f(e(e(b,a),e(d,h)),g),c)}function h(a,b,c,d,e,f,h){return g(b&c|~b&d,a,b,e,f,h)}function i(a,b,c,d,e,f,h){return g(b&d|c&~d,a,b,e,f,h)}function j(a,b,c,d,e,f,h){return g(b^c^d,a,b,e,f,h)}function k(a,b,c,d,e,f,h){return g(c^(b|~d),a,b,e,f,h)}function l(a){var b,f=d(a),g=1732584193,l=-271733879,m=-1732584194,n=271733878;for(b=0;b<f.length;b+=16){var o=g,p=l,q=m,r=n;g=h(g,l,m,n,f[b+0],7,-680876936),n=h(n,g,l,m,f[b+1],12,-389564586),m=h(m,n,g,l,f[b+2],17,606105819),l=h(l,m,n,g,f[b+3],22,-1044525330),g=h(g,l,m,n,f[b+4],7,-176418897),n=h(n,g,l,m,f[b+5],12,1200080426),m=h(m,n,g,l,f[b+6],17,-1473231341),l=h(l,m,n,g,f[b+7],22,-45705983),g=h(g,l,m,n,f[b+8],7,1770035416),n=h(n,g,l,m,f[b+9],12,-1958414417),m=h(m,n,g,l,f[b+10],17,-42063),l=h(l,m,n,g,f[b+11],22,-1990404162),g=h(g,l,m,n,f[b+12],7,1804603682),n=h(n,g,l,m,f[b+13],12,-40341101),m=h(m,n,g,l,f[b+14],17,-1502002290),l=h(l,m,n,g,f[b+15],22,1236535329),g=i(g,l,m,n,f[b+1],5,-165796510),n=i(n,g,l,m,f[b+6],9,-1069501632),m=i(m,n,g,l,f[b+11],14,643717713),l=i(l,m,n,g,f[b+0],20,-373897302),g=i(g,l,m,n,f[b+5],5,-701558691),n=i(n,g,l,m,f[b+10],9,38016083),m=i(m,n,g,l,f[b+15],14,-660478335),l=i(l,m,n,g,f[b+4],20,-405537848),g=i(g,l,m,n,f[b+9],5,568446438),n=i(n,g,l,m,f[b+14],9,-1019803690),m=i(m,n,g,l,f[b+3],14,-187363961),l=i(l,m,n,g,f[b+8],20,1163531501),g=i(g,l,m,n,f[b+13],5,-1444681467),n=i(n,g,l,m,f[b+2],9,-51403784),m=i(m,n,g,l,f[b+7],14,1735328473),l=i(l,m,n,g,f[b+12],20,-1926607734),g=j(g,l,m,n,f[b+5],4,-378558),n=j(n,g,l,m,f[b+8],11,-2022574463),m=j(m,n,g,l,f[b+11],16,1839030562),l=j(l,m,n,g,f[b+14],23,-35309556),g=j(g,l,m,n,f[b+1],4,-1530992060),n=j(n,g,l,m,f[b+4],11,1272893353),m=j(m,n,g,l,f[b+7],16,-155497632),l=j(l,m,n,g,f[b+10],23,-1094730640),g=j(g,l,m,n,f[b+13],4,681279174),n=j(n,g,l,m,f[b+0],11,-358537222),m=j(m,n,g,l,f[b+3],16,-722521979),l=j(l,m,n,g,f[b+6],23,76029189),g=j(g,l,m,n,f[b+9],4,-640364487),n=j(n,g,l,m,f[b+12],11,-421815835),m=j(m,n,g,l,f[b+15],16,530742520),l=j(l,m,n,g,f[b+2],23,-995338651),g=k(g,l,m,n,f[b+0],6,-198630844),n=k(n,g,l,m,f[b+7],10,1126891415),m=k(m,n,g,l,f[b+14],15,-1416354905),l=k(l,m,n,g,f[b+5],21,-57434055),g=k(g,l,m,n,f[b+12],6,1700485571),n=k(n,g,l,m,f[b+3],10,-1894986606),m=k(m,n,g,l,f[b+10],15,-1051523),l=k(l,m,n,g,f[b+1],21,-2054922799),g=k(g,l,m,n,f[b+8],6,1873313359),n=k(n,g,l,m,f[b+15],10,-30611744),m=k(m,n,g,l,f[b+6],15,-1560198380),l=k(l,m,n,g,f[b+13],21,1309151649),g=k(g,l,m,n,f[b+4],6,-145523070),n=k(n,g,l,m,f[b+11],10,-1120210379),m=k(m,n,g,l,f[b+2],15,718787259),l=k(l,m,n,g,f[b+9],21,-343485551),g=e(g,o),l=e(l,p),m=e(m,q),n=e(n,r)}return c(g)+c(l)+c(m)+c(n)}var m={};m.hash=function(a){a=a.utf8Encode();var b=[1518500249,1859775393,2400959708,3395469782];a+=String.fromCharCode(128);for(var c=a.length/4+2,d=Math.ceil(c/16),e=new Array(d),f=0;f<d;f++){e[f]=new Array(16);for(var g=0;g<16;g++)e[f][g]=a.charCodeAt(64*f+4*g)<<24|a.charCodeAt(64*f+4*g+1)<<16|a.charCodeAt(64*f+4*g+2)<<8|a.charCodeAt(64*f+4*g+3)}e[d-1][14]=8*(a.length-1)/Math.pow(2,32),e[d-1][14]=Math.floor(e[d-1][14]),e[d-1][15]=8*(a.length-1)&4294967295;var h,i,j,k,l,n=1732584193,o=4023233417,p=2562383102,q=271733878,r=3285377520,s=new Array(80);for(f=0;f<d;f++){for(var t=0;t<16;t++)s[t]=e[f][t];for(t=16;t<80;t++)s[t]=m.ROTL(s[t-3]^s[t-8]^s[t-14]^s[t-16],1);for(h=n,i=o,j=p,k=q,l=r,t=0;t<80;t++){var u=Math.floor(t/20),v=m.ROTL(h,5)+m.f(u,i,j,k)+l+b[u]+s[t]&4294967295;l=k,k=j,j=m.ROTL(i,30),i=h,h=v}n=n+h&4294967295,o=o+i&4294967295,p=p+j&4294967295,q=q+k&4294967295,r=r+l&4294967295}return m.toHexStr(n)+m.toHexStr(o)+m.toHexStr(p)+m.toHexStr(q)+m.toHexStr(r)},m.f=function(a,b,c,d){switch(a){case 0:return b&c^~b&d;case 1:return b^c^d;case 2:return b&c^b&d^c&d;case 3:return b^c^d}},m.ROTL=function(a,b){return a<<b|a>>>32-b},m.toHexStr=function(a){for(var b,c="",d=7;d>=0;d--)b=a>>>4*d&15,c+=b.toString(16);return c},void 0===String.prototype.utf8Encode&&(String.prototype.utf8Encode=function(){return unescape(encodeURIComponent(this))}),void 0===String.prototype.utf8Decode&&(String.prototype.utf8Decode=function(){try{return decodeURIComponent(escape(this))}catch(a){return this}});var n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,$,_,aa,ba,ca,da,ea,fa,ga,ha,ia,ja,ka,la,ma,na,oa,pa,qa,ra,sa,ta,ua,va,wa="0123456789abcdef",xa={},ya={};$=window._6si=window._6si||[],ha="",z=!1,A=!0,na=!1,va=!1,qa=1,pa="",window._storagePopulated=!1,n={},sa=!1,ta=!1,ua=!1,B={_VIDEO:"VIDEO",_FORM:"FORM",_DIV:"DIV",_A:"A",_BUTTON:"BUTTON",_INPUT:"INPUT",_OBJECT:"OBJECT",_SELECT:"SELECT",_TEXTAREA:"TEXTAREA"},da=[],ca="",ba={},y=[],q=[],la=[],ra="https:"===document.location.protocol,U=ra?"https://":"http://","undefined"!=typeof JSON&&null!==JSON||(S=p().createElement("script"),S.type="text/javascript",S.async=!0,S.src=U+"d1lm7kd3bd3yo9.cloudfront.net/json2.min.js",S.onload=function(){return window._6si.push(["clearQueue"])},T=p().getElementsByTagName("script")[0],T.parentNode.insertBefore(S,T)),ia=U+"b.6sc.co/img.gif",ja=63072e6,ea=null,fa=null,ga=144e5,ka=6048e5,xa={setToken:function(a){ha=a,xa.clearQueue.apply()},setEndpoint:function(a){ia=U+a+"/v1/beacon/img.gif"},disableCookies:function(a){ua=a},setEpsilonKey:function(a){pa="Token "+a},clearQueue:function(){var a,b,c;if(Q()){for(a=0,b=da.length;a<b;a++)c=da[a],xa.send.apply(this,c);return da=[]}},setPageAttributes:function(a){ba=a},setSessionTimeout:function(a){ga=a},enableCompanyDetails:function(a,b,c){na=a,c&&(qa=c),b&&(oa=b)},enableEventTracking:function(a,b){var c,d,e=[];if(z=a,a){for(c in B)B.hasOwnProperty(c)&&e.push(B[c]);if(b){for(d=0;d<b.length;d++){if(e.indexOf(b[d])<0)throw new Error("One or more of the event trackingattributes is incorrect");n[b[d]]=!0}B._FORM in n&&(n[B._INPUT]=!0,n[B._SELECT]=!0,n[B._TEXTAREA]=!0)}else for(d=0;d<e.length;d++)n[e[d]]=!0}},enableRetargeting:function(a){A=a},setCustomMetatags:function(a){y=a},setWhiteListFields:function(a){q=q.concat(a)},setBlacklistFields:function(){},setThirdPartyValues:function(a){var b,c,d="Third party value is in the wrongformat";for(c=0;c<a.length;c++){if(b=a[c],"[object Array]"!==Object.prototype.toString.call(b))throw new Error(d);if(!b[0]||!b[1])throw new Error(d);la.push(b)}},send:function(a,b){var c,d,e,f,g,h,i,j,k,l,m,n,q,r,t,u=N(),v=o();if(!sa){if(!Q())return void da.push([a,b]);l=E("_gd_svisitor"),k=L(),h=K(),g=J(),f=s(),t=P(),q=ma(b,ba),e=encodeURIComponent(JSON.stringify(q)),m=encodeURIComponent(JSON.stringify(v)),i=encodeURIComponent(JSON.stringify(u)),c=(+new Date).toString().substring(5),j=[ia,"?token=",ha,"&svisitor=",l,"&visitor=",k,"&session=",h,"&event=",a,"&q=",e,"&isIframe=",f,"&m=",m,"&cb=",c,"&r=",g,"&thirdParty=",i,"&pageURL=",t].join(""),ua&&(j+="&d=1"),!0===A&&null!==(r=Y())&&(j+="&an_uid="+r),d=new Image,d.src=j,n=p().getElementById(b.id),null===n||null===n.href&&null===n.length&&null===n.method&&null===n.elements||(d.onload=function(){V(n)},d.onerror=function(){V(n)})}},loadVisitorData:function(a,b){var c,d,e,f=window.localStorage;XMLHttpRequest&&a&&"withCredentials"in(c=new XMLHttpRequest)&&(c.onreadystatechange=function(){4===c.readyState&&200===c.status&&(f.setItem("_6senseCompanyDetails",c.response),window._storagePopulated=!0,void 0!==b&&b(c.response))},e=3===qa?"https://epsilon.6sense.com/v3/company/details":"https://epsilon.6sense.com/v1/company/details",c.open("GET",e,false),c.setRequestHeader("Authorization",pa),c.withCredentials=!0,d=E("_gd_svisitor"),d&&c.setRequestHeader("EpsilonCookie",d),c.send())},optOut:function(a){sa=a},loadAppNexusUID:function(){var a,b,c;XMLHttpRequest&&"withCredentials"in(a=new XMLHttpRequest)&&(a.onreadystatechange=function(){4===a.readyState&&(b=200===a.status?JSON.parse(a.response).uid:-1,X(b),this.push(["send","a_pageload",ba]))}.bind(this),c=ra?"https://secure.adnxs.com/getuidj":"http://ib.adnxs.com/getuidj",a.open("GET",c,!0),a.withCredentials=!0,a.send())}},ya={push:function(){var a,b,c,d,e;for(d=0,e=arguments.length;d<e;d++){c=arguments[d],a=c.shift();try{xa[a].apply(this,c)}catch(f){throw"non_object_property_call"===f.type?(b="Command could not be resolved.",new Error(b)):f}}},init:function(a){var b,c,d,e,f,g,h,i,j,k,l={};if(!a)for(_=0,aa=$.length;_<aa;_++)R=$[_],this.push(R);if(b=this,k=(new Date).getTime(),Z(function(){(new Date).getTime()-k<150&&!va&&(!0!==na||a||(va=!0,b.push(["loadVisitorData",pa,oa])))}),setTimeout(function(){va||!0!==na||a||(va=!0,b.push(["loadVisitorData",pa,oa]))},150),!0===z&&!ta){if(ta=!0,a||(!0===A&&null===Y()?this.push(["loadAppNexusUID"]):this.push(["send","a_pageload",ba])),b=this,null!==(c=p().querySelector("body"))&&(c.addEventListener("click",function(a){for(d=a||window.event,e=d.srcElement||d.target;e.parentNode&&"BODY"!==e.tagName;){if(n[e.tagName])return l={srcElement:e,type:d.type},void b.send(l);e=e.parentNode}},!1),n.hasOwnProperty(B._FORM)&&null!==(f=p().querySelectorAll("form"))))for(g=0;g<f.length;g++)f[g].addEventListener("submit",function(a){a?b.send(a):b.send(this)});if(n.hasOwnProperty(B._OBJECT)&&null!==(h=p().querySelectorAll("object")))for(i=0;i<h.length;i++)h[i].addEventListener("mousedown",function(a){b.send(a)},!1);n.hasOwnProperty(B._VIDEO)&&null!==(j=p().querySelector("body"))&&(j.addEventListener("play",function(a){b.send(a)},!0),j.addEventListener("pause",function(a){b.send(a)},!0),j.addEventListener("loadeddata",function(a){b.send(a)},!0))}},send:function(){var a,b,c,d,e,f,g,h,i,j=arguments[0];if(j&&void 0!==j.type){if(a=j.srcElement||j.target,"loadeddata"===j.type)return;c=a,b=c.getAttribute("id"),g=j.type}else b=j?j.getAttribute("id"):null,c=j||null,g="unknown";if(d="",e="send",c&&void 0!==c.length&&void 0!==c.method&&void 0!==c.elements)d=F(c);else if(c&&null!==C(c)&&"submit"===c.type)f=C(c),b=f.getAttribute("id"),d=M(f),g="submit";else if(c&&void 0!==c.href)d=c.href;else if(c&&void 0!==c.data)d=c.data;else if(c&&(void 0!==c.src||void 0!==c.controls))if(void 0===c.src||""===c.src)for(h=0;h<c.getElementsByTagName("source").length;h++)i=c.getElementsByTagName("source"),d+=i[h].src,h<c.getElementsByTagName("source").length-1&&(d+=",");else d=c.src;null===b&&(b=""),this.push([e,g,{event_id:b,event_value:d}])},enable:function(){var a;a=this,z||(window._6si.push(["optOut",!1]),window._6si.push(["enableEventTracking",!0]),a.init(!0))},disable:function(){var a;a=this,window._6si.push(["optOut",!0]),window._6si.push(["enableEventTracking",!1]),a.init(!0)}},W=function(a,b,c){var d,e;d=new Date,d.setTime(d.getTime()+c),e=encodeURIComponent(b),p().cookie=[a,"=",e,";expires=",d.toGMTString(),";path=/;secure;samesite=none"].join("")},E=function(a){var b,c;return c=new RegExp("(?:^|;)\\s?"+a+"(.*?)(?:;|$)","i"),b=c.exec(p().cookie),null===b?null:decodeURIComponent(b[1].substring(1))},ma=function(a,b){var c;for(c in b)b.hasOwnProperty(c)&&(a[c]=b[c]);return a},J=function(){return ca=encodeURIComponent(p().referrer)},s=function(){return window.top!==window.self},O=function(){return(""+1e7+-1e3+-4e3+-8e3+-1e11).replace(/1|0/g,function(){return(0|16*Math.random()).toString(16)})},N=function(){var a,b,c,d={};for(a=0;a<la.length;a++)b=la[a],c=E(b[1]),d[b[0]]=c;return d},v=function(){return ea=O(),W("_gd_session",ea,ga),ea},w=function(){return fa=O(),W("_gd_visitor",fa,ja),fa},K=function(){return null===ea&&(ea=E("_gd_session")),null===ea&&(ea=v()),ea},L=function(){return null===fa&&(fa=E("_gd_visitor")),null===fa&&(fa=w()),fa},Q=function(){var a;return a="undefined"!=typeof JSON&&null!==JSON,a=a&&ha.length>0},G=function(){var a="",b=p().getElementsByTagName("title");return b.length>0&&(a=b[0].innerHTML),a},p=function(){try{if(!(x=parent.document))throw new Error("Unaccessible");return x}catch(a){return document}},H=function(a){var b,c;for(c=p().getElementsByTagName("meta"),b=0;b<c.length;){if(c[b].getAttribute("name")===a)return c[b].getAttribute("content");b++}return""},r=function(a){var b=/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;return!!b.test(a)},t=function(a){if(/company|country|title|state|city|prov|job|role/.test(a.toLowerCase()))return!0},o=function(){var a,b,c={description:H("description"),keywords:H("keywords"),title:G()};for(a=0;a<y.length;a++)b=y[a].name,c[b]=H(b);return c},u=function(a){if("string"==typeof a){var b;if(t(a))return!0;for(b=0;b<q.length;b++)if(a.toLowerCase()===q[b].toLowerCase())return!0}return!1},C=function(a){for(var b=a.parentNode;"TABLE"!==b.tagName;){if(void 0===b.tagName)return null;if(null===(b=b.parentNode))return null}return b},F=function(a){var b,c,d,e,f,g,h,i,j,k,l;for(e=0,g=[];e<a.elements.length;){if(l=a.elements[e],b=encodeURIComponent(l.name),c=encodeURIComponent(l.id),d=encodeURIComponent(l.placeholder).split(" ").join(""),!b&&!c&&!d){if(h=l.parentNode,!((i=h.getAttribute("name"))||(h=h.parentNode,i=h.getAttribute("name")))){e++;continue}b=encodeURIComponent(l.id)||encodeURIComponent(l.tagName),b=i+"_"+b}j="radio"===l.type&&!l.checked,k="fieldset"===l.type||"fieldset"===(l.tagName||"").toLowerCase(),j||k?e++:(f=I(b||c||d,l),f.length>0&&g.push(f),e++)}return g.join("&")},I=function(a,b){var c,d,e,f="",g=b.type,h=b.tagName||"",i=r(b.value),j="hidden"===g,k="password"===g,n="fieldset"===h.toLowerCase(),o=!n&&!k&&!j&&(i||u(a));return!b||n||!n&&b.value.length>100?f:(o&&(i?(c=m.hash(b.value),d=a+"_emaildomain="+b.value.split("@")[1],e=a+"_MD5="+l(b.value)):c=b.value,c=D(c),c=encodeURIComponent(c),"button"!==b.type&&"submit"!==b.type&&(d?(f+=a+"_Hash="+c,f+="&"+e,f+="&"+d):f+=a+"="+c)),f)},M=function(a){var b,c,d,e,f;for(c=0,d="",f=a.querySelectorAll("input, select, button, textarea");c<f.length;)e=f[c],b=encodeURIComponent(e.name),"radio"!==e.type||e.checked?(d+=I(b,e),c++):c++;return d.indexOf("&",d.length-3)>=0&&(d=d.substring(0,d.lastIndexOf("&"))+""),d},D=function(a){var b,c,d;return d=new RegExp("\\t","g"),b=new RegExp("\\n","g"),c=new RegExp("\\r","g"),a.replace(d,"").replace(b,"").replace(c,"")},V=function(a){return a},Z=function(a){var b;E("_gd_svisitor")||XMLHttpRequest&&"withCredentials"in(b=new XMLHttpRequest)&&(b.onreadystatechange=function(){var c,d=b.responseText;4===b.readyState&&200===b.status&&d.match("6suuid=")&&(c=d.split("=")[1],W("_gd_svisitor",c,ja),void 0!==a&&a())},ua?b.open("GET","//c.6sc.co/?d=1",!0):b.open("GET","//c.6sc.co/",!0),b.withCredentials=!0,b.send())},X=function(a){return W("_an_uid",a,ka),a},Y=function(){var a;return a=E("_an_uid"),-1!==[-1,"-1","",0,"0",void 0].indexOf(a)&&(a=null),a},P=function(){var a="";try{return a=encodeURIComponent(window.location.href)}catch(b){return a}},ya.init(),window._6si=ya,b.true=a}({},function(){return this}());';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(gd, s);
+            })();
+        } else {
+            // broadcast custom event for other things to listen for and consume
+            var event = document.createEvent("CustomEvent");
+            event.initCustomEvent("6sense-request-success", true, true, {});
+            document.dispatchEvent(event);
+        }
+    } catch (e) {
+        data = false
+    }
+})();
+</script><script>
+  var script = document.createElement("script")
+  var pathVariable = "";
+  var s = document.cookie.match("country=([^;]+)")
+
+  countryCode = s && s[1] !== "(null)" ? s[1].toLowerCase() : null
+  if (countryCode) {
+      pathVariable = "country=" + countryCode + "&";
+  }
+  
+  script.src = "//consent.trustarc.com/notice?domain=sap-community.com&c=teconsent&" + pathVariable + "gtm=1&js=nj&noticeType=bb&text=true&pn=1-0"
+  script.async = "async"
+  document.head.appendChild(script)
+</script><script src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/notice" async="" id="truste_0.6098607161303647"></script>
+<script>
+window.addEventListener('message', function (event) {
+              if (event.origin.indexOf("consent-pref.trustarc.com") < 0)
+              return;
+
+              var data = JSON.parse(event.data);
+              if (data && data.message === 'remove_iframe') {
+                sessionStorage.setItem("referrerBeforeTrustArcReload", document.referrer);
+                sessionStorage.setItem("referrerBeforeTrustArcReloadUpdateTime", new Date().getTime());
+                window.location.reload();
+    }
+});
+</script>
+<script src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/RC0ebc20a4a74647aa83482613c9f385e7-source.js" async=""></script><script src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/AppMeasurement_Module_AudienceManagement.js" async=""></script><script src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/RCe2fb5c75a39242489fb7dc141ee245dc-source.js" async=""></script><script src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/RC62bcf6626c624e01ab6e3a1c5635901b-source.js" async=""></script></head><body class="post-template-default single single-post postid-331781 single-format-standard custom-font-enabled"><div id="consent_blackbar" style="position:fixed; bottom:0px; z-index:1000000; width:100%"></div>
+<script type="text/javascript" id="wpp-js-js-extra">
+/* <![CDATA[ */
+var wpp_params = {"sampling_active":"","sampling_rate":"100","ajax_url":"https:\/\/blogs.sap.com\/wp-admin\/admin-ajax.php","action":"update_views_ajax","ID":"331781","token":"2b4528a9e9"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/wpp.js" id="wpp-js-js"></script>
+<link rel="https://api.w.org/" href="https://blogs.sap.com/wp-json/"><link rel="alternate" type="application/json" href="https://blogs.sap.com/wp-json/wp/v2/posts/331781"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blogs.sap.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blogs.sap.com/wp-includes/wlwmanifest.xml"> 
+
+<link rel="canonical" href="https://blogs.sap.com/2012/09/16/all-about-data-transfer-process-dtp-sap-bw-7/">
+<link rel="shortlink" href="https://blogs.sap.com/?p=331781">
+<script type="text/javascript">var ajaxurl = "https://blogs.sap.com/wp-admin/admin-ajax.php";var likePostLabel = "Like";var unLikePostLabel = "Liked";var likeCommentLabel = "Like";var unLikeCommentLabel = "Liked";</script>    <!--[if IE ]>
+    <link rel="stylesheet" id="scn-ie-styles" href="https://blogs.sap.com/wp-content/themes/sap-v3-neo/css/ie.css"
+          type="text/css" media="all">
+    <link id="ids-popup-css" href="https://accounts.sap.com/universalui/shared/stylesheets/idsPopup.css"
+          rel="stylesheet"
+          type="text/css">
+    <![endif]-->
+
+
+
+
+
+
+
+<div class="page-wrapper">
+<b class="cn-accessibility"><a href="#main" tabindex="0" accesskey="S">Skip to Content</a></b>
+<div id="page" class="hfeed site">
+
+<header id="masthead" class="blogs-nav sap-header">
+    <header id="comm-hdr-Header" role="masthead"><div class="dm-header"><div class="dm-header__inner"><div class="dm-header__logo-wrapper"><a class="dm-logo--header" href="http://www.sap.com/" title="SAP"></a></div><nav id="comm-hdr-Navigation" class="dm-mainNav"><div class="dm-mobileSearch"><form class="dm-header__search-form" action="https://community.sap.com/search"><div class="dm-search-container dm-input dm-search__input"><label class="dm-input__box" aria-label="search SAP Community"><input class="dm-input__control" placeholder="Search SAP Community" name="filter-search" type="search" required="" aria-label="type here to search"><button class="dm-search__button dm-search__button-clear" type="reset" role="button" title="Reset Search"><span class="dm-search__buttonIcon dm-icon-encoded--close" role="img" aria-label="Reset"></span></button><button class="dm-search__button dm-search__button-submit" type="submit" role="button" title="Search SAP Community"><span class="dm-search__buttonIcon dm-icon-encoded--search" role="img" aria-label="Search"></span></button></label></div></form></div><ul class="dm-mainNav__menu" role="menubar"><li class="dm-header__homeItem" role="none"><a class="dm-header__homeItem-link" role="menuitem" aria-label="Community Home" target="_self" href="https://community.sap.com/">Community</a></li><li class="dm-mainNav__menuItem" role="none"><a class="dm-mainNav__menuItem-link" href="https://community.sap.com/topics" aria-label="" aria-haspopup="false" role="menuitem">Topics<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a></li><li class="dm-mainNav__menuItem dm-mainNav--hasSubMenu" role="none"><a class="dm-mainNav__menuItem-link" href="https://answers.sap.com/index.html" aria-label="Answers. Press Arrow Down to expand the submenu and navigate with arrow keys." aria-haspopup="true" role="menuitem">Answers<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a><div class="dm-mainNav__menuItem-dropdownContainer"><ul class="dm-mainNav__subMenu" role="menu"><li class="dm-mainNav__subMenu-mobileTitle"><a class="dm-mainNav__subMenu-title-link" target="_self" href="https://answers.sap.com/index.html" role="button">Answers<span class="dm-mainNav__subMenu-title-arrow dm-icon-encoded dm-icon-encoded--arrow-left"></span></a></li><li class="dm-mainNav__subMenu-item--overview" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://answers.sap.com/index.html" role="none">All Questions</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://answers.sap.com/questions/ask.html" role="menuitem">Ask a question</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_blank" href="https://developers.sap.com/tutorials/community-qa.html" role="menuitem">How to ask a question</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/using-tags" role="menuitem">Using Tags</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://answers.sap.com/tags.html" role="menuitem">All Tags</a></li></ul></div></li><li class="dm-mainNav__menuItem dm-mainNav--hasSubMenu" role="none"><a class="dm-mainNav__menuItem-link" href="https://blogs.sap.com/" aria-label="Blogs. Press Arrow Down to expand the submenu and navigate with arrow keys." aria-haspopup="true" role="menuitem">Blogs<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a><div class="dm-mainNav__menuItem-dropdownContainer"><ul class="dm-mainNav__subMenu" role="menu"><li class="dm-mainNav__subMenu-mobileTitle"><a class="dm-mainNav__subMenu-title-link" target="_self" href="https://blogs.sap.com/" role="button">Blogs<span class="dm-mainNav__subMenu-title-arrow dm-icon-encoded dm-icon-encoded--arrow-left"></span></a></li><li class="dm-mainNav__subMenu-item--overview" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://blogs.sap.com/" role="none">All Blog Posts</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://blogs.sap.com/wp-admin/post-new.php" role="menuitem">Write a blog post</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/blogging" role="menuitem">How to write a blog post</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/using-tags" role="menuitem">Using Tags</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/blogging#Using_categories" role="menuitem">Using Categories</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://blogs.sap.com/tags/" role="menuitem">All tags</a></li></ul></div></li><li class="dm-mainNav__menuItem dm-mainNav--hasSubMenu" role="none"><a class="dm-mainNav__menuItem-link" href="https://community.sap.com/events" aria-label="Events. Press Arrow Down to expand the submenu and navigate with arrow keys." aria-haspopup="true" role="menuitem">Events<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a><div class="dm-mainNav__menuItem-dropdownContainer"><ul class="dm-mainNav__subMenu" role="menu"><li class="dm-mainNav__subMenu-mobileTitle"><a class="dm-mainNav__subMenu-title-link" target="_self" href="https://community.sap.com/events" role="button">Events<span class="dm-mainNav__subMenu-title-arrow dm-icon-encoded dm-icon-encoded--arrow-left"></span></a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/events/codejam" role="menuitem">SAP Code Jam</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/community-calls" role="menuitem">SAP Community Calls</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/events/inside-track" role="menuitem">SAP Inside Track</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/events/stammtisch" role="menuitem">SAP Stammtisch</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/topics/teched-in-2020" role="menuitem">SAP TechEd</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/events" role="menuitem">All Events</a></li></ul></div></li><li class="dm-mainNav__menuItem dm-mainNav--hasSubMenu" role="none"><a class="dm-mainNav__menuItem-link" href="https://community.sap.com/programs" aria-label="Programs. Press Arrow Down to expand the submenu and navigate with arrow keys." aria-haspopup="true" role="menuitem">Programs<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a><div class="dm-mainNav__menuItem-dropdownContainer"><ul class="dm-mainNav__subMenu" role="menu"><li class="dm-mainNav__subMenu-mobileTitle"><a class="dm-mainNav__subMenu-title-link" target="_self" href="https://community.sap.com/programs" role="button">Community Programs<span class="dm-mainNav__subMenu-title-arrow dm-icon-encoded dm-icon-encoded--arrow-left"></span></a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/programs/influencer-programs" role="menuitem">Influencers</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/programs/spotlight-interviews" role="menuitem">Spotlight Interviews</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/media" role="menuitem">Community Live</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://answers.sap.com/content/kbentry/list.html" role="menuitem">Coffee Corner Discussions</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/programs" role="menuitem">All Programs</a></li></ul></div></li><li class="dm-mainNav__menuItem dm-mainNav--hasSubMenu" role="none"><a class="dm-mainNav__menuItem-link" href="https://community.sap.com/resources" aria-label="Resources. Press Arrow Down to expand the submenu and navigate with arrow keys." aria-haspopup="true" role="menuitem">Resources<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a><div class="dm-mainNav__menuItem-dropdownContainer"><ul class="dm-mainNav__subMenu" role="menu"><li class="dm-mainNav__subMenu-mobileTitle"><a class="dm-mainNav__subMenu-title-link" target="_self" href="https://community.sap.com/resources" role="button">Resources<span class="dm-mainNav__subMenu-title-arrow dm-icon-encoded dm-icon-encoded--arrow-left"></span></a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_blank" href="https://developers.sap.com/tutorials/community-start.html" role="menuitem">Getting started</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/tutorials" role="menuitem">Community Tutorials</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/tip-in-a-minute#Videos" role="menuitem">Community Videos</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/voice-nl" role="menuitem">Community Voice Newsletter</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/reputation" role="menuitem">Reputation</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/missions-badges" role="menuitem">Missions &amp; Badges</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/moderation" role="menuitem">Moderation</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources/rules-of-engagement" role="menuitem">Rules of Engagement</a></li><li class="dm-mainNav__subMenu-item" role="none"><a class="dm-mainNav__subMenu-link" target="_self" href="https://community.sap.com/resources" role="menuitem">All Resources</a></li></ul></div></li><li class="dm-mainNav__menuItem" role="none"><a class="dm-mainNav__menuItem-link" href="https://community.sap.com/resources/what-is-new" aria-label="" aria-haspopup="false" role="menuitem">What's New<span class="dm-mainNav__menuItem-arrow dm-icon-encoded dm-icon-encoded--arrow-right"></span></a></li></ul></nav><ul class="dm-header__actions"><li id="comm-hdr-Search" class="dm-header__actions-item dm-headerSearch"><a class="dm-search-action dm-icon-encoded dm-header__search-icon" aria-label="Search the SAP Community" href="#" role="button" aria-expanded="false" title="Search"></a><div class="dm-headerSearch__wrapper"><form class="dm-searchdropdown dm-align-center" action="https://community.sap.com/search"><div class="dm-search__input dm-input" role="search"><label class="dm-input__box" aria-label="search the SAP community"><input class="dm-input__control" placeholder="Search the SAP Community" name="filter-search" aria-label="type here to search" type="input"><button class="dm-search__button dm-search__button-clear" type="reset" title="Reset"><span class="dm-search__buttonIcon dm-icon-encoded--clear" role="img" aria-label="Reset"></span></button><button class="dm-search__button dm-search__button-submit" type="submit" title="Search the SAP Community"><span class="dm-search__buttonIcon dm-icon-encoded--search" role="img" aria-label="Search"></span></button></label></div></form><a class="dm-headerSearch__closeButton" type="submit" role="button" title="Close search input" href="javascript:void(0);"><span class="dm-icon-encoded dm-icon-encoded--close" role="img" aria-label="Close search input"></span></a></div></li><li id="comm-hdr-Authentication" class="dm-header__actions-item dm-header__account"><a id="comm-hdr-SignIn" class="dm-user__login-button--wrapper" aria-haspopup="true" aria-expanded="false" role="button" href="https://blogs.sap.com/wp-login.php?redirect_to=%2F2012%2F09%2F16%2Fall-about-data-transfer-process-dtp-sap-bw-7%2F" title="Log On" rel="IDS_login"><div id="comm-hdr-AnonymousIcon" class="dm-icon-encoded dm-icon-encoded--account" aria-label="click here to login"></div><div id="comm-hdr-Avatar" class="dm-user dm-header__avatar"><img class="dm-header__avatar-image dm-hidden" data-src="" src="" width="24px" height="24px"><span class="dm-header__notifications dm-hidden js-notification-indicator"></span></div></a><ul id="comm-hdr-UserProfileMenu" class="dm-header__actionsSubMenu dm-profileFlyoutMenu dm-profileMenuDropdown" role="menu" aria-label="drop down menu of people profile"><li class="dm-profileMenu__userData"><div id="comm-hdr-Username" class="dm-profileMenu__userName"></div><div id="comm-hdr-Email" class="dm-profileMenu__userEmail"></div><a id="comm-hdr-SubMenuTitleLink" class="dm-link" href="#">Manage my Account</a></li><li id="comm-hdr-ProfileMenuTopSection" class="dm-profileMenu__section"><ul class="dm-profileMenu__list"></ul></li><li id="comm-hdr-ProfileMenuMiddleSection" class="dm-profileMenu__section"><ul class="dm-profileMenu__list"></ul></li><li class="dm-profileMenu__section"><ul class="dm-profileMenu__list dm-profileMenu__logout"><li class="dm-profileMenu__item"><a id="comm-hdr-LogOut" class="dm-button dm-button--secondary" href="#" role="button"><span class="dm-button-text">Logout</span></a></li></ul></li></ul></li><li class="dm-header__actions-item dm-header__mobileMenu"><a id="comm-hdr-MobileMenuBtn" class="dm-mobileMenuButton" aria-label="Search SAP community"><span class="dm-icon-encoded dm-icon-encoded--mobile-menu"></span><span style="display:none;">Search</span></a></li></ul></div></div></header><div class="announcements" role="menubar"></div><div class="dm-wrapper dm-subheader dm-subheader--wrapper  dm-user--unauthenticated "><div class="dm-grid"><div class="dm-breadcrumb dm-user--unauthenticated" role="menubar">
+    <ul class="dm-breadcrumb-nav" role="navigation" aria-label="breadcrumb navigation to trace the path back to original landing point">
+        
+        <li><a id="comm-shdr-breadcrumb-home" href="https://www.sap.com/" title="Home">Home</a></li>
+        
+        <li><a id="comm-shdr-breadcrumb-community" href="https://community.sap.com/" title="Community">Community</a></li>
+        
+    <li><a href="https://blogs.sap.com/" title="Blogs">Blogs</a></li></ul>
+    <ul class="dm-breadcrumb-actions" role="menu">
+        
+        <li><a id="comm-shdr-AskQuestion" href="https://answers.sap.com/questions/ask.html" title="Ask a Question">Ask a Question</a></li>
+        
+        <li><a id="comm-shdr-WriteBlogPost" href="https://blogs.sap.com/wp-admin/post-new.php" title="Write a Blog Post">Write a Blog Post</a></li>
+        
+        <li class="dm-user__login-button--wrapper"><a class="dm-button-small dm-button--primary" role="button" rel="IDS_login" aria-label="Login or Sign up. Click here to log in or sign up" href="https://blogs.sap.com/wp-login.php?redirect_to=%2F2012%2F09%2F16%2Fall-about-data-transfer-process-dtp-sap-bw-7%2F"><span class="dm-button-text">Login / Sign-up</span></a></li>
+        <li class="dm-breadcrumb-actions__dropdown">
+            <span id="comm-shdr-actions-opener" class="dm-breadcrumb-actions__dropdown-toggle" title="Community actions">
+                 <span class="dm-icon-encoded dm-icon-encoded--3dots"></span>
+            </span>
+            <ul id="comm-shdr-user-actions-ul" class="dm-breadcrumb-actions__dropdown-menu dm_actions--populated" role="menu"><li id="comm-shdr-SendMessage"><a href="https://messages.sap.com/" title="Send a Message">Send a Message</a></li><li id="comm-shdr-ManageBlogPosts"><a href="https://blogs.sap.com/wp-admin/edit.php?post_type=post&amp;author=currentUser" title="Manage My Blog Posts">Manage My Blog Posts</a></li><li id="comm-shdr-GetStarted"><a href="https://community.sap.com/resources/getting-started" title="Quick Start Guide">Quick Start Guide</a></li></ul>
+        </li>
+    </ul>
+</div>
+</div></div>    <!-- #site-navigation -->
+
+</header>
+
+<!-- #masthead -->
+<div id="main" tabindex="0" class="wrapper">
+
+
+
+<div class="dm-wrapper">
+  <div class="dm-grid">
+    <div class="dm-section dm-section--first">
+      <div class="dm-layout__flexRow">
+        <div class="dm-layout__flexColumn">
+          <!-- Hero unit start -->
+          
+<div class="dm-contentHero">
+    <div class="dm-contentHero__row">
+        <div class="dm-contentHero__category">
+                    </div>
+    </div>
+    <div class="dm-contentHero__row">
+        <div class="dm-contentHero__column">
+            <div class="dm-contentHero__author-avatar">
+                <a target="_blank" class="dm-author__image " href="https://people.sap.com/bhushan.raval">
+                    <img alt="Author's profile photo Bhushan Raval" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/bhushan.png" class="avatar avatar-48 photo avatar-default dm-author__image" width="48" height="48">                </a>
+            </div>
+        </div>
+        <div class="dm-contentHero__column dm-contentHero__flexColumn--wrap">
+            <div class="dm-contentHero__author">
+                <div class="dm-author__data">
+                    <div class="dm-author__heading">
+                        <a target="_blank" class="dm-author__name " aria-label="Author name Bhushan Raval" href="https://people.sap.com/bhushan.raval">Bhushan Raval</a>
+                                            </div>
+                    <div class="dm-contentHero__metadata">
+                        <span class="dm-contentHero__metadata--item">
+                            <span class="dm-accesible-hidden"> Posted on</span> 
+                            September 16, 2012                        </span>
+                        <span class="dm-contentHero__metadata--item">8 minute read</span>
+                    </div>
+                </div>
+            </div>
+            <div class="dm-contentHero__headline">
+                <h1 class="dm-contentHero__title">All about Data Transfer Process (DTP) – SAP BW 7</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="dm-contentHero__actions">
+        <div class="dm-contentFollow dm-contentHero__contentFollow onscroll_sticky" style="z-index: 99; position: fixed; top: 10px; left: 108.333px;">
+            <a class="dm-button-small dm-button--callToAction sap-button-follow" id="sap-button-follow-hdr-id" href="https://blogs.sap.com/wp-login.php?redirect_to=https%3A%2F%2Fblogs.sap.com%2F2012%2F09%2F16%2Fall-about-data-transfer-process-dtp-sap-bw-7%2F%3Fs_action%3Dss_change_follow_status%26nonce%3Da0893984ec&amp;nonce=1625482638643.2212" rel="IDS_login" role="button" data-content-type="blogpost" data-content-id="331781" data-nonce="a0893984ec" title="Please log into the system to use follow/unfollow functionality."><span class="dm-button-text">Follow</span></a>            <a class="dm-button-small dm-button--secondary" role="button" type="button" href="https://blogs.sap.com/2012/09/16/all-about-data-transfer-process-dtp-sap-bw-7/feed/"><span class="dm-button-text">RSS feed</span></a>
+            <a class="dm-button-small dm-button--secondary likes-post-link dolike " rel="IDS_login" href="https://blogs.sap.com/wp-login.php?redirect_to=https%3A%2F%2Fblogs.sap.com%2F2012%2F09%2F16%2Fall-about-data-transfer-process-dtp-sap-bw-7%2F%3Fs_action%3Dss_change_like_status%26nonce%3D05f495ccc5&amp;nonce=1625482638643.2212" role="button" type="button" title="Like" data-nonce="05f495ccc5" data-post-id="331781"><span class="dm-button-text">Like</span></a>        </div>
+        <div class="dm-contentHero__statistics">
+            <div class="dm-contentHero__metadata">
+                <span id="dm-contentHero__metadata--likes" class="dm-contentHero__metadata--item">
+                    79 Likes                </span>
+                <span class="dm-contentHero__metadata--item">
+                    157,698 Views                </span>
+                <span class="dm-contentHero__metadata--item">
+                    14 Comments                </span>
+                <span class="dm-contentHero__metadata--item">
+                                    </span>
+            </div>
+        </div>
+    </div>
+</div>          <!-- Hero unit end -->
+          <div class="dm-contentDetail">
+            <div class="dm-contentDetail__body-content">
+                <div class="jive-rendered-content">
+<h1><span style="color: #000080;">Data Transfer Process (DTP)</span></h1>
+<p><span style="color: #000080;"><br></span></p>
+<p><span style="color: #000000;">DTP determines the process for transfer of data between two persistent/non persistent objects within BI.</span></p>
+<p><span style="color: #000000;">As of SAP NetWeaver 7.0, InfoPackage 
+loads data from a Source System only up to PSA. It is DTP that 
+determines the further loading of data thereafter.</span></p>
+<p></p>
+<p></p>
+<p><span style="color: #000080; font-size: 12pt;"><strong>Use</strong></span></p>
+<ul>
+<li><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;">Loading data from PSA to InfoProvider(s).</span></li>
+<li><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;">Transfer of data from one InfoProvider to another within BI.</span></li>
+<li><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;">Data distribution to a target outside the BI system; e.g. Open HUBs, etc.</span></li>
+</ul>
+<p><span style="color: #000000;">In the process of transferring data 
+within BI, the Transformations define mapping and logic of data updating
+ to the data targets whereas, the Extraction mode and Update mode are 
+determined using a DTP.</span></p>
+<p></p>
+<p style="margin-left: 31.5pt; text-indent: -31.5pt;"><span style="color: #000000;"><strong>NOTE</strong>:
+ DTP is used to load data within BI system only; except when they are 
+used in the scenarios of Virtual InfoProviders where DTP can be used to 
+determine a direct data fetch from the source system at run time.</span></p>
+<p></p>
+<p style="margin-bottom: 10.0pt;">
+</p><p style="margin-bottom: 10.0pt;"><span style="color: #000080; font-size: 12pt;"><strong>Key Benefits of using a DTP over conventional IP loading</strong></span></p>
+<ol>
+<li><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;">DTP
+ follows one to one mechanism between a source and a Target i.e. one DTP
+ sources data to only one data target whereas, IP loads data to all data
+ targets at once. This is one of the major advantages over the 
+InfoPackage method as it helps in achieving a lot of other benefits.</span></li>
+<li><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;">Isolation
+ of Data loading from Source to BI system (PSA) and within BI system. 
+This helps in scheduling data loads to InfoProviders at any time after 
+loading data from the source.</span></li>
+<li><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;">Better Error handling mechanism with the use of Temporary storage area, Semantic Keys and Error Stack.</span></li>
+</ol>
+<p></p>
+<p style="margin-bottom: 10.0pt;"><span style="color: #000080; font-size: 18pt;"><strong>Extraction</strong></span></p>
+<p><span style="color: #000000;">There are two types of Extraction modes for a DTP – <em>Full</em> and <em>Delta</em>.</span></p>
+<p></p>
+<p style="margin-left: 2.0pt;">
+</p><h2><span style="color: #000080; font-size: 12pt;">Full:</span></h2>
+<p></p>
+<p><span style="color: #000000;">Update mode full is same as that in an InfoPackage.</span></p>
+<p><span style="color: #000000;">It selects all the data available in the source based on the Filter conditions mentioned in the DTP.</span></p>
+<p><span style="color: #000000;">When the source of data is any one from the below InfoProviders, only FULL Extraction Mode is available. </span></p>
+<ul style="list-style-type: disc;">
+<li><span style="color: #000000;">InfoObjects</span></li>
+<li><span style="color: #000000;">InfoSets</span></li>
+<li><span style="color: #000000;">DataStore Objects for Direct Update</span></li>
+</ul>
+<p><span style="color: #000000;">Delta is not possible when the source is anyone of the above.</span></p>
+<p><span style="color: #000000;"><br></span></p>
+<p style="margin-left: 2.0pt;">
+</p><h2><span style="color: #000080; font-size: 12pt;">Delta:</span></h2>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><span style="color: #000000;">Unlike
+ InfoPackage, delta transfer using a DTP doesn’t require an explicit 
+initialization. When DTP is executed with Extraction mode Delta for the 
+first time, all existing request till then are retrieved from the source
+ and the delta is automatically initialized.</span><a href="https://blogs.sap.com/wp-content/uploads/2012/09/delta_137885.jpg"><img class="jive-image" alt="Delta.jpg" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/delta_137885.jpg"></a></p>
+<p></p>
+<p style="margin-right: 8.0pt;"><span style="color: #000000;">The below 3 options are available for a DTP with Extraction Mode: Delta.</span></p>
+<ul style="list-style-type: disc;">
+<li><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;">Only Get Delta Once.</span></li>
+<li><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;">Get All New Data Request By Request.</span></li>
+<li><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;">Retrieve Until No More New Data.</span></li>
+</ul>
+<p><span style="color: #000000;">&nbsp; </span></p>
+<p></p>
+<p><span style="color: #000000;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size: 10pt; font-family: Arial, sans-serif;">I</span><strong><span style="font-size: 10pt; font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Only get delta once</span><span style="font-size: 12pt; font-family: Arial, sans-serif;">:</span></strong></span></p>
+<p style="margin: 5pt 0 5pt 0.5in;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;">If this indicator is set, a snapshot scenario is built. The Data available in the Target is an exact replica of the Source Data.</span></p>
+<p style="margin-right: 8pt; padding-left: 30px;"><span style="color: #000000; font-size: 10pt; font-family: Arial, sans-serif;"><em>Scenario:</em></span></p>
+<p style="margin-right: 8.0pt; margin-left: .5in; margin-bottom: .0001pt;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;">Let
+ us consider a scenario wherein Data is transferred from a Flat File to 
+an InfoCube. The Target needs to contain the data from the latest Flat 
+File data load only. Each time a new Request is loaded, the previous 
+request needs to be deleted from the Target. For every new data load, 
+any previous Request loaded with the same selection criteria is to be 
+removed from the InfoCube automatically. This is necessary, whenever the
+ source delivers only the last status of the key figures, similar to a 
+Snap Shot of the Source Data.</span></p>
+<p style="margin-right: 8pt; padding-left: 30px;"><span style="color: #000000; font-size: 10pt; text-decoration: underline; font-family: Arial, sans-serif;">Solution – Only Get Delta Once</span></p>
+<p style="margin-right: 8.0pt; margin-left: .5in; margin-bottom: .0001pt;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;">A
+ DTP with a Full load should suffice the requirement. However, it is not
+ recommended to use a Full DTP; the reason being, a full DTP loads all 
+the requests from the PSA regardless of whether these were loaded 
+previously or not. So, in order to avoid the duplication of data due to 
+full loads, we have to always schedule PSA deletion every time before a 
+full DTP is triggered again.</span></p>
+<p></p>
+<p style="margin-right: 8.0pt; margin-left: .5in; margin-bottom: .0001pt;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;">‘Only
+ Get Delta Once’ does this job in a much efficient way; as it loads only
+ the latest request (Delta) from a PSA to a Data target.</span></p>
+<ol style="list-style-type: decimal;">
+<ol>
+<ol>
+<li><span style="color: #000000; font-size: 10pt; font-family: Arial, sans-serif;">Delete the previous Request from the data target.</span></li>
+<li><span style="color: #000000; font-size: 10pt; font-family: Arial, sans-serif;">Load data up to PSA using a Full InfoPackage.</span></li>
+<li><span style="color: #000000; font-size: 10pt; font-family: Arial, sans-serif;">Execute DTP in Extraction Mode: Delta with ‘Only Get Delta Once’ checked.</span></li>
+</ol>
+</ol>
+</ol>
+<p style="padding-left: 30px;"><span style="color: #000000;">The above 3 steps can be incorporated in a Process Chain which avoids any manual intervention.</span></p>
+<p></p>
+<p><span style="color: #000000;"><span style="font-size: 10pt; font-family: Arial, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-size: 10pt; font-family: Arial, sans-serif;">II&nbsp;&nbsp;&nbsp;&nbsp; </span><strong><span style="font-size: 10pt; font-family: Arial, sans-serif;">Get all new data request by request</span><span style="font-size: 12pt; font-family: Arial, sans-serif;">:</span> </strong></span></p>
+<p style="margin: 5pt 0 5pt 0.5in;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;">If you set this indicator in combination with ‘<em>Retrieve Until No More New Data</em>’,
+ a DTP gets data from one request in the source. When it completes 
+processing, the DTP checks whether the source contains any further new 
+requests. If the source contains more requests, a new DTP request is 
+automatically generated and processed.</span></p>
+<p></p>
+<p style="margin-right: 17.0pt; margin-left: 67.5pt; margin-bottom: .0001pt; text-indent: -31.5pt;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;">NOTE: If ‘<em>Retrieve Until No More New Data’</em> is unchecked, the above option automatically changes to ‘<em>Get One Request Only’</em>. This would in turn get only one request from the source.</span></p>
+<p style="margin-right: 17.0pt; margin-left: 67.5pt; margin-bottom: .0001pt;"><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;">Also, once DTP is activated, the option ‘<em>Retrieve Until No More New Data’</em> no more appears in the DTP maintenance.</span></p>
+<p></p>
+<p style="margin-left: 2.0pt;">
+</p><p style="margin-left: 2.0pt;">
+</p><h2><span style="color: #000080; font-size: 12pt;">Package Size</span></h2>
+<p><span style="color: #000000;">The number of Data records contained in one individual Data package is determined here.</span></p>
+<p><span style="color: #000000;">Default value is 50,000.</span></p>
+<p><span style="color: #000000;">&nbsp; <span style="font-size: 10pt; font-family: Arial, sans-serif;"><strong><br clear="all"></strong></span>&nbsp; </span></p>
+<p></p>
+<h2><span style="color: #000080; font-size: 12pt;">Filter</span></h2>
+<p>&nbsp;&nbsp; <br><span style="color: #000000;">The selection Criteria for fetching the data from the source is determined / restricted by filter.</span><a href="https://blogs.sap.com/wp-content/uploads/2012/09/filter_137886.jpg"><img class="jive-image" alt="/wp-content/uploads/2012/09/filter_137886.jpg" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/filter_137886.jpg"></a></p>
+<p></p>
+<p><span style="color: #000000;">We have following options to restrict a value / range of values:</span></p>
+<p></p>
+<p><span style="color: #000000;">&nbsp;&nbsp; Multiple selections</span></p>
+<p></p>
+<p><span style="color: #000000;">&nbsp;&nbsp; OLAP variable </span></p>
+<p></p>
+<p><span style="color: #000000;">&nbsp;&nbsp; ABAP Routine</span></p>
+<p></p>
+<p style="margin-left: 4.5pt;"><span style="color: #000000;">A<a href="https://blogs.sap.com/wp-content/uploads/2012/09/check_137889.jpg"><img class="jive-image" alt="/wp-content/uploads/2012/09/check_137889.jpg" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/check_137889.jpg"></a> on the right of the <em>Filter</em> button indicates the Filter selections exist for the DTP.</span></p>
+<p></p>
+<p style="margin-left: 4.5pt;"><span style="color: #000000;"><br></span></p>
+<p style="margin-left: 2.0pt;">
+</p><p style="margin-left: 2.0pt;">
+</p><h2><span style="color: #000080; font-size: 12pt;">Semantic Groups</span></h2>
+<p><span style="color: #000000;">Choose Semantic Groups to specify how 
+you want to build the data packages that are read from the source 
+(DataSource or InfoProvider). To do this, define key fields. Data 
+records that have the same key are combined in a single data package. </span></p>
+<p><span style="color: #000000;">This setting is only relevant for 
+DataStore objects with data fields that are overwritten. This setting 
+also defines the key fields for the error stack. By defining the key for
+ the error stack, you ensure that the data can be updated in the target 
+in the correct order once the incorrect data records have been 
+corrected.</span></p>
+<p></p>
+<p><span style="color: #000000;">A<a href="https://blogs.sap.com/wp-content/uploads/2012/09/check_137889.jpg"><img class="jive-image" alt="/wp-content/uploads/2012/09/check_137889.jpg" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/check_137889.jpg"></a>on the right side of the ‘Semantic Groups’ button indicates the Semantic keys exist for the DTP.</span></p>
+<p><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;">&nbsp; <br clear="all">&nbsp;&nbsp; </span></p>
+<p></p>
+<p style="margin-bottom: 10.0pt;"><span style="color: #000080; font-size: 18pt;"><strong>Update</strong></span></p>
+<p style="margin-left: 4.5pt;"><a href="https://blogs.sap.com/wp-content/uploads/2012/09/update_137890.jpg"><img class="jive-image" alt="/wp-content/uploads/2012/09/update_137890.jpg" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/update_137890.jpg"></a> </p>
+<p></p>
+<h2></h2>
+<h2><span style="color: #000080; font-size: 12pt;">Error Handling</span></h2>
+<p></p>
+<ul style="list-style-type: disc;">
+<li><span style="color: #000000;"><span style="font-size: 10pt; font-family: Arial, sans-serif;"><strong>Deactivated</strong></span><span style="font-size: 10pt; font-family: Arial, sans-serif;">:</span></span></li>
+</ul>
+<p style="margin-left: 40.5pt;"><span style="color: #000000;">If an error occurs, the error is reported at the package level and not at the data record level.</span></p>
+<p style="margin-left: 40.5pt;"><span style="color: #000000;">The 
+incorrect records are not written to the error stack since the request 
+is terminated and has to be updated again in its entirety.</span></p>
+<p style="margin-left: 40.5pt;"><span style="color: #000000;">This results in faster processing.</span></p>
+<p></p>
+<ul style="list-style-type: disc;">
+<li><span style="color: #000000;"><span style="font-size: 10pt; font-family: Arial, sans-serif;"><strong>No Update, No Reporting</strong></span><span style="font-size: 10pt; font-family: Arial, sans-serif;">:</span></span></li>
+</ul>
+<p style="margin-left: 40.5pt;"><span style="color: #000000;">If errors 
+occur, the system terminates the update of the entire data package. The 
+request is not released for reporting. The incorrect record is 
+highlighted so that the error can be assigned to the data record.</span></p>
+<p style="margin-left: 40.5pt;"><span style="color: #000000;">The 
+incorrect records are not written to the error stack since the request 
+is terminated and has to be updated again in its entirety.</span></p>
+<p></p>
+<ul style="list-style-type: disc;">
+<li><span style="color: #000000;"><span style="font-size: 10pt; font-family: Arial, sans-serif;"><strong>Valid Records Update, No Reporting (Request Red)</strong></span><span style="font-size: 10pt; font-family: Arial, sans-serif;">:</span></span></li>
+</ul>
+<p style="margin-left: 40.5pt;"><span style="color: #000000;">This 
+option allows you to update valid data. This data is only released for 
+reporting after the administrator checks the incorrect records that are 
+not updated and manually releases the request (by a QM action, that is, 
+setting the overall status on the Status tab page in the monitor).</span></p>
+<p style="margin-left: 40.5pt;"><span style="color: #000000;">The 
+incorrect records are written to a separate error stack in which the 
+records are edited and can be updated manually using an error DTP.</span></p>
+<p style="margin: 5pt 0 5pt 40.5pt;">
+</p><ul style="list-style-type: disc;">
+<li><span style="color: #000000;"><span style="font-size: 10pt; font-family: Arial, sans-serif;"><strong>Valid Records Update, Reporting Possible (Request Green)</strong></span><span style="font-size: 10pt; font-family: Arial, sans-serif;">:</span></span></li>
+</ul>
+<p style="margin-left: 40.5pt;"><span style="color: #000000;">Valid records can be reported immediately. Automatic follow-up actions, such as adjusting the aggregates, are also carried out.</span></p>
+<p style="margin-left: 40.5pt;"><span style="color: #000000;">The 
+incorrect records are written to a separate error stack in which the 
+records are edited and can be updated manually using an error DTP.</span></p>
+<p></p>
+<p style="margin-left: 2.0pt;">
+</p><h2><span style="color: #000080; font-size: 12pt;">Error DTP</span></h2>
+<p><span style="color: #000000;">Erroneous records in a DTP load are written to a stack called Error Stack.</span></p>
+<p><span style="color: #000000;">Error Stack is a request-based table 
+(PSA table) into which erroneous data records from a data transfer 
+process (DTP) are written. The error stack is based on the data source 
+(PSA, DSO or Info Cube), that is, records from the source are written to
+ the error stack.</span></p>
+<p><span style="color: #000000;">In order to upload data to the Data 
+Target, we need to correct the data records in the Error Stack and 
+manually run the Error DTP.</span></p>
+<p></p>
+<p style="margin-bottom: 10.0pt;">
+</p><p style="margin-bottom: 10.0pt;"><span style="color: #000080; font-size: 18pt;"><strong>Execute</strong></span></p>
+<p style="margin-left: 2.0pt;"><a href="https://blogs.sap.com/wp-content/uploads/2012/09/execute_137891.jpg"><img class="jive-image" alt="Execute.jpg" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/execute_137891.jpg"></a></p>
+<p></p>
+<p style="margin-left: 2.0pt;">
+</p><p style="margin-left: 2.0pt;">
+</p><p style="margin-left: 2.0pt;"><span style="color: #000080; font-size: 12pt;"><strong>Processing Mode</strong></span></p>
+<p style="margin-left: 2.0pt;">
+</p><p style="margin-left: 2.0pt;"><span style="color: #000000;"><strong>Serial Extraction, Immediate Parallel Processing:</strong></span></p>
+<p style="margin-left: 2.0pt;"><span style="color: #000000;">A request is processed in a background process when a DTP is started in a process chain or manually.</span></p>
+<p style="margin-left: 2.0pt;">
+</p><p><span style="color: #000000;">&nbsp; <span style="font-size: 10pt; font-family: Arial, sans-serif;"><strong><br clear="all"></strong></span>&nbsp; </span></p>
+<p></p>
+<p style="margin-left: 2.0pt;"><span style="color: #000000;"><strong>Serial in dialog process (for debugging):</strong></span></p>
+<p style="margin-left: 2.0pt;"><span style="color: #000000;">A request is processed in a dialog process when it is started in debug mode from DTP maintenance.</span><br><span style="color: #000000;">This
+ mode is ideal for simulating the DTP execution in Debugging mode. When 
+this mode is selected, we have the option to activate or deactivate the 
+session Break Points at various stages like – Extraction, Data 
+Filtering, Error Handling, Transformation and Data Target updating.</span></p>
+<p style="margin-left: 2.0pt;"><span style="color: #000000;">You cannot start requests for real-time data acquisition in debug mode.</span></p>
+<p></p>
+<p style="margin-left: 2.0pt;"><span style="text-decoration: underline; color: #000000;">Debugging Tip:</span></p>
+<p style="margin-left: 2.0pt;"><span style="color: #000000;">When you 
+want to debug the DTP, you cannot set a session breakpoint in the editor
+ where you write the ABAP code (e.g. DTP Filter). You need to set a 
+session break point(s) in the Generated program as shown below:</span></p>
+<p></p>
+<p style="margin-left: 2.0pt;"><a href="https://blogs.sap.com/wp-content/uploads/2012/09/execute_137892.jpg"><img class="jive-image" alt="Execute.jpg" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/execute_137892.jpg"></a></p>
+<p></p>
+<p style="margin-left: 2.0pt;">
+</p><p style="margin-left: 2.0pt;"><span style="color: #000000;"><strong>No data transfer; delta status in source: fetched:</strong></span></p>
+<p style="margin-left: 2.0pt;"><span style="color: #000000;">This 
+processing is available only when DTP is operated in Delta Mode. It is 
+similar to Delta Initialization without data transfer as in an 
+InfoPackage.</span></p>
+<p style="margin-left: 2.0pt;"><span style="color: #000000;">In this 
+mode, the DTP executes directly in Dialog. The request generated would 
+mark the data found from the source as fetched, but does not actually 
+load any data to the target.</span></p>
+<p style="margin-left: 2.0pt;"><span style="color: #000000;">We can choose this mode even if the data has already been transferred previously using the DTP.</span></p>
+<p><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;">&nbsp; <br clear="all">&nbsp;&nbsp; </span></p>
+<p></p>
+<p style="margin-bottom: 10.0pt;"><span style="color: #000080; font-size: 18pt;"><strong>Delta DTP on a DSO</strong></span></p>
+<p><span style="color: #000000;">There are special data transfer options when the Data is sourced from a DTP to other Data Target.</span></p>
+<p></p>
+<p><a href="https://blogs.sap.com/wp-content/uploads/2012/09/dso_137893.jpg"><img class="jive-image" alt="DSO.jpg" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/dso_137893.jpg"></a></p>
+<p></p>
+<ul style="list-style-type: disc;">
+<li><span style="font-size: 10pt; font-family: Arial, sans-serif; color: #000000;"><strong>Active Table (with Archive)</strong></span></li>
+</ul>
+<p><span style="font-family: Arial, sans-serif; font-size: 10pt; color: #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The data is read from the DSO active table and from the archived data.</span></p>
+<p></p>
+<ul style="list-style-type: disc;">
+<li><span style="color: #000000;"><span style="font-size: 10pt; font-family: Arial, sans-serif;"><strong>Active Table (Without Archive)<br></strong></span><span style="font-size: 10pt; font-family: Arial, sans-serif;">The
+ data is only read from the active table of a DSO. If there is data in 
+the archive or in near-line storage at the time of extraction, this data
+ is not extracted.</span></span></li>
+</ul>
+<ul style="list-style-type: disc;">
+<li><span style="color: #000000;"><span style="font-size: 10pt; font-family: Arial, sans-serif;"><strong>Archive (Full Extraction Only)<br></strong></span><span style="font-size: 10pt; font-family: Arial, sans-serif;">The data is only read from the archive data store. Data is not extracted from the active table.</span></span></li>
+</ul>
+<ul>
+<li><span style="color: #000000;"><span style="font-size: 10pt; font-family: Arial, sans-serif;"><strong>Change Log</strong></span><span style="font-size: 10pt; font-family: Arial, sans-serif;"><br>The data is read from the change log and not the active table of the DSO.</span></span></li>
+</ul>
+</div>
+            </div>
+            <ul class="dm-sharing-icons">
+               <li class="dm-sharing-icons--item"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fblogs.sap.com%2F2012%2F09%2F16%2Fall-about-data-transfer-process-dtp-sap-bw-7%2F" title="Share on Facebook" target="_blank"><span class="dm-icon-encoded--facebook"></span></a></li><li class="dm-sharing-icons--item"><a href="https://twitter.com/share?url=https%3A%2F%2Fblogs.sap.com%2F2012%2F09%2F16%2Fall-about-data-transfer-process-dtp-sap-bw-7%2F&amp;text=All+about+Data+Transfer+Process+%28DTP%29+%E2%80%93+SAP+BW+7" title="Share on Twitter" target="_blank"><span class="dm-icon-encoded--twitter"></span></a></li><li class="dm-sharing-icons--item"><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fblogs.sap.com%2F2012%2F09%2F16%2Fall-about-data-transfer-process-dtp-sap-bw-7%2F&amp;title=All+about+Data+Transfer+Process+%28DTP%29+%E2%80%93+SAP+BW+7" title="Share on LinkedIn" target="_blank"><span class="dm-icon-encoded--linkedin"></span></a></li>            </ul>
+            <div class="dm-actionbar__wrapper dm-collapse__wrapper">
+               <ul class="dm-actionbar dm-actionbar--links">
+                     <li class="dm-actionbar__item">
+      <a class="dm-actionbar__link dm-button--disabled" data-toggle="collapse" data-hide-class="dm-is-collapsed" data-triggers=".alertModerator" aria-expanded="false" href="javascript:void(0);">Alert Moderator</a>
+    </li>
+               </ul>
+               
+  <div class="dm-actionbar__forms wprc-content-v3">
+    <div class="dm-actionsForm dm-is-collapsed alertModerator wprc-form-v3" data-toggle="collapseComponent" data-name="alertModerator">
+          </div>
+  </div>
+            </div>
+          </div>
+        </div>
+        <div class="dm-layout__flexColumn dm-layout--pullRight dm-layout--contentSidebar">
+            <div id="sapassignedtagswidget-v3" class="dm-widget widget_sapassignedtagswidget-v3 dm-widget--assignedTags"><h3 class="dm-widget__heading--small">Assigned tags</h3><ul class="dm-assignedTagsList dm-widgetlist--default-items"><li class="dm-assignedTagsList__item"><a class="dm-assignedTagsList__title" href="https://blogs.sap.com/tags/242586194391178517100436979900901/">BW (SAP Business Warehouse)</a></li></ul></div><div id="sap-relatedcontent-widget-v3-2" class="dm-widget dm-widget--relatedContent widget_sap-relatedcontent-widget-v3"><h3 class="dm-widget__heading--small">Related Blog Posts</h3><ul class="dm-widgetlist" data-types="blogpost" data-limit="3"><li class="dm-widgetlist__item">
+                          <div class="dm-widget__article">
+                            <div class="dm-widget__article-content-box">
+                              <div class="dm-widget__article-text">
+                                <a class="dm-widget__article-title" href="https://blogs.sap.com/2014/08/22/automate-dtp-with-init-without-data-transfer-processing-mode/" title="">Automate DTP with ‘Init Without Data Transfer’ Processing Mode</a>
+                                <div class="dm-widget__article-metadata">By
+                                  <a target="_blank" class="dm-widget__article-username" href="https://people.sap.com/purvang.zinzuwadia" title="">Purvang Zinzuwadia</a>, Aug 22, 2014
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li><li class="dm-widgetlist__item">
+                          <div class="dm-widget__article">
+                            <div class="dm-widget__article-content-box">
+                              <div class="dm-widget__article-text">
+                                <a class="dm-widget__article-title" href="https://blogs.sap.com/2015/05/26/new-features-of-dtp-in-sap-bw-74/" title="">New Features of DTP in SAP BW 7.4</a>
+                                <div class="dm-widget__article-metadata">By
+                                  <a target="_blank" class="dm-widget__article-username disabled" href="https://people.sap.com/former.member" aria-disabled="true" title="">Former Member</a>, May 26, 2015
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li><li class="dm-widgetlist__item">
+                          <div class="dm-widget__article">
+                            <div class="dm-widget__article-content-box">
+                              <div class="dm-widget__article-text">
+                                <a class="dm-widget__article-title" href="https://blogs.sap.com/2014/01/13/sap-bw-testing-episode-2-system-testing/" title="">SAP BW Testing Episode 2 – System testing</a>
+                                <div class="dm-widget__article-metadata">By
+                                  <a target="_blank" class="dm-widget__article-username disabled" href="https://people.sap.com/former.member" aria-disabled="true" title="">Former Member</a>, Jan 13, 2014
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li></ul></div><div id="sap-relatedcontent-widget-v3-3" class="dm-widget dm-widget--relatedContent widget_sap-relatedcontent-widget-v3"><h3 class="dm-widget__heading--small">Related Questions</h3><ul class="dm-widgetlist" data-types="question" data-limit="3"><li class="dm-widgetlist__item">
+                          <div class="dm-widget__article">
+                            <div class="dm-widget__article-content-box">
+                              <div class="dm-widget__article-text">
+                                <a class="dm-widget__article-title" href="https://answers.sap.com/questions/2165426/bw-7-data-transfer-process.html" title="">BW 7 Data Transfer process</a>
+                                <div class="dm-widget__article-metadata">By
+                                  <a target="_blank" class="dm-widget__article-username disabled" href="https://people.sap.com/former.member" aria-disabled="true" title="">Former Member</a>, Mar 26, 2007
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li><li class="dm-widgetlist__item">
+                          <div class="dm-widget__article">
+                            <div class="dm-widget__article-content-box">
+                              <div class="dm-widget__article-text">
+                                <a class="dm-widget__article-title" href="https://answers.sap.com/questions/9118527/after-load-info-package-the-request-update-is-red-.html" title="">after load info package the request update is red (before the process cont)</a>
+                                <div class="dm-widget__article-metadata">By
+                                  <a target="_blank" class="dm-widget__article-username disabled" href="https://people.sap.com/former.member" aria-disabled="true" title="">Former Member</a>, Feb 24, 2012
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li><li class="dm-widgetlist__item">
+                          <div class="dm-widget__article">
+                            <div class="dm-widget__article-content-box">
+                              <div class="dm-widget__article-text">
+                                <a class="dm-widget__article-title" href="https://answers.sap.com/questions/12407764/getting-ora-00904-invalid-identifier-error-when-ru.html" title="">Getting ORA-00904 invalid identifier error when running a DTP</a>
+                                <div class="dm-widget__article-metadata">By
+                                  <a target="_blank" class="dm-widget__article-username" href="https://people.sap.com/dolly.rawat" title="">Anu V</a>, May 25, 2016
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li></ul></div>        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="content-lightbox-modal" class="dm-lightbox" data-id="plbox-331781"><div class="dm-lightbox__box"><div class="dm-lightbox__slideNumber"><span class="dm-lightbox__slideNumber--current"></span>/<span class="dm-lightbox__slideNumber--total"></span></div><div class="lightbox__header"><span class="dm-icon-encoded--close" data-id="plbox-331781"></span></div><div class="dm-lightbox__content--scrollable dm-lightbox__content"><a class="lightbox-gallery-button--prev" href="javascript:void(0);" aria-label="Show previous image"> <span class="dm-icon-encoded--arrow-left dm-lightbox--previous"></span></a><a class="lightbox-gallery-button--next" href="javascript:void(0);" aria-label="Show next image"> <span class=" dm-icon-encoded--arrow-right dm-lightbox--next"></span></a></div><div class="zoom-buttons"><span class="lightbox-zoom-out dm-icon-encoded--minus"></span><span class="lightbox-zoom-in dm-icon-encoded--plus"></span></div></div></div><div class="dm-wrapper">
+  <div class="dm-grid">
+    
+<div id="comments" class="dm-section dm-section--last">
+      <div class="dm-section-header">
+      <div class="dm-section-header__title" title="Number of Comments">
+      14 Comments      </div>
+              <div class="dm-section dm-align-center dm-section-header__title" title="Please log on to comment" aria-role="alert">
+                You must be <a href="https://blogs.sap.com/wp-login.php?redirect_to=2012/09/16/all-about-data-transfer-process-dtp-sap-bw-7" class="opener js-idspopup" rel="IDS_login" title="Log On">Logged on</a> to comment or reply to a post.
+        </div>
+          </div>
+
+    <div class="dm-filter-results dm-border--top">
+          <div class="dm-layout__flexRow">
+        <div class="dm-commentsbox dm-commentsbox--blogs">
+          <ul class="dm-list-comments">
+                <li class="comment byuser comment-author-chanda even thread-even depth-1 dm-list-comments__item" id="li-comment-124839">
+        <article id="comment-124839">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Chandra Janardhansudhir Kunar" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/chanda_small.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a target="_blank" aria-label="Author name Chandra Janardhansudhir Kunar" href="https://people.sap.com/chanda" rel="external nofollow" class="url ">Chandra Janardhansudhir Kunar</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on &lt;?echo get_comment_date(); ?&gt;" href="https://blogs.sap.com/2012/09/16/all-about-data-transfer-process-dtp-sap-bw-7/#comment-124839"><time datetime="2013-05-23T04:21:02+00:00">May 23, 2013 at 4:21 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <div class="jive-rendered-content">
+<p>Hi Bhushan raval,</p>
+<p>Very informative , explained in simple terms.</p>
+<p>Hope to see more such articles.</p>
+<p>Best Rgds</p>
+<p>Chanda</p>
+</div>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-124839" class="reply comment-actions dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_124839">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            </li><!-- #comment-## -->
+    <li class="comment byuser comment-author-formermember odd alt thread-odd thread-alt depth-1 dm-list-comments__item" id="li-comment-124840">
+        <article id="comment-124840">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Former Member" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/former.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a target="_blank" aria-label="Author name Former Member" href="https://people.sap.com/former.member" rel="external nofollow" class="url disabled" aria-disabled="true">Former Member</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on &lt;?echo get_comment_date(); ?&gt;" href="https://blogs.sap.com/2012/09/16/all-about-data-transfer-process-dtp-sap-bw-7/#comment-124840"><time datetime="2013-10-09T03:58:34+00:00">October 9, 2013 at 3:58 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <div class="jive-rendered-content">
+<p>I have a doubt,</p>
+<p></p>
+<p>If i do delta load, it's always fetching data from "change log only", even though i checked active table (radio button).</p>
+<p></p>
+<p>Do u have any idea.</p>
+<p></p>
+<p>Thanks.</p>
+</div>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-124840" class="reply comment-actions dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_124840">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            </li><!-- #comment-## -->
+    <li class="comment byuser comment-author-colmboyle even thread-even depth-1 dm-list-comments__item" id="li-comment-124841">
+        <article id="comment-124841">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Colm Boyle" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/colm.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"><span class="dm-user__roles"><span class="dm-icon-encoded--employee" title="This user is an SAP Employee" data-role-name="SAP Employee"></span></span> <a target="_blank" aria-label="Author name Colm Boyle" href="https://people.sap.com/colm.boyle" rel="external nofollow" class="url ">Colm Boyle</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on &lt;?echo get_comment_date(); ?&gt;" href="https://blogs.sap.com/2012/09/16/all-about-data-transfer-process-dtp-sap-bw-7/#comment-124841"><time datetime="2014-07-16T18:48:33+00:00">July 16, 2014 at 6:48 pm</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <div class="jive-rendered-content">
+<p>Added this article to my favourites, will come back to it in the future no doubt, thanks</p>
+</div>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-124841" class="reply comment-actions dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_124841">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            </li><!-- #comment-## -->
+    <li class="comment byuser comment-author-rajendradewangan3 odd alt thread-odd thread-alt depth-1 dm-list-comments__item" id="li-comment-124842">
+        <article id="comment-124842">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Rajendra Dewangan" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/rajendra.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a target="_blank" aria-label="Author name Rajendra Dewangan" href="https://people.sap.com/rajendra.dewangan3" rel="external nofollow" class="url ">Rajendra Dewangan</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on &lt;?echo get_comment_date(); ?&gt;" href="https://blogs.sap.com/2012/09/16/all-about-data-transfer-process-dtp-sap-bw-7/#comment-124842"><time datetime="2014-08-22T10:18:05+00:00">August 22, 2014 at 10:18 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <div class="jive-rendered-content">
+<p>Hi Bhushan,</p>
+<p></p>
+<p>Very good and informative article, good work.</p>
+<p>Looking for some more informative articles from you.</p>
+<p></p>
+<p>Best Regards,</p>
+<p>Rajendra Dewangan</p>
+</div>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-124842" class="reply comment-actions dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_124842">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            <ul class="dm-list-comments">
+    <li class="comment byuser comment-author-bhushanraval bypostauthor even depth-2 dm-list-comments__item" id="li-comment-124844">
+        <article id="comment-124844">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Bhushan Raval" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/bhushan.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a target="_blank" aria-label="Author name Bhushan Raval" href="https://people.sap.com/bhushan.raval" rel="external nofollow" class="url ">Bhushan Raval</a> <span class="dm-user__category">Post author</span></div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on &lt;?echo get_comment_date(); ?&gt;" href="https://blogs.sap.com/2012/09/16/all-about-data-transfer-process-dtp-sap-bw-7/#comment-124844"><time datetime="2016-06-02T06:50:50+00:00">June 2, 2016 at 6:50 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <div class="jive-rendered-content">
+<p>Thank you Sir! <img draggable="false" role="img" class="emoji" alt="🙂" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/1f642.svg"> </p>
+</div>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-124844" class="reply comment-actions dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_124844">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment byuser comment-author-formermember odd alt thread-even depth-1 dm-list-comments__item" id="li-comment-124843">
+        <article id="comment-124843">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Former Member" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/former.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a target="_blank" aria-label="Author name Former Member" href="https://people.sap.com/former.member" rel="external nofollow" class="url disabled" aria-disabled="true">Former Member</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on &lt;?echo get_comment_date(); ?&gt;" href="https://blogs.sap.com/2012/09/16/all-about-data-transfer-process-dtp-sap-bw-7/#comment-124843"><time datetime="2016-06-02T06:40:49+00:00">June 2, 2016 at 6:40 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <div class="jive-rendered-content">
+<p>Dear Bhushan ,</p>
+<p></p>
+<p>I have a DTP between info cube and open hub destination set at delta mode but it is sending full data to open hub destination .</p>
+<p>Kindly suggest the solution .</p>
+<p></p>
+<p>Regards</p>
+<p>Amod </p>
+</div>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-124843" class="reply comment-actions dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_124843">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            <ul class="dm-list-comments">
+    <li class="comment byuser comment-author-bhushanraval bypostauthor even depth-2 dm-list-comments__item" id="li-comment-124845">
+        <article id="comment-124845">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Bhushan Raval" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/bhushan.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a target="_blank" aria-label="Author name Bhushan Raval" href="https://people.sap.com/bhushan.raval" rel="external nofollow" class="url ">Bhushan Raval</a> <span class="dm-user__category">Post author</span></div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on &lt;?echo get_comment_date(); ?&gt;" href="https://blogs.sap.com/2012/09/16/all-about-data-transfer-process-dtp-sap-bw-7/#comment-124845"><time datetime="2016-06-02T06:54:13+00:00">June 2, 2016 at 6:54 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <div class="jive-rendered-content">
+<p>Hi Amod, data transfer to OHD is purely based on the selection filters in DTP. The concept of Delta does not apply there!</p>
+<p>The whole of the source data set is considered in order to generate data on to the OHD's target.</p>
+</div>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-124845" class="reply comment-actions dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_124845">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            <ul class="dm-list-comments">
+    <li class="comment byuser comment-author-muralikrishnap1 odd alt depth-3 dm-list-comments__item" id="li-comment-350806">
+        <article id="comment-350806">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Muralikrishna P" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/muralikrishna.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a target="_blank" aria-label="Author name Muralikrishna P" href="https://people.sap.com/muralikrishna.p1" rel="external nofollow" class="url ">Muralikrishna P</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on &lt;?echo get_comment_date(); ?&gt;" href="https://blogs.sap.com/2012/09/16/all-about-data-transfer-process-dtp-sap-bw-7/#comment-350806"><time datetime="2016-10-22T07:42:20+00:00">October 22, 2016 at 7:42 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>Hi Bhushan,</p>
+<p>Why the delta load to Open-Hub is not possible?</p>
+<p>It is possible.</p>
+<p>Regards,<br>
+Muralikrishna p</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-350806" class="reply comment-actions dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_350806">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment byuser comment-author-muralikrishnap1 even depth-2 dm-list-comments__item" id="li-comment-350805">
+        <article id="comment-350805">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Muralikrishna P" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/muralikrishna.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a target="_blank" aria-label="Author name Muralikrishna P" href="https://people.sap.com/muralikrishna.p1" rel="external nofollow" class="url ">Muralikrishna P</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on &lt;?echo get_comment_date(); ?&gt;" href="https://blogs.sap.com/2012/09/16/all-about-data-transfer-process-dtp-sap-bw-7/#comment-350805"><time datetime="2016-10-22T07:40:32+00:00">October 22, 2016 at 7:40 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>Hi Amod Shrivatsava,</p>
+<p>Please select&nbsp;"init without data transfer&nbsp;" and also in 
+execution mode, select "..... Source fetched" and execute the DTP. We 
+need to first initialize the deltas, after which we can load the deltas.</p>
+<p>Regards,<br>
+Muralikrishna P</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-350805" class="reply comment-actions dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_350805">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment byuser comment-author-formermember odd alt thread-odd thread-alt depth-1 dm-list-comments__item" id="li-comment-124846">
+        <article id="comment-124846">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Former Member" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/former.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a target="_blank" aria-label="Author name Former Member" href="https://people.sap.com/former.member" rel="external nofollow" class="url disabled" aria-disabled="true">Former Member</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on &lt;?echo get_comment_date(); ?&gt;" href="https://blogs.sap.com/2012/09/16/all-about-data-transfer-process-dtp-sap-bw-7/#comment-124846"><time datetime="2016-07-07T11:38:57+00:00">July 7, 2016 at 11:38 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <div class="jive-rendered-content">
+<p>Hai bhushan</p>
+<p></p>
+<p>Very good and your article excellent&nbsp;&nbsp;&nbsp;&nbsp; </p>
+<p></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+Regards.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Madhan mohan</p>
+</div>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-124846" class="reply comment-actions dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_124846">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            </li><!-- #comment-## -->
+    <li class="comment byuser comment-author-formermember even thread-even depth-1 dm-list-comments__item" id="li-comment-124847">
+        <article id="comment-124847">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Former Member" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/former.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a target="_blank" aria-label="Author name Former Member" href="https://people.sap.com/former.member" rel="external nofollow" class="url disabled" aria-disabled="true">Former Member</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on &lt;?echo get_comment_date(); ?&gt;" href="https://blogs.sap.com/2012/09/16/all-about-data-transfer-process-dtp-sap-bw-7/#comment-124847"><time datetime="2016-10-04T07:45:19+00:00">October 4, 2016 at 7:45 am</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <div class="jive-rendered-content">
+<p>Hi Bhushan, Thanks for this article.I wanted to know one more point 
+in this ,which ABAP code will restrict from updating the active table 
+while execution is in <strong>Debugging mode</strong>.? Reagrds, Tesmin Thomas.</p>
+</div>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-124847" class="reply comment-actions dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_124847">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            <ul class="dm-list-comments">
+    <li class="comment byuser comment-author-bhushanraval bypostauthor odd alt depth-2 dm-list-comments__item" id="li-comment-124849">
+        <article id="comment-124849">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Bhushan Raval" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/bhushan.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a target="_blank" aria-label="Author name Bhushan Raval" href="https://people.sap.com/bhushan.raval" rel="external nofollow" class="url ">Bhushan Raval</a> <span class="dm-user__category">Post author</span></div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on &lt;?echo get_comment_date(); ?&gt;" href="https://blogs.sap.com/2012/09/16/all-about-data-transfer-process-dtp-sap-bw-7/#comment-124849"><time datetime="2016-10-04T13:28:40+00:00">October 4, 2016 at 1:28 pm</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <div class="jive-rendered-content">
+<p>Hi Tesmin, in the Debugging mode, a DTP never updates the data to the target. It's pure simulation. Hope it helps.</p>
+<p></p>
+<p>Cheers !!</p>
+<p>Bhushan.</p>
+</div>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-124849" class="reply comment-actions dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_124849">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            </li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+    <li class="comment byuser comment-author-bharadwajm even thread-odd thread-alt depth-1 dm-list-comments__item" id="li-comment-375326">
+        <article id="comment-375326">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Bharadwaj M" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/bharadwaj.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a target="_blank" aria-label="Author name Bharadwaj M" href="https://people.sap.com/bharadwaj.m" rel="external nofollow" class="url ">Bharadwaj M</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on &lt;?echo get_comment_date(); ?&gt;" href="https://blogs.sap.com/2012/09/16/all-about-data-transfer-process-dtp-sap-bw-7/#comment-375326"><time datetime="2017-05-18T12:30:51+00:00">May 18, 2017 at 12:30 pm</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>Hi Bhushan,</p>
+<p>&nbsp;</p>
+<p>How it varies when loading data in Delta and Full when we select Active table (With Archive).</p>
+<p>&nbsp;</p>
+<p>Regards,</p>
+<p>Bharadwaj</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-375326" class="reply comment-actions dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_375326">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            </li><!-- #comment-## -->
+    <li class="comment byuser comment-author-ipsitakundu100 odd alt thread-even depth-1 dm-list-comments__item" id="li-comment-431154">
+        <article id="comment-431154">
+                    <div class="dm-list-comments__item-header"> <!--  header -->
+              <div class="dm-user">
+                <div class="dm-user__image dm-user__image--40"><img alt="Author's profile photo Ipsita Kundu" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/ipsita.png" class="avatar avatar-48 photo avatar-default" width="48" height="48"></div><div class="dm-user__data"><div class="dm-user__heading"> <a target="_blank" aria-label="Author name Ipsita Kundu" href="https://people.sap.com/ipsita.kundu100" rel="external nofollow" class="url ">Ipsita Kundu</a> </div></div>              </div> <!-- .dm-user -->
+              <div class="dm-list-comments__item-date">
+                <a aria-label="Posted on &lt;?echo get_comment_date(); ?&gt;" href="https://blogs.sap.com/2012/09/16/all-about-data-transfer-process-dtp-sap-bw-7/#comment-431154"><time datetime="2018-07-19T12:59:16+00:00">July 19, 2018 at 12:59 pm</time></a>
+              </div> <!-- .dm-list-comments__item-date -->
+            </div> <!-- /header -->
+
+            <div class="dm-list-comments__item-content">
+                <p>Hello Experts,</p>
+<p>I have a data flow which is loading data from data source to a Cube.</p>
+<p>Added a selection&nbsp; in the delta Info-package on FISCPER and also added the same selection on the DTP.</p>
+<p>Info-package is loading data to the PSA properly with that selection 
+but when I am adding the same selection in the DTP it is loading 0 
+number od record.</p>
+<p>can you please help.</p>
+<p>&nbsp;</p>
+<p>Thanks,</p>
+<p>Ipsita</p>
+<p>&nbsp;</p>
+                            </div><!-- section .comment-content.comment -->
+
+            <div id="comment-actions-431154" class="reply comment-actions dm-actionbar__wrapper dm-collapse__wrapper" data-name="collapseWrapper">
+                <ul class="dm-actionbar dm-actionbar--links" role="menubar" aria-label="action menu">
+                    <!-- render like, reply, edit, delete links -->
+                    <li class="dm-actionbar__item"><span class="likes-comment-link dm-actionbar__link dm-button--disabled">Like</span><span class="dm-actionbar__score dm-button--disabled nb-likes-comment" id="nbLikeComment_431154">(0)</span></li>                </ul> <!-- .dm-actionbar .dm-actionbar--links -->
+                <div class="dm-actionbar--forms"></div>
+            </div><!-- .reply .dm-actionbar__wrapper -->
+        </article>
+            </li><!-- #comment-## -->
+          </ul><!-- .commentlist -->
+
+          
+        </div> <!-- .dm-commentsbox -->
+
+      </div> <!-- .dm-layout__flexRow -->
+        </div> <!-- main comments content area -->
+  
+          
+</div><!-- #comments .dm-section.dm-section--last -->  </div>
+</div>
+                </div> <!-- #main -->
+                <div id="shared_footer" class="dm-container dm-wrapper">
+                    <footer class="dm-footer">
+    <div class="dm-footer__inner-wrapper">
+        <div class="dm-socialmedia">
+            <h5 class="dm-socialmedia__headline" id="hl-sharefollow">Find us on</h5>
+            <ul class="dm-socialmedia__links" aria-labelledby="hl-sharefollow">
+                <li><a href="https://www.facebook.com/sapcommunity" title="Facebook"><span class="dm-icon-encoded--facebook"></span></a></li>
+                <li><a href="https://twitter.com/SAPCommunity" title="Twitter"><span class="dm-icon-encoded--twitter"></span></a></li>
+                <li><a href="https://www.youtube.com/c/SAPCommunities" title="YouTube"><span class="dm-icon-encoded--youtube"></span></a></li>
+                <li><a href="https://www.linkedin.com/company/sap" title="LinkedIn"><span class="dm-icon-encoded--linkedin"></span></a></li>
+                <li><a href="https://instagram.com/sap/" title="Instagram"><span class="dm-icon-encoded--instagram"></span></a></li>
+                <li><a href="http://www.slideshare.net/SAP" title="Slideshare"><span class="dm-icon-encoded--slideshare"></span></a></li>
+                <li><a href="mailto:?subject='SAP Community'" title="Email Share"><span class="dm-icon-encoded--email"></span></a></li>
+            </ul>
+        </div>
+        <nav role="navigation" class="dm-footer__navigation">
+            <ul class="dm-footer__navigation__list" aria-label="footer navigation">
+                <li><a href="http://sap.com/about/legal/privacy.html" target="_blank">Privacy</a></li>
+                <li><a href="http://sap.com/corporate/en/legal/terms-of-use.html" target="_blank">Terms of Use</a></li>
+                <li><a href="http://sap.com/about/legal/impressum.html" target="_blank">Legal Disclosure</a></li>
+                <li><a href="http://sap.com/about/legal/copyright.html" target="_blank">Copyright</a></li>
+                <li><a href="http://sap.com/about/legal/trademark.html" target="_blank">Trademark</a></li>
+                <li id="teconsent" consent="0,1" aria-label="Open Cookie Preferences Modal" style="display: block;" role="complementary"><script async="async" type="text/javascript" crossorigin="" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/v1.7-8690"></script><a role="link" id="icon-id031236729077490044" tabindex="0" aria-label="Настройки параметра cookie" style="cursor: pointer;" lang="ru">Настройки параметра cookie</a></li>
+                <li><a href="https://www.sap.com/cmp/nl/sap-community-voice/index.html" target="_blank">Newsletter</a></li>
+                <li><a href="mailto:sapnetwork@sap.com" target="_blank">Support</a></li>
+            </ul>
+        </nav>
+    </div>
+</footer>                </div>
+            </div> <!-- #page -->
+            <script type="application/ld+json" data-schema="331781-post-Default">{"@context":"https:\/\/schema.org\/","@type":"BlogPosting","@id":"https:\/\/blogs.sap.com\/2012\/09\/16\/all-about-data-transfer-process-dtp-sap-bw-7\/#BlogPosting","mainEntityOfPage":"https:\/\/blogs.sap.com\/2012\/09\/16\/all-about-data-transfer-process-dtp-sap-bw-7\/","headline":"All about Data Transfer Process (DTP) &#8211; SAP BW 7","name":"All about Data Transfer Process (DTP) &#8211; SAP BW 7","description":"Data Transfer Process (DTP) DTP determines the process for transfer of data between two persistent\/non persistent objects within BI. As of SAP NetWeaver 7.0, InfoPackage loads data from a Source System only up to PSA.","datePublished":"2012-09-16","dateModified":"2012-09-16","author":{"@type":"Person","@id":"https:\/\/blogs.sap.com\/author\/bhushan.raval\/#Person","name":"Bhushan Raval","url":"https:\/\/blogs.sap.com\/author\/bhushan.raval\/","image":{"@type":"ImageObject","@id":"https:\/\/avatars.services.sap.com\/images\/bhushan.raval_small.png","url":"https:\/\/avatars.services.sap.com\/images\/bhushan.raval_small.png","height":96,"width":96}},"publisher":{"@type":"Organization","name":"SAP Community Blogs","logo":{"@type":"ImageObject","@id":"https:\/\/blogs.sap.com\/wp-content\/uploads\/2020\/03\/SAP_scrn_R-2.png","url":"https:\/\/blogs.sap.com\/wp-content\/uploads\/2020\/03\/SAP_scrn_R-2.png","width":600,"height":60}},"image":{"@type":"ImageObject","@id":"\/wp-content\/uploads\/2012\/09\/delta_137885.jpg","url":"\/wp-content\/uploads\/2012\/09\/delta_137885.jpg","height":"","width":""},"url":"https:\/\/blogs.sap.com\/2012\/09\/16\/all-about-data-transfer-process-dtp-sap-bw-7\/","about":["Uncategorized"],"wordCount":3365}</script>
+<script type="application/ld+json" data-schema="Breadcrumb">{"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"2012","item":"https:\/\/blogs.sap.com\/2012\/#breadcrumbitem"},{"@type":"ListItem","position":2,"name":"09","item":"https:\/\/blogs.sap.com\/2012\/\/09\/#breadcrumbitem"},{"@type":"ListItem","position":3,"name":"16","item":"https:\/\/blogs.sap.com\/2012\/\/09\/\/16\/#breadcrumbitem"},{"@type":"ListItem","position":4,"name":"All about Data Transfer Process (DTP) &#8211; SAP BW 7","item":"https:\/\/blogs.sap.com\/2012\/09\/16\/all-about-data-transfer-process-dtp-sap-bw-7\/#breadcrumbitem"}]}</script>
+<script type="text/javascript" id="unified_header-js-extra">
+/* <![CDATA[ */
+var headerInitArgs = {"system":"blogs","wrapperID":"page","breadcrumbItems":[{"text":"Blogs","href":"https:\/\/blogs.sap.com"}]};
+/* ]]> */
+</script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/scn-header.js" id="unified_header-js"></script>
+<script type="text/javascript" id="unified_header-js-after">
+            scnHeader.init(headerInitArgs);
+            setCookie("userArgs", headerInitArgs.user ? JSON.stringify(headerInitArgs.user) : "", { path : "/" });
+    
+</script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/header.js" id="designmate_header_script-js"></script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/subheader.js" id="designmate_subheader_script-js"></script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/designmate.js" id="designmate_script-js"></script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/comment-reply.js" id="comment-reply-js"></script>
+<script type="text/javascript" id="satm_handler-js-extra">
+/* <![CDATA[ */
+var satmContentSelectors = ["div.dm-contentDetail__body-content","div.dm-list-comments__item-content"];
+var satmProfileBaseUrl = "people.sap.com\/";
+var satmChangeableElementsSelectors = ["div.dm-list-comments__item-content"];
+var satmPluginEnabled = "1";
+var satmApiUrl = "https:\/\/uss.api.community.sap.com";
+var satmApiCallWithCredentials = "1";
+var satmRequestDelayMs = "100";
+/* ]]> */
+</script>
+<script type="text/javascript" defer="defer" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/sap-at-mention.js" id="satm_handler-js"></script>
+<script type="text/javascript" id="sap-comment-validation-js-extra">
+/* <![CDATA[ */
+var commentValidation = {"validateMaxLinks":"1","max_links_number":"7","BLOGS_PAGE":"single"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/sap-comment-validation.js" id="sap-comment-validation-js"></script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/sap-post-status.js" id="scn_post_status_check-js"></script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/jquery-plugins.js" id="sap_jquery_plugins-js"></script>
+<script type="text/javascript" id="sap-login-csrf-cookie-js-extra">
+/* <![CDATA[ */
+var sapLoginCookieConfig = {"cookieName":"SAP_BLOGS_ANONYMOUS_NONCE","sapActionName":"s_action"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/sap-login-csrf-cookie.js" id="sap-login-csrf-cookie-js"></script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/lightbox-gallery-old.js" id="sap_lightbox_gallery_js-js"></script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/choices.js" id="choices.js-js"></script>
+<script type="text/javascript" id="wprc-script-js-extra">
+/* <![CDATA[ */
+var wprcajaxhandler = {"ajaxurl":"https:\/\/blogs.sap.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/scripts.js" id="wprc-script-js"></script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/single.js" id="sap_single_v3-js"></script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/onscroll-sticky-old.js" id="onscroll_sticky-js"></script>
+<script type="text/javascript" id="sap_assignedtags_widget_js_v3-js-extra">
+/* <![CDATA[ */
+var assignedTagsWidgetSettings = {"isNewBlogDetailPage":"","maxItemsBeforeHide":"5","data":{"BW (SAP Business Warehouse)":"https:\/\/blogs.sap.com\/tags\/242586194391178517100436979900901\/"},"widgetClassname":".widget_sapassignedtagswidget-v3"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/sap-assigned-tags-widget.js" id="sap_assignedtags_widget_js_v3-js"></script>
+<script type="text/javascript" id="sap_relatedcontent_widget_js_v3-js-extra">
+/* <![CDATA[ */
+var relatedContentWidgetSettings = {"widgetSelector":".widget_sap-relatedcontent-widget-v3","isNewBlogDetailPage":"","contentServiceUrl":"https:\/\/content.services.sap.com\/cse\/search\/topic","profileUrl":"https:\/\/people.sap.com","targetContentItem":{"id":331781,"type":"blogpost","title":"All about Data Transfer Process (DTP) - SAP BW 7","primary_tag":"242586194391178517100436979900901"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/sap-related-content-widget.js" id="sap_relatedcontent_widget_js_v3-js"></script>
+<script type="text/javascript">_satellite.pageBottom();</script><script>
+    var swa = {
+        pubToken: '33255556-c863-4a29-9bda-1309df0cff50',
+        baseUrl: 'https://webanalytics.cfapps.eu10.hana.ondemand.com/tracker/',
+        dntLevel: 1,
+        subSiteId:"blogs.sap.com"
+    };
+    (function(){
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.defer=true; g.async=true; g.src=swa.baseUrl+'js/privacy.js';
+        s.parentNode.insertBefore(g,s); g.onload = function() { swa.enable(); };
+     })();
+</script>        </div> <!-- .page-wrapper -->
+    
+
+<script type="text/javascript" defer="defer" async="" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/jquery_002.js"></script><script type="text/javascript" defer="defer" async="" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/piwik.js"></script><script>
+  if((_satellite.cookie.get('country')||"").toLowerCase() != 'us')
+  {
+  document .body.addEventListener( "click" , function (event) {
+  if (event && event.target && event.target.id === 'truste-consent-button' ) {
+     sessionStorage.setItem('referrerBeforeTrustArcReload', document.referrer);
+     sessionStorage.setItem('referrerBeforeTrustArcReloadUpdateTime', new Date().getTime());
+  setTimeout(function() { window .location.reload(); }, 1000 );
+  }
+});}
+</script><script type="text/javascript" defer="defer" async="" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/piwik_plugin.js"></script><iframe style="display: none;" name="trustarc_notice" id="trustarcNoticeFrame" title="Trustarc Cross-Domain Consent Frame" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/get.htm"></iframe><style>#swa_background{position:fixed;top:0px;left:0px;height:100%;width:100%;display:none;background-color: black;z-index:100;}#swa_license{font-family:Arial,Helvetica,sans-serif;background-color: white;color: black;border: 1px solid gray;position:absolute;display:none;z-index:11100;padding: 30px; display:none;background: #FFF;border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;box-shadow: 0px 0px 4px rgba(0,0,0,0.7); -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.7); -moz-box-shadow: 0 0px 4px rgba(0,0,0,0.7);}.close_license{ position: absolute; top: 12px; right: 12px; display: block; width: 14px; height: 14px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEUAAACIiIhaeOqmAAAAAXRSTlMAQObYZgAAAC9JREFUaN5jYGBgEOBgsJBhqLFjsKthkP/BwP+Bgf0BCAEZQC5QECgFVABUxsAAAOcxCbuaDAybAAAAAElFTkSuQmCC); z-index: 2;}.swabutton{display:inline;position: absolute;right: 25px;margin: 0px}.swalicensetxt{width:100%; height:100%; overflow-y: hidden;overflow-x: hidden;}</style><div id="swa_background"></div><div id="swa_license"><div id="swa_header"><table><tbody><tr><td><strong>Privacy Statement</strong></td></tr></tbody></table><a class="close_license" href="#"></a></div><iframe id="swa_licence_window" class="swalicensetxt" src="All%20about%20Data%20Transfer%20Process%20(DTP)%20%E2%80%93%20SAP%20BW%207%20SAP%20Blogs_files/a.htm" scrolling="yes"></iframe><div id="swa_form"><p></p><p></p><input type="checkbox" class="swa_checkid" id="swa_p_checkid"><label for="swa_p_checkid" id="l_swa_p_checkid">&nbsp;Allow use of SAP Web Analytics</label>&nbsp;&nbsp;<button class="swabutton" type="button" id="swa_save_modal" onclick="frame_save(event);">Save</button></div></div><div class="hidden" id="wp_window_loaded"></div><script>_satellite["_runScript1"](function(event, target, Promise) {
+function handleQueryAjaxActions(c){var r=function(t){return t.split("&").reduce(function(t,n){var e=n.split("=");return t[e[0]]=e[1],t},{})};jQuery(document).ajaxSuccess(function(t,n,e){if(e.data)for(var o=r(e.data),a=0;a<c.length;a++){var i=c[a][0],s=c[a][1];if(i(o))return void s()}})}function handleFetchActions(c){var t=fetch;fetch=function(){var s=arguments;return t.apply(this,arguments).then(function(t){if(s&&s[1]&&s[1].body){var i=t.clone();i.json().then(function(t){for(var n=Array.from(s[1].body.entries()).reduce(function(t,n){return t[n[0]]=n[1],t},t),e=0;e<c.length;e++){var o=c[e][0],a=c[e][1];if(o(n))return a(),i}})}return t})}}function hasAction(n){return function(t){return"undefined"!=typeof t.action&&t.action===n}}function hasParams(e){return function(t){for(var n in e)if(!t[n]||t[n]!==e[n])return!1;return!0}}function sentActivity(e,o){return function(){var t={objectType:o,actionType:e},n=window.location;t.contentURL=n.host+getRootPagePath(n.pathname),sap_s.trackActivity(t)}}function getRootPagePath(t){var n=t,e=/.*comment-page-\d+$/,o=!1;n.endsWith("/")&&(n=n.slice(0,-1),o=!0);var a=n.split("/");return e.test(n)&&6===a.length?(a.pop(),a.join("/")+(o?"/":"")):t}handleQueryAjaxActions([[hasParams({action:"like_a_post",actionLike:"doLike"}),sentActivity("like","blogpost")],[hasParams({action:"like_a_comment",actionLike:"doLike"}),sentActivity("like","comment")],[hasParams({action:"like_a_post",actionLike:"doUnLike"}),sentActivity("cancel-like","blogpost")],[hasParams({action:"like_a_comment",actionLike:"doUnLike"}),sentActivity("cancel-like","comment")],[hasAction("sap-update-comment"),sentActivity("update","comment")],[hasAction("sap-delete-comment"),sentActivity("delete","comment")],[hasParams({action:"delete-comment",trash:"1"}),sentActivity("delete","comment")],[hasParams({action:"delete-comment",untrash:"1"}),sentActivity("publish","comment")],[hasAction("wprc_add_report"),sentActivity("publish","alert")],[hasAction("report_agree_post"),sentActivity("confirm","alert")],[hasAction("report_disagree_post"),sentActivity("reject","alert")]]),handleFetchActions([[hasParams({last_status:"follow",action:"ss_change_follow_status",content_type:"blogpost"}),sentActivity("follow","blogpost")],[hasParams({last_status:"follow",action:"ss_change_follow_status",content_type:"sap_tag"}),sentActivity("follow","tag")],[hasParams({last_status:"not-follow",action:"ss_change_follow_status",content_type:"blogpost"}),sentActivity("stop-following","blogpost")],[hasParams({last_status:"not-follow",action:"ss_change_follow_status",content_type:"sap_tag"}),sentActivity("stop-following","tag")]]);
+});</script><script>_satellite["_runScript2"](function(event, target, Promise) {
+function fillStorageForTrackingActivity(){setUpDeleteBlogpost(),setUpPublishBlogpost(),setUpPublishComment()}function setUpPublishComment(){var t=jQuery("form#commentform");t.submit(function(){t.find("#new_comment_nonce").length&&saveToSessionStorage("comment","publish")})}function setUpDeleteBlogpost(){jQuery(".submitdelete").click(function(){saveToSessionStorage("blogpost","delete")})}function setUpPublishBlogpost(){var o=jQuery("form#post"),i="";o.find('input[value="Publish"][type="Submit"]').click(function(){i="publish"}),o.find('input[value="Needs More Work"][type="Submit"]').click(function(){i="needs_more_work"}),o.find('input[value="Submit for Review"][type="Submit"]').click(function(){i="submit_for_review"}),o.find('input[value="Update"][type="Submit"]').click(function(){i="update"}),o.find('input[value="Save"][type="Submit"]').click(function(){i="update"});var n=!1;o.find("#primary-tag").change(function(){n=!0});var s="Not Saved"===o.find("#custom-post-status-display").text();o.submit(function(){var t=o.find("#original_post_status").attr("value"),e=n&&("needs-more-work"===t||"pending"===t||"update"===i&&!s);i&&saveToSessionStorage("blogpost",i),e&&saveToSessionStorage("blogpost","update-tag-assignment")})}function saveToSessionStorage(t,e){var o=[],i=sessionStorage.getItem(STORAGE_KEY);i&&(o=JSON.parse(i)),o.push(createActivity(t,e)),sessionStorage.setItem(STORAGE_KEY,JSON.stringify(o))}function createActivity(t,e){var o={objectType:t,actionType:e},i=window.location;return o.contentURL=i.host+getRootPagePath(i.pathname),o}function sendActionsFromSessionStorage(){var t=sessionStorage.getItem(STORAGE_KEY);if(t){var e=JSON.parse(t);sessionStorage.removeItem(STORAGE_KEY);var o=window.location.host+getRootPagePath(window.location.pathname);e.forEach(function(t){t.contentURL=o,sap_s.trackActivity(t)})}}function getRootPagePath(t){var e=t,o=/.*comment-page-\d+$/,i=!1;e.endsWith("/")&&(e=e.slice(0,-1),i=!0);var n=e.split("/");return o.test(e)&&6===n.length?(n.pop(),n.join("/")+(i?"/":"")):t}var STORAGE_KEY="DTM_RELOAD_ACTION";fillStorageForTrackingActivity(),sendActionsFromSessionStorage();
+});</script></body></html>
