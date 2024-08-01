@@ -1,0 +1,10 @@
+begin
+for c in (select table_name,owner from dba_tables where owner in ('St_LOADER','REPORTS'))
+  loop
+    begin
+      execute immediate
+              'GRANT SELECT ON '||c.owner||'.' || c.table_name || ' to OLEGON_READER';
+    end;
+  end loop;
+end;
+/
